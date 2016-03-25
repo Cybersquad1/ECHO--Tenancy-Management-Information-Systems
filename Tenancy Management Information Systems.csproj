@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB8144A3-816C-40A7-B0A9-319A014B2775}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tenancy_Management_Information_Systems</RootNamespace>
+    <AssemblyName>Tenancy Management Information Systems</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture">
+      <HintPath>packages\WebCam_Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\KioskHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\KioskHome.Designer.cs">
+      <DependentUpon>KioskHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\HomeKioskForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\HomeKioskForms.Designer.cs">
+      <DependentUpon>HomeKioskForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\HomeTenantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\HomeTenantForm.Designer.cs">
+      <DependentUpon>HomeTenantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportGeneration\logSheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGeneration\logSheetForm.Designer.cs">
+      <DependentUpon>logSheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGeneration\MonthlyAssociationDuesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGeneration\MonthlyAssociationDuesForm.Designer.cs">
+      <DependentUpon>MonthlyAssociationDuesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGeneration\TheListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGeneration\TheListForm.Designer.cs">
+      <DependentUpon>TheListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGeneration\WaterBillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGeneration\WaterBillingForm.Designer.cs">
+      <DependentUpon>WaterBillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\AvailableUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\AvailableUnitForm.Designer.cs">
+      <DependentUpon>AvailableUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\CreateNewTenantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\CreateNewTenantForm.Designer.cs">
+      <DependentUpon>CreateNewTenantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\EditTenantInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\EditTenantInformationForm.Designer.cs">
+      <DependentUpon>EditTenantInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\PaymentHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\PaymentHistoryForm.Designer.cs">
+      <DependentUpon>PaymentHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\TenancyArchiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\TenancyArchiveForm.Designer.cs">
+      <DependentUpon>TenancyArchiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\TenancyDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\TenancyDatabaseForm.Designer.cs">
+      <DependentUpon>TenancyDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyManagement\viewUnitNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\viewUnitNumberForm.Designer.cs">
+      <DependentUpon>viewUnitNumberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccounts\CollectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccounts\CollectorForm.Designer.cs">
+      <DependentUpon>CollectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccounts\CreateNewUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccounts\CreateNewUserForm.Designer.cs">
+      <DependentUpon>CreateNewUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccounts\EditUserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccounts\EditUserInfoForm.Designer.cs">
+      <DependentUpon>EditUserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\UserUtilities.cs" />
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\HomeKioskForms.resx">
+      <DependentUpon>HomeKioskForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\KioskHome.resx">
+      <DependentUpon>KioskHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\HomeTenantForm.resx">
+      <DependentUpon>HomeTenantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportGeneration\logSheetForm.resx">
+      <DependentUpon>logSheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGeneration\MonthlyAssociationDuesForm.resx">
+      <DependentUpon>MonthlyAssociationDuesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGeneration\TheListForm.resx">
+      <DependentUpon>TheListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGeneration\WaterBillingForm.resx">
+      <DependentUpon>WaterBillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\AvailableUnitForm.resx">
+      <DependentUpon>AvailableUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\CreateNewTenantForm.resx">
+      <DependentUpon>CreateNewTenantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\EditTenantInformationForm.resx">
+      <DependentUpon>EditTenantInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\PaymentHistoryForm.resx">
+      <DependentUpon>PaymentHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\TenancyArchiveForm.resx">
+      <DependentUpon>TenancyArchiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\TenancyDatabaseForm.resx">
+      <DependentUpon>TenancyDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\viewUnitNumberForm.resx">
+      <DependentUpon>viewUnitNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccounts\CollectorForm.resx">
+      <DependentUpon>CollectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccounts\CreateNewUserForm.resx">
+      <DependentUpon>CreateNewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccounts\EditUserInfoForm.resx">
+      <DependentUpon>EditUserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cityland-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edituser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doooor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashier4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bathroom4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\technology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\technology %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashier41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logomgmt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homebut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutbut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tentinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservicon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservicon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reqreq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assocbut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservicon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservefin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lereqq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lereqq1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lilogout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Echo.Data.Repository\Echo.Data.Repository.csproj">
+      <Project>{37e24e93-ecc5-4533-b849-c557674c8b27}</Project>
+      <Name>Echo.Data.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
