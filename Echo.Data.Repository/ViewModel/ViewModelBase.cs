@@ -38,9 +38,9 @@ namespace Echo.Data.Repository.ViewModel
             Context.SaveChanges();
         }
 
-        protected void Update()
+        protected void Update(TEntity _entity)
         {
-            Context.Entry<TEntity>(Entity).State = EntityState.Modified;
+            Context.Entry<TEntity>(_entity).State = EntityState.Modified;
 
             Context.SaveChanges();
         }

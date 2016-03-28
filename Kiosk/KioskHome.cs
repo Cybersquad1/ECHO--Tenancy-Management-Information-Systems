@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Echo.Data.Repository.Repository;
+
 
 namespace Tenancy_Management_Information_Systems.Kiosk
 {
@@ -28,6 +28,8 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
             if(user != null)
             {
+                lblErrorLogin.Hide();
+
                 LoginInfo loginInfo = new LoginInfo
                 {
                     username = user.Username,
@@ -45,6 +47,11 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                     HomeTenantForm ht1 = new HomeTenantForm();
                     ht1.Show();
                 }
+            }
+            else
+            {
+                lblErrorLogin.Show();
+                txtBoxPassword.Text = "";
             }
            
         }

@@ -41,11 +41,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewUser = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,7 +70,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.btnGeneratePassword = new System.Windows.Forms.Button();
-            this.txtOPass = new System.Windows.Forms.TextBox();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
             this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
@@ -76,16 +80,13 @@
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
-            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
-            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,7 @@
             this.btnDeactivate.TabIndex = 22;
             this.btnDeactivate.Text = "    Deactivate";
             this.btnDeactivate.UseVisualStyleBackColor = true;
+            this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
             // 
             // btnSave
             // 
@@ -139,6 +141,7 @@
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "     Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -150,6 +153,7 @@
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "      Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSearch
             // 
@@ -223,6 +227,7 @@
             // 
             this.listViewUser.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.listViewUser.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
             this.columnHeader5,
             this.columnHeader1,
             this.columnHeader2,
@@ -230,11 +235,18 @@
             this.listViewUser.FullRowSelect = true;
             this.listViewUser.GridLines = true;
             this.listViewUser.Location = new System.Drawing.Point(6, -3);
+            this.listViewUser.MultiSelect = false;
             this.listViewUser.Name = "listViewUser";
             this.listViewUser.Size = new System.Drawing.Size(927, 387);
             this.listViewUser.TabIndex = 0;
             this.listViewUser.UseCompatibleStateImageBehavior = false;
             this.listViewUser.View = System.Windows.Forms.View.Details;
+            this.listViewUser.DoubleClick += new System.EventHandler(this.listViewUser_DoubleClick);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 131;
             // 
             // columnHeader1
             // 
@@ -253,7 +265,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
@@ -264,26 +276,56 @@
             this.tabPage2.Text = "Employee Information";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.Controls.Add(this.txtBoxContactNo);
-            this.groupBox1.Controls.Add(this.txtBoxTelNo);
-            this.groupBox1.Controls.Add(this.txtBoxMobileNo);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label39);
-            this.groupBox1.Controls.Add(this.txtBoxEmail);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtBoxRelationToContactPerson);
-            this.groupBox1.Controls.Add(this.txtBoxContactPerson);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 224);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(907, 140);
-            this.groupBox1.TabIndex = 104;
-            this.groupBox1.TabStop = false;
+            this.groupBox2.Controls.Add(this.txtBoxContactNo);
+            this.groupBox2.Controls.Add(this.txtBoxTelNo);
+            this.groupBox2.Controls.Add(this.txtBoxMobileNo);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label25);
+            this.groupBox2.Controls.Add(this.label39);
+            this.groupBox2.Controls.Add(this.txtBoxEmail);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtBoxRelationToContactPerson);
+            this.groupBox2.Controls.Add(this.txtBoxContactPerson);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(19, 224);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(907, 140);
+            this.groupBox2.TabIndex = 104;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Enabled = false;
+            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxContactNo.Location = new System.Drawing.Point(613, 63);
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxContactNo.TabIndex = 130;
+            // 
+            // txtBoxTelNo
+            // 
+            this.txtBoxTelNo.Enabled = false;
+            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxTelNo.Location = new System.Drawing.Point(152, 62);
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxTelNo.TabIndex = 126;
+            // 
+            // txtBoxMobileNo
+            // 
+            this.txtBoxMobileNo.Enabled = false;
+            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(152, 38);
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxMobileNo.TabIndex = 129;
             // 
             // label10
             // 
@@ -393,7 +435,7 @@
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.btnGeneratePassword);
-            this.groupBox6.Controls.Add(this.txtOPass);
+            this.groupBox6.Controls.Add(this.txtBoxPassword);
             this.groupBox6.Controls.Add(this.txtBoxUsername);
             this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
             this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
@@ -519,16 +561,17 @@
             this.btnGeneratePassword.TabIndex = 17;
             this.btnGeneratePassword.Text = "Generate Password";
             this.btnGeneratePassword.UseVisualStyleBackColor = true;
+            this.btnGeneratePassword.Click += new System.EventHandler(this.btnGeneratePassword_Click);
             // 
-            // txtOPass
+            // txtBoxPassword
             // 
-            this.txtOPass.Enabled = false;
-            this.txtOPass.Location = new System.Drawing.Point(489, 51);
-            this.txtOPass.Name = "txtOPass";
-            this.txtOPass.PasswordChar = '*';
-            this.txtOPass.Size = new System.Drawing.Size(212, 21);
-            this.txtOPass.TabIndex = 97;
-            this.txtOPass.Visible = false;
+            this.txtBoxPassword.Enabled = false;
+            this.txtBoxPassword.Location = new System.Drawing.Point(489, 51);
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.PasswordChar = '*';
+            this.txtBoxPassword.Size = new System.Drawing.Size(212, 21);
+            this.txtBoxPassword.TabIndex = 97;
+            this.txtBoxPassword.Visible = false;
             // 
             // txtBoxUsername
             // 
@@ -626,40 +669,10 @@
             this.pictureBox2.TabIndex = 126;
             this.pictureBox2.TabStop = false;
             // 
-            // columnHeader5
+            // columnHeader4
             // 
-            this.columnHeader5.Text = "Status";
-            this.columnHeader5.Width = 131;
-            // 
-            // txtBoxMobileNo
-            // 
-            this.txtBoxMobileNo.Enabled = false;
-            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxMobileNo.Location = new System.Drawing.Point(152, 38);
-            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
-            this.txtBoxMobileNo.Size = new System.Drawing.Size(230, 20);
-            this.txtBoxMobileNo.TabIndex = 129;
-            // 
-            // txtBoxTelNo
-            // 
-            this.txtBoxTelNo.Enabled = false;
-            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxTelNo.Location = new System.Drawing.Point(152, 62);
-            this.txtBoxTelNo.Name = "txtBoxTelNo";
-            this.txtBoxTelNo.Size = new System.Drawing.Size(230, 20);
-            this.txtBoxTelNo.TabIndex = 126;
-            // 
-            // txtBoxContactNo
-            // 
-            this.txtBoxContactNo.Enabled = false;
-            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxContactNo.Location = new System.Drawing.Point(613, 63);
-            this.txtBoxContactNo.Name = "txtBoxContactNo";
-            this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
-            this.txtBoxContactNo.TabIndex = 130;
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 0;
             // 
             // Edit_User_Info
             // 
@@ -679,8 +692,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -700,7 +713,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -721,7 +734,7 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button btnGeneratePassword;
-        private System.Windows.Forms.TextBox txtOPass;
+        private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.TextBox txtBoxProvincialAddress;
         private System.Windows.Forms.TextBox txtBoxHomeAddress;
@@ -741,5 +754,6 @@
         private System.Windows.Forms.TextBox txtBoxContactNo;
         private System.Windows.Forms.TextBox txtBoxTelNo;
         private System.Windows.Forms.TextBox txtBoxMobileNo;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

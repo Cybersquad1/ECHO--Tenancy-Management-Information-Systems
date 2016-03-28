@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EchoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LogSheet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="150" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="LogSheetActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ItemID" Type="uniqueidentifier" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Purpose" Type="varchar" MaxLength="150" />
+    <Property Name="Area" Type="varchar" MaxLength="100" />
+    <Property Name="IssuedBy" Type="uniqueidentifier" />
+    <Property Name="ReceivedBy" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="MonthlyAssociationDue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="ChargeDate" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="AssociationDue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="WaterBillTotalDue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discounts" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Penalty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OtherPenalty" Type="varchar" MaxLength="100" />
+    <Property Name="OtherPenaltyAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="OtherOccupants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TenantProfileID" Type="uniqueidentifier" />
+    <Property Name="FullName" Type="varchar" MaxLength="100" />
+    <Property Name="Relation" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PaymentHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="ChargeDate" Type="datetime" />
+    <Property Name="AssociationDues" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PreviousWaterBillDue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CurrentWaterBillDue" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PetsProfile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Quantity" Type="varchar" MaxLength="2" />
+    <Property Name="Type" Type="varchar" MaxLength="100" />
+    <Property Name="Breed" Type="varchar" MaxLength="100" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="TenantProfileID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TenantProfile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="100" />
+    <Property Name="NatureOfOccupancy" Type="varchar" MaxLength="150" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="300" />
+    <Property Name="ProvincialAddress" Type="varchar" MaxLength="300" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+    <Property Name="TelephoneNo" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="WithOtherOccupants" Type="varchar" MaxLength="1" />
+    <Property Name="WithPets" Type="varchar" MaxLength="1" />
+    <Property Name="WithFireExtinguisher" Type="varchar" MaxLength="1" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="ImageLocation" Type="image" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="UnitProfile">
+    <Key>
+      <PropertyRef Name="UnitNumber" />
+    </Key>
+    <Property Name="UnitNumber" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="StartOfOccupancy" Type="datetime" />
+    <Property Name="ExpectedEndOfOccupancy" Type="datetime" />
+    <Property Name="Owner" Type="uniqueidentifier" />
+    <Property Name="Tenant" Type="uniqueidentifier" />
+    <Property Name="NatureOfOccupancy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="ProvincialAddress" Type="varchar" MaxLength="300" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+    <Property Name="TelephoneNo" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ContactPerson" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="15" />
+    <Property Name="RelationshipToContact" Type="varchar" MaxLength="100" />
+    <Property Name="ImageContent" Type="image" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="Type" Type="varchar" MaxLength="20" />
+    <Property Name="IfGeneratedPassword" Type="varchar" MaxLength="1" />
+    <Property Name="FullName" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="WaterBilling">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="ChargeDate" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="CurrentReading" Type="varchar" MaxLength="100" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OverdueAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DisconnectionFee" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_LogSheet_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="LogSheet" Type="Self.LogSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogSheet">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogSheetActivity_LogSheet">
+    <End Role="LogSheet" Type="Self.LogSheet" Multiplicity="0..1" />
+    <End Role="LogSheetActivity" Type="Self.LogSheetActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogSheet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogSheetActivity">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogSheetActivity_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
+    <End Role="LogSheetActivity" Type="Self.LogSheetActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogSheetActivity">
+        <PropertyRef Name="IssuedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonthlyAssociationDue_UnitProfile">
+    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+    <End Role="MonthlyAssociationDue" Type="Self.MonthlyAssociationDue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="MonthlyAssociationDue">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OtherOccupants_TenantProfile">
+    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
+    <End Role="OtherOccupants" Type="Self.OtherOccupants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TenantProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OtherOccupants">
+        <PropertyRef Name="TenantProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentHistory_UnitProfile">
+    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+    <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="PaymentHistory">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PetsProfile_TenantProfile">
+    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
+    <End Role="PetsProfile" Type="Self.PetsProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TenantProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PetsProfile">
+        <PropertyRef Name="TenantProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TenantProfile_UnitProfile">
+    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="TenantProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WaterBilling_UnitProfile">
+    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+    <End Role="WaterBilling" Type="Self.WaterBilling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="WaterBilling">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EchoModelStoreContainer">
+    <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PetsProfile" EntityType="Self.PetsProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaterBilling" EntityType="Self.WaterBilling" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_LogSheet_UserProfile" Association="Self.FK_LogSheet_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="LogSheet" EntitySet="LogSheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogSheetActivity_LogSheet" Association="Self.FK_LogSheetActivity_LogSheet">
+      <End Role="LogSheet" EntitySet="LogSheet" />
+      <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogSheetActivity_UserProfile" Association="Self.FK_LogSheetActivity_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonthlyAssociationDue_UnitProfile" Association="Self.FK_MonthlyAssociationDue_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="Self.FK_OtherOccupants_TenantProfile">
+      <End Role="TenantProfile" EntitySet="TenantProfile" />
+      <End Role="OtherOccupants" EntitySet="OtherOccupants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="PaymentHistory" EntitySet="PaymentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PetsProfile_TenantProfile" Association="Self.FK_PetsProfile_TenantProfile">
+      <End Role="TenantProfile" EntitySet="TenantProfile" />
+      <End Role="PetsProfile" EntitySet="PetsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="Self.FK_TenantProfile_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="TenantProfile" EntitySet="TenantProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="Self.FK_WaterBilling_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="WaterBilling" EntitySet="WaterBilling" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

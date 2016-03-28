@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Utilities;
-using Echo.Data.Repository.Repository;
 using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts

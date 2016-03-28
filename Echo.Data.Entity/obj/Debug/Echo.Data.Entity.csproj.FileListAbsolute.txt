@@ -1,0 +1,6 @@
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\bin\Debug\Echo.Data.Entity.dll
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\bin\Debug\Echo.Data.Entity.pdb
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\obj\Debug\Echo.Data.Entity.dll
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\obj\Debug\Echo.Data.Entity.pdb
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\bin\Debug\Echo.Data.Entity.dll.config
+C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Entity\obj\Debug\Echo.Data.Entity.csprojResolveAssemblyReference.cache

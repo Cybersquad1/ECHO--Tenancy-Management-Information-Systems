@@ -24,6 +24,21 @@ namespace Echo.Data.Repository.ViewModel
             Add(_user);
         }
 
+        public void UpdateUser(UserProfile _user)
+        {
+            if (_user.Password != "")
+                _user.IfGeneratedPassword = "Y";
+
+            _user.FullName = _user.FirstName + " " + _user.LastName;
+
+            Update(_user);
+        }
+
+        public UserProfile GetSelectedUser(Guid _userID)
+        {
+            return GetEntity(r => r.ID == _userID);
+        }
+
         public List<UserProfile> GetUsers(string _searchKey)
         {
             return Find(r => r.FullName.ToLower().Contains(_searchKey.ToLower()));

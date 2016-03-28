@@ -1,4 +1,4 @@
-﻿using Echo.Data.Repository.Repository;
+﻿using Echo.Data.Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
