@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenancy Management Informat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echo.Data.Repository", "Echo.Data.Repository\Echo.Data.Repository.csproj", "{37E24E93-ECC5-4533-B849-C557674C8B27}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1240C56E-8744-41E4-8A9C-ECC274F8B8B6}"
+	ProjectSection(SolutionItems) = preProject
+		Echo.sql = Echo.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
