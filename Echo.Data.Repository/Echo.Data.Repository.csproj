@@ -75,7 +75,7 @@
     <Compile Include="MonthlyAssociationDue.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="OtherOccupants.cs">
+    <Compile Include="OtherOccupant.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentHistory.cs">
@@ -86,9 +86,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>EchoEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="TenantProfile.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>

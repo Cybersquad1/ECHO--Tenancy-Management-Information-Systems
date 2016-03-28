@@ -16,9 +16,22 @@ namespace Echo.Data.Repository.ViewModel
 
         public void AddUser(UserProfile _user)
         {
+            //Default data if new user
             _user.Status = "Y"; //Active Status
+            _user.IfGeneratedPassword = "Y";
+            _user.FullName = _user.FirstName + " " + _user.LastName;
 
             Add(_user);
+        }
+
+        public List<UserProfile> GetUsers(string _searchKey)
+        {
+            return Find(r => r.FullName.ToLower().Contains(_searchKey.ToLower()));
+        }
+
+        public List<UserProfile> GetUsers()
+        {
+            return Find();
         }
     }
 }

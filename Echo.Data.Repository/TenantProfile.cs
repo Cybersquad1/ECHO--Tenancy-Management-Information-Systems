@@ -17,8 +17,8 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TenantProfile()
         {
-            this.OtherOccupants = new HashSet<OtherOccupants>();
-            this.PetsProfile = new HashSet<PetsProfile>();
+            this.OtherOccupants = new HashSet<OtherOccupant>();
+            this.PetsProfiles = new HashSet<PetsProfile>();
         }
     
         public System.Guid ID { get; set; }
@@ -43,9 +43,9 @@ namespace Echo.Data.Repository
         public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OtherOccupants> OtherOccupants { get; set; }
+        public virtual ICollection<OtherOccupant> OtherOccupants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PetsProfile> PetsProfile { get; set; }
+        public virtual ICollection<PetsProfile> PetsProfiles { get; set; }
         public virtual UnitProfile UnitProfile { get; set; }
     }
 }

@@ -17,10 +17,10 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UnitProfile()
         {
-            this.MonthlyAssociationDue = new HashSet<MonthlyAssociationDue>();
-            this.PaymentHistory = new HashSet<PaymentHistory>();
-            this.TenantProfile = new HashSet<TenantProfile>();
-            this.WaterBilling = new HashSet<WaterBilling>();
+            this.MonthlyAssociationDues = new HashSet<MonthlyAssociationDue>();
+            this.PaymentHistories = new HashSet<PaymentHistory>();
+            this.TenantProfiles = new HashSet<TenantProfile>();
+            this.WaterBillings = new HashSet<WaterBilling>();
         }
     
         public string UnitNumber { get; set; }
@@ -31,12 +31,12 @@ namespace Echo.Data.Repository
         public string NatureOfOccupancy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MonthlyAssociationDue> MonthlyAssociationDue { get; set; }
+        public virtual ICollection<MonthlyAssociationDue> MonthlyAssociationDues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PaymentHistory> PaymentHistory { get; set; }
+        public virtual ICollection<PaymentHistory> PaymentHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TenantProfile> TenantProfile { get; set; }
+        public virtual ICollection<TenantProfile> TenantProfiles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WaterBilling> WaterBilling { get; set; }
+        public virtual ICollection<WaterBilling> WaterBillings { get; set; }
     }
 }

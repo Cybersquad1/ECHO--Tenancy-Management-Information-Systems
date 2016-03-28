@@ -28,9 +28,16 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
             if(user != null)
             {
-                if(user.Type == "ADMIN")
+                LoginInfo loginInfo = new LoginInfo
                 {
-                    Home h1 = new Home();
+                    username = user.Username,
+                    fullName = user.FirstName + " " + user.LastName,
+                    accountType = user.Type
+                };
+
+                if(loginInfo.accountType == "ADMIN")
+                {
+                    Home h1 = new Home(loginInfo);
                     h1.Show();
                 }
                 else //if user is Tenant or Unit Owner

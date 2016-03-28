@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EchoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EchoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LogSheet">
           <Key>
             <PropertyRef Name="ID" />
@@ -77,16 +77,6 @@
           <Property Name="Name" Type="varchar" MaxLength="150" />
           <Property Name="TenantProfileID" Type="uniqueidentifier" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="TenantProfile">
           <Key>
             <PropertyRef Name="ID" />
@@ -146,6 +136,8 @@
           <Property Name="ImageContent" Type="image" />
           <Property Name="Status" Type="varchar" MaxLength="1" />
           <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="IfGeneratedPassword" Type="varchar" MaxLength="1" />
+          <Property Name="FullName" Type="varchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="WaterBilling">
           <Key>
@@ -277,7 +269,6 @@
           <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PetsProfile" EntityType="Self.PetsProfile" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
@@ -319,8 +310,7 @@
             <End Role="WaterBilling" EntitySet="WaterBilling" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EchoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -334,7 +324,7 @@
           <Property Name="DateModified" Type="DateTime" Precision="3" />
           <Property Name="ModifiedBy" Type="Guid" />
           <NavigationProperty Name="UserProfile" Relationship="Self.FK_LogSheet_UserProfile" FromRole="LogSheet" ToRole="UserProfile" />
-          <NavigationProperty Name="LogSheetActivity" Relationship="Self.FK_LogSheetActivity_LogSheet" FromRole="LogSheet" ToRole="LogSheetActivity" />
+          <NavigationProperty Name="LogSheetActivities" Relationship="Self.FK_LogSheetActivity_LogSheet" FromRole="LogSheet" ToRole="LogSheetActivity" />
         </EntityType>
         <EntityType Name="LogSheetActivity">
           <Key>
@@ -369,7 +359,7 @@
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="UnitProfile" Relationship="Self.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
         </EntityType>
-        <EntityType Name="OtherOccupants">
+        <EntityType Name="OtherOccupant">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -404,16 +394,6 @@
           <Property Name="TenantProfileID" Type="Guid" />
           <NavigationProperty Name="TenantProfile" Relationship="Self.FK_PetsProfile_TenantProfile" FromRole="PetsProfile" ToRole="TenantProfile" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="TenantProfile">
           <Key>
             <PropertyRef Name="ID" />
@@ -439,7 +419,7 @@
           <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="OtherOccupants" Relationship="Self.FK_OtherOccupants_TenantProfile" FromRole="TenantProfile" ToRole="OtherOccupants" />
-          <NavigationProperty Name="PetsProfile" Relationship="Self.FK_PetsProfile_TenantProfile" FromRole="TenantProfile" ToRole="PetsProfile" />
+          <NavigationProperty Name="PetsProfiles" Relationship="Self.FK_PetsProfile_TenantProfile" FromRole="TenantProfile" ToRole="PetsProfile" />
           <NavigationProperty Name="UnitProfile" Relationship="Self.FK_TenantProfile_UnitProfile" FromRole="TenantProfile" ToRole="UnitProfile" />
         </EntityType>
         <EntityType Name="UnitProfile">
@@ -452,10 +432,10 @@
           <Property Name="Owner" Type="Guid" />
           <Property Name="Tenant" Type="Guid" />
           <Property Name="NatureOfOccupancy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="MonthlyAssociationDue" Relationship="Self.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
-          <NavigationProperty Name="PaymentHistory" Relationship="Self.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
-          <NavigationProperty Name="TenantProfile" Relationship="Self.FK_TenantProfile_UnitProfile" FromRole="UnitProfile" ToRole="TenantProfile" />
-          <NavigationProperty Name="WaterBilling" Relationship="Self.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
+          <NavigationProperty Name="MonthlyAssociationDues" Relationship="Self.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
+          <NavigationProperty Name="PaymentHistories" Relationship="Self.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
+          <NavigationProperty Name="TenantProfiles" Relationship="Self.FK_TenantProfile_UnitProfile" FromRole="UnitProfile" ToRole="TenantProfile" />
+          <NavigationProperty Name="WaterBillings" Relationship="Self.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
         </EntityType>
         <EntityType Name="UserProfile">
           <Key>
@@ -480,8 +460,10 @@
           <Property Name="ImageContent" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="LogSheet" Relationship="Self.FK_LogSheet_UserProfile" FromRole="UserProfile" ToRole="LogSheet" />
-          <NavigationProperty Name="LogSheetActivity" Relationship="Self.FK_LogSheetActivity_UserProfile" FromRole="UserProfile" ToRole="LogSheetActivity" />
+          <Property Name="IfGeneratedPassword" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LogSheets" Relationship="Self.FK_LogSheet_UserProfile" FromRole="UserProfile" ToRole="LogSheet" />
+          <NavigationProperty Name="LogSheetActivities" Relationship="Self.FK_LogSheetActivity_UserProfile" FromRole="UserProfile" ToRole="LogSheetActivity" />
+          <Property Name="FullName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="WaterBilling">
           <Key>
@@ -549,7 +531,7 @@
         </Association>
         <Association Name="FK_OtherOccupants_TenantProfile">
           <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
-          <End Role="OtherOccupants" Type="Self.OtherOccupants" Multiplicity="*" />
+          <End Role="OtherOccupants" Type="Self.OtherOccupant" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TenantProfile">
               <PropertyRef Name="ID" />
@@ -608,52 +590,51 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EchoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="LogSheet" EntityType="Self.LogSheet" />
-          <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" />
-          <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" />
-          <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" />
-          <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" />
-          <EntitySet Name="PetsProfile" EntityType="Self.PetsProfile" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" />
-          <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" />
-          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" />
-          <EntitySet Name="WaterBilling" EntityType="Self.WaterBilling" />
+          <EntitySet Name="LogSheets" EntityType="Self.LogSheet" />
+          <EntitySet Name="LogSheetActivities" EntityType="Self.LogSheetActivity" />
+          <EntitySet Name="MonthlyAssociationDues" EntityType="Self.MonthlyAssociationDue" />
+          <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupant" />
+          <EntitySet Name="PaymentHistories" EntityType="Self.PaymentHistory" />
+          <EntitySet Name="PetsProfiles" EntityType="Self.PetsProfile" />
+          <EntitySet Name="TenantProfiles" EntityType="Self.TenantProfile" />
+          <EntitySet Name="UnitProfiles" EntityType="Self.UnitProfile" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+          <EntitySet Name="WaterBillings" EntityType="Self.WaterBilling" />
           <AssociationSet Name="FK_LogSheet_UserProfile" Association="Self.FK_LogSheet_UserProfile">
-            <End Role="UserProfile" EntitySet="UserProfile" />
-            <End Role="LogSheet" EntitySet="LogSheet" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="LogSheet" EntitySet="LogSheets" />
           </AssociationSet>
           <AssociationSet Name="FK_LogSheetActivity_LogSheet" Association="Self.FK_LogSheetActivity_LogSheet">
-            <End Role="LogSheet" EntitySet="LogSheet" />
-            <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
+            <End Role="LogSheet" EntitySet="LogSheets" />
+            <End Role="LogSheetActivity" EntitySet="LogSheetActivities" />
           </AssociationSet>
           <AssociationSet Name="FK_LogSheetActivity_UserProfile" Association="Self.FK_LogSheetActivity_UserProfile">
-            <End Role="UserProfile" EntitySet="UserProfile" />
-            <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="LogSheetActivity" EntitySet="LogSheetActivities" />
           </AssociationSet>
           <AssociationSet Name="FK_MonthlyAssociationDue_UnitProfile" Association="Self.FK_MonthlyAssociationDue_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
+            <End Role="UnitProfile" EntitySet="UnitProfiles" />
+            <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDues" />
           </AssociationSet>
           <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="Self.FK_OtherOccupants_TenantProfile">
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
+            <End Role="TenantProfile" EntitySet="TenantProfiles" />
             <End Role="OtherOccupants" EntitySet="OtherOccupants" />
           </AssociationSet>
           <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="PaymentHistory" EntitySet="PaymentHistory" />
+            <End Role="UnitProfile" EntitySet="UnitProfiles" />
+            <End Role="PaymentHistory" EntitySet="PaymentHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_PetsProfile_TenantProfile" Association="Self.FK_PetsProfile_TenantProfile">
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
-            <End Role="PetsProfile" EntitySet="PetsProfile" />
+            <End Role="TenantProfile" EntitySet="TenantProfiles" />
+            <End Role="PetsProfile" EntitySet="PetsProfiles" />
           </AssociationSet>
           <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="Self.FK_TenantProfile_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
+            <End Role="UnitProfile" EntitySet="UnitProfiles" />
+            <End Role="TenantProfile" EntitySet="TenantProfiles" />
           </AssociationSet>
           <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="Self.FK_WaterBilling_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="WaterBilling" EntitySet="WaterBilling" />
+            <End Role="UnitProfile" EntitySet="UnitProfiles" />
+            <End Role="WaterBilling" EntitySet="WaterBillings" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -662,7 +643,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EchoModelStoreContainer" CdmEntityContainer="EchoEntities">
-          <EntitySetMapping Name="LogSheet">
+          <EntitySetMapping Name="LogSheets">
             <EntityTypeMapping TypeName="EchoModel.LogSheet">
               <MappingFragment StoreEntitySet="LogSheet">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -673,7 +654,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LogSheetActivity">
+          <EntitySetMapping Name="LogSheetActivities">
             <EntityTypeMapping TypeName="EchoModel.LogSheetActivity">
               <MappingFragment StoreEntitySet="LogSheetActivity">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -688,7 +669,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MonthlyAssociationDue">
+          <EntitySetMapping Name="MonthlyAssociationDues">
             <EntityTypeMapping TypeName="EchoModel.MonthlyAssociationDue">
               <MappingFragment StoreEntitySet="MonthlyAssociationDue">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -706,7 +687,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OtherOccupants">
-            <EntityTypeMapping TypeName="EchoModel.OtherOccupants">
+            <EntityTypeMapping TypeName="EchoModel.OtherOccupant">
               <MappingFragment StoreEntitySet="OtherOccupants">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
@@ -716,7 +697,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PaymentHistory">
+          <EntitySetMapping Name="PaymentHistories">
             <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
               <MappingFragment StoreEntitySet="PaymentHistory">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -728,7 +709,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PetsProfile">
+          <EntitySetMapping Name="PetsProfiles">
             <EntityTypeMapping TypeName="EchoModel.PetsProfile">
               <MappingFragment StoreEntitySet="PetsProfile">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -740,18 +721,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="EchoModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TenantProfile">
+          <EntitySetMapping Name="TenantProfiles">
             <EntityTypeMapping TypeName="EchoModel.TenantProfile">
               <MappingFragment StoreEntitySet="TenantProfile">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -777,7 +747,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UnitProfile">
+          <EntitySetMapping Name="UnitProfiles">
             <EntityTypeMapping TypeName="EchoModel.UnitProfile">
               <MappingFragment StoreEntitySet="UnitProfile">
                 <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
@@ -789,9 +759,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserProfile">
+          <EntitySetMapping Name="UserProfiles">
             <EntityTypeMapping TypeName="EchoModel.UserProfile">
               <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -811,10 +782,11 @@
                 <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WaterBilling">
+          <EntitySetMapping Name="WaterBillings">
             <EntityTypeMapping TypeName="EchoModel.WaterBilling">
               <MappingFragment StoreEntitySet="WaterBilling">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -844,7 +816,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

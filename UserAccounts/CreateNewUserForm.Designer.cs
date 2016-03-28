@@ -1,6 +1,6 @@
 ﻿namespace Tenancy_Management_Information_Systems.User_Accounts
 {
-    partial class Create_New_User
+    partial class CreateNewUserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_New_User));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewUserForm));
             this.NewUserPnl = new System.Windows.Forms.Panel();
             this.CreateNewUserBox = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,6 @@
             this.txtBoxRelationToContactPerson = new System.Windows.Forms.TextBox();
             this.txtBoxContactPerson = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Error5 = new System.Windows.Forms.Label();
             this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -72,6 +71,15 @@
             this.txtImgLink = new System.Windows.Forms.TextBox();
             this.camBtn = new System.Windows.Forms.Button();
             this.importBtn = new System.Windows.Forms.Button();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblHomeAddress = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblAccountType = new System.Windows.Forms.Label();
+            this.lblContactPerson = new System.Windows.Forms.Label();
+            this.lblContactNo = new System.Windows.Forms.Label();
+            this.lblRelationToContactPerson = new System.Windows.Forms.Label();
             this.NewUserPnl.SuspendLayout();
             this.CreateNewUserBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,6 +116,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblRelationToContactPerson);
+            this.groupBox3.Controls.Add(this.lblContactNo);
+            this.groupBox3.Controls.Add(this.lblContactPerson);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label3);
@@ -207,30 +218,32 @@
             this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxContactNo.Location = new System.Drawing.Point(637, 52);
-            this.txtBoxContactNo.Mask = "(+63 )000-000-0000";
             this.txtBoxContactNo.Name = "txtBoxContactNo";
             this.txtBoxContactNo.Size = new System.Drawing.Size(237, 20);
             this.txtBoxContactNo.TabIndex = 132;
+            this.txtBoxContactNo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtBoxContactNo_MaskInputRejected);
+            this.txtBoxContactNo.TextChanged += new System.EventHandler(this.txtBoxContactNo_TextChanged);
+            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
             // 
             // txtBoxTelNo
             // 
             this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxTelNo.Location = new System.Drawing.Point(172, 54);
-            this.txtBoxTelNo.Mask = "000-0000";
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(214, 20);
             this.txtBoxTelNo.TabIndex = 130;
+            this.txtBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelNo_KeyPress);
             // 
             // txtBoxMobileNo
             // 
             this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxMobileNo.Location = new System.Drawing.Point(172, 32);
-            this.txtBoxMobileNo.Mask = "(+63 )000-000-0000";
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(214, 20);
             this.txtBoxMobileNo.TabIndex = 129;
+            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // txtBoxRelationToContactPerson
             // 
@@ -241,6 +254,7 @@
             this.txtBoxRelationToContactPerson.Size = new System.Drawing.Size(237, 20);
             this.txtBoxRelationToContactPerson.TabIndex = 133;
             this.txtBoxRelationToContactPerson.Text = " ";
+            this.txtBoxRelationToContactPerson.TextChanged += new System.EventHandler(this.txtBoxRelationToContactPerson_TextChanged);
             // 
             // txtBoxContactPerson
             // 
@@ -250,10 +264,16 @@
             this.txtBoxContactPerson.Name = "txtBoxContactPerson";
             this.txtBoxContactPerson.Size = new System.Drawing.Size(237, 20);
             this.txtBoxContactPerson.TabIndex = 131;
+            this.txtBoxContactPerson.TextChanged += new System.EventHandler(this.txtBoxContactPerson_TextChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Error5);
+            this.groupBox2.Controls.Add(this.lblAccountType);
+            this.groupBox2.Controls.Add(this.lblDateOfBirth);
+            this.groupBox2.Controls.Add(this.lblMaritalStatus);
+            this.groupBox2.Controls.Add(this.lblHomeAddress);
+            this.groupBox2.Controls.Add(this.lblLastName);
+            this.groupBox2.Controls.Add(this.lblFirstName);
             this.groupBox2.Controls.Add(this.datePickerDateOfBirth);
             this.groupBox2.Controls.Add(this.comboBoxMaritalStatus);
             this.groupBox2.Controls.Add(this.label23);
@@ -281,18 +301,6 @@
             this.groupBox2.TabIndex = 107;
             this.groupBox2.TabStop = false;
             // 
-            // Error5
-            // 
-            this.Error5.AutoSize = true;
-            this.Error5.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Error5.ForeColor = System.Drawing.Color.Red;
-            this.Error5.Location = new System.Drawing.Point(527, 153);
-            this.Error5.Name = "Error5";
-            this.Error5.Size = new System.Drawing.Size(34, 11);
-            this.Error5.TabIndex = 121;
-            this.Error5.Text = "Error5";
-            this.Error5.Visible = false;
-            // 
             // datePickerDateOfBirth
             // 
             this.datePickerDateOfBirth.CalendarFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,6 +311,7 @@
             this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
             this.datePickerDateOfBirth.Size = new System.Drawing.Size(207, 21);
             this.datePickerDateOfBirth.TabIndex = 120;
+            this.datePickerDateOfBirth.ValueChanged += new System.EventHandler(this.datePickerDateOfBirth_ValueChanged);
             // 
             // comboBoxMaritalStatus
             // 
@@ -439,6 +448,7 @@
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(207, 23);
             this.txtBoxFirstName.TabIndex = 1;
+            this.txtBoxFirstName.TextChanged += new System.EventHandler(this.txtBoxFirstName_TextChanged);
             // 
             // txtBoxHomeAddress
             // 
@@ -449,6 +459,7 @@
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
             this.txtBoxHomeAddress.Size = new System.Drawing.Size(207, 23);
             this.txtBoxHomeAddress.TabIndex = 6;
+            this.txtBoxHomeAddress.TextChanged += new System.EventHandler(this.txtBoxHomeAddress_TextChanged);
             // 
             // comboBoxAccountType
             // 
@@ -464,6 +475,7 @@
             this.comboBoxAccountType.Name = "comboBoxAccountType";
             this.comboBoxAccountType.Size = new System.Drawing.Size(183, 22);
             this.comboBoxAccountType.TabIndex = 106;
+            this.comboBoxAccountType.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccountType_SelectedIndexChanged);
             // 
             // txtBoxProvincialAddress
             // 
@@ -514,6 +526,7 @@
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(207, 23);
             this.txtBoxLastName.TabIndex = 3;
+            this.txtBoxLastName.TextChanged += new System.EventHandler(this.txtBoxLastName_TextChanged);
             this.txtBoxLastName.Leave += new System.EventHandler(this.txtBoxLastName_Leave);
             // 
             // btnCreate
@@ -582,7 +595,106 @@
             this.importBtn.Text = "Add Picture";
             this.importBtn.UseVisualStyleBackColor = true;
             // 
-            // Create_New_User
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstName.Location = new System.Drawing.Point(345, 23);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
+            this.lblFirstName.TabIndex = 122;
+            this.lblFirstName.Text = "required";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Red;
+            this.lblLastName.Location = new System.Drawing.Point(345, 77);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 11);
+            this.lblLastName.TabIndex = 123;
+            this.lblLastName.Text = "required";
+            // 
+            // lblHomeAddress
+            // 
+            this.lblHomeAddress.AutoSize = true;
+            this.lblHomeAddress.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAddress.ForeColor = System.Drawing.Color.Red;
+            this.lblHomeAddress.Location = new System.Drawing.Point(345, 159);
+            this.lblHomeAddress.Name = "lblHomeAddress";
+            this.lblHomeAddress.Size = new System.Drawing.Size(44, 11);
+            this.lblHomeAddress.TabIndex = 124;
+            this.lblHomeAddress.Text = "required";
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(345, 128);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
+            this.lblMaritalStatus.TabIndex = 125;
+            this.lblMaritalStatus.Text = "required";
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(345, 103);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
+            this.lblDateOfBirth.TabIndex = 126;
+            this.lblDateOfBirth.Text = "required";
+            // 
+            // lblAccountType
+            // 
+            this.lblAccountType.AutoSize = true;
+            this.lblAccountType.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountType.ForeColor = System.Drawing.Color.Red;
+            this.lblAccountType.Location = new System.Drawing.Point(718, 133);
+            this.lblAccountType.Name = "lblAccountType";
+            this.lblAccountType.Size = new System.Drawing.Size(44, 11);
+            this.lblAccountType.TabIndex = 127;
+            this.lblAccountType.Text = "required";
+            // 
+            // lblContactPerson
+            // 
+            this.lblContactPerson.AutoSize = true;
+            this.lblContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactPerson.ForeColor = System.Drawing.Color.Red;
+            this.lblContactPerson.Location = new System.Drawing.Point(880, 37);
+            this.lblContactPerson.Name = "lblContactPerson";
+            this.lblContactPerson.Size = new System.Drawing.Size(44, 11);
+            this.lblContactPerson.TabIndex = 123;
+            this.lblContactPerson.Text = "required";
+            // 
+            // lblContactNo
+            // 
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.ForeColor = System.Drawing.Color.Red;
+            this.lblContactNo.Location = new System.Drawing.Point(880, 59);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(44, 11);
+            this.lblContactNo.TabIndex = 141;
+            this.lblContactNo.Text = "required";
+            // 
+            // lblRelationToContactPerson
+            // 
+            this.lblRelationToContactPerson.AutoSize = true;
+            this.lblRelationToContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRelationToContactPerson.ForeColor = System.Drawing.Color.Red;
+            this.lblRelationToContactPerson.Location = new System.Drawing.Point(880, 81);
+            this.lblRelationToContactPerson.Name = "lblRelationToContactPerson";
+            this.lblRelationToContactPerson.Size = new System.Drawing.Size(44, 11);
+            this.lblRelationToContactPerson.TabIndex = 123;
+            this.lblRelationToContactPerson.Text = "required";
+            // 
+            // CreateNewUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -591,7 +703,7 @@
             this.Controls.Add(this.NewUserPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(352, 141);
-            this.Name = "Create_New_User";
+            this.Name = "CreateNewUserForm";
             this.Text = "Create_New_User";
             this.NewUserPnl.ResumeLayout(false);
             this.CreateNewUserBox.ResumeLayout(false);
@@ -623,7 +735,6 @@
         private System.Windows.Forms.TextBox txtBoxRelationToContactPerson;
         private System.Windows.Forms.TextBox txtBoxContactPerson;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label Error5;
         private System.Windows.Forms.DateTimePicker datePickerDateOfBirth;
         private System.Windows.Forms.ComboBox comboBoxMaritalStatus;
         private System.Windows.Forms.Label label23;
@@ -650,5 +761,14 @@
         private System.Windows.Forms.TextBox txtImgLink;
         private System.Windows.Forms.Button camBtn;
         private System.Windows.Forms.Button importBtn;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblRelationToContactPerson;
+        private System.Windows.Forms.Label lblContactNo;
+        private System.Windows.Forms.Label lblContactPerson;
+        private System.Windows.Forms.Label lblAccountType;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblMaritalStatus;
+        private System.Windows.Forms.Label lblHomeAddress;
+        private System.Windows.Forms.Label lblLastName;
     }
 }

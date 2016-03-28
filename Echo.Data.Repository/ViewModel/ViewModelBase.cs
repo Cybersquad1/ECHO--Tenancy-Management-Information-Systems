@@ -54,5 +54,10 @@ namespace Echo.Data.Repository.ViewModel
         {
             return Context.Set<TEntity>().Where(predicate).ToList();
         }
+
+        protected List<TEntity> Find()
+        {
+            return Context.Set<TEntity>().ToList();
+        }
     }
 }

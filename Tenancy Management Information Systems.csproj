@@ -173,6 +173,7 @@
     <Compile Include="UserAccounts\EditUserInfoForm.Designer.cs">
       <DependentUpon>EditUserInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FormUtilities.cs" />
     <Compile Include="Utilities\UserUtilities.cs" />
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

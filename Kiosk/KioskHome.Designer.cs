@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.pictureBox7);
             this.panel2.Controls.Add(this.pictureBox8);
             this.panel2.Controls.Add(this.pictureBox9);
-            this.panel2.Location = new System.Drawing.Point(400, 189);
+            this.panel2.Location = new System.Drawing.Point(367, 189);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(566, 347);
             this.panel2.TabIndex = 53;
@@ -160,7 +160,7 @@
             this.btnLogin.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.building_bg;
             this.btnLogin.Location = new System.Drawing.Point(0, 0);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(1350, 729);
+            this.btnLogin.Size = new System.Drawing.Size(1284, 729);
             this.btnLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLogin.TabIndex = 51;
             this.btnLogin.TabStop = false;
@@ -171,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1284, 729);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnLogin);
             this.Name = "Home2";

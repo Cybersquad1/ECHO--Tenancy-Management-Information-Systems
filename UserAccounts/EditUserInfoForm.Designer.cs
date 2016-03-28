@@ -31,20 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_User_Info));
             this.EditUserPnl = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnDeactivate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.Go = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewUser = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,17 +51,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.txtEditEmail = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.txtRelation = new System.Windows.Forms.TextBox();
-            this.txtCPerson = new System.Windows.Forms.TextBox();
+            this.txtBoxRelationToContactPerson = new System.Windows.Forms.TextBox();
+            this.txtBoxContactPerson = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.Error3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -72,21 +65,21 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Error1 = new System.Windows.Forms.Label();
-            this.txtCPass = new System.Windows.Forms.TextBox();
-            this.txtboxNpass = new System.Windows.Forms.TextBox();
+            this.btnGeneratePassword = new System.Windows.Forms.Button();
             this.txtOPass = new System.Windows.Forms.TextBox();
-            this.txtboxUname = new System.Windows.Forms.TextBox();
-            this.txtboxPadd = new System.Windows.Forms.TextBox();
-            this.txtboxHadd = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.txtboxLname = new System.Windows.Forms.TextBox();
-            this.txtboxMname = new System.Windows.Forms.TextBox();
-            this.txtboxFname = new System.Windows.Forms.TextBox();
-            this.txtFPass = new System.Windows.Forms.TextBox();
+            this.txtBoxUsername = new System.Windows.Forms.TextBox();
+            this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
+            this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
+            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxLastName = new System.Windows.Forms.TextBox();
+            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
+            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -108,13 +101,13 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button10);
-            this.groupBox5.Controls.Add(this.button9);
-            this.groupBox5.Controls.Add(this.button11);
+            this.groupBox5.Controls.Add(this.btnDeactivate);
+            this.groupBox5.Controls.Add(this.btnSave);
+            this.groupBox5.Controls.Add(this.btnEdit);
             this.groupBox5.Controls.Add(this.txtSearch);
-            this.groupBox5.Controls.Add(this.Go);
+            this.groupBox5.Controls.Add(this.btnSearch);
             this.groupBox5.Controls.Add(this.btnExport);
-            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.btnCancel);
             this.groupBox5.Controls.Add(this.tabControl1);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(9, 3);
@@ -124,58 +117,62 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Edit User Information";
             // 
-            // button10
+            // btnDeactivate
             // 
-            this.button10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(130, 42);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(87, 28);
-            this.button10.TabIndex = 22;
-            this.button10.Text = "    Deactivate";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnDeactivate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeactivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeactivate.Location = new System.Drawing.Point(130, 42);
+            this.btnDeactivate.Name = "btnDeactivate";
+            this.btnDeactivate.Size = new System.Drawing.Size(87, 28);
+            this.btnDeactivate.TabIndex = 22;
+            this.btnDeactivate.Text = "    Deactivate";
+            this.btnDeactivate.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnSave
             // 
-            this.button9.Enabled = false;
-            this.button9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(70, 42);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(59, 28);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "     Save";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(70, 42);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(59, 28);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "     Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnEdit
             // 
-            this.button11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(10, 42);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(59, 28);
-            this.button11.TabIndex = 20;
-            this.button11.Text = "      Edit";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(10, 42);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(59, 28);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "      Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtSearch.Location = new System.Drawing.Point(637, 22);
+            this.txtSearch.Location = new System.Drawing.Point(631, 22);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(277, 20);
             this.txtSearch.TabIndex = 18;
-            this.txtSearch.Text = "Enter Name or Unit Number to search..";
+            this.txtSearch.Text = "Enter Name to search..";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             // 
-            // Go
+            // btnSearch
             // 
-            this.Go.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Go.Location = new System.Drawing.Point(920, 20);
-            this.Go.Name = "Go";
-            this.Go.Size = new System.Drawing.Size(24, 24);
-            this.Go.TabIndex = 19;
-            this.Go.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(914, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 24);
+            this.btnSearch.TabIndex = 19;
+            this.btnSearch.Text = ". . .";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExport
             // 
@@ -184,21 +181,21 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 16;
-            this.btnExport.Text = "Export to Excel";
+            this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(858, 513);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "    Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(858, 513);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(92, 33);
+            this.btnCancel.TabIndex = 17;
+            this.btnCancel.Text = "    Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
@@ -213,7 +210,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Controls.Add(this.listViewUser);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -222,21 +219,22 @@
             this.tabPage1.Text = "All";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listViewUser
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewUser.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.listViewUser.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(927, 387);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader3});
+            this.listViewUser.FullRowSelect = true;
+            this.listViewUser.GridLines = true;
+            this.listViewUser.Location = new System.Drawing.Point(6, -3);
+            this.listViewUser.Name = "listViewUser";
+            this.listViewUser.Size = new System.Drawing.Size(927, 387);
+            this.listViewUser.TabIndex = 0;
+            this.listViewUser.UseCompatibleStateImageBehavior = false;
+            this.listViewUser.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -251,12 +249,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Username";
-            this.columnHeader3.Width = 97;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Password";
-            this.columnHeader4.Width = 107;
+            this.columnHeader3.Width = 157;
             // 
             // tabPage2
             // 
@@ -273,18 +266,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtBoxContactNo);
+            this.groupBox1.Controls.Add(this.txtBoxTelNo);
+            this.groupBox1.Controls.Add(this.txtBoxMobileNo);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label39);
-            this.groupBox1.Controls.Add(this.txtEditEmail);
+            this.groupBox1.Controls.Add(this.txtBoxEmail);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.maskedTextBox4);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.txtRelation);
-            this.groupBox1.Controls.Add(this.txtCPerson);
+            this.groupBox1.Controls.Add(this.txtBoxRelationToContactPerson);
+            this.groupBox1.Controls.Add(this.txtBoxContactPerson);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(19, 224);
             this.groupBox1.Name = "groupBox1";
@@ -347,85 +340,49 @@
             this.label39.TabIndex = 120;
             this.label39.Text = "Mobile Number:";
             // 
-            // txtEditEmail
+            // txtBoxEmail
             // 
-            this.txtEditEmail.Enabled = false;
-            this.txtEditEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditEmail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtEditEmail.Location = new System.Drawing.Point(152, 85);
-            this.txtEditEmail.Name = "txtEditEmail";
-            this.txtEditEmail.Size = new System.Drawing.Size(230, 20);
-            this.txtEditEmail.TabIndex = 125;
+            this.txtBoxEmail.Enabled = false;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEmail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxEmail.Location = new System.Drawing.Point(152, 86);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxEmail.TabIndex = 125;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label9.Location = new System.Drawing.Point(428, 88);
+            this.label9.Location = new System.Drawing.Point(428, 92);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 13);
             this.label9.TabIndex = 124;
             this.label9.Text = "Relationship to Contact Person:";
             // 
-            // maskedTextBox4
+            // txtBoxRelationToContactPerson
             // 
-            this.maskedTextBox4.Enabled = false;
-            this.maskedTextBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.maskedTextBox4.Location = new System.Drawing.Point(613, 62);
-            this.maskedTextBox4.Mask = "(+63 )000-000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(247, 20);
-            this.maskedTextBox4.TabIndex = 11;
+            this.txtBoxRelationToContactPerson.Enabled = false;
+            this.txtBoxRelationToContactPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRelationToContactPerson.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxRelationToContactPerson.Location = new System.Drawing.Point(613, 89);
+            this.txtBoxRelationToContactPerson.Name = "txtBoxRelationToContactPerson";
+            this.txtBoxRelationToContactPerson.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxRelationToContactPerson.TabIndex = 12;
             // 
-            // maskedTextBox3
+            // txtBoxContactPerson
             // 
-            this.maskedTextBox3.Enabled = false;
-            this.maskedTextBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.maskedTextBox3.Location = new System.Drawing.Point(152, 60);
-            this.maskedTextBox3.Mask = "000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(230, 20);
-            this.maskedTextBox3.TabIndex = 9;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Enabled = false;
-            this.maskedTextBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.maskedTextBox2.Location = new System.Drawing.Point(152, 38);
-            this.maskedTextBox2.Mask = "(+63 )000-000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(230, 20);
-            this.maskedTextBox2.TabIndex = 8;
-            // 
-            // txtRelation
-            // 
-            this.txtRelation.Enabled = false;
-            this.txtRelation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRelation.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtRelation.Location = new System.Drawing.Point(613, 85);
-            this.txtRelation.Name = "txtRelation";
-            this.txtRelation.Size = new System.Drawing.Size(247, 20);
-            this.txtRelation.TabIndex = 12;
-            // 
-            // txtCPerson
-            // 
-            this.txtCPerson.Enabled = false;
-            this.txtCPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPerson.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCPerson.Location = new System.Drawing.Point(613, 37);
-            this.txtCPerson.Name = "txtCPerson";
-            this.txtCPerson.Size = new System.Drawing.Size(247, 20);
-            this.txtCPerson.TabIndex = 10;
+            this.txtBoxContactPerson.Enabled = false;
+            this.txtBoxContactPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContactPerson.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxContactPerson.Location = new System.Drawing.Point(613, 37);
+            this.txtBoxContactPerson.Name = "txtBoxContactPerson";
+            this.txtBoxContactPerson.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxContactPerson.TabIndex = 10;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.Error3);
-            this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label26);
@@ -435,20 +392,16 @@
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.label32);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.Error1);
-            this.groupBox6.Controls.Add(this.txtCPass);
-            this.groupBox6.Controls.Add(this.txtboxNpass);
+            this.groupBox6.Controls.Add(this.btnGeneratePassword);
             this.groupBox6.Controls.Add(this.txtOPass);
-            this.groupBox6.Controls.Add(this.txtboxUname);
-            this.groupBox6.Controls.Add(this.txtboxPadd);
-            this.groupBox6.Controls.Add(this.txtboxHadd);
-            this.groupBox6.Controls.Add(this.comboBox1);
-            this.groupBox6.Controls.Add(this.dateTimePicker2);
-            this.groupBox6.Controls.Add(this.txtboxLname);
-            this.groupBox6.Controls.Add(this.txtboxMname);
-            this.groupBox6.Controls.Add(this.txtboxFname);
-            this.groupBox6.Controls.Add(this.txtFPass);
+            this.groupBox6.Controls.Add(this.txtBoxUsername);
+            this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
+            this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
+            this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
+            this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
+            this.groupBox6.Controls.Add(this.txtBoxLastName);
+            this.groupBox6.Controls.Add(this.txtBoxMiddleName);
+            this.groupBox6.Controls.Add(this.txtBoxFirstName);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(178, 5);
             this.groupBox6.Name = "groupBox6";
@@ -456,52 +409,16 @@
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             // 
-            // Error3
-            // 
-            this.Error3.AutoSize = true;
-            this.Error3.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Error3.ForeColor = System.Drawing.Color.Red;
-            this.Error3.Location = new System.Drawing.Point(487, 97);
-            this.Error3.Name = "Error3";
-            this.Error3.Size = new System.Drawing.Size(34, 11);
-            this.Error3.TabIndex = 125;
-            this.Error3.Text = "Error2";
-            this.Error3.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label18.Location = new System.Drawing.Point(379, 145);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 13);
-            this.label18.TabIndex = 123;
-            this.label18.Text = "Re-type Password:";
-            this.label18.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label17.Location = new System.Drawing.Point(398, 121);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 13);
-            this.label17.TabIndex = 122;
-            this.label17.Text = "New Password:";
-            this.label17.Visible = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(379, 77);
+            this.label4.Location = new System.Drawing.Point(420, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 121;
-            this.label4.Text = "Current Password:";
+            this.label4.Text = "Password:";
             this.label4.Visible = false;
             // 
             // label15
@@ -592,152 +509,110 @@
             this.label32.TabIndex = 113;
             this.label32.Text = "First Name:";
             // 
-            // button2
+            // btnGeneratePassword
             // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(583, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 24);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Change Password";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Error1
-            // 
-            this.Error1.AutoSize = true;
-            this.Error1.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Error1.ForeColor = System.Drawing.Color.Red;
-            this.Error1.Location = new System.Drawing.Point(487, 165);
-            this.Error1.Name = "Error1";
-            this.Error1.Size = new System.Drawing.Size(34, 11);
-            this.Error1.TabIndex = 103;
-            this.Error1.Text = "Error1";
-            this.Error1.Visible = false;
-            // 
-            // txtCPass
-            // 
-            this.txtCPass.Enabled = false;
-            this.txtCPass.Location = new System.Drawing.Point(489, 141);
-            this.txtCPass.Name = "txtCPass";
-            this.txtCPass.PasswordChar = '*';
-            this.txtCPass.Size = new System.Drawing.Size(212, 21);
-            this.txtCPass.TabIndex = 102;
-            this.txtCPass.Visible = false;
-            // 
-            // txtboxNpass
-            // 
-            this.txtboxNpass.Enabled = false;
-            this.txtboxNpass.Location = new System.Drawing.Point(489, 117);
-            this.txtboxNpass.Name = "txtboxNpass";
-            this.txtboxNpass.PasswordChar = '*';
-            this.txtboxNpass.Size = new System.Drawing.Size(212, 21);
-            this.txtboxNpass.TabIndex = 98;
-            this.txtboxNpass.Visible = false;
+            this.btnGeneratePassword.Enabled = false;
+            this.btnGeneratePassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGeneratePassword.Location = new System.Drawing.Point(489, 78);
+            this.btnGeneratePassword.Name = "btnGeneratePassword";
+            this.btnGeneratePassword.Size = new System.Drawing.Size(212, 24);
+            this.btnGeneratePassword.TabIndex = 17;
+            this.btnGeneratePassword.Text = "Generate Password";
+            this.btnGeneratePassword.UseVisualStyleBackColor = true;
             // 
             // txtOPass
             // 
             this.txtOPass.Enabled = false;
-            this.txtOPass.Location = new System.Drawing.Point(489, 73);
+            this.txtOPass.Location = new System.Drawing.Point(489, 51);
             this.txtOPass.Name = "txtOPass";
             this.txtOPass.PasswordChar = '*';
             this.txtOPass.Size = new System.Drawing.Size(212, 21);
             this.txtOPass.TabIndex = 97;
             this.txtOPass.Visible = false;
             // 
-            // txtboxUname
+            // txtBoxUsername
             // 
-            this.txtboxUname.Enabled = false;
-            this.txtboxUname.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxUname.Location = new System.Drawing.Point(489, 25);
-            this.txtboxUname.Name = "txtboxUname";
-            this.txtboxUname.Size = new System.Drawing.Size(212, 20);
-            this.txtboxUname.TabIndex = 2;
+            this.txtBoxUsername.Enabled = false;
+            this.txtBoxUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUsername.Location = new System.Drawing.Point(489, 25);
+            this.txtBoxUsername.Name = "txtBoxUsername";
+            this.txtBoxUsername.Size = new System.Drawing.Size(212, 20);
+            this.txtBoxUsername.TabIndex = 2;
             // 
-            // txtboxPadd
+            // txtBoxProvincialAddress
             // 
-            this.txtboxPadd.Enabled = false;
-            this.txtboxPadd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPadd.Location = new System.Drawing.Point(123, 169);
-            this.txtboxPadd.Name = "txtboxPadd";
-            this.txtboxPadd.Size = new System.Drawing.Size(206, 20);
-            this.txtboxPadd.TabIndex = 14;
+            this.txtBoxProvincialAddress.Enabled = false;
+            this.txtBoxProvincialAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxProvincialAddress.Location = new System.Drawing.Point(123, 169);
+            this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxProvincialAddress.TabIndex = 14;
             // 
-            // txtboxHadd
+            // txtBoxHomeAddress
             // 
-            this.txtboxHadd.Enabled = false;
-            this.txtboxHadd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxHadd.Location = new System.Drawing.Point(123, 143);
-            this.txtboxHadd.Name = "txtboxHadd";
-            this.txtboxHadd.Size = new System.Drawing.Size(206, 20);
-            this.txtboxHadd.TabIndex = 13;
+            this.txtBoxHomeAddress.Enabled = false;
+            this.txtBoxHomeAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxHomeAddress.Location = new System.Drawing.Point(123, 143);
+            this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxHomeAddress.TabIndex = 13;
             // 
-            // comboBox1
+            // comboBoxMaritalStatus
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxMaritalStatus.Enabled = false;
+            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMaritalStatus.FormattingEnabled = true;
+            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
             "Single",
             "Married",
             "Divorced",
             "Widowed"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 22);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "--Select One--";
+            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(123, 117);
+            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
+            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(170, 22);
+            this.comboBoxMaritalStatus.TabIndex = 7;
+            this.comboBoxMaritalStatus.Text = "--Select One--";
             // 
-            // dateTimePicker2
+            // datePickerDateOfBirth
             // 
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.GrayText;
-            this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.SystemColors.GrayText;
-            this.dateTimePicker2.CustomFormat = "mm/dd/yyyy";
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(123, 91);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(170, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.datePickerDateOfBirth.CalendarForeColor = System.Drawing.SystemColors.GrayText;
+            this.datePickerDateOfBirth.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.datePickerDateOfBirth.CalendarTitleForeColor = System.Drawing.SystemColors.GrayText;
+            this.datePickerDateOfBirth.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDateOfBirth.Enabled = false;
+            this.datePickerDateOfBirth.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateOfBirth.Location = new System.Drawing.Point(123, 91);
+            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(170, 20);
+            this.datePickerDateOfBirth.TabIndex = 6;
             // 
-            // txtboxLname
+            // txtBoxLastName
             // 
-            this.txtboxLname.Enabled = false;
-            this.txtboxLname.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLname.Location = new System.Drawing.Point(123, 67);
-            this.txtboxLname.Name = "txtboxLname";
-            this.txtboxLname.Size = new System.Drawing.Size(206, 20);
-            this.txtboxLname.TabIndex = 5;
+            this.txtBoxLastName.Enabled = false;
+            this.txtBoxLastName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxLastName.Location = new System.Drawing.Point(123, 67);
+            this.txtBoxLastName.Name = "txtBoxLastName";
+            this.txtBoxLastName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxLastName.TabIndex = 5;
             // 
-            // txtboxMname
+            // txtBoxMiddleName
             // 
-            this.txtboxMname.Enabled = false;
-            this.txtboxMname.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxMname.Location = new System.Drawing.Point(123, 42);
-            this.txtboxMname.Name = "txtboxMname";
-            this.txtboxMname.Size = new System.Drawing.Size(206, 20);
-            this.txtboxMname.TabIndex = 4;
+            this.txtBoxMiddleName.Enabled = false;
+            this.txtBoxMiddleName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMiddleName.Location = new System.Drawing.Point(123, 42);
+            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxMiddleName.TabIndex = 4;
             // 
-            // txtboxFname
+            // txtBoxFirstName
             // 
-            this.txtboxFname.Enabled = false;
-            this.txtboxFname.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxFname.Location = new System.Drawing.Point(123, 18);
-            this.txtboxFname.Name = "txtboxFname";
-            this.txtboxFname.Size = new System.Drawing.Size(206, 20);
-            this.txtboxFname.TabIndex = 3;
-            // 
-            // txtFPass
-            // 
-            this.txtFPass.Enabled = false;
-            this.txtFPass.Location = new System.Drawing.Point(489, 51);
-            this.txtFPass.Name = "txtFPass";
-            this.txtFPass.PasswordChar = '*';
-            this.txtFPass.Size = new System.Drawing.Size(212, 21);
-            this.txtFPass.TabIndex = 124;
-            this.txtFPass.Visible = false;
+            this.txtBoxFirstName.Enabled = false;
+            this.txtBoxFirstName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFirstName.Location = new System.Drawing.Point(123, 18);
+            this.txtBoxFirstName.Name = "txtBoxFirstName";
+            this.txtBoxFirstName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxFirstName.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -750,6 +625,41 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 126;
             this.pictureBox2.TabStop = false;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 131;
+            // 
+            // txtBoxMobileNo
+            // 
+            this.txtBoxMobileNo.Enabled = false;
+            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(152, 38);
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxMobileNo.TabIndex = 129;
+            // 
+            // txtBoxTelNo
+            // 
+            this.txtBoxTelNo.Enabled = false;
+            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxTelNo.Location = new System.Drawing.Point(152, 62);
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxTelNo.TabIndex = 126;
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Enabled = false;
+            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxContactNo.Location = new System.Drawing.Point(613, 63);
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxContactNo.TabIndex = 130;
             // 
             // Edit_User_Info
             // 
@@ -780,13 +690,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnDeactivate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button Go;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -796,17 +706,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txtEditEmail;
+        private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox txtRelation;
-        private System.Windows.Forms.TextBox txtCPerson;
+        private System.Windows.Forms.TextBox txtBoxRelationToContactPerson;
+        private System.Windows.Forms.TextBox txtBoxContactPerson;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label Error3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label26;
@@ -816,27 +720,26 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label Error1;
-        private System.Windows.Forms.TextBox txtCPass;
-        private System.Windows.Forms.TextBox txtboxNpass;
+        private System.Windows.Forms.Button btnGeneratePassword;
         private System.Windows.Forms.TextBox txtOPass;
-        private System.Windows.Forms.TextBox txtboxUname;
-        private System.Windows.Forms.TextBox txtboxPadd;
-        private System.Windows.Forms.TextBox txtboxHadd;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox txtboxLname;
-        private System.Windows.Forms.TextBox txtboxMname;
-        private System.Windows.Forms.TextBox txtboxFname;
-        private System.Windows.Forms.TextBox txtFPass;
+        private System.Windows.Forms.TextBox txtBoxUsername;
+        private System.Windows.Forms.TextBox txtBoxProvincialAddress;
+        private System.Windows.Forms.TextBox txtBoxHomeAddress;
+        private System.Windows.Forms.ComboBox comboBoxMaritalStatus;
+        private System.Windows.Forms.DateTimePicker datePickerDateOfBirth;
+        private System.Windows.Forms.TextBox txtBoxLastName;
+        private System.Windows.Forms.TextBox txtBoxMiddleName;
+        private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewUser;
         internal System.Windows.Forms.Panel EditUserPnl;
         internal System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtBoxContactNo;
+        private System.Windows.Forms.TextBox txtBoxTelNo;
+        private System.Windows.Forms.TextBox txtBoxMobileNo;
     }
 }

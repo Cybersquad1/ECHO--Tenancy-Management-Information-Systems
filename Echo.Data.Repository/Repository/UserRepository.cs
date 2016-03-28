@@ -7,6 +7,13 @@ using Echo.Data.Repository.ViewModel;
 
 namespace Echo.Data.Repository.Repository
 {
+    public class LoginInfo
+    {
+        public string username { get; set; }
+        public string fullName { get; set; }
+        public string accountType { get; set; }
+    }
+
     public class UserRepository : UserViewModel
     {
         public UserProfile Login(string _username, string _password)
@@ -31,6 +38,14 @@ namespace Echo.Data.Repository.Repository
             {
                 return false;
             }
+        }
+
+        public List<UserProfile> GetUserList(string _searchKey)
+        {
+            if (_searchKey != "")
+                return GetUsers(_searchKey); //filter list with search parameter
+            else
+                return GetUsers(); //get all
         }
     }
 }

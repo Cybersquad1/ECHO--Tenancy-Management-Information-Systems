@@ -17,7 +17,7 @@ namespace Tenancy_Management_Information_Systems
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SplashScreen());
-            Application.Run(new Home());
+            //Application.Run(new Home());
         }
     }
 }

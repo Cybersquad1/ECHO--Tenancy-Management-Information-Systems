@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenancy Management Information Systems", "Tenancy Management Information Systems.csproj", "{BB8144A3-816C-40A7-B0A9-319A014B2775}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{457E83EA-16BA-463A-B03B-63035A56A187}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echo.Data.Repository", "Echo.Data.Repository\Echo.Data.Repository.csproj", "{37E24E93-ECC5-4533-B849-C557674C8B27}"
 EndProject
 Global
@@ -26,8 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{37E24E93-ECC5-4533-B849-C557674C8B27} = {457E83EA-16BA-463A-B03B-63035A56A187}
 	EndGlobalSection
 EndGlobal

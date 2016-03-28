@@ -83,6 +83,7 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblUsername = new System.Windows.Forms.Label();
             this.baPanel.SuspendLayout();
             this.UserAccPnl.SuspendLayout();
             this.TenMgmtPnl.SuspendLayout();
@@ -544,7 +545,7 @@
             this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblTime.Location = new System.Drawing.Point(1264, 29);
+            this.lblTime.Location = new System.Drawing.Point(1198, 29);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(82, 16);
             this.lblTime.TabIndex = 63;
@@ -554,7 +555,7 @@
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
-            this.pictureBox5.Location = new System.Drawing.Point(1251, 48);
+            this.pictureBox5.Location = new System.Drawing.Point(1185, 48);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(99, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -577,7 +578,7 @@
             this.pictureBox4.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
             this.pictureBox4.Location = new System.Drawing.Point(0, 700);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1350, 29);
+            this.pictureBox4.Size = new System.Drawing.Size(1284, 29);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 59;
             this.pictureBox4.TabStop = false;
@@ -588,7 +589,7 @@
             this.pictureBox3.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
             this.pictureBox3.Location = new System.Drawing.Point(209, 48);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(907, 29);
+            this.pictureBox3.Size = new System.Drawing.Size(845, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 58;
             this.pictureBox3.TabStop = false;
@@ -750,6 +751,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.lblUsername);
             this.panelTop.Controls.Add(this.pictureBox3);
             this.panelTop.Controls.Add(this.lblTime);
             this.panelTop.Controls.Add(this.pictureBox1);
@@ -758,7 +760,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1350, 127);
+            this.panelTop.Size = new System.Drawing.Size(1284, 127);
             this.panelTop.TabIndex = 64;
             // 
             // panelLeft
@@ -767,12 +769,12 @@
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
-            this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Controls.Add(this.UserAccPnl);
             this.panelLeft.Controls.Add(this.TenMgmtPnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
+            this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";
@@ -788,7 +790,7 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(289, 127);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1061, 573);
+            this.panelMain.Size = new System.Drawing.Size(995, 573);
             this.panelMain.TabIndex = 66;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -796,12 +798,26 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblUsername.Location = new System.Drawing.Point(1059, 55);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(82, 16);
+            this.lblUsername.TabIndex = 64;
+            this.lblUsername.Text = "RCVIgnacio";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1284, 729);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelTop);
@@ -884,6 +900,7 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblUsername;
     }
 }
 

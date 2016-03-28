@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Echo.Data.Repository.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,13 @@ namespace Tenancy_Management_Information_Systems
 {
     public partial class Home : Form
     {
-        public Home()
+        public Home(LoginInfo loginInfo)
         {
             InitializeComponent();
 
             timer1.Start();
+
+            lblUsername.Text = loginInfo.username;
         }
 
         private void AccountsButton_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace Tenancy_Management_Information_Systems
         {
             panelMain.Controls.Clear();
 
-            User_Accounts.Create_New_User c1 = new User_Accounts.Create_New_User();
+            User_Accounts.CreateNewUserForm c1 = new User_Accounts.CreateNewUserForm();
             c1.NewUserPnl.Visible = true;
 
             c1.TopLevel = false;
@@ -44,9 +47,16 @@ namespace Tenancy_Management_Information_Systems
 
         private void EditUserInfoButton_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+
             User_Accounts.Edit_User_Info e1 = new User_Accounts.Edit_User_Info();
             e1.EditUserPnl.Visible = true;
-            e1.ShowDialog();
+
+            e1.TopLevel = false;
+            e1.Visible = true;
+            e1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(e1);
         }
 
         private void TenancyMgmtButton_Click(object sender, EventArgs e)

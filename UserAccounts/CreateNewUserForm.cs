@@ -13,11 +13,13 @@ using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
-    public partial class Create_New_User : Form
+    public partial class CreateNewUserForm : Form
     {
         UserUtilities userUtilities = new UserUtilities();
 
-        public Create_New_User()
+        FormUtilities formUtilities = new FormUtilities();
+
+        public CreateNewUserForm()
         {
             InitializeComponent();
         }
@@ -79,6 +81,18 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             if (comboBoxAccountType.Text == "")
                 errorMessage += "-Account type\n";
 
+            if (txtBoxContactNo.Text == "")
+                errorMessage += "-Contact Number\n";
+
+            if (txtBoxContactPerson.Text == "")
+                errorMessage += "-Contact Person\n";
+
+            if (txtBoxRelationToContactPerson.Text == "")
+                errorMessage += "-Relation to contact person\n";
+
+            if (datePickerDateOfBirth.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
+                errorMessage += "-Date of Birth\n";
+
             if (errorMessage != "")
             {
                 errorMessage = "Please fill up missing fields \n\n" + errorMessage;
@@ -101,6 +115,73 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         private void txtBoxLastName_Leave(object sender, EventArgs e)
         {
             GenerateUsernameAndPassword();
+        }
+
+        private void Error5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            lblFirstName.Visible = formUtilities.ShowRequiredLabel(txtBoxFirstName.Text);
+        }
+
+        private void txtBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            lblLastName.Visible = formUtilities.ShowRequiredLabel(txtBoxLastName.Text);
+        }
+
+        private void datePickerDateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+            lblDateOfBirth.Visible = formUtilities.ShowRequiredLabel
+                (datePickerDateOfBirth.Value.ToShortDateString());
+        }
+
+        private void txtBoxHomeAddress_TextChanged(object sender, EventArgs e)
+        {
+            lblHomeAddress.Visible = formUtilities.ShowRequiredLabel(txtBoxHomeAddress.Text);
+        }
+
+        private void comboBoxAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAccountType.Visible = formUtilities.ShowRequiredLabel(comboBoxAccountType.Text);
+        }
+
+        private void txtBoxContactPerson_TextChanged(object sender, EventArgs e)
+        {
+            lblContactPerson.Visible = formUtilities.ShowRequiredLabel(txtBoxContactPerson.Text);
+        }
+
+        private void txtBoxContactNo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            lblContactNo.Visible = formUtilities.ShowRequiredLabel(txtBoxContactNo.Text);
+        }
+
+        private void txtBoxRelationToContactPerson_TextChanged(object sender, EventArgs e)
+        {
+            lblRelationToContactPerson.Visible = formUtilities.ShowRequiredLabel
+                (txtBoxRelationToContactPerson.Text);
+        }
+
+        private void txtBoxMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxTelNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxContactNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxContactNo_TextChanged(object sender, EventArgs e)
+        {
+            lblContactNo.Visible = formUtilities.ShowRequiredLabel(txtBoxContactNo.Text);
         }
     }
 }
