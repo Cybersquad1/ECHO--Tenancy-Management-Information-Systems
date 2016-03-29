@@ -6,28 +6,39 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;;
+using System.Windows.Forms;
 using Echo.Data.Repository;
 using Echo.Data.Repository.ViewModel;
 using Tenancy_Management_Information_Systems.Utilities;
+using System.IO;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
     public partial class Edit_User_Info : Form
     {
-        
+        UserViewModel vm;
+
+        Guid userID = Guid.Empty;
+
         public Edit_User_Info()
         {
             InitializeComponent();
 
-            GetUsers();
+            vm = new UserViewModel();
+
+            GetUsers();            
         }
 
         private void GetUsers(string _searchKey = "")
         {
             listViewUser.Items.Clear();
 
-            var userList = new UserRepository().GetUserList(_searchKey);
+            List<UserProfile> userList = new List<UserProfile>();
+
+            if (_searchKey == "")
+                userList = vm.GetUsers();
+            else
+                userList = vm.GetUsers(_searchKey);
 
             userList.ForEach(item =>
             {
@@ -41,9 +52,10 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             });
         }
 
+
         private void GetSelectedUser(Guid _userID)
         {
-            var user = new UserViewModel().GetSelectedUser(_userID); //get selected user
+            var user = vm.GetSelectedUser(_userID); //get selected user
 
             //Assign value to corresponding fields
             txtBoxFirstName.Text = user.FirstName;
@@ -60,6 +72,22 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             txtBoxContactNo.Text = user.ContactNo;
             txtBoxContactPerson.Text = user.ContactPerson;
             txtBoxRelationToContactPerson.Text = user.RelationshipToContact;
+
+            if(user.ImageContent != null)
+            {
+                Stream imgStr = new MemoryStream(user.ImageContent);
+
+                pictureBoxUser.Image = System.Drawing.Image.FromStream(imgStr);
+            }
+            else
+            {
+                pictureBoxUser.Image = null;
+            }
+
+            if (user.Status == "Y")
+                btnDeactivate.Text = "Deactivate";
+            else
+                btnDeactivate.Text = "Activate";    
         }
 
         private void EnableDisableUserFields(bool _value)
@@ -68,7 +96,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                 comboBoxMaritalStatus.Enabled = txtBoxHomeAddress.Enabled = txtBoxProvincialAddress.Enabled =
                 txtBoxMobileNo.Enabled = txtBoxTelNo.Enabled = txtBoxEmail.Enabled = txtBoxContactNo.Enabled =
                 txtBoxContactPerson.Enabled = txtBoxRelationToContactPerson.Enabled = btnSave.Enabled =
-                btnGeneratePassword.Enabled = txtBoxFirstName.Enabled = _value;
+                btnGeneratePassword.Enabled = txtBoxFirstName.Enabled = btnDeactivate.Enabled = _value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,13 +125,21 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             TabPage openTab = tabControl1.TabPages[1];
             tabControl1.SelectedTab = openTab;
 
-            GetSelectedUser(Guid.Parse(listViewUser.SelectedItems[0].SubItems[0].Text));
-            //MessageBox.Show(listViewUser.SelectedItems[0].SubItems[0].Text);
+            userID = Guid.Parse(listViewUser.SelectedItems[0].SubItems[0].Text);
+
+            GetSelectedUser(userID);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EnableDisableUserFields(true);
+            if (userID == Guid.Empty)
+            {
+                MessageBox.Show("Please select data from grid", "Error");
+            }
+            else
+            {
+                EnableDisableUserFields(true);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -134,32 +170,53 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
                 if (confirmation == DialogResult.Yes)
                 {
-                    //assign field to class
-                    UserProfile editUser = new UserProfile();
-
-                    //will only change password if user clicks "Generate Password"
-                    if (txtBoxPassword.Text != "")
-                        editUser.Password = txtBoxPassword.Text;
-
-                    editUser.FirstName = txtBoxFirstName.Text;
-                    editUser.MiddleName = txtBoxMiddleName.Text;
-                    editUser.LastName = txtBoxLastName.Text;
-                    editUser.DateOfBirth = datePickerDateOfBirth.Value;
-                    editUser.MaritalStatus = comboBoxMaritalStatus.Text;
-                    editUser.HomeAddress = txtBoxHomeAddress.Text;
-                    editUser.ProvincialAddress = txtBoxProvincialAddress.Text;
-                    editUser.MobileNo = txtBoxMobileNo.Text;
-                    editUser.TelephoneNo = txtBoxTelNo.Text;
-                    editUser.Email = txtBoxEmail.Text;
-                    editUser.ContactNo = txtBoxContactNo.Text;
-                    editUser.ContactPerson = txtBoxContactPerson.Text;
-                    editUser.RelationshipToContact = txtBoxRelationToContactPerson.Text;
-
-                    UserViewModel vm = new UserViewModel();
-
-
-                    EnableDisableUserFields(false);
+                        try
+                        {
+                            Save();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Cannot update user some kind of error found", "Error");
+                        }                    
                 }
+            }
+        }
+
+        private void Save(string _status = "Y")
+        {
+            using (var db = new EchoEntities())
+            {
+                //assign field to class
+                var editUser = db.UserProfiles.FirstOrDefault(r => r.ID == userID);
+
+                //will only change password if user clicks "Generate Password"
+                if (txtBoxPassword.Text != "")
+                {
+                    editUser.Password = txtBoxPassword.Text;
+                    editUser.IfGeneratedPassword = "Y";
+                }
+
+                editUser.FirstName = txtBoxFirstName.Text;
+                editUser.MiddleName = txtBoxMiddleName.Text;
+                editUser.LastName = txtBoxLastName.Text;
+                editUser.DateOfBirth = datePickerDateOfBirth.Value;
+                editUser.MaritalStatus = comboBoxMaritalStatus.Text;
+                editUser.HomeAddress = txtBoxHomeAddress.Text;
+                editUser.ProvincialAddress = txtBoxProvincialAddress.Text;
+                editUser.MobileNo = txtBoxMobileNo.Text;
+                editUser.TelephoneNo = txtBoxTelNo.Text;
+                editUser.Email = txtBoxEmail.Text;
+                editUser.ContactNo = txtBoxContactNo.Text;
+                editUser.ContactPerson = txtBoxContactPerson.Text;
+                editUser.RelationshipToContact = txtBoxRelationToContactPerson.Text;
+                editUser.Status = _status;
+
+                db.Entry(editUser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                EnableDisableUserFields(false);
+
+                GetSelectedUser(userID);
             }
         }
 
@@ -175,7 +232,24 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
             if(confirmation == DialogResult.Yes)
             {
+                Save("N");
+            }
+        }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image files | *.jpg";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxUser.Image = Image.FromFile(openFileDialog.FileName);
             }
         }
     }

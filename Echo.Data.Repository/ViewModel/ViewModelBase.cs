@@ -40,7 +40,7 @@ namespace Echo.Data.Repository.ViewModel
 
         protected void Update(TEntity _entity)
         {
-            Context.Entry<TEntity>(_entity).State = EntityState.Modified;
+            Context.Entry(_entity).State = EntityState.Modified;
 
             Context.SaveChanges();
         }

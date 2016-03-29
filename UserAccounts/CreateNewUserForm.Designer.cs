@@ -32,6 +32,9 @@
             this.NewUserPnl = new System.Windows.Forms.Panel();
             this.CreateNewUserBox = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblRelationToContactPerson = new System.Windows.Forms.Label();
+            this.lblContactNo = new System.Windows.Forms.Label();
+            this.lblContactPerson = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +48,12 @@
             this.txtBoxRelationToContactPerson = new System.Windows.Forms.TextBox();
             this.txtBoxContactPerson = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblAccountType = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblHomeAddress = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -67,24 +76,15 @@
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.txtImgLink = new System.Windows.Forms.TextBox();
-            this.camBtn = new System.Windows.Forms.Button();
-            this.importBtn = new System.Windows.Forms.Button();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblHomeAddress = new System.Windows.Forms.Label();
-            this.lblMaritalStatus = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.lblAccountType = new System.Windows.Forms.Label();
-            this.lblContactPerson = new System.Windows.Forms.Label();
-            this.lblContactNo = new System.Windows.Forms.Label();
-            this.lblRelationToContactPerson = new System.Windows.Forms.Label();
+            this.btnTakePicture = new System.Windows.Forms.Button();
+            this.btnAddPicture = new System.Windows.Forms.Button();
             this.NewUserPnl.SuspendLayout();
             this.CreateNewUserBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // NewUserPnl
@@ -102,10 +102,10 @@
             this.CreateNewUserBox.Controls.Add(this.groupBox2);
             this.CreateNewUserBox.Controls.Add(this.btnCreate);
             this.CreateNewUserBox.Controls.Add(this.btnCancel);
-            this.CreateNewUserBox.Controls.Add(this.pictureBox1);
+            this.CreateNewUserBox.Controls.Add(this.pictureBoxUser);
             this.CreateNewUserBox.Controls.Add(this.txtImgLink);
-            this.CreateNewUserBox.Controls.Add(this.camBtn);
-            this.CreateNewUserBox.Controls.Add(this.importBtn);
+            this.CreateNewUserBox.Controls.Add(this.btnTakePicture);
+            this.CreateNewUserBox.Controls.Add(this.btnAddPicture);
             this.CreateNewUserBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewUserBox.Location = new System.Drawing.Point(6, 2);
             this.CreateNewUserBox.Name = "CreateNewUserBox";
@@ -137,6 +137,39 @@
             this.groupBox3.Size = new System.Drawing.Size(939, 122);
             this.groupBox3.TabIndex = 108;
             this.groupBox3.TabStop = false;
+            // 
+            // lblRelationToContactPerson
+            // 
+            this.lblRelationToContactPerson.AutoSize = true;
+            this.lblRelationToContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRelationToContactPerson.ForeColor = System.Drawing.Color.Red;
+            this.lblRelationToContactPerson.Location = new System.Drawing.Point(880, 81);
+            this.lblRelationToContactPerson.Name = "lblRelationToContactPerson";
+            this.lblRelationToContactPerson.Size = new System.Drawing.Size(44, 11);
+            this.lblRelationToContactPerson.TabIndex = 123;
+            this.lblRelationToContactPerson.Text = "required";
+            // 
+            // lblContactNo
+            // 
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.ForeColor = System.Drawing.Color.Red;
+            this.lblContactNo.Location = new System.Drawing.Point(880, 59);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(44, 11);
+            this.lblContactNo.TabIndex = 141;
+            this.lblContactNo.Text = "required";
+            // 
+            // lblContactPerson
+            // 
+            this.lblContactPerson.AutoSize = true;
+            this.lblContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactPerson.ForeColor = System.Drawing.Color.Red;
+            this.lblContactPerson.Location = new System.Drawing.Point(880, 37);
+            this.lblContactPerson.Name = "lblContactPerson";
+            this.lblContactPerson.Size = new System.Drawing.Size(44, 11);
+            this.lblContactPerson.TabIndex = 123;
+            this.lblContactPerson.Text = "required";
             // 
             // label1
             // 
@@ -300,6 +333,72 @@
             this.groupBox2.Size = new System.Drawing.Size(777, 214);
             this.groupBox2.TabIndex = 107;
             this.groupBox2.TabStop = false;
+            // 
+            // lblAccountType
+            // 
+            this.lblAccountType.AutoSize = true;
+            this.lblAccountType.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountType.ForeColor = System.Drawing.Color.Red;
+            this.lblAccountType.Location = new System.Drawing.Point(718, 133);
+            this.lblAccountType.Name = "lblAccountType";
+            this.lblAccountType.Size = new System.Drawing.Size(44, 11);
+            this.lblAccountType.TabIndex = 127;
+            this.lblAccountType.Text = "required";
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(345, 103);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
+            this.lblDateOfBirth.TabIndex = 126;
+            this.lblDateOfBirth.Text = "required";
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(345, 128);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
+            this.lblMaritalStatus.TabIndex = 125;
+            this.lblMaritalStatus.Text = "required";
+            // 
+            // lblHomeAddress
+            // 
+            this.lblHomeAddress.AutoSize = true;
+            this.lblHomeAddress.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAddress.ForeColor = System.Drawing.Color.Red;
+            this.lblHomeAddress.Location = new System.Drawing.Point(345, 159);
+            this.lblHomeAddress.Name = "lblHomeAddress";
+            this.lblHomeAddress.Size = new System.Drawing.Size(44, 11);
+            this.lblHomeAddress.TabIndex = 124;
+            this.lblHomeAddress.Text = "required";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Red;
+            this.lblLastName.Location = new System.Drawing.Point(345, 77);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 11);
+            this.lblLastName.TabIndex = 123;
+            this.lblLastName.Text = "required";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstName.Location = new System.Drawing.Point(345, 23);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
+            this.lblFirstName.TabIndex = 122;
+            this.lblFirstName.Text = "required";
             // 
             // datePickerDateOfBirth
             // 
@@ -555,144 +654,47 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnUserCancel_Click);
             // 
-            // pictureBox1
+            // pictureBoxUser
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxUser.InitialImage = null;
+            this.pictureBoxUser.Location = new System.Drawing.Point(13, 30);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(155, 130);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 51;
+            this.pictureBoxUser.TabStop = false;
             // 
             // txtImgLink
             // 
-            this.txtImgLink.Location = new System.Drawing.Point(13, 206);
+            this.txtImgLink.Location = new System.Drawing.Point(16, 195);
             this.txtImgLink.Name = "txtImgLink";
             this.txtImgLink.Size = new System.Drawing.Size(149, 21);
             this.txtImgLink.TabIndex = 107;
             this.txtImgLink.Visible = false;
             // 
-            // camBtn
+            // btnTakePicture
             // 
-            this.camBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.camBtn.Location = new System.Drawing.Point(91, 177);
-            this.camBtn.Name = "camBtn";
-            this.camBtn.Size = new System.Drawing.Size(71, 23);
-            this.camBtn.TabIndex = 20;
-            this.camBtn.Text = "Webcam";
-            this.camBtn.UseVisualStyleBackColor = true;
+            this.btnTakePicture.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTakePicture.Location = new System.Drawing.Point(91, 166);
+            this.btnTakePicture.Name = "btnTakePicture";
+            this.btnTakePicture.Size = new System.Drawing.Size(71, 23);
+            this.btnTakePicture.TabIndex = 20;
+            this.btnTakePicture.Text = "Webcam";
+            this.btnTakePicture.UseVisualStyleBackColor = true;
+            this.btnTakePicture.Click += new System.EventHandler(this.btnTakePicture_Click);
             // 
-            // importBtn
+            // btnAddPicture
             // 
-            this.importBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importBtn.Location = new System.Drawing.Point(12, 177);
-            this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(75, 23);
-            this.importBtn.TabIndex = 19;
-            this.importBtn.Text = "Add Picture";
-            this.importBtn.UseVisualStyleBackColor = true;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
-            this.lblFirstName.Location = new System.Drawing.Point(345, 23);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
-            this.lblFirstName.TabIndex = 122;
-            this.lblFirstName.Text = "required";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.Red;
-            this.lblLastName.Location = new System.Drawing.Point(345, 77);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(44, 11);
-            this.lblLastName.TabIndex = 123;
-            this.lblLastName.Text = "required";
-            // 
-            // lblHomeAddress
-            // 
-            this.lblHomeAddress.AutoSize = true;
-            this.lblHomeAddress.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHomeAddress.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeAddress.Location = new System.Drawing.Point(345, 159);
-            this.lblHomeAddress.Name = "lblHomeAddress";
-            this.lblHomeAddress.Size = new System.Drawing.Size(44, 11);
-            this.lblHomeAddress.TabIndex = 124;
-            this.lblHomeAddress.Text = "required";
-            // 
-            // lblMaritalStatus
-            // 
-            this.lblMaritalStatus.AutoSize = true;
-            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblMaritalStatus.Location = new System.Drawing.Point(345, 128);
-            this.lblMaritalStatus.Name = "lblMaritalStatus";
-            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
-            this.lblMaritalStatus.TabIndex = 125;
-            this.lblMaritalStatus.Text = "required";
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(345, 103);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
-            this.lblDateOfBirth.TabIndex = 126;
-            this.lblDateOfBirth.Text = "required";
-            // 
-            // lblAccountType
-            // 
-            this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountType.ForeColor = System.Drawing.Color.Red;
-            this.lblAccountType.Location = new System.Drawing.Point(718, 133);
-            this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(44, 11);
-            this.lblAccountType.TabIndex = 127;
-            this.lblAccountType.Text = "required";
-            // 
-            // lblContactPerson
-            // 
-            this.lblContactPerson.AutoSize = true;
-            this.lblContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactPerson.ForeColor = System.Drawing.Color.Red;
-            this.lblContactPerson.Location = new System.Drawing.Point(880, 37);
-            this.lblContactPerson.Name = "lblContactPerson";
-            this.lblContactPerson.Size = new System.Drawing.Size(44, 11);
-            this.lblContactPerson.TabIndex = 123;
-            this.lblContactPerson.Text = "required";
-            // 
-            // lblContactNo
-            // 
-            this.lblContactNo.AutoSize = true;
-            this.lblContactNo.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.ForeColor = System.Drawing.Color.Red;
-            this.lblContactNo.Location = new System.Drawing.Point(880, 59);
-            this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(44, 11);
-            this.lblContactNo.TabIndex = 141;
-            this.lblContactNo.Text = "required";
-            // 
-            // lblRelationToContactPerson
-            // 
-            this.lblRelationToContactPerson.AutoSize = true;
-            this.lblRelationToContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRelationToContactPerson.ForeColor = System.Drawing.Color.Red;
-            this.lblRelationToContactPerson.Location = new System.Drawing.Point(880, 81);
-            this.lblRelationToContactPerson.Name = "lblRelationToContactPerson";
-            this.lblRelationToContactPerson.Size = new System.Drawing.Size(44, 11);
-            this.lblRelationToContactPerson.TabIndex = 123;
-            this.lblRelationToContactPerson.Text = "required";
+            this.btnAddPicture.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPicture.Location = new System.Drawing.Point(13, 166);
+            this.btnAddPicture.Name = "btnAddPicture";
+            this.btnAddPicture.Size = new System.Drawing.Size(75, 23);
+            this.btnAddPicture.TabIndex = 19;
+            this.btnAddPicture.Text = "Add Picture";
+            this.btnAddPicture.UseVisualStyleBackColor = true;
+            this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
             // 
             // CreateNewUserForm
             // 
@@ -712,7 +714,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -757,10 +759,10 @@
         private System.Windows.Forms.TextBox txtBoxLastName;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.TextBox txtImgLink;
-        private System.Windows.Forms.Button camBtn;
-        private System.Windows.Forms.Button importBtn;
+        private System.Windows.Forms.Button btnTakePicture;
+        private System.Windows.Forms.Button btnAddPicture;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblRelationToContactPerson;
         private System.Windows.Forms.Label lblContactNo;

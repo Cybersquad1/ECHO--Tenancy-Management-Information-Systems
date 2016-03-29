@@ -13,4 +13,4 @@ namespace Echo.Data.Repository.Models
         public string accountType { get; set; }
     }
 }
-}
+

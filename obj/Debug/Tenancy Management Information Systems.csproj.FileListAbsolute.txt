@@ -236,17 +236,6 @@ C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Ten
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\WebCam_Capture.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
@@ -269,3 +258,13 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.dll
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\WebCam_Capture.dll
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb

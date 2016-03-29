@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblErrorLogin = new System.Windows.Forms.Label();
             this.loginbutton = new System.Windows.Forms.Button();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.PictureBox();
-            this.lblErrorLogin = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -67,6 +67,18 @@
             this.panel2.Size = new System.Drawing.Size(566, 347);
             this.panel2.TabIndex = 53;
             // 
+            // lblErrorLogin
+            // 
+            this.lblErrorLogin.AutoSize = true;
+            this.lblErrorLogin.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorLogin.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorLogin.Location = new System.Drawing.Point(322, 208);
+            this.lblErrorLogin.Name = "lblErrorLogin";
+            this.lblErrorLogin.Size = new System.Drawing.Size(153, 11);
+            this.lblErrorLogin.TabIndex = 126;
+            this.lblErrorLogin.Text = "Incorrect username or password";
+            this.lblErrorLogin.Visible = false;
+            // 
             // loginbutton
             // 
             this.loginbutton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,6 +98,8 @@
             this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(166, 20);
             this.txtBoxPassword.TabIndex = 9;
+            this.txtBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPassword_KeyPress);
+            this.txtBoxPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxPassword_KeyUp);
             // 
             // txtBoxUsername
             // 
@@ -167,18 +181,6 @@
             this.btnLogin.TabIndex = 51;
             this.btnLogin.TabStop = false;
             this.btnLogin.WaitOnLoad = true;
-            // 
-            // lblErrorLogin
-            // 
-            this.lblErrorLogin.AutoSize = true;
-            this.lblErrorLogin.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorLogin.Location = new System.Drawing.Point(322, 208);
-            this.lblErrorLogin.Name = "lblErrorLogin";
-            this.lblErrorLogin.Size = new System.Drawing.Size(153, 11);
-            this.lblErrorLogin.TabIndex = 126;
-            this.lblErrorLogin.Text = "Incorrect username or password";
-            this.lblErrorLogin.Visible = false;
             // 
             // Home2
             // 

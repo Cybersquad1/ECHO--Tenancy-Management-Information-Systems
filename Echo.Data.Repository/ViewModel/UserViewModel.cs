@@ -8,30 +8,64 @@ using System.Threading.Tasks;
 namespace Echo.Data.Repository.ViewModel
 {
     public class UserViewModel : ViewModelBase<UserProfile>
-    {
+    { 
         public UserProfile TryLogin(string _username, string _password)
         {
             return GetEntity(user => user.Username == _username && user.Password == _password);          
         }
 
-        public void AddUser(UserProfile _user)
+        public bool DeactivateUser(Guid _userID, string _type)
+        {
+            try
+            {
+                var user = GetEntity(r => r.ID == _userID);
+
+                user.Status = _type;
+
+                Update(user);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AddUser(UserProfile _user)
         {
             //Default data if new user
             _user.Status = "Y"; //Active Status
             _user.IfGeneratedPassword = "Y";
             _user.FullName = _user.FirstName + " " + _user.LastName;
 
-            Add(_user);
+            try
+            {
+                Add(_user);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void UpdateUser(UserProfile _user)
+        public bool UpdateUser(UserProfile _user)
         {
-            if (_user.Password != "")
-                _user.IfGeneratedPassword = "Y";
 
             _user.FullName = _user.FirstName + " " + _user.LastName;
 
-            Update(_user);
+            try
+            {
+                Update(_user);
+
+                return true;
+            }
+            catch(Exception err)
+            {
+                return false;
+            }
         }
 
         public UserProfile GetSelectedUser(Guid _userID)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Utilities;
 using Echo.Data.Repository;
+using Echo.Data.Repository.ViewModel;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
@@ -41,26 +42,34 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private UserProfile SetUserValues()
         {
-            UserProfile user = new UserProfile
-            {
-                Username = txtBoxUserName.Text,
-                FirstName = txtBoxFirstName.Text,
-                MiddleName = txtBoxMiddleName.Text,
-                LastName = txtBoxLastName.Text,
-                DateOfBirth = datePickerDateOfBirth.Value,
-                MaritalStatus = comboBoxMaritalStatus.Text.ToUpper(),
-                HomeAddress = txtBoxHomeAddress.Text,
-                ProvincialAddress = txtBoxProvincialAddress.Text,
-                Password = txtBoxPassword.Text,
-                MobileNo = txtBoxMobileNo.Text,
-                TelephoneNo = txtBoxTelNo.Text,
-                Email = txtBoxEmail.Text,
-                ContactPerson = txtBoxContactPerson.Text,
-                ContactNo = txtBoxContactNo.Text,
-                RelationshipToContact = txtBoxRelationToContactPerson.Text,
-                Type = comboBoxAccountType.Text.ToUpper()
-            };
+            UserProfile user = new UserProfile();
 
+            if (pictureBoxUser.Image != null)
+            {
+                using (var imgStr = new System.IO.MemoryStream())
+                {
+                    pictureBoxUser.Image.Save(imgStr, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    user.ImageContent = imgStr.ToArray();
+                }
+            }
+           
+            user.Username = txtBoxUserName.Text;
+            user.FirstName = txtBoxFirstName.Text;
+            user.MiddleName = txtBoxMiddleName.Text;
+            user.LastName = txtBoxLastName.Text;
+            user.DateOfBirth = datePickerDateOfBirth.Value;
+            user.MaritalStatus = comboBoxMaritalStatus.Text.ToUpper();
+            user.HomeAddress = txtBoxHomeAddress.Text;
+            user.ProvincialAddress = txtBoxProvincialAddress.Text;
+            user.Password = txtBoxPassword.Text;
+            user.MobileNo = txtBoxMobileNo.Text;
+            user.TelephoneNo = txtBoxTelNo.Text;
+            user.Email = txtBoxEmail.Text;
+            user.ContactPerson = txtBoxContactPerson.Text;
+            user.ContactNo = txtBoxContactNo.Text;
+            user.RelationshipToContact = txtBoxRelationToContactPerson.Text;
+            user.Type = comboBoxAccountType.Text.ToUpper();
+                  
             return user;
         }
 
@@ -102,9 +111,9 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             {
                 UserProfile newUser = SetUserValues();
 
-                UserRepository repository = new UserRepository();
+                UserViewModel vm = new UserViewModel();
 
-                if (repository.CreateUser(newUser))
+                if (vm.AddUser(newUser))
                     MessageBox.Show("Successfully saved");
                 else
                     MessageBox.Show("Cannot save new user", "Error on saving");
@@ -181,6 +190,23 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         private void txtBoxContactNo_TextChanged(object sender, EventArgs e)
         {
             lblContactNo.Visible = formUtilities.ShowRequiredLabel(txtBoxContactNo.Text);
+        }
+
+        private void btnAddPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image files | *.jpg";
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxUser.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private void btnTakePicture_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Webcam photo not yet available", "Error");
         }
     }
 }

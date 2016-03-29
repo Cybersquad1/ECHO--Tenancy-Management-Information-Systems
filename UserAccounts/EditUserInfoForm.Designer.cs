@@ -41,6 +41,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewUser = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,8 +80,8 @@
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -88,7 +89,7 @@
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // EditUserPnl
@@ -120,6 +121,7 @@
             // 
             // btnDeactivate
             // 
+            this.btnDeactivate.Enabled = false;
             this.btnDeactivate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeactivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeactivate.Location = new System.Drawing.Point(130, 42);
@@ -181,7 +183,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(746, 513);
+            this.btnExport.Location = new System.Drawing.Point(838, 499);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 16;
@@ -193,9 +195,9 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(858, 513);
+            this.btnCancel.Location = new System.Drawing.Point(220, 42);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 33);
+            this.btnCancel.Size = new System.Drawing.Size(92, 28);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "    Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -243,6 +245,11 @@
             this.listViewUser.View = System.Windows.Forms.View.Details;
             this.listViewUser.DoubleClick += new System.EventHandler(this.listViewUser_DoubleClick);
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 0;
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Status";
@@ -265,9 +272,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnUploadImage);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.pictureBoxUser);
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -275,6 +283,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employee Information";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // groupBox2
             // 
@@ -568,7 +577,6 @@
             this.txtBoxPassword.Enabled = false;
             this.txtBoxPassword.Location = new System.Drawing.Point(489, 51);
             this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(212, 21);
             this.txtBoxPassword.TabIndex = 97;
             this.txtBoxPassword.Visible = false;
@@ -657,22 +665,29 @@
             this.txtBoxFirstName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxFirstName.TabIndex = 3;
             // 
-            // pictureBox2
+            // pictureBoxUser
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(149, 132);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 126;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxUser.InitialImage = null;
+            this.pictureBoxUser.Location = new System.Drawing.Point(17, 20);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(149, 132);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 126;
+            this.pictureBoxUser.TabStop = false;
             // 
-            // columnHeader4
+            // btnUploadImage
             // 
-            this.columnHeader4.Text = "ID";
-            this.columnHeader4.Width = 0;
+            this.btnUploadImage.Enabled = false;
+            this.btnUploadImage.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadImage.Location = new System.Drawing.Point(17, 158);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(149, 24);
+            this.btnUploadImage.TabIndex = 127;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // Edit_User_Info
             // 
@@ -696,7 +711,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,7 +758,7 @@
         private System.Windows.Forms.TextBox txtBoxLastName;
         private System.Windows.Forms.TextBox txtBoxMiddleName;
         private System.Windows.Forms.TextBox txtBoxFirstName;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.ListView listViewUser;
         internal System.Windows.Forms.Panel EditUserPnl;
         internal System.Windows.Forms.GroupBox groupBox5;
@@ -755,5 +770,6 @@
         private System.Windows.Forms.TextBox txtBoxTelNo;
         private System.Windows.Forms.TextBox txtBoxMobileNo;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnUploadImage;
     }
 }
