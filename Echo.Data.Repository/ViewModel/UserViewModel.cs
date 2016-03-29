@@ -68,7 +68,7 @@ namespace Echo.Data.Repository.ViewModel
             }
         }
 
-        public UserProfile GetSelectedUser(Guid _userID)
+        public UserProfile GetSelectedUser(Guid? _userID)
         {
             return GetEntity(r => r.ID == _userID);
         }

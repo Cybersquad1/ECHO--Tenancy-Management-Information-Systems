@@ -169,11 +169,18 @@ namespace Tenancy_Management_Information_Systems
             p1.ShowDialog();
         }
 
-        private void AUnitsButton_Click(object sender, EventArgs e)
+        private void AUnitsButton_Click(object sender, EventArgs e)//View Available Units
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.AvailableUnitForm a1 = new TenancyManagement.AvailableUnitForm();
             a1.unitPnl.Visible = true;
-            a1.ShowDialog();
+
+            a1.TopLevel = false;
+            a1.Visible = true;
+            a1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(a1);
         }
 
         private void button4_Click(object sender, EventArgs e)

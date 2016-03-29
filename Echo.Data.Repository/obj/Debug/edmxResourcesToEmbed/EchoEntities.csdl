@@ -33,7 +33,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="ChargeDate" Type="DateTime" Precision="3" />
     <Property Name="DueDate" Type="DateTime" Precision="3" />
     <Property Name="AssociationDue" Type="Decimal" Precision="18" Scale="2" />
@@ -61,7 +61,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="ChargeDate" Type="DateTime" Precision="3" />
     <Property Name="AssociationDues" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="PreviousWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
@@ -102,17 +102,18 @@
     <Property Name="WithFireExtinguisher" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ImageLocation" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="OtherOccupants" Relationship="Self.FK_OtherOccupants_TenantProfile" FromRole="TenantProfile" ToRole="OtherOccupants" />
     <NavigationProperty Name="PetsProfiles" Relationship="Self.FK_PetsProfile_TenantProfile" FromRole="TenantProfile" ToRole="PetsProfile" />
     <NavigationProperty Name="UnitProfile" Relationship="Self.FK_TenantProfile_UnitProfile" FromRole="TenantProfile" ToRole="UnitProfile" />
+    <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
       <PropertyRef Name="UnitNumber" />
     </Key>
-    <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StartOfOccupancy" Type="DateTime" Precision="3" />
     <Property Name="ExpectedEndOfOccupancy" Type="DateTime" Precision="3" />
     <Property Name="Owner" Type="Guid" />
@@ -122,6 +123,9 @@
     <NavigationProperty Name="PaymentHistories" Relationship="Self.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
     <NavigationProperty Name="TenantProfiles" Relationship="Self.FK_TenantProfile_UnitProfile" FromRole="UnitProfile" ToRole="TenantProfile" />
     <NavigationProperty Name="WaterBillings" Relationship="Self.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Floor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
   </EntityType>
   <EntityType Name="UserProfile">
     <Key>
@@ -156,7 +160,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="UnitNumber" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="ChargeDate" Type="DateTime" Precision="3" />
     <Property Name="DueDate" Type="DateTime" Precision="3" />
     <Property Name="FromDate" Type="DateTime" Precision="3" />
@@ -322,5 +326,51 @@
       <End Role="UnitProfile" EntitySet="UnitProfiles" />
       <End Role="WaterBilling" EntitySet="WaterBillings" />
     </AssociationSet>
+    <EntitySet Name="TenantArchives" EntityType="EchoModel.TenantArchive" />
+    <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="EchoModel.FK_TenantArchive_TenantProfile">
+      <End Role="TenantProfile" EntitySet="TenantProfiles" />
+      <End Role="TenantArchive" EntitySet="TenantArchives" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="EchoModel.FK_TenantArchive_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfiles" />
+      <End Role="TenantArchive" EntitySet="TenantArchives" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="TenantArchive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="StartOfOccupancy" Type="DateTime" Precision="3" />
+    <Property Name="EndOfOccupancy" Type="DateTime" Precision="3" />
+    <Property Name="NatureOfOccupancy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TenantID" Type="Guid" />
+    <NavigationProperty Name="TenantProfile" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantArchive" ToRole="TenantProfile" />
+    <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="TenantArchive" ToRole="UnitProfile" />
+  </EntityType>
+  <Association Name="FK_TenantArchive_TenantProfile">
+    <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="0..1" />
+    <End Type="EchoModel.TenantArchive" Role="TenantArchive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TenantProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TenantArchive">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TenantArchive_UnitProfile">
+    <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
+    <End Type="EchoModel.TenantArchive" Role="TenantArchive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="TenantArchive">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

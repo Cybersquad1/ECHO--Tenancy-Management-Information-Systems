@@ -80,10 +80,10 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblUsername = new System.Windows.Forms.Label();
             this.baPanel.SuspendLayout();
             this.UserAccPnl.SuspendLayout();
             this.TenMgmtPnl.SuspendLayout();
@@ -763,18 +763,32 @@
             this.panelTop.Size = new System.Drawing.Size(1284, 127);
             this.panelTop.TabIndex = 64;
             // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblUsername.Location = new System.Drawing.Point(1059, 55);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(82, 16);
+            this.lblUsername.TabIndex = 64;
+            this.lblUsername.Text = "RCVIgnacio";
+            // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.SystemColors.Window;
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
-            this.panelLeft.Controls.Add(this.UserAccPnl);
-            this.panelLeft.Controls.Add(this.TenMgmtPnl);
-            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Controls.Add(this.collectorPnl2);
+            this.panelLeft.Controls.Add(this.UserAccPnl);
+            this.panelLeft.Controls.Add(this.TenMgmtPnl);
+            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";
@@ -797,20 +811,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblUsername.Location = new System.Drawing.Point(1059, 55);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(82, 16);
-            this.lblUsername.TabIndex = 64;
-            this.lblUsername.Text = "RCVIgnacio";
             // 
             // Home
             // 

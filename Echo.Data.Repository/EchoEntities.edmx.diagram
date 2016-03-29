@@ -24,6 +24,9 @@
         <AssociationConnector Association="EchoModel.FK_PetsProfile_TenantProfile" ManuallyRouted="false" />
         <AssociationConnector Association="EchoModel.FK_TenantProfile_UnitProfile" ManuallyRouted="false" />
         <AssociationConnector Association="EchoModel.FK_WaterBilling_UnitProfile" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EchoModel.TenantArchive" Width="1.5" PointX="8.25" PointY="10.25" />
+        <AssociationConnector Association="EchoModel.FK_TenantArchive_TenantProfile" />
+        <AssociationConnector Association="EchoModel.FK_TenantArchive_UnitProfile" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

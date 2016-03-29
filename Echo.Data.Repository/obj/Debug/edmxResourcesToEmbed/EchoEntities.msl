@@ -108,6 +108,8 @@
     <EntitySetMapping Name="UnitProfiles">
       <EntityTypeMapping TypeName="EchoModel.UnitProfile">
         <MappingFragment StoreEntitySet="UnitProfile">
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
           <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
           <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
@@ -157,6 +159,18 @@
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
           <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
           <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenantArchives">
+      <EntityTypeMapping TypeName="EchoModel.TenantArchive">
+        <MappingFragment StoreEntitySet="TenantArchive">
+          <ScalarProperty Name="TenantID" ColumnName="TenantID" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="EndOfOccupancy" ColumnName="EndOfOccupancy" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

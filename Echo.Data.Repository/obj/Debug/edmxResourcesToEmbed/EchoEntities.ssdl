@@ -29,7 +29,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="ChargeDate" Type="datetime" />
     <Property Name="DueDate" Type="datetime" />
     <Property Name="AssociationDue" Type="decimal" Precision="18" Scale="2" />
@@ -55,7 +55,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="ChargeDate" Type="datetime" />
     <Property Name="AssociationDues" Type="decimal" Precision="18" Scale="2" />
     <Property Name="PreviousWaterBillDue" Type="decimal" Precision="18" Scale="2" />
@@ -71,6 +71,17 @@
     <Property Name="Breed" Type="varchar" MaxLength="100" />
     <Property Name="Name" Type="varchar" MaxLength="150" />
     <Property Name="TenantProfileID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TenantArchive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
+    <Property Name="StartOfOccupancy" Type="datetime" />
+    <Property Name="EndOfOccupancy" Type="datetime" />
+    <Property Name="NatureOfOccupancy" Type="varchar" MaxLength="150" />
+    <Property Name="TenantID" Type="uniqueidentifier" />
   </EntityType>
   <EntityType Name="TenantProfile">
     <Key>
@@ -94,19 +105,21 @@
     <Property Name="WithFireExtinguisher" Type="varchar" MaxLength="1" />
     <Property Name="Password" Type="varchar" MaxLength="50" />
     <Property Name="ImageLocation" Type="image" />
-    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="Status" Type="varchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
       <PropertyRef Name="UnitNumber" />
     </Key>
-    <Property Name="UnitNumber" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="StartOfOccupancy" Type="datetime" />
     <Property Name="ExpectedEndOfOccupancy" Type="datetime" />
     <Property Name="Owner" Type="uniqueidentifier" />
     <Property Name="Tenant" Type="uniqueidentifier" />
     <Property Name="NatureOfOccupancy" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Floor" Type="varchar" MaxLength="3" />
   </EntityType>
   <EntityType Name="UserProfile">
     <Key>
@@ -139,7 +152,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UnitNumber" Type="varchar" MaxLength="3" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="ChargeDate" Type="datetime" />
     <Property Name="DueDate" Type="datetime" />
     <Property Name="FromDate" Type="datetime" />
@@ -233,6 +246,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TenantArchive_TenantProfile">
+    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
+    <End Role="TenantArchive" Type="Self.TenantArchive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TenantProfile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TenantArchive">
+        <PropertyRef Name="TenantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TenantArchive_UnitProfile">
+    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+    <End Role="TenantArchive" Type="Self.TenantArchive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="TenantArchive">
+        <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TenantProfile_UnitProfile">
     <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
     <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="*" />
@@ -264,6 +301,7 @@
     <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PetsProfile" EntityType="Self.PetsProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
@@ -295,6 +333,14 @@
     <AssociationSet Name="FK_PetsProfile_TenantProfile" Association="Self.FK_PetsProfile_TenantProfile">
       <End Role="TenantProfile" EntitySet="TenantProfile" />
       <End Role="PetsProfile" EntitySet="PetsProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="Self.FK_TenantArchive_TenantProfile">
+      <End Role="TenantProfile" EntitySet="TenantProfile" />
+      <End Role="TenantArchive" EntitySet="TenantArchive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="Self.FK_TenantArchive_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="TenantArchive" EntitySet="TenantArchive" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="Self.FK_TenantProfile_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />

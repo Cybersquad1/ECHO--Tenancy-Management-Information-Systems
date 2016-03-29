@@ -149,6 +149,12 @@
     <Compile Include="TenancyManagement\TenancyDatabaseForm.Designer.cs">
       <DependentUpon>TenancyDatabaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TenancyManagement\TransferOwnership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\TransferOwnership.Designer.cs">
+      <DependentUpon>TransferOwnership.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenancyManagement\viewUnitNumberForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TenancyManagement\TenancyDatabaseForm.resx">
       <DependentUpon>TenancyDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\TransferOwnership.resx">
+      <DependentUpon>TransferOwnership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TenancyManagement\viewUnitNumberForm.resx">
       <DependentUpon>viewUnitNumberForm.cs</DependentUpon>
