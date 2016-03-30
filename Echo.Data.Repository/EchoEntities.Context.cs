@@ -30,11 +30,11 @@ namespace Echo.Data.Repository
         public virtual DbSet<MonthlyAssociationDue> MonthlyAssociationDues { get; set; }
         public virtual DbSet<OtherOccupant> OtherOccupants { get; set; }
         public virtual DbSet<PaymentHistory> PaymentHistories { get; set; }
-        public virtual DbSet<PetsProfile> PetsProfiles { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TenantArchive> TenantArchives { get; set; }
         public virtual DbSet<TenantProfile> TenantProfiles { get; set; }
         public virtual DbSet<UnitProfile> UnitProfiles { get; set; }
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<WaterBilling> WaterBillings { get; set; }
-        public virtual DbSet<TenantArchive> TenantArchives { get; set; }
     }
 }

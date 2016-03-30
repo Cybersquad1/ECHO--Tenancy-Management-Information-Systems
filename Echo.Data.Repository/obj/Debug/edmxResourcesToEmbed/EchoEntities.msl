@@ -4,161 +4,77 @@
     <EntitySetMapping Name="LogSheets">
       <EntityTypeMapping TypeName="EchoModel.LogSheet">
         <MappingFragment StoreEntitySet="LogSheet">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Item" ColumnName="Item" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LogSheetActivities">
       <EntityTypeMapping TypeName="EchoModel.LogSheetActivity">
         <MappingFragment StoreEntitySet="LogSheetActivity">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
-          <ScalarProperty Name="Area" ColumnName="Area" />
-          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
           <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MonthlyAssociationDues">
       <EntityTypeMapping TypeName="EchoModel.MonthlyAssociationDue">
         <MappingFragment StoreEntitySet="MonthlyAssociationDue">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
-          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
-          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
-          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
-          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
-          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="OtherOccupants">
       <EntityTypeMapping TypeName="EchoModel.OtherOccupant">
         <MappingFragment StoreEntitySet="OtherOccupants">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Relation" ColumnName="Relation" />
           <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PaymentHistories">
       <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
         <MappingFragment StoreEntitySet="PaymentHistory">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-          <ScalarProperty Name="AssociationDues" ColumnName="AssociationDues" />
-          <ScalarProperty Name="PreviousWaterBillDue" ColumnName="PreviousWaterBillDue" />
           <ScalarProperty Name="CurrentWaterBillDue" ColumnName="CurrentWaterBillDue" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PetsProfiles">
-      <EntityTypeMapping TypeName="EchoModel.PetsProfile">
-        <MappingFragment StoreEntitySet="PetsProfile">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Breed" ColumnName="Breed" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TenantProfiles">
-      <EntityTypeMapping TypeName="EchoModel.TenantProfile">
-        <MappingFragment StoreEntitySet="TenantProfile">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
-          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="WithOtherOccupants" ColumnName="WithOtherOccupants" />
-          <ScalarProperty Name="WithPets" ColumnName="WithPets" />
-          <ScalarProperty Name="WithFireExtinguisher" ColumnName="WithFireExtinguisher" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="ImageLocation" ColumnName="ImageLocation" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UnitProfiles">
-      <EntityTypeMapping TypeName="EchoModel.UnitProfile">
-        <MappingFragment StoreEntitySet="UnitProfile">
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="Tenant" ColumnName="Tenant" />
-          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserProfiles">
-      <EntityTypeMapping TypeName="EchoModel.UserProfile">
-        <MappingFragment StoreEntitySet="UserProfile">
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
-          <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WaterBillings">
-      <EntityTypeMapping TypeName="EchoModel.WaterBilling">
-        <MappingFragment StoreEntitySet="WaterBilling">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="PreviousWaterBillDue" ColumnName="PreviousWaterBillDue" />
+          <ScalarProperty Name="AssociationDues" ColumnName="AssociationDues" />
           <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-          <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
-          <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EchoModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -169,6 +85,102 @@
           <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
           <ScalarProperty Name="EndOfOccupancy" ColumnName="EndOfOccupancy" />
           <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenantProfiles">
+      <EntityTypeMapping TypeName="EchoModel.TenantProfile">
+        <MappingFragment StoreEntitySet="TenantProfile">
+          <ScalarProperty Name="PetName" ColumnName="PetName" />
+          <ScalarProperty Name="PetBreed" ColumnName="PetBreed" />
+          <ScalarProperty Name="PetType" ColumnName="PetType" />
+          <ScalarProperty Name="PetQuantity" ColumnName="PetQuantity" />
+          <ScalarProperty Name="OtherDateOfBirth3" ColumnName="OtherDateOfBirth3" />
+          <ScalarProperty Name="OtherRelation3" ColumnName="OtherRelation3" />
+          <ScalarProperty Name="OtherName3" ColumnName="OtherName3" />
+          <ScalarProperty Name="OtherDateOfBirth2" ColumnName="OtherDateOfBirth2" />
+          <ScalarProperty Name="OtherRelation2" ColumnName="OtherRelation2" />
+          <ScalarProperty Name="OtherName2" ColumnName="OtherName2" />
+          <ScalarProperty Name="OtherDateOfBirth1" ColumnName="OtherDateOfBirth1" />
+          <ScalarProperty Name="OtherRelation1" ColumnName="OtherRelation1" />
+          <ScalarProperty Name="OtherName1" ColumnName="OtherName1" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ImageLocation" ColumnName="ImageLocation" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="WithFireExtinguisher" ColumnName="WithFireExtinguisher" />
+          <ScalarProperty Name="WithPets" ColumnName="WithPets" />
+          <ScalarProperty Name="WithOtherOccupants" ColumnName="WithOtherOccupants" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitProfiles">
+      <EntityTypeMapping TypeName="EchoModel.UnitProfile">
+        <MappingFragment StoreEntitySet="UnitProfile">
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Tenant" ColumnName="Tenant" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="EchoModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
+          <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaterBillings">
+      <EntityTypeMapping TypeName="EchoModel.WaterBilling">
+        <MappingFragment StoreEntitySet="WaterBilling">
+          <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+          <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>

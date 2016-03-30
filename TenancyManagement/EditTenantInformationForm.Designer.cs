@@ -36,7 +36,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewTenants = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -98,6 +98,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditTenantPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -195,7 +196,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listView2);
+            this.tabPage1.Controls.Add(this.listViewTenants);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -204,22 +205,23 @@
             this.tabPage1.Text = "All";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // listViewTenants
             // 
-            this.listView2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewTenants.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.listViewTenants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9});
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(6, 2);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(918, 387);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listViewTenants.GridLines = true;
+            this.listViewTenants.Location = new System.Drawing.Point(6, 2);
+            this.listViewTenants.Name = "listViewTenants";
+            this.listViewTenants.Size = new System.Drawing.Size(918, 387);
+            this.listViewTenants.TabIndex = 2;
+            this.listViewTenants.UseCompatibleStateImageBehavior = false;
+            this.listViewTenants.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -840,10 +842,16 @@
             this.Go.TabIndex = 11;
             this.Go.UseVisualStyleBackColor = true;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 0;
+            // 
             // EditTenantInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(986, 568);
             this.Controls.Add(this.EditTenantPnl);
@@ -884,7 +892,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button Go;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewTenants;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox22;
@@ -943,5 +951,6 @@
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

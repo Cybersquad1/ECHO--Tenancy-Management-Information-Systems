@@ -19,9 +19,9 @@ namespace Echo.Data.Repository
         {
             this.MonthlyAssociationDues = new HashSet<MonthlyAssociationDue>();
             this.PaymentHistories = new HashSet<PaymentHistory>();
+            this.TenantArchives = new HashSet<TenantArchive>();
             this.TenantProfiles = new HashSet<TenantProfile>();
             this.WaterBillings = new HashSet<WaterBilling>();
-            this.TenantArchives = new HashSet<TenantArchive>();
         }
     
         public string UnitNumber { get; set; }
@@ -38,10 +38,10 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PaymentHistory> PaymentHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TenantArchive> TenantArchives { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TenantProfile> TenantProfiles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaterBilling> WaterBillings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TenantArchive> TenantArchives { get; set; }
     }
 }

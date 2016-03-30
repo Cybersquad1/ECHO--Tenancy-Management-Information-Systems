@@ -12,5 +12,49 @@ namespace Echo.Data.Repository.ViewModel
         {
             return GetEntity(r => r.ID == _tenantID);
         }
+
+        public List<TenantProfile> GetAll()
+        {
+            return Find();
+        }
+
+        public List<TenantProfile> Search(string _searchKey)
+        {
+            return Find(r => r.FirstName.ToLower().Contains(_searchKey.ToLower()) ||
+                r.LastName.ToLower().Contains(_searchKey.ToLower()) ||
+                r.MiddleName.ToLower().Contains(_searchKey.ToLower()));
+        }
+
+        public bool ChangeTenantStatus(Guid _tenantID, string _status)
+        {
+            try
+            {
+                var tenant = GetSelectedTenant(_tenantID);
+
+                tenant.Status = _status;
+
+                Update(tenant); //Save Changes
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool AddTenant(TenantProfile _tenantProfile)
+        {
+            try
+            {
+                _tenantProfile.Status = "Y"; //Active status             
+
+                return true;
+            }
+            catch
+            {
+                return false;                                                                                                                                                             
+            }
+        }
     }
 }

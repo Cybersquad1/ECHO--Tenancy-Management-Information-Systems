@@ -18,7 +18,6 @@ namespace Echo.Data.Repository
         public TenantProfile()
         {
             this.OtherOccupants = new HashSet<OtherOccupant>();
-            this.PetsProfiles = new HashSet<PetsProfile>();
             this.TenantArchives = new HashSet<TenantArchive>();
         }
     
@@ -42,13 +41,24 @@ namespace Echo.Data.Repository
         public byte[] ImageLocation { get; set; }
         public string UnitNumber { get; set; }
         public string Status { get; set; }
+        public string OtherName1 { get; set; }
+        public string OtherRelation1 { get; set; }
+        public Nullable<System.DateTime> OtherDateOfBirth1 { get; set; }
+        public string OtherName2 { get; set; }
+        public string OtherRelation2 { get; set; }
+        public Nullable<System.DateTime> OtherDateOfBirth2 { get; set; }
+        public string OtherName3 { get; set; }
+        public string OtherRelation3 { get; set; }
+        public Nullable<System.DateTime> OtherDateOfBirth3 { get; set; }
+        public string PetQuantity { get; set; }
+        public string PetType { get; set; }
+        public string PetBreed { get; set; }
+        public string PetName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OtherOccupant> OtherOccupants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PetsProfile> PetsProfiles { get; set; }
-        public virtual UnitProfile UnitProfile { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TenantArchive> TenantArchives { get; set; }
+        public virtual UnitProfile UnitProfile { get; set; }
     }
 }

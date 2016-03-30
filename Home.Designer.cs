@@ -84,6 +84,7 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblLogout = new System.Windows.Forms.Label();
             this.baPanel.SuspendLayout();
             this.UserAccPnl.SuspendLayout();
             this.TenMgmtPnl.SuspendLayout();
@@ -751,6 +752,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.lblLogout);
             this.panelTop.Controls.Add(this.lblUsername);
             this.panelTop.Controls.Add(this.pictureBox3);
             this.panelTop.Controls.Add(this.lblTime);
@@ -783,12 +785,12 @@
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
+            this.panelLeft.Controls.Add(this.TenMgmtPnl);
+            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Controls.Add(this.UserAccPnl);
-            this.panelLeft.Controls.Add(this.TenMgmtPnl);
-            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";
@@ -797,6 +799,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.AutoScroll = true;
             this.panelMain.AutoSize = true;
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.building_bg;
@@ -812,10 +815,27 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblLogout
+            // 
+            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLogout.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblLogout.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
+            this.lblLogout.Location = new System.Drawing.Point(1220, 55);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(52, 16);
+            this.lblLogout.TabIndex = 65;
+            this.lblLogout.Text = "Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1284, 729);
             this.Controls.Add(this.panelMain);
@@ -823,6 +843,9 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.pictureBox4);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.baPanel.ResumeLayout(false);
             this.UserAccPnl.ResumeLayout(false);
             this.TenMgmtPnl.ResumeLayout(false);
@@ -901,6 +924,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblLogout;
     }
 }
 

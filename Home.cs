@@ -8,18 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tenancy_Management_Information_Systems.Kiosk;
 
 namespace Tenancy_Management_Information_Systems
 {
     public partial class Home : Form
     {
-        public Home(LoginInfo loginInfo)
+        Home2 parentForm;
+
+        public Home(LoginInfo loginInfo, Home2 parentForm)
         {
             InitializeComponent();
 
             timer1.Start();
 
             lblUsername.Text = loginInfo.username;
+
+            this.parentForm = parentForm;
         }
 
         private void AccountsButton_Click(object sender, EventArgs e)
@@ -68,18 +73,30 @@ namespace Tenancy_Management_Information_Systems
             tenancyDatabasePnl.Visible = false;
         }
 
-        private void CreateNewTenantButton_Click(object sender, EventArgs e)
+        private void CreateNewTenantButton_Click(object sender, EventArgs e) //Create new Tenant
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.CreateNewTenantForm t1 = new TenancyManagement.CreateNewTenantForm();
             t1.NewTenantPnl.Visible = true;
-            t1.ShowDialog();
+            t1.TopLevel = false;
+            t1.Visible = true;
+            t1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t1);
         }
 
-        private void EditTenantInfoButton_Click(object sender, EventArgs e)
+        private void EditTenantInfoButton_Click(object sender, EventArgs e) //Edit Tenant Information
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.EditTenantInformationForm e2 = new TenancyManagement.EditTenantInformationForm();
             e2.EditTenantPnl.Visible = true;
-            e2.ShowDialog();
+            e2.TopLevel = false;
+            e2.Visible = true;
+            e2.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(e2);
         }
 
         private void ReportsButton_Click(object sender, EventArgs e)
@@ -130,11 +147,17 @@ namespace Tenancy_Management_Information_Systems
             t1.ShowDialog();
         }
 
-        private void TenancyArchiveButton_Click(object sender, EventArgs e)
+        private void TenancyArchiveButton_Click(object sender, EventArgs e) //Tenancy Archive
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.TenancyArchiveForm t2 = new TenancyManagement.TenancyArchiveForm();
             t2.ArchivePnl.Visible = true;
-            t2.ShowDialog();
+            t2.TopLevel = false;
+            t2.Visible = true;
+            t2.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t2);
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -281,6 +304,17 @@ namespace Tenancy_Management_Information_Systems
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+            parentForm.Show();
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

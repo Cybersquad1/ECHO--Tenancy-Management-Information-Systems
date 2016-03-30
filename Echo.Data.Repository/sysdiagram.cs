@@ -12,15 +12,12 @@ namespace Echo.Data.Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class PetsProfile
+    public partial class sysdiagram
     {
-        public System.Guid ID { get; set; }
-        public string Quantity { get; set; }
-        public string Type { get; set; }
-        public string Breed { get; set; }
-        public string Name { get; set; }
-        public Nullable<System.Guid> TenantProfileID { get; set; }
-    
-        public virtual TenantProfile TenantProfile { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

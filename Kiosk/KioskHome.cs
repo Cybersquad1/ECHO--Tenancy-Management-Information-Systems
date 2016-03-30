@@ -40,13 +40,17 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
                     if (loginInfo.accountType == "ADMIN")
                     {
-                        Home h1 = new Home(loginInfo);
+                        Home h1 = new Home(loginInfo, this);
                         h1.Show();
+
+                        Hide();
                     }
                     else //if user is Tenant or Unit Owner
                     {
                         HomeTenantForm ht1 = new HomeTenantForm();
                         ht1.Show();
+
+                        Hide();
                     }
                 }
                 else

@@ -192,6 +192,7 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "Home2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home2_FormClosed);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

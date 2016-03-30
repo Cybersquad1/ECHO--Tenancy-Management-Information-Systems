@@ -194,6 +194,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void btnAddPicture_Click(object sender, EventArgs e)
         {
+            //upload image to picture box
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.Filter = "Image files | *.jpg";

@@ -61,16 +61,15 @@
     <Property Name="PreviousWaterBillDue" Type="decimal" Precision="18" Scale="2" />
     <Property Name="CurrentWaterBillDue" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
-  <EntityType Name="PetsProfile">
+  <EntityType Name="sysdiagrams">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Quantity" Type="varchar" MaxLength="2" />
-    <Property Name="Type" Type="varchar" MaxLength="100" />
-    <Property Name="Breed" Type="varchar" MaxLength="100" />
-    <Property Name="Name" Type="varchar" MaxLength="150" />
-    <Property Name="TenantProfileID" Type="uniqueidentifier" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TenantArchive">
     <Key>
@@ -107,6 +106,19 @@
     <Property Name="ImageLocation" Type="image" />
     <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="OtherName1" Type="varchar" MaxLength="150" />
+    <Property Name="OtherRelation1" Type="varchar" MaxLength="100" />
+    <Property Name="OtherDateOfBirth1" Type="datetime" />
+    <Property Name="OtherName2" Type="varchar" MaxLength="150" />
+    <Property Name="OtherRelation2" Type="varchar" MaxLength="100" />
+    <Property Name="OtherDateOfBirth2" Type="datetime" />
+    <Property Name="OtherName3" Type="varchar" MaxLength="150" />
+    <Property Name="OtherRelation3" Type="varchar" MaxLength="100" />
+    <Property Name="OtherDateOfBirth3" Type="datetime" />
+    <Property Name="PetQuantity" Type="varchar" MaxLength="2" />
+    <Property Name="PetType" Type="varchar" MaxLength="100" />
+    <Property Name="PetBreed" Type="varchar" MaxLength="100" />
+    <Property Name="PetName" Type="varchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
@@ -234,18 +246,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PetsProfile_TenantProfile">
-    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
-    <End Role="PetsProfile" Type="Self.PetsProfile" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TenantProfile">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PetsProfile">
-        <PropertyRef Name="TenantProfileID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TenantArchive_TenantProfile">
     <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
     <End Role="TenantArchive" Type="Self.TenantArchive" Multiplicity="*" />
@@ -300,7 +300,7 @@
     <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PetsProfile" EntityType="Self.PetsProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
@@ -329,10 +329,6 @@
     <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PetsProfile_TenantProfile" Association="Self.FK_PetsProfile_TenantProfile">
-      <End Role="TenantProfile" EntitySet="TenantProfile" />
-      <End Role="PetsProfile" EntitySet="PetsProfile" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="Self.FK_TenantArchive_TenantProfile">
       <End Role="TenantProfile" EntitySet="TenantProfile" />
