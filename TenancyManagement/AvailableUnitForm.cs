@@ -96,6 +96,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
         private void GetUnits()
         {
+            vm = new UnitViewModel();
+
             listViewUnits.Items.Clear();
 
             var units = vm.GetAll();
@@ -144,6 +146,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
         private void GetSelectedUnit()
         {
+            vm = new UnitViewModel();
+
             var selectedUnit = vm.GetSelected(unitNo);
 
             txtBoxUnitNumber.Text = selectedUnit.UnitNumber;
@@ -203,6 +207,33 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         }
 
         private void listViewUnits_DoubleClick(object sender, EventArgs e)
+        {
+            TabPage openTab = tabControl1.TabPages[1];
+            tabControl1.SelectedTab = openTab;
+
+            unitNo = listViewUnits.SelectedItems[0].SubItems[0].Text;
+
+            GetSelectedUnit();
+        }
+
+        private void btnTransferOwnership_Click(object sender, EventArgs e)
+        {
+            if (txtBoxUnitNumber.Text == "")
+            {
+                MessageBox.Show("Please select unit to transfer", "Error");
+            }
+            else
+            {             
+                    TransferOwnership form = new TransferOwnership(txtBoxUnitNumber.Text);
+                    form.ShowDialog();
+
+                    GetUnits();
+
+                    GetSelectedUnit(); //Refresh data
+            }
+        }
+
+        private void listViewUnits_DoubleClick_1(object sender, EventArgs e)
         {
             TabPage openTab = tabControl1.TabPages[1];
             tabControl1.SelectedTab = openTab;

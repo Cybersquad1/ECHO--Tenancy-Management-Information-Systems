@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableUnitForm));
             this.unitPnl = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeactivate = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listViewUnits = new System.Windows.Forms.ListView();
@@ -47,6 +43,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnTransferOwnership = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtBoxType = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -74,7 +71,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtBoxType = new System.Windows.Forms.TextBox();
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -98,10 +94,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDeactivate);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(216, 4);
@@ -110,52 +102,6 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Units";
-            // 
-            // btnDeactivate
-            // 
-            this.btnDeactivate.Enabled = false;
-            this.btnDeactivate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeactivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeactivate.Location = new System.Drawing.Point(150, 21);
-            this.btnDeactivate.Name = "btnDeactivate";
-            this.btnDeactivate.Size = new System.Drawing.Size(87, 28);
-            this.btnDeactivate.TabIndex = 26;
-            this.btnDeactivate.Text = "    Deactivate";
-            this.btnDeactivate.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(90, 21);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(59, 28);
-            this.btnSave.TabIndex = 25;
-            this.btnSave.Text = "     Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(30, 21);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(59, 28);
-            this.btnEdit.TabIndex = 24;
-            this.btnEdit.Text = "      Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(240, 21);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 28);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "    Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -197,6 +143,7 @@
             this.listViewUnits.TabIndex = 1;
             this.listViewUnits.UseCompatibleStateImageBehavior = false;
             this.listViewUnits.View = System.Windows.Forms.View.Details;
+            this.listViewUnits.DoubleClick += new System.EventHandler(this.listViewUnits_DoubleClick_1);
             // 
             // columnHeader1
             // 
@@ -248,7 +195,6 @@
             // 
             // btnTransferOwnership
             // 
-            this.btnTransferOwnership.Enabled = false;
             this.btnTransferOwnership.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransferOwnership.Location = new System.Drawing.Point(272, 310);
             this.btnTransferOwnership.Name = "btnTransferOwnership";
@@ -256,6 +202,7 @@
             this.btnTransferOwnership.TabIndex = 18;
             this.btnTransferOwnership.Text = "Transfer Ownership";
             this.btnTransferOwnership.UseVisualStyleBackColor = true;
+            this.btnTransferOwnership.Click += new System.EventHandler(this.btnTransferOwnership_Click);
             // 
             // groupBox6
             // 
@@ -272,6 +219,15 @@
             this.groupBox6.Size = new System.Drawing.Size(345, 142);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
+            // 
+            // txtBoxType
+            // 
+            this.txtBoxType.Enabled = false;
+            this.txtBoxType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxType.Location = new System.Drawing.Point(123, 68);
+            this.txtBoxType.Name = "txtBoxType";
+            this.txtBoxType.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxType.TabIndex = 121;
             // 
             // label3
             // 
@@ -567,7 +523,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 512);
+            this.btnExport.Location = new System.Drawing.Point(749, 508);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 18;
@@ -579,22 +535,13 @@
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(861, 512);
+            this.button2.Location = new System.Drawing.Point(861, 508);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 33);
             this.button2.TabIndex = 19;
             this.button2.Text = "    Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtBoxType
-            // 
-            this.txtBoxType.Enabled = false;
-            this.txtBoxType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxType.Location = new System.Drawing.Point(123, 68);
-            this.txtBoxType.Name = "txtBoxType";
-            this.txtBoxType.Size = new System.Drawing.Size(206, 20);
-            this.txtBoxType.TabIndex = 121;
             // 
             // AvailableUnitForm
             // 
@@ -666,10 +613,6 @@
         private System.Windows.Forms.TextBox txtBoxAvailability;
         private System.Windows.Forms.Button btnTransferOwnership;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDeactivate;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtBoxType;
     }
 }
