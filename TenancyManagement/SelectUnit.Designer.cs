@@ -53,6 +53,7 @@
             this.listViewUnits.TabIndex = 28;
             this.listViewUnits.UseCompatibleStateImageBehavior = false;
             this.listViewUnits.View = System.Windows.Forms.View.Details;
+            this.listViewUnits.DoubleClick += new System.EventHandler(this.listViewUnits_DoubleClick);
             // 
             // columnHeader2
             // 
@@ -74,6 +75,7 @@
             this.btnOkay.TabIndex = 29;
             this.btnOkay.Text = "      Okay";
             this.btnOkay.UseVisualStyleBackColor = true;
+            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
             // 
             // btnSearch
             // 
@@ -84,6 +86,7 @@
             this.btnSearch.Size = new System.Drawing.Size(24, 23);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 

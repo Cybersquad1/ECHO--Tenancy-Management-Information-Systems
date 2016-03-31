@@ -47,11 +47,13 @@ namespace Echo.Data.Repository.ViewModel
         {
             try
             {
-                _tenantProfile.Status = "Y"; //Active status             
+                _tenantProfile.Status = "Y"; //Active status       
+
+                Add(_tenantProfile);      
 
                 return true;
             }
-            catch
+            catch(Exception error)//just for debugging
             {
                 return false;                                                                                                                                                             
             }

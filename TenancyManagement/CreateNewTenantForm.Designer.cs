@@ -36,6 +36,8 @@
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.txtBoxTelNo = new System.Windows.Forms.TextBox();
@@ -45,26 +47,17 @@
             this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
-            this.txtBoxOwner = new System.Windows.Forms.TextBox();
-            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtBoxLastname = new System.Windows.Forms.TextBox();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstname = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBoxPets = new System.Windows.Forms.GroupBox();
-            this.txtBoxPetQuantity = new System.Windows.Forms.TextBox();
-            this.txtBoxPetName = new System.Windows.Forms.TextBox();
-            this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
-            this.txtBoxPetType = new System.Windows.Forms.TextBox();
             this.pictureBoxTenant = new System.Windows.Forms.PictureBox();
             this.btnWebcam = new System.Windows.Forms.Button();
             this.btnAddPicture = new System.Windows.Forms.Button();
@@ -77,6 +70,8 @@
             this.checkBoxPets = new System.Windows.Forms.CheckBox();
             this.checkBoxWithOther = new System.Windows.Forms.CheckBox();
             this.groupBoxOtherOccupants = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.datePickerOtherDateOfBirth3 = new System.Windows.Forms.DateTimePicker();
             this.txtBoxOtherRelation3 = new System.Windows.Forms.TextBox();
@@ -90,24 +85,24 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSearchUnitNo = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.groupBoxPets = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxPetQuantity = new System.Windows.Forms.TextBox();
+            this.txtBoxPetName = new System.Windows.Forms.TextBox();
+            this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
+            this.txtBoxPetType = new System.Windows.Forms.TextBox();
             this.NewTenantPnl.SuspendLayout();
             this.grpboxnew.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBoxPets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).BeginInit();
             this.gbStay.SuspendLayout();
             this.groupBoxOtherOccupants.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBoxPets.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewTenantPnl
@@ -203,7 +198,6 @@
             // 
             this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
             this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
-            this.groupBox6.Controls.Add(this.btnSearchUnitNo);
             this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
             this.groupBox6.Controls.Add(this.txtBoxEmail);
             this.groupBox6.Controls.Add(this.txtBoxTelNo);
@@ -213,15 +207,11 @@
             this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
-            this.groupBox6.Controls.Add(this.txtBoxOwner);
-            this.groupBox6.Controls.Add(this.txtBoxUnitNo);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.txtBoxLastname);
             this.groupBox6.Controls.Add(this.txtBoxMiddleName);
             this.groupBox6.Controls.Add(this.txtBoxFirstname);
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.label29);
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label13);
@@ -235,6 +225,32 @@
             this.groupBox6.TabIndex = 144;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
+            // 
+            // comboBoxMaritalStatus
+            // 
+            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMaritalStatus.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.comboBoxMaritalStatus.FormattingEnabled = true;
+            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
+            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(110, 109);
+            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
+            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(213, 22);
+            this.comboBoxMaritalStatus.TabIndex = 148;
+            // 
+            // datePickerDateOfBirth
+            // 
+            this.datePickerDateOfBirth.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDateOfBirth.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateOfBirth.Location = new System.Drawing.Point(109, 87);
+            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(214, 20);
+            this.datePickerDateOfBirth.TabIndex = 147;
             // 
             // txtBoxProvincialAddress
             // 
@@ -314,28 +330,10 @@
             // txtBoxNatureOfOccupancy
             // 
             this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(146, 177);
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(145, 137);
             this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
             this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(178, 20);
             this.txtBoxNatureOfOccupancy.TabIndex = 134;
-            // 
-            // txtBoxOwner
-            // 
-            this.txtBoxOwner.BackColor = System.Drawing.Color.White;
-            this.txtBoxOwner.Enabled = false;
-            this.txtBoxOwner.Location = new System.Drawing.Point(109, 154);
-            this.txtBoxOwner.Name = "txtBoxOwner";
-            this.txtBoxOwner.Size = new System.Drawing.Size(215, 20);
-            this.txtBoxOwner.TabIndex = 133;
-            // 
-            // txtBoxUnitNo
-            // 
-            this.txtBoxUnitNo.BackColor = System.Drawing.Color.White;
-            this.txtBoxUnitNo.Enabled = false;
-            this.txtBoxUnitNo.Location = new System.Drawing.Point(109, 132);
-            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
-            this.txtBoxUnitNo.Size = new System.Drawing.Size(215, 20);
-            this.txtBoxUnitNo.TabIndex = 132;
             // 
             // label20
             // 
@@ -383,28 +381,6 @@
             this.txtBoxFirstname.Name = "txtBoxFirstname";
             this.txtBoxFirstname.Size = new System.Drawing.Size(215, 20);
             this.txtBoxFirstname.TabIndex = 127;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label8.Location = new System.Drawing.Point(18, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 14);
-            this.label8.TabIndex = 106;
-            this.label8.Text = "Unit Owner:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label29.Location = new System.Drawing.Point(18, 135);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(78, 14);
-            this.label29.TabIndex = 105;
-            this.label29.Text = "Unit Number:";
             // 
             // label12
             // 
@@ -466,67 +442,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label4.Location = new System.Drawing.Point(18, 180);
+            this.label4.Location = new System.Drawing.Point(17, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 14);
             this.label4.TabIndex = 43;
             this.label4.Text = "Nature of Occupancy:";
-            // 
-            // groupBoxPets
-            // 
-            this.groupBoxPets.Controls.Add(this.label17);
-            this.groupBoxPets.Controls.Add(this.label10);
-            this.groupBoxPets.Controls.Add(this.label9);
-            this.groupBoxPets.Controls.Add(this.label6);
-            this.groupBoxPets.Controls.Add(this.txtBoxPetQuantity);
-            this.groupBoxPets.Controls.Add(this.txtBoxPetName);
-            this.groupBoxPets.Controls.Add(this.txtBoxPetBreed);
-            this.groupBoxPets.Controls.Add(this.txtBoxPetType);
-            this.groupBoxPets.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPets.Location = new System.Drawing.Point(11, 194);
-            this.groupBoxPets.Name = "groupBoxPets";
-            this.groupBoxPets.Size = new System.Drawing.Size(744, 71);
-            this.groupBoxPets.TabIndex = 48;
-            this.groupBoxPets.TabStop = false;
-            this.groupBoxPets.Text = "Pets (if any)";
-            this.groupBoxPets.Visible = false;
-            this.groupBoxPets.Enter += new System.EventHandler(this.gbPets_Enter);
-            // 
-            // txtBoxPetQuantity
-            // 
-            this.txtBoxPetQuantity.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPetQuantity.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxPetQuantity.Location = new System.Drawing.Point(28, 36);
-            this.txtBoxPetQuantity.Name = "txtBoxPetQuantity";
-            this.txtBoxPetQuantity.Size = new System.Drawing.Size(86, 20);
-            this.txtBoxPetQuantity.TabIndex = 71;
-            // 
-            // txtBoxPetName
-            // 
-            this.txtBoxPetName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPetName.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxPetName.Location = new System.Drawing.Point(509, 36);
-            this.txtBoxPetName.Name = "txtBoxPetName";
-            this.txtBoxPetName.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxPetName.TabIndex = 74;
-            // 
-            // txtBoxPetBreed
-            // 
-            this.txtBoxPetBreed.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPetBreed.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxPetBreed.Location = new System.Drawing.Point(306, 36);
-            this.txtBoxPetBreed.Name = "txtBoxPetBreed";
-            this.txtBoxPetBreed.Size = new System.Drawing.Size(164, 20);
-            this.txtBoxPetBreed.TabIndex = 73;
-            // 
-            // txtBoxPetType
-            // 
-            this.txtBoxPetType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPetType.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxPetType.Location = new System.Drawing.Point(138, 36);
-            this.txtBoxPetType.Name = "txtBoxPetType";
-            this.txtBoxPetType.Size = new System.Drawing.Size(149, 20);
-            this.txtBoxPetType.TabIndex = 72;
             // 
             // pictureBoxTenant
             // 
@@ -676,6 +596,24 @@
             this.groupBoxOtherOccupants.Text = "Other Occupants";
             this.groupBoxOtherOccupants.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(127, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 14);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(364, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 14);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Relation";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -771,7 +709,6 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Enabled = false;
             this.btnCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreate.Location = new System.Drawing.Point(711, 547);
@@ -806,60 +743,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Other Information";
             // 
-            // btnSearchUnitNo
+            // groupBoxPets
             // 
-            this.btnSearchUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchUnitNo.Location = new System.Drawing.Point(324, 131);
-            this.btnSearchUnitNo.Name = "btnSearchUnitNo";
-            this.btnSearchUnitNo.Size = new System.Drawing.Size(28, 23);
-            this.btnSearchUnitNo.TabIndex = 146;
-            this.btnSearchUnitNo.Text = "...";
-            this.btnSearchUnitNo.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(364, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 14);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Relation";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 14);
-            this.label5.TabIndex = 73;
-            this.label5.Text = "Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 14);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "Quantity";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(196, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 14);
-            this.label9.TabIndex = 76;
-            this.label9.Text = "Type";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(365, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 14);
-            this.label10.TabIndex = 77;
-            this.label10.Text = "Breed/s";
+            this.groupBoxPets.Controls.Add(this.label17);
+            this.groupBoxPets.Controls.Add(this.label10);
+            this.groupBoxPets.Controls.Add(this.label9);
+            this.groupBoxPets.Controls.Add(this.label6);
+            this.groupBoxPets.Controls.Add(this.txtBoxPetQuantity);
+            this.groupBoxPets.Controls.Add(this.txtBoxPetName);
+            this.groupBoxPets.Controls.Add(this.txtBoxPetBreed);
+            this.groupBoxPets.Controls.Add(this.txtBoxPetType);
+            this.groupBoxPets.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxPets.Location = new System.Drawing.Point(11, 194);
+            this.groupBoxPets.Name = "groupBoxPets";
+            this.groupBoxPets.Size = new System.Drawing.Size(744, 71);
+            this.groupBoxPets.TabIndex = 48;
+            this.groupBoxPets.TabStop = false;
+            this.groupBoxPets.Text = "Pets (if any)";
+            this.groupBoxPets.Visible = false;
+            this.groupBoxPets.Enter += new System.EventHandler(this.gbPets_Enter);
             // 
             // label17
             // 
@@ -870,31 +772,68 @@
             this.label17.TabIndex = 78;
             this.label17.Text = "Name of Pet/s";
             // 
-            // datePickerDateOfBirth
+            // label10
             // 
-            this.datePickerDateOfBirth.CustomFormat = "mm/dd/yyyy";
-            this.datePickerDateOfBirth.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerDateOfBirth.Location = new System.Drawing.Point(109, 87);
-            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
-            this.datePickerDateOfBirth.Size = new System.Drawing.Size(214, 20);
-            this.datePickerDateOfBirth.TabIndex = 147;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(365, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 14);
+            this.label10.TabIndex = 77;
+            this.label10.Text = "Breed/s";
             // 
-            // comboBoxMaritalStatus
+            // label9
             // 
-            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMaritalStatus.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.comboBoxMaritalStatus.FormattingEnabled = true;
-            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
-            "Single",
-            "Married",
-            "Divorced",
-            "Widowed"});
-            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(110, 109);
-            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
-            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(213, 22);
-            this.comboBoxMaritalStatus.TabIndex = 148;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(196, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 14);
+            this.label9.TabIndex = 76;
+            this.label9.Text = "Type";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 14);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Quantity";
+            // 
+            // txtBoxPetQuantity
+            // 
+            this.txtBoxPetQuantity.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPetQuantity.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxPetQuantity.Location = new System.Drawing.Point(28, 36);
+            this.txtBoxPetQuantity.Name = "txtBoxPetQuantity";
+            this.txtBoxPetQuantity.Size = new System.Drawing.Size(86, 20);
+            this.txtBoxPetQuantity.TabIndex = 71;
+            // 
+            // txtBoxPetName
+            // 
+            this.txtBoxPetName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPetName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxPetName.Location = new System.Drawing.Point(509, 36);
+            this.txtBoxPetName.Name = "txtBoxPetName";
+            this.txtBoxPetName.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxPetName.TabIndex = 74;
+            // 
+            // txtBoxPetBreed
+            // 
+            this.txtBoxPetBreed.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPetBreed.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxPetBreed.Location = new System.Drawing.Point(306, 36);
+            this.txtBoxPetBreed.Name = "txtBoxPetBreed";
+            this.txtBoxPetBreed.Size = new System.Drawing.Size(164, 20);
+            this.txtBoxPetBreed.TabIndex = 73;
+            // 
+            // txtBoxPetType
+            // 
+            this.txtBoxPetType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPetType.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxPetType.Location = new System.Drawing.Point(138, 36);
+            this.txtBoxPetType.Name = "txtBoxPetType";
+            this.txtBoxPetType.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxPetType.TabIndex = 72;
             // 
             // CreateNewTenantForm
             // 
@@ -916,14 +855,14 @@
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBoxPets.ResumeLayout(false);
-            this.groupBoxPets.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).EndInit();
             this.gbStay.ResumeLayout(false);
             this.gbStay.PerformLayout();
             this.groupBoxOtherOccupants.ResumeLayout(false);
             this.groupBoxOtherOccupants.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBoxPets.ResumeLayout(false);
+            this.groupBoxPets.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -972,15 +911,11 @@
         private System.Windows.Forms.TextBox txtBoxHomeAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
-        private System.Windows.Forms.TextBox txtBoxOwner;
-        private System.Windows.Forms.TextBox txtBoxUnitNo;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtBoxLastname;
         private System.Windows.Forms.TextBox txtBoxMiddleName;
         private System.Windows.Forms.TextBox txtBoxFirstname;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
@@ -992,7 +927,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSearchUnitNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label17;

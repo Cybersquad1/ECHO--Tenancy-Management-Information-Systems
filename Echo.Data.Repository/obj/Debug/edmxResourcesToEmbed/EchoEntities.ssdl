@@ -40,16 +40,6 @@
     <Property Name="OtherPenaltyAmount" Type="decimal" Precision="18" Scale="2" />
     <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
-  <EntityType Name="OtherOccupants">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="TenantProfileID" Type="uniqueidentifier" />
-    <Property Name="FullName" Type="varchar" MaxLength="100" />
-    <Property Name="Relation" Type="varchar" MaxLength="50" />
-    <Property Name="DateOfBirth" Type="datetime" />
-  </EntityType>
   <EntityType Name="PaymentHistory">
     <Key>
       <PropertyRef Name="ID" />
@@ -222,18 +212,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_OtherOccupants_TenantProfile">
-    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
-    <End Role="OtherOccupants" Type="Self.OtherOccupants" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TenantProfile">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OtherOccupants">
-        <PropertyRef Name="TenantProfileID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PaymentHistory_UnitProfile">
     <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
     <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
@@ -270,18 +248,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TenantProfile_UnitProfile">
-    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
-    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UnitProfile">
-        <PropertyRef Name="UnitNumber" />
-      </Principal>
-      <Dependent Role="TenantProfile">
-        <PropertyRef Name="UnitNumber" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_WaterBilling_UnitProfile">
     <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
     <End Role="WaterBilling" Type="Self.WaterBilling" Multiplicity="*" />
@@ -298,7 +264,6 @@
     <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
@@ -322,10 +287,6 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
     </AssociationSet>
-    <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="Self.FK_OtherOccupants_TenantProfile">
-      <End Role="TenantProfile" EntitySet="TenantProfile" />
-      <End Role="OtherOccupants" EntitySet="OtherOccupants" />
-    </AssociationSet>
     <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
@@ -337,10 +298,6 @@
     <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="Self.FK_TenantArchive_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="TenantArchive" EntitySet="TenantArchive" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="Self.FK_TenantProfile_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfile" />
-      <End Role="TenantProfile" EntitySet="TenantProfile" />
     </AssociationSet>
     <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="Self.FK_WaterBilling_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />

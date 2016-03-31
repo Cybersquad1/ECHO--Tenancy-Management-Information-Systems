@@ -4,7 +4,6 @@
     <EntitySet Name="LogSheets" EntityType="EchoModel.LogSheet" />
     <EntitySet Name="LogSheetActivities" EntityType="EchoModel.LogSheetActivity" />
     <EntitySet Name="MonthlyAssociationDues" EntityType="EchoModel.MonthlyAssociationDue" />
-    <EntitySet Name="OtherOccupants" EntityType="EchoModel.OtherOccupant" />
     <EntitySet Name="PaymentHistories" EntityType="EchoModel.PaymentHistory" />
     <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagram" />
     <EntitySet Name="TenantArchives" EntityType="EchoModel.TenantArchive" />
@@ -28,10 +27,6 @@
       <End Role="UnitProfile" EntitySet="UnitProfiles" />
       <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDues" />
     </AssociationSet>
-    <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="EchoModel.FK_OtherOccupants_TenantProfile">
-      <End Role="TenantProfile" EntitySet="TenantProfiles" />
-      <End Role="OtherOccupant" EntitySet="OtherOccupants" />
-    </AssociationSet>
     <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="EchoModel.FK_PaymentHistory_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfiles" />
       <End Role="PaymentHistory" EntitySet="PaymentHistories" />
@@ -43,10 +38,6 @@
     <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="EchoModel.FK_TenantArchive_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfiles" />
       <End Role="TenantArchive" EntitySet="TenantArchives" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="EchoModel.FK_TenantProfile_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfiles" />
-      <End Role="TenantProfile" EntitySet="TenantProfiles" />
     </AssociationSet>
     <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="EchoModel.FK_WaterBilling_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfiles" />
@@ -97,17 +88,6 @@
     <Property Name="OtherPenaltyAmount" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
-  </EntityType>
-  <EntityType Name="OtherOccupant">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="TenantProfileID" Type="Guid" />
-    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="TenantProfile" Relationship="EchoModel.FK_OtherOccupants_TenantProfile" FromRole="OtherOccupant" ToRole="TenantProfile" />
   </EntityType>
   <EntityType Name="PaymentHistory">
     <Key>
@@ -181,9 +161,7 @@
     <Property Name="PetType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PetBreed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PetName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="OtherOccupants" Relationship="EchoModel.FK_OtherOccupants_TenantProfile" FromRole="TenantProfile" ToRole="OtherOccupant" />
     <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
-    <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_TenantProfile_UnitProfile" FromRole="TenantProfile" ToRole="UnitProfile" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
@@ -200,7 +178,6 @@
     <NavigationProperty Name="MonthlyAssociationDues" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
     <NavigationProperty Name="PaymentHistories" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
     <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
-    <NavigationProperty Name="TenantProfiles" Relationship="EchoModel.FK_TenantProfile_UnitProfile" FromRole="UnitProfile" ToRole="TenantProfile" />
     <NavigationProperty Name="WaterBillings" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
   </EntityType>
   <EntityType Name="UserProfile">
@@ -295,18 +272,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_OtherOccupants_TenantProfile">
-    <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="0..1" />
-    <End Type="EchoModel.OtherOccupant" Role="OtherOccupant" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TenantProfile">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="OtherOccupant">
-        <PropertyRef Name="TenantProfileID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PaymentHistory_UnitProfile">
     <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
     <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
@@ -339,18 +304,6 @@
         <PropertyRef Name="UnitNumber" />
       </Principal>
       <Dependent Role="TenantArchive">
-        <PropertyRef Name="UnitNumber" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TenantProfile_UnitProfile">
-    <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
-    <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UnitProfile">
-        <PropertyRef Name="UnitNumber" />
-      </Principal>
-      <Dependent Role="TenantProfile">
         <PropertyRef Name="UnitNumber" />
       </Dependent>
     </ReferentialConstraint>

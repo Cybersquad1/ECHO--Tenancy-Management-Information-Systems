@@ -28,7 +28,6 @@ namespace Echo.Data.Repository
         public virtual DbSet<LogSheet> LogSheets { get; set; }
         public virtual DbSet<LogSheetActivity> LogSheetActivities { get; set; }
         public virtual DbSet<MonthlyAssociationDue> MonthlyAssociationDues { get; set; }
-        public virtual DbSet<OtherOccupant> OtherOccupants { get; set; }
         public virtual DbSet<PaymentHistory> PaymentHistories { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TenantArchive> TenantArchives { get; set; }

@@ -45,16 +45,6 @@
           <Property Name="OtherPenaltyAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="OtherOccupants">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TenantProfileID" Type="uniqueidentifier" />
-          <Property Name="FullName" Type="varchar" MaxLength="100" />
-          <Property Name="Relation" Type="varchar" MaxLength="50" />
-          <Property Name="DateOfBirth" Type="datetime" />
-        </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
             <PropertyRef Name="ID" />
@@ -227,18 +217,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OtherOccupants_TenantProfile">
-          <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
-          <End Role="OtherOccupants" Type="Self.OtherOccupants" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TenantProfile">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="OtherOccupants">
-              <PropertyRef Name="TenantProfileID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PaymentHistory_UnitProfile">
           <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
           <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
@@ -275,18 +253,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TenantProfile_UnitProfile">
-          <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
-          <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UnitProfile">
-              <PropertyRef Name="UnitNumber" />
-            </Principal>
-            <Dependent Role="TenantProfile">
-              <PropertyRef Name="UnitNumber" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_WaterBilling_UnitProfile">
           <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
           <End Role="WaterBilling" Type="Self.WaterBilling" Multiplicity="*" />
@@ -303,7 +269,6 @@
           <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OtherOccupants" EntityType="Self.OtherOccupants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
@@ -327,10 +292,6 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
           </AssociationSet>
-          <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="Self.FK_OtherOccupants_TenantProfile">
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
-            <End Role="OtherOccupants" EntitySet="OtherOccupants" />
-          </AssociationSet>
           <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="PaymentHistory" EntitySet="PaymentHistory" />
@@ -342,10 +303,6 @@
           <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="Self.FK_TenantArchive_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="TenantArchive" EntitySet="TenantArchive" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="Self.FK_TenantProfile_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
           </AssociationSet>
           <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="Self.FK_WaterBilling_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfile" />
@@ -360,7 +317,6 @@
           <EntitySet Name="LogSheets" EntityType="EchoModel.LogSheet" />
           <EntitySet Name="LogSheetActivities" EntityType="EchoModel.LogSheetActivity" />
           <EntitySet Name="MonthlyAssociationDues" EntityType="EchoModel.MonthlyAssociationDue" />
-          <EntitySet Name="OtherOccupants" EntityType="EchoModel.OtherOccupant" />
           <EntitySet Name="PaymentHistories" EntityType="EchoModel.PaymentHistory" />
           <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagram" />
           <EntitySet Name="TenantArchives" EntityType="EchoModel.TenantArchive" />
@@ -384,10 +340,6 @@
             <End Role="UnitProfile" EntitySet="UnitProfiles" />
             <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDues" />
           </AssociationSet>
-          <AssociationSet Name="FK_OtherOccupants_TenantProfile" Association="EchoModel.FK_OtherOccupants_TenantProfile">
-            <End Role="TenantProfile" EntitySet="TenantProfiles" />
-            <End Role="OtherOccupant" EntitySet="OtherOccupants" />
-          </AssociationSet>
           <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="EchoModel.FK_PaymentHistory_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfiles" />
             <End Role="PaymentHistory" EntitySet="PaymentHistories" />
@@ -399,10 +351,6 @@
           <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="EchoModel.FK_TenantArchive_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfiles" />
             <End Role="TenantArchive" EntitySet="TenantArchives" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TenantProfile_UnitProfile" Association="EchoModel.FK_TenantProfile_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfiles" />
-            <End Role="TenantProfile" EntitySet="TenantProfiles" />
           </AssociationSet>
           <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="EchoModel.FK_WaterBilling_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfiles" />
@@ -453,17 +401,6 @@
           <Property Name="OtherPenaltyAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
-        </EntityType>
-        <EntityType Name="OtherOccupant">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="TenantProfileID" Type="Guid" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Relation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="TenantProfile" Relationship="EchoModel.FK_OtherOccupants_TenantProfile" FromRole="OtherOccupant" ToRole="TenantProfile" />
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
@@ -537,9 +474,7 @@
           <Property Name="PetType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PetBreed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PetName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="OtherOccupants" Relationship="EchoModel.FK_OtherOccupants_TenantProfile" FromRole="TenantProfile" ToRole="OtherOccupant" />
           <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
-          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_TenantProfile_UnitProfile" FromRole="TenantProfile" ToRole="UnitProfile" />
         </EntityType>
         <EntityType Name="UnitProfile">
           <Key>
@@ -556,7 +491,6 @@
           <NavigationProperty Name="MonthlyAssociationDues" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
           <NavigationProperty Name="PaymentHistories" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
           <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
-          <NavigationProperty Name="TenantProfiles" Relationship="EchoModel.FK_TenantProfile_UnitProfile" FromRole="UnitProfile" ToRole="TenantProfile" />
           <NavigationProperty Name="WaterBillings" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
         </EntityType>
         <EntityType Name="UserProfile">
@@ -651,18 +585,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OtherOccupants_TenantProfile">
-          <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="0..1" />
-          <End Type="EchoModel.OtherOccupant" Role="OtherOccupant" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TenantProfile">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="OtherOccupant">
-              <PropertyRef Name="TenantProfileID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PaymentHistory_UnitProfile">
           <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
           <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
@@ -695,18 +617,6 @@
               <PropertyRef Name="UnitNumber" />
             </Principal>
             <Dependent Role="TenantArchive">
-              <PropertyRef Name="UnitNumber" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TenantProfile_UnitProfile">
-          <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
-          <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UnitProfile">
-              <PropertyRef Name="UnitNumber" />
-            </Principal>
-            <Dependent Role="TenantProfile">
               <PropertyRef Name="UnitNumber" />
             </Dependent>
           </ReferentialConstraint>
@@ -768,17 +678,6 @@
                 <ScalarProperty Name="DueDate" ColumnName="DueDate" />
                 <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
                 <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OtherOccupants">
-            <EntityTypeMapping TypeName="EchoModel.OtherOccupant">
-              <MappingFragment StoreEntitySet="OtherOccupants">
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Relation" ColumnName="Relation" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

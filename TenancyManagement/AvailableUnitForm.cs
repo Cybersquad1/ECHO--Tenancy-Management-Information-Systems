@@ -185,6 +185,12 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 txtBoxAvailability.Text = "Occupied";
             }
 
+            if(selectedUnit.StartOfOccupancy != null)
+                datePickerStart.Value = DateTime.Parse(selectedUnit.StartOfOccupancy.ToString());
+
+            if (selectedUnit.ExpectedEndOfOccupancy != null)
+                datePickerEnd.Value = DateTime.Parse(selectedUnit.ExpectedEndOfOccupancy.ToString());
+
             txtBoxFloor.Text = selectedUnit.Floor;
             txtBoxType.Text = selectedUnit.Type;
         }

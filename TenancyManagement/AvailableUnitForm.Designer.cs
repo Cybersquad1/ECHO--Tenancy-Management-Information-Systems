@@ -71,6 +71,15 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
+            this.datePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnSelectTenant = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -79,6 +88,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // unitPnl
@@ -94,6 +104,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(216, 4);
@@ -182,6 +193,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSelectTenant);
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.btnTransferOwnership);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -196,9 +209,9 @@
             // btnTransferOwnership
             // 
             this.btnTransferOwnership.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransferOwnership.Location = new System.Drawing.Point(272, 310);
+            this.btnTransferOwnership.Location = new System.Drawing.Point(376, 350);
             this.btnTransferOwnership.Name = "btnTransferOwnership";
-            this.btnTransferOwnership.Size = new System.Drawing.Size(212, 24);
+            this.btnTransferOwnership.Size = new System.Drawing.Size(156, 24);
             this.btnTransferOwnership.TabIndex = 18;
             this.btnTransferOwnership.Text = "Transfer Ownership";
             this.btnTransferOwnership.UseVisualStyleBackColor = true;
@@ -214,9 +227,9 @@
             this.groupBox6.Controls.Add(this.txtBoxFloor);
             this.groupBox6.Controls.Add(this.txtBoxAvailability);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(203, 162);
+            this.groupBox6.Location = new System.Drawing.Point(187, 82);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(345, 142);
+            this.groupBox6.Size = new System.Drawing.Size(345, 112);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             // 
@@ -292,15 +305,13 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtBoxTenant);
-            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtBoxUnitNumber);
             this.groupBox3.Controls.Add(this.linkLabel1);
-            this.groupBox3.Location = new System.Drawing.Point(203, 73);
+            this.groupBox3.Location = new System.Drawing.Point(187, 11);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(345, 83);
+            this.groupBox3.Size = new System.Drawing.Size(345, 65);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
@@ -308,17 +319,17 @@
             // 
             this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
             this.txtBoxTenant.Enabled = false;
-            this.txtBoxTenant.Location = new System.Drawing.Point(91, 55);
+            this.txtBoxTenant.Location = new System.Drawing.Point(143, 105);
             this.txtBoxTenant.Name = "txtBoxTenant";
-            this.txtBoxTenant.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxTenant.Size = new System.Drawing.Size(174, 21);
             this.txtBoxTenant.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Location = new System.Drawing.Point(88, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 14);
+            this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tenant:";
             // 
@@ -543,6 +554,101 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtBoxTenant);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.datePickerEnd);
+            this.groupBox4.Controls.Add(this.datePickerStart);
+            this.groupBox4.Controls.Add(this.txtBoxNatureOfOccupancy);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(187, 203);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(345, 141);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Start Of Occupancy:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "End Of Occupancy:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Nature Of Occupancy:";
+            // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.Enabled = false;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(174, 20);
+            this.txtBoxNatureOfOccupancy.TabIndex = 122;
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.CustomFormat = "mm/dd/yyyy";
+            this.datePickerStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(143, 28);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.Size = new System.Drawing.Size(174, 20);
+            this.datePickerStart.TabIndex = 123;
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.CustomFormat = "mm/dd/yyyy";
+            this.datePickerEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(143, 53);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.Size = new System.Drawing.Size(174, 20);
+            this.datePickerEnd.TabIndex = 124;
+            // 
+            // btnSelectTenant
+            // 
+            this.btnSelectTenant.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectTenant.Location = new System.Drawing.Point(187, 350);
+            this.btnSelectTenant.Name = "btnSelectTenant";
+            this.btnSelectTenant.Size = new System.Drawing.Size(183, 24);
+            this.btnSelectTenant.TabIndex = 20;
+            this.btnSelectTenant.Text = "Select Tenant";
+            this.btnSelectTenant.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(12, 20);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(59, 28);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "     Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // AvailableUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +672,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,5 +722,14 @@
         private System.Windows.Forms.Button btnTransferOwnership;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxType;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSelectTenant;
+        private System.Windows.Forms.DateTimePicker datePickerEnd;
+        private System.Windows.Forms.DateTimePicker datePickerStart;
+        private System.Windows.Forms.Button btnSave;
     }
 }

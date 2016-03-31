@@ -44,17 +44,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OtherOccupants">
-      <EntityTypeMapping TypeName="EchoModel.OtherOccupant">
-        <MappingFragment StoreEntitySet="OtherOccupants">
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="Relation" ColumnName="Relation" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="TenantProfileID" ColumnName="TenantProfileID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PaymentHistories">
       <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
         <MappingFragment StoreEntitySet="PaymentHistory">

@@ -27,6 +27,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void Save()
         {
             TenantProfile newTenantProfile = new TenantProfile();
+
             //Login Credentials
             newTenantProfile.Username = txtBoxUsername.Text;
             newTenantProfile.Password = txtBoxPassword.Text;
@@ -90,7 +91,6 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             newTenantProfile.PetQuantity = txtBoxPetQuantity.Text;
             newTenantProfile.PetType = txtBoxPetType.Text;
             newTenantProfile.PetName = txtBoxPetName.Text;
-
 
             //Image upload
             if(pictureBoxTenant.Image != null)
