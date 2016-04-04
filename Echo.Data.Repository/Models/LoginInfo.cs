@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Echo.Data.Repository.Models
+﻿namespace Echo.Data.Repository.Models
 {
+    //To transfer login information to its corresponding form upon login
+    //For user privilege
     public class LoginInfo
     {
         public string username { get; set; }

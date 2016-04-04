@@ -8,6 +8,11 @@ namespace Echo.Data.Repository.ViewModel
 {
    public class TenantViewModel : ViewModelBase<TenantProfile>
     {
+        public TenantProfile TryLogin(string _username, string _password)
+        {
+            return GetEntity(r => r.Username == _username && r.Password == _password);
+        }
+
         public TenantProfile GetSelectedTenant(Guid? _tenantID)
         {
             return GetEntity(r => r.ID == _tenantID);
@@ -37,7 +42,7 @@ namespace Echo.Data.Repository.ViewModel
 
                 return true;
             }
-            catch
+            catch(Exception error) //just for debugging
             {
                 return false;
             }

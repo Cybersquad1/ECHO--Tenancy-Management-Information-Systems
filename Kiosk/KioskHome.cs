@@ -23,9 +23,12 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void Login()
         {
+            //check if login is in user table
             var user = new UserViewModel().TryLogin(txtBoxUsername.Text, txtBoxPassword.Text);
+            //check if login is in tenant table
+            var tenant = new TenantViewModel().TryLogin(txtBoxUsername.Text, txtBoxPassword.Text);
 
-            if (user != null)
+            if (user != null)//user login
             {
                 if (user.Status == "Y")
                 {
@@ -45,12 +48,9 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
                         Hide();
                     }
-                    else //if user is Tenant or Unit Owner
+                    else //If unit owner | accounting
                     {
-                        HomeTenantForm ht1 = new HomeTenantForm();
-                        ht1.Show();
 
-                        Hide();
                     }
                 }
                 else
@@ -59,7 +59,29 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                     txtBoxPassword.Text = "";
                 }
             }
-            else
+
+            if(tenant != null) //tenant login
+            {
+                if(tenant.Status == "Y")
+                {
+                    lblErrorLogin.Hide();
+
+                    LoginInfo loginInfo = new LoginInfo
+                    {
+                        username = tenant.Username,
+                        fullName = tenant.FirstName + " " +tenant.LastName,
+                        accountType = "TENANT"
+                    };
+
+                    HomeTenantForm ht1 = new HomeTenantForm();
+                    ht1.Show();
+
+                    Hide();
+                }
+            }
+
+            //if username and password not match in user and tenant profile table
+            if(user == null && tenant == null)
             {
                 lblErrorLogin.Show();
                 lblErrorLogin.Text = "Incorrect username or password";
@@ -67,20 +89,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//Login button
         {
             Login();           
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            HomeTenantForm ht1 = new HomeTenantForm();
-            ht1.Show();
-        }
-
         private void Home2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); //closed the program when this form is closed
         }
 
         private void txtBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -90,7 +106,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void txtBoxPassword_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if(e.KeyData == Keys.Enter)//press enter on password textbox to login
             {
                 Login();
             }
