@@ -47,6 +47,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBoxContactNo = new System.Windows.Forms.TextBox();
             this.txtBoxTelNo = new System.Windows.Forms.TextBox();
@@ -81,7 +82,7 @@
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.btnUploadImage = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.btnDeactivate);
             this.groupBox5.Controls.Add(this.btnSave);
             this.groupBox5.Controls.Add(this.btnEdit);
@@ -161,22 +163,22 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtSearch.Location = new System.Drawing.Point(631, 22);
+            this.txtSearch.Location = new System.Drawing.Point(636, 22);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(277, 20);
             this.txtSearch.TabIndex = 18;
-            this.txtSearch.Text = "Enter Name to search..";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             // 
             // btnSearch
             // 
+            this.btnSearch.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(914, 20);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(30, 24);
             this.btnSearch.TabIndex = 19;
-            this.btnSearch.Text = ". . .";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -284,6 +286,18 @@
             this.tabPage2.Text = "Employee Information";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Enabled = false;
+            this.btnUploadImage.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadImage.Location = new System.Drawing.Point(17, 158);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(149, 24);
+            this.btnUploadImage.TabIndex = 127;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // groupBox2
             // 
@@ -568,7 +582,7 @@
             this.btnGeneratePassword.Name = "btnGeneratePassword";
             this.btnGeneratePassword.Size = new System.Drawing.Size(212, 24);
             this.btnGeneratePassword.TabIndex = 17;
-            this.btnGeneratePassword.Text = "Generate Password";
+            this.btnGeneratePassword.Text = "Generate New Password";
             this.btnGeneratePassword.UseVisualStyleBackColor = true;
             this.btnGeneratePassword.Click += new System.EventHandler(this.btnGeneratePassword_Click);
             // 
@@ -677,17 +691,16 @@
             this.pictureBoxUser.TabIndex = 126;
             this.pictureBoxUser.TabStop = false;
             // 
-            // btnUploadImage
+            // label1
             // 
-            this.btnUploadImage.Enabled = false;
-            this.btnUploadImage.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadImage.Location = new System.Drawing.Point(17, 158);
-            this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Size = new System.Drawing.Size(149, 24);
-            this.btnUploadImage.TabIndex = 127;
-            this.btnUploadImage.Text = "Upload Image";
-            this.btnUploadImage.UseVisualStyleBackColor = true;
-            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label1.Location = new System.Drawing.Point(726, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "Enter Name to Search";
             // 
             // Edit_User_Info
             // 
@@ -771,5 +784,6 @@
         private System.Windows.Forms.TextBox txtBoxMobileNo;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -55,39 +55,53 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void GetSelectedUser(Guid _userID)
         {
-            var user = vm.GetSelectedUser(_userID); //get selected user
-
-            //Assign value to corresponding fields
-            txtBoxFirstName.Text = user.FirstName;
-            txtBoxMiddleName.Text = user.MiddleName;
-            txtBoxLastName.Text = user.LastName;
-            txtBoxUsername.Text = user.Username;
-            datePickerDateOfBirth.Value = user.DateOfBirth;
-            comboBoxMaritalStatus.Text = user.MaritalStatus;
-            txtBoxHomeAddress.Text = user.HomeAddress;
-            txtBoxProvincialAddress.Text = user.ProvincialAddress;
-            txtBoxMobileNo.Text = user.MobileNo;
-            txtBoxTelNo.Text = user.TelephoneNo;
-            txtBoxEmail.Text = user.Email;
-            txtBoxContactNo.Text = user.ContactNo;
-            txtBoxContactPerson.Text = user.ContactPerson;
-            txtBoxRelationToContactPerson.Text = user.RelationshipToContact;
-
-            if(user.ImageContent != null)
+            try
             {
-                Stream imgStr = new MemoryStream(user.ImageContent);
+                var user = vm.GetSelectedUser(_userID); //get selected user
 
-                pictureBoxUser.Image = System.Drawing.Image.FromStream(imgStr);
+                if (user != null)
+                {
+                    //Assign value to corresponding fields
+                    txtBoxFirstName.Text = user.FirstName;
+                    txtBoxMiddleName.Text = user.MiddleName;
+                    txtBoxLastName.Text = user.LastName;
+                    txtBoxUsername.Text = user.Username;
+                    datePickerDateOfBirth.Value = user.DateOfBirth;
+                    comboBoxMaritalStatus.Text = user.MaritalStatus;
+                    txtBoxHomeAddress.Text = user.HomeAddress;
+                    txtBoxProvincialAddress.Text = user.ProvincialAddress;
+                    txtBoxMobileNo.Text = user.MobileNo;
+                    txtBoxTelNo.Text = user.TelephoneNo;
+                    txtBoxEmail.Text = user.Email;
+                    txtBoxContactNo.Text = user.ContactNo;
+                    txtBoxContactPerson.Text = user.ContactPerson;
+                    txtBoxRelationToContactPerson.Text = user.RelationshipToContact;
+
+                    if (user.ImageContent != null)
+                    {
+                        Stream imgStr = new MemoryStream(user.ImageContent);
+
+                        pictureBoxUser.Image = System.Drawing.Image.FromStream(imgStr);
+                    }
+                    else
+                    {
+                        pictureBoxUser.Image = null;
+                    }
+
+                    if (user.Status == "Y")
+                        btnDeactivate.Text = "Deactivate";
+                    else
+                        btnDeactivate.Text = "Activate";
+                }
+                else
+                {
+                    MessageBox.Show("No data found", "Error");
+                }
             }
-            else
+            catch(Exception error)
             {
-                pictureBoxUser.Image = null;
+                MessageBox.Show(error.Message, "Error");
             }
-
-            if (user.Status == "Y")
-                btnDeactivate.Text = "Deactivate";
-            else
-                btnDeactivate.Text = "Activate";    
         }
 
         private void EnableDisableUserFields(bool _value)
@@ -122,12 +136,19 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void listViewUser_DoubleClick(object sender, EventArgs e)
         {
-            TabPage openTab = tabControl1.TabPages[1];
-            tabControl1.SelectedTab = openTab;
+            try
+            {
+                TabPage openTab = tabControl1.TabPages[1];
+                tabControl1.SelectedTab = openTab;
 
-            userID = Guid.Parse(listViewUser.SelectedItems[0].SubItems[0].Text);
+                userID = Guid.Parse(listViewUser.SelectedItems[0].SubItems[0].Text);
 
-            GetSelectedUser(userID);
+                GetSelectedUser(userID);
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message, "Error");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

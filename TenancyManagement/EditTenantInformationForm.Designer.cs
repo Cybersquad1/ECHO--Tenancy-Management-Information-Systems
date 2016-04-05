@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.EditTenantPnl = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnActivate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewTenants = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,50 +46,49 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGeneratePassword = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txtBoxEndDateOfOccupancy = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.txtBoxStartDateOfOccupancy = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtBoxPetType = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtBoxPetName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.txtBoxTelephoneNo = new System.Windows.Forms.TextBox();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBoxLastName = new System.Windows.Forms.TextBox();
+            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
+            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -98,9 +99,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditTenantPnl.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -108,12 +108,12 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // EditTenantPnl
             // 
-            this.EditTenantPnl.Controls.Add(this.groupBox5);
+            this.EditTenantPnl.Controls.Add(this.btnClose);
             this.EditTenantPnl.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditTenantPnl.Location = new System.Drawing.Point(13, 8);
             this.EditTenantPnl.Name = "EditTenantPnl";
@@ -121,22 +121,34 @@
             this.EditTenantPnl.TabIndex = 6;
             this.EditTenantPnl.Visible = false;
             // 
-            // groupBox5
+            // btnClose
             // 
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.button10);
-            this.groupBox5.Controls.Add(this.button9);
-            this.groupBox5.Controls.Add(this.button8);
-            this.groupBox5.Controls.Add(this.tabControl1);
-            this.groupBox5.Controls.Add(this.txtSearch);
-            this.groupBox5.Controls.Add(this.Go);
-            this.groupBox5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(8, 4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(950, 541);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Edit Tenant Information";
+            this.btnClose.Controls.Add(this.label5);
+            this.btnClose.Controls.Add(this.button1);
+            this.btnClose.Controls.Add(this.btnActivate);
+            this.btnClose.Controls.Add(this.btnSave);
+            this.btnClose.Controls.Add(this.btnEdit);
+            this.btnClose.Controls.Add(this.tabControl1);
+            this.btnClose.Controls.Add(this.txtSearch);
+            this.btnClose.Controls.Add(this.Go);
+            this.btnClose.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(8, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(950, 541);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.TabStop = false;
+            this.btnClose.Text = "Edit Tenant Information";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label5.Location = new System.Drawing.Point(690, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 13);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "Enter Name to Search";
             // 
             // button1
             // 
@@ -150,38 +162,43 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button10
+            // btnActivate
             // 
-            this.button10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(152, 43);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(101, 28);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "     Deactivate";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnActivate.Enabled = false;
+            this.btnActivate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivate.Location = new System.Drawing.Point(152, 43);
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(101, 28);
+            this.btnActivate.TabIndex = 16;
+            this.btnActivate.Text = "     Deactivate";
+            this.btnActivate.UseVisualStyleBackColor = true;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
-            // button9
+            // btnSave
             // 
-            this.button9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(82, 43);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(69, 28);
-            this.button9.TabIndex = 15;
-            this.button9.Text = "    Save";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(82, 43);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(69, 28);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "    Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button8
+            // btnEdit
             // 
-            this.button8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(12, 43);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(69, 28);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "       Edit";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(12, 43);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(69, 28);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Text = "       Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // tabControl1
             // 
@@ -215,6 +232,7 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9});
+            this.listViewTenants.FullRowSelect = true;
             this.listViewTenants.GridLines = true;
             this.listViewTenants.Location = new System.Drawing.Point(6, 2);
             this.listViewTenants.Name = "listViewTenants";
@@ -222,6 +240,12 @@
             this.listViewTenants.TabIndex = 2;
             this.listViewTenants.UseCompatibleStateImageBehavior = false;
             this.listViewTenants.View = System.Windows.Forms.View.Details;
+            this.listViewTenants.DoubleClick += new System.EventHandler(this.listViewTenants_DoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 0;
             // 
             // columnHeader5
             // 
@@ -264,16 +288,28 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnGeneratePassword);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox23);
+            this.groupBox2.Controls.Add(this.txtBoxPassword);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtBoxUsername);
             this.groupBox2.Location = new System.Drawing.Point(7, 217);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(123, 173);
             this.groupBox2.TabIndex = 146;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Login Credentials";
+            // 
+            // btnGeneratePassword
+            // 
+            this.btnGeneratePassword.Enabled = false;
+            this.btnGeneratePassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGeneratePassword.Location = new System.Drawing.Point(6, 115);
+            this.btnGeneratePassword.Name = "btnGeneratePassword";
+            this.btnGeneratePassword.Size = new System.Drawing.Size(111, 24);
+            this.btnGeneratePassword.TabIndex = 40;
+            this.btnGeneratePassword.Text = "Generate New";
+            this.btnGeneratePassword.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -286,14 +322,14 @@
             this.label2.TabIndex = 156;
             this.label2.Text = "Password:";
             // 
-            // textBox23
+            // txtBoxPassword
             // 
-            this.textBox23.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox23.Enabled = false;
-            this.textBox23.Location = new System.Drawing.Point(6, 97);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(111, 20);
-            this.textBox23.TabIndex = 157;
+            this.txtBoxPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPassword.Enabled = false;
+            this.txtBoxPassword.Location = new System.Drawing.Point(6, 97);
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.Size = new System.Drawing.Size(111, 20);
+            this.txtBoxPassword.TabIndex = 157;
             // 
             // label1
             // 
@@ -306,21 +342,21 @@
             this.label1.TabIndex = 154;
             this.label1.Text = "Username:";
             // 
-            // textBox1
+            // txtBoxUsername
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(6, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 20);
-            this.textBox1.TabIndex = 155;
+            this.txtBoxUsername.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxUsername.Enabled = false;
+            this.txtBoxUsername.Location = new System.Drawing.Point(6, 50);
+            this.txtBoxUsername.Name = "txtBoxUsername";
+            this.txtBoxUsername.Size = new System.Drawing.Size(111, 20);
+            this.txtBoxUsername.TabIndex = 155;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.textBox22);
+            this.groupBox3.Controls.Add(this.txtBoxEndDateOfOccupancy);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.textBox21);
+            this.groupBox3.Controls.Add(this.txtBoxStartDateOfOccupancy);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(136, 323);
             this.groupBox3.Name = "groupBox3";
@@ -340,13 +376,14 @@
             this.label24.TabIndex = 156;
             this.label24.Text = "End Date of Occupancy:";
             // 
-            // textBox22
+            // txtBoxEndDateOfOccupancy
             // 
-            this.textBox22.BackColor = System.Drawing.Color.White;
-            this.textBox22.Location = new System.Drawing.Point(532, 26);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(212, 20);
-            this.textBox22.TabIndex = 157;
+            this.txtBoxEndDateOfOccupancy.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxEndDateOfOccupancy.Enabled = false;
+            this.txtBoxEndDateOfOccupancy.Location = new System.Drawing.Point(532, 26);
+            this.txtBoxEndDateOfOccupancy.Name = "txtBoxEndDateOfOccupancy";
+            this.txtBoxEndDateOfOccupancy.Size = new System.Drawing.Size(212, 20);
+            this.txtBoxEndDateOfOccupancy.TabIndex = 157;
             // 
             // label23
             // 
@@ -359,30 +396,28 @@
             this.label23.TabIndex = 154;
             this.label23.Text = "Start Date of Occupancy:";
             // 
-            // textBox21
+            // txtBoxStartDateOfOccupancy
             // 
-            this.textBox21.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox21.Enabled = false;
-            this.textBox21.Location = new System.Drawing.Point(169, 26);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(181, 20);
-            this.textBox21.TabIndex = 155;
+            this.txtBoxStartDateOfOccupancy.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxStartDateOfOccupancy.Enabled = false;
+            this.txtBoxStartDateOfOccupancy.Location = new System.Drawing.Point(169, 26);
+            this.txtBoxStartDateOfOccupancy.Name = "txtBoxStartDateOfOccupancy";
+            this.txtBoxStartDateOfOccupancy.Size = new System.Drawing.Size(181, 20);
+            this.txtBoxStartDateOfOccupancy.TabIndex = 155;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox20);
+            this.groupBox1.Controls.Add(this.txtBoxPetType);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox19);
+            this.groupBox1.Controls.Add(this.txtBoxPetName);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox18);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox17);
+            this.groupBox1.Controls.Add(this.txtBoxOtherName3);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox16);
+            this.groupBox1.Controls.Add(this.txtBoxOtherName2);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.txtBoxOtherName1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(136, 217);
@@ -397,87 +432,71 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label21.Location = new System.Drawing.Point(557, 63);
+            this.label21.Location = new System.Drawing.Point(523, 63);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(46, 14);
             this.label21.TabIndex = 152;
             this.label21.Text = "Type/s:";
             // 
-            // textBox20
+            // txtBoxPetType
             // 
-            this.textBox20.BackColor = System.Drawing.Color.White;
-            this.textBox20.Location = new System.Drawing.Point(614, 60);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(130, 20);
-            this.textBox20.TabIndex = 153;
+            this.txtBoxPetType.BackColor = System.Drawing.Color.White;
+            this.txtBoxPetType.Enabled = false;
+            this.txtBoxPetType.Location = new System.Drawing.Point(580, 60);
+            this.txtBoxPetType.Name = "txtBoxPetType";
+            this.txtBoxPetType.Size = new System.Drawing.Size(164, 20);
+            this.txtBoxPetType.TabIndex = 153;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label19.Location = new System.Drawing.Point(557, 40);
+            this.label19.Location = new System.Drawing.Point(523, 40);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(51, 14);
             this.label19.TabIndex = 150;
             this.label19.Text = "Name/s:";
             // 
-            // textBox19
+            // txtBoxPetName
             // 
-            this.textBox19.BackColor = System.Drawing.Color.White;
-            this.textBox19.Location = new System.Drawing.Point(614, 37);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(130, 20);
-            this.textBox19.TabIndex = 151;
+            this.txtBoxPetName.BackColor = System.Drawing.Color.White;
+            this.txtBoxPetName.Enabled = false;
+            this.txtBoxPetName.Location = new System.Drawing.Point(580, 37);
+            this.txtBoxPetName.Name = "txtBoxPetName";
+            this.txtBoxPetName.Size = new System.Drawing.Size(164, 20);
+            this.txtBoxPetName.TabIndex = 151;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label18.Location = new System.Drawing.Point(536, 19);
+            this.label18.Location = new System.Drawing.Point(523, 19);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 14);
             this.label18.TabIndex = 149;
             this.label18.Text = "Pet/s:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label17.Location = new System.Drawing.Point(281, 63);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 14);
-            this.label17.TabIndex = 147;
-            this.label17.Text = "Name:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.BackColor = System.Drawing.Color.White;
-            this.textBox18.Location = new System.Drawing.Point(325, 60);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(183, 20);
-            this.textBox18.TabIndex = 148;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label10.Location = new System.Drawing.Point(281, 40);
+            this.label10.Location = new System.Drawing.Point(275, 40);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 14);
             this.label10.TabIndex = 145;
             this.label10.Text = "Name:";
             // 
-            // textBox17
+            // txtBoxOtherName3
             // 
-            this.textBox17.BackColor = System.Drawing.Color.White;
-            this.textBox17.Location = new System.Drawing.Point(325, 37);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(183, 20);
-            this.textBox17.TabIndex = 146;
+            this.txtBoxOtherName3.BackColor = System.Drawing.Color.White;
+            this.txtBoxOtherName3.Enabled = false;
+            this.txtBoxOtherName3.Location = new System.Drawing.Point(319, 37);
+            this.txtBoxOtherName3.Name = "txtBoxOtherName3";
+            this.txtBoxOtherName3.Size = new System.Drawing.Size(183, 20);
+            this.txtBoxOtherName3.TabIndex = 146;
             // 
             // label9
             // 
@@ -490,13 +509,14 @@
             this.label9.TabIndex = 143;
             this.label9.Text = "Name:";
             // 
-            // textBox16
+            // txtBoxOtherName2
             // 
-            this.textBox16.BackColor = System.Drawing.Color.White;
-            this.textBox16.Location = new System.Drawing.Point(76, 60);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(181, 20);
-            this.textBox16.TabIndex = 144;
+            this.txtBoxOtherName2.BackColor = System.Drawing.Color.White;
+            this.txtBoxOtherName2.Enabled = false;
+            this.txtBoxOtherName2.Location = new System.Drawing.Point(76, 60);
+            this.txtBoxOtherName2.Name = "txtBoxOtherName2";
+            this.txtBoxOtherName2.Size = new System.Drawing.Size(181, 20);
+            this.txtBoxOtherName2.TabIndex = 144;
             // 
             // label6
             // 
@@ -509,13 +529,14 @@
             this.label6.TabIndex = 141;
             this.label6.Text = "Name:";
             // 
-            // textBox15
+            // txtBoxOtherName1
             // 
-            this.textBox15.BackColor = System.Drawing.Color.White;
-            this.textBox15.Location = new System.Drawing.Point(76, 37);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(181, 20);
-            this.textBox15.TabIndex = 142;
+            this.txtBoxOtherName1.BackColor = System.Drawing.Color.White;
+            this.txtBoxOtherName1.Enabled = false;
+            this.txtBoxOtherName1.Location = new System.Drawing.Point(76, 37);
+            this.txtBoxOtherName1.Name = "txtBoxOtherName1";
+            this.txtBoxOtherName1.Size = new System.Drawing.Size(181, 20);
+            this.txtBoxOtherName1.TabIndex = 142;
             // 
             // label3
             // 
@@ -530,25 +551,25 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox8);
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox12);
+            this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
+            this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
+            this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
+            this.groupBox6.Controls.Add(this.txtBoxEmail);
+            this.groupBox6.Controls.Add(this.txtBoxTelephoneNo);
+            this.groupBox6.Controls.Add(this.txtBoxMobileNo);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.textBox7);
+            this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
+            this.groupBox6.Controls.Add(this.txtBoxUnitOwner);
+            this.groupBox6.Controls.Add(this.txtBoxUnitNo);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.textBox6);
             this.groupBox6.Controls.Add(this.label26);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.pictureBox1);
+            this.groupBox6.Controls.Add(this.txtBoxLastName);
+            this.groupBox6.Controls.Add(this.txtBoxMiddleName);
+            this.groupBox6.Controls.Add(this.txtBoxFirstName);
+            this.groupBox6.Controls.Add(this.pictureBox);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label29);
             this.groupBox6.Controls.Add(this.label12);
@@ -565,38 +586,72 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
             // 
-            // textBox8
+            // comboBoxMaritalStatus
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(484, 90);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(390, 34);
-            this.textBox8.TabIndex = 140;
+            this.comboBoxMaritalStatus.Enabled = false;
+            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMaritalStatus.FormattingEnabled = true;
+            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
+            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(217, 101);
+            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
+            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(170, 22);
+            this.comboBoxMaritalStatus.TabIndex = 142;
+            this.comboBoxMaritalStatus.Text = "--Select One--";
             // 
-            // textBox14
+            // datePickerDateOfBirth
             // 
-            this.textBox14.BackColor = System.Drawing.Color.White;
-            this.textBox14.Location = new System.Drawing.Point(610, 171);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(264, 20);
-            this.textBox14.TabIndex = 139;
+            this.datePickerDateOfBirth.CalendarForeColor = System.Drawing.SystemColors.GrayText;
+            this.datePickerDateOfBirth.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.datePickerDateOfBirth.CalendarTitleForeColor = System.Drawing.SystemColors.GrayText;
+            this.datePickerDateOfBirth.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDateOfBirth.Enabled = false;
+            this.datePickerDateOfBirth.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateOfBirth.Location = new System.Drawing.Point(218, 79);
+            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(169, 20);
+            this.datePickerDateOfBirth.TabIndex = 141;
             // 
-            // textBox13
+            // txtBoxProvincialAddress
             // 
-            this.textBox13.BackColor = System.Drawing.Color.White;
-            this.textBox13.Location = new System.Drawing.Point(610, 149);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(264, 20);
-            this.textBox13.TabIndex = 138;
+            this.txtBoxProvincialAddress.BackColor = System.Drawing.Color.White;
+            this.txtBoxProvincialAddress.Enabled = false;
+            this.txtBoxProvincialAddress.Location = new System.Drawing.Point(484, 90);
+            this.txtBoxProvincialAddress.Multiline = true;
+            this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(390, 34);
+            this.txtBoxProvincialAddress.TabIndex = 140;
             // 
-            // textBox12
+            // txtBoxEmail
             // 
-            this.textBox12.BackColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(610, 127);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(264, 20);
-            this.textBox12.TabIndex = 137;
+            this.txtBoxEmail.BackColor = System.Drawing.Color.White;
+            this.txtBoxEmail.Enabled = false;
+            this.txtBoxEmail.Location = new System.Drawing.Point(610, 171);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxEmail.TabIndex = 139;
+            // 
+            // txtBoxTelephoneNo
+            // 
+            this.txtBoxTelephoneNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxTelephoneNo.Enabled = false;
+            this.txtBoxTelephoneNo.Location = new System.Drawing.Point(610, 149);
+            this.txtBoxTelephoneNo.Name = "txtBoxTelephoneNo";
+            this.txtBoxTelephoneNo.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxTelephoneNo.TabIndex = 138;
+            // 
+            // txtBoxMobileNo
+            // 
+            this.txtBoxMobileNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxMobileNo.Enabled = false;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(610, 127);
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxMobileNo.TabIndex = 137;
             // 
             // label22
             // 
@@ -620,14 +675,15 @@
             this.label14.TabIndex = 108;
             this.label14.Text = "Mobile Number:";
             // 
-            // textBox7
+            // txtBoxHomeAddress
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(484, 36);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(390, 34);
-            this.textBox7.TabIndex = 135;
+            this.txtBoxHomeAddress.BackColor = System.Drawing.Color.White;
+            this.txtBoxHomeAddress.Enabled = false;
+            this.txtBoxHomeAddress.Location = new System.Drawing.Point(484, 36);
+            this.txtBoxHomeAddress.Multiline = true;
+            this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(390, 34);
+            this.txtBoxHomeAddress.TabIndex = 135;
             // 
             // label7
             // 
@@ -640,29 +696,32 @@
             this.label7.TabIndex = 109;
             this.label7.Text = "Telephone Number:";
             // 
-            // textBox11
+            // txtBoxNatureOfOccupancy
             // 
-            this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(255, 169);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(178, 20);
-            this.textBox11.TabIndex = 134;
+            this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
+            this.txtBoxNatureOfOccupancy.Enabled = false;
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(255, 169);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(178, 20);
+            this.txtBoxNatureOfOccupancy.TabIndex = 134;
             // 
-            // textBox10
+            // txtBoxUnitOwner
             // 
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.Location = new System.Drawing.Point(218, 146);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(215, 20);
-            this.textBox10.TabIndex = 133;
+            this.txtBoxUnitOwner.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitOwner.Enabled = false;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(218, 146);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(215, 20);
+            this.txtBoxUnitOwner.TabIndex = 133;
             // 
-            // textBox9
+            // txtBoxUnitNo
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(218, 124);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(215, 20);
-            this.textBox9.TabIndex = 132;
+            this.txtBoxUnitNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitNo.Enabled = false;
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(218, 124);
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(215, 20);
+            this.txtBoxUnitNo.TabIndex = 132;
             // 
             // label20
             // 
@@ -675,14 +734,6 @@
             this.label20.TabIndex = 94;
             this.label20.Text = "Provincial Address:";
             // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(218, 102);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(215, 20);
-            this.textBox6.TabIndex = 131;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -694,45 +745,40 @@
             this.label26.TabIndex = 95;
             this.label26.Text = "Home Address:";
             // 
-            // textBox5
+            // txtBoxLastName
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(218, 80);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(215, 20);
-            this.textBox5.TabIndex = 130;
+            this.txtBoxLastName.BackColor = System.Drawing.Color.White;
+            this.txtBoxLastName.Enabled = false;
+            this.txtBoxLastName.Location = new System.Drawing.Point(218, 58);
+            this.txtBoxLastName.Name = "txtBoxLastName";
+            this.txtBoxLastName.Size = new System.Drawing.Size(215, 20);
+            this.txtBoxLastName.TabIndex = 129;
             // 
-            // textBox4
+            // txtBoxMiddleName
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(218, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 20);
-            this.textBox4.TabIndex = 129;
+            this.txtBoxMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtBoxMiddleName.Enabled = false;
+            this.txtBoxMiddleName.Location = new System.Drawing.Point(218, 36);
+            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(215, 20);
+            this.txtBoxMiddleName.TabIndex = 128;
             // 
-            // textBox3
+            // txtBoxFirstName
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(218, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 20);
-            this.textBox3.TabIndex = 128;
+            this.txtBoxFirstName.BackColor = System.Drawing.Color.White;
+            this.txtBoxFirstName.Enabled = false;
+            this.txtBoxFirstName.Location = new System.Drawing.Point(218, 14);
+            this.txtBoxFirstName.Name = "txtBoxFirstName";
+            this.txtBoxFirstName.Size = new System.Drawing.Size(215, 20);
+            this.txtBoxFirstName.TabIndex = 127;
             // 
-            // textBox2
+            // pictureBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(218, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 20);
-            this.textBox2.TabIndex = 127;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 96);
-            this.pictureBox1.TabIndex = 126;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Location = new System.Drawing.Point(13, 20);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(106, 96);
+            this.pictureBox.TabIndex = 126;
+            this.pictureBox.TabStop = false;
             // 
             // label8
             // 
@@ -826,11 +872,11 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtSearch.Location = new System.Drawing.Point(584, 20);
+            this.txtSearch.Location = new System.Drawing.Point(590, 20);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(324, 20);
             this.txtSearch.TabIndex = 4;
-            this.txtSearch.Text = "Enter Name or Unit Number to search..";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Go
             // 
@@ -841,11 +887,7 @@
             this.Go.Size = new System.Drawing.Size(27, 24);
             this.Go.TabIndex = 11;
             this.Go.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 0;
+            this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // EditTenantInformationForm
             // 
@@ -861,8 +903,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "EditTenantInformation";
             this.EditTenantPnl.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.btnClose.ResumeLayout(false);
+            this.btnClose.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -874,7 +916,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -882,11 +924,11 @@
         #endregion
 
         internal System.Windows.Forms.Panel EditTenantPnl;
-        internal System.Windows.Forms.GroupBox groupBox5;
+        internal System.Windows.Forms.GroupBox btnClose;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnActivate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -895,44 +937,40 @@
         private System.Windows.Forms.ListView listViewTenants;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox txtBoxEndDateOfOccupancy;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txtBoxStartDateOfOccupancy;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtBoxPetType;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtBoxPetName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtBoxOtherName3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtBoxOtherName2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtBoxOtherName1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtBoxProvincialAddress;
+        private System.Windows.Forms.TextBox txtBoxEmail;
+        private System.Windows.Forms.TextBox txtBoxTelephoneNo;
+        private System.Windows.Forms.TextBox txtBoxMobileNo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBoxHomeAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
+        private System.Windows.Forms.TextBox txtBoxUnitOwner;
+        private System.Windows.Forms.TextBox txtBoxUnitNo;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtBoxLastName;
+        private System.Windows.Forms.TextBox txtBoxMiddleName;
+        private System.Windows.Forms.TextBox txtBoxFirstName;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label12;
@@ -948,9 +986,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.DateTimePicker datePickerDateOfBirth;
+        private System.Windows.Forms.ComboBox comboBoxMaritalStatus;
+        private System.Windows.Forms.Button btnGeneratePassword;
+        private System.Windows.Forms.Label label5;
     }
 }
