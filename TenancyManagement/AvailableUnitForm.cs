@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
@@ -16,6 +17,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         UnitViewModel vm;
 
         string unitNo = "";
+
+        Guid tenantID = Guid.Empty;
 
         public AvailableUnitForm()
         {
@@ -247,6 +250,26 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             unitNo = listViewUnits.SelectedItems[0].SubItems[0].Text;
 
             GetSelectedUnit();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            UnitProfile unitProfile = new UnitProfile
+            {
+                UnitNumber = txtBoxUnitNumber.Text,
+                ExpectedEndOfOccupancy = datePickerEnd.Value,
+                StartOfOccupancy = datePickerStart.Value,
+                Tenant = tenantID
+            };
+
+            vm.Save(unitProfile);
+
+            GetSelectedUnit(); //reload data
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

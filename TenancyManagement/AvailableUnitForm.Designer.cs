@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableUnitForm));
             this.unitPnl = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listViewUnits = new System.Windows.Forms.ListView();
@@ -41,6 +42,14 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.datePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnTransferOwnership = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtBoxType = new System.Windows.Forms.TextBox();
@@ -51,8 +60,6 @@
             this.txtBoxFloor = new System.Windows.Forms.TextBox();
             this.txtBoxAvailability = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtBoxTenant = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxUnitNumber = new System.Windows.Forms.TextBox();
@@ -71,24 +78,17 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
-            this.datePickerStart = new System.Windows.Forms.DateTimePicker();
-            this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxTenant = new System.Windows.Forms.TextBox();
             this.btnSelectTenant = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // unitPnl
@@ -113,6 +113,19 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Units";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(12, 20);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(59, 28);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "     Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tabControl1
             // 
@@ -206,10 +219,92 @@
             this.tabPage1.Text = "Unit Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtBoxTenant);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.datePickerEnd);
+            this.groupBox4.Controls.Add(this.datePickerStart);
+            this.groupBox4.Controls.Add(this.txtBoxNatureOfOccupancy);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(187, 203);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(423, 141);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(88, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tenant:";
+            // 
+            // datePickerEnd
+            // 
+            this.datePickerEnd.CustomFormat = "mm/dd/yyyy";
+            this.datePickerEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerEnd.Location = new System.Drawing.Point(143, 53);
+            this.datePickerEnd.Name = "datePickerEnd";
+            this.datePickerEnd.Size = new System.Drawing.Size(123, 20);
+            this.datePickerEnd.TabIndex = 124;
+            // 
+            // datePickerStart
+            // 
+            this.datePickerStart.CustomFormat = "mm/dd/yyyy";
+            this.datePickerStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerStart.Location = new System.Drawing.Point(143, 28);
+            this.datePickerStart.Name = "datePickerStart";
+            this.datePickerStart.Size = new System.Drawing.Size(123, 20);
+            this.datePickerStart.TabIndex = 123;
+            // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.Enabled = false;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(253, 20);
+            this.txtBoxNatureOfOccupancy.TabIndex = 122;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Nature Of Occupancy:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "End Of Occupancy:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Start Of Occupancy:";
+            // 
             // btnTransferOwnership
             // 
             this.btnTransferOwnership.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransferOwnership.Location = new System.Drawing.Point(376, 350);
+            this.btnTransferOwnership.Location = new System.Drawing.Point(454, 350);
             this.btnTransferOwnership.Name = "btnTransferOwnership";
             this.btnTransferOwnership.Size = new System.Drawing.Size(156, 24);
             this.btnTransferOwnership.TabIndex = 18;
@@ -229,7 +324,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(187, 82);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(345, 112);
+            this.groupBox6.Size = new System.Drawing.Size(423, 112);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             // 
@@ -239,7 +334,7 @@
             this.txtBoxType.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxType.Location = new System.Drawing.Point(123, 68);
             this.txtBoxType.Name = "txtBoxType";
-            this.txtBoxType.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxType.Size = new System.Drawing.Size(273, 20);
             this.txtBoxType.TabIndex = 121;
             // 
             // label3
@@ -291,7 +386,7 @@
             this.txtBoxFloor.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxFloor.Location = new System.Drawing.Point(123, 42);
             this.txtBoxFloor.Name = "txtBoxFloor";
-            this.txtBoxFloor.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxFloor.Size = new System.Drawing.Size(273, 20);
             this.txtBoxFloor.TabIndex = 4;
             // 
             // txtBoxAvailability
@@ -300,7 +395,7 @@
             this.txtBoxAvailability.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxAvailability.Location = new System.Drawing.Point(123, 18);
             this.txtBoxAvailability.Name = "txtBoxAvailability";
-            this.txtBoxAvailability.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxAvailability.Size = new System.Drawing.Size(273, 20);
             this.txtBoxAvailability.TabIndex = 3;
             // 
             // groupBox3
@@ -311,27 +406,10 @@
             this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Location = new System.Drawing.Point(187, 11);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(345, 65);
+            this.groupBox3.Size = new System.Drawing.Size(423, 65);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
-            // 
-            // txtBoxTenant
-            // 
-            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxTenant.Enabled = false;
-            this.txtBoxTenant.Location = new System.Drawing.Point(143, 105);
-            this.txtBoxTenant.Name = "txtBoxTenant";
-            this.txtBoxTenant.Size = new System.Drawing.Size(174, 21);
-            this.txtBoxTenant.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tenant:";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // txtBoxUnitOwner
             // 
@@ -339,7 +417,7 @@
             this.txtBoxUnitOwner.Enabled = false;
             this.txtBoxUnitOwner.Location = new System.Drawing.Point(91, 33);
             this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
-            this.txtBoxUnitOwner.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(305, 20);
             this.txtBoxUnitOwner.TabIndex = 3;
             // 
             // label1
@@ -357,7 +435,7 @@
             this.txtBoxUnitNumber.Enabled = false;
             this.txtBoxUnitNumber.Location = new System.Drawing.Point(91, 11);
             this.txtBoxUnitNumber.Name = "txtBoxUnitNumber";
-            this.txtBoxUnitNumber.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxUnitNumber.Size = new System.Drawing.Size(305, 20);
             this.txtBoxUnitNumber.TabIndex = 1;
             // 
             // linkLabel1
@@ -554,100 +632,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // groupBox4
+            // txtBoxTenant
             // 
-            this.groupBox4.Controls.Add(this.txtBoxTenant);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.datePickerEnd);
-            this.groupBox4.Controls.Add(this.datePickerStart);
-            this.groupBox4.Controls.Add(this.txtBoxNatureOfOccupancy);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(187, 203);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(345, 141);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Start Of Occupancy:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "End Of Occupancy:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Nature Of Occupancy:";
-            // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.Enabled = false;
-            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(174, 20);
-            this.txtBoxNatureOfOccupancy.TabIndex = 122;
-            // 
-            // datePickerStart
-            // 
-            this.datePickerStart.CustomFormat = "mm/dd/yyyy";
-            this.datePickerStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStart.Location = new System.Drawing.Point(143, 28);
-            this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.Size = new System.Drawing.Size(174, 20);
-            this.datePickerStart.TabIndex = 123;
-            // 
-            // datePickerEnd
-            // 
-            this.datePickerEnd.CustomFormat = "mm/dd/yyyy";
-            this.datePickerEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEnd.Location = new System.Drawing.Point(143, 53);
-            this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.Size = new System.Drawing.Size(174, 20);
-            this.datePickerEnd.TabIndex = 124;
+            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxTenant.Enabled = false;
+            this.txtBoxTenant.Location = new System.Drawing.Point(143, 105);
+            this.txtBoxTenant.Name = "txtBoxTenant";
+            this.txtBoxTenant.Size = new System.Drawing.Size(253, 21);
+            this.txtBoxTenant.TabIndex = 5;
             // 
             // btnSelectTenant
             // 
             this.btnSelectTenant.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectTenant.Location = new System.Drawing.Point(187, 350);
             this.btnSelectTenant.Name = "btnSelectTenant";
-            this.btnSelectTenant.Size = new System.Drawing.Size(183, 24);
+            this.btnSelectTenant.Size = new System.Drawing.Size(156, 24);
             this.btnSelectTenant.TabIndex = 20;
             this.btnSelectTenant.Text = "Select Tenant";
             this.btnSelectTenant.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(12, 20);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(59, 28);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "     Save";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // AvailableUnitForm
             // 
@@ -666,14 +668,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -687,7 +689,6 @@
         private System.Windows.Forms.ListView listViewUnits;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtBoxTenant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.Label label1;
@@ -727,9 +728,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSelectTenant;
         private System.Windows.Forms.DateTimePicker datePickerEnd;
         private System.Windows.Forms.DateTimePicker datePickerStart;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtBoxTenant;
+        private System.Windows.Forms.Button btnSelectTenant;
     }
 }

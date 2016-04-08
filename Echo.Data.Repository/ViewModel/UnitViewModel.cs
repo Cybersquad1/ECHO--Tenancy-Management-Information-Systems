@@ -8,6 +8,44 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class UnitViewModel : ViewModelBase<UnitProfile>
     {
+        public bool Save(UnitProfile unitProfile)
+        {
+            try
+            {
+                //update unit profile info
+                var unit = GetEntity(r => r.UnitNumber == unitProfile.UnitNumber);
+
+                unit.StartOfOccupancy = unitProfile.StartOfOccupancy;
+                unit.ExpectedEndOfOccupancy = unitProfile.ExpectedEndOfOccupancy;
+                unit.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
+                unit.Tenant = unitProfile.Tenant;
+
+                Update(unit);
+                //end of unit update
+
+                //update tenant profile info
+                var tenant = new TenantViewModel().GetSelectedTenant(unitProfile.Tenant);
+                tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
+
+                var db = new EchoEntities();
+                db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                //end of update tenant
+
+                //Save Archive
+                var archiveVM = new TenantArchiveViewModel();
+                archiveVM.SaveArchive(unit);
+                //end of archive
+
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool TransferOwnership(string _unitNo, Guid _newOwnerID)
         {
             try

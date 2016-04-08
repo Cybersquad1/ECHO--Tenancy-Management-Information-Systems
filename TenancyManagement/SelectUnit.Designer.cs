@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.listViewUnits = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnOkay = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBoxSearchKey = new System.Windows.Forms.TextBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,8 +42,8 @@
             // 
             this.listViewUnits.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.listViewUnits.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader1});
+            this.columnHeader1,
+            this.columnHeader2});
             this.listViewUnits.FullRowSelect = true;
             this.listViewUnits.GridLines = true;
             this.listViewUnits.Location = new System.Drawing.Point(12, 73);
@@ -54,16 +54,6 @@
             this.listViewUnits.UseCompatibleStateImageBehavior = false;
             this.listViewUnits.View = System.Windows.Forms.View.Details;
             this.listViewUnits.DoubleClick += new System.EventHandler(this.listViewUnits_DoubleClick);
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Unit No";
-            this.columnHeader2.Width = 63;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Owner";
-            this.columnHeader1.Width = 386;
             // 
             // btnOkay
             // 
@@ -108,6 +98,16 @@
             this.txtBoxSearchKey.Size = new System.Drawing.Size(191, 21);
             this.txtBoxSearchKey.TabIndex = 27;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 0;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 448;
+            // 
             // SelectUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,11 +127,11 @@
         #endregion
 
         private System.Windows.Forms.ListView listViewUnits;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btnOkay;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBoxSearchKey;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
