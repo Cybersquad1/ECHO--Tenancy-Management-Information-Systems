@@ -272,3 +272,4 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectUnit.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectTenant.resources

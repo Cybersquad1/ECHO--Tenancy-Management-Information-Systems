@@ -137,6 +137,12 @@
     <Compile Include="TenancyManagement\PaymentHistoryForm.Designer.cs">
       <DependentUpon>PaymentHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TenancyManagement\SelectTenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TenancyManagement\SelectTenant.Designer.cs">
+      <DependentUpon>SelectTenant.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenancyManagement\SelectUnit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TenancyManagement\PaymentHistoryForm.resx">
       <DependentUpon>PaymentHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TenancyManagement\SelectTenant.resx">
+      <DependentUpon>SelectTenant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TenancyManagement\SelectUnit.resx">
       <DependentUpon>SelectUnit.cs</DependentUpon>

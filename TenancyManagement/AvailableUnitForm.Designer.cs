@@ -42,7 +42,9 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSelectTenant = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtBoxTenant = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.datePickerStart = new System.Windows.Forms.DateTimePicker();
@@ -78,8 +80,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtBoxTenant = new System.Windows.Forms.TextBox();
-            this.btnSelectTenant = new System.Windows.Forms.Button();
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -219,6 +219,17 @@
             this.tabPage1.Text = "Unit Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnSelectTenant
+            // 
+            this.btnSelectTenant.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectTenant.Location = new System.Drawing.Point(187, 350);
+            this.btnSelectTenant.Name = "btnSelectTenant";
+            this.btnSelectTenant.Size = new System.Drawing.Size(156, 24);
+            this.btnSelectTenant.TabIndex = 20;
+            this.btnSelectTenant.Text = "Select Tenant";
+            this.btnSelectTenant.UseVisualStyleBackColor = true;
+            this.btnSelectTenant.Click += new System.EventHandler(this.btnSelectTenant_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtBoxTenant);
@@ -235,6 +246,15 @@
             this.groupBox4.Size = new System.Drawing.Size(423, 141);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
+            // 
+            // txtBoxTenant
+            // 
+            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxTenant.Enabled = false;
+            this.txtBoxTenant.Location = new System.Drawing.Point(143, 105);
+            this.txtBoxTenant.Name = "txtBoxTenant";
+            this.txtBoxTenant.Size = new System.Drawing.Size(253, 21);
+            this.txtBoxTenant.TabIndex = 5;
             // 
             // label2
             // 
@@ -632,25 +652,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtBoxTenant
-            // 
-            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtBoxTenant.Enabled = false;
-            this.txtBoxTenant.Location = new System.Drawing.Point(143, 105);
-            this.txtBoxTenant.Name = "txtBoxTenant";
-            this.txtBoxTenant.Size = new System.Drawing.Size(253, 21);
-            this.txtBoxTenant.TabIndex = 5;
-            // 
-            // btnSelectTenant
-            // 
-            this.btnSelectTenant.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectTenant.Location = new System.Drawing.Point(187, 350);
-            this.btnSelectTenant.Name = "btnSelectTenant";
-            this.btnSelectTenant.Size = new System.Drawing.Size(156, 24);
-            this.btnSelectTenant.TabIndex = 20;
-            this.btnSelectTenant.Text = "Select Tenant";
-            this.btnSelectTenant.UseVisualStyleBackColor = true;
-            // 
             // AvailableUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,7 +732,7 @@
         private System.Windows.Forms.DateTimePicker datePickerEnd;
         private System.Windows.Forms.DateTimePicker datePickerStart;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtBoxTenant;
         private System.Windows.Forms.Button btnSelectTenant;
+        public System.Windows.Forms.TextBox txtBoxTenant;
     }
 }

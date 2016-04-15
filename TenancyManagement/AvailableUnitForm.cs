@@ -18,7 +18,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
         string unitNo = "";
 
-        Guid tenantID = Guid.Empty;
+        public Guid tenantID = Guid.Empty;
 
         public AvailableUnitForm()
         {
@@ -28,6 +28,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             GetUnits();
         }
+
 
         private void Search(string unitNo, string avail, string unitFloor, string unitType)
         {
@@ -270,6 +271,12 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSelectTenant_Click(object sender, EventArgs e)
+        {
+            SelectTenant form = new SelectTenant(this);
+            form.ShowDialog();
         }
     }
 }
