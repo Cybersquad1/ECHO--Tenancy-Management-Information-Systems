@@ -801,12 +801,12 @@
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
-            this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Controls.Add(this.UserAccPnl);
             this.panelLeft.Controls.Add(this.TenMgmtPnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl);
+            this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";

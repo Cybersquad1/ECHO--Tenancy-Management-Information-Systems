@@ -14,7 +14,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
     public partial class TransferOwnership : Form
     {
-        UserViewModel vm;
+        TenantViewModel vm;
 
         string unitNo;
 
@@ -22,7 +22,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         {
             InitializeComponent();
 
-            vm = new UserViewModel();
+            vm = new TenantViewModel();
 
             GetUserList();
 
@@ -33,22 +33,24 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         {
             listViewUsers.Items.Clear();
 
-            List<UserProfile> users = new List<UserProfile>();
+            List<TenantProfile> tenants = new List<TenantProfile>();
 
             if (_searchKey != "")
-                users = vm.GetUsers(_searchKey);
+                tenants = vm.Search(_searchKey);
             else
-                users = vm.GetUsers();
+                tenants = vm.GetAll();
 
-            users.ForEach(item =>
+            tenants = tenants.AsQueryable().Where(r => r.NatureOfOccupancy == "Owner").ToList();
+
+            tenants.ForEach(item =>
             {
                 ListViewItem lvi = new ListViewItem(item.ID.ToString());
-                lvi.SubItems.Add(item.FullName);
+                lvi.SubItems.Add(item.FirstName + " " +item.LastName);
                 listViewUsers.Items.Add(lvi);
             });
         }
 
-        private void TranserOwner(Guid _userID)
+        private void TranserOwner(Guid _tenantID)
         {
             DialogResult dialog = MessageBox.Show("Are you sure you want to transfer ownership of this unit? (Y/N)", "Confirmation", MessageBoxButtons.YesNo);
 
@@ -56,7 +58,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             {
                 UnitViewModel unitVM = new UnitViewModel();
 
-                if (unitVM.TransferOwnership(unitNo, _userID))
+                if (unitVM.TransferOwnership(unitNo, _tenantID))
                 {
                     MessageBox.Show("Ownership successfully transfer", "Successful");
 

@@ -126,11 +126,17 @@ namespace Tenancy_Management_Information_Systems
             tenancyDatabasePnl.Visible = false;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) //Water Billing
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.WaterBillingForm w1 = new ReportGeneration.WaterBillingForm();
             w1.waterBillingPnl.Visible = true;
-            w1.ShowDialog();
+            w1.TopLevel = false;
+            w1.Visible = true;
+            w1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(w1);
         }
 
         private void button3_Click(object sender, EventArgs e)

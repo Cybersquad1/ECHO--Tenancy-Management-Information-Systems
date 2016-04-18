@@ -46,7 +46,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtBoxLastname = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.txtBoxPetName = new System.Windows.Forms.TextBox();
             this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
             this.txtBoxPetType = new System.Windows.Forms.TextBox();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.NewTenantPnl.SuspendLayout();
             this.grpboxnew.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -196,6 +196,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
             this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
             this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
@@ -206,7 +207,6 @@
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.txtBoxLastname);
@@ -326,14 +326,6 @@
             this.label7.Size = new System.Drawing.Size(115, 14);
             this.label7.TabIndex = 109;
             this.label7.Text = "Telephone Number:";
-            // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(145, 137);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(178, 20);
-            this.txtBoxNatureOfOccupancy.TabIndex = 134;
             // 
             // label20
             // 
@@ -835,6 +827,20 @@
             this.txtBoxPetType.Size = new System.Drawing.Size(149, 20);
             this.txtBoxPetType.TabIndex = 72;
             // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
+            "Tenant",
+            "Unit Owner"});
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(141, 134);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
+            this.txtBoxNatureOfOccupancy.TabIndex = 149;
+            // 
             // CreateNewTenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -910,7 +916,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtBoxHomeAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtBoxLastname;
@@ -935,5 +940,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker datePickerDateOfBirth;
         private System.Windows.Forms.ComboBox comboBoxMaritalStatus;
+        private System.Windows.Forms.ComboBox txtBoxNatureOfOccupancy;
     }
 }

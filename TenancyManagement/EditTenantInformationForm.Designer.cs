@@ -80,7 +80,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -99,6 +98,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.EditTenantPnl.SuspendLayout();
             this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -551,6 +551,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
             this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
             this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
@@ -561,7 +562,6 @@
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox6.Controls.Add(this.txtBoxUnitNo);
             this.groupBox6.Controls.Add(this.label20);
@@ -695,15 +695,6 @@
             this.label7.Size = new System.Drawing.Size(115, 14);
             this.label7.TabIndex = 109;
             this.label7.Text = "Telephone Number:";
-            // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
-            this.txtBoxNatureOfOccupancy.Enabled = false;
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(255, 169);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(178, 20);
-            this.txtBoxNatureOfOccupancy.TabIndex = 134;
             // 
             // txtBoxUnitOwner
             // 
@@ -889,6 +880,20 @@
             this.Go.UseVisualStyleBackColor = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
+            "Tenant",
+            "Unit Owner"});
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(251, 171);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
+            this.txtBoxNatureOfOccupancy.TabIndex = 150;
+            // 
             // EditTenantInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,7 +967,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtBoxHomeAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
         private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.TextBox txtBoxUnitNo;
         private System.Windows.Forms.Label label20;
@@ -994,5 +998,6 @@
         private System.Windows.Forms.ComboBox comboBoxMaritalStatus;
         private System.Windows.Forms.Button btnGeneratePassword;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox txtBoxNatureOfOccupancy;
     }
 }
