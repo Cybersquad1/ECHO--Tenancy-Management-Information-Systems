@@ -27,4 +27,3 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache

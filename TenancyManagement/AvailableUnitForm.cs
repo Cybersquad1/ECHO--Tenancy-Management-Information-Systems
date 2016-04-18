@@ -114,7 +114,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 item.ExpectedEndOfOccupancy > DateTime.Now) //Availability
                     lvi.SubItems.Add("Available");
                 else
-                    lvi.SubItems.Add("Not available");
+                    lvi.SubItems.Add("Occupied");
 
                 lvi.SubItems.Add(item.Floor); //Unit Floor
                 lvi.SubItems.Add(item.Type); //Unit Type
@@ -197,6 +197,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             txtBoxFloor.Text = selectedUnit.Floor;
             txtBoxType.Text = selectedUnit.Type;
+            txtBoxNatureOfOccupancy.Text = selectedUnit.NatureOfOccupancy;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -251,6 +252,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             unitNo = listViewUnits.SelectedItems[0].SubItems[0].Text;
 
             GetSelectedUnit();
+
+            btnSave.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -260,10 +263,18 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 UnitNumber = txtBoxUnitNumber.Text,
                 ExpectedEndOfOccupancy = datePickerEnd.Value,
                 StartOfOccupancy = datePickerStart.Value,
-                Tenant = tenantID
+                Tenant = tenantID,
+                NatureOfOccupancy = txtBoxNatureOfOccupancy.Text
             };
 
-            vm.Save(unitProfile);
+            if(vm.Save(unitProfile)) //If saved successful
+            {
+                MessageBox.Show("Successfully saved");
+            }
+            else //Error on saving
+            {
+                MessageBox.Show("Error on saving. . . \nThere was some kind of error", "Error");
+            }
 
             GetSelectedUnit(); //reload data
         }
@@ -277,6 +288,16 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         {
             SelectTenant form = new SelectTenant(this);
             form.ShowDialog();
+        }
+
+        private void listViewUnitSearch_DoubleClick(object sender, EventArgs e)
+        {
+            TabPage openTab = tabControl1.TabPages[1];
+            tabControl1.SelectedTab = openTab;
+
+            unitNo = listViewUnitSearch.SelectedItems[0].SubItems[0].Text;
+
+            GetSelectedUnit();
         }
     }
 }

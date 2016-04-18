@@ -17,7 +17,7 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LogSheet()
         {
-            this.LogSheetActivities = new HashSet<LogSheetActivity>();
+            this.LogSheetActivity = new HashSet<LogSheetActivity>();
         }
     
         public System.Guid ID { get; set; }
@@ -28,6 +28,6 @@ namespace Echo.Data.Repository
     
         public virtual UserProfile UserProfile { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LogSheetActivity> LogSheetActivities { get; set; }
+        public virtual ICollection<LogSheetActivity> LogSheetActivity { get; set; }
     }
 }

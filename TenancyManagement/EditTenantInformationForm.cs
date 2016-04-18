@@ -265,7 +265,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             {
                 using (var db = new EchoEntities())
                 {
-                    var editTenant = db.TenantProfiles.FirstOrDefault(r => r.ID == tenantID);
+                    var editTenant = db.TenantProfile.FirstOrDefault(r => r.ID == tenantID);
 
                     //Personal Information
                     editTenant.FirstName = txtBoxFirstName.Text;

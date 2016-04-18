@@ -249,7 +249,7 @@
             this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerDateOfBirth.Location = new System.Drawing.Point(109, 87);
             this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
-            this.datePickerDateOfBirth.Size = new System.Drawing.Size(214, 20);
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(100, 20);
             this.datePickerDateOfBirth.TabIndex = 147;
             // 
             // txtBoxProvincialAddress

@@ -25,15 +25,15 @@ namespace Echo.Data.Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<LogSheet> LogSheets { get; set; }
-        public virtual DbSet<LogSheetActivity> LogSheetActivities { get; set; }
-        public virtual DbSet<MonthlyAssociationDue> MonthlyAssociationDues { get; set; }
-        public virtual DbSet<PaymentHistory> PaymentHistories { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TenantArchive> TenantArchives { get; set; }
-        public virtual DbSet<TenantProfile> TenantProfiles { get; set; }
-        public virtual DbSet<UnitProfile> UnitProfiles { get; set; }
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
-        public virtual DbSet<WaterBilling> WaterBillings { get; set; }
+        public virtual DbSet<LogSheet> LogSheet { get; set; }
+        public virtual DbSet<LogSheetActivity> LogSheetActivity { get; set; }
+        public virtual DbSet<MonthlyAssociationDue> MonthlyAssociationDue { get; set; }
+        public virtual DbSet<PaymentHistory> PaymentHistory { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TenantArchive> TenantArchive { get; set; }
+        public virtual DbSet<TenantProfile> TenantProfile { get; set; }
+        public virtual DbSet<UnitProfile> UnitProfile { get; set; }
+        public virtual DbSet<UserProfile> UserProfile { get; set; }
+        public virtual DbSet<WaterBilling> WaterBilling { get; set; }
     }
 }

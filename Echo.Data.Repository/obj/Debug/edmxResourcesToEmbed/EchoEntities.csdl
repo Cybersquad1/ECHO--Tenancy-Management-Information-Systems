@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="EchoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="EchoEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="LogSheets" EntityType="EchoModel.LogSheet" />
-    <EntitySet Name="LogSheetActivities" EntityType="EchoModel.LogSheetActivity" />
-    <EntitySet Name="MonthlyAssociationDues" EntityType="EchoModel.MonthlyAssociationDue" />
-    <EntitySet Name="PaymentHistories" EntityType="EchoModel.PaymentHistory" />
-    <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagram" />
-    <EntitySet Name="TenantArchives" EntityType="EchoModel.TenantArchive" />
-    <EntitySet Name="TenantProfiles" EntityType="EchoModel.TenantProfile" />
-    <EntitySet Name="UnitProfiles" EntityType="EchoModel.UnitProfile" />
-    <EntitySet Name="UserProfiles" EntityType="EchoModel.UserProfile" />
-    <EntitySet Name="WaterBillings" EntityType="EchoModel.WaterBilling" />
+    <EntitySet Name="LogSheet" EntityType="EchoModel.LogSheet" />
+    <EntitySet Name="LogSheetActivity" EntityType="EchoModel.LogSheetActivity" />
+    <EntitySet Name="MonthlyAssociationDue" EntityType="EchoModel.MonthlyAssociationDue" />
+    <EntitySet Name="PaymentHistory" EntityType="EchoModel.PaymentHistory" />
+    <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagrams" />
+    <EntitySet Name="TenantArchive" EntityType="EchoModel.TenantArchive" />
+    <EntitySet Name="TenantProfile" EntityType="EchoModel.TenantProfile" />
+    <EntitySet Name="UnitProfile" EntityType="EchoModel.UnitProfile" />
+    <EntitySet Name="UserProfile" EntityType="EchoModel.UserProfile" />
+    <EntitySet Name="WaterBilling" EntityType="EchoModel.WaterBilling" />
     <AssociationSet Name="FK_LogSheet_UserProfile" Association="EchoModel.FK_LogSheet_UserProfile">
-      <End Role="UserProfile" EntitySet="UserProfiles" />
-      <End Role="LogSheet" EntitySet="LogSheets" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="LogSheet" EntitySet="LogSheet" />
     </AssociationSet>
     <AssociationSet Name="FK_LogSheetActivity_LogSheet" Association="EchoModel.FK_LogSheetActivity_LogSheet">
-      <End Role="LogSheet" EntitySet="LogSheets" />
-      <End Role="LogSheetActivity" EntitySet="LogSheetActivities" />
+      <End Role="LogSheet" EntitySet="LogSheet" />
+      <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
     </AssociationSet>
     <AssociationSet Name="FK_LogSheetActivity_UserProfile" Association="EchoModel.FK_LogSheetActivity_UserProfile">
-      <End Role="UserProfile" EntitySet="UserProfiles" />
-      <End Role="LogSheetActivity" EntitySet="LogSheetActivities" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="LogSheetActivity" EntitySet="LogSheetActivity" />
     </AssociationSet>
     <AssociationSet Name="FK_MonthlyAssociationDue_UnitProfile" Association="EchoModel.FK_MonthlyAssociationDue_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfiles" />
-      <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDues" />
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
     </AssociationSet>
     <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="EchoModel.FK_PaymentHistory_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfiles" />
-      <End Role="PaymentHistory" EntitySet="PaymentHistories" />
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="EchoModel.FK_TenantArchive_TenantProfile">
-      <End Role="TenantProfile" EntitySet="TenantProfiles" />
-      <End Role="TenantArchive" EntitySet="TenantArchives" />
+      <End Role="TenantProfile" EntitySet="TenantProfile" />
+      <End Role="TenantArchive" EntitySet="TenantArchive" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="EchoModel.FK_TenantArchive_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfiles" />
-      <End Role="TenantArchive" EntitySet="TenantArchives" />
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="TenantArchive" EntitySet="TenantArchive" />
     </AssociationSet>
     <AssociationSet Name="FK_WaterBilling_UnitProfile" Association="EchoModel.FK_WaterBilling_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfiles" />
-      <End Role="WaterBilling" EntitySet="WaterBillings" />
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="WaterBilling" EntitySet="WaterBilling" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="LogSheet">
@@ -54,7 +54,7 @@
     <Property Name="DateModified" Type="DateTime" Precision="3" />
     <Property Name="ModifiedBy" Type="Guid" />
     <NavigationProperty Name="UserProfile" Relationship="EchoModel.FK_LogSheet_UserProfile" FromRole="LogSheet" ToRole="UserProfile" />
-    <NavigationProperty Name="LogSheetActivities" Relationship="EchoModel.FK_LogSheetActivity_LogSheet" FromRole="LogSheet" ToRole="LogSheetActivity" />
+    <NavigationProperty Name="LogSheetActivity" Relationship="EchoModel.FK_LogSheetActivity_LogSheet" FromRole="LogSheet" ToRole="LogSheetActivity" />
   </EntityType>
   <EntityType Name="LogSheetActivity">
     <Key>
@@ -101,7 +101,7 @@
     <Property Name="CurrentWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="PaymentHistory" ToRole="UnitProfile" />
   </EntityType>
-  <EntityType Name="sysdiagram">
+  <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
@@ -161,7 +161,9 @@
     <Property Name="PetType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PetBreed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PetName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
+    <Property Name="StartOfOccupancy" Type="Int32" />
+    <Property Name="EndOfOccupancy" Type="Int32" />
+    <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
@@ -175,10 +177,10 @@
     <Property Name="NatureOfOccupancy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Floor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="MonthlyAssociationDues" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
-    <NavigationProperty Name="PaymentHistories" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
-    <NavigationProperty Name="TenantArchives" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
-    <NavigationProperty Name="WaterBillings" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
+    <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
+    <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
+    <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
+    <NavigationProperty Name="WaterBilling" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
   </EntityType>
   <EntityType Name="UserProfile">
     <Key>
@@ -205,8 +207,8 @@
     <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="IfGeneratedPassword" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="FullName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="LogSheets" Relationship="EchoModel.FK_LogSheet_UserProfile" FromRole="UserProfile" ToRole="LogSheet" />
-    <NavigationProperty Name="LogSheetActivities" Relationship="EchoModel.FK_LogSheetActivity_UserProfile" FromRole="UserProfile" ToRole="LogSheetActivity" />
+    <NavigationProperty Name="LogSheet" Relationship="EchoModel.FK_LogSheet_UserProfile" FromRole="UserProfile" ToRole="LogSheet" />
+    <NavigationProperty Name="LogSheetActivity" Relationship="EchoModel.FK_LogSheetActivity_UserProfile" FromRole="UserProfile" ToRole="LogSheetActivity" />
   </EntityType>
   <EntityType Name="WaterBilling">
     <Key>

@@ -208,7 +208,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             using (var db = new EchoEntities())
             {
                 //assign field to class
-                var editUser = db.UserProfiles.FirstOrDefault(r => r.ID == userID);
+                var editUser = db.UserProfile.FirstOrDefault(r => r.ID == userID);
 
                 //will only change password if user clicks "Generate Password"
                 if (txtBoxPassword.Text != "")

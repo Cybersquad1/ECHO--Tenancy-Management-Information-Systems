@@ -287,7 +287,6 @@
             // 
             // txtBoxNatureOfOccupancy
             // 
-            this.txtBoxNatureOfOccupancy.Enabled = false;
             this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
             this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
@@ -502,6 +501,7 @@
             this.listViewUnitSearch.TabIndex = 2;
             this.listViewUnitSearch.UseCompatibleStateImageBehavior = false;
             this.listViewUnitSearch.View = System.Windows.Forms.View.Details;
+            this.listViewUnitSearch.DoubleClick += new System.EventHandler(this.listViewUnitSearch_DoubleClick);
             // 
             // columnHeader7
             // 

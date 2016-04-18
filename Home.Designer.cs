@@ -80,11 +80,11 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblLogout = new System.Windows.Forms.Label();
             this.baPanel.SuspendLayout();
             this.UserAccPnl.SuspendLayout();
             this.TenMgmtPnl.SuspendLayout();
@@ -765,6 +765,22 @@
             this.panelTop.Size = new System.Drawing.Size(1284, 127);
             this.panelTop.TabIndex = 64;
             // 
+            // lblLogout
+            // 
+            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLogout.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblLogout.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
+            this.lblLogout.Location = new System.Drawing.Point(1220, 55);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(52, 16);
+            this.lblLogout.TabIndex = 65;
+            this.lblLogout.Text = "Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
             // lblUsername
             // 
             this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -785,12 +801,12 @@
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
-            this.panelLeft.Controls.Add(this.TenMgmtPnl);
-            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Controls.Add(this.UserAccPnl);
+            this.panelLeft.Controls.Add(this.TenMgmtPnl);
+            this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";
@@ -814,22 +830,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblLogout
-            // 
-            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblLogout.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblLogout.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
-            this.lblLogout.Location = new System.Drawing.Point(1220, 55);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(52, 16);
-            this.lblLogout.TabIndex = 65;
-            this.lblLogout.Text = "Logout";
-            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // Home
             // 

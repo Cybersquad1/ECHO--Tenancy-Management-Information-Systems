@@ -178,11 +178,17 @@ namespace Tenancy_Management_Information_Systems
             tenancyDatabasePnl.Visible = true;
         }
 
-        private void ViewTenantProfButton_Click(object sender, EventArgs e)
+        private void ViewTenantProfButton_Click(object sender, EventArgs e) //View Tenant Profile
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.TenancyDatabaseForm t3 = new TenancyManagement.TenancyDatabaseForm();
             t3.TenancyDBPnl.Visible = true;
-            t3.ShowDialog();
+            t3.TopLevel = false;
+            t3.Visible = true;
+            t3.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t3);
         }
 
         private void PHistoryButton_Click(object sender, EventArgs e)

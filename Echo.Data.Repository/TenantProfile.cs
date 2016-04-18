@@ -17,7 +17,7 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TenantProfile()
         {
-            this.TenantArchives = new HashSet<TenantArchive>();
+            this.TenantArchive = new HashSet<TenantArchive>();
         }
     
         public System.Guid ID { get; set; }
@@ -53,8 +53,10 @@ namespace Echo.Data.Repository
         public string PetType { get; set; }
         public string PetBreed { get; set; }
         public string PetName { get; set; }
+        public Nullable<int> StartOfOccupancy { get; set; }
+        public Nullable<int> EndOfOccupancy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TenantArchive> TenantArchives { get; set; }
+        public virtual ICollection<TenantArchive> TenantArchive { get; set; }
     }
 }

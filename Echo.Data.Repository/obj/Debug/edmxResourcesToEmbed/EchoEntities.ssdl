@@ -109,6 +109,8 @@
     <Property Name="PetType" Type="varchar" MaxLength="100" />
     <Property Name="PetBreed" Type="varchar" MaxLength="100" />
     <Property Name="PetName" Type="varchar" MaxLength="300" />
+    <Property Name="StartOfOccupancy" Type="int" />
+    <Property Name="EndOfOccupancy" Type="int" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>
