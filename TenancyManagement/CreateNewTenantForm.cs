@@ -155,9 +155,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void checkBoxWithOther_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxWithOther.Checked)
-                groupBoxOtherOccupants.Visible = true;
+                groupBoxOtherOccupants.Enabled = true;
             else
-                groupBoxOtherOccupants.Visible = false;
+                groupBoxOtherOccupants.Enabled = false;
         }
 
         private void grpboxnew_Enter(object sender, EventArgs e)
@@ -168,9 +168,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void checkBoxPets_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxPets.Checked)
-                groupBoxPets.Visible = true;
+                groupBoxPets.Enabled = true;
             else
-                groupBoxPets.Visible = false;
+                groupBoxPets.Enabled = false;
         }
 
         private void btnAddPicture_Click(object sender, EventArgs e)

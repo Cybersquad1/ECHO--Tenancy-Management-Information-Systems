@@ -36,6 +36,7 @@
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
@@ -60,11 +61,6 @@
             this.pictureBoxTenant = new System.Windows.Forms.PictureBox();
             this.btnWebcam = new System.Windows.Forms.Button();
             this.btnAddPicture = new System.Windows.Forms.Button();
-            this.gbStay = new System.Windows.Forms.GroupBox();
-            this.datePickerEndDate = new System.Windows.Forms.DateTimePicker();
-            this.datePickerStartDate = new System.Windows.Forms.DateTimePicker();
-            this.EEDate = new System.Windows.Forms.Label();
-            this.StartDate = new System.Windows.Forms.Label();
             this.checkBoxFireExtinguisher = new System.Windows.Forms.CheckBox();
             this.checkBoxPets = new System.Windows.Forms.CheckBox();
             this.checkBoxWithOther = new System.Windows.Forms.CheckBox();
@@ -93,13 +89,11 @@
             this.txtBoxPetName = new System.Windows.Forms.TextBox();
             this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
             this.txtBoxPetType = new System.Windows.Forms.TextBox();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.NewTenantPnl.SuspendLayout();
             this.grpboxnew.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).BeginInit();
-            this.gbStay.SuspendLayout();
             this.groupBoxOtherOccupants.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBoxPets.SuspendLayout();
@@ -123,11 +117,9 @@
             this.grpboxnew.Controls.Add(this.pictureBoxTenant);
             this.grpboxnew.Controls.Add(this.btnWebcam);
             this.grpboxnew.Controls.Add(this.btnAddPicture);
-            this.grpboxnew.Controls.Add(this.gbStay);
             this.grpboxnew.Controls.Add(this.checkBoxFireExtinguisher);
             this.grpboxnew.Controls.Add(this.checkBoxPets);
             this.grpboxnew.Controls.Add(this.checkBoxWithOther);
-            this.grpboxnew.Controls.Add(this.groupBoxOtherOccupants);
             this.grpboxnew.Controls.Add(this.btnCreate);
             this.grpboxnew.Controls.Add(this.btnCancel);
             this.grpboxnew.Controls.Add(this.groupBox4);
@@ -225,6 +217,20 @@
             this.groupBox6.TabIndex = 144;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
+            // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
+            "Tenant",
+            "Unit Owner"});
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(141, 134);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
+            this.txtBoxNatureOfOccupancy.TabIndex = 149;
             // 
             // comboBoxMaritalStatus
             // 
@@ -474,62 +480,6 @@
             this.btnAddPicture.UseVisualStyleBackColor = true;
             this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
             // 
-            // gbStay
-            // 
-            this.gbStay.Controls.Add(this.datePickerEndDate);
-            this.gbStay.Controls.Add(this.datePickerStartDate);
-            this.gbStay.Controls.Add(this.EEDate);
-            this.gbStay.Controls.Add(this.StartDate);
-            this.gbStay.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbStay.Location = new System.Drawing.Point(180, 272);
-            this.gbStay.Name = "gbStay";
-            this.gbStay.Size = new System.Drawing.Size(744, 47);
-            this.gbStay.TabIndex = 50;
-            this.gbStay.TabStop = false;
-            this.gbStay.Text = "Duration of Stay";
-            // 
-            // datePickerEndDate
-            // 
-            this.datePickerEndDate.CustomFormat = "mm/dd/yyyy";
-            this.datePickerEndDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerEndDate.Location = new System.Drawing.Point(380, 19);
-            this.datePickerEndDate.Name = "datePickerEndDate";
-            this.datePickerEndDate.Size = new System.Drawing.Size(130, 20);
-            this.datePickerEndDate.TabIndex = 61;
-            // 
-            // datePickerStartDate
-            // 
-            this.datePickerStartDate.CustomFormat = "mm/dd/yyyy";
-            this.datePickerStartDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerStartDate.Location = new System.Drawing.Point(99, 20);
-            this.datePickerStartDate.Name = "datePickerStartDate";
-            this.datePickerStartDate.Size = new System.Drawing.Size(130, 20);
-            this.datePickerStartDate.TabIndex = 60;
-            // 
-            // EEDate
-            // 
-            this.EEDate.AutoSize = true;
-            this.EEDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EEDate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EEDate.Location = new System.Drawing.Point(252, 22);
-            this.EEDate.Name = "EEDate";
-            this.EEDate.Size = new System.Drawing.Size(110, 14);
-            this.EEDate.TabIndex = 43;
-            this.EEDate.Text = "Expected End Date:";
-            // 
-            // StartDate
-            // 
-            this.StartDate.AutoSize = true;
-            this.StartDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.StartDate.Location = new System.Drawing.Point(23, 22);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(63, 14);
-            this.StartDate.TabIndex = 42;
-            this.StartDate.Text = "Start Date:";
-            // 
             // checkBoxFireExtinguisher
             // 
             this.checkBoxFireExtinguisher.AutoSize = true;
@@ -579,14 +529,14 @@
             this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth1);
             this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation1);
             this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName1);
+            this.groupBoxOtherOccupants.Enabled = false;
             this.groupBoxOtherOccupants.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxOtherOccupants.Location = new System.Drawing.Point(180, 323);
+            this.groupBoxOtherOccupants.Location = new System.Drawing.Point(11, 19);
             this.groupBoxOtherOccupants.Name = "groupBoxOtherOccupants";
             this.groupBoxOtherOccupants.Size = new System.Drawing.Size(744, 118);
             this.groupBoxOtherOccupants.TabIndex = 46;
             this.groupBoxOtherOccupants.TabStop = false;
             this.groupBoxOtherOccupants.Text = "Other Occupants";
-            this.groupBoxOtherOccupants.Visible = false;
             // 
             // label5
             // 
@@ -727,6 +677,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.groupBoxPets);
+            this.groupBox4.Controls.Add(this.groupBoxOtherOccupants);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(169, 253);
             this.groupBox4.Name = "groupBox4";
@@ -745,14 +696,14 @@
             this.groupBoxPets.Controls.Add(this.txtBoxPetName);
             this.groupBoxPets.Controls.Add(this.txtBoxPetBreed);
             this.groupBoxPets.Controls.Add(this.txtBoxPetType);
+            this.groupBoxPets.Enabled = false;
             this.groupBoxPets.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPets.Location = new System.Drawing.Point(11, 194);
+            this.groupBoxPets.Location = new System.Drawing.Point(11, 143);
             this.groupBoxPets.Name = "groupBoxPets";
             this.groupBoxPets.Size = new System.Drawing.Size(744, 71);
             this.groupBoxPets.TabIndex = 48;
             this.groupBoxPets.TabStop = false;
             this.groupBoxPets.Text = "Pets (if any)";
-            this.groupBoxPets.Visible = false;
             this.groupBoxPets.Enter += new System.EventHandler(this.gbPets_Enter);
             // 
             // label17
@@ -827,20 +778,6 @@
             this.txtBoxPetType.Size = new System.Drawing.Size(149, 20);
             this.txtBoxPetType.TabIndex = 72;
             // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
-            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
-            "Tenant",
-            "Unit Owner"});
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(141, 134);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
-            this.txtBoxNatureOfOccupancy.TabIndex = 149;
-            // 
             // CreateNewTenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -862,8 +799,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).EndInit();
-            this.gbStay.ResumeLayout(false);
-            this.gbStay.PerformLayout();
             this.groupBoxOtherOccupants.ResumeLayout(false);
             this.groupBoxOtherOccupants.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -885,11 +820,6 @@
         private System.Windows.Forms.PictureBox pictureBoxTenant;
         private System.Windows.Forms.Button btnWebcam;
         private System.Windows.Forms.Button btnAddPicture;
-        private System.Windows.Forms.GroupBox gbStay;
-        private System.Windows.Forms.DateTimePicker datePickerEndDate;
-        private System.Windows.Forms.DateTimePicker datePickerStartDate;
-        private System.Windows.Forms.Label EEDate;
-        private System.Windows.Forms.Label StartDate;
         private System.Windows.Forms.CheckBox checkBoxFireExtinguisher;
         private System.Windows.Forms.CheckBox checkBoxPets;
         private System.Windows.Forms.CheckBox checkBoxWithOther;

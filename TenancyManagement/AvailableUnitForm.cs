@@ -43,11 +43,12 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             if(avail == "Available")
             {
-                units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy > DateTime.Now);
+                units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy 
+                    > DateTime.Now && r.NatureOfOccupancy == "Tenant");
             }
             else //Occupied
             {
-                units = units.Where(r => r.ExpectedEndOfOccupancy < DateTime.Now);
+                units = units.Where(r => r.ExpectedEndOfOccupancy < DateTime.Now && r.NatureOfOccupancy == "Tenant");
             }
 
             if(unitFloor != "")
@@ -111,7 +112,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 ListViewItem lvi = new ListViewItem(item.UnitNumber); //Unit No
 
                 if (item.ExpectedEndOfOccupancy == null ||
-                item.ExpectedEndOfOccupancy > DateTime.Now) //Availability
+                item.ExpectedEndOfOccupancy > DateTime.Now && item.NatureOfOccupancy == "Tenant") //Availability
                     lvi.SubItems.Add("Available");
                 else
                     lvi.SubItems.Add("Occupied");
@@ -122,9 +123,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 //Unit Owner
                 if(item.Owner != null)
                 {
-                    var owner = new UserViewModel().GetSelectedUser(item.Owner);
+                    var owner = new TenantViewModel().GetSelectedTenant(item.Owner);
 
-                    lvi.SubItems.Add(owner.FullName);
+                    lvi.SubItems.Add(owner.FirstName + " " + owner.LastName);
                 }
                 else
                 {
@@ -169,9 +170,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             if(selectedUnit.Owner != null) //Owner 
             {
-                var owner = new UserViewModel().GetSelectedUser(selectedUnit.Owner);
+                var owner = new TenantViewModel().GetSelectedTenant(selectedUnit.Owner);
 
-                txtBoxUnitOwner.Text = owner.FullName;
+                txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
             }
             else
             {
@@ -198,6 +199,15 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             txtBoxFloor.Text = selectedUnit.Floor;
             txtBoxType.Text = selectedUnit.Type;
             txtBoxNatureOfOccupancy.Text = selectedUnit.NatureOfOccupancy;
+
+            if(txtBoxNatureOfOccupancy.Text == "Unit Owner")
+            {
+                btnSelectTenant.Enabled = false;
+            }
+            else
+            {
+                btnSelectTenant.Enabled = true;
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

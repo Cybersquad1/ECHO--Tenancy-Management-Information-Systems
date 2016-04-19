@@ -48,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.datePickerStart = new System.Windows.Forms.DateTimePicker();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -226,17 +226,17 @@
             this.btnSelectTenant.Name = "btnSelectTenant";
             this.btnSelectTenant.Size = new System.Drawing.Size(156, 24);
             this.btnSelectTenant.TabIndex = 20;
-            this.btnSelectTenant.Text = "Select Tenant";
+            this.btnSelectTenant.Text = "Select Occupant";
             this.btnSelectTenant.UseVisualStyleBackColor = true;
             this.btnSelectTenant.Click += new System.EventHandler(this.btnSelectTenant_Click);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox4.Controls.Add(this.txtBoxTenant);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.datePickerEnd);
             this.groupBox4.Controls.Add(this.datePickerStart);
-            this.groupBox4.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
@@ -259,11 +259,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 108);
+            this.label2.Location = new System.Drawing.Point(72, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 15);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Tenant:";
+            this.label2.Text = "Occupant:";
             // 
             // datePickerEnd
             // 
@@ -272,7 +272,7 @@
             this.datePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerEnd.Location = new System.Drawing.Point(143, 53);
             this.datePickerEnd.Name = "datePickerEnd";
-            this.datePickerEnd.Size = new System.Drawing.Size(123, 20);
+            this.datePickerEnd.Size = new System.Drawing.Size(99, 20);
             this.datePickerEnd.TabIndex = 124;
             // 
             // datePickerStart
@@ -282,16 +282,8 @@
             this.datePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerStart.Location = new System.Drawing.Point(143, 28);
             this.datePickerStart.Name = "datePickerStart";
-            this.datePickerStart.Size = new System.Drawing.Size(123, 20);
+            this.datePickerStart.Size = new System.Drawing.Size(99, 20);
             this.datePickerStart.TabIndex = 123;
-            // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(253, 20);
-            this.txtBoxNatureOfOccupancy.TabIndex = 122;
             // 
             // label6
             // 
@@ -652,6 +644,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
+            "Tenant",
+            "Unit Owner"});
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(143, 79);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(253, 22);
+            this.txtBoxNatureOfOccupancy.TabIndex = 150;
+            // 
             // AvailableUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,7 +731,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxType;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -734,5 +739,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSelectTenant;
         public System.Windows.Forms.TextBox txtBoxTenant;
+        private System.Windows.Forms.ComboBox txtBoxNatureOfOccupancy;
     }
 }

@@ -24,10 +24,12 @@ namespace Echo.Data.Repository.ViewModel
                 //end of unit update
 
                 //update tenant profile info
-                var tenant = new TenantViewModel().GetSelectedTenant(unitProfile.Tenant);
-                tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
 
                 var db = new EchoEntities();
+                var tenant = db.TenantProfile.FirstOrDefault(r => r.ID == unitProfile.Tenant) ;
+                tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
+                tenant.UnitNumber = unitProfile.UnitNumber;
+
                 db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 //end of update tenant

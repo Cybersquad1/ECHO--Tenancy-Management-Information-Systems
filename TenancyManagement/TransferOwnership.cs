@@ -40,7 +40,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             else
                 tenants = vm.GetAll();
 
-            tenants = tenants.AsQueryable().Where(r => r.NatureOfOccupancy == "Owner").ToList();
+            tenants = tenants.AsQueryable().Where(r => r.NatureOfOccupancy == "Unit Owner").ToList();
 
             tenants.ForEach(item =>
             {
@@ -58,7 +58,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             {
                 UnitViewModel unitVM = new UnitViewModel();
 
-                if (unitVM.TransferOwnership(unitNo, _tenantID))
+                if (unitVM.TransferOwnership (unitNo, _tenantID))
                 {
                     MessageBox.Show("Ownership successfully transfer", "Successful");
 
