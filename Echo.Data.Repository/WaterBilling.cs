@@ -24,6 +24,10 @@ namespace Echo.Data.Repository
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<decimal> OverdueAmount { get; set; }
         public Nullable<decimal> DisconnectionFee { get; set; }
+        public string PreviousReading { get; set; }
+        public Nullable<decimal> PreviousAmount { get; set; }
+        public Nullable<decimal> Paid { get; set; }
+        public Nullable<decimal> Balance { get; set; }
     
         public virtual UnitProfile UnitProfile { get; set; }
     }

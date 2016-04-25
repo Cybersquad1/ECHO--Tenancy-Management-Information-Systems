@@ -32,60 +32,53 @@
             this.waterBillingPnl = new System.Windows.Forms.Panel();
             this.btnUserCreate = new System.Windows.Forms.Button();
             this.btnUserCancel = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.dateTimeDueDate = new System.Windows.Forms.DateTimePicker();
+            this.listViewFee = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtBoxChargeDate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxDisconnectionFee = new System.Windows.Forms.CheckBox();
+            this.checkBoxOverdue = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtBoxBillAmount = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBoxCurrentReading = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxTotalAmountDue = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewPreviousBalance = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeTo = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeFrom = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxPreviousBillAmount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxPreviousReading = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbBoxUnitNo = new System.Windows.Forms.ComboBox();
+            this.txtBoxTenant = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.waterBillingPnl.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,11 +90,10 @@
             // 
             this.waterBillingPnl.Controls.Add(this.btnUserCreate);
             this.waterBillingPnl.Controls.Add(this.btnUserCancel);
-            this.waterBillingPnl.Controls.Add(this.groupBox2);
             this.waterBillingPnl.Controls.Add(this.groupBox1);
             this.waterBillingPnl.Location = new System.Drawing.Point(2, 1);
             this.waterBillingPnl.Name = "waterBillingPnl";
-            this.waterBillingPnl.Size = new System.Drawing.Size(982, 564);
+            this.waterBillingPnl.Size = new System.Drawing.Size(779, 533);
             this.waterBillingPnl.TabIndex = 0;
             // 
             // btnUserCreate
@@ -110,7 +102,7 @@
             this.btnUserCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCreate.Image")));
             this.btnUserCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCreate.Location = new System.Drawing.Point(779, 516);
+            this.btnUserCreate.Location = new System.Drawing.Point(571, 489);
             this.btnUserCreate.Name = "btnUserCreate";
             this.btnUserCreate.Size = new System.Drawing.Size(92, 33);
             this.btnUserCreate.TabIndex = 23;
@@ -122,86 +114,28 @@
             this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
             this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCancel.Location = new System.Drawing.Point(879, 516);
+            this.btnUserCancel.Location = new System.Drawing.Point(669, 489);
             this.btnUserCancel.Name = "btnUserCancel";
             this.btnUserCancel.Size = new System.Drawing.Size(92, 33);
             this.btnUserCancel.TabIndex = 24;
             this.btnUserCancel.Text = "    Cancel";
             this.btnUserCancel.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 555);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Unit Owners/Tenants";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(4, 50);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(218, 498);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Unit Number";
-            this.columnHeader6.Width = 81;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Unit Owner/Tenant";
-            this.columnHeader7.Width = 135;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(113, 20);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Unit Number";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(197, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 23);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUserCancel.Click += new System.EventHandler(this.btnUserCancel_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.listView3);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.dateTimeDueDate);
+            this.groupBox1.Controls.Add(this.listViewFee);
+            this.groupBox1.Controls.Add(this.txtBoxChargeDate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(233, 6);
+            this.groupBox1.Location = new System.Drawing.Point(10, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(739, 498);
+            this.groupBox1.Size = new System.Drawing.Size(751, 477);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Billing Details";
@@ -215,31 +149,31 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Bill Due Date:";
             // 
-            // dateTimePicker1
+            // dateTimeDueDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(455, 111);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 20);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimeDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeDueDate.Location = new System.Drawing.Point(455, 111);
+            this.dateTimeDueDate.Name = "dateTimeDueDate";
+            this.dateTimeDueDate.Size = new System.Drawing.Size(223, 20);
+            this.dateTimeDueDate.TabIndex = 15;
             // 
-            // listView3
+            // listViewFee
             // 
-            this.listView3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewFee.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.listViewFee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listView3.FullRowSelect = true;
-            this.listView3.GridLines = true;
-            this.listView3.Location = new System.Drawing.Point(8, 376);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(725, 116);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listViewFee.FullRowSelect = true;
+            this.listViewFee.GridLines = true;
+            this.listViewFee.Location = new System.Drawing.Point(8, 372);
+            this.listViewFee.Name = "listViewFee";
+            this.listViewFee.Size = new System.Drawing.Size(725, 85);
+            this.listViewFee.TabIndex = 0;
+            this.listViewFee.UseCompatibleStateImageBehavior = false;
+            this.listViewFee.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -266,15 +200,15 @@
             this.columnHeader5.Text = "Total Amount Due";
             this.columnHeader5.Width = 201;
             // 
-            // textBox8
+            // txtBoxChargeDate
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(138, 111);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 20);
-            this.textBox8.TabIndex = 6;
-            this.textBox8.Text = "Date Today";
+            this.txtBoxChargeDate.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxChargeDate.Enabled = false;
+            this.txtBoxChargeDate.Location = new System.Drawing.Point(138, 111);
+            this.txtBoxChargeDate.Name = "txtBoxChargeDate";
+            this.txtBoxChargeDate.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxChargeDate.TabIndex = 6;
+            this.txtBoxChargeDate.Text = "Date Today";
             // 
             // label8
             // 
@@ -288,21 +222,21 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.pictureBox1);
-            this.groupBox5.Controls.Add(this.checkBox2);
-            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.checkBoxDisconnectionFee);
+            this.groupBox5.Controls.Add(this.checkBoxOverdue);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.textBox9);
+            this.groupBox5.Controls.Add(this.txtBoxBillAmount);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.txtBoxCurrentReading);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.textBox10);
+            this.groupBox5.Controls.Add(this.textBoxTotalAmountDue);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.listView2);
+            this.groupBox5.Controls.Add(this.listViewPreviousBalance);
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.dateTimePicker3);
+            this.groupBox5.Controls.Add(this.dateTimeTo);
             this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.dateTimePicker2);
+            this.groupBox5.Controls.Add(this.dateTimeFrom);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.shapeContainer1);
@@ -311,7 +245,6 @@
             this.groupBox5.Size = new System.Drawing.Size(725, 232);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // pictureBox1
             // 
@@ -323,25 +256,25 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox2
+            // checkBoxDisconnectionFee
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(136, 175);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(127, 18);
-            this.checkBox2.TabIndex = 35;
-            this.checkBox2.Text = "Disconnection Fee";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxDisconnectionFee.AutoSize = true;
+            this.checkBoxDisconnectionFee.Location = new System.Drawing.Point(136, 175);
+            this.checkBoxDisconnectionFee.Name = "checkBoxDisconnectionFee";
+            this.checkBoxDisconnectionFee.Size = new System.Drawing.Size(127, 18);
+            this.checkBoxDisconnectionFee.TabIndex = 35;
+            this.checkBoxDisconnectionFee.Text = "Disconnection Fee";
+            this.checkBoxDisconnectionFee.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxOverdue
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(136, 158);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 18);
-            this.checkBox1.TabIndex = 34;
-            this.checkBox1.Text = "Overdue";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxOverdue.AutoSize = true;
+            this.checkBoxOverdue.Location = new System.Drawing.Point(136, 158);
+            this.checkBoxOverdue.Name = "checkBoxOverdue";
+            this.checkBoxOverdue.Size = new System.Drawing.Size(73, 18);
+            this.checkBoxOverdue.TabIndex = 34;
+            this.checkBoxOverdue.Text = "Overdue";
+            this.checkBoxOverdue.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -352,13 +285,15 @@
             this.label13.TabIndex = 33;
             this.label13.Text = "Penalties:";
             // 
-            // textBox9
+            // txtBoxBillAmount
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox9.Location = new System.Drawing.Point(134, 127);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(193, 20);
-            this.textBox9.TabIndex = 32;
+            this.txtBoxBillAmount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxBillAmount.Location = new System.Drawing.Point(134, 127);
+            this.txtBoxBillAmount.Name = "txtBoxBillAmount";
+            this.txtBoxBillAmount.Size = new System.Drawing.Size(193, 20);
+            this.txtBoxBillAmount.TabIndex = 32;
+            this.txtBoxBillAmount.TextChanged += new System.EventHandler(this.txtBoxBillAmount_TextChanged);
+            this.txtBoxBillAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxBillAmount_KeyPress);
             // 
             // label9
             // 
@@ -369,13 +304,13 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Bill Amount:";
             // 
-            // textBox7
+            // txtBoxCurrentReading
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(134, 106);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(193, 20);
-            this.textBox7.TabIndex = 29;
+            this.txtBoxCurrentReading.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxCurrentReading.Location = new System.Drawing.Point(134, 106);
+            this.txtBoxCurrentReading.Name = "txtBoxCurrentReading";
+            this.txtBoxCurrentReading.Size = new System.Drawing.Size(193, 20);
+            this.txtBoxCurrentReading.TabIndex = 29;
             // 
             // label6
             // 
@@ -394,17 +329,17 @@
             this.groupBox6.TabIndex = 37;
             this.groupBox6.TabStop = false;
             // 
-            // textBox10
+            // textBoxTotalAmountDue
             // 
-            this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox10.Location = new System.Drawing.Point(404, 205);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(308, 21);
-            this.textBox10.TabIndex = 26;
-            this.textBox10.Text = "PHP 0.00";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTotalAmountDue.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxTotalAmountDue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTotalAmountDue.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.textBoxTotalAmountDue.Location = new System.Drawing.Point(404, 205);
+            this.textBoxTotalAmountDue.Name = "textBoxTotalAmountDue";
+            this.textBoxTotalAmountDue.Size = new System.Drawing.Size(308, 21);
+            this.textBoxTotalAmountDue.TabIndex = 26;
+            this.textBoxTotalAmountDue.Text = "PHP 0.00";
+            this.textBoxTotalAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -416,26 +351,28 @@
             this.label15.TabIndex = 25;
             this.label15.Text = "TOTAL AMOUNT DUE:";
             // 
-            // listView2
+            // listViewPreviousBalance
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewPreviousBalance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
             this.columnHeader9});
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(404, 33);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(308, 128);
-            this.listView2.TabIndex = 24;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listViewPreviousBalance.GridLines = true;
+            this.listViewPreviousBalance.Location = new System.Drawing.Point(404, 33);
+            this.listViewPreviousBalance.Name = "listViewPreviousBalance";
+            this.listViewPreviousBalance.Size = new System.Drawing.Size(308, 128);
+            this.listViewPreviousBalance.TabIndex = 24;
+            this.listViewPreviousBalance.UseCompatibleStateImageBehavior = false;
+            this.listViewPreviousBalance.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Date";
+            this.columnHeader8.Width = 138;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Amount";
+            this.columnHeader9.Width = 163;
             // 
             // label14
             // 
@@ -446,13 +383,13 @@
             this.label14.TabIndex = 23;
             this.label14.Text = "Previous Balance(s):";
             // 
-            // dateTimePicker3
+            // dateTimeTo
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(204, 29);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker3.TabIndex = 18;
+            this.dateTimeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeTo.Location = new System.Drawing.Point(204, 29);
+            this.dateTimeTo.Name = "dateTimeTo";
+            this.dateTimeTo.Size = new System.Drawing.Size(126, 20);
+            this.dateTimeTo.TabIndex = 18;
             // 
             // label12
             // 
@@ -463,13 +400,14 @@
             this.label12.TabIndex = 17;
             this.label12.Text = "To:";
             // 
-            // dateTimePicker2
+            // dateTimeFrom
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(47, 29);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(113, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeFrom.Location = new System.Drawing.Point(47, 29);
+            this.dateTimeFrom.Name = "dateTimeFrom";
+            this.dateTimeFrom.Size = new System.Drawing.Size(113, 20);
+            this.dateTimeFrom.TabIndex = 11;
+            this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
             // 
             // label11
             // 
@@ -512,9 +450,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.txtBoxPreviousBillAmount);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.txtBoxPreviousReading);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(356, 16);
             this.groupBox4.Name = "groupBox4";
@@ -522,14 +460,14 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
-            // textBox6
+            // txtBoxPreviousBillAmount
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(139, 34);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 20);
-            this.textBox6.TabIndex = 10;
+            this.txtBoxPreviousBillAmount.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPreviousBillAmount.Enabled = false;
+            this.txtBoxPreviousBillAmount.Location = new System.Drawing.Point(139, 34);
+            this.txtBoxPreviousBillAmount.Name = "txtBoxPreviousBillAmount";
+            this.txtBoxPreviousBillAmount.Size = new System.Drawing.Size(222, 20);
+            this.txtBoxPreviousBillAmount.TabIndex = 10;
             // 
             // label5
             // 
@@ -540,14 +478,14 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Previous Bill Amount:";
             // 
-            // textBox5
+            // txtBoxPreviousReading
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(139, 11);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 20);
-            this.textBox5.TabIndex = 6;
+            this.txtBoxPreviousReading.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPreviousReading.Enabled = false;
+            this.txtBoxPreviousReading.Location = new System.Drawing.Point(139, 11);
+            this.txtBoxPreviousReading.Name = "txtBoxPreviousReading";
+            this.txtBoxPreviousReading.Size = new System.Drawing.Size(222, 20);
+            this.txtBoxPreviousReading.TabIndex = 6;
             // 
             // label4
             // 
@@ -560,11 +498,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.cmbBoxUnitNo);
+            this.groupBox3.Controls.Add(this.txtBoxTenant);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Location = new System.Drawing.Point(8, 17);
             this.groupBox3.Name = "groupBox3";
@@ -572,14 +510,24 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
-            // textBox4
+            // cmbBoxUnitNo
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(91, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 5;
+            this.cmbBoxUnitNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxUnitNo.FormattingEnabled = true;
+            this.cmbBoxUnitNo.Location = new System.Drawing.Point(91, 8);
+            this.cmbBoxUnitNo.Name = "cmbBoxUnitNo";
+            this.cmbBoxUnitNo.Size = new System.Drawing.Size(239, 22);
+            this.cmbBoxUnitNo.TabIndex = 6;
+            this.cmbBoxUnitNo.SelectedIndexChanged += new System.EventHandler(this.cmbBoxUnitNo_SelectedIndexChanged);
+            // 
+            // txtBoxTenant
+            // 
+            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxTenant.Enabled = false;
+            this.txtBoxTenant.Location = new System.Drawing.Point(91, 55);
+            this.txtBoxTenant.Name = "txtBoxTenant";
+            this.txtBoxTenant.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxTenant.TabIndex = 5;
             // 
             // label2
             // 
@@ -590,14 +538,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Tenant:";
             // 
-            // textBox3
+            // txtBoxUnitOwner
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(91, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtBoxUnitOwner.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxUnitOwner.Enabled = false;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(91, 33);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxUnitOwner.TabIndex = 3;
             // 
             // label1
             // 
@@ -607,15 +555,6 @@
             this.label1.Size = new System.Drawing.Size(71, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "Unit Owner:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(91, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 20);
-            this.textBox2.TabIndex = 1;
             // 
             // linkLabel1
             // 
@@ -633,7 +572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(986, 568);
+            this.ClientSize = new System.Drawing.Size(783, 539);
             this.Controls.Add(this.waterBillingPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(352, 141);
@@ -641,8 +580,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "WaterBillingForm";
             this.waterBillingPnl.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -659,59 +596,53 @@
         #endregion
 
         internal System.Windows.Forms.Panel waterBillingPnl;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBoxPreviousBillAmount;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBoxPreviousReading;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBoxTenant;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimeTo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimeFrom;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtBoxChargeDate;
         private System.Windows.Forms.Label label8;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView listViewFee;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxTotalAmountDue;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewPreviousBalance;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnUserCreate;
         private System.Windows.Forms.Button btnUserCancel;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeDueDate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxDisconnectionFee;
+        private System.Windows.Forms.CheckBox checkBoxOverdue;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtBoxBillAmount;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBoxCurrentReading;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox cmbBoxUnitNo;
     }
 }

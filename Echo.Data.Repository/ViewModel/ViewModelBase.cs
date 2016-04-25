@@ -36,7 +36,7 @@ namespace Echo.Data.Repository.ViewModel
             Context.Set<TEntity>().Add(_entity);
 
             Context.SaveChanges();
-        }
+        }   
 
         protected void Update(TEntity _entity)
         {
@@ -48,6 +48,11 @@ namespace Echo.Data.Repository.ViewModel
         protected TEntity GetEntity(Func<TEntity, Boolean> predicate)
         {
             return Context.Set<TEntity>().FirstOrDefault(predicate);
+        }
+
+        protected TEntity GetLast(Func<TEntity, Boolean> predicate)
+        {
+            return Context.Set<TEntity>().LastOrDefault(predicate);
         }
 
         protected List<TEntity> Find(Func<TEntity, bool> predicate)

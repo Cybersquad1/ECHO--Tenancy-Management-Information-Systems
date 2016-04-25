@@ -170,6 +170,10 @@
           <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="OverdueAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DisconnectionFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PreviousReading" Type="varchar" MaxLength="100" />
+          <Property Name="PreviousAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <Association Name="FK_LogSheet_UserProfile">
           <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
@@ -540,6 +544,10 @@
           <Property Name="OverdueAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DisconnectionFee" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="WaterBilling" ToRole="UnitProfile" />
+          <Property Name="PreviousReading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PreviousAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <Association Name="FK_LogSheet_UserProfile">
           <End Type="EchoModel.UserProfile" Role="UserProfile" Multiplicity="0..1" />
@@ -806,6 +814,10 @@
           <EntitySetMapping Name="WaterBilling">
             <EntityTypeMapping TypeName="EchoModel.WaterBilling">
               <MappingFragment StoreEntitySet="WaterBilling">
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+                <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
                 <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
                 <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />

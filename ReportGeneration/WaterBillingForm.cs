@@ -7,45 +7,151 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Echo.Data.Repository.ViewModel;
+using Tenancy_Management_Information_Systems.Utilities;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
     public partial class WaterBillingForm : Form
     {
+        TenantViewModel tenantVm; //database connection for tenant
+
+        WaterBillingViewModel billingVm; //database conneciton for water billing
+
+        UnitViewModel unitVm; //database connection for Unit
+
         public WaterBillingForm()
         {
             InitializeComponent();
+
+            GetUnits(); //Get combo box data upon loading
+
+            txtBoxChargeDate.Text = DateTime.Now.ToShortDateString(); //Get today's Date         
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void GetBalance(string _unitNo)
         {
+            decimal totalBalance = 0;
 
+            listViewPreviousBalance.Items.Clear(); //clear existing record on table
+
+            billingVm = new WaterBillingViewModel(); //refresh db connection
+
+            var balance = billingVm.GetPreviousBalance(_unitNo);
+
+            balance.ForEach(item =>
+            {
+                ListViewItem lvi = new ListViewItem(item.Date.ToShortDateString());
+                lvi.SubItems.Add(string.Format("{0:0.00}", item.Amount));
+
+                listViewPreviousBalance.Items.Add(lvi);
+
+                totalBalance += item.Amount; //Get total amount remaining balance
+            });
+
+            textBoxTotalAmountDue.Text = string.Format("{0:0.00}", totalBalance);
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void GetUnitInformation(string _unitNo)
         {
+            unitVm = new UnitViewModel();
 
+            var unit = unitVm.GetSelected(_unitNo);
+
+            //Assign unit information
+            if(unit.Owner != null)
+            {
+                var tenant = tenantVm.GetSelectedTenant(unit.Owner);
+
+                txtBoxUnitOwner.Text = tenant.FirstName + " " + tenant.LastName;
+            }
+            else
+            {
+                txtBoxUnitOwner.Text = "N/A";
+            }
+
+            GetPreviousBilling(_unitNo); //Fetch previous billing
+            GetBalance(_unitNo); //Fetch Remaining Balance
         }
 
-        private void groupBox5_Enter(object sender, EventArgs e)
+        private void GetPreviousBilling(string _unitNo)
         {
+            billingVm = new WaterBillingViewModel(); //releoad database connection
 
+            var previousBilling = billingVm.GetPreviousBilling(_unitNo);
+
+            if(previousBilling != null)
+            {
+                txtBoxPreviousReading.Text = previousBilling[0]; //Reading
+                txtBoxPreviousBillAmount.Text = previousBilling[1]; //Amount
+            }
+            else //If no previous Billing Record found
+            {
+                txtBoxPreviousBillAmount.Text = "N/A";
+                txtBoxPreviousReading.Text = "N/A";
+            }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void GetUnits()
         {
+            cmbBoxUnitNo.Items.Clear(); //Clear Combo box
 
-        }
+            tenantVm = new TenantViewModel(); //reload database connection
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
+            var unitNumbers = tenantVm.GetAll().OrderBy(r => r.UnitNumber).ToList();
 
+            unitNumbers.ForEach(item =>
+            {
+                cmbBoxUnitNo.Items.Add(item.UnitNumber);
+            });
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             TenancyManagement.viewUnitNumberForm v2 = new TenancyManagement.viewUnitNumberForm();
             v2.Show();
+        }
+
+        private void btnUserCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Load unit information upon selecting value
+            GetUnitInformation(cmbBoxUnitNo.Text);
+        }
+
+        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
+        {
+            //automatically assign 1 month advance in TO Date
+            dateTimeTo.Value = dateTimeFrom.Value.AddMonths(1);
+
+            //assign 15 days for due date
+            dateTimeDueDate.Value = dateTimeTo.Value.AddDays(15);
+        }
+
+        private void txtBoxBillAmount_TextChanged(object sender, EventArgs e)
+        {
+            //disable checkboxes if no amount
+            if(txtBoxBillAmount.Text != "")
+            {
+                checkBoxDisconnectionFee.Enabled = true;
+                checkBoxOverdue.Enabled = true;
+            }
+            else
+            {
+                checkBoxDisconnectionFee.Enabled = false;
+                checkBoxOverdue.Enabled = false;
+            }
+        }
+
+        private void txtBoxBillAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormUtilities formUtilities = new FormUtilities();
+
+            formUtilities.AllowsNumericOnly(sender, e); //allows numeric only
         }
     }
 }
