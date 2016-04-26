@@ -170,7 +170,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     var owner = new UserViewModel().GetSelectedUser(unit.Owner);
                     startDate = unit.StartOfOccupancy.ToString();
                     endDate = unit.ExpectedEndOfOccupancy.ToString();
-                    lvi.SubItems.Add(owner.FullName); //owner
+                    if (owner != null)
+                        lvi.SubItems.Add(owner.FullName); //owner
+                    else
+                        lvi.SubItems.Add("N/A");
                 }
                 else
                 {

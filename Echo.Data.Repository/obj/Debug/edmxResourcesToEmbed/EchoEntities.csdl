@@ -225,6 +225,10 @@
     <Property Name="OverdueAmount" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="DisconnectionFee" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="WaterBilling" ToRole="UnitProfile" />
+    <Property Name="PreviousReading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PreviousAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
   <Association Name="FK_LogSheet_UserProfile">
     <End Type="EchoModel.UserProfile" Role="UserProfile" Multiplicity="0..1" />

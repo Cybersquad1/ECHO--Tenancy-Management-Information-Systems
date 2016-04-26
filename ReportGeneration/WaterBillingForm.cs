@@ -49,7 +49,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 totalBalance += item.Amount; //Get total amount remaining balance
             });
 
-            textBoxTotalAmountDue.Text = string.Format("{0:0.00}", totalBalance);
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", totalBalance);
         }
 
         private void GetUnitInformation(string _unitNo)
@@ -137,13 +137,19 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             //disable checkboxes if no amount
             if(txtBoxBillAmount.Text != "")
             {
+                //To enable Fee checkboxes
                 checkBoxDisconnectionFee.Enabled = true;
                 checkBoxOverdue.Enabled = true;
+
+                txtBoxTotalAmountDue.Text = 
+                    string.Format("{0:0.00}",decimal.Parse(txtBoxBillAmount.Text));
             }
             else
             {
                 checkBoxDisconnectionFee.Enabled = false;
                 checkBoxOverdue.Enabled = false;
+
+                txtBoxTotalAmountDue.Text = "0.00";
             }
         }
 
@@ -152,6 +158,38 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             FormUtilities formUtilities = new FormUtilities();
 
             formUtilities.AllowsNumericOnly(sender, e); //allows numeric only
+        }
+
+        private void checkBoxOverdue_CheckedChanged(object sender, EventArgs e)
+        {
+            decimal total = decimal.Parse(txtBoxTotalAmountDue.Text);
+
+            if (checkBoxOverdue.Checked)
+            {
+                total += 250;
+            }
+            else
+            {
+                total -= 250;
+            }
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+        }
+
+        private void checkBoxDisconnectionFee_CheckedChanged(object sender, EventArgs e)
+        {
+            decimal total = decimal.Parse(txtBoxTotalAmountDue.Text);
+
+            if (checkBoxDisconnectionFee.Checked)
+            {
+                total += 250;
+            }
+            else
+            {
+                total -= 250;
+            }
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
         }
     }
 }

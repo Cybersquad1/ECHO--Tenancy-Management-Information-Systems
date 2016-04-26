@@ -53,7 +53,7 @@
             this.txtBoxCurrentReading = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBoxTotalAmountDue = new System.Windows.Forms.TextBox();
+            this.txtBoxTotalAmountDue = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.listViewPreviousBalance = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,7 +77,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.waterBillingPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -221,6 +222,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Controls.Add(this.checkBoxDisconnectionFee);
             this.groupBox5.Controls.Add(this.checkBoxOverdue);
@@ -230,7 +232,7 @@
             this.groupBox5.Controls.Add(this.txtBoxCurrentReading);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.textBoxTotalAmountDue);
+            this.groupBox5.Controls.Add(this.txtBoxTotalAmountDue);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.listViewPreviousBalance);
             this.groupBox5.Controls.Add(this.label14);
@@ -259,22 +261,26 @@
             // checkBoxDisconnectionFee
             // 
             this.checkBoxDisconnectionFee.AutoSize = true;
+            this.checkBoxDisconnectionFee.Enabled = false;
             this.checkBoxDisconnectionFee.Location = new System.Drawing.Point(136, 175);
             this.checkBoxDisconnectionFee.Name = "checkBoxDisconnectionFee";
             this.checkBoxDisconnectionFee.Size = new System.Drawing.Size(127, 18);
             this.checkBoxDisconnectionFee.TabIndex = 35;
             this.checkBoxDisconnectionFee.Text = "Disconnection Fee";
             this.checkBoxDisconnectionFee.UseVisualStyleBackColor = true;
+            this.checkBoxDisconnectionFee.CheckedChanged += new System.EventHandler(this.checkBoxDisconnectionFee_CheckedChanged);
             // 
             // checkBoxOverdue
             // 
             this.checkBoxOverdue.AutoSize = true;
+            this.checkBoxOverdue.Enabled = false;
             this.checkBoxOverdue.Location = new System.Drawing.Point(136, 158);
             this.checkBoxOverdue.Name = "checkBoxOverdue";
             this.checkBoxOverdue.Size = new System.Drawing.Size(73, 18);
             this.checkBoxOverdue.TabIndex = 34;
             this.checkBoxOverdue.Text = "Overdue";
             this.checkBoxOverdue.UseVisualStyleBackColor = true;
+            this.checkBoxOverdue.CheckedChanged += new System.EventHandler(this.checkBoxOverdue_CheckedChanged);
             // 
             // label13
             // 
@@ -329,17 +335,17 @@
             this.groupBox6.TabIndex = 37;
             this.groupBox6.TabStop = false;
             // 
-            // textBoxTotalAmountDue
+            // txtBoxTotalAmountDue
             // 
-            this.textBoxTotalAmountDue.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxTotalAmountDue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotalAmountDue.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBoxTotalAmountDue.Location = new System.Drawing.Point(404, 205);
-            this.textBoxTotalAmountDue.Name = "textBoxTotalAmountDue";
-            this.textBoxTotalAmountDue.Size = new System.Drawing.Size(308, 21);
-            this.textBoxTotalAmountDue.TabIndex = 26;
-            this.textBoxTotalAmountDue.Text = "PHP 0.00";
-            this.textBoxTotalAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBoxTotalAmountDue.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtBoxTotalAmountDue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTotalAmountDue.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtBoxTotalAmountDue.Location = new System.Drawing.Point(568, 205);
+            this.txtBoxTotalAmountDue.Name = "txtBoxTotalAmountDue";
+            this.txtBoxTotalAmountDue.Size = new System.Drawing.Size(144, 21);
+            this.txtBoxTotalAmountDue.TabIndex = 26;
+            this.txtBoxTotalAmountDue.Text = "0.00";
+            this.txtBoxTotalAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -498,12 +504,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.cmbBoxUnitNo);
             this.groupBox3.Controls.Add(this.txtBoxTenant);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Location = new System.Drawing.Point(8, 17);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(342, 83);
@@ -556,16 +562,25 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Unit Owner:";
             // 
-            // linkLabel1
+            // label7
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(7, 14);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(78, 14);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Unit Number:";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(539, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "PHP";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 14);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Unit Number:";
             // 
             // WaterBillingForm
             // 
@@ -608,7 +623,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.DateTimePicker dateTimeTo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimeFrom;
@@ -624,7 +638,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.TextBox textBoxTotalAmountDue;
+        private System.Windows.Forms.TextBox txtBoxTotalAmountDue;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListView listViewPreviousBalance;
         private System.Windows.Forms.Label label14;
@@ -644,5 +658,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox cmbBoxUnitNo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -164,6 +164,10 @@
     <EntitySetMapping Name="WaterBilling">
       <EntityTypeMapping TypeName="EchoModel.WaterBilling">
         <MappingFragment StoreEntitySet="WaterBilling">
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+          <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
           <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
           <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />

@@ -165,6 +165,10 @@
     <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
     <Property Name="OverdueAmount" Type="decimal" Precision="18" Scale="2" />
     <Property Name="DisconnectionFee" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PreviousReading" Type="varchar" MaxLength="100" />
+    <Property Name="PreviousAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <Association Name="FK_LogSheet_UserProfile">
     <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
