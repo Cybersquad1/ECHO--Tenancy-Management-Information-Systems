@@ -37,5 +37,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             TenancyManagement.viewUnitNumberForm v1 = new TenancyManagement.viewUnitNumberForm();
             v1.Show();
         }
+
+        private void btnUserCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

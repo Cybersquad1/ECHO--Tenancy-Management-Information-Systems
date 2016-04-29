@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Utilities;
 using Echo.Data.Repository;
 using Echo.Data.Repository.ViewModel;
+using System.Text.RegularExpressions;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
@@ -75,8 +76,11 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+
             string errorMessage = "";
 
+            //Required field validation
             if (txtBoxFirstName.Text == "")
                 errorMessage += "-First name\n";
 
@@ -100,6 +104,15 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
             if (datePickerDateOfBirth.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
                 errorMessage += "-Date of Birth\n";
+
+            //Email validation
+            if (txtBoxEmail.Text != "") 
+            {
+                if (!EmailAddress.IsMatch(txtBoxEmail.Text))
+                {
+                    errorMessage += "-Invalid Email\n";
+                }
+            }
 
             if (errorMessage != "")
             {

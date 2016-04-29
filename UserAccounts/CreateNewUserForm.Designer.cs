@@ -42,9 +42,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtBoxContactNo = new System.Windows.Forms.MaskedTextBox();
-            this.txtBoxTelNo = new System.Windows.Forms.MaskedTextBox();
-            this.txtBoxMobileNo = new System.Windows.Forms.MaskedTextBox();
             this.txtBoxRelationToContactPerson = new System.Windows.Forms.TextBox();
             this.txtBoxContactPerson = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -80,6 +77,9 @@
             this.txtImgLink = new System.Windows.Forms.TextBox();
             this.btnTakePicture = new System.Windows.Forms.Button();
             this.btnAddPicture = new System.Windows.Forms.Button();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
             this.NewUserPnl.SuspendLayout();
             this.CreateNewUserBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +116,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtBoxContactNo);
+            this.groupBox3.Controls.Add(this.txtBoxTelNo);
+            this.groupBox3.Controls.Add(this.txtBoxMobileNo);
             this.groupBox3.Controls.Add(this.lblRelationToContactPerson);
             this.groupBox3.Controls.Add(this.lblContactNo);
             this.groupBox3.Controls.Add(this.lblContactPerson);
@@ -126,9 +129,6 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtBoxEmail);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtBoxContactNo);
-            this.groupBox3.Controls.Add(this.txtBoxTelNo);
-            this.groupBox3.Controls.Add(this.txtBoxMobileNo);
             this.groupBox3.Controls.Add(this.txtBoxRelationToContactPerson);
             this.groupBox3.Controls.Add(this.txtBoxContactPerson);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,7 +230,8 @@
             // 
             this.txtBoxEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxEmail.Location = new System.Drawing.Point(172, 79);
+            this.txtBoxEmail.Location = new System.Drawing.Point(172, 83);
+            this.txtBoxEmail.MaxLength = 100;
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(214, 20);
             this.txtBoxEmail.TabIndex = 137;
@@ -245,38 +246,6 @@
             this.label11.Size = new System.Drawing.Size(180, 14);
             this.label11.TabIndex = 136;
             this.label11.Text = "Relationship to Contact Person:";
-            // 
-            // txtBoxContactNo
-            // 
-            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxContactNo.Location = new System.Drawing.Point(637, 52);
-            this.txtBoxContactNo.Name = "txtBoxContactNo";
-            this.txtBoxContactNo.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxContactNo.TabIndex = 132;
-            this.txtBoxContactNo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtBoxContactNo_MaskInputRejected);
-            this.txtBoxContactNo.TextChanged += new System.EventHandler(this.txtBoxContactNo_TextChanged);
-            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
-            // 
-            // txtBoxTelNo
-            // 
-            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxTelNo.Location = new System.Drawing.Point(172, 54);
-            this.txtBoxTelNo.Name = "txtBoxTelNo";
-            this.txtBoxTelNo.Size = new System.Drawing.Size(214, 20);
-            this.txtBoxTelNo.TabIndex = 130;
-            this.txtBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelNo_KeyPress);
-            // 
-            // txtBoxMobileNo
-            // 
-            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxMobileNo.Location = new System.Drawing.Point(172, 32);
-            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
-            this.txtBoxMobileNo.Size = new System.Drawing.Size(214, 20);
-            this.txtBoxMobileNo.TabIndex = 129;
-            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // txtBoxRelationToContactPerson
             // 
@@ -294,6 +263,7 @@
             this.txtBoxContactPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContactPerson.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxContactPerson.Location = new System.Drawing.Point(637, 29);
+            this.txtBoxContactPerson.MaxLength = 150;
             this.txtBoxContactPerson.Name = "txtBoxContactPerson";
             this.txtBoxContactPerson.Size = new System.Drawing.Size(237, 20);
             this.txtBoxContactPerson.TabIndex = 131;
@@ -543,6 +513,7 @@
             this.txtBoxFirstName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxFirstName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxFirstName.Location = new System.Drawing.Point(132, 17);
+            this.txtBoxFirstName.MaxLength = 100;
             this.txtBoxFirstName.Multiline = true;
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(207, 23);
@@ -554,6 +525,7 @@
             this.txtBoxHomeAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxHomeAddress.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxHomeAddress.Location = new System.Drawing.Point(132, 152);
+            this.txtBoxHomeAddress.MaxLength = 300;
             this.txtBoxHomeAddress.Multiline = true;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
             this.txtBoxHomeAddress.Size = new System.Drawing.Size(207, 23);
@@ -581,6 +553,7 @@
             this.txtBoxProvincialAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProvincialAddress.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxProvincialAddress.Location = new System.Drawing.Point(132, 181);
+            this.txtBoxProvincialAddress.MaxLength = 300;
             this.txtBoxProvincialAddress.Multiline = true;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
             this.txtBoxProvincialAddress.Size = new System.Drawing.Size(207, 23);
@@ -601,6 +574,7 @@
             this.txtBoxPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPassword.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxPassword.Location = new System.Drawing.Point(529, 17);
+            this.txtBoxPassword.MaxLength = 100;
             this.txtBoxPassword.Multiline = true;
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(183, 22);
@@ -611,6 +585,7 @@
             this.txtBoxMiddleName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMiddleName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxMiddleName.Location = new System.Drawing.Point(132, 43);
+            this.txtBoxMiddleName.MaxLength = 100;
             this.txtBoxMiddleName.Multiline = true;
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(207, 23);
@@ -621,6 +596,7 @@
             this.txtBoxLastName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLastName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxLastName.Location = new System.Drawing.Point(132, 69);
+            this.txtBoxLastName.MaxLength = 100;
             this.txtBoxLastName.Multiline = true;
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(207, 23);
@@ -696,6 +672,36 @@
             this.btnAddPicture.UseVisualStyleBackColor = true;
             this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
             // 
+            // txtBoxMobileNo
+            // 
+            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(172, 31);
+            this.txtBoxMobileNo.MaxLength = 15;
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(214, 20);
+            this.txtBoxMobileNo.TabIndex = 142;
+            // 
+            // txtBoxTelNo
+            // 
+            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxTelNo.Location = new System.Drawing.Point(172, 57);
+            this.txtBoxTelNo.MaxLength = 15;
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(214, 20);
+            this.txtBoxTelNo.TabIndex = 143;
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxContactNo.Location = new System.Drawing.Point(637, 52);
+            this.txtBoxContactNo.MaxLength = 15;
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxContactNo.TabIndex = 144;
+            // 
             // CreateNewUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,9 +737,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.MaskedTextBox txtBoxContactNo;
-        private System.Windows.Forms.MaskedTextBox txtBoxTelNo;
-        private System.Windows.Forms.MaskedTextBox txtBoxMobileNo;
         private System.Windows.Forms.TextBox txtBoxRelationToContactPerson;
         private System.Windows.Forms.TextBox txtBoxContactPerson;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -772,5 +775,8 @@
         private System.Windows.Forms.Label lblMaritalStatus;
         private System.Windows.Forms.Label lblHomeAddress;
         private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.TextBox txtBoxTelNo;
+        private System.Windows.Forms.TextBox txtBoxMobileNo;
+        private System.Windows.Forms.TextBox txtBoxContactNo;
     }
 }

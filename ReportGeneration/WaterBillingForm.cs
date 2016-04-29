@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Tenancy_Management_Information_Systems.Utilities;
+using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
@@ -29,6 +30,17 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             txtBoxChargeDate.Text = DateTime.Now.ToShortDateString(); //Get today's Date         
         }
 
+        private void ClearFields()
+        {
+            txtBoxBillAmount.Text = txtBoxPreviousBillAmount.Text = txtBoxCurrentReading.Text =
+                txtBoxPreviousReading.Text = txtBoxUnitOwner.Text = txtBoxTenant.Text = "";
+
+            //dates
+            dateTimeFrom.Value = DateTime.Now;
+            dateTimeTo.Value = dateTimeFrom.Value.AddMonths(1);
+            dateTimeDueDate.Value = dateTimeFrom.Value.AddMonths(1).AddDays(15);
+        }
+
         private void GetBalance(string _unitNo)
         {
             decimal totalBalance = 0;
@@ -42,6 +54,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             balance.ForEach(item =>
             {
                 ListViewItem lvi = new ListViewItem(item.Date.ToShortDateString());
+
                 lvi.SubItems.Add(string.Format("{0:0.00}", item.Amount));
 
                 listViewPreviousBalance.Items.Add(lvi);
@@ -55,22 +68,36 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void GetUnitInformation(string _unitNo)
         {
             unitVm = new UnitViewModel();
+            tenantVm = new TenantViewModel();
 
             var unit = unitVm.GetSelected(_unitNo);
 
             //Assign unit information
-            if(unit.Owner != null)
+            //Owner Information
+            if (unit.Owner != null)
             {
-                var tenant = tenantVm.GetSelectedTenant(unit.Owner);
+                var owner = tenantVm.GetSelectedTenant(unit.Owner);
 
-                txtBoxUnitOwner.Text = tenant.FirstName + " " + tenant.LastName;
+                txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
             }
             else
             {
                 txtBoxUnitOwner.Text = "N/A";
             }
+            //Tenant Information
+            if (unit.Tenant != null)
+            {
+                var tenant = tenantVm.GetSelectedTenant(unit.Tenant);
+
+                txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+            }
+            else
+            {
+                txtBoxTenant.Text = "N/A";
+            }
 
             GetPreviousBilling(_unitNo); //Fetch previous billing
+
             GetBalance(_unitNo); //Fetch Remaining Balance
         }
 
@@ -80,25 +107,44 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             var previousBilling = billingVm.GetPreviousBilling(_unitNo);
 
-            if(previousBilling != null)
+            if (previousBilling != null)
             {
                 txtBoxPreviousReading.Text = previousBilling[0]; //Reading
+
                 txtBoxPreviousBillAmount.Text = previousBilling[1]; //Amount
             }
             else //If no previous Billing Record found
             {
-                txtBoxPreviousBillAmount.Text = "N/A";
+                txtBoxPreviousBillAmount.Text = "0.00";
+
                 txtBoxPreviousReading.Text = "N/A";
             }
+        }
+
+        private void AddSummary()
+        {
+            lstViewSummary.Items.Clear();
+
+            ListViewItem lvi = new ListViewItem(txtBoxChargeDate.Text);
+
+            lvi.SubItems.Add(cmbBoxUnitNo.Text);
+
+            lvi.SubItems.Add(txtBoxPreviousReading.Text);
+
+            lvi.SubItems.Add(txtBoxCurrentReading.Text);
+
+            lvi.SubItems.Add(txtBoxTotalAmountDue.Text);
+
+            lstViewSummary.Items.Add(lvi);
         }
 
         private void GetUnits()
         {
             cmbBoxUnitNo.Items.Clear(); //Clear Combo box
 
-            tenantVm = new TenantViewModel(); //reload database connection
+            unitVm = new UnitViewModel(); //reload database connection
 
-            var unitNumbers = tenantVm.GetAll().OrderBy(r => r.UnitNumber).ToList();
+            var unitNumbers = unitVm.GetAll().OrderBy(r => r.UnitNumber).ToList();
 
             unitNumbers.ForEach(item =>
             {
@@ -120,6 +166,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Load unit information upon selecting value
+            ClearFields();
+
             GetUnitInformation(cmbBoxUnitNo.Text);
         }
 
@@ -139,6 +187,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 //To enable Fee checkboxes
                 checkBoxDisconnectionFee.Enabled = true;
+
                 checkBoxOverdue.Enabled = true;
 
                 txtBoxTotalAmountDue.Text = 
@@ -147,6 +196,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             else
             {
                 checkBoxDisconnectionFee.Enabled = false;
+
                 checkBoxOverdue.Enabled = false;
 
                 txtBoxTotalAmountDue.Text = "0.00";
@@ -190,6 +240,69 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             }
 
             txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+        }
+
+        private void btnUserCreate_Click(object sender, EventArgs e)
+        {
+            //check required fields
+            string errorMessage = "";
+
+            if (txtBoxCurrentReading.Text == "")
+                errorMessage += "Current reading is required\n";
+
+            if (txtBoxBillAmount.Text == "")
+                errorMessage += "Bill amount is required\n";
+
+            if (dateTimeFrom.Value == dateTimeTo.Value)
+                errorMessage += "Consumption date must be a date-range\n";
+
+            if (dateTimeDueDate.Value <= dateTimeTo.Value)
+                errorMessage += "Due date must be greater than From date\n";
+
+            if (dateTimeFrom.Value > dateTimeTo.Value)
+                errorMessage += "To date must be greater than From date\n";
+
+            if (errorMessage == "")
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to save? Y/N", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)//Confirmation 
+                {
+                    //asign values
+                    WaterBilling waterBilling = new WaterBilling();
+
+                    waterBilling.ChargeDate = DateTime.Now; //Get today's date
+
+                    waterBilling.CurrentReading = txtBoxCurrentReading.Text;
+
+                    waterBilling.TotalAmount = waterBilling.Balance =
+                        decimal.Parse(txtBoxTotalAmountDue.Text);
+
+                    waterBilling.UnitNumber = cmbBoxUnitNo.Text;
+
+                    waterBilling.Paid = 0;
+
+                    //dates
+                    waterBilling.ToDate = dateTimeTo.Value;
+
+                    waterBilling.FromDate = dateTimeFrom.Value;
+
+                    waterBilling.DueDate = dateTimeDueDate.Value;
+
+                    //previous
+                    waterBilling.PreviousAmount = decimal.Parse(txtBoxPreviousBillAmount.Text);
+
+                    waterBilling.PreviousReading = txtBoxPreviousReading.Text;
+
+                    billingVm.CreateWaterBilling(waterBilling); //save water billing
+
+                    AddSummary(); //add data on table
+                }
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Warning");
+            }
         }
     }
 }

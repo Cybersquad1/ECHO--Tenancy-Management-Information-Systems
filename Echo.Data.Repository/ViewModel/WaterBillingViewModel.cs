@@ -16,7 +16,7 @@ namespace Echo.Data.Repository.ViewModel
 
         public string[] GetPreviousBilling(string _unitNo)
         {
-            string[] returnValue = null;
+            string[] returnValue = new string[2];
 
             var billing = GetLast(r => r.UnitNumber == _unitNo); //Get last record of Water billing
 
@@ -48,6 +48,20 @@ namespace Echo.Data.Repository.ViewModel
             });
 
             return returnValue;
+        }
+
+        public bool CreateWaterBilling(WaterBilling _waterBilling)
+        {
+            try
+            {
+                Add(_waterBilling);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

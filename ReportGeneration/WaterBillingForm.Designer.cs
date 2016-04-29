@@ -35,7 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimeDueDate = new System.Windows.Forms.DateTimePicker();
-            this.listViewFee = new System.Windows.Forms.ListView();
+            this.lstViewSummary = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +44,7 @@
             this.txtBoxChargeDate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBoxDisconnectionFee = new System.Windows.Forms.CheckBox();
             this.checkBoxOverdue = new System.Windows.Forms.CheckBox();
@@ -72,13 +73,12 @@
             this.txtBoxPreviousReading = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.cmbBoxUnitNo = new System.Windows.Forms.ComboBox();
             this.txtBoxTenant = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.waterBillingPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -99,7 +99,6 @@
             // 
             // btnUserCreate
             // 
-            this.btnUserCreate.Enabled = false;
             this.btnUserCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCreate.Image")));
             this.btnUserCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,6 +108,7 @@
             this.btnUserCreate.TabIndex = 23;
             this.btnUserCreate.Text = "    Update";
             this.btnUserCreate.UseVisualStyleBackColor = true;
+            this.btnUserCreate.Click += new System.EventHandler(this.btnUserCreate_Click);
             // 
             // btnUserCancel
             // 
@@ -127,7 +127,7 @@
             // 
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimeDueDate);
-            this.groupBox1.Controls.Add(this.listViewFee);
+            this.groupBox1.Controls.Add(this.lstViewSummary);
             this.groupBox1.Controls.Add(this.txtBoxChargeDate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -158,23 +158,23 @@
             this.dateTimeDueDate.Size = new System.Drawing.Size(223, 20);
             this.dateTimeDueDate.TabIndex = 15;
             // 
-            // listViewFee
+            // lstViewSummary
             // 
-            this.listViewFee.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listViewFee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstViewSummary.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lstViewSummary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listViewFee.FullRowSelect = true;
-            this.listViewFee.GridLines = true;
-            this.listViewFee.Location = new System.Drawing.Point(8, 372);
-            this.listViewFee.Name = "listViewFee";
-            this.listViewFee.Size = new System.Drawing.Size(725, 85);
-            this.listViewFee.TabIndex = 0;
-            this.listViewFee.UseCompatibleStateImageBehavior = false;
-            this.listViewFee.View = System.Windows.Forms.View.Details;
+            this.lstViewSummary.FullRowSelect = true;
+            this.lstViewSummary.GridLines = true;
+            this.lstViewSummary.Location = new System.Drawing.Point(8, 372);
+            this.lstViewSummary.Name = "lstViewSummary";
+            this.lstViewSummary.Size = new System.Drawing.Size(725, 85);
+            this.lstViewSummary.TabIndex = 0;
+            this.lstViewSummary.UseCompatibleStateImageBehavior = false;
+            this.lstViewSummary.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -247,6 +247,17 @@
             this.groupBox5.Size = new System.Drawing.Size(725, 232);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(539, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "PHP";
             // 
             // pictureBox1
             // 
@@ -516,6 +527,15 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 14);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Unit Number:";
+            // 
             // cmbBoxUnitNo
             // 
             this.cmbBoxUnitNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -561,26 +581,6 @@
             this.label1.Size = new System.Drawing.Size(71, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "Unit Owner:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(539, 208);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "PHP";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(78, 14);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Unit Number:";
             // 
             // WaterBillingForm
             // 
@@ -632,7 +632,7 @@
         private System.Windows.Forms.Label label8;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private System.Windows.Forms.ListView listViewFee;
+        private System.Windows.Forms.ListView lstViewSummary;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
