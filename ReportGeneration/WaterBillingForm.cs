@@ -247,6 +247,16 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             //check required fields
             string errorMessage = "";
 
+            if (cmbBoxUnitNo.Text != "")
+                errorMessage += "Unit number is required\n";
+            else
+            {
+                if (billingVm.IfBillingAlreadyExist(cmbBoxUnitNo.Text))
+                {
+                    errorMessage += "There is already existing billing for this month\n";
+                }
+            }
+
             if (txtBoxCurrentReading.Text == "")
                 errorMessage += "Current reading is required\n";
 
@@ -260,7 +270,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 errorMessage += "Due date must be greater than From date\n";
 
             if (dateTimeFrom.Value > dateTimeTo.Value)
-                errorMessage += "To date must be greater than From date\n";
+                errorMessage += "To date must be greater than From date\n";            
 
             if (errorMessage == "")
             {

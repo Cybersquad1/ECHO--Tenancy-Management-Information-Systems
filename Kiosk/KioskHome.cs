@@ -41,7 +41,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                         accountType = user.Type
                     };
 
-                    if (loginInfo.accountType == "ADMIN")
+                    if (loginInfo.accountType.ToUpper() == "ADMIN")
                     {
                         Home h1 = new Home(loginInfo, this);
                         h1.Show();

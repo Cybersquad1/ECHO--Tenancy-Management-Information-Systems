@@ -14,6 +14,12 @@ namespace Echo.Data.Repository
     
     public partial class MonthlyAssociationDue
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MonthlyAssociationDue()
+        {
+            this.PaymentHistory = new HashSet<PaymentHistory>();
+        }
+    
         public System.Guid ID { get; set; }
         public string UnitNumber { get; set; }
         public Nullable<System.DateTime> ChargeDate { get; set; }
@@ -25,7 +31,11 @@ namespace Echo.Data.Repository
         public string OtherPenalty { get; set; }
         public Nullable<decimal> OtherPenaltyAmount { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public Nullable<decimal> Paid { get; set; }
     
         public virtual UnitProfile UnitProfile { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaymentHistory> PaymentHistory { get; set; }
     }
 }

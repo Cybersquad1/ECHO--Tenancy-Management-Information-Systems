@@ -44,17 +44,19 @@
           <Property Name="OtherPenalty" Type="varchar" MaxLength="100" />
           <Property Name="OtherPenaltyAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
           <Property Name="ChargeDate" Type="datetime" />
-          <Property Name="AssociationDues" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="PreviousWaterBillDue" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="CurrentWaterBillDue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyAssocID" Type="uniqueidentifier" />
+          <Property Name="Payable" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -223,15 +225,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PaymentHistory_UnitProfile">
-          <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+        <Association Name="FK_PaymentHistory_MonthlyAssociationDue">
+          <End Role="MonthlyAssociationDue" Type="Self.MonthlyAssociationDue" Multiplicity="0..1" />
           <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="UnitProfile">
-              <PropertyRef Name="UnitNumber" />
+            <Principal Role="MonthlyAssociationDue">
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PaymentHistory">
-              <PropertyRef Name="UnitNumber" />
+              <PropertyRef Name="MonthlyAssocID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -298,8 +300,8 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
           </AssociationSet>
-          <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
+          <AssociationSet Name="FK_PaymentHistory_MonthlyAssociationDue" Association="Self.FK_PaymentHistory_MonthlyAssociationDue">
+            <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
             <End Role="PaymentHistory" EntitySet="PaymentHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="Self.FK_TenantArchive_TenantProfile">
@@ -346,8 +348,8 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
           </AssociationSet>
-          <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="EchoModel.FK_PaymentHistory_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
+          <AssociationSet Name="FK_PaymentHistory_MonthlyAssociationDue" Association="EchoModel.FK_PaymentHistory_MonthlyAssociationDue">
+            <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
             <End Role="PaymentHistory" EntitySet="PaymentHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="EchoModel.FK_TenantArchive_TenantProfile">
@@ -406,19 +408,22 @@
           <Property Name="OtherPenalty" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="OtherPenaltyAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
+          <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="MonthlyAssociationDue" ToRole="PaymentHistory" />
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="ChargeDate" Type="DateTime" Precision="3" />
-          <Property Name="AssociationDues" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="PreviousWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="CurrentWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="PaymentHistory" ToRole="UnitProfile" />
+          <Property Name="TotalPayment" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyAssocID" Type="Guid" />
+          <Property Name="Payable" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -497,7 +502,6 @@
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Floor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
-          <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
           <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
           <NavigationProperty Name="WaterBilling" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
         </EntityType>
@@ -543,11 +547,11 @@
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="OverdueAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DisconnectionFee" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="WaterBilling" ToRole="UnitProfile" />
           <Property Name="PreviousReading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PreviousAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="WaterBilling" ToRole="UnitProfile" />
         </EntityType>
         <Association Name="FK_LogSheet_UserProfile">
           <End Type="EchoModel.UserProfile" Role="UserProfile" Multiplicity="0..1" />
@@ -597,15 +601,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PaymentHistory_UnitProfile">
-          <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
+        <Association Name="FK_PaymentHistory_MonthlyAssociationDue">
+          <End Type="EchoModel.MonthlyAssociationDue" Role="MonthlyAssociationDue" Multiplicity="0..1" />
           <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="UnitProfile">
-              <PropertyRef Name="UnitNumber" />
+            <Principal Role="MonthlyAssociationDue">
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PaymentHistory">
-              <PropertyRef Name="UnitNumber" />
+              <PropertyRef Name="MonthlyAssocID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -680,6 +684,8 @@
           <EntitySetMapping Name="MonthlyAssociationDue">
             <EntityTypeMapping TypeName="EchoModel.MonthlyAssociationDue">
               <MappingFragment StoreEntitySet="MonthlyAssociationDue">
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
                 <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
@@ -697,11 +703,11 @@
           <EntitySetMapping Name="PaymentHistory">
             <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
               <MappingFragment StoreEntitySet="PaymentHistory">
-                <ScalarProperty Name="CurrentWaterBillDue" ColumnName="CurrentWaterBillDue" />
-                <ScalarProperty Name="PreviousWaterBillDue" ColumnName="PreviousWaterBillDue" />
-                <ScalarProperty Name="AssociationDues" ColumnName="AssociationDues" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Payable" ColumnName="Payable" />
+                <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />
+                <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
                 <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -14,6 +14,23 @@ namespace Echo.Data.Repository.ViewModel
             public decimal Amount { get; set; }
         }
 
+        public bool IfBillingAlreadyExist(string _unitNo)
+        {
+            var billing = GetLast(r=>r.UnitNumber == _unitNo);
+
+            if (billing != null)
+            {
+                DateTime billingDate = DateTime.Parse(billing.ChargeDate.ToString());
+
+                if(billingDate.Month == DateTime.Now.Month)
+                {
+                    return true; //Duplicate billing for this month
+                }
+            }
+
+            return false; //No duplicate billing for this month
+        }
+
         public string[] GetPreviousBilling(string _unitNo)
         {
             string[] returnValue = new string[2];
@@ -24,9 +41,11 @@ namespace Echo.Data.Repository.ViewModel
             {
                 returnValue[0] = billing.CurrentReading; //reading
                 returnValue[1] = string.Format("{0:0.00}", billing.TotalAmount); //amount
+
+                return returnValue;
             }
 
-            return returnValue;
+            return null;
         }
 
         public List<PreviousBalance> GetPreviousBalance(string _unitNo)

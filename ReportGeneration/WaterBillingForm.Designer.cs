@@ -106,7 +106,7 @@
             this.btnUserCreate.Name = "btnUserCreate";
             this.btnUserCreate.Size = new System.Drawing.Size(92, 33);
             this.btnUserCreate.TabIndex = 23;
-            this.btnUserCreate.Text = "    Update";
+            this.btnUserCreate.Text = "    Save";
             this.btnUserCreate.UseVisualStyleBackColor = true;
             this.btnUserCreate.Click += new System.EventHandler(this.btnUserCreate_Click);
             // 
@@ -253,7 +253,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(539, 208);
+            this.label7.Location = new System.Drawing.Point(536, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 15);
             this.label7.TabIndex = 38;
@@ -521,9 +521,9 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(8, 17);
+            this.groupBox3.Location = new System.Drawing.Point(8, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(342, 83);
+            this.groupBox3.Size = new System.Drawing.Size(342, 81);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 

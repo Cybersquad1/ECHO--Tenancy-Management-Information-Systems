@@ -15,12 +15,12 @@ namespace Echo.Data.Repository
     public partial class PaymentHistory
     {
         public System.Guid ID { get; set; }
-        public string UnitNumber { get; set; }
         public Nullable<System.DateTime> ChargeDate { get; set; }
-        public Nullable<decimal> AssociationDues { get; set; }
-        public Nullable<decimal> PreviousWaterBillDue { get; set; }
-        public Nullable<decimal> CurrentWaterBillDue { get; set; }
+        public Nullable<decimal> TotalPayment { get; set; }
+        public Nullable<System.Guid> MonthlyAssocID { get; set; }
+        public Nullable<decimal> Payable { get; set; }
+        public Nullable<decimal> Balance { get; set; }
     
-        public virtual UnitProfile UnitProfile { get; set; }
+        public virtual MonthlyAssociationDue MonthlyAssociationDue { get; set; }
     }
 }

@@ -124,6 +124,8 @@ namespace Tenancy_Management_Information_Systems
             reportsGenPnl.Visible = true;
             reportsGenPnl2.Visible = false;
             tenancyDatabasePnl.Visible = false;
+
+            panelMain.Controls.Clear();
         }
 
         private void button7_Click(object sender, EventArgs e) //Water Billing
@@ -139,11 +141,17 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Add(w1);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Monthly assoc due
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.MonthlyAssociationDuesForm m1 = new ReportGeneration.MonthlyAssociationDuesForm();
             m1.AssocDuesPnl.Visible = true;
-            m1.ShowDialog();
+            m1.TopLevel = false;
+            m1.Visible = true;
+            m1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(m1);     
         }
 
         private void button24_Click(object sender, EventArgs e)

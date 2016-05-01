@@ -7,29 +7,127 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Echo.Data.Repository.ViewModel;
+using Echo.Data.Repository;
+using Tenancy_Management_Information_Systems.Utilities;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
     public partial class MonthlyAssociationDuesForm : Form
     {
+        WaterBillingViewModel waterBillingVM; //Water billing database connection
+
+        UnitViewModel unitVM; //Unit database connection
+
+        TenantViewModel tenantVM; //tenant database connection
+
+        MonthlyAssociationDueViewModel assocVM;
+
+        FormUtilities formUtilities = new FormUtilities();
+
+        double penalty = 0;
+
         public MonthlyAssociationDuesForm()
         {
             InitializeComponent();
+
+            txtBoxChargeDate.Text = DateTime.Now.ToShortDateString(); // assign charge date
+
+            dateTimeDueDate.Value = DateTime.Now.AddDays(15); // 15 days deadline
+
+            GetUnitDropDown();
         }
 
-        private void AssocDuesPnl_Paint(object sender, PaintEventArgs e)
+        private void GetUnitDropDown()
         {
+            cmbBoxUnitNo.Items.Clear();
 
+            unitVM = new UnitViewModel(); //refresh database connection
+
+            var units = unitVM.GetAll();
+
+            units.ForEach(item =>
+            {
+                cmbBoxUnitNo.Items.Add(item.UnitNumber);
+            });
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void AddDuesToSummaryTable()
         {
+            ListViewItem lvi = new ListViewItem(txtBoxChargeDate.Text);
+            lvi.SubItems.Add(txtBoxPrevBillAmount.Text);
+            lvi.SubItems.Add(txtBoxTotalAmountDue.Text);
 
+            listViewSummary.Items.Add(lvi);
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void GetPreviousBilling()
         {
+            assocVM = new MonthlyAssociationDueViewModel();
 
+            var prevBillin = assocVM.GetPreviousBilling(cmbBoxUnitNo.Text);
+
+            if(prevBillin!=null)
+            {
+                txtBoxPrevBillAmount.Text = string.Format("{0:0.00}", prevBillin.TotalAmount);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void GetUnitInformation(string _unitNo)
+        {
+            unitVM = new UnitViewModel();
+            tenantVM = new TenantViewModel();
+
+            var unit = unitVM.GetSelected(_unitNo);
+
+            //Assign unit information
+            //Owner Information
+            if (unit.Owner != null)
+            {
+                var owner = tenantVM.GetSelectedTenant(unit.Owner);
+
+                txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+            }
+            else
+            {
+                txtBoxUnitOwner.Text = "N/A";
+            }
+            //Tenant Information
+            if (unit.Tenant != null)
+            {
+                var tenant = tenantVM.GetSelectedTenant(unit.Tenant);
+
+                txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+            }
+            else
+            {
+                txtBoxTenant.Text = "N/A";
+            }
+
+            GetWaterBilling();
+        }
+
+        private void GetWaterBilling()
+        {
+            waterBillingVM = new WaterBillingViewModel(); //Refresh connection
+
+            var waterBilling = waterBillingVM.GetPreviousBilling(cmbBoxUnitNo.Text);
+
+            if(waterBilling != null)
+            {
+                txtBoxWaterBilling.Text = waterBilling[1];
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", decimal.Parse(waterBilling[1]) 
+                    + decimal.Parse(txtBoxTotalAmountDue.Text));
+            }
+            else
+            {
+                txtBoxWaterBilling.Text = "0.00";
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -42,5 +140,154 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         {
             Close();
         }
-    }
+
+        private void checkBoxOthers_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxOthers.Checked)
+            {
+                txtBoxOtherDesc.Enabled = true;
+                txtBoxOtherAmount.Enabled = true;
+            }
+            else
+            {
+                txtBoxOtherDesc.Enabled = false;
+                txtBoxOtherAmount.Enabled = false;
+            }
+        }
+
+        private void btnFinalize_Click(object sender, EventArgs e)
+        {
+            string errorMessage = "";
+
+            if (cmbBoxUnitNo.Text == "")
+                errorMessage += "Unit no is required\n";
+
+            if (txtBoxAssociationDues.Text == "")
+                errorMessage += "Month association fee is required\n";
+
+            if(errorMessage =="")
+            {
+                assocVM = new MonthlyAssociationDueViewModel();
+
+                MonthlyAssociationDue newAssoc = new MonthlyAssociationDue();
+                newAssoc.UnitNumber = cmbBoxUnitNo.Text;
+                newAssoc.ChargeDate = DateTime.Now;
+                newAssoc.DueDate = dateTimeDueDate.Value;
+                newAssoc.AssociationDue = decimal.Parse(txtBoxAssociationDues.Text);
+
+                if (txtBoxWaterBilling.Text == "N/A")
+                    newAssoc.WaterBillTotalDue = 0;
+                else
+                    newAssoc.WaterBillTotalDue = decimal.Parse(txtBoxWaterBilling.Text);
+
+                if (txtBoxDiscount.Text == "")
+                    newAssoc.Discounts = 0;
+                else
+                    newAssoc.Discounts = decimal.Parse(txtBoxDiscount.Text);
+
+
+
+                newAssoc.Balance = newAssoc.TotalAmount = decimal.Parse(txtBoxTotalAmountDue.Text);
+                newAssoc.Paid = 0;
+
+                if (checkBoxOverdue.Checked)
+                    newAssoc.Penalty = decimal.Parse((double.Parse(
+                        txtBoxAssociationDues.Text) * 0.04).ToString());
+                else
+                    newAssoc.Penalty = 0;
+
+                if (txtBoxOtherAmount.Text != "")
+                    newAssoc.OtherPenaltyAmount = decimal.Parse(txtBoxOtherAmount.Text);
+                else
+                    newAssoc.OtherPenaltyAmount = 0;
+
+                if (txtBoxOtherDesc.Text != "")
+                    newAssoc.OtherPenalty = txtBoxOtherDesc.Text;
+                else
+                    newAssoc.OtherPenalty = "N/A";
+
+                if (assocVM.CreateMonthlyAssoc(newAssoc))
+                {
+                    AddDuesToSummaryTable();
+
+                    MessageBox.Show("Successfully save");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot save association dues. There was some kind of error", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Warning");
+            }
+        }
+
+        private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetUnitInformation(cmbBoxUnitNo.Text);
+        }
+
+        private void txtBoxOtherAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void checkBoxOverdue_CheckedChanged(object sender, EventArgs e)
+        {
+            double total = 0, amountDue = double.Parse(txtBoxTotalAmountDue.Text);
+
+            double totalPenalty = amountDue * 0.04;
+
+            if (checkBoxOthers.Checked)
+            {
+                total = amountDue + totalPenalty;
+
+                penalty += totalPenalty;
+            }
+            else
+            {
+                total = amountDue - totalPenalty;
+
+                penalty -= totalPenalty;
+            }
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+        }
+
+        private void txtBoxDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxDiscount_TextChanged(object sender, EventArgs e)
+        {
+            //Auto deduction of discount to total amount due
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", 
+                decimal.Parse(txtBoxTotalAmountDue.Text) - decimal.Parse(txtBoxDiscount.Text));
+        }
+
+        private void txtBoxAssociationDues_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxAssociationDues_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBoxTotalAmountDue.Text != "" && decimal.Parse(txtBoxTotalAmountDue.Text) > 0)
+            {
+                txtBoxAssociationDues.Text = string.Format("{0:0.00}", decimal.Parse(txtBoxAssociationDues.Text)
+                    + decimal.Parse(txtBoxTotalAmountDue.Text));
+            }
+        }
+
+        private void txtBoxOtherAmount_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBoxOtherAmount.Text != "")
+            {
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", decimal.Parse(txtBoxTotalAmountDue.Text) 
+                    + decimal.Parse(txtBoxOtherAmount.Text));
+            }
+        }
+    } 
 }
