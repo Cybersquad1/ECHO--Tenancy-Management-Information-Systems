@@ -468,6 +468,7 @@
             // 
             // btnWebcam
             // 
+            this.btnWebcam.Enabled = false;
             this.btnWebcam.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWebcam.Location = new System.Drawing.Point(95, 148);
             this.btnWebcam.Name = "btnWebcam";
@@ -621,9 +622,11 @@
             this.txtBoxPetQuantity.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPetQuantity.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtBoxPetQuantity.Location = new System.Drawing.Point(28, 36);
+            this.txtBoxPetQuantity.MaxLength = 2;
             this.txtBoxPetQuantity.Name = "txtBoxPetQuantity";
             this.txtBoxPetQuantity.Size = new System.Drawing.Size(86, 20);
             this.txtBoxPetQuantity.TabIndex = 71;
+            this.txtBoxPetQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPetQuantity_KeyPress);
             // 
             // txtBoxPetName
             // 

@@ -19,6 +19,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
         TenantViewModel vm = new TenantViewModel();
 
+        FormUtilities formUtilities = new FormUtilities();
+
         public CreateNewTenantForm()
         {
             InitializeComponent();
@@ -194,5 +196,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             txtBoxPassword.Text = userUtilities.GeneratePassword(10);
         }
 
+        private void txtBoxPetQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
     }
 }
