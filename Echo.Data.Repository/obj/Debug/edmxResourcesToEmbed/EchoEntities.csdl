@@ -5,6 +5,7 @@
     <EntitySet Name="LogSheetActivity" EntityType="EchoModel.LogSheetActivity" />
     <EntitySet Name="MonthlyAssociationDue" EntityType="EchoModel.MonthlyAssociationDue" />
     <EntitySet Name="PaymentHistory" EntityType="EchoModel.PaymentHistory" />
+    <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagrams" />
     <EntitySet Name="TenantArchive" EntityType="EchoModel.TenantArchive" />
     <EntitySet Name="TenantProfile" EntityType="EchoModel.TenantProfile" />
     <EntitySet Name="UnitProfile" EntityType="EchoModel.UnitProfile" />
@@ -26,8 +27,8 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
     </AssociationSet>
-    <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="EchoModel.FK_PaymentHistory_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfile" />
+    <AssociationSet Name="FK_PaymentHistory_MonthlyAssociationDue" Association="EchoModel.FK_PaymentHistory_MonthlyAssociationDue">
+      <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="EchoModel.FK_TenantArchive_TenantProfile">
@@ -89,18 +90,31 @@
     <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
+    <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="MonthlyAssociationDue" ToRole="PaymentHistory" />
   </EntityType>
   <EntityType Name="PaymentHistory">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
-    <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="ChargeDate" Type="DateTime" Precision="3" />
-    <Property Name="AssociationDues" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="PreviousWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="CurrentWaterBillDue" Type="Decimal" Precision="18" Scale="2" />
-    <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="PaymentHistory" ToRole="UnitProfile" />
+    <Property Name="TotalPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MonthlyAssocID" Type="Guid" />
+    <Property Name="Payable" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
+    <Property Name="UnitNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TenantArchive">
     <Key>
@@ -169,7 +183,6 @@
     <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Floor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
-    <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_UnitProfile" FromRole="UnitProfile" ToRole="PaymentHistory" />
     <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
     <NavigationProperty Name="WaterBilling" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
   </EntityType>
@@ -269,15 +282,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PaymentHistory_UnitProfile">
-    <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="0..1" />
+  <Association Name="FK_PaymentHistory_MonthlyAssociationDue">
+    <End Type="EchoModel.MonthlyAssociationDue" Role="MonthlyAssociationDue" Multiplicity="0..1" />
     <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UnitProfile">
-        <PropertyRef Name="UnitNumber" />
+      <Principal Role="MonthlyAssociationDue">
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="PaymentHistory">
-        <PropertyRef Name="UnitNumber" />
+        <PropertyRef Name="MonthlyAssocID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

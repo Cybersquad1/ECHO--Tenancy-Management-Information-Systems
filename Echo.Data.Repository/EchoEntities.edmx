@@ -57,6 +57,8 @@
           <Property Name="MonthlyAssocID" Type="uniqueidentifier" />
           <Property Name="Payable" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UnitNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -424,6 +426,8 @@
           <Property Name="Payable" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
+          <Property Name="UnitNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -703,6 +707,8 @@
           <EntitySetMapping Name="PaymentHistory">
             <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
               <MappingFragment StoreEntitySet="PaymentHistory">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="Payable" ColumnName="Payable" />
                 <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />

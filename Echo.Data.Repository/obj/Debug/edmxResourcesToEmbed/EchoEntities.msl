@@ -49,12 +49,25 @@
     <EntitySetMapping Name="PaymentHistory">
       <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
         <MappingFragment StoreEntitySet="PaymentHistory">
-          <ScalarProperty Name="CurrentWaterBillDue" ColumnName="CurrentWaterBillDue" />
-          <ScalarProperty Name="PreviousWaterBillDue" ColumnName="PreviousWaterBillDue" />
-          <ScalarProperty Name="AssociationDues" ColumnName="AssociationDues" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Payable" ColumnName="Payable" />
+          <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EchoModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

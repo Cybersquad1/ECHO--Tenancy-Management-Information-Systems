@@ -142,7 +142,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 {
                     var tenant = new TenantViewModel().GetSelectedTenant(item.Tenant);
 
-                    lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
+                    if (tenant != null)
+                        lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
+                    else
+                        lvi.SubItems.Add("N/A");
                 }
 
                 listViewUnits.Items.Add(lvi);

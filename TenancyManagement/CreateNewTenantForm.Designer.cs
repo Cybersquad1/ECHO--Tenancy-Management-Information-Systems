@@ -64,6 +64,18 @@
             this.checkBoxFireExtinguisher = new System.Windows.Forms.CheckBox();
             this.checkBoxPets = new System.Windows.Forms.CheckBox();
             this.checkBoxWithOther = new System.Windows.Forms.CheckBox();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBoxPets = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxPetQuantity = new System.Windows.Forms.TextBox();
+            this.txtBoxPetName = new System.Windows.Forms.TextBox();
+            this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
+            this.txtBoxPetType = new System.Windows.Forms.TextBox();
             this.groupBoxOtherOccupants = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,26 +89,14 @@
             this.datePickerOtherDateOfBirth1 = new System.Windows.Forms.DateTimePicker();
             this.txtBoxOtherRelation1 = new System.Windows.Forms.TextBox();
             this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBoxPets = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxPetQuantity = new System.Windows.Forms.TextBox();
-            this.txtBoxPetName = new System.Windows.Forms.TextBox();
-            this.txtBoxPetBreed = new System.Windows.Forms.TextBox();
-            this.txtBoxPetType = new System.Windows.Forms.TextBox();
             this.NewTenantPnl.SuspendLayout();
             this.grpboxnew.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).BeginInit();
-            this.groupBoxOtherOccupants.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBoxPets.SuspendLayout();
+            this.groupBoxOtherOccupants.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewTenantPnl
@@ -262,6 +262,7 @@
             // 
             this.txtBoxProvincialAddress.BackColor = System.Drawing.Color.White;
             this.txtBoxProvincialAddress.Location = new System.Drawing.Point(365, 93);
+            this.txtBoxProvincialAddress.MaxLength = 300;
             this.txtBoxProvincialAddress.Multiline = true;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
             this.txtBoxProvincialAddress.Size = new System.Drawing.Size(390, 34);
@@ -271,6 +272,7 @@
             // 
             this.txtBoxEmail.BackColor = System.Drawing.Color.White;
             this.txtBoxEmail.Location = new System.Drawing.Point(491, 174);
+            this.txtBoxEmail.MaxLength = 150;
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(264, 20);
             this.txtBoxEmail.TabIndex = 139;
@@ -279,6 +281,7 @@
             // 
             this.txtBoxTelNo.BackColor = System.Drawing.Color.White;
             this.txtBoxTelNo.Location = new System.Drawing.Point(491, 152);
+            this.txtBoxTelNo.MaxLength = 10;
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxTelNo.TabIndex = 138;
@@ -287,6 +290,7 @@
             // 
             this.txtBoxMobileNo.BackColor = System.Drawing.Color.White;
             this.txtBoxMobileNo.Location = new System.Drawing.Point(491, 130);
+            this.txtBoxMobileNo.MaxLength = 15;
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxMobileNo.TabIndex = 137;
@@ -317,6 +321,7 @@
             // 
             this.txtBoxHomeAddress.BackColor = System.Drawing.Color.White;
             this.txtBoxHomeAddress.Location = new System.Drawing.Point(365, 39);
+            this.txtBoxHomeAddress.MaxLength = 300;
             this.txtBoxHomeAddress.Multiline = true;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
             this.txtBoxHomeAddress.Size = new System.Drawing.Size(390, 34);
@@ -359,6 +364,7 @@
             // 
             this.txtBoxLastname.BackColor = System.Drawing.Color.White;
             this.txtBoxLastname.Location = new System.Drawing.Point(109, 64);
+            this.txtBoxLastname.MaxLength = 100;
             this.txtBoxLastname.Name = "txtBoxLastname";
             this.txtBoxLastname.Size = new System.Drawing.Size(215, 20);
             this.txtBoxLastname.TabIndex = 129;
@@ -368,6 +374,7 @@
             // 
             this.txtBoxMiddleName.BackColor = System.Drawing.Color.White;
             this.txtBoxMiddleName.Location = new System.Drawing.Point(109, 42);
+            this.txtBoxMiddleName.MaxLength = 100;
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxMiddleName.TabIndex = 128;
@@ -376,6 +383,7 @@
             // 
             this.txtBoxFirstname.BackColor = System.Drawing.Color.White;
             this.txtBoxFirstname.Location = new System.Drawing.Point(109, 20);
+            this.txtBoxFirstname.MaxLength = 100;
             this.txtBoxFirstname.Name = "txtBoxFirstname";
             this.txtBoxFirstname.Size = new System.Drawing.Size(215, 20);
             this.txtBoxFirstname.TabIndex = 127;
@@ -515,140 +523,6 @@
             this.checkBoxWithOther.UseVisualStyleBackColor = true;
             this.checkBoxWithOther.CheckedChanged += new System.EventHandler(this.checkBoxWithOther_CheckedChanged);
             // 
-            // groupBoxOtherOccupants
-            // 
-            this.groupBoxOtherOccupants.Controls.Add(this.label5);
-            this.groupBoxOtherOccupants.Controls.Add(this.label3);
-            this.groupBoxOtherOccupants.Controls.Add(this.label18);
-            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth3);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation3);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName3);
-            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth2);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation2);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName2);
-            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth1);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation1);
-            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName1);
-            this.groupBoxOtherOccupants.Enabled = false;
-            this.groupBoxOtherOccupants.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxOtherOccupants.Location = new System.Drawing.Point(11, 19);
-            this.groupBoxOtherOccupants.Name = "groupBoxOtherOccupants";
-            this.groupBoxOtherOccupants.Size = new System.Drawing.Size(744, 118);
-            this.groupBoxOtherOccupants.TabIndex = 46;
-            this.groupBoxOtherOccupants.TabStop = false;
-            this.groupBoxOtherOccupants.Text = "Other Occupants";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(127, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 14);
-            this.label5.TabIndex = 73;
-            this.label5.Text = "Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(364, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 14);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Relation";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(614, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(74, 14);
-            this.label18.TabIndex = 71;
-            this.label18.Text = "Date of Birth";
-            // 
-            // datePickerOtherDateOfBirth3
-            // 
-            this.datePickerOtherDateOfBirth3.CustomFormat = "mm/dd/yyyy";
-            this.datePickerOtherDateOfBirth3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerOtherDateOfBirth3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerOtherDateOfBirth3.Location = new System.Drawing.Point(589, 87);
-            this.datePickerOtherDateOfBirth3.Name = "datePickerOtherDateOfBirth3";
-            this.datePickerOtherDateOfBirth3.Size = new System.Drawing.Size(137, 20);
-            this.datePickerOtherDateOfBirth3.TabIndex = 70;
-            // 
-            // txtBoxOtherRelation3
-            // 
-            this.txtBoxOtherRelation3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherRelation3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherRelation3.Location = new System.Drawing.Point(310, 86);
-            this.txtBoxOtherRelation3.Name = "txtBoxOtherRelation3";
-            this.txtBoxOtherRelation3.Size = new System.Drawing.Size(160, 20);
-            this.txtBoxOtherRelation3.TabIndex = 69;
-            // 
-            // txtBoxOtherName3
-            // 
-            this.txtBoxOtherName3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherName3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherName3.Location = new System.Drawing.Point(28, 86);
-            this.txtBoxOtherName3.Name = "txtBoxOtherName3";
-            this.txtBoxOtherName3.Size = new System.Drawing.Size(235, 20);
-            this.txtBoxOtherName3.TabIndex = 68;
-            // 
-            // datePickerOtherDateOfBirth2
-            // 
-            this.datePickerOtherDateOfBirth2.CustomFormat = "mm/dd/yyyy";
-            this.datePickerOtherDateOfBirth2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerOtherDateOfBirth2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerOtherDateOfBirth2.Location = new System.Drawing.Point(589, 61);
-            this.datePickerOtherDateOfBirth2.Name = "datePickerOtherDateOfBirth2";
-            this.datePickerOtherDateOfBirth2.Size = new System.Drawing.Size(137, 20);
-            this.datePickerOtherDateOfBirth2.TabIndex = 67;
-            // 
-            // txtBoxOtherRelation2
-            // 
-            this.txtBoxOtherRelation2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherRelation2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherRelation2.Location = new System.Drawing.Point(310, 60);
-            this.txtBoxOtherRelation2.Name = "txtBoxOtherRelation2";
-            this.txtBoxOtherRelation2.Size = new System.Drawing.Size(160, 20);
-            this.txtBoxOtherRelation2.TabIndex = 66;
-            // 
-            // txtBoxOtherName2
-            // 
-            this.txtBoxOtherName2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherName2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherName2.Location = new System.Drawing.Point(28, 60);
-            this.txtBoxOtherName2.Name = "txtBoxOtherName2";
-            this.txtBoxOtherName2.Size = new System.Drawing.Size(235, 20);
-            this.txtBoxOtherName2.TabIndex = 65;
-            // 
-            // datePickerOtherDateOfBirth1
-            // 
-            this.datePickerOtherDateOfBirth1.CustomFormat = "mm/dd/yyyy";
-            this.datePickerOtherDateOfBirth1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerOtherDateOfBirth1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerOtherDateOfBirth1.Location = new System.Drawing.Point(589, 35);
-            this.datePickerOtherDateOfBirth1.Name = "datePickerOtherDateOfBirth1";
-            this.datePickerOtherDateOfBirth1.Size = new System.Drawing.Size(137, 20);
-            this.datePickerOtherDateOfBirth1.TabIndex = 64;
-            // 
-            // txtBoxOtherRelation1
-            // 
-            this.txtBoxOtherRelation1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherRelation1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherRelation1.Location = new System.Drawing.Point(310, 34);
-            this.txtBoxOtherRelation1.Name = "txtBoxOtherRelation1";
-            this.txtBoxOtherRelation1.Size = new System.Drawing.Size(160, 20);
-            this.txtBoxOtherRelation1.TabIndex = 63;
-            // 
-            // txtBoxOtherName1
-            // 
-            this.txtBoxOtherName1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtherName1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxOtherName1.Location = new System.Drawing.Point(28, 34);
-            this.txtBoxOtherName1.Name = "txtBoxOtherName1";
-            this.txtBoxOtherName1.Size = new System.Drawing.Size(235, 20);
-            this.txtBoxOtherName1.TabIndex = 62;
-            // 
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -778,6 +652,146 @@
             this.txtBoxPetType.Size = new System.Drawing.Size(149, 20);
             this.txtBoxPetType.TabIndex = 72;
             // 
+            // groupBoxOtherOccupants
+            // 
+            this.groupBoxOtherOccupants.Controls.Add(this.label5);
+            this.groupBoxOtherOccupants.Controls.Add(this.label3);
+            this.groupBoxOtherOccupants.Controls.Add(this.label18);
+            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth3);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation3);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName3);
+            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth2);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation2);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName2);
+            this.groupBoxOtherOccupants.Controls.Add(this.datePickerOtherDateOfBirth1);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherRelation1);
+            this.groupBoxOtherOccupants.Controls.Add(this.txtBoxOtherName1);
+            this.groupBoxOtherOccupants.Enabled = false;
+            this.groupBoxOtherOccupants.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxOtherOccupants.Location = new System.Drawing.Point(11, 19);
+            this.groupBoxOtherOccupants.Name = "groupBoxOtherOccupants";
+            this.groupBoxOtherOccupants.Size = new System.Drawing.Size(744, 118);
+            this.groupBoxOtherOccupants.TabIndex = 46;
+            this.groupBoxOtherOccupants.TabStop = false;
+            this.groupBoxOtherOccupants.Text = "Other Occupants";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(127, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 14);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(364, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 14);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Relation";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(614, 14);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(74, 14);
+            this.label18.TabIndex = 71;
+            this.label18.Text = "Date of Birth";
+            // 
+            // datePickerOtherDateOfBirth3
+            // 
+            this.datePickerOtherDateOfBirth3.CustomFormat = "mm/dd/yyyy";
+            this.datePickerOtherDateOfBirth3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerOtherDateOfBirth3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerOtherDateOfBirth3.Location = new System.Drawing.Point(589, 87);
+            this.datePickerOtherDateOfBirth3.Name = "datePickerOtherDateOfBirth3";
+            this.datePickerOtherDateOfBirth3.Size = new System.Drawing.Size(137, 20);
+            this.datePickerOtherDateOfBirth3.TabIndex = 70;
+            // 
+            // txtBoxOtherRelation3
+            // 
+            this.txtBoxOtherRelation3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherRelation3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherRelation3.Location = new System.Drawing.Point(310, 86);
+            this.txtBoxOtherRelation3.MaxLength = 100;
+            this.txtBoxOtherRelation3.Name = "txtBoxOtherRelation3";
+            this.txtBoxOtherRelation3.Size = new System.Drawing.Size(160, 20);
+            this.txtBoxOtherRelation3.TabIndex = 69;
+            // 
+            // txtBoxOtherName3
+            // 
+            this.txtBoxOtherName3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName3.Location = new System.Drawing.Point(28, 86);
+            this.txtBoxOtherName3.MaxLength = 150;
+            this.txtBoxOtherName3.Name = "txtBoxOtherName3";
+            this.txtBoxOtherName3.Size = new System.Drawing.Size(235, 20);
+            this.txtBoxOtherName3.TabIndex = 68;
+            // 
+            // datePickerOtherDateOfBirth2
+            // 
+            this.datePickerOtherDateOfBirth2.CustomFormat = "mm/dd/yyyy";
+            this.datePickerOtherDateOfBirth2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerOtherDateOfBirth2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerOtherDateOfBirth2.Location = new System.Drawing.Point(589, 61);
+            this.datePickerOtherDateOfBirth2.Name = "datePickerOtherDateOfBirth2";
+            this.datePickerOtherDateOfBirth2.Size = new System.Drawing.Size(137, 20);
+            this.datePickerOtherDateOfBirth2.TabIndex = 67;
+            // 
+            // txtBoxOtherRelation2
+            // 
+            this.txtBoxOtherRelation2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherRelation2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherRelation2.Location = new System.Drawing.Point(310, 60);
+            this.txtBoxOtherRelation2.MaxLength = 100;
+            this.txtBoxOtherRelation2.Name = "txtBoxOtherRelation2";
+            this.txtBoxOtherRelation2.Size = new System.Drawing.Size(160, 20);
+            this.txtBoxOtherRelation2.TabIndex = 66;
+            // 
+            // txtBoxOtherName2
+            // 
+            this.txtBoxOtherName2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName2.Location = new System.Drawing.Point(28, 60);
+            this.txtBoxOtherName2.MaxLength = 150;
+            this.txtBoxOtherName2.Name = "txtBoxOtherName2";
+            this.txtBoxOtherName2.Size = new System.Drawing.Size(235, 20);
+            this.txtBoxOtherName2.TabIndex = 65;
+            // 
+            // datePickerOtherDateOfBirth1
+            // 
+            this.datePickerOtherDateOfBirth1.CustomFormat = "mm/dd/yyyy";
+            this.datePickerOtherDateOfBirth1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerOtherDateOfBirth1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerOtherDateOfBirth1.Location = new System.Drawing.Point(589, 35);
+            this.datePickerOtherDateOfBirth1.Name = "datePickerOtherDateOfBirth1";
+            this.datePickerOtherDateOfBirth1.Size = new System.Drawing.Size(137, 20);
+            this.datePickerOtherDateOfBirth1.TabIndex = 64;
+            // 
+            // txtBoxOtherRelation1
+            // 
+            this.txtBoxOtherRelation1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherRelation1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherRelation1.Location = new System.Drawing.Point(310, 34);
+            this.txtBoxOtherRelation1.MaxLength = 100;
+            this.txtBoxOtherRelation1.Name = "txtBoxOtherRelation1";
+            this.txtBoxOtherRelation1.Size = new System.Drawing.Size(160, 20);
+            this.txtBoxOtherRelation1.TabIndex = 63;
+            // 
+            // txtBoxOtherName1
+            // 
+            this.txtBoxOtherName1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName1.Location = new System.Drawing.Point(28, 34);
+            this.txtBoxOtherName1.MaxLength = 150;
+            this.txtBoxOtherName1.Name = "txtBoxOtherName1";
+            this.txtBoxOtherName1.Size = new System.Drawing.Size(235, 20);
+            this.txtBoxOtherName1.TabIndex = 62;
+            // 
             // CreateNewTenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,11 +813,11 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTenant)).EndInit();
-            this.groupBoxOtherOccupants.ResumeLayout(false);
-            this.groupBoxOtherOccupants.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBoxPets.ResumeLayout(false);
             this.groupBoxPets.PerformLayout();
+            this.groupBoxOtherOccupants.ResumeLayout(false);
+            this.groupBoxOtherOccupants.PerformLayout();
             this.ResumeLayout(false);
 
         }

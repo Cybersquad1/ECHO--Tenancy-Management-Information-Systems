@@ -15,21 +15,22 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
     public partial class MonthlyAssociationDuesForm : Form
     {
-        WaterBillingViewModel waterBillingVM; //Water billing database connection
-
-        UnitViewModel unitVM; //Unit database connection
-
-        TenantViewModel tenantVM; //tenant database connection
-
+        //Database Connection per table
+        WaterBillingViewModel waterBillingVM;
+        UnitViewModel unitVM;
+        TenantViewModel tenantVM;   
+        PaymentHistoryViewModel paymentHistoryVM;
         MonthlyAssociationDueViewModel assocVM;
 
         FormUtilities formUtilities = new FormUtilities();
-
+     
         double penalty = 0;
 
         public MonthlyAssociationDuesForm()
         {
             InitializeComponent();
+
+            txtBoxTotalAmountDue.Text = "0.00";
 
             txtBoxChargeDate.Text = DateTime.Now.ToShortDateString(); // assign charge date
 
@@ -63,6 +64,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void GetPreviousBilling()
         {
+            //Previous billing amount
             assocVM = new MonthlyAssociationDueViewModel();
 
             var prevBillin = assocVM.GetPreviousBilling(cmbBoxUnitNo.Text);
@@ -73,7 +75,21 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             }
             else
             {
+                txtBoxPrevBillAmount.Text = "N/A";
+            }
 
+            //Date of last payment
+            paymentHistoryVM = new PaymentHistoryViewModel();
+
+            var paymentHistory = paymentHistoryVM.GetLastPayment(cmbBoxUnitNo.Text);
+
+            if (paymentHistory != null)
+            {
+                txtBoxDateOfLastPayment.Text = paymentHistory.ToString();
+            }
+            else
+            {
+                txtBoxDateOfLastPayment.Text = "N/A";
             }
         }
 
@@ -206,15 +222,20 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 else
                     newAssoc.OtherPenalty = "N/A";
 
-                if (assocVM.CreateMonthlyAssoc(newAssoc))
-                {
-                    AddDuesToSummaryTable();
+                DialogResult result = MessageBox.Show("Are you sure you want to save? Y/N", "Confirmation", MessageBoxButtons.YesNo);
 
-                    MessageBox.Show("Successfully save");
-                }
-                else
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Cannot save association dues. There was some kind of error", "Error");
+                    if (assocVM.CreateMonthlyAssoc(newAssoc))
+                    {
+                        AddDuesToSummaryTable();
+
+                        MessageBox.Show("Successfully save");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot save association dues. There was some kind of error", "Error");
+                    }
                 }
             }
             else
@@ -263,6 +284,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void txtBoxDiscount_TextChanged(object sender, EventArgs e)
         {
             //Auto deduction of discount to total amount due
+            if(txtBoxDiscount.Text != "")
             txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", 
                 decimal.Parse(txtBoxTotalAmountDue.Text) - decimal.Parse(txtBoxDiscount.Text));
         }
@@ -274,10 +296,13 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void txtBoxAssociationDues_TextChanged(object sender, EventArgs e)
         {
-            if (txtBoxTotalAmountDue.Text != "" && decimal.Parse(txtBoxTotalAmountDue.Text) > 0)
+            if (txtBoxAssociationDues.Text != "")
             {
-                txtBoxAssociationDues.Text = string.Format("{0:0.00}", decimal.Parse(txtBoxAssociationDues.Text)
-                    + decimal.Parse(txtBoxTotalAmountDue.Text));
+                decimal total = 0;
+
+                total = decimal.Parse(txtBoxAssociationDues.Text) + decimal.Parse(txtBoxTotalAmountDue.Text);
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
             }
         }
 

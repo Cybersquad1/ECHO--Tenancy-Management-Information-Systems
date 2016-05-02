@@ -47,11 +47,23 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
     <Property Name="ChargeDate" Type="datetime" />
-    <Property Name="AssociationDues" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="PreviousWaterBillDue" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="CurrentWaterBillDue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MonthlyAssocID" Type="uniqueidentifier" />
+    <Property Name="Payable" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="10" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TenantArchive">
     <Key>
@@ -210,15 +222,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PaymentHistory_UnitProfile">
-    <End Role="UnitProfile" Type="Self.UnitProfile" Multiplicity="0..1" />
+  <Association Name="FK_PaymentHistory_MonthlyAssociationDue">
+    <End Role="MonthlyAssociationDue" Type="Self.MonthlyAssociationDue" Multiplicity="0..1" />
     <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UnitProfile">
-        <PropertyRef Name="UnitNumber" />
+      <Principal Role="MonthlyAssociationDue">
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="PaymentHistory">
-        <PropertyRef Name="UnitNumber" />
+        <PropertyRef Name="MonthlyAssocID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -263,6 +275,7 @@
     <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
@@ -284,8 +297,8 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
     </AssociationSet>
-    <AssociationSet Name="FK_PaymentHistory_UnitProfile" Association="Self.FK_PaymentHistory_UnitProfile">
-      <End Role="UnitProfile" EntitySet="UnitProfile" />
+    <AssociationSet Name="FK_PaymentHistory_MonthlyAssociationDue" Association="Self.FK_PaymentHistory_MonthlyAssociationDue">
+      <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="Self.FK_TenantArchive_TenantProfile">

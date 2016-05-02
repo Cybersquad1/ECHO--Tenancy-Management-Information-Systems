@@ -20,6 +20,8 @@ namespace Echo.Data.Repository
         public Nullable<System.Guid> MonthlyAssocID { get; set; }
         public Nullable<decimal> Payable { get; set; }
         public Nullable<decimal> Balance { get; set; }
+        public string UnitNumber { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual MonthlyAssociationDue MonthlyAssociationDue { get; set; }
     }

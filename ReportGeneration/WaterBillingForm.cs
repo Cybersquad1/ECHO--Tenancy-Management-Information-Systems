@@ -247,7 +247,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             //check required fields
             string errorMessage = "";
 
-            if (cmbBoxUnitNo.Text != "")
+            if (cmbBoxUnitNo.Text == "")
                 errorMessage += "Unit number is required\n";
             else
             {

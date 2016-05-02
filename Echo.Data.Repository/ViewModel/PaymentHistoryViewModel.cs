@@ -12,8 +12,10 @@ namespace Echo.Data.Repository.ViewModel
         {
             var lastPayment = GetLast(r => r.UnitNumber == _unitNo);
 
-            if(lastPayment != null)
-                return lastPayment.cha
+            if (lastPayment != null)
+                return lastPayment.Date;
+            else
+                return null;
         }
     }
 }

@@ -42,6 +42,9 @@
             this.dateTimeDueDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtBoxWaterBilling = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,6 +70,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtBoxPrevBillAmount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxDateOfLastPayment = new System.Windows.Forms.TextBox();
@@ -83,10 +87,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.AssocDuesPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -103,7 +103,7 @@
             this.AssocDuesPnl.Controls.Add(this.groupBox1);
             this.AssocDuesPnl.Location = new System.Drawing.Point(1, 4);
             this.AssocDuesPnl.Name = "AssocDuesPnl";
-            this.AssocDuesPnl.Size = new System.Drawing.Size(760, 566);
+            this.AssocDuesPnl.Size = new System.Drawing.Size(760, 538);
             this.AssocDuesPnl.TabIndex = 1;
             // 
             // btnPreview
@@ -112,7 +112,7 @@
             this.btnPreview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreview.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
             this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPreview.Location = new System.Drawing.Point(555, 519);
+            this.btnPreview.Location = new System.Drawing.Point(553, 499);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(111, 33);
             this.btnPreview.TabIndex = 27;
@@ -124,7 +124,7 @@
             this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
             this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCancel.Location = new System.Drawing.Point(672, 519);
+            this.btnUserCancel.Location = new System.Drawing.Point(670, 499);
             this.btnUserCancel.Name = "btnUserCancel";
             this.btnUserCancel.Size = new System.Drawing.Size(79, 33);
             this.btnUserCancel.TabIndex = 26;
@@ -145,7 +145,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 510);
+            this.groupBox1.Size = new System.Drawing.Size(740, 491);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Monthly Association Dues Details";
@@ -159,7 +159,7 @@
             this.columnHeader4});
             this.listViewSummary.FullRowSelect = true;
             this.listViewSummary.GridLines = true;
-            this.listViewSummary.Location = new System.Drawing.Point(6, 395);
+            this.listViewSummary.Location = new System.Drawing.Point(6, 375);
             this.listViewSummary.Name = "listViewSummary";
             this.listViewSummary.Size = new System.Drawing.Size(728, 110);
             this.listViewSummary.TabIndex = 13;
@@ -241,16 +241,49 @@
             this.groupBox5.Controls.Add(this.shapeContainer1);
             this.groupBox5.Location = new System.Drawing.Point(8, 135);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(726, 255);
+            this.groupBox5.Size = new System.Drawing.Size(726, 234);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label20.Location = new System.Drawing.Point(171, 20);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(31, 15);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "PHP";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label19.Location = new System.Drawing.Point(171, 46);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(31, 15);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "PHP";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label18.Location = new System.Drawing.Point(171, 72);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(31, 15);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "PHP";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label17.Location = new System.Drawing.Point(536, 202);
+            this.label17.Location = new System.Drawing.Point(537, 183);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(31, 15);
             this.label17.TabIndex = 41;
@@ -344,6 +377,7 @@
             this.txtBoxOtherDesc.Enabled = false;
             this.txtBoxOtherDesc.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxOtherDesc.Location = new System.Drawing.Point(52, 63);
+            this.txtBoxOtherDesc.MaxLength = 100;
             this.txtBoxOtherDesc.Name = "txtBoxOtherDesc";
             this.txtBoxOtherDesc.Size = new System.Drawing.Size(118, 20);
             this.txtBoxOtherDesc.TabIndex = 29;
@@ -374,7 +408,7 @@
             this.btnFinalize.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalize.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalize.Image")));
             this.btnFinalize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinalize.Location = new System.Drawing.Point(629, 223);
+            this.btnFinalize.Location = new System.Drawing.Point(630, 204);
             this.btnFinalize.Name = "btnFinalize";
             this.btnFinalize.Size = new System.Drawing.Size(85, 23);
             this.btnFinalize.TabIndex = 28;
@@ -427,7 +461,7 @@
             this.txtBoxTotalAmountDue.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBoxTotalAmountDue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTotalAmountDue.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtBoxTotalAmountDue.Location = new System.Drawing.Point(569, 199);
+            this.txtBoxTotalAmountDue.Location = new System.Drawing.Point(570, 180);
             this.txtBoxTotalAmountDue.Name = "txtBoxTotalAmountDue";
             this.txtBoxTotalAmountDue.Size = new System.Drawing.Size(144, 21);
             this.txtBoxTotalAmountDue.TabIndex = 26;
@@ -438,7 +472,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(566, 181);
+            this.label15.Location = new System.Drawing.Point(567, 162);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(144, 16);
             this.label15.TabIndex = 25;
@@ -482,7 +516,7 @@
             this.shapeContainer1.Location = new System.Drawing.Point(3, 16);
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Size = new System.Drawing.Size(720, 236);
+            this.shapeContainer1.Size = new System.Drawing.Size(720, 215);
             this.shapeContainer1.TabIndex = 22;
             this.shapeContainer1.TabStop = false;
             // 
@@ -498,6 +532,17 @@
             this.groupBox4.Size = new System.Drawing.Size(367, 84);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label21.Location = new System.Drawing.Point(138, 39);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 15);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "PHP";
             // 
             // txtBoxPrevBillAmount
             // 
@@ -655,56 +700,12 @@
             this.shapeContainer3.TabIndex = 22;
             this.shapeContainer3.TabStop = false;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label18.Location = new System.Drawing.Point(171, 72);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(31, 15);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "PHP";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label19.Location = new System.Drawing.Point(171, 46);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(31, 15);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "PHP";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label20.Location = new System.Drawing.Point(171, 20);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 15);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "PHP";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label21.Location = new System.Drawing.Point(138, 39);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 15);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "PHP";
-            // 
             // MonthlyAssociationDuesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(762, 568);
+            this.ClientSize = new System.Drawing.Size(770, 545);
             this.Controls.Add(this.AssocDuesPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(352, 141);
