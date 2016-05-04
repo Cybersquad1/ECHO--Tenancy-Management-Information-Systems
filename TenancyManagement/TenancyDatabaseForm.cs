@@ -129,8 +129,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                     if (unit.Owner != null)
                     {
-                        var owner = new UserViewModel().GetSelectedUser(unit.Owner);
-                        lvi.SubItems.Add(owner.FullName);   //Unit Owner
+                        var owner = new TenantViewModel().GetSelectedTenant(unit.Owner);
+                        lvi.SubItems.Add(owner.FirstName + " " + owner.LastName);   //Unit Owner
                     }
                     else
                         lvi.SubItems.Add("None");//If no owner

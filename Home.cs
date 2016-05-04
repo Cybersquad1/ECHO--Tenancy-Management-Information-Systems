@@ -154,11 +154,17 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Add(m1);     
         }
 
-        private void button24_Click(object sender, EventArgs e)
+        private void button24_Click(object sender, EventArgs e)//Paid and unpaid
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.TheListForm t1 = new ReportGeneration.TheListForm();
             t1.listPnl.Visible = true;
-            t1.ShowDialog();
+            t1.Visible = true;
+            t1.TopLevel = false;
+            t1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t1);
         }
 
         private void TenancyArchiveButton_Click(object sender, EventArgs e) //Tenancy Archive
@@ -174,13 +180,15 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Add(t2);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Back
         {
             UserAccPnl.Visible = false;
             TenMgmtPnl.Visible = true;
             reportsGenPnl.Visible = false;
             reportsGenPnl2.Visible = false;
             tenancyDatabasePnl.Visible = false;
+
+            panelMain.Controls.Clear();
         }
 
         private void tenancyDataButton_Click(object sender, EventArgs e)
@@ -205,11 +213,17 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Add(t3);
         }
 
-        private void PHistoryButton_Click(object sender, EventArgs e)
+        private void PHistoryButton_Click(object sender, EventArgs e)//Payment History
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.PaymentHistoryForm p1 = new TenancyManagement.PaymentHistoryForm();
             p1.paymentHistoryPnl.Visible = true;
-            p1.ShowDialog();
+            p1.Visible = true;
+            p1.TopLevel = false;
+            p1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(p1);
         }
 
         private void AUnitsButton_Click(object sender, EventArgs e)//View Available Units
@@ -233,11 +247,17 @@ namespace Tenancy_Management_Information_Systems
             c1.ShowDialog();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e) //Log sheet
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm();
             l1.logPnl.Visible = true;
-            l1.ShowDialog();
+            l1.TopLevel = false;
+            l1.Visible = true;
+            l1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(l1);
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -265,9 +285,15 @@ namespace Tenancy_Management_Information_Systems
 
         private void button12_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.TenancyDatabaseForm t3 = new TenancyManagement.TenancyDatabaseForm();
             t3.TenancyDBPnl.Visible = true;
-            t3.ShowDialog();
+            t3.TopLevel = false;
+            t3.Visible = true;
+            t3.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t3);
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -277,25 +303,43 @@ namespace Tenancy_Management_Information_Systems
             a1.ShowDialog();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)//Payment History
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.PaymentHistoryForm p1 = new TenancyManagement.PaymentHistoryForm();
             p1.paymentHistoryPnl.Visible = true;
-            p1.ShowDialog();
+            p1.Visible = true;
+            p1.TopLevel = false;
+            p1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(p1);        
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) //Tenancy Archive
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.TenancyArchiveForm t2 = new TenancyManagement.TenancyArchiveForm();
             t2.ArchivePnl.Visible = true;
-            t2.ShowDialog();
+            t2.Visible = true;
+            t2.TopLevel = false;
+            t2.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t2);
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void button15_Click(object sender, EventArgs e) //Paid and Unpaid Accounts
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.TheListForm t1 = new ReportGeneration.TheListForm();
             t1.listPnl.Visible = true;
-            t1.ShowDialog();
+            t1.TopLevel = false;
+            t1.Visible = true;
+            t1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(t1);
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -335,6 +379,11 @@ namespace Tenancy_Management_Information_Systems
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
             parentForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e) //Logout
+        {
+            Close();
         }
     }
 }

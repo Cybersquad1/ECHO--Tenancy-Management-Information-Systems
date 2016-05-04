@@ -182,6 +182,7 @@
             this.button2.Text = "   Log Out";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // UserAccPnl
             // 

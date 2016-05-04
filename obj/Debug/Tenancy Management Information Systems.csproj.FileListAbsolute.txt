@@ -310,3 +310,8 @@ C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.MonthlyAssocDue.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.PaymentHistory.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.RequestForm.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ReservationForm.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.TenantInformation.resources

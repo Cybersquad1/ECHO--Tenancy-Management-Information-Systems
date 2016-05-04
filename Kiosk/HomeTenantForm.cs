@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tenancy_Management_Information_Systems.Kiosk.TenantForms;
 
 namespace Tenancy_Management_Information_Systems.Kiosk
 {
@@ -36,13 +37,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void AssocDuesButton_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = false;
-            hk.pnlRequest.Visible = false;
-            hk.pnlPaymentHistory.Visible = false;
-            hk.pnlReservation.Visible = false;
-            hk.pnlAssocDues.Visible = true;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
+
+            MonthlyAssocDue form = new MonthlyAssocDue(lblUnitNo.Text);
+            form.TopLevel = false;
+            form.Visible = true;
+            form.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(form);
         }
 
         private void PHistoryButton_Click(object sender, EventArgs e)
@@ -92,6 +94,16 @@ namespace Tenancy_Management_Information_Systems.Kiosk
             hk.pnlReservation.Visible = false;
             hk.pnlAssocDues.Visible = false;
             hk.ShowDialog();
+        }
+
+        private void HomeTenantForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

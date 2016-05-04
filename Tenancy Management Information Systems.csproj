@@ -81,6 +81,36 @@
     <Compile Include="Kiosk\HomeTenantForm.Designer.cs">
       <DependentUpon>HomeTenantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kiosk\TenantForms\MonthlyAssocDue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\MonthlyAssocDue.Designer.cs">
+      <DependentUpon>MonthlyAssocDue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\PaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\PaymentHistory.Designer.cs">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\RequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\RequestForm.Designer.cs">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\ReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\TenantInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\TenantInformation.Designer.cs">
+      <DependentUpon>TenantInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportGeneration\logSheetForm.cs">
@@ -204,6 +234,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kiosk\HomeTenantForm.resx">
       <DependentUpon>HomeTenantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\MonthlyAssocDue.resx">
+      <DependentUpon>MonthlyAssocDue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\PaymentHistory.resx">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\RequestForm.resx">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\TenantInformation.resx">
+      <DependentUpon>TenantInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
