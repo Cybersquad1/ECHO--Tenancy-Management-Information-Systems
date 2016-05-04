@@ -73,10 +73,17 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                         accountType = "TENANT"
                     };
 
-                    HomeTenantForm ht1 = new HomeTenantForm();
-                    ht1.Show();
+                    if (tenant.UnitNumber != null && tenant.UnitNumber != "")
+                    {
+                        HomeTenantForm ht1 = new HomeTenantForm(this,tenant.ID, tenant.UnitNumber, tenant.FirstName + " " + tenant.LastName);
+                        ht1.Show();
 
-                    Hide();
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No assign unit, please contact administrator for this issue", "Warning");
+                    }
                 }
             }
 

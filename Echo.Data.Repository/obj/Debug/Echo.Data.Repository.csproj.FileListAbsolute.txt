@@ -37,3 +37,4 @@ C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache

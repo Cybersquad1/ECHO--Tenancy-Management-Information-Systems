@@ -31,6 +31,11 @@ namespace Echo.Data.Repository.ViewModel
             return false; //No duplicate billing for this month
         }
 
+        public WaterBilling GetPrevBilling(string _unitNo)
+        {
+            return GetLast(r => r.UnitNumber == _unitNo);
+        }
+
         public string[] GetPreviousBilling(string _unitNo)
         {
             string[] returnValue = new string[2];

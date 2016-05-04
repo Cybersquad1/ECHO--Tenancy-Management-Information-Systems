@@ -13,9 +13,21 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 {
     public partial class HomeTenantForm : Form
     {
-        public HomeTenantForm()
+        Guid tenantID;
+
+        Home2 parentForm;
+
+        public HomeTenantForm(Home2 parentForm, Guid _tenantID, string _unitNo, string _name)
         {
             InitializeComponent();
+
+            tenantID = _tenantID;
+
+            lblUnitNo.Text = _unitNo;
+
+            lblTenantName.Text = _name;
+
+            this.parentForm = parentForm;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -82,18 +94,12 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = false;
-            hk.pnlRequest.Visible = false;
-            hk.pnlPaymentHistory.Visible = false;
-            hk.pnlReservation.Visible = false;
-            hk.pnlAssocDues.Visible = false;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
         }
 
         private void HomeTenantForm_Load(object sender, EventArgs e)
@@ -104,6 +110,16 @@ namespace Tenancy_Management_Information_Systems.Kiosk
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void HomeTenantForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void HomeTenantForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

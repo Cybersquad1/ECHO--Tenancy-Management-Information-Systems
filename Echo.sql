@@ -16,34 +16,34 @@ ALTER TABLE [dbo].[LogSheetActivity] DROP CONSTRAINT [FK_LogSheetActivity_LogShe
 GO
 ALTER TABLE [dbo].[LogSheet] DROP CONSTRAINT [FK_LogSheet_UserProfile]
 GO
-/****** Object:  Table [dbo].[WaterBilling]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[WaterBilling]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[WaterBilling]
 GO
-/****** Object:  Table [dbo].[UserProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[UserProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[UserProfile]
 GO
-/****** Object:  Table [dbo].[UnitProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[UnitProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[UnitProfile]
 GO
-/****** Object:  Table [dbo].[TenantProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[TenantProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[TenantProfile]
 GO
-/****** Object:  Table [dbo].[TenantArchive]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[TenantArchive]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[TenantArchive]
 GO
-/****** Object:  Table [dbo].[PaymentHistory]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[PaymentHistory]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[PaymentHistory]
 GO
-/****** Object:  Table [dbo].[MonthlyAssociationDue]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[MonthlyAssociationDue]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[MonthlyAssociationDue]
 GO
-/****** Object:  Table [dbo].[LogSheetActivity]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[LogSheetActivity]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[LogSheetActivity]
 GO
-/****** Object:  Table [dbo].[LogSheet]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[LogSheet]    Script Date: 5/4/2016 4:36:32 PM ******/
 DROP TABLE [dbo].[LogSheet]
 GO
-/****** Object:  Table [dbo].[LogSheet]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[LogSheet]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[LogSheet](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LogSheetActivity]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[LogSheetActivity]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -91,7 +91,7 @@ CREATE TABLE [dbo].[LogSheetActivity](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[MonthlyAssociationDue]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[MonthlyAssociationDue]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,10 +121,12 @@ CREATE TABLE [dbo].[MonthlyAssociationDue](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PaymentHistory]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[PaymentHistory]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[PaymentHistory](
 	[ID] [uniqueidentifier] NOT NULL,
@@ -133,6 +135,8 @@ CREATE TABLE [dbo].[PaymentHistory](
 	[MonthlyAssocID] [uniqueidentifier] NULL,
 	[Payable] [decimal](18, 2) NULL,
 	[Balance] [decimal](18, 2) NULL,
+	[UnitNumber] [varchar](10) NULL,
+	[Date] [datetime] NULL,
  CONSTRAINT [PK_PaymentHistory] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -140,7 +144,9 @@ CREATE TABLE [dbo].[PaymentHistory](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[TenantArchive]    Script Date: 5/1/2016 10:53:21 PM ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TenantArchive]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -163,7 +169,7 @@ CREATE TABLE [dbo].[TenantArchive](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[TenantProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[TenantProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -215,7 +221,7 @@ CREATE TABLE [dbo].[TenantProfile](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[UnitProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[UnitProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -240,7 +246,7 @@ CREATE TABLE [dbo].[UnitProfile](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[UserProfile]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[UserProfile]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -278,7 +284,7 @@ CREATE TABLE [dbo].[UserProfile](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[WaterBilling]    Script Date: 5/1/2016 10:53:21 PM ******/
+/****** Object:  Table [dbo].[WaterBilling]    Script Date: 5/4/2016 4:36:32 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,14 +314,6 @@ CREATE TABLE [dbo].[WaterBilling](
 
 GO
 SET ANSI_PADDING OFF
-GO
-INSERT [dbo].[UnitProfile] ([UnitNumber], [StartOfOccupancy], [ExpectedEndOfOccupancy], [Owner], [Tenant], [NatureOfOccupancy], [Type], [Floor]) VALUES (N'2001', NULL, NULL, NULL, NULL, NULL, NULL, N'2')
-GO
-INSERT [dbo].[UnitProfile] ([UnitNumber], [StartOfOccupancy], [ExpectedEndOfOccupancy], [Owner], [Tenant], [NatureOfOccupancy], [Type], [Floor]) VALUES (N'2002', NULL, NULL, NULL, NULL, NULL, NULL, N'2')
-GO
-INSERT [dbo].[UnitProfile] ([UnitNumber], [StartOfOccupancy], [ExpectedEndOfOccupancy], [Owner], [Tenant], [NatureOfOccupancy], [Type], [Floor]) VALUES (N'3001', NULL, NULL, NULL, NULL, NULL, NULL, N'3')
-GO
-INSERT [dbo].[UserProfile] ([ID], [Username], [FirstName], [MiddleName], [LastName], [DateOfBirth], [MaritalStatus], [HomeAddress], [ProvincialAddress], [Password], [MobileNo], [TelephoneNo], [Email], [ContactPerson], [ContactNo], [RelationshipToContact], [ImageContent], [Status], [Type], [IfGeneratedPassword], [FullName]) VALUES (N'408691e2-b2c4-45ef-883e-412f32bcda0d', N'admin', N'ramil', NULL, N'ignacio', CAST(0x0000858D00000000 AS DateTime), N'Single', N'Pasig', NULL, N'admin', NULL, NULL, N'r@gmail.com', NULL, NULL, NULL, NULL, N'Y', N'admin', NULL, N'Ramil Charles Ignacio')
 GO
 ALTER TABLE [dbo].[LogSheet]  WITH CHECK ADD  CONSTRAINT [FK_LogSheet_UserProfile] FOREIGN KEY([ModifiedBy])
 REFERENCES [dbo].[UserProfile] ([ID])
