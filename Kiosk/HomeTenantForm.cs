@@ -37,14 +37,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void ViewTenantProfButton_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = true;
-            hk.pnlRequest.Visible = false;
-            hk.pnlPaymentHistory.Visible = false;
-            hk.pnlReservation.Visible = false;
-            hk.pnlAssocDues.Visible = false;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
 
+            TenantInformation form = new TenantInformation(tenantID);
+            form.Visible = true;
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(form);
         }
 
         private void AssocDuesButton_Click(object sender, EventArgs e)

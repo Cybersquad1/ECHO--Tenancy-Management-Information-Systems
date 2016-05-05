@@ -30,38 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantInformation));
             this.pnlTenancyInfo = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtBoxRelation2 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBoxRelation3 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName2 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName3 = new System.Windows.Forms.TextBox();
+            this.txtBoxRelation1 = new System.Windows.Forms.TextBox();
+            this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBoxEndDate = new System.Windows.Forms.TextBox();
+            this.txtBoxStartDate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.txtOwner = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtboxHadd = new System.Windows.Forms.TextBox();
-            this.txtboxPadd = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.txtboxLname = new System.Windows.Forms.TextBox();
-            this.txtboxMname = new System.Windows.Forms.TextBox();
-            this.txtboxFname = new System.Windows.Forms.TextBox();
+            this.txtBoxOwner = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
+            this.txtBoxHomeAddress = new System.Windows.Forms.TextBox();
+            this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
+            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtBoxLastName = new System.Windows.Forms.TextBox();
+            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
+            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -69,10 +70,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.cbNature = new System.Windows.Forms.ComboBox();
+            this.comboBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.cmbBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.pnlTenancyInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,7 +81,9 @@
             // 
             // pnlTenancyInfo
             // 
-            this.pnlTenancyInfo.Controls.Add(this.button8);
+            this.pnlTenancyInfo.BackColor = System.Drawing.Color.White;
+            this.pnlTenancyInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTenancyInfo.Controls.Add(this.btnClose);
             this.pnlTenancyInfo.Controls.Add(this.label3);
             this.pnlTenancyInfo.Controls.Add(this.groupBox2);
             this.pnlTenancyInfo.Controls.Add(this.groupBox1);
@@ -91,6 +93,19 @@
             this.pnlTenancyInfo.Name = "pnlTenancyInfo";
             this.pnlTenancyInfo.Size = new System.Drawing.Size(915, 471);
             this.pnlTenancyInfo.TabIndex = 79;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(823, 421);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(70, 29);
+            this.btnClose.TabIndex = 155;
+            this.btnClose.Text = "    Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label3
             // 
@@ -105,13 +120,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.txtBoxRelation2);
             this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtBoxRelation3);
+            this.groupBox2.Controls.Add(this.txtBoxOtherName2);
+            this.groupBox2.Controls.Add(this.txtBoxOtherName3);
+            this.groupBox2.Controls.Add(this.txtBoxRelation1);
+            this.groupBox2.Controls.Add(this.txtBoxOtherName1);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 286);
@@ -121,16 +136,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Other Information";
             // 
-            // textBox8
+            // txtBoxRelation2
             // 
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox8.Location = new System.Drawing.Point(442, 69);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(261, 20);
-            this.textBox8.TabIndex = 120;
+            this.txtBoxRelation2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxRelation2.Enabled = false;
+            this.txtBoxRelation2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRelation2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxRelation2.Location = new System.Drawing.Point(442, 69);
+            this.txtBoxRelation2.Name = "txtBoxRelation2";
+            this.txtBoxRelation2.Size = new System.Drawing.Size(261, 20);
+            this.txtBoxRelation2.TabIndex = 120;
             // 
             // label27
             // 
@@ -143,60 +158,60 @@
             this.label27.TabIndex = 118;
             this.label27.Text = "Relation to Unit Owner/Tenant:";
             // 
-            // textBox9
+            // txtBoxRelation3
             // 
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox9.Location = new System.Drawing.Point(442, 92);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(261, 20);
-            this.textBox9.TabIndex = 119;
+            this.txtBoxRelation3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxRelation3.Enabled = false;
+            this.txtBoxRelation3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRelation3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxRelation3.Location = new System.Drawing.Point(442, 92);
+            this.txtBoxRelation3.Name = "txtBoxRelation3";
+            this.txtBoxRelation3.Size = new System.Drawing.Size(261, 20);
+            this.txtBoxRelation3.TabIndex = 119;
             // 
-            // textBox5
+            // txtBoxOtherName2
             // 
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox5.Location = new System.Drawing.Point(82, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(271, 20);
-            this.textBox5.TabIndex = 115;
+            this.txtBoxOtherName2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxOtherName2.Enabled = false;
+            this.txtBoxOtherName2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName2.Location = new System.Drawing.Point(82, 70);
+            this.txtBoxOtherName2.Name = "txtBoxOtherName2";
+            this.txtBoxOtherName2.Size = new System.Drawing.Size(271, 20);
+            this.txtBoxOtherName2.TabIndex = 115;
             // 
-            // textBox4
+            // txtBoxOtherName3
             // 
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox4.Location = new System.Drawing.Point(82, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(271, 20);
-            this.textBox4.TabIndex = 114;
+            this.txtBoxOtherName3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxOtherName3.Enabled = false;
+            this.txtBoxOtherName3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName3.Location = new System.Drawing.Point(82, 93);
+            this.txtBoxOtherName3.Name = "txtBoxOtherName3";
+            this.txtBoxOtherName3.Size = new System.Drawing.Size(271, 20);
+            this.txtBoxOtherName3.TabIndex = 114;
             // 
-            // textBox14
+            // txtBoxRelation1
             // 
-            this.textBox14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox14.Enabled = false;
-            this.textBox14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox14.Location = new System.Drawing.Point(442, 46);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(261, 20);
-            this.textBox14.TabIndex = 117;
+            this.txtBoxRelation1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxRelation1.Enabled = false;
+            this.txtBoxRelation1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRelation1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxRelation1.Location = new System.Drawing.Point(442, 46);
+            this.txtBoxRelation1.Name = "txtBoxRelation1";
+            this.txtBoxRelation1.Size = new System.Drawing.Size(261, 20);
+            this.txtBoxRelation1.TabIndex = 117;
             // 
-            // textBox3
+            // txtBoxOtherName1
             // 
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox3.Location = new System.Drawing.Point(82, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(271, 20);
-            this.textBox3.TabIndex = 113;
+            this.txtBoxOtherName1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxOtherName1.Enabled = false;
+            this.txtBoxOtherName1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOtherName1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxOtherName1.Location = new System.Drawing.Point(82, 47);
+            this.txtBoxOtherName1.Name = "txtBoxOtherName1";
+            this.txtBoxOtherName1.Size = new System.Drawing.Size(271, 20);
+            this.txtBoxOtherName1.TabIndex = 113;
             // 
             // label25
             // 
@@ -211,10 +226,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtBoxEndDate);
+            this.groupBox1.Controls.Add(this.txtBoxStartDate);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.dtpStart);
-            this.groupBox1.Controls.Add(this.dtpEnd);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(756, 34);
             this.groupBox1.Name = "groupBox1";
@@ -223,9 +238,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Duration of Stay";
             // 
+            // txtBoxEndDate
+            // 
+            this.txtBoxEndDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxEndDate.Enabled = false;
+            this.txtBoxEndDate.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxEndDate.Location = new System.Drawing.Point(6, 140);
+            this.txtBoxEndDate.Multiline = true;
+            this.txtBoxEndDate.Name = "txtBoxEndDate";
+            this.txtBoxEndDate.Size = new System.Drawing.Size(128, 21);
+            this.txtBoxEndDate.TabIndex = 113;
+            // 
+            // txtBoxStartDate
+            // 
+            this.txtBoxStartDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxStartDate.Enabled = false;
+            this.txtBoxStartDate.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxStartDate.Location = new System.Drawing.Point(6, 59);
+            this.txtBoxStartDate.Multiline = true;
+            this.txtBoxStartDate.Name = "txtBoxStartDate";
+            this.txtBoxStartDate.Size = new System.Drawing.Size(128, 21);
+            this.txtBoxStartDate.TabIndex = 112;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label9.Location = new System.Drawing.Point(11, 125);
@@ -245,46 +285,24 @@
             this.label10.TabIndex = 42;
             this.label10.Text = "Start Date:";
             // 
-            // dtpStart
-            // 
-            this.dtpStart.CustomFormat = "mm/dd/yyyy";
-            this.dtpStart.Enabled = false;
-            this.dtpStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(14, 56);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(93, 20);
-            this.dtpStart.TabIndex = 45;
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.CustomFormat = "mm/dd/yyyy";
-            this.dtpEnd.Enabled = false;
-            this.dtpEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(14, 144);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(108, 20);
-            this.dtpEnd.TabIndex = 48;
-            // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.maskedTextBox2);
-            this.groupBox6.Controls.Add(this.maskedTextBox1);
+            this.groupBox6.Controls.Add(this.txtBoxTelNo);
+            this.groupBox6.Controls.Add(this.txtBoxMobileNo);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.txtEmail);
+            this.groupBox6.Controls.Add(this.txtBoxEmail);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Controls.Add(this.txtOwner);
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.txtboxHadd);
-            this.groupBox6.Controls.Add(this.txtboxPadd);
-            this.groupBox6.Controls.Add(this.dateTimePicker2);
-            this.groupBox6.Controls.Add(this.txtboxLname);
-            this.groupBox6.Controls.Add(this.txtboxMname);
-            this.groupBox6.Controls.Add(this.txtboxFname);
+            this.groupBox6.Controls.Add(this.txtBoxOwner);
+            this.groupBox6.Controls.Add(this.txtBoxUnitNo);
+            this.groupBox6.Controls.Add(this.txtBoxHomeAddress);
+            this.groupBox6.Controls.Add(this.txtBoxProvincialAddress);
+            this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
+            this.groupBox6.Controls.Add(this.txtBoxLastName);
+            this.groupBox6.Controls.Add(this.txtBoxMiddleName);
+            this.groupBox6.Controls.Add(this.txtBoxFirstName);
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label20);
@@ -292,9 +310,9 @@
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.cbNature);
+            this.groupBox6.Controls.Add(this.comboBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.cmbBoxMaritalStatus);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(9, 36);
             this.groupBox6.Name = "groupBox6";
@@ -303,36 +321,36 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
             // 
-            // maskedTextBox2
+            // txtBoxTelNo
             // 
-            this.maskedTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.maskedTextBox2.Enabled = false;
-            this.maskedTextBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.maskedTextBox2.Location = new System.Drawing.Point(541, 148);
-            this.maskedTextBox2.Mask = "000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(154, 20);
-            this.maskedTextBox2.TabIndex = 112;
+            this.txtBoxTelNo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxTelNo.Enabled = false;
+            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTelNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxTelNo.Location = new System.Drawing.Point(496, 127);
+            this.txtBoxTelNo.Multiline = true;
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(198, 21);
+            this.txtBoxTelNo.TabIndex = 112;
             // 
-            // maskedTextBox1
+            // txtBoxMobileNo
             // 
-            this.maskedTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.maskedTextBox1.Location = new System.Drawing.Point(541, 125);
-            this.maskedTextBox1.Mask = "(+63 )000-000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(154, 20);
-            this.maskedTextBox1.TabIndex = 111;
+            this.txtBoxMobileNo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxMobileNo.Enabled = false;
+            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMobileNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(496, 103);
+            this.txtBoxMobileNo.Multiline = true;
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(198, 21);
+            this.txtBoxMobileNo.TabIndex = 111;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label22.Location = new System.Drawing.Point(445, 175);
+            this.label22.Location = new System.Drawing.Point(401, 157);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(93, 13);
             this.label22.TabIndex = 110;
@@ -343,7 +361,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(424, 151);
+            this.label7.Location = new System.Drawing.Point(380, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 109;
@@ -354,23 +372,22 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(442, 129);
+            this.label14.Location = new System.Drawing.Point(398, 111);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(96, 13);
             this.label14.TabIndex = 108;
             this.label14.Text = "Mobile Number:";
             // 
-            // txtEmail
+            // txtBoxEmail
             // 
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtEmail.Location = new System.Drawing.Point(541, 171);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(154, 20);
-            this.txtEmail.TabIndex = 107;
-            this.txtEmail.Text = "E-mail Address";
+            this.txtBoxEmail.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxEmail.Enabled = false;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEmail.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxEmail.Location = new System.Drawing.Point(497, 153);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(197, 20);
+            this.txtBoxEmail.TabIndex = 107;
             // 
             // label8
             // 
@@ -378,7 +395,7 @@
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(465, 58);
+            this.label8.Location = new System.Drawing.Point(421, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 106;
@@ -390,108 +407,102 @@
             this.label29.Enabled = false;
             this.label29.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label29.Location = new System.Drawing.Point(457, 30);
+            this.label29.Location = new System.Drawing.Point(413, 29);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(80, 13);
             this.label29.TabIndex = 105;
             this.label29.Text = "Unit Number:";
             // 
-            // txtOwner
+            // txtBoxOwner
             // 
-            this.txtOwner.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtOwner.Enabled = false;
-            this.txtOwner.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOwner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtOwner.Location = new System.Drawing.Point(540, 54);
-            this.txtOwner.Multiline = true;
-            this.txtOwner.Name = "txtOwner";
-            this.txtOwner.Size = new System.Drawing.Size(154, 21);
-            this.txtOwner.TabIndex = 104;
-            this.txtOwner.Text = "sample sample";
+            this.txtBoxOwner.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxOwner.Enabled = false;
+            this.txtBoxOwner.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxOwner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxOwner.Location = new System.Drawing.Point(496, 53);
+            this.txtBoxOwner.Multiline = true;
+            this.txtBoxOwner.Name = "txtBoxOwner";
+            this.txtBoxOwner.Size = new System.Drawing.Size(198, 21);
+            this.txtBoxOwner.TabIndex = 104;
             // 
-            // textBox2
+            // txtBoxUnitNo
             // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.textBox2.Location = new System.Drawing.Point(540, 26);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 21);
-            this.textBox2.TabIndex = 103;
-            this.textBox2.Text = "sample sample";
+            this.txtBoxUnitNo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxUnitNo.Enabled = false;
+            this.txtBoxUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUnitNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(496, 25);
+            this.txtBoxUnitNo.Multiline = true;
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(198, 21);
+            this.txtBoxUnitNo.TabIndex = 103;
             // 
-            // txtboxHadd
+            // txtBoxHomeAddress
             // 
-            this.txtboxHadd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtboxHadd.Enabled = false;
-            this.txtboxHadd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxHadd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtboxHadd.Location = new System.Drawing.Point(178, 179);
-            this.txtboxHadd.Name = "txtboxHadd";
-            this.txtboxHadd.Size = new System.Drawing.Size(175, 20);
-            this.txtboxHadd.TabIndex = 102;
-            this.txtboxHadd.Text = "Provincial Address";
+            this.txtBoxHomeAddress.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxHomeAddress.Enabled = false;
+            this.txtBoxHomeAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxHomeAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxHomeAddress.Location = new System.Drawing.Point(178, 179);
+            this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(516, 20);
+            this.txtBoxHomeAddress.TabIndex = 102;
             // 
-            // txtboxPadd
+            // txtBoxProvincialAddress
             // 
-            this.txtboxPadd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtboxPadd.Enabled = false;
-            this.txtboxPadd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPadd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtboxPadd.Location = new System.Drawing.Point(178, 204);
-            this.txtboxPadd.Name = "txtboxPadd";
-            this.txtboxPadd.Size = new System.Drawing.Size(175, 20);
-            this.txtboxPadd.TabIndex = 101;
-            this.txtboxPadd.Text = "Home Address";
+            this.txtBoxProvincialAddress.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxProvincialAddress.Enabled = false;
+            this.txtBoxProvincialAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxProvincialAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxProvincialAddress.Location = new System.Drawing.Point(178, 204);
+            this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(516, 20);
+            this.txtBoxProvincialAddress.TabIndex = 101;
             // 
-            // dateTimePicker2
+            // datePickerDateOfBirth
             // 
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker2.CustomFormat = "mm/dd/yyyy";
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(178, 112);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 20);
-            this.dateTimePicker2.TabIndex = 100;
+            this.datePickerDateOfBirth.Cursor = System.Windows.Forms.Cursors.Default;
+            this.datePickerDateOfBirth.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDateOfBirth.Enabled = false;
+            this.datePickerDateOfBirth.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateOfBirth.Location = new System.Drawing.Point(178, 112);
+            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(139, 20);
+            this.datePickerDateOfBirth.TabIndex = 100;
             // 
-            // txtboxLname
+            // txtBoxLastName
             // 
-            this.txtboxLname.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtboxLname.Enabled = false;
-            this.txtboxLname.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxLname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtboxLname.Location = new System.Drawing.Point(178, 77);
-            this.txtboxLname.Name = "txtboxLname";
-            this.txtboxLname.Size = new System.Drawing.Size(175, 20);
-            this.txtboxLname.TabIndex = 99;
+            this.txtBoxLastName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxLastName.Enabled = false;
+            this.txtBoxLastName.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxLastName.Location = new System.Drawing.Point(178, 77);
+            this.txtBoxLastName.Name = "txtBoxLastName";
+            this.txtBoxLastName.Size = new System.Drawing.Size(175, 20);
+            this.txtBoxLastName.TabIndex = 99;
             // 
-            // txtboxMname
+            // txtBoxMiddleName
             // 
-            this.txtboxMname.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtboxMname.Enabled = false;
-            this.txtboxMname.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxMname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtboxMname.Location = new System.Drawing.Point(178, 50);
-            this.txtboxMname.Name = "txtboxMname";
-            this.txtboxMname.Size = new System.Drawing.Size(175, 20);
-            this.txtboxMname.TabIndex = 98;
-            this.txtboxMname.Text = "Sample Name";
+            this.txtBoxMiddleName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxMiddleName.Enabled = false;
+            this.txtBoxMiddleName.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxMiddleName.Location = new System.Drawing.Point(178, 50);
+            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(175, 20);
+            this.txtBoxMiddleName.TabIndex = 98;
             // 
-            // txtboxFname
+            // txtBoxFirstName
             // 
-            this.txtboxFname.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtboxFname.Enabled = false;
-            this.txtboxFname.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxFname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtboxFname.Location = new System.Drawing.Point(178, 26);
-            this.txtboxFname.Name = "txtboxFname";
-            this.txtboxFname.Size = new System.Drawing.Size(175, 20);
-            this.txtboxFname.TabIndex = 97;
-            this.txtboxFname.Text = "Sample Name";
+            this.txtBoxFirstName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtBoxFirstName.Enabled = false;
+            this.txtBoxFirstName.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtBoxFirstName.Location = new System.Drawing.Point(178, 26);
+            this.txtBoxFirstName.Name = "txtBoxFirstName";
+            this.txtBoxFirstName.Size = new System.Drawing.Size(175, 20);
+            this.txtBoxFirstName.TabIndex = 97;
             // 
             // label12
             // 
@@ -570,21 +581,21 @@
             this.label16.TabIndex = 90;
             this.label16.Text = "First Name:";
             // 
-            // cbNature
+            // comboBoxNatureOfOccupancy
             // 
-            this.cbNature.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbNature.Enabled = false;
-            this.cbNature.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbNature.FormattingEnabled = true;
-            this.cbNature.Items.AddRange(new object[] {
+            this.comboBoxNatureOfOccupancy.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNatureOfOccupancy.Enabled = false;
+            this.comboBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxNatureOfOccupancy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.comboBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.comboBoxNatureOfOccupancy.Items.AddRange(new object[] {
             "Unit Owner",
             "Tenant"});
-            this.cbNature.Location = new System.Drawing.Point(540, 81);
-            this.cbNature.Name = "cbNature";
-            this.cbNature.Size = new System.Drawing.Size(155, 21);
-            this.cbNature.TabIndex = 53;
-            this.cbNature.Text = "sample sample";
+            this.comboBoxNatureOfOccupancy.Location = new System.Drawing.Point(496, 80);
+            this.comboBoxNatureOfOccupancy.Name = "comboBoxNatureOfOccupancy";
+            this.comboBoxNatureOfOccupancy.Size = new System.Drawing.Size(198, 21);
+            this.comboBoxNatureOfOccupancy.TabIndex = 53;
             // 
             // label2
             // 
@@ -592,40 +603,28 @@
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(411, 86);
+            this.label2.Location = new System.Drawing.Point(367, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 13);
             this.label2.TabIndex = 43;
             this.label2.Text = "Nature of Occupancy:";
             // 
-            // comboBox1
+            // cmbBoxMaritalStatus
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBoxMaritalStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cmbBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxMaritalStatus.Enabled = false;
+            this.cmbBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxMaritalStatus.FormattingEnabled = true;
+            this.cmbBoxMaritalStatus.Items.AddRange(new object[] {
             "Single",
             "Married",
             "Divorced",
             "Widowed"});
-            this.comboBox1.Location = new System.Drawing.Point(178, 137);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 22);
-            this.comboBox1.TabIndex = 39;
-            this.comboBox1.Text = "--Select One--";
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(823, 421);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(70, 29);
-            this.button8.TabIndex = 155;
-            this.button8.Text = "    Close";
-            this.button8.UseVisualStyleBackColor = true;
+            this.cmbBoxMaritalStatus.Location = new System.Drawing.Point(178, 137);
+            this.cmbBoxMaritalStatus.Name = "cmbBoxMaritalStatus";
+            this.cmbBoxMaritalStatus.Size = new System.Drawing.Size(139, 22);
+            this.cmbBoxMaritalStatus.TabIndex = 39;
             // 
             // TenantInformation
             // 
@@ -651,39 +650,35 @@
         #endregion
 
         internal System.Windows.Forms.Panel pnlTenancyInfo;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtBoxRelation2;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxRelation3;
+        private System.Windows.Forms.TextBox txtBoxOtherName2;
+        private System.Windows.Forms.TextBox txtBoxOtherName3;
+        private System.Windows.Forms.TextBox txtBoxRelation1;
+        private System.Windows.Forms.TextBox txtBoxOtherName1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox txtOwner;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txtboxHadd;
-        private System.Windows.Forms.TextBox txtboxPadd;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox txtboxLname;
-        private System.Windows.Forms.TextBox txtboxMname;
-        private System.Windows.Forms.TextBox txtboxFname;
+        private System.Windows.Forms.TextBox txtBoxOwner;
+        private System.Windows.Forms.TextBox txtBoxUnitNo;
+        private System.Windows.Forms.TextBox txtBoxHomeAddress;
+        private System.Windows.Forms.TextBox txtBoxProvincialAddress;
+        private System.Windows.Forms.DateTimePicker datePickerDateOfBirth;
+        private System.Windows.Forms.TextBox txtBoxLastName;
+        private System.Windows.Forms.TextBox txtBoxMiddleName;
+        private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label20;
@@ -691,8 +686,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cbNature;
+        private System.Windows.Forms.ComboBox comboBoxNatureOfOccupancy;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBoxMaritalStatus;
+        private System.Windows.Forms.TextBox txtBoxTelNo;
+        private System.Windows.Forms.TextBox txtBoxMobileNo;
+        private System.Windows.Forms.TextBox txtBoxEndDate;
+        private System.Windows.Forms.TextBox txtBoxStartDate;
     }
 }
