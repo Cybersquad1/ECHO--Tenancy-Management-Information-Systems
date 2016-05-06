@@ -19,35 +19,35 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox2.Text == "Monthly Association Dues")
+            if (cmbBoxUtilityBilling.Text == "Monthly Association Dues")
             {
-                checkBox1.Visible = true;
+                checkBoxAdvancePayment.Visible = true;
             }
             else
             {
-                checkBox1.Visible = false;
+                checkBoxAdvancePayment.Visible = false;
             }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (checkBoxAdvancePayment.Checked == true)
             {
-                comboBox3.Visible = true;
+                comboBoxMonths.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
                 label12.Visible = true;
-                textBox11.Visible = true;
-                textBox12.Visible = true;
+                txtBoxExactNoOfMonths.Visible = true;
+                txtBoxDiscount.Visible = true;
             }
             else
             {
-                comboBox3.Visible = false;
+                comboBoxMonths.Visible = false;
                 label10.Visible = false;
                 label11.Visible = false;
                 label12.Visible = false;
-                textBox11.Visible = false;
-                textBox12.Visible = false;
+                txtBoxExactNoOfMonths.Visible = false;
+                txtBoxDiscount.Visible = false;
             }
         }
 

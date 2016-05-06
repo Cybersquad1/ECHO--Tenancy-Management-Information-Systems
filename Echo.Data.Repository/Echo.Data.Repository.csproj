@@ -95,6 +95,7 @@
     <Compile Include="UserProfile.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\LogSheetViewModel.cs" />
     <Compile Include="ViewModel\MonthlyAssociationDueViewModel.cs" />
     <Compile Include="ViewModel\PaymentHistoryViewModel.cs" />
     <Compile Include="ViewModel\TenantArchiveViewModel.cs" />

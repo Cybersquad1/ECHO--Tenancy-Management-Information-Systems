@@ -30,38 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectorForm));
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtBoxDiscount = new System.Windows.Forms.TextBox();
+            this.txtBoxExactNoOfMonths = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.comboBoxMonths = new System.Windows.Forms.ComboBox();
+            this.checkBoxAdvancePayment = new System.Windows.Forms.CheckBox();
+            this.txtBoxDiscounts = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtBoxChange = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBoxTenderedAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnViewDetails = new System.Windows.Forms.Button();
+            this.txtBoxTotalAmountDue = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxPenalties = new System.Windows.Forms.TextBox();
             this.collectorPnl = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUserCreate = new System.Windows.Forms.Button();
             this.btnUserCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxBillAmount = new System.Windows.Forms.TextBox();
             this.label81 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxDueDate = new System.Windows.Forms.TextBox();
+            this.txtBoxBillDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbBoxUtilityBilling = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -69,15 +68,14 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstBoxParticulars = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbBoxUnitNo = new System.Windows.Forms.ComboBox();
+            this.txtBoxTenant = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.collectorPnl.SuspendLayout();
@@ -98,24 +96,24 @@
             this.label12.Text = "Discount:";
             this.label12.Visible = false;
             // 
-            // textBox12
+            // txtBoxDiscount
             // 
-            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(301, 70);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(36, 20);
-            this.textBox12.TabIndex = 126;
-            this.textBox12.Visible = false;
+            this.txtBoxDiscount.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxDiscount.Enabled = false;
+            this.txtBoxDiscount.Location = new System.Drawing.Point(301, 70);
+            this.txtBoxDiscount.Name = "txtBoxDiscount";
+            this.txtBoxDiscount.Size = new System.Drawing.Size(36, 20);
+            this.txtBoxDiscount.TabIndex = 126;
+            this.txtBoxDiscount.Visible = false;
             // 
-            // textBox11
+            // txtBoxExactNoOfMonths
             // 
-            this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(138, 94);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(96, 20);
-            this.textBox11.TabIndex = 20;
-            this.textBox11.Visible = false;
+            this.txtBoxExactNoOfMonths.BackColor = System.Drawing.Color.White;
+            this.txtBoxExactNoOfMonths.Location = new System.Drawing.Point(138, 94);
+            this.txtBoxExactNoOfMonths.Name = "txtBoxExactNoOfMonths";
+            this.txtBoxExactNoOfMonths.Size = new System.Drawing.Size(96, 20);
+            this.txtBoxExactNoOfMonths.TabIndex = 20;
+            this.txtBoxExactNoOfMonths.Visible = false;
             // 
             // label11
             // 
@@ -137,41 +135,42 @@
             this.label10.Text = "Months:";
             this.label10.Visible = false;
             // 
-            // comboBox3
+            // comboBoxMonths
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBoxMonths.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMonths.FormattingEnabled = true;
+            this.comboBoxMonths.Items.AddRange(new object[] {
             "2-5 mo.",
             "6-11 mo. -- 2.5%",
             "12-17 mo. -- 5.0%",
             "18-23 mo. -- 8.0%",
             "24 mo. & up -- 11.0%"});
-            this.comboBox3.Location = new System.Drawing.Point(98, 69);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(136, 22);
-            this.comboBox3.TabIndex = 20;
-            this.comboBox3.Visible = false;
+            this.comboBoxMonths.Location = new System.Drawing.Point(98, 69);
+            this.comboBoxMonths.Name = "comboBoxMonths";
+            this.comboBoxMonths.Size = new System.Drawing.Size(136, 22);
+            this.comboBoxMonths.TabIndex = 20;
+            this.comboBoxMonths.Visible = false;
             // 
-            // checkBox1
+            // checkBoxAdvancePayment
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(203, 49);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(131, 18);
-            this.checkBox1.TabIndex = 123;
-            this.checkBox1.Text = "Advance Payments";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxAdvancePayment.AutoSize = true;
+            this.checkBoxAdvancePayment.Location = new System.Drawing.Point(203, 49);
+            this.checkBoxAdvancePayment.Name = "checkBoxAdvancePayment";
+            this.checkBoxAdvancePayment.Size = new System.Drawing.Size(131, 18);
+            this.checkBoxAdvancePayment.TabIndex = 123;
+            this.checkBoxAdvancePayment.Text = "Advance Payments";
+            this.checkBoxAdvancePayment.UseVisualStyleBackColor = true;
+            this.checkBoxAdvancePayment.Visible = false;
+            this.checkBoxAdvancePayment.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox9
+            // txtBoxDiscounts
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(93, 188);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(244, 20);
-            this.textBox9.TabIndex = 122;
+            this.txtBoxDiscounts.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxDiscounts.Enabled = false;
+            this.txtBoxDiscounts.Location = new System.Drawing.Point(93, 188);
+            this.txtBoxDiscounts.Name = "txtBoxDiscounts";
+            this.txtBoxDiscounts.Size = new System.Drawing.Size(244, 20);
+            this.txtBoxDiscounts.TabIndex = 122;
             // 
             // label9
             // 
@@ -194,13 +193,13 @@
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
-            // textBox8
+            // txtBoxChange
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(161, 355);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(176, 20);
-            this.textBox8.TabIndex = 115;
+            this.txtBoxChange.BackColor = System.Drawing.Color.White;
+            this.txtBoxChange.Location = new System.Drawing.Point(161, 355);
+            this.txtBoxChange.Name = "txtBoxChange";
+            this.txtBoxChange.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxChange.TabIndex = 115;
             // 
             // label8
             // 
@@ -213,13 +212,13 @@
             this.label8.TabIndex = 114;
             this.label8.Text = "Change:";
             // 
-            // textBox7
+            // txtBoxTenderedAmount
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(161, 333);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(176, 20);
-            this.textBox7.TabIndex = 113;
+            this.txtBoxTenderedAmount.BackColor = System.Drawing.Color.White;
+            this.txtBoxTenderedAmount.Location = new System.Drawing.Point(161, 333);
+            this.txtBoxTenderedAmount.Name = "txtBoxTenderedAmount";
+            this.txtBoxTenderedAmount.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxTenderedAmount.TabIndex = 113;
             // 
             // label7
             // 
@@ -233,26 +232,26 @@
             this.label7.Text = "TENDERED AMOUNT:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // button2
+            // btnViewDetails
             // 
-            this.button2.Location = new System.Drawing.Point(231, 216);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
-            this.button2.TabIndex = 111;
-            this.button2.Text = "View Details";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnViewDetails.Location = new System.Drawing.Point(231, 216);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(106, 23);
+            this.btnViewDetails.TabIndex = 111;
+            this.btnViewDetails.Text = "View Details";
+            this.btnViewDetails.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // txtBoxTotalAmountDue
             // 
-            this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox10.Location = new System.Drawing.Point(17, 281);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(320, 21);
-            this.textBox10.TabIndex = 110;
-            this.textBox10.Text = "PHP 0.00";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBoxTotalAmountDue.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtBoxTotalAmountDue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTotalAmountDue.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtBoxTotalAmountDue.Location = new System.Drawing.Point(194, 281);
+            this.txtBoxTotalAmountDue.Name = "txtBoxTotalAmountDue";
+            this.txtBoxTotalAmountDue.Size = new System.Drawing.Size(143, 21);
+            this.txtBoxTotalAmountDue.TabIndex = 110;
+            this.txtBoxTotalAmountDue.Text = "0.00";
+            this.txtBoxTotalAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -264,20 +263,19 @@
             this.label15.TabIndex = 109;
             this.label15.Text = "TOTAL AMOUNT DUE:";
             // 
-            // textBox6
+            // txtBoxPenalties
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(93, 166);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(244, 20);
-            this.textBox6.TabIndex = 108;
+            this.txtBoxPenalties.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxPenalties.Enabled = false;
+            this.txtBoxPenalties.Location = new System.Drawing.Point(93, 166);
+            this.txtBoxPenalties.Name = "txtBoxPenalties";
+            this.txtBoxPenalties.Size = new System.Drawing.Size(244, 20);
+            this.txtBoxPenalties.TabIndex = 108;
             // 
             // collectorPnl
             // 
-            this.collectorPnl.Controls.Add(this.button3);
-            this.collectorPnl.Controls.Add(this.button4);
-            this.collectorPnl.Controls.Add(this.button5);
+            this.collectorPnl.Controls.Add(this.btnPreview);
+            this.collectorPnl.Controls.Add(this.btnCancel);
             this.collectorPnl.Controls.Add(this.groupBox1);
             this.collectorPnl.Controls.Add(this.groupBox2);
             this.collectorPnl.Controls.Add(this.groupBox3);
@@ -286,74 +284,61 @@
             this.collectorPnl.Size = new System.Drawing.Size(979, 559);
             this.collectorPnl.TabIndex = 19;
             // 
-            // button3
+            // btnPreview
             // 
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(695, 520);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 33);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "    Print Preview";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPreview.Enabled = false;
+            this.btnPreview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreview.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPreview.Location = new System.Drawing.Point(777, 520);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(111, 33);
+            this.btnPreview.TabIndex = 30;
+            this.btnPreview.Text = "    Preview";
+            this.btnPreview.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnCancel
             // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.technology__1_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(806, 520);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 33);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "    Print";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(894, 520);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 33);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "    Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(894, 520);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 33);
+            this.btnCancel.TabIndex = 29;
+            this.btnCancel.Text = "    Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtBoxDiscount);
+            this.groupBox1.Controls.Add(this.txtBoxExactNoOfMonths);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.comboBoxMonths);
+            this.groupBox1.Controls.Add(this.checkBoxAdvancePayment);
+            this.groupBox1.Controls.Add(this.txtBoxDiscounts);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnUserCreate);
             this.groupBox1.Controls.Add(this.btnUserCancel);
             this.groupBox1.Controls.Add(this.listView2);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtBoxChange);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtBoxTenderedAmount);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.btnViewDetails);
+            this.groupBox1.Controls.Add(this.txtBoxTotalAmountDue);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtBoxPenalties);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtBoxBillAmount);
             this.groupBox1.Controls.Add(this.label81);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtBoxDueDate);
+            this.groupBox1.Controls.Add(this.txtBoxBillDate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cmbBoxUtilityBilling);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.shapeContainer1);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -375,7 +360,7 @@
             this.btnUserCreate.Name = "btnUserCreate";
             this.btnUserCreate.Size = new System.Drawing.Size(92, 28);
             this.btnUserCreate.TabIndex = 119;
-            this.btnUserCreate.Text = "    Finalize";
+            this.btnUserCreate.Text = "    Save";
             this.btnUserCreate.UseVisualStyleBackColor = true;
             // 
             // btnUserCancel
@@ -401,14 +386,14 @@
             this.label4.TabIndex = 107;
             this.label4.Text = "Penalties:";
             // 
-            // textBox5
+            // txtBoxBillAmount
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(93, 144);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(244, 20);
-            this.textBox5.TabIndex = 106;
+            this.txtBoxBillAmount.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxBillAmount.Enabled = false;
+            this.txtBoxBillAmount.Location = new System.Drawing.Point(93, 144);
+            this.txtBoxBillAmount.Name = "txtBoxBillAmount";
+            this.txtBoxBillAmount.Size = new System.Drawing.Size(244, 20);
+            this.txtBoxBillAmount.TabIndex = 106;
             // 
             // label81
             // 
@@ -421,23 +406,23 @@
             this.label81.TabIndex = 104;
             this.label81.Text = "Bill Amount:";
             // 
-            // textBox2
+            // txtBoxDueDate
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(611, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(81, 20);
-            this.textBox2.TabIndex = 23;
+            this.txtBoxDueDate.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxDueDate.Enabled = false;
+            this.txtBoxDueDate.Location = new System.Drawing.Point(611, 24);
+            this.txtBoxDueDate.Name = "txtBoxDueDate";
+            this.txtBoxDueDate.Size = new System.Drawing.Size(81, 20);
+            this.txtBoxDueDate.TabIndex = 23;
             // 
-            // textBox1
+            // txtBoxBillDate
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(447, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtBoxBillDate.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxBillDate.Enabled = false;
+            this.txtBoxBillDate.Location = new System.Drawing.Point(447, 25);
+            this.txtBoxBillDate.Name = "txtBoxBillDate";
+            this.txtBoxBillDate.Size = new System.Drawing.Size(81, 20);
+            this.txtBoxBillDate.TabIndex = 20;
             // 
             // label6
             // 
@@ -459,17 +444,18 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Bill Date:";
             // 
-            // comboBox2
+            // cmbBoxUtilityBilling
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbBoxUtilityBilling.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxUtilityBilling.FormattingEnabled = true;
+            this.cmbBoxUtilityBilling.Items.AddRange(new object[] {
             "Monthly Association Dues",
             "Reservation"});
-            this.comboBox2.Location = new System.Drawing.Point(98, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(239, 22);
-            this.comboBox2.TabIndex = 20;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmbBoxUtilityBilling.Location = new System.Drawing.Point(98, 24);
+            this.cmbBoxUtilityBilling.Name = "cmbBoxUtilityBilling";
+            this.cmbBoxUtilityBilling.Size = new System.Drawing.Size(239, 22);
+            this.cmbBoxUtilityBilling.TabIndex = 20;
+            this.cmbBoxUtilityBilling.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -535,7 +521,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lstBoxParticulars);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(751, 3);
             this.groupBox2.Name = "groupBox2";
@@ -544,20 +530,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Particulars";
             // 
-            // listView1
+            // lstBoxParticulars
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstBoxParticulars.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lstBoxParticulars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader7});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(4, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(218, 470);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstBoxParticulars.FullRowSelect = true;
+            this.lstBoxParticulars.GridLines = true;
+            this.lstBoxParticulars.Location = new System.Drawing.Point(4, 19);
+            this.lstBoxParticulars.Name = "lstBoxParticulars";
+            this.lstBoxParticulars.Size = new System.Drawing.Size(218, 470);
+            this.lstBoxParticulars.TabIndex = 2;
+            this.lstBoxParticulars.UseCompatibleStateImageBehavior = false;
+            this.lstBoxParticulars.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader6
             // 
@@ -571,11 +557,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.cmbBoxUnitNo);
+            this.groupBox3.Controls.Add(this.txtBoxTenant);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtBoxUnitOwner);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -586,32 +571,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Unit Information";
             // 
-            // button1
+            // cmbBoxUnitNo
             // 
-            this.button1.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(313, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 23);
-            this.button1.TabIndex = 19;
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmbBoxUnitNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxUnitNo.FormattingEnabled = true;
+            this.cmbBoxUnitNo.Location = new System.Drawing.Point(98, 17);
+            this.cmbBoxUnitNo.Name = "cmbBoxUnitNo";
+            this.cmbBoxUnitNo.Size = new System.Drawing.Size(239, 22);
+            this.cmbBoxUnitNo.TabIndex = 6;
             // 
-            // comboBox1
+            // txtBoxTenant
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 22);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(98, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtBoxTenant.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxTenant.Enabled = false;
+            this.txtBoxTenant.Location = new System.Drawing.Point(98, 62);
+            this.txtBoxTenant.Name = "txtBoxTenant";
+            this.txtBoxTenant.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxTenant.TabIndex = 5;
             // 
             // label2
             // 
@@ -622,14 +598,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Tenant:";
             // 
-            // textBox3
+            // txtBoxUnitOwner
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(98, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtBoxUnitOwner.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBoxUnitOwner.Enabled = false;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(98, 40);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(239, 20);
+            this.txtBoxUnitOwner.TabIndex = 3;
             // 
             // label1
             // 
@@ -675,56 +651,53 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtBoxDiscount;
+        private System.Windows.Forms.TextBox txtBoxExactNoOfMonths;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ComboBox comboBoxMonths;
+        private System.Windows.Forms.CheckBox checkBoxAdvancePayment;
+        private System.Windows.Forms.TextBox txtBoxDiscounts;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUserCreate;
         private System.Windows.Forms.Button btnUserCancel;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.TextBox txtBoxChange;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBoxTenderedAmount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btnViewDetails;
+        private System.Windows.Forms.TextBox txtBoxTotalAmountDue;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtBoxPenalties;
         internal System.Windows.Forms.Panel collectorPnl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBoxBillAmount;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxDueDate;
+        private System.Windows.Forms.TextBox txtBoxBillDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbBoxUtilityBilling;
         private System.Windows.Forms.Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstBoxParticulars;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cmbBoxUnitNo;
+        private System.Windows.Forms.TextBox txtBoxTenant;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
