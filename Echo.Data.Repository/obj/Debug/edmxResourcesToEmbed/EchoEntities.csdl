@@ -48,6 +48,11 @@
       <End Role="Reservation" EntitySet="Reservation" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
+    <EntitySet Name="Request" EntityType="EchoModel.Request" />
+    <AssociationSet Name="FK_Request_UnitProfile" Association="EchoModel.FK_Request_UnitProfile">
+      <End Role="UnitProfile" EntitySet="UnitProfile" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="LogSheet">
     <Key>
@@ -193,6 +198,7 @@
     <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
     <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
     <NavigationProperty Name="WaterBilling" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
+    <NavigationProperty Name="Request" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="UnitProfile" ToRole="Request" />
   </EntityType>
   <EntityType Name="UserProfile">
     <Key>
@@ -362,6 +368,36 @@
       </Principal>
       <Dependent Role="PaymentHistory">
         <PropertyRef Name="ReservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Project" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Owner" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Time" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Request1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Request2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Request3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Request4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="Request" ToRole="UnitProfile" />
+  </EntityType>
+  <Association Name="FK_Request_UnitProfile">
+    <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="1" />
+    <End Type="EchoModel.Request" Role="Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitProfile">
+        <PropertyRef Name="UnitNumber" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="UnitNumber" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

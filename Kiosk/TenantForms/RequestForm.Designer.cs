@@ -30,23 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestForm));
             this.pnlRequest = new System.Windows.Forms.Panel();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOkay = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePickerPrefferedDate = new System.Windows.Forms.DateTimePicker();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.dtpReqDate = new System.Windows.Forms.DateTimePicker();
+            this.datePickerDate = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.cbProject = new System.Windows.Forms.ComboBox();
+            this.cmbBoxProject = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtUnitNumber = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCNumber = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -54,37 +52,40 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtBoxRequest4 = new System.Windows.Forms.TextBox();
+            this.txtBoxRequest3 = new System.Windows.Forms.TextBox();
+            this.txtBoxRequest2 = new System.Windows.Forms.TextBox();
+            this.txtBoxRequest1 = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
+            this.txtBoxTime = new System.Windows.Forms.TextBox();
             this.pnlRequest.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRequest
             // 
-            this.pnlRequest.Controls.Add(this.button1);
-            this.pnlRequest.Controls.Add(this.button3);
-            this.pnlRequest.Controls.Add(this.maskedTextBox4);
+            this.pnlRequest.BackColor = System.Drawing.Color.White;
+            this.pnlRequest.Controls.Add(this.txtBoxTime);
+            this.pnlRequest.Controls.Add(this.txtBoxContactNo);
+            this.pnlRequest.Controls.Add(this.txtBoxUnitOwner);
+            this.pnlRequest.Controls.Add(this.txtBoxUnitNo);
+            this.pnlRequest.Controls.Add(this.btnCancel);
+            this.pnlRequest.Controls.Add(this.btnOkay);
             this.pnlRequest.Controls.Add(this.label36);
-            this.pnlRequest.Controls.Add(this.dateTimePicker1);
+            this.pnlRequest.Controls.Add(this.datePickerPrefferedDate);
             this.pnlRequest.Controls.Add(this.label35);
             this.pnlRequest.Controls.Add(this.label34);
             this.pnlRequest.Controls.Add(this.label33);
             this.pnlRequest.Controls.Add(this.label32);
             this.pnlRequest.Controls.Add(this.label31);
-            this.pnlRequest.Controls.Add(this.maskedTextBox3);
             this.pnlRequest.Controls.Add(this.label30);
-            this.pnlRequest.Controls.Add(this.dtpReqDate);
+            this.pnlRequest.Controls.Add(this.datePickerDate);
             this.pnlRequest.Controls.Add(this.label17);
-            this.pnlRequest.Controls.Add(this.cbProject);
+            this.pnlRequest.Controls.Add(this.cmbBoxProject);
             this.pnlRequest.Controls.Add(this.label18);
-            this.pnlRequest.Controls.Add(this.txtUnitNumber);
             this.pnlRequest.Controls.Add(this.label6);
-            this.pnlRequest.Controls.Add(this.txtCNumber);
             this.pnlRequest.Controls.Add(this.label19);
             this.pnlRequest.Controls.Add(this.label24);
             this.pnlRequest.Controls.Add(this.groupBox3);
@@ -95,13 +96,31 @@
             this.pnlRequest.Size = new System.Drawing.Size(928, 472);
             this.pnlRequest.TabIndex = 122;
             // 
-            // maskedTextBox4
+            // btnCancel
             // 
-            this.maskedTextBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox4.Location = new System.Drawing.Point(700, 281);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(137, 21);
-            this.maskedTextBox4.TabIndex = 147;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(825, 421);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(70, 29);
+            this.btnCancel.TabIndex = 155;
+            this.btnCancel.Text = "    Close";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOkay
+            // 
+            this.btnOkay.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOkay.Image = ((System.Drawing.Image)(resources.GetObject("btnOkay.Image")));
+            this.btnOkay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOkay.Location = new System.Drawing.Point(747, 421);
+            this.btnOkay.Name = "btnOkay";
+            this.btnOkay.Size = new System.Drawing.Size(72, 29);
+            this.btnOkay.TabIndex = 149;
+            this.btnOkay.Text = "   Okay";
+            this.btnOkay.UseVisualStyleBackColor = true;
+            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
             // 
             // label36
             // 
@@ -114,15 +133,15 @@
             this.label36.TabIndex = 146;
             this.label36.Text = "Time";
             // 
-            // dateTimePicker1
+            // datePickerPrefferedDate
             // 
-            this.dateTimePicker1.CustomFormat = "mm/dd/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(504, 281);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
-            this.dateTimePicker1.TabIndex = 145;
+            this.datePickerPrefferedDate.CustomFormat = "mm/dd/yyyy";
+            this.datePickerPrefferedDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerPrefferedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerPrefferedDate.Location = new System.Drawing.Point(504, 281);
+            this.datePickerPrefferedDate.Name = "datePickerPrefferedDate";
+            this.datePickerPrefferedDate.Size = new System.Drawing.Size(138, 20);
+            this.datePickerPrefferedDate.TabIndex = 145;
             // 
             // label35
             // 
@@ -177,15 +196,6 @@
             this.label31.TabIndex = 140;
             this.label31.Text = "IMPORTANT REMINDERS!";
             // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Enabled = false;
-            this.maskedTextBox3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox3.Location = new System.Drawing.Point(275, 88);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(185, 21);
-            this.maskedTextBox3.TabIndex = 139;
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -197,16 +207,16 @@
             this.label30.TabIndex = 138;
             this.label30.Text = "Unit Owner/Tenant";
             // 
-            // dtpReqDate
+            // datePickerDate
             // 
-            this.dtpReqDate.CustomFormat = "mm/dd/yyyy";
-            this.dtpReqDate.Enabled = false;
-            this.dtpReqDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpReqDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReqDate.Location = new System.Drawing.Point(618, 56);
-            this.dtpReqDate.Name = "dtpReqDate";
-            this.dtpReqDate.Size = new System.Drawing.Size(138, 20);
-            this.dtpReqDate.TabIndex = 135;
+            this.datePickerDate.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDate.Enabled = false;
+            this.datePickerDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDate.Location = new System.Drawing.Point(618, 56);
+            this.datePickerDate.Name = "datePickerDate";
+            this.datePickerDate.Size = new System.Drawing.Size(138, 20);
+            this.datePickerDate.TabIndex = 135;
             // 
             // label17
             // 
@@ -219,18 +229,18 @@
             this.label17.TabIndex = 134;
             this.label17.Text = "Date";
             // 
-            // cbProject
+            // cmbBoxProject
             // 
-            this.cbProject.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbProject.FormattingEnabled = true;
-            this.cbProject.Items.AddRange(new object[] {
+            this.cmbBoxProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxProject.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxProject.FormattingEnabled = true;
+            this.cmbBoxProject.Items.AddRange(new object[] {
             "Inspection",
             "Repair"});
-            this.cbProject.Location = new System.Drawing.Point(213, 54);
-            this.cbProject.Name = "cbProject";
-            this.cbProject.Size = new System.Drawing.Size(138, 23);
-            this.cbProject.TabIndex = 133;
-            this.cbProject.Text = "Select One";
+            this.cmbBoxProject.Location = new System.Drawing.Point(213, 54);
+            this.cmbBoxProject.Name = "cmbBoxProject";
+            this.cmbBoxProject.Size = new System.Drawing.Size(138, 23);
+            this.cmbBoxProject.TabIndex = 133;
             // 
             // label18
             // 
@@ -243,15 +253,6 @@
             this.label18.TabIndex = 125;
             this.label18.Text = "Project";
             // 
-            // txtUnitNumber
-            // 
-            this.txtUnitNumber.Enabled = false;
-            this.txtUnitNumber.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitNumber.Location = new System.Drawing.Point(438, 55);
-            this.txtUnitNumber.Name = "txtUnitNumber";
-            this.txtUnitNumber.Size = new System.Drawing.Size(137, 21);
-            this.txtUnitNumber.TabIndex = 124;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -262,14 +263,6 @@
             this.label6.Size = new System.Drawing.Size(131, 18);
             this.label6.TabIndex = 121;
             this.label6.Text = "REQUEST FORM";
-            // 
-            // txtCNumber
-            // 
-            this.txtCNumber.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNumber.Location = new System.Drawing.Point(571, 88);
-            this.txtCNumber.Name = "txtCNumber";
-            this.txtCNumber.Size = new System.Drawing.Size(185, 21);
-            this.txtCNumber.TabIndex = 132;
             // 
             // label19
             // 
@@ -299,10 +292,10 @@
             this.groupBox3.Controls.Add(this.label39);
             this.groupBox3.Controls.Add(this.label38);
             this.groupBox3.Controls.Add(this.label37);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox11);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtBoxRequest4);
+            this.groupBox3.Controls.Add(this.txtBoxRequest3);
+            this.groupBox3.Controls.Add(this.txtBoxRequest2);
+            this.groupBox3.Controls.Add(this.txtBoxRequest1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(67, 235);
             this.groupBox3.Name = "groupBox3";
@@ -347,61 +340,82 @@
             this.label37.TabIndex = 4;
             this.label37.Text = "(1)";
             // 
-            // textBox12
+            // txtBoxRequest4
             // 
-            this.textBox12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(44, 129);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(288, 21);
-            this.textBox12.TabIndex = 3;
+            this.txtBoxRequest4.Enabled = false;
+            this.txtBoxRequest4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRequest4.Location = new System.Drawing.Point(44, 129);
+            this.txtBoxRequest4.MaxLength = 200;
+            this.txtBoxRequest4.Name = "txtBoxRequest4";
+            this.txtBoxRequest4.Size = new System.Drawing.Size(288, 21);
+            this.txtBoxRequest4.TabIndex = 3;
             // 
-            // textBox11
+            // txtBoxRequest3
             // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(44, 102);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(288, 21);
-            this.textBox11.TabIndex = 2;
+            this.txtBoxRequest3.Enabled = false;
+            this.txtBoxRequest3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRequest3.Location = new System.Drawing.Point(44, 102);
+            this.txtBoxRequest3.MaxLength = 200;
+            this.txtBoxRequest3.Name = "txtBoxRequest3";
+            this.txtBoxRequest3.Size = new System.Drawing.Size(288, 21);
+            this.txtBoxRequest3.TabIndex = 2;
+            this.txtBoxRequest3.TextChanged += new System.EventHandler(this.txtBoxRequest3_TextChanged);
             // 
-            // textBox10
+            // txtBoxRequest2
             // 
-            this.textBox10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(44, 74);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(288, 21);
-            this.textBox10.TabIndex = 1;
+            this.txtBoxRequest2.Enabled = false;
+            this.txtBoxRequest2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRequest2.Location = new System.Drawing.Point(44, 74);
+            this.txtBoxRequest2.MaxLength = 200;
+            this.txtBoxRequest2.Name = "txtBoxRequest2";
+            this.txtBoxRequest2.Size = new System.Drawing.Size(288, 21);
+            this.txtBoxRequest2.TabIndex = 1;
+            this.txtBoxRequest2.TextChanged += new System.EventHandler(this.txtBoxRequest2_TextChanged);
             // 
-            // textBox1
+            // txtBoxRequest1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(44, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 21);
-            this.textBox1.TabIndex = 0;
+            this.txtBoxRequest1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxRequest1.Location = new System.Drawing.Point(44, 47);
+            this.txtBoxRequest1.MaxLength = 200;
+            this.txtBoxRequest1.Name = "txtBoxRequest1";
+            this.txtBoxRequest1.Size = new System.Drawing.Size(288, 21);
+            this.txtBoxRequest1.TabIndex = 0;
+            this.txtBoxRequest1.TextChanged += new System.EventHandler(this.txtBoxRequest1_TextChanged);
             // 
-            // button1
+            // txtBoxUnitNo
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(825, 410);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 29);
-            this.button1.TabIndex = 155;
-            this.button1.Text = "    Close";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(438, 53);
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(135, 20);
+            this.txtBoxUnitNo.TabIndex = 156;
+            this.txtBoxUnitNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitNo_KeyPress);
+            this.txtBoxUnitNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitNo_KeyUp);
+            this.txtBoxUnitNo.Leave += new System.EventHandler(this.txtBoxUnitNo_Leave);
             // 
-            // button3
+            // txtBoxUnitOwner
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(748, 410);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 29);
-            this.button3.TabIndex = 149;
-            this.button3.Text = "   Okay";
-            this.button3.UseVisualStyleBackColor = true;
+            this.txtBoxUnitOwner.Enabled = false;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(275, 86);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(185, 20);
+            this.txtBoxUnitOwner.TabIndex = 157;
+            this.txtBoxUnitOwner.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitOwner_KeyPress);
+            this.txtBoxUnitOwner.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitOwner_KeyUp);
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Location = new System.Drawing.Point(571, 89);
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(185, 20);
+            this.txtBoxContactNo.TabIndex = 158;
+            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
+            // 
+            // txtBoxTime
+            // 
+            this.txtBoxTime.Location = new System.Drawing.Point(700, 283);
+            this.txtBoxTime.Name = "txtBoxTime";
+            this.txtBoxTime.Size = new System.Drawing.Size(132, 20);
+            this.txtBoxTime.TabIndex = 159;
             // 
             // RequestForm
             // 
@@ -423,25 +437,21 @@
         #endregion
 
         internal System.Windows.Forms.Panel pnlRequest;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOkay;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePickerPrefferedDate;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dtpReqDate;
+        private System.Windows.Forms.DateTimePicker datePickerDate;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbProject;
+        private System.Windows.Forms.ComboBox cmbBoxProject;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.MaskedTextBox txtUnitNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtCNumber;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -449,9 +459,13 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxRequest4;
+        private System.Windows.Forms.TextBox txtBoxRequest3;
+        private System.Windows.Forms.TextBox txtBoxRequest2;
+        private System.Windows.Forms.TextBox txtBoxRequest1;
+        private System.Windows.Forms.TextBox txtBoxTime;
+        private System.Windows.Forms.TextBox txtBoxContactNo;
+        private System.Windows.Forms.TextBox txtBoxUnitOwner;
+        private System.Windows.Forms.TextBox txtBoxUnitNo;
     }
 }

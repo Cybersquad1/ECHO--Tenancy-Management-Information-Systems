@@ -36,5 +36,6 @@ namespace Echo.Data.Repository
         public virtual DbSet<UserProfile> UserProfile { get; set; }
         public virtual DbSet<WaterBilling> WaterBilling { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
     }
 }

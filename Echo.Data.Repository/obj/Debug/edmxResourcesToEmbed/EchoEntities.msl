@@ -202,5 +202,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="EchoModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Request4" ColumnName="Request4" />
+          <ScalarProperty Name="Request3" ColumnName="Request3" />
+          <ScalarProperty Name="Request2" ColumnName="Request2" />
+          <ScalarProperty Name="Request1" ColumnName="Request1" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

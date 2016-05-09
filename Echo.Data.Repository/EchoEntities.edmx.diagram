@@ -25,6 +25,8 @@
         <AssociationConnector Association="EchoModel.FK_WaterBilling_UnitProfile" />
         <EntityTypeShape EntityType="EchoModel.Reservation" Width="1.5" PointX="10.375" PointY="7" />
         <AssociationConnector Association="EchoModel.FK_PaymentHistory_Reservation" />
+        <EntityTypeShape EntityType="EchoModel.Request" Width="1.5" PointX="5.25" PointY="0.5" />
+        <AssociationConnector Association="EchoModel.FK_Request_UnitProfile" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

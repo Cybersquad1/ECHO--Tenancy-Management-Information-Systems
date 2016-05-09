@@ -8,6 +8,23 @@ namespace Echo.Data.Repository.ViewModel
 {
    public class TenantViewModel : ViewModelBase<TenantProfile>
     {
+        public bool ChangePassword(Guid _tenantID, string _newPassword)
+        {
+            try
+            {
+                var tenant = GetEntity(r => r.ID == _tenantID);
+
+                tenant.Password = _newPassword;
+
+                Update(tenant);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public TenantProfile TryLogin(string _username, string _password)
         {

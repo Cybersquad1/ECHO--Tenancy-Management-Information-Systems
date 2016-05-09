@@ -30,7 +30,7 @@ namespace Echo.Data.Repository.ViewModel
         }
 
         protected void Add(TEntity _entity)
-        {
+         {
             _entity.GetType().GetProperty("ID").SetValue(_entity, Guid.NewGuid());
 
             Context.Set<TEntity>().Add(_entity);

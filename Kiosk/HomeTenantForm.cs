@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Kiosk.TenantForms;
+using Echo.Data.Repository.ViewModel;
 
 namespace Tenancy_Management_Information_Systems.Kiosk
 {
@@ -28,6 +29,11 @@ namespace Tenancy_Management_Information_Systems.Kiosk
             lblTenantName.Text = _name;
 
             this.parentForm = parentForm;
+        }
+
+        private void CheckIfChangesPassword()
+        {
+            var tenant = new TenantViewModel().GetSelectedTenant(tenantID);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -72,13 +78,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void RequestButton_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = false;
-            hk.pnlRequest.Visible = true;
-            hk.pnlPaymentHistory.Visible = false;
-            hk.pnlReservation.Visible = false;
-            hk.pnlAssocDues.Visible = false;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
+
+            RequestForm hk = new RequestForm();
+            hk.Visible = true;
+            hk.TopLevel = false;
+            hk.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(hk);
         }
 
         private void ReservationButton_Click(object sender, EventArgs e)

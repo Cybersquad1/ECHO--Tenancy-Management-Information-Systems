@@ -81,6 +81,12 @@
     <Compile Include="Kiosk\HomeTenantForm.Designer.cs">
       <DependentUpon>HomeTenantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kiosk\TenantForms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kiosk\TenantForms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kiosk\TenantForms\MonthlyAssocDue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kiosk\HomeTenantForm.resx">
       <DependentUpon>HomeTenantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kiosk\TenantForms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kiosk\TenantForms\MonthlyAssocDue.resx">
       <DependentUpon>MonthlyAssocDue.cs</DependentUpon>

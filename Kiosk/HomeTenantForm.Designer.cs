@@ -33,26 +33,26 @@
             this.ReservationButton = new System.Windows.Forms.Button();
             this.PHistoryButton = new System.Windows.Forms.Button();
             this.lblUnitNo = new System.Windows.Forms.Label();
-            this.lblTenantName = new System.Windows.Forms.Label();
             this.AssocDuesButton = new System.Windows.Forms.Button();
             this.ViewTenantProfButton = new System.Windows.Forms.Button();
+            this.lblTenantName = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.menuPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPnl
@@ -125,18 +125,6 @@
             this.lblUnitNo.TabIndex = 65;
             this.lblUnitNo.Text = "2001";
             // 
-            // lblTenantName
-            // 
-            this.lblTenantName.AutoSize = true;
-            this.lblTenantName.BackColor = System.Drawing.Color.Transparent;
-            this.lblTenantName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenantName.ForeColor = System.Drawing.Color.White;
-            this.lblTenantName.Location = new System.Drawing.Point(12, 9);
-            this.lblTenantName.Name = "lblTenantName";
-            this.lblTenantName.Size = new System.Drawing.Size(117, 16);
-            this.lblTenantName.TabIndex = 67;
-            this.lblTenantName.Text = "Ariel Manglanlan";
-            // 
             // AssocDuesButton
             // 
             this.AssocDuesButton.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,8 +151,21 @@
             this.ViewTenantProfButton.UseVisualStyleBackColor = true;
             this.ViewTenantProfButton.Click += new System.EventHandler(this.ViewTenantProfButton_Click);
             // 
+            // lblTenantName
+            // 
+            this.lblTenantName.AutoSize = true;
+            this.lblTenantName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenantName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenantName.ForeColor = System.Drawing.Color.White;
+            this.lblTenantName.Location = new System.Drawing.Point(12, 9);
+            this.lblTenantName.Name = "lblTenantName";
+            this.lblTenantName.Size = new System.Drawing.Size(117, 16);
+            this.lblTenantName.TabIndex = 67;
+            this.lblTenantName.Text = "Ariel Manglanlan";
+            // 
             // lblTime
             // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,6 +191,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.lilogout;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -202,6 +204,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.homebut;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -223,16 +226,15 @@
             this.panel2.Size = new System.Drawing.Size(1350, 124);
             this.panel2.TabIndex = 72;
             // 
-            // pictureBox3
+            // pictureBox6
             // 
-            this.pictureBox3.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
-            this.pictureBox3.Location = new System.Drawing.Point(259, 49);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1091, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 59;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox6.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 49);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(119, 29);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 62;
+            this.pictureBox6.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -244,15 +246,17 @@
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox6
+            // pictureBox3
             // 
-            this.pictureBox6.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 49);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(119, 29);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 62;
-            this.pictureBox6.TabStop = false;
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
+            this.pictureBox3.Location = new System.Drawing.Point(259, 49);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1091, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 59;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // mainPanel
             // 
@@ -275,6 +279,8 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "HomeTenantForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeTenantForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeTenantForm_FormClosed);
             this.Load += new System.EventHandler(this.HomeTenantForm_Load);
@@ -285,9 +291,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
