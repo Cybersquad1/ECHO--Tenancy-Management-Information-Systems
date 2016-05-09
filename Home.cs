@@ -16,6 +16,8 @@ namespace Tenancy_Management_Information_Systems
     {
         Home2 parentForm;
 
+        LoginInfo loginInfo;
+
         public Home(LoginInfo loginInfo, Home2 parentForm)
         {
             InitializeComponent();
@@ -25,6 +27,8 @@ namespace Tenancy_Management_Information_Systems
             lblUsername.Text = loginInfo.username;
 
             this.parentForm = parentForm;
+
+            this.loginInfo = loginInfo;
         }
 
         private void AccountsButton_Click(object sender, EventArgs e)
@@ -251,7 +255,7 @@ namespace Tenancy_Management_Information_Systems
         {
             panelMain.Controls.Clear();
 
-            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm();
+            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = true;
             l1.TopLevel = false;
             l1.Visible = true;
@@ -269,7 +273,7 @@ namespace Tenancy_Management_Information_Systems
 
         private void button22_Click(object sender, EventArgs e)
         {
-            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm();
+            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = true;
             l1.ShowDialog();
         }
@@ -277,7 +281,7 @@ namespace Tenancy_Management_Information_Systems
         private void button5_Click(object sender, EventArgs e)
         {
             collectorPnl2.Visible = true;
-            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm();
+            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = false;
             UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
             c1.collectorPnl.Visible = false;
@@ -346,7 +350,7 @@ namespace Tenancy_Management_Information_Systems
         {
             collectorPnl2.Visible = true;
             reportsGenPnl.Visible = false;
-            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm();
+            ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = false;
             UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
             c1.collectorPnl.Visible = false;

@@ -38,7 +38,8 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                     {
                         username = user.Username,
                         fullName = user.FirstName + " " + user.LastName,
-                        accountType = user.Type
+                        accountType = user.Type,
+                        userID = user.ID
                     };
 
                     if (loginInfo.accountType.ToUpper() == "ADMIN")

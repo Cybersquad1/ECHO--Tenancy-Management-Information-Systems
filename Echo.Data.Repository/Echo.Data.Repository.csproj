@@ -80,6 +80,9 @@
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
@@ -95,6 +98,7 @@
     <Compile Include="UserProfile.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\LogSheetActivityViewModel.cs" />
     <Compile Include="ViewModel\LogSheetViewModel.cs" />
     <Compile Include="ViewModel\MonthlyAssociationDueViewModel.cs" />
     <Compile Include="ViewModel\PaymentHistoryViewModel.cs" />

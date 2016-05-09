@@ -104,10 +104,9 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
             totalAmount += double.Parse(lblWaterOverdueAmount.Text);
             totalAmount += double.Parse(lblWaterDisconnectionAmount.Text);
 
-            lblTotalAmount.Text = string.Format("{0:0.00}", totalAmount);
+            lblTotalAmount.Text = string.Format("{0:0.00}", totalAmount - double.Parse(lblVAT.Text));
             lblVAT.Text = string.Format("{0:0.00}", totalAmount * 0.12);
-            lblTotalWithVAT.Text = string.Format("{0:0.00}", (double.Parse(lblTotalAmount.Text)
-                + double.Parse(lblVAT.Text)));
+            lblTotalWithVAT.Text = string.Format("{0:0.00}", totalAmount);
         }
 
         private void pnlAssocDues_Paint(object sender, PaintEventArgs e)

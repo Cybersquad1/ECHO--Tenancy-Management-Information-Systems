@@ -23,6 +23,8 @@
         <AssociationConnector Association="EchoModel.FK_TenantArchive_TenantProfile" />
         <AssociationConnector Association="EchoModel.FK_TenantArchive_UnitProfile" />
         <AssociationConnector Association="EchoModel.FK_WaterBilling_UnitProfile" />
+        <EntityTypeShape EntityType="EchoModel.Reservation" Width="1.5" PointX="10.375" PointY="7" />
+        <AssociationConnector Association="EchoModel.FK_PaymentHistory_Reservation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

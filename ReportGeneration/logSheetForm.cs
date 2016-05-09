@@ -16,11 +16,56 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
     {
         LogSheetViewModel logVM;
 
-        public logSheetForm()
+        LogSheetActivityViewModel logActivityVM;
+
+        Guid userID;
+        public logSheetForm(Guid _userID)
         {
             InitializeComponent();
 
             GetItems();
+
+            userID = _userID;
+
+            GetLogSheetActivity();
+
+            txtBoxDateToday.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void GetLogSheetActivity()
+        {
+            logActivityVM = new LogSheetActivityViewModel();
+
+            logVM = new LogSheetViewModel();
+
+            lstViewLogSheetRequest.Items.Clear();
+
+            var logActivity = logActivityVM.GetAll();
+
+            logActivity.ForEach(item =>
+            {
+                ListViewItem lvi = new ListViewItem(item.Date.ToString());
+
+                var selectedItem = logVM.GetSelectedID(item.ItemID);
+
+                lvi.SubItems.Add(selectedItem.Item);
+
+                lvi.SubItems.Add(item.Balance.ToString());
+
+                lvi.SubItems.Add(item.Quantity.ToString());
+
+                lvi.SubItems.Add(item.Purpose);
+
+                lvi.SubItems.Add(item.Area);
+
+                var user = new UserViewModel().GetSelectedUser(item.IssuedBy);
+
+                lvi.SubItems.Add(user.FullName);
+
+                lvi.SubItems.Add(item.ReceivedBy);
+
+                lstViewLogSheetRequest.Items.Add(lvi);             
+            });
         }
         
         private void Clear(string _type)
@@ -28,11 +73,27 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             if (_type == "ADD")
             {
                 txtBoxAddItem.Text = "";
+
                 txtBoxAddQuantity.Text = "";
+            }
+            else if(_type =="ACTIVITY")
+            {
+                txtBoxPurpose.Text = "";
+
+                txtBoxArea.Text = "";
+
+                txtBoxReceivedBy.Text = "";
+
+                txtBoxPieces.Text = "";
+
+                txtBoxQuantity.Text = "";
+
+                txtBoxDateToday.Text = DateTime.Now.ToShortDateString();
             }
             else
             {
                 txtBoxModifyQuantity.Text = "";
+
                 cmbBoxModifyItem.Text = "";
             }
         }
@@ -49,7 +110,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void GetItems()
         {
             cmbBoxItem.Items.Clear();
+
             cmbBoxModifyItem.Items.Clear();
+
+            lstViewItem.Items.Clear();
 
             logVM = new LogSheetViewModel();
 
@@ -57,8 +121,34 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             items.ForEach(item =>
             {
+                //DropDown Menu
                 cmbBoxItem.Items.Add(item.Item);
+
                 cmbBoxModifyItem.Items.Add(item.Item);
+
+                //List
+                ListViewItem lvi = new ListViewItem(item.Item);
+
+                lvi.SubItems.Add(item.Quantity.ToString());
+
+                if (item.DateModified != null)
+                    lvi.SubItems.Add(DateTime.Parse(item.DateModified.ToString()).ToShortDateString());
+                else
+                    lvi.SubItems.Add("N/A");
+
+                if (item.ModifiedBy != null)
+                {
+                    var user = new UserViewModel().GetSelectedUser(item.ModifiedBy);
+
+                    if (user != null)
+                        lvi.SubItems.Add(user.FullName);
+                    else
+                        lvi.SubItems.Add("N/A");
+                }
+                else
+                    lvi.SubItems.Add("N/A");
+
+                lstViewItem.Items.Add(lvi);
             });
         }
 
@@ -83,38 +173,145 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void btnModifyAdd_Click(object sender, EventArgs e)
         {
-            logVM = new LogSheetViewModel();
+            string errorMessage = "";
 
-            LogSheet newItem = new LogSheet();
+            if (cmbBoxModifyItem.Text == "")
+                errorMessage += "Item is required\n";
 
-            if(logVM.Save(newItem))
+            if (txtBoxModifyQuantity.Text == "")
+                errorMessage += "Quantity is required\n";
+
+            if (errorMessage == "")
             {
-                Clear("EDIT");
+                logVM = new LogSheetViewModel();
+
+                LogSheet editItem = new LogSheet();
+
+                editItem.Quantity = int.Parse(txtBoxModifyQuantity.Text);
+
+                editItem.Item = cmbBoxModifyItem.Text;
+
+                editItem.ModifiedBy = userID;
+
+                var itemID = logVM.GetSelectedItem(cmbBoxModifyItem.Text);
+
+                editItem.ID = itemID.ID;
+
+                if (logVM.Modify(editItem))
+                {
+                    Clear("EDIT");
+
+                    GetItems();
+
+                    MessageBox.Show("Successfully modified");
+                }
+                else
+                {
+                    MessageBox.Show("Error on saving, there was some kind of error", "Error");
+                }
             }
             else
-            {
-                MessageBox.Show("Error on saving, there was some kind of error", "Error");
-            }
+                MessageBox.Show(errorMessage, "Error on saving");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            logVM = new LogSheetViewModel();
+            string errorMessage = "";
 
-            LogSheet newItem = new LogSheet();
-            newItem.Item = txtBoxAddItem.Text;
-            newItem.Quantity = int.Parse(txtBoxQuantity.Text);
+            if (txtBoxAddItem.Text == "")
+                errorMessage += "Item is required\n";
 
-            if (logVM.Save(newItem))
+            if (txtBoxAddQuantity.Text == "")
+                errorMessage += "Quantity is required\n";
+
+            if (errorMessage == "")
             {
-                Clear("ADD");
+                logVM = new LogSheetViewModel();
 
-                MessageBox.Show("Successfully saved");
+                LogSheet newItem = new LogSheet();
+
+                newItem.Item = txtBoxAddItem.Text.ToUpper();
+
+                newItem.Quantity = int.Parse(txtBoxAddQuantity.Text);
+
+                if (logVM.Save(newItem))
+                {
+                    Clear("ADD");
+
+                    GetItems();
+
+                    MessageBox.Show("Successfully saved");
+                }
+                else
+                {
+                    MessageBox.Show("Error on saving, there was some kind of error", "Error");
+                }
             }
             else
+                MessageBox.Show(errorMessage, "Error on saving");
+        }
+
+        private void btnModifyClear_Click(object sender, EventArgs e)
+        {
+            Clear("EDIT");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear("ADD");
+        }
+
+        private void btnLogAdd_Click(object sender, EventArgs e)
+        {
+            string errorMessage = "";
+
+            if (errorMessage == "")
             {
-                MessageBox.Show("Error on saving, there was some kind of error", "Error");
+                DialogResult result = MessageBox.Show("Proceed on saving Log Sheet? [Y/N]", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    //Save to Database
+                    LogSheetActivity newLog = new LogSheetActivity();
+                    newLog.Date = DateTime.Now;
+
+                    var item = new LogSheetViewModel().GetSelectedItem(cmbBoxItem.Text);
+
+                    newLog.ItemID = item.ID;
+
+                    newLog.Balance = int.Parse(txtBoxPieces.Text);
+
+                    newLog.Quantity = int.Parse(txtBoxQuantity.Text);
+
+                    newLog.Purpose = txtBoxPurpose.Text;
+
+                    newLog.Area = txtBoxArea.Text;
+
+                    newLog.IssuedBy = userID;
+
+                    newLog.ReceivedBy = txtBoxReceivedBy.Text;
+
+                    logActivityVM = new LogSheetActivityViewModel();
+
+                    if (logActivityVM.Save(newLog))
+                    {
+                        MessageBox.Show("Successfuly saved");
+
+                        GetLogSheetActivity();
+
+                        GetItems();
+                    }
+                    else
+                        MessageBox.Show("Can't save Log sheet there was some kind of error", "Error on saving");
+                }
             }
+            else
+                MessageBox.Show(errorMessage, "Error on saving");
+        }
+
+        private void btnLogClear_Click(object sender, EventArgs e)
+        {
+            Clear("ACTIVITY");
         }
     }
 }

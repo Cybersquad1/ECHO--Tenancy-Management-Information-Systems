@@ -62,7 +62,7 @@ namespace Echo.Data.Repository.ViewModel
 
                 return true;
             }
-            catch(Exception err)
+            catch
             {
                 return false;
             }

@@ -63,14 +63,12 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBoxIssuedBy = new System.Windows.Forms.TextBox();
             this.txtBoxPurpose = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxReceivedBy = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnLogClear = new System.Windows.Forms.Button();
             this.btnLogAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtBoxArea = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxQuantity = new System.Windows.Forms.TextBox();
@@ -97,7 +95,7 @@
             this.logPnl.Controls.Add(this.groupBox1);
             this.logPnl.Location = new System.Drawing.Point(12, 12);
             this.logPnl.Name = "logPnl";
-            this.logPnl.Size = new System.Drawing.Size(962, 544);
+            this.logPnl.Size = new System.Drawing.Size(962, 529);
             this.logPnl.TabIndex = 0;
             // 
             // btnCancel
@@ -105,7 +103,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(883, 508);
+            this.btnCancel.Location = new System.Drawing.Point(876, 488);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 33);
             this.btnCancel.TabIndex = 27;
@@ -147,11 +145,12 @@
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12});
+            this.lstViewLogSheetRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstViewLogSheetRequest.FullRowSelect = true;
             this.lstViewLogSheetRequest.GridLines = true;
-            this.lstViewLogSheetRequest.Location = new System.Drawing.Point(1, 0);
+            this.lstViewLogSheetRequest.Location = new System.Drawing.Point(3, 3);
             this.lstViewLogSheetRequest.Name = "lstViewLogSheetRequest";
-            this.lstViewLogSheetRequest.Size = new System.Drawing.Size(943, 268);
+            this.lstViewLogSheetRequest.Size = new System.Drawing.Size(941, 268);
             this.lstViewLogSheetRequest.TabIndex = 3;
             this.lstViewLogSheetRequest.UseCompatibleStateImageBehavior = false;
             this.lstViewLogSheetRequest.View = System.Windows.Forms.View.Details;
@@ -242,6 +241,7 @@
             this.btnClear.TabIndex = 114;
             this.btnClear.Text = "   Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label14
             // 
@@ -307,6 +307,7 @@
             this.btnModifyClear.TabIndex = 114;
             this.btnModifyClear.Text = "   Clear";
             this.btnModifyClear.UseVisualStyleBackColor = true;
+            this.btnModifyClear.Click += new System.EventHandler(this.btnModifyClear_Click);
             // 
             // label10
             // 
@@ -325,7 +326,7 @@
             this.btnModifyAdd.Name = "btnModifyAdd";
             this.btnModifyAdd.Size = new System.Drawing.Size(59, 23);
             this.btnModifyAdd.TabIndex = 113;
-            this.btnModifyAdd.Text = "   Add";
+            this.btnModifyAdd.Text = "   Edit";
             this.btnModifyAdd.UseVisualStyleBackColor = true;
             this.btnModifyAdd.Click += new System.EventHandler(this.btnModifyAdd_Click);
             // 
@@ -398,14 +399,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtBoxIssuedBy);
             this.groupBox1.Controls.Add(this.txtBoxPurpose);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtBoxReceivedBy);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnLogClear);
             this.groupBox1.Controls.Add(this.btnLogAdd);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtBoxArea);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtBoxQuantity);
@@ -423,13 +422,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log Sheet Information";
-            // 
-            // txtBoxIssuedBy
-            // 
-            this.txtBoxIssuedBy.Location = new System.Drawing.Point(512, 79);
-            this.txtBoxIssuedBy.Name = "txtBoxIssuedBy";
-            this.txtBoxIssuedBy.Size = new System.Drawing.Size(235, 20);
-            this.txtBoxIssuedBy.TabIndex = 113;
             // 
             // txtBoxPurpose
             // 
@@ -449,7 +441,7 @@
             // 
             // txtBoxReceivedBy
             // 
-            this.txtBoxReceivedBy.Location = new System.Drawing.Point(512, 103);
+            this.txtBoxReceivedBy.Location = new System.Drawing.Point(512, 81);
             this.txtBoxReceivedBy.Name = "txtBoxReceivedBy";
             this.txtBoxReceivedBy.Size = new System.Drawing.Size(235, 20);
             this.txtBoxReceivedBy.TabIndex = 110;
@@ -457,7 +449,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(414, 106);
+            this.label7.Location = new System.Drawing.Point(414, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 14);
             this.label7.TabIndex = 109;
@@ -474,6 +466,7 @@
             this.btnLogClear.TabIndex = 108;
             this.btnLogClear.Text = "   Clear";
             this.btnLogClear.UseVisualStyleBackColor = true;
+            this.btnLogClear.Click += new System.EventHandler(this.btnLogClear_Click);
             // 
             // btnLogAdd
             // 
@@ -485,15 +478,7 @@
             this.btnLogAdd.TabIndex = 107;
             this.btnLogAdd.Text = "   Add";
             this.btnLogAdd.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(414, 82);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 14);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Issued by: ";
+            this.btnLogAdd.Click += new System.EventHandler(this.btnLogAdd_Click);
             // 
             // txtBoxArea
             // 
@@ -587,7 +572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(986, 568);
+            this.ClientSize = new System.Drawing.Size(986, 545);
             this.Controls.Add(this.logPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(352, 141);
@@ -612,7 +597,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLogClear;
         private System.Windows.Forms.Button btnLogAdd;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxArea;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBoxQuantity;
@@ -660,6 +644,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.TextBox txtBoxAddItem;
         internal System.Windows.Forms.Panel logPnl;
-        private System.Windows.Forms.TextBox txtBoxIssuedBy;
     }
 }

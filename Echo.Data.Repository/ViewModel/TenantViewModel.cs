@@ -43,7 +43,7 @@ namespace Echo.Data.Repository.ViewModel
 
                 return true;
             }
-            catch(Exception error) //just for debugging
+            catch //just for debugging
             {
                 return false;
             }
@@ -59,7 +59,7 @@ namespace Echo.Data.Repository.ViewModel
 
                 return true;
             }
-            catch(Exception error)//just for debugging
+            catch
             {
                 return false;                                                                                                                                                             
             }

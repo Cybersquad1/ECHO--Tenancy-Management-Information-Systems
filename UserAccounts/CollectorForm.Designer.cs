@@ -38,12 +38,10 @@
             this.checkBoxAdvancePayment = new System.Windows.Forms.CheckBox();
             this.txtBoxDiscounts = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.txtBoxChange = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxTenderedAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnViewDetails = new System.Windows.Forms.Button();
             this.txtBoxTotalAmountDue = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtBoxPenalties = new System.Windows.Forms.TextBox();
@@ -78,6 +76,7 @@
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.collectorPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -183,16 +182,6 @@
             this.label9.TabIndex = 121;
             this.label9.Text = "Discount(s):";
             // 
-            // listView2
-            // 
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(391, 69);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(336, 233);
-            this.listView2.TabIndex = 118;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
             // txtBoxChange
             // 
             this.txtBoxChange.BackColor = System.Drawing.Color.White;
@@ -231,15 +220,6 @@
             this.label7.TabIndex = 112;
             this.label7.Text = "TENDERED AMOUNT:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // btnViewDetails
-            // 
-            this.btnViewDetails.Location = new System.Drawing.Point(231, 216);
-            this.btnViewDetails.Name = "btnViewDetails";
-            this.btnViewDetails.Size = new System.Drawing.Size(106, 23);
-            this.btnViewDetails.TabIndex = 111;
-            this.btnViewDetails.Text = "View Details";
-            this.btnViewDetails.UseVisualStyleBackColor = true;
             // 
             // txtBoxTotalAmountDue
             // 
@@ -322,12 +302,10 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnUserCreate);
             this.groupBox1.Controls.Add(this.btnUserCancel);
-            this.groupBox1.Controls.Add(this.listView2);
             this.groupBox1.Controls.Add(this.txtBoxChange);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtBoxTenderedAmount);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnViewDetails);
             this.groupBox1.Controls.Add(this.txtBoxTotalAmountDue);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtBoxPenalties);
@@ -345,7 +323,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(742, 392);
+            this.groupBox1.Size = new System.Drawing.Size(562, 392);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment Form";
@@ -356,7 +334,7 @@
             this.btnUserCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCreate.Image")));
             this.btnUserCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCreate.Location = new System.Drawing.Point(535, 358);
+            this.btnUserCreate.Location = new System.Drawing.Point(366, 351);
             this.btnUserCreate.Name = "btnUserCreate";
             this.btnUserCreate.Size = new System.Drawing.Size(92, 28);
             this.btnUserCreate.TabIndex = 119;
@@ -368,7 +346,7 @@
             this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
             this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCancel.Location = new System.Drawing.Point(635, 358);
+            this.btnUserCancel.Location = new System.Drawing.Point(466, 351);
             this.btnUserCancel.Name = "btnUserCancel";
             this.btnUserCancel.Size = new System.Drawing.Size(92, 28);
             this.btnUserCancel.TabIndex = 120;
@@ -410,7 +388,7 @@
             // 
             this.txtBoxDueDate.BackColor = System.Drawing.Color.Gainsboro;
             this.txtBoxDueDate.Enabled = false;
-            this.txtBoxDueDate.Location = new System.Drawing.Point(611, 24);
+            this.txtBoxDueDate.Location = new System.Drawing.Point(447, 51);
             this.txtBoxDueDate.Name = "txtBoxDueDate";
             this.txtBoxDueDate.Size = new System.Drawing.Size(81, 20);
             this.txtBoxDueDate.TabIndex = 23;
@@ -428,7 +406,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(547, 27);
+            this.label6.Location = new System.Drawing.Point(383, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 14);
             this.label6.TabIndex = 22;
@@ -474,7 +452,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1,
             this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(736, 373);
+            this.shapeContainer1.Size = new System.Drawing.Size(699, 373);
             this.shapeContainer1.TabIndex = 105;
             this.shapeContainer1.TabStop = false;
             // 
@@ -523,9 +501,9 @@
             // 
             this.groupBox2.Controls.Add(this.lstBoxParticulars);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(751, 3);
+            this.groupBox2.Location = new System.Drawing.Point(588, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 492);
+            this.groupBox2.Size = new System.Drawing.Size(388, 492);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Particulars";
@@ -535,12 +513,13 @@
             this.lstBoxParticulars.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lstBoxParticulars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader1});
             this.lstBoxParticulars.FullRowSelect = true;
             this.lstBoxParticulars.GridLines = true;
-            this.lstBoxParticulars.Location = new System.Drawing.Point(4, 19);
+            this.lstBoxParticulars.Location = new System.Drawing.Point(6, 19);
             this.lstBoxParticulars.Name = "lstBoxParticulars";
-            this.lstBoxParticulars.Size = new System.Drawing.Size(218, 470);
+            this.lstBoxParticulars.Size = new System.Drawing.Size(376, 470);
             this.lstBoxParticulars.TabIndex = 2;
             this.lstBoxParticulars.UseCompatibleStateImageBehavior = false;
             this.lstBoxParticulars.View = System.Windows.Forms.View.Details;
@@ -548,7 +527,7 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Particulars";
-            this.columnHeader6.Width = 81;
+            this.columnHeader6.Width = 109;
             // 
             // columnHeader7
             // 
@@ -626,6 +605,12 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Unit Number:";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Amount";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader1.Width = 110;
+            // 
             // CollectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,13 +648,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUserCreate;
         private System.Windows.Forms.Button btnUserCancel;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.TextBox txtBoxChange;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxTenderedAmount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnViewDetails;
         private System.Windows.Forms.TextBox txtBoxTotalAmountDue;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnCancel;
@@ -700,5 +683,6 @@
         private System.Windows.Forms.TextBox txtBoxUnitOwner;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

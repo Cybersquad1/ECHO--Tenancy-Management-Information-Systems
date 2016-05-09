@@ -22,7 +22,10 @@ namespace Echo.Data.Repository
         public Nullable<decimal> Balance { get; set; }
         public string UnitNumber { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.Guid> ReservationID { get; set; }
+        public string Type { get; set; }
     
         public virtual MonthlyAssociationDue MonthlyAssociationDue { get; set; }
+        public virtual Reservation Reservation { get; set; }
     }
 }

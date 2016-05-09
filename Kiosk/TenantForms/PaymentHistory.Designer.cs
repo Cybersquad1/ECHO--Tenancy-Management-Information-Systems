@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentHistory));
             this.pnlPaymentHistory = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -42,25 +43,13 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlPaymentHistory.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlPaymentHistory
@@ -73,6 +62,18 @@
             this.pnlPaymentHistory.Name = "pnlPaymentHistory";
             this.pnlPaymentHistory.Size = new System.Drawing.Size(916, 473);
             this.pnlPaymentHistory.TabIndex = 121;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(825, 431);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 29);
+            this.button2.TabIndex = 155;
+            this.button2.Text = "    Close";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -89,11 +90,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(8, 22);
+            this.tabControl1.Location = new System.Drawing.Point(12, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 403);
+            this.tabControl1.Size = new System.Drawing.Size(890, 439);
             this.tabControl1.TabIndex = 121;
             // 
             // tabPage2
@@ -102,7 +102,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(886, 377);
+            this.tabPage2.Size = new System.Drawing.Size(882, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Billing History";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.tabPage3.Controls.Add(this.listView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(886, 377);
+            this.tabPage3.Size = new System.Drawing.Size(882, 413);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Association Dues";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -165,15 +165,15 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader8,
-            this.columnHeader12,
             this.columnHeader13,
             this.columnHeader15,
             this.columnHeader17});
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(3, 2);
+            this.listView2.Location = new System.Drawing.Point(0, 0);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(880, 375);
+            this.listView2.Size = new System.Drawing.Size(882, 413);
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -181,112 +181,27 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Tenant Charge Date";
-            this.columnHeader7.Width = 122;
+            this.columnHeader7.Width = 133;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Date Due";
-            this.columnHeader8.Width = 86;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Date Due";
-            this.columnHeader12.Width = 172;
+            this.columnHeader8.Width = 132;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Amount Paid";
-            this.columnHeader13.Width = 131;
+            this.columnHeader13.Width = 132;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Balance";
+            this.columnHeader15.Width = 110;
             // 
             // columnHeader17
             // 
             this.columnHeader17.Text = "Total";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(886, 377);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Water Billing";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader14});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(880, 370);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tenant Charge Date";
-            this.columnHeader1.Width = 142;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Date Due";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 125;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Current Reading";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 122;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Amount Due";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 140;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Amount Paid";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 212;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Balance";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 159;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Total";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(825, 431);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 29);
-            this.button2.TabIndex = 155;
-            this.button2.Text = "    Close";
-            this.button2.UseVisualStyleBackColor = true;
+            this.columnHeader17.Width = 118;
             // 
             // PaymentHistory
             // 
@@ -302,7 +217,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -323,18 +237,8 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader17;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }

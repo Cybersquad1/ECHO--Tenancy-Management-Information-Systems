@@ -49,6 +49,8 @@
     <EntitySetMapping Name="PaymentHistory">
       <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
         <MappingFragment StoreEntitySet="PaymentHistory">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
@@ -181,6 +183,21 @@
           <ScalarProperty Name="DueDate" ColumnName="DueDate" />
           <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservation">
+      <EntityTypeMapping TypeName="EchoModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="NoOfGuest" ColumnName="NoOfGuest" />
+          <ScalarProperty Name="DateOfFuntion" ColumnName="DateOfFuntion" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

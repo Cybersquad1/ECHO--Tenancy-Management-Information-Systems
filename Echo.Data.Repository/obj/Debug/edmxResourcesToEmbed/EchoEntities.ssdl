@@ -53,7 +53,23 @@
     <Property Name="Payable" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
     <Property Name="UnitNumber" Type="varchar" MaxLength="10" />
+    <Property Name="ReservationID" Type="uniqueidentifier" />
     <Property Name="Date" Type="datetime" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Facility" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Purpose" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DateOfFuntion" Type="datetime" Nullable="false" />
+    <Property Name="NoOfGuest" Type="varchar" MaxLength="3" />
+    <Property Name="Time" Type="varchar" MaxLength="10" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -234,15 +250,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TenantArchive_TenantProfile">
-    <End Role="TenantProfile" Type="Self.TenantProfile" Multiplicity="0..1" />
-    <End Role="TenantArchive" Type="Self.TenantArchive" Multiplicity="*" />
+  <Association Name="FK_PaymentHistory_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="0..1" />
+    <End Role="PaymentHistory" Type="Self.PaymentHistory" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TenantProfile">
+      <Principal Role="Reservation">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="TenantArchive">
-        <PropertyRef Name="TenantID" />
+      <Dependent Role="PaymentHistory">
+        <PropertyRef Name="ReservationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -275,6 +291,7 @@
     <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonthlyAssociationDue" EntityType="Self.MonthlyAssociationDue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
@@ -301,9 +318,9 @@
       <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
       <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
-    <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="Self.FK_TenantArchive_TenantProfile">
-      <End Role="TenantProfile" EntitySet="TenantProfile" />
-      <End Role="TenantArchive" EntitySet="TenantArchive" />
+    <AssociationSet Name="FK_PaymentHistory_Reservation" Association="Self.FK_PaymentHistory_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="PaymentHistory" EntitySet="PaymentHistory" />
     </AssociationSet>
     <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="Self.FK_TenantArchive_UnitProfile">
       <End Role="UnitProfile" EntitySet="UnitProfile" />

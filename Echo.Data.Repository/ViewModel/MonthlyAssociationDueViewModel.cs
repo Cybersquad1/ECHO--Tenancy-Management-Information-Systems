@@ -9,6 +9,12 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class MonthlyAssociationDueViewModel: ViewModelBase<MonthlyAssociationDue>
     {
+
+        public List<MonthlyAssociationDue> GetAll(string _unitNo)
+        {
+            return Find(r => r.UnitNumber == _unitNo).OrderByDescending(r=>r.ChargeDate).ToList();
+        }
+
         public MonthlyAssociationDue GetPreviousBilling(string _unitNo)
         {
             var prevBilling = GetLast(r => r.UnitNumber == _unitNo);

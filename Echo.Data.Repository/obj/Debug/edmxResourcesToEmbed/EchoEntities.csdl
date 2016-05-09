@@ -43,6 +43,11 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="WaterBilling" EntitySet="WaterBilling" />
     </AssociationSet>
+    <EntitySet Name="Reservation" EntityType="EchoModel.Reservation" />
+    <AssociationSet Name="FK_PaymentHistory_Reservation" Association="EchoModel.FK_PaymentHistory_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="PaymentHistory" EntitySet="PaymentHistory" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="LogSheet">
     <Key>
@@ -105,6 +110,9 @@
     <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
     <Property Name="UnitNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="ReservationID" Type="Guid" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reservation" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="PaymentHistory" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -327,6 +335,33 @@
       </Principal>
       <Dependent Role="WaterBilling">
         <PropertyRef Name="UnitNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Facility" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Purpose" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfFuntion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NoOfGuest" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="Reservation" ToRole="PaymentHistory" />
+  </EntityType>
+  <Association Name="FK_PaymentHistory_Reservation">
+    <End Type="EchoModel.Reservation" Role="Reservation" Multiplicity="0..1" />
+    <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PaymentHistory">
+        <PropertyRef Name="ReservationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1240C56E-8744-41E4-8A9C-ECC274F8B8B6}"
 	ProjectSection(SolutionItems) = preProject
 		Echo.sql = Echo.sql
+		SQL Query with Sample Data.sql = SQL Query with Sample Data.sql
 	EndProjectSection
 EndProject
 Global
