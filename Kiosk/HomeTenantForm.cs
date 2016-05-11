@@ -34,6 +34,12 @@ namespace Tenancy_Management_Information_Systems.Kiosk
         private void CheckIfChangesPassword()
         {
             var tenant = new TenantViewModel().GetSelectedTenant(tenantID);
+
+            if(tenant.ChangePassword == "Y")
+            {
+                ChangePassword form = new ChangePassword(tenantID);
+                form.ShowDialog();
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

@@ -82,28 +82,31 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
             //Required field validation
             if (txtBoxFirstName.Text == "")
-                errorMessage += "-First name\n";
+                errorMessage += "First name is required\n";
 
             if (txtBoxLastName.Text == "")
-                errorMessage += "-Last name\n";
+                errorMessage += "Last name is required\n";
 
             if (comboBoxMaritalStatus.Text == "")
-                errorMessage += "-Marital status\n";
+                errorMessage += "Marital status is required\n";
 
             if (comboBoxAccountType.Text == "")
-                errorMessage += "-Account type\n";
+                errorMessage += "Account type is required\n";
 
             if (txtBoxContactNo.Text == "")
-                errorMessage += "-Contact Number\n";
+                errorMessage += "Contact Number is required\n";
 
             if (txtBoxContactPerson.Text == "")
-                errorMessage += "-Contact Person\n";
+                errorMessage += "Contact Person is required\n";
 
             if (txtBoxRelationToContactPerson.Text == "")
-                errorMessage += "-Relation to contact person\n";
+                errorMessage += "Relation to contact person is required\n";
 
             if (datePickerDateOfBirth.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
-                errorMessage += "-Date of Birth\n";
+                errorMessage += "Date of Birth is required\n";
+
+            if (datePickerDateOfBirth.Value.Year < 18)
+                errorMessage += "User must be atleast 18yrs old";
 
             //Email validation
             if (txtBoxEmail.Text != "") 
@@ -116,8 +119,6 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
             if (errorMessage != "")
             {
-                errorMessage = "Please fill up missing fields \n\n" + errorMessage;
-
                 MessageBox.Show(errorMessage, "Error on saving");
             }
             else
@@ -221,6 +222,26 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         private void btnTakePicture_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Webcam photo not yet available", "Error");
+        }
+
+        private void txtBoxContactPerson_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtBoxContactNo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxTelNo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxMobileNo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
         }
     }
 }

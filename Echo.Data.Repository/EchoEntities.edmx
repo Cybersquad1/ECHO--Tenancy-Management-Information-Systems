@@ -153,6 +153,7 @@
           <Property Name="PetName" Type="varchar" MaxLength="300" />
           <Property Name="StartOfOccupancy" Type="int" />
           <Property Name="EndOfOccupancy" Type="int" />
+          <Property Name="ChangePassword" Type="varchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="UnitProfile">
           <Key>
@@ -556,6 +557,7 @@
           <Property Name="StartOfOccupancy" Type="Int32" />
           <Property Name="EndOfOccupancy" Type="Int32" />
           <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
+          <Property Name="ChangePassword" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="UnitProfile">
           <Key>
@@ -868,6 +870,7 @@
           <EntitySetMapping Name="TenantProfile">
             <EntityTypeMapping TypeName="EchoModel.TenantProfile">
               <MappingFragment StoreEntitySet="TenantProfile">
+                <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
                 <ScalarProperty Name="EndOfOccupancy" ColumnName="EndOfOccupancy" />
                 <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
                 <ScalarProperty Name="PetName" ColumnName="PetName" />

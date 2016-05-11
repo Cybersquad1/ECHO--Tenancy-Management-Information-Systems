@@ -47,6 +47,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             newTenantProfile.MobileNo = txtBoxMobileNo.Text;
             newTenantProfile.TelephoneNo = txtBoxTelNo.Text;
             newTenantProfile.Email = txtBoxEmail.Text;
+            newTenantProfile.ChangePassword = "Y"; //must change password upon login
 
             //Fire Extinguisher
             if (checkBoxFireExtinguisher.Checked)
@@ -145,6 +146,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             if (datePickerDateOfBirth.Value >= DateTime.Now)
                 errorMessage += "Date of birth must no be equal or exceed from date today\n";
 
+            if (datePickerDateOfBirth.Value.Year < 18)
+                errorMessage += "Tenant must be atleast 18yrs old\n";
+
             if (comboBoxMaritalStatus.Text == "")
                 errorMessage += "Marital status is required\n";
 
@@ -197,6 +201,16 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         }
 
         private void txtBoxPetQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxTelNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             formUtilities.AllowsNumericOnly(sender, e);
         }

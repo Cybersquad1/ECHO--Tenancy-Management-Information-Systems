@@ -55,6 +55,7 @@ namespace Echo.Data.Repository
         public string PetName { get; set; }
         public Nullable<int> StartOfOccupancy { get; set; }
         public Nullable<int> EndOfOccupancy { get; set; }
+        public string ChangePassword { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TenantArchive> TenantArchive { get; set; }

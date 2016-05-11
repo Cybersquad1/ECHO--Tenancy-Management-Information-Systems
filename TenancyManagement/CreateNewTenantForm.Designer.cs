@@ -285,6 +285,7 @@
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxTelNo.TabIndex = 138;
+            this.txtBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelNo_KeyPress);
             // 
             // txtBoxMobileNo
             // 
@@ -294,6 +295,7 @@
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxMobileNo.TabIndex = 137;
+            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // label22
             // 

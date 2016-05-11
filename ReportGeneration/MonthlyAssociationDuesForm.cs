@@ -256,24 +256,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void checkBoxOverdue_CheckedChanged(object sender, EventArgs e)
         {
-            double total = 0, amountDue = double.Parse(txtBoxTotalAmountDue.Text);
-
-            double totalPenalty = amountDue * 0.04;
-
-            if (checkBoxOthers.Checked)
-            {
-                total = amountDue + totalPenalty;
-
-                penalty += totalPenalty;
-            }
-            else
-            {
-                total = amountDue - totalPenalty;
-
-                penalty -= totalPenalty;
-            }
-
-            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+            ComputeTotal();
         }
 
         private void txtBoxDiscount_KeyPress(object sender, KeyPressEventArgs e)
@@ -294,25 +277,41 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             formUtilities.AllowsNumericOnly(sender, e);
         }
 
-        private void txtBoxAssociationDues_TextChanged(object sender, EventArgs e)
+        private void ComputeTotal()
         {
+            double total = 0;
+
             if (txtBoxAssociationDues.Text != "")
             {
-                decimal total = 0;
-
-                total = decimal.Parse(txtBoxAssociationDues.Text) + decimal.Parse(txtBoxTotalAmountDue.Text);
-
-                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+                total += double.Parse(txtBoxAssociationDues.Text);
             }
+
+            if (txtBoxWaterBilling.Text != "")
+            {
+                total += double.Parse(txtBoxWaterBilling.Text);
+            }
+
+            if(checkBoxOverdue.Checked)
+            {
+                total += double.Parse(txtBoxAssociationDues.Text) * 0.04;
+            }
+
+            if(txtBoxOtherAmount.Text !="")
+            {
+                total += double.Parse(txtBoxOtherAmount.Text);
+            }
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+        }
+
+        private void txtBoxAssociationDues_TextChanged(object sender, EventArgs e)
+        {
+                ComputeTotal();
         }
 
         private void txtBoxOtherAmount_TextChanged(object sender, EventArgs e)
         {
-            if(txtBoxOtherAmount.Text != "")
-            {
-                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", decimal.Parse(txtBoxTotalAmountDue.Text) 
-                    + decimal.Parse(txtBoxOtherAmount.Text));
-            }
+                ComputeTotal();
         }
     } 
 }

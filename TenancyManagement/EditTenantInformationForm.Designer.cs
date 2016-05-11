@@ -70,6 +70,7 @@
             this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
@@ -98,7 +99,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
-            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.EditTenantPnl.SuspendLayout();
             this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -310,6 +310,7 @@
             this.btnGeneratePassword.TabIndex = 40;
             this.btnGeneratePassword.Text = "Generate New";
             this.btnGeneratePassword.UseVisualStyleBackColor = true;
+            this.btnGeneratePassword.Click += new System.EventHandler(this.btnGeneratePassword_Click);
             // 
             // label2
             // 
@@ -586,6 +587,20 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
             // 
+            // txtBoxNatureOfOccupancy
+            // 
+            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
+            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
+            "Tenant",
+            "Unit Owner"});
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(251, 171);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
+            this.txtBoxNatureOfOccupancy.TabIndex = 150;
+            // 
             // comboBoxMaritalStatus
             // 
             this.comboBoxMaritalStatus.Enabled = false;
@@ -643,6 +658,7 @@
             this.txtBoxTelephoneNo.Name = "txtBoxTelephoneNo";
             this.txtBoxTelephoneNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxTelephoneNo.TabIndex = 138;
+            this.txtBoxTelephoneNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelephoneNo_KeyPress);
             // 
             // txtBoxMobileNo
             // 
@@ -652,6 +668,7 @@
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxMobileNo.TabIndex = 137;
+            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // label22
             // 
@@ -879,20 +896,6 @@
             this.Go.TabIndex = 11;
             this.Go.UseVisualStyleBackColor = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
-            // 
-            // txtBoxNatureOfOccupancy
-            // 
-            this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtBoxNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNatureOfOccupancy.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxNatureOfOccupancy.FormattingEnabled = true;
-            this.txtBoxNatureOfOccupancy.Items.AddRange(new object[] {
-            "Tenant",
-            "Unit Owner"});
-            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(251, 171);
-            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
-            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
-            this.txtBoxNatureOfOccupancy.TabIndex = 150;
             // 
             // EditTenantInformationForm
             // 

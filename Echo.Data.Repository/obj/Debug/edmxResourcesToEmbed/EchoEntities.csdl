@@ -182,6 +182,7 @@
     <Property Name="StartOfOccupancy" Type="Int32" />
     <Property Name="EndOfOccupancy" Type="Int32" />
     <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
+    <Property Name="ChangePassword" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>

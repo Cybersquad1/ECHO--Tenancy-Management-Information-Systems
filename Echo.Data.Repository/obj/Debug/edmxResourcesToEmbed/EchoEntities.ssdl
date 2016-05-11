@@ -148,6 +148,7 @@
     <Property Name="PetName" Type="varchar" MaxLength="300" />
     <Property Name="StartOfOccupancy" Type="int" />
     <Property Name="EndOfOccupancy" Type="int" />
+    <Property Name="ChangePassword" Type="varchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="UnitProfile">
     <Key>

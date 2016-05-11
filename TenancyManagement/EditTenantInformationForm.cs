@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
 using System.IO;
+using Tenancy_Management_Information_Systems.Utilities;
 
 namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
@@ -18,6 +19,12 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         TenantViewModel vm;
 
         Guid tenantID = Guid.Empty;
+
+        string IfChangePassword = "N";
+
+        FormUtilities formUtilities = new FormUtilities();
+
+        UserUtilities userUtilities = new UserUtilities();
 
         public EditTenantInformationForm()
         {
@@ -266,41 +273,80 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         {
             try
             {
-                using (var db = new EchoEntities())
+                string errorMessage = "";
+
+                if (txtBoxFirstName.Text == "")
+                    errorMessage += "Firstname is required\n";
+
+                if (txtBoxLastName.Text == "")
+                    errorMessage += "Lastname is required\n";
+
+                if (datePickerDateOfBirth.Value >= DateTime.Now)
+                    errorMessage += "Date of birth must no be equal or exceed from date today\n";
+
+                if (datePickerDateOfBirth.Value.Year < 18)
+                    errorMessage += "Tenant must be atleast 18yrs old\n";
+
+                if (comboBoxMaritalStatus.Text == "")
+                    errorMessage += "Marital status is required\n";
+
+                if (errorMessage == "")
                 {
-                    var editTenant = db.TenantProfile.FirstOrDefault(r => r.ID == tenantID);
+                    using (var db = new EchoEntities())
+                    {
+                        var editTenant = db.TenantProfile.FirstOrDefault(r => r.ID == tenantID);
 
-                    //Personal Information
-                    editTenant.FirstName = txtBoxFirstName.Text;
-                    editTenant.MiddleName = txtBoxMiddleName.Text;
-                    editTenant.LastName = txtBoxLastName.Text;
-                    editTenant.DateOfBirth = datePickerDateOfBirth.Value;
-                    editTenant.NatureOfOccupancy = txtBoxNatureOfOccupancy.Text;
-                    editTenant.HomeAddress = txtBoxHomeAddress.Text;
-                    editTenant.ProvincialAddress = txtBoxProvincialAddress.Text;
-                    editTenant.MobileNo = txtBoxMobileNo.Text;
-                    editTenant.TelephoneNo = txtBoxTelephoneNo.Text;
-                    editTenant.Email = txtBoxEmail.Text;
+                        //Personal Information
+                        editTenant.FirstName = txtBoxFirstName.Text;
+                        editTenant.MiddleName = txtBoxMiddleName.Text;
+                        editTenant.LastName = txtBoxLastName.Text;
+                        editTenant.DateOfBirth = datePickerDateOfBirth.Value;
+                        editTenant.NatureOfOccupancy = txtBoxNatureOfOccupancy.Text;
+                        editTenant.HomeAddress = txtBoxHomeAddress.Text;
+                        editTenant.ProvincialAddress = txtBoxProvincialAddress.Text;
+                        editTenant.MobileNo = txtBoxMobileNo.Text;
+                        editTenant.TelephoneNo = txtBoxTelephoneNo.Text;
+                        editTenant.Email = txtBoxEmail.Text;
 
-                    //Other Information
-                    editTenant.OtherName1 = txtBoxOtherName1.Text;
-                    editTenant.OtherName2 = txtBoxOtherName2.Text;
-                    editTenant.OtherName3 = txtBoxOtherName3.Text;
-                    editTenant.PetName = txtBoxPetName.Text;
-                    editTenant.PetType = txtBoxPetType.Text;
+                        //Other Information
+                        editTenant.OtherName1 = txtBoxOtherName1.Text;
+                        editTenant.OtherName2 = txtBoxOtherName2.Text;
+                        editTenant.OtherName3 = txtBoxOtherName3.Text;
+                        editTenant.PetName = txtBoxPetName.Text;
+                        editTenant.PetType = txtBoxPetType.Text;
 
-                    //will change password if it generates new one
-                    if (txtBoxPassword.Text != "")
-                        editTenant.Password = txtBoxPassword.Text;
+                        //will change password if it generates new one
+                        if (txtBoxPassword.Text != "")
+                            editTenant.Password = txtBoxPassword.Text;
 
-                    db.Entry(editTenant).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
+                        db.Entry(editTenant).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
                 }
+                else
+                    MessageBox.Show(errorMessage, "Error");              
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Error");
             }
+        }
+
+        private void btnGeneratePassword_Click(object sender, EventArgs e)
+        {
+            IfChangePassword = "Y";
+
+            txtBoxPassword.Text = userUtilities.GeneratePassword(8);
+        }
+
+        private void txtBoxTelephoneNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
         }
     }
 }

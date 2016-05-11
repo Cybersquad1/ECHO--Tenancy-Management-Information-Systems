@@ -32,6 +32,9 @@
             this.NewUserPnl = new System.Windows.Forms.Panel();
             this.CreateNewUserBox = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
             this.lblRelationToContactPerson = new System.Windows.Forms.Label();
             this.lblContactNo = new System.Windows.Forms.Label();
             this.lblContactPerson = new System.Windows.Forms.Label();
@@ -77,9 +80,6 @@
             this.txtImgLink = new System.Windows.Forms.TextBox();
             this.btnTakePicture = new System.Windows.Forms.Button();
             this.btnAddPicture = new System.Windows.Forms.Button();
-            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
-            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
-            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
             this.NewUserPnl.SuspendLayout();
             this.CreateNewUserBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -137,6 +137,39 @@
             this.groupBox3.Size = new System.Drawing.Size(939, 122);
             this.groupBox3.TabIndex = 108;
             this.groupBox3.TabStop = false;
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtBoxContactNo.Location = new System.Drawing.Point(637, 52);
+            this.txtBoxContactNo.MaxLength = 15;
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxContactNo.TabIndex = 144;
+            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress_1);
+            // 
+            // txtBoxTelNo
+            // 
+            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxTelNo.Location = new System.Drawing.Point(172, 57);
+            this.txtBoxTelNo.MaxLength = 15;
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(214, 20);
+            this.txtBoxTelNo.TabIndex = 143;
+            this.txtBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelNo_KeyPress_1);
+            // 
+            // txtBoxMobileNo
+            // 
+            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(172, 31);
+            this.txtBoxMobileNo.MaxLength = 15;
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(214, 20);
+            this.txtBoxMobileNo.TabIndex = 142;
+            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress_1);
             // 
             // lblRelationToContactPerson
             // 
@@ -268,6 +301,7 @@
             this.txtBoxContactPerson.Size = new System.Drawing.Size(237, 20);
             this.txtBoxContactPerson.TabIndex = 131;
             this.txtBoxContactPerson.TextChanged += new System.EventHandler(this.txtBoxContactPerson_TextChanged);
+            this.txtBoxContactPerson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactPerson_KeyPress);
             // 
             // groupBox2
             // 
@@ -671,36 +705,6 @@
             this.btnAddPicture.Text = "Add Picture";
             this.btnAddPicture.UseVisualStyleBackColor = true;
             this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
-            // 
-            // txtBoxMobileNo
-            // 
-            this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxMobileNo.Location = new System.Drawing.Point(172, 31);
-            this.txtBoxMobileNo.MaxLength = 15;
-            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
-            this.txtBoxMobileNo.Size = new System.Drawing.Size(214, 20);
-            this.txtBoxMobileNo.TabIndex = 142;
-            // 
-            // txtBoxTelNo
-            // 
-            this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBoxTelNo.Location = new System.Drawing.Point(172, 57);
-            this.txtBoxTelNo.MaxLength = 15;
-            this.txtBoxTelNo.Name = "txtBoxTelNo";
-            this.txtBoxTelNo.Size = new System.Drawing.Size(214, 20);
-            this.txtBoxTelNo.TabIndex = 143;
-            // 
-            // txtBoxContactNo
-            // 
-            this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtBoxContactNo.Location = new System.Drawing.Point(637, 52);
-            this.txtBoxContactNo.MaxLength = 15;
-            this.txtBoxContactNo.Name = "txtBoxContactNo";
-            this.txtBoxContactNo.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxContactNo.TabIndex = 144;
             // 
             // CreateNewUserForm
             // 

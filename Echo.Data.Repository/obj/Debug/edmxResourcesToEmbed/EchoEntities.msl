@@ -88,6 +88,7 @@
     <EntitySetMapping Name="TenantProfile">
       <EntityTypeMapping TypeName="EchoModel.TenantProfile">
         <MappingFragment StoreEntitySet="TenantProfile">
+          <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
           <ScalarProperty Name="EndOfOccupancy" ColumnName="EndOfOccupancy" />
           <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
           <ScalarProperty Name="PetName" ColumnName="PetName" />
