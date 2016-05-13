@@ -325,6 +325,7 @@
             // 
             this.txtBoxCurrentReading.BackColor = System.Drawing.SystemColors.Window;
             this.txtBoxCurrentReading.Location = new System.Drawing.Point(134, 106);
+            this.txtBoxCurrentReading.MaxLength = 100;
             this.txtBoxCurrentReading.Name = "txtBoxCurrentReading";
             this.txtBoxCurrentReading.Size = new System.Drawing.Size(193, 20);
             this.txtBoxCurrentReading.TabIndex = 29;

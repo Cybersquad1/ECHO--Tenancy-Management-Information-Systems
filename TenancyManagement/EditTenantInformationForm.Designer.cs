@@ -444,6 +444,7 @@
             this.txtBoxPetType.BackColor = System.Drawing.Color.White;
             this.txtBoxPetType.Enabled = false;
             this.txtBoxPetType.Location = new System.Drawing.Point(580, 60);
+            this.txtBoxPetType.MaxLength = 100;
             this.txtBoxPetType.Name = "txtBoxPetType";
             this.txtBoxPetType.Size = new System.Drawing.Size(164, 20);
             this.txtBoxPetType.TabIndex = 153;
@@ -464,6 +465,7 @@
             this.txtBoxPetName.BackColor = System.Drawing.Color.White;
             this.txtBoxPetName.Enabled = false;
             this.txtBoxPetName.Location = new System.Drawing.Point(580, 37);
+            this.txtBoxPetName.MaxLength = 100;
             this.txtBoxPetName.Name = "txtBoxPetName";
             this.txtBoxPetName.Size = new System.Drawing.Size(164, 20);
             this.txtBoxPetName.TabIndex = 151;
@@ -495,6 +497,7 @@
             this.txtBoxOtherName3.BackColor = System.Drawing.Color.White;
             this.txtBoxOtherName3.Enabled = false;
             this.txtBoxOtherName3.Location = new System.Drawing.Point(319, 37);
+            this.txtBoxOtherName3.MaxLength = 100;
             this.txtBoxOtherName3.Name = "txtBoxOtherName3";
             this.txtBoxOtherName3.Size = new System.Drawing.Size(183, 20);
             this.txtBoxOtherName3.TabIndex = 146;
@@ -515,6 +518,7 @@
             this.txtBoxOtherName2.BackColor = System.Drawing.Color.White;
             this.txtBoxOtherName2.Enabled = false;
             this.txtBoxOtherName2.Location = new System.Drawing.Point(76, 60);
+            this.txtBoxOtherName2.MaxLength = 100;
             this.txtBoxOtherName2.Name = "txtBoxOtherName2";
             this.txtBoxOtherName2.Size = new System.Drawing.Size(181, 20);
             this.txtBoxOtherName2.TabIndex = 144;
@@ -535,6 +539,7 @@
             this.txtBoxOtherName1.BackColor = System.Drawing.Color.White;
             this.txtBoxOtherName1.Enabled = false;
             this.txtBoxOtherName1.Location = new System.Drawing.Point(76, 37);
+            this.txtBoxOtherName1.MaxLength = 100;
             this.txtBoxOtherName1.Name = "txtBoxOtherName1";
             this.txtBoxOtherName1.Size = new System.Drawing.Size(181, 20);
             this.txtBoxOtherName1.TabIndex = 142;
@@ -636,6 +641,7 @@
             this.txtBoxProvincialAddress.BackColor = System.Drawing.Color.White;
             this.txtBoxProvincialAddress.Enabled = false;
             this.txtBoxProvincialAddress.Location = new System.Drawing.Point(484, 90);
+            this.txtBoxProvincialAddress.MaxLength = 200;
             this.txtBoxProvincialAddress.Multiline = true;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
             this.txtBoxProvincialAddress.Size = new System.Drawing.Size(390, 34);
@@ -646,6 +652,7 @@
             this.txtBoxEmail.BackColor = System.Drawing.Color.White;
             this.txtBoxEmail.Enabled = false;
             this.txtBoxEmail.Location = new System.Drawing.Point(610, 171);
+            this.txtBoxEmail.MaxLength = 100;
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(264, 20);
             this.txtBoxEmail.TabIndex = 139;
@@ -655,6 +662,7 @@
             this.txtBoxTelephoneNo.BackColor = System.Drawing.Color.White;
             this.txtBoxTelephoneNo.Enabled = false;
             this.txtBoxTelephoneNo.Location = new System.Drawing.Point(610, 149);
+            this.txtBoxTelephoneNo.MaxLength = 10;
             this.txtBoxTelephoneNo.Name = "txtBoxTelephoneNo";
             this.txtBoxTelephoneNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxTelephoneNo.TabIndex = 138;
@@ -665,6 +673,7 @@
             this.txtBoxMobileNo.BackColor = System.Drawing.Color.White;
             this.txtBoxMobileNo.Enabled = false;
             this.txtBoxMobileNo.Location = new System.Drawing.Point(610, 127);
+            this.txtBoxMobileNo.MaxLength = 12;
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
             this.txtBoxMobileNo.TabIndex = 137;
@@ -697,6 +706,7 @@
             this.txtBoxHomeAddress.BackColor = System.Drawing.Color.White;
             this.txtBoxHomeAddress.Enabled = false;
             this.txtBoxHomeAddress.Location = new System.Drawing.Point(484, 36);
+            this.txtBoxHomeAddress.MaxLength = 200;
             this.txtBoxHomeAddress.Multiline = true;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
             this.txtBoxHomeAddress.Size = new System.Drawing.Size(390, 34);
@@ -718,6 +728,7 @@
             this.txtBoxUnitOwner.BackColor = System.Drawing.Color.White;
             this.txtBoxUnitOwner.Enabled = false;
             this.txtBoxUnitOwner.Location = new System.Drawing.Point(218, 146);
+            this.txtBoxUnitOwner.MaxLength = 200;
             this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
             this.txtBoxUnitOwner.Size = new System.Drawing.Size(215, 20);
             this.txtBoxUnitOwner.TabIndex = 133;
@@ -727,6 +738,7 @@
             this.txtBoxUnitNo.BackColor = System.Drawing.Color.White;
             this.txtBoxUnitNo.Enabled = false;
             this.txtBoxUnitNo.Location = new System.Drawing.Point(218, 124);
+            this.txtBoxUnitNo.MaxLength = 5;
             this.txtBoxUnitNo.Name = "txtBoxUnitNo";
             this.txtBoxUnitNo.Size = new System.Drawing.Size(215, 20);
             this.txtBoxUnitNo.TabIndex = 132;
@@ -758,6 +770,7 @@
             this.txtBoxLastName.BackColor = System.Drawing.Color.White;
             this.txtBoxLastName.Enabled = false;
             this.txtBoxLastName.Location = new System.Drawing.Point(218, 58);
+            this.txtBoxLastName.MaxLength = 100;
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxLastName.TabIndex = 129;
@@ -767,6 +780,7 @@
             this.txtBoxMiddleName.BackColor = System.Drawing.Color.White;
             this.txtBoxMiddleName.Enabled = false;
             this.txtBoxMiddleName.Location = new System.Drawing.Point(218, 36);
+            this.txtBoxMiddleName.MaxLength = 100;
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxMiddleName.TabIndex = 128;
@@ -776,6 +790,7 @@
             this.txtBoxFirstName.BackColor = System.Drawing.Color.White;
             this.txtBoxFirstName.Enabled = false;
             this.txtBoxFirstName.Location = new System.Drawing.Point(218, 14);
+            this.txtBoxFirstName.MaxLength = 100;
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxFirstName.TabIndex = 127;

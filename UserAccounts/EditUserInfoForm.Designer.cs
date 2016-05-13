@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_User_Info));
             this.EditUserPnl = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDeactivate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -120,6 +120,17 @@
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Edit User Information";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label1.Location = new System.Drawing.Point(726, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "Enter Name to Search";
             // 
             // btnDeactivate
             // 
@@ -326,6 +337,7 @@
             this.txtBoxContactNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContactNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxContactNo.Location = new System.Drawing.Point(613, 63);
+            this.txtBoxContactNo.MaxLength = 12;
             this.txtBoxContactNo.Name = "txtBoxContactNo";
             this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
             this.txtBoxContactNo.TabIndex = 130;
@@ -336,6 +348,7 @@
             this.txtBoxTelNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTelNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxTelNo.Location = new System.Drawing.Point(152, 62);
+            this.txtBoxTelNo.MaxLength = 10;
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(230, 20);
             this.txtBoxTelNo.TabIndex = 126;
@@ -346,6 +359,7 @@
             this.txtBoxMobileNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMobileNo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxMobileNo.Location = new System.Drawing.Point(152, 38);
+            this.txtBoxMobileNo.MaxLength = 12;
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(230, 20);
             this.txtBoxMobileNo.TabIndex = 129;
@@ -411,6 +425,7 @@
             this.txtBoxEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxEmail.Location = new System.Drawing.Point(152, 86);
+            this.txtBoxEmail.MaxLength = 100;
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(230, 20);
             this.txtBoxEmail.TabIndex = 125;
@@ -432,6 +447,7 @@
             this.txtBoxRelationToContactPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxRelationToContactPerson.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxRelationToContactPerson.Location = new System.Drawing.Point(613, 89);
+            this.txtBoxRelationToContactPerson.MaxLength = 100;
             this.txtBoxRelationToContactPerson.Name = "txtBoxRelationToContactPerson";
             this.txtBoxRelationToContactPerson.Size = new System.Drawing.Size(247, 20);
             this.txtBoxRelationToContactPerson.TabIndex = 12;
@@ -442,6 +458,7 @@
             this.txtBoxContactPerson.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContactPerson.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBoxContactPerson.Location = new System.Drawing.Point(613, 37);
+            this.txtBoxContactPerson.MaxLength = 100;
             this.txtBoxContactPerson.Name = "txtBoxContactPerson";
             this.txtBoxContactPerson.Size = new System.Drawing.Size(247, 20);
             this.txtBoxContactPerson.TabIndex = 10;
@@ -609,8 +626,9 @@
             this.txtBoxProvincialAddress.Enabled = false;
             this.txtBoxProvincialAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProvincialAddress.Location = new System.Drawing.Point(123, 169);
+            this.txtBoxProvincialAddress.MaxLength = 250;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
-            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(578, 20);
             this.txtBoxProvincialAddress.TabIndex = 14;
             // 
             // txtBoxHomeAddress
@@ -618,8 +636,9 @@
             this.txtBoxHomeAddress.Enabled = false;
             this.txtBoxHomeAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxHomeAddress.Location = new System.Drawing.Point(123, 143);
+            this.txtBoxHomeAddress.MaxLength = 250;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
-            this.txtBoxHomeAddress.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(578, 20);
             this.txtBoxHomeAddress.TabIndex = 13;
             // 
             // comboBoxMaritalStatus
@@ -657,6 +676,7 @@
             this.txtBoxLastName.Enabled = false;
             this.txtBoxLastName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLastName.Location = new System.Drawing.Point(123, 67);
+            this.txtBoxLastName.MaxLength = 100;
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxLastName.TabIndex = 5;
@@ -666,6 +686,7 @@
             this.txtBoxMiddleName.Enabled = false;
             this.txtBoxMiddleName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMiddleName.Location = new System.Drawing.Point(123, 42);
+            this.txtBoxMiddleName.MaxLength = 100;
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxMiddleName.TabIndex = 4;
@@ -675,6 +696,7 @@
             this.txtBoxFirstName.Enabled = false;
             this.txtBoxFirstName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxFirstName.Location = new System.Drawing.Point(123, 18);
+            this.txtBoxFirstName.MaxLength = 100;
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxFirstName.TabIndex = 3;
@@ -690,17 +712,6 @@
             this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUser.TabIndex = 126;
             this.pictureBoxUser.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(726, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
-            this.label1.TabIndex = 121;
-            this.label1.Text = "Enter Name to Search";
             // 
             // Edit_User_Info
             // 

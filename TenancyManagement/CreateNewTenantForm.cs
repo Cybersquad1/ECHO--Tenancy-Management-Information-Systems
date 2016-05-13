@@ -197,6 +197,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             UserUtilities userUtilities = new UserUtilities();
 
             txtBoxUsername.Text = userUtilities.GenerateUsername(txtBoxFirstname.Text, txtBoxLastname.Text, txtBoxMiddleName.Text);
+
             txtBoxPassword.Text = userUtilities.GeneratePassword(10);
         }
 
