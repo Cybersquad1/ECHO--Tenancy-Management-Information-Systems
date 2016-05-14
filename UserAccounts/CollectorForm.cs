@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Echo.Data.Repository.ViewModel;
+using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.UserAccounts
 {
@@ -15,6 +17,20 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         public CollectorForm()
         {
             InitializeComponent();
+
+            GetUnitDropDown();
+        }
+
+        private void GetUnitDropDown()
+        {
+            cmbBoxUnitNo.Items.Clear();
+
+            var units = new UnitViewModel().GetAll();
+
+            units.ForEach(item =>
+            {
+                cmbBoxUnitNo.Items.Add(item.UnitNumber);
+            });
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,6 +70,52 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUserCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbBoxUnitNo.Text != "")
+            {
+                var unitInformation = new UnitViewModel().GetSelected(cmbBoxUnitNo.Text);
+                
+                //Get Tenant Information
+                if (unitInformation.Tenant != null)
+                {
+                    var tenantInfo = new TenantViewModel().GetSelectedTenant(unitInformation.Tenant);
+
+                    if (tenantInfo != null)
+                        txtBoxTenant.Text = tenantInfo.FirstName + " " + tenantInfo.LastName;
+                    else
+                        txtBoxTenant.Text = "N/A";
+                }
+                else
+                    txtBoxTenant.Text = "N/A";
+
+                if (unitInformation.Owner != null)
+                {
+                    var ownerInfo = new TenantViewModel().GetSelectedTenant(unitInformation.Owner);
+
+                    if (ownerInfo != null)
+                        txtBoxUnitOwner.Text = ownerInfo.FirstName + " " + ownerInfo.LastName;
+                    else
+                        txtBoxUnitOwner.Text = "N/A";
+                }
+                else
+                    txtBoxUnitOwner.Text = "N/A";
+
+                //Get Particulars
+                var particulars = new MonthlyAssociationDueViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
+
+                particulars.ForEach(item =>
+                {
+
+                });
+            }
         }
     }
 }

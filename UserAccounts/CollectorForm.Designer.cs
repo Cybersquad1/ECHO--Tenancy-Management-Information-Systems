@@ -69,6 +69,7 @@
             this.lstBoxParticulars = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbBoxUnitNo = new System.Windows.Forms.ComboBox();
             this.txtBoxTenant = new System.Windows.Forms.TextBox();
@@ -76,7 +77,6 @@
             this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.collectorPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -340,6 +340,7 @@
             this.btnUserCreate.TabIndex = 119;
             this.btnUserCreate.Text = "    Save";
             this.btnUserCreate.UseVisualStyleBackColor = true;
+            this.btnUserCreate.Click += new System.EventHandler(this.btnUserCreate_Click);
             // 
             // btnUserCancel
             // 
@@ -452,7 +453,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1,
             this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(699, 373);
+            this.shapeContainer1.Size = new System.Drawing.Size(556, 373);
             this.shapeContainer1.TabIndex = 105;
             this.shapeContainer1.TabStop = false;
             // 
@@ -534,6 +535,12 @@
             this.columnHeader7.Text = "Due Date";
             this.columnHeader7.Width = 135;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Amount";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader1.Width = 110;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cmbBoxUnitNo);
@@ -558,6 +565,7 @@
             this.cmbBoxUnitNo.Name = "cmbBoxUnitNo";
             this.cmbBoxUnitNo.Size = new System.Drawing.Size(239, 22);
             this.cmbBoxUnitNo.TabIndex = 6;
+            this.cmbBoxUnitNo.SelectedIndexChanged += new System.EventHandler(this.cmbBoxUnitNo_SelectedIndexChanged);
             // 
             // txtBoxTenant
             // 
@@ -604,12 +612,6 @@
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Unit Number:";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Amount";
-            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader1.Width = 110;
             // 
             // CollectorForm
             // 
