@@ -11,6 +11,7 @@ using Echo.Data.Repository;
 using Echo.Data.Repository.ViewModel;
 using Tenancy_Management_Information_Systems.Utilities;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
@@ -19,6 +20,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         UserViewModel vm;
 
         Guid userID = Guid.Empty;
+
+        FormUtilities formUtilities = new FormUtilities();
 
         public Edit_User_Info()
         {
@@ -165,6 +168,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+
             string errorMessage = "";
 
             if (txtBoxFirstName.Text == "")
@@ -180,6 +185,17 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                 == DateTime.Now.ToShortDateString())
                 errorMessage += "Date of birth is required\n";
 
+            if(DateTime.Now.Year - datePickerDateOfBirth.Value.Year < 18)
+                errorMessage += "User must be atleast 18yrs old";
+
+            //Email validation
+            if (txtBoxEmail.Text != "")
+            {
+                if (!EmailAddress.IsMatch(txtBoxEmail.Text))
+                {
+                    errorMessage += "-Invalid Email\n";
+                }
+            }
 
             if (errorMessage != "")
             {
@@ -194,6 +210,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                         try
                         {
                             Save();
+
+                            MessageBox.Show("Successfully updated " + txtBoxUsername.Text);
                         }
                         catch
                         {
@@ -272,6 +290,26 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             {
                 pictureBoxUser.Image = Image.FromFile(openFileDialog.FileName);
             }
+        }
+
+        private void txtBoxMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxTelNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxContactNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxContactNo_TextChanged(object sender, EventArgs e)
+        {
+ 
         }
     }
 }

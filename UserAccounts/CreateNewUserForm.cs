@@ -105,7 +105,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             if (datePickerDateOfBirth.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
                 errorMessage += "Date of Birth is required\n";
 
-            if (datePickerDateOfBirth.Value.Year < 18)
+            if (DateTime.Now.Year - datePickerDateOfBirth.Value.Year < 18)
                 errorMessage += "User must be atleast 18yrs old";
 
             //Email validation
@@ -123,14 +123,19 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             }
             else
             {
-                UserProfile newUser = SetUserValues();
+                DialogResult confirmation = MessageBox.Show("Are you sure you want to save? \n Y/N", "Confirmation", MessageBoxButtons.YesNo);
 
-                UserViewModel vm = new UserViewModel();
+                if (confirmation == DialogResult.Yes)
+                {
+                    UserProfile newUser = SetUserValues();
 
-                if (vm.AddUser(newUser))
-                    MessageBox.Show("Successfully saved");
-                else
-                    MessageBox.Show("Cannot save new user", "Error on saving");
+                    UserViewModel vm = new UserViewModel();
+
+                    if (vm.AddUser(newUser))
+                        MessageBox.Show("Successfully saved");
+                    else
+                        MessageBox.Show("Cannot save new user", "Error on saving");
+                }
             }
         }
 

@@ -341,6 +341,8 @@
             this.txtBoxContactNo.Name = "txtBoxContactNo";
             this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
             this.txtBoxContactNo.TabIndex = 130;
+            this.txtBoxContactNo.TextChanged += new System.EventHandler(this.txtBoxContactNo_TextChanged);
+            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
             // 
             // txtBoxTelNo
             // 
@@ -352,6 +354,7 @@
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(230, 20);
             this.txtBoxTelNo.TabIndex = 126;
+            this.txtBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelNo_KeyPress);
             // 
             // txtBoxMobileNo
             // 
@@ -363,6 +366,7 @@
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(230, 20);
             this.txtBoxMobileNo.TabIndex = 129;
+            this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // label10
             // 
@@ -462,6 +466,7 @@
             this.txtBoxContactPerson.Name = "txtBoxContactPerson";
             this.txtBoxContactPerson.Size = new System.Drawing.Size(247, 20);
             this.txtBoxContactPerson.TabIndex = 10;
+            
             // 
             // groupBox6
             // 
