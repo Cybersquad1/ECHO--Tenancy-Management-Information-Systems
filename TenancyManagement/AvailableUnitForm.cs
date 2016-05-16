@@ -164,7 +164,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             {
                 var tenant = new TenantViewModel().GetSelectedTenant(selectedUnit.Tenant);
 
-                txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                if (tenant != null)
+                    txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                else
+                    txtBoxTenant.Text = "N/A";
             }
             else
             {
@@ -175,7 +178,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             {
                 var owner = new TenantViewModel().GetSelectedTenant(selectedUnit.Owner);
 
-                txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+                if (owner != null)
+                    txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+                else
+                    txtBoxUnitOwner.Text = "N/A";
             }
             else
             {
