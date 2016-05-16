@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
+using Tenancy_Management_Information_Systems.ReportForms;
 
 namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
@@ -98,7 +99,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             }
         }
 
-        private void GetTenants(string unitNo = "", int? start = null, int? end = null)
+        private void GetTenants(string unitNo = "", DateTime? start = null, DateTime? end = null)
         {
             listViewTenants.Items.Clear(); //Clear data in list view
 
@@ -118,6 +119,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             tenants.ToList().ForEach(item =>
             {
                 ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                if (item.Status == "Y")
+                    lvi.SubItems.Add("Active");
+                else
+                    lvi.SubItems.Add("Deactivated");
 
                 if (item.UnitNumber != "" && item.UnitNumber != null)//if it has unit rented
                 {
@@ -161,19 +167,19 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             //Search Tenant
             if (txtBoxSearchUnitNo.Text != "" && cmbBoxSearchEnd.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text, int.Parse(cmbBoxSearchStart.Text), int.Parse(cmbBoxSearchEnd.Text));
+                GetTenants(txtBoxSearchUnitNo.Text, DateTime.Parse(cmbBoxSearchStart.Text), DateTime.Parse(cmbBoxSearchEnd.Text));
             }
             else if (txtBoxSearchUnitNo.Text != "" && cmbBoxSearchEnd.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text, null, int.Parse(cmbBoxSearchEnd.Text));
+                GetTenants(txtBoxSearchUnitNo.Text, null, DateTime.Parse(cmbBoxSearchEnd.Text));
             }
             else if(txtBoxSearchUnitNo.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text,int.Parse(cmbBoxSearchStart.Text), null);
+                GetTenants(txtBoxSearchUnitNo.Text, DateTime.Parse(cmbBoxSearchStart.Text), null);
             }
             else if(cmbBoxSearchEnd.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants("", int.Parse(cmbBoxSearchStart.Text), int.Parse(cmbBoxSearchEnd.Text));
+                GetTenants("", DateTime.Parse(cmbBoxSearchStart.Text), DateTime.Parse(cmbBoxSearchEnd.Text));
             }
             else if(txtBoxSearchUnitNo.Text != "")
             {
@@ -181,11 +187,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             }
             else if(cmbBoxSearchStart.Text != "")
             {
-                GetTenants("", int.Parse(cmbBoxSearchStart.Text), null);
+                GetTenants("", DateTime.Parse(cmbBoxSearchStart.Text), null);
             }
             else if(cmbBoxSearchEnd.Text != "")
             {
-                GetTenants("", null, int.Parse(cmbBoxSearchEnd.Text));
+                GetTenants("", null, DateTime.Parse(cmbBoxSearchEnd.Text));
             }
             else
             {
@@ -207,6 +213,12 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             var tenantID = Guid.Parse(listViewTenants.SelectedItems[0].SubItems[0].Text); //Get TenantID from List then converted to GUID
 
             GetSelected(tenantID);
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            TenancyDatabaseParameter form = new TenancyDatabaseParameter();
+            form.ShowDialog();
         }
     }
 }

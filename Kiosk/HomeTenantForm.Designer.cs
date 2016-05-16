@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuPnl = new System.Windows.Forms.Panel();
             this.RequestButton = new System.Windows.Forms.Button();
             this.ReservationButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuPnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -170,11 +172,11 @@
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(1204, 9);
+            this.lblTime.Location = new System.Drawing.Point(1174, 9);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(52, 16);
+            this.lblTime.Size = new System.Drawing.Size(82, 16);
             this.lblTime.TabIndex = 70;
-            this.lblTime.Text = "<time>";
+            this.lblTime.Text = "10:45:31 PM";
             // 
             // panel1
             // 
@@ -267,6 +269,10 @@
             this.mainPanel.Size = new System.Drawing.Size(1175, 571);
             this.mainPanel.TabIndex = 73;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // HomeTenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +323,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

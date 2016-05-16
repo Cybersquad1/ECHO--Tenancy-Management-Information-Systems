@@ -19,9 +19,13 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
 
         UnitProfile unitProfile;
 
-        public RequestForm()
+        public RequestForm(string _unitNo)
         {
             InitializeComponent();
+
+            txtBoxUnitNo.Text = _unitNo;
+
+            GetUnitProfile(); 
         }
 
         private void GetUnitProfile()
@@ -99,7 +103,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
 
         private void txtBoxUnitNo_Leave(object sender, EventArgs e)
         {
-            GetUnitProfile();
+            
         }
 
         private void txtBoxUnitOwner_KeyPress(object sender, KeyPressEventArgs e)
@@ -109,10 +113,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
 
         private void txtBoxUnitOwner_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                GetUnitProfile(); 
-            }
+            
         }
 
         private void btnOkay_Click(object sender, EventArgs e)
@@ -182,6 +183,11 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
             }
             else
                 MessageBox.Show(errorMessage, "Error on saving");
+        }
+
+        private void txtBoxUnitNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

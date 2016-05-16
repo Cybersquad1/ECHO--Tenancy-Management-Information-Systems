@@ -99,6 +99,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditTenantPnl.SuspendLayout();
             this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -226,6 +227,7 @@
             // 
             this.listViewTenants.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.listViewTenants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
             this.columnHeader1,
             this.columnHeader5,
             this.columnHeader6,
@@ -244,6 +246,7 @@
             // 
             // columnHeader1
             // 
+            this.columnHeader1.DisplayIndex = 0;
             this.columnHeader1.Text = "ID";
             this.columnHeader1.Width = 0;
             // 
@@ -912,6 +915,12 @@
             this.Go.UseVisualStyleBackColor = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 1;
+            this.columnHeader2.Text = "Status";
+            this.columnHeader2.Width = 114;
+            // 
             // EditTenantInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1017,5 +1026,6 @@
         private System.Windows.Forms.Button btnGeneratePassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox txtBoxNatureOfOccupancy;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

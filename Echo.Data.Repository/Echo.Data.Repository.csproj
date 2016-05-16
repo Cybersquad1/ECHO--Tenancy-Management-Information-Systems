@@ -51,6 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EchoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EchoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EchoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EchoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EchoEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +95,11 @@
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Request.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
@@ -87,6 +107,9 @@
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TenancyDatabaseByOccupancyYear_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TenantArchive.cs">
@@ -106,6 +129,7 @@
     <Compile Include="ViewModel\MonthlyAssociationDueViewModel.cs" />
     <Compile Include="ViewModel\PaymentHistoryViewModel.cs" />
     <Compile Include="ViewModel\RequestViewModel.cs" />
+    <Compile Include="ViewModel\ReservationViewModel.cs" />
     <Compile Include="ViewModel\TenantArchiveViewModel.cs" />
     <Compile Include="ViewModel\TenantViewModel.cs" />
     <Compile Include="ViewModel\UnitViewModel.cs" />
@@ -122,10 +146,47 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EchoEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="EchoDataSet.xsc">
+      <DependentUpon>EchoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EchoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EchoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EchoDataSet.xss">
+      <DependentUpon>EchoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EchoDataSet1.xsc">
+      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EchoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EchoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EchoDataSet1.xss">
+      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EchoDataSet2.xsc">
+      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EchoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EchoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EchoDataSet2.xss">
+      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="EchoEntities.edmx.diagram">
       <DependentUpon>EchoEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

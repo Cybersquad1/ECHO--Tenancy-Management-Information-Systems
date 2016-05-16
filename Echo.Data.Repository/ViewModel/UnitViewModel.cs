@@ -29,6 +29,8 @@ namespace Echo.Data.Repository.ViewModel
                 var tenant = db.TenantProfile.FirstOrDefault(r => r.ID == unitProfile.Tenant) ;
                 tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
                 tenant.UnitNumber = unitProfile.UnitNumber;
+                tenant.StartOfOccupancy = unitProfile.StartOfOccupancy;
+                tenant.EndOfOccupancy = unit.ExpectedEndOfOccupancy;
 
                 db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();

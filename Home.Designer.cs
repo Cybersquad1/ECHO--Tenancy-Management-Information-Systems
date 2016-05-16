@@ -591,7 +591,7 @@
             this.pictureBox3.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.line;
             this.pictureBox3.Location = new System.Drawing.Point(209, 48);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(845, 29);
+            this.pictureBox3.Size = new System.Drawing.Size(729, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 58;
             this.pictureBox3.TabStop = false;
@@ -790,7 +790,7 @@
             this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblUsername.Location = new System.Drawing.Point(1059, 55);
+            this.lblUsername.Location = new System.Drawing.Point(944, 55);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(82, 16);
             this.lblUsername.TabIndex = 64;

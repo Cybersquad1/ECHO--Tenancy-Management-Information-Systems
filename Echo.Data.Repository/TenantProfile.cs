@@ -14,12 +14,6 @@ namespace Echo.Data.Repository
     
     public partial class TenantProfile
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TenantProfile()
-        {
-            this.TenantArchive = new HashSet<TenantArchive>();
-        }
-    
         public System.Guid ID { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
@@ -53,11 +47,8 @@ namespace Echo.Data.Repository
         public string PetType { get; set; }
         public string PetBreed { get; set; }
         public string PetName { get; set; }
-        public Nullable<int> StartOfOccupancy { get; set; }
-        public Nullable<int> EndOfOccupancy { get; set; }
+        public Nullable<System.DateTime> StartOfOccupancy { get; set; }
+        public Nullable<System.DateTime> EndOfOccupancy { get; set; }
         public string ChangePassword { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TenantArchive> TenantArchive { get; set; }
     }
 }

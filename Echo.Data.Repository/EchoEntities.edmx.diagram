@@ -5,28 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6e9a1be3dc16420b9ba5a4f0141e4492" Name="Diagram1" ZoomLevel="79">
-        <EntityTypeShape EntityType="EchoModel.LogSheet" Width="1.5" PointX="10" PointY="2.625" />
-        <EntityTypeShape EntityType="EchoModel.LogSheetActivity" Width="1.5" PointX="12.25" PointY="2.25" />
-        <EntityTypeShape EntityType="EchoModel.MonthlyAssociationDue" Width="1.5" PointX="3" PointY="6.375" />
-        <EntityTypeShape EntityType="EchoModel.PaymentHistory" Width="1.5" PointX="5.25" PointY="7.125" />
-        <EntityTypeShape EntityType="EchoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.75" />
-        <EntityTypeShape EntityType="EchoModel.TenantArchive" Width="1.5" PointX="3" PointY="3.125" />
-        <EntityTypeShape EntityType="EchoModel.TenantProfile" Width="1.5" PointX="0.75" PointY="13" />
-        <EntityTypeShape EntityType="EchoModel.UnitProfile" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="EchoModel.UserProfile" Width="1.5" PointX="7.75" PointY="1.125" />
-        <EntityTypeShape EntityType="EchoModel.WaterBilling" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="EchoModel.LogSheet" Width="1.5" PointX="8" PointY="2.625" />
+        <EntityTypeShape EntityType="EchoModel.LogSheetActivity" Width="1.5" PointX="10.25" PointY="2.25" />
+        <EntityTypeShape EntityType="EchoModel.MonthlyAssociationDue" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="EchoModel.PaymentHistory" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="EchoModel.Request" Width="1.5" PointX="3" PointY="1.625" />
+        <EntityTypeShape EntityType="EchoModel.Reservation" Width="1.5" PointX="3" PointY="18.75" />
+        <EntityTypeShape EntityType="EchoModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" />
+        <EntityTypeShape EntityType="EchoModel.TenantArchive" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="EchoModel.TenantProfile" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EchoModel.UnitProfile" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="EchoModel.UserProfile" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="EchoModel.WaterBilling" Width="1.5" PointX="3" PointY="5.875" />
         <AssociationConnector Association="EchoModel.FK_LogSheet_UserProfile" />
         <AssociationConnector Association="EchoModel.FK_LogSheetActivity_LogSheet" />
         <AssociationConnector Association="EchoModel.FK_LogSheetActivity_UserProfile" />
         <AssociationConnector Association="EchoModel.FK_MonthlyAssociationDue_UnitProfile" />
         <AssociationConnector Association="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" />
-        <AssociationConnector Association="EchoModel.FK_TenantArchive_TenantProfile" />
+        <AssociationConnector Association="EchoModel.FK_PaymentHistory_Reservation" />
+        <AssociationConnector Association="EchoModel.FK_Request_UnitProfile" />
         <AssociationConnector Association="EchoModel.FK_TenantArchive_UnitProfile" />
         <AssociationConnector Association="EchoModel.FK_WaterBilling_UnitProfile" />
-        <EntityTypeShape EntityType="EchoModel.Reservation" Width="1.5" PointX="10.375" PointY="7" />
-        <AssociationConnector Association="EchoModel.FK_PaymentHistory_Reservation" />
-        <EntityTypeShape EntityType="EchoModel.Request" Width="1.5" PointX="5.25" PointY="0.5" />
-        <AssociationConnector Association="EchoModel.FK_Request_UnitProfile" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

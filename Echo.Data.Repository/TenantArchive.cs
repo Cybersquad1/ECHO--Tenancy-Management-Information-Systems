@@ -21,7 +21,6 @@ namespace Echo.Data.Repository
         public string NatureOfOccupancy { get; set; }
         public Nullable<System.Guid> TenantID { get; set; }
     
-        public virtual TenantProfile TenantProfile { get; set; }
         public virtual UnitProfile UnitProfile { get; set; }
     }
 }
