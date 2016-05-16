@@ -31,14 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenancyDatabaseForm));
             this.TenancyDBPnl = new System.Windows.Forms.Panel();
             this.btnExport = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBoxSearchNature = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbBoxSearchEnd = new System.Windows.Forms.ComboBox();
+            this.cmbBoxSearchStart = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtBoxSearchUnitNo = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewTenants = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,6 +70,8 @@
             this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txtBoxProvincialAddress = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.txtBoxTelNo = new System.Windows.Forms.TextBox();
@@ -81,7 +88,6 @@
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
-            this.pictureBoxTenant = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -90,15 +96,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtBoxSearchNature = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbBoxSearchStart = new System.Windows.Forms.ComboBox();
-            this.cmbBoxSearchEnd = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBoxTenant = new System.Windows.Forms.PictureBox();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TenancyDBPnl.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -124,25 +125,13 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 512);
+            this.btnExport.Location = new System.Drawing.Point(748, 463);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 18;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(861, 512);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 33);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "    Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // groupBox2
             // 
@@ -164,6 +153,26 @@
             this.groupBox2.Text = "Search";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // txtBoxSearchNature
+            // 
+            this.txtBoxSearchNature.BackColor = System.Drawing.Color.White;
+            this.txtBoxSearchNature.Enabled = false;
+            this.txtBoxSearchNature.Location = new System.Drawing.Point(6, 95);
+            this.txtBoxSearchNature.Name = "txtBoxSearchNature";
+            this.txtBoxSearchNature.Size = new System.Drawing.Size(171, 20);
+            this.txtBoxSearchNature.TabIndex = 147;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label17.Location = new System.Drawing.Point(90, 43);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(45, 14);
+            this.label17.TabIndex = 146;
+            this.label17.Text = "Unit No";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -174,6 +183,152 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Nature of Occupancy:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 14);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Expected End Year:";
+            // 
+            // cmbBoxSearchEnd
+            // 
+            this.cmbBoxSearchEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxSearchEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxSearchEnd.FormattingEnabled = true;
+            this.cmbBoxSearchEnd.Items.AddRange(new object[] {
+            "",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2043",
+            "2044",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2050"});
+            this.cmbBoxSearchEnd.Location = new System.Drawing.Point(6, 185);
+            this.cmbBoxSearchEnd.Name = "cmbBoxSearchEnd";
+            this.cmbBoxSearchEnd.Size = new System.Drawing.Size(171, 22);
+            this.cmbBoxSearchEnd.TabIndex = 57;
+            // 
+            // cmbBoxSearchStart
+            // 
+            this.cmbBoxSearchStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxSearchStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxSearchStart.FormattingEnabled = true;
+            this.cmbBoxSearchStart.Items.AddRange(new object[] {
+            "",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2043",
+            "2044",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2050"});
+            this.cmbBoxSearchStart.Location = new System.Drawing.Point(6, 139);
+            this.cmbBoxSearchStart.Name = "cmbBoxSearchStart";
+            this.cmbBoxSearchStart.Size = new System.Drawing.Size(171, 22);
+            this.cmbBoxSearchStart.TabIndex = 55;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 14);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Start Year of Occupancy:";
+            // 
             // txtBoxSearchUnitNo
             // 
             this.txtBoxSearchUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,17 +337,6 @@
             this.txtBoxSearchUnitNo.Name = "txtBoxSearchUnitNo";
             this.txtBoxSearchUnitNo.Size = new System.Drawing.Size(86, 21);
             this.txtBoxSearchUnitNo.TabIndex = 3;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(153, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(24, 23);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tabControl1
             // 
@@ -221,6 +365,7 @@
             this.listViewTenants.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.listViewTenants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
+            this.columnHeader8,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -229,7 +374,7 @@
             this.columnHeader6});
             this.listViewTenants.FullRowSelect = true;
             this.listViewTenants.GridLines = true;
-            this.listViewTenants.Location = new System.Drawing.Point(2, 5);
+            this.listViewTenants.Location = new System.Drawing.Point(3, 4);
             this.listViewTenants.MultiSelect = false;
             this.listViewTenants.Name = "listViewTenants";
             this.listViewTenants.Size = new System.Drawing.Size(748, 416);
@@ -238,43 +383,42 @@
             this.listViewTenants.View = System.Windows.Forms.View.Details;
             this.listViewTenants.DoubleClick += new System.EventHandler(this.listViewTenants_DoubleClick);
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "TenantID";
+            this.columnHeader7.Width = 0;
+            // 
             // columnHeader1
             // 
-            this.columnHeader1.DisplayIndex = 1;
             this.columnHeader1.Text = "Unit Number";
             this.columnHeader1.Width = 85;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 2;
             this.columnHeader2.Text = "Start Year of Occupancy";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 148;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 3;
             this.columnHeader3.Text = "Expected End Year of Occupancy";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 136;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 4;
             this.columnHeader4.Text = "Unit Owner";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 121;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 5;
             this.columnHeader5.Text = "Tenant";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader5.Width = 109;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.DisplayIndex = 6;
             this.columnHeader6.Text = "Nature of Occupancy";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader6.Width = 166;
@@ -527,6 +671,30 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
             // 
+            // comboBoxMaritalStatus
+            // 
+            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMaritalStatus.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.comboBoxMaritalStatus.FormattingEnabled = true;
+            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
+            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(218, 107);
+            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
+            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(184, 22);
+            this.comboBoxMaritalStatus.TabIndex = 149;
+            // 
+            // datePickerDateOfBirth
+            // 
+            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickerDateOfBirth.Location = new System.Drawing.Point(218, 86);
+            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
+            this.datePickerDateOfBirth.Size = new System.Drawing.Size(91, 20);
+            this.datePickerDateOfBirth.TabIndex = 141;
+            // 
             // txtBoxProvincialAddress
             // 
             this.txtBoxProvincialAddress.BackColor = System.Drawing.Color.Gainsboro;
@@ -683,14 +851,6 @@
             this.txtBoxFirstName.Size = new System.Drawing.Size(184, 20);
             this.txtBoxFirstName.TabIndex = 127;
             // 
-            // pictureBoxTenant
-            // 
-            this.pictureBoxTenant.Location = new System.Drawing.Point(13, 24);
-            this.pictureBoxTenant.Name = "pictureBoxTenant";
-            this.pictureBoxTenant.Size = new System.Drawing.Size(106, 96);
-            this.pictureBoxTenant.TabIndex = 126;
-            this.pictureBoxTenant.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -779,201 +939,42 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Nature of Occupancy:";
             // 
-            // datePickerDateOfBirth
+            // button2
             // 
-            this.datePickerDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerDateOfBirth.Location = new System.Drawing.Point(218, 86);
-            this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
-            this.datePickerDateOfBirth.Size = new System.Drawing.Size(91, 20);
-            this.datePickerDateOfBirth.TabIndex = 141;
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(860, 463);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 33);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "    Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBoxMaritalStatus
+            // btnSearch
             // 
-            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMaritalStatus.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.comboBoxMaritalStatus.FormattingEnabled = true;
-            this.comboBoxMaritalStatus.Items.AddRange(new object[] {
-            "Single",
-            "Married",
-            "Divorced",
-            "Widowed"});
-            this.comboBoxMaritalStatus.Location = new System.Drawing.Point(218, 107);
-            this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
-            this.comboBoxMaritalStatus.Size = new System.Drawing.Size(184, 22);
-            this.comboBoxMaritalStatus.TabIndex = 149;
+            this.btnSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(153, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(24, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // columnHeader7
+            // pictureBoxTenant
             // 
-            this.columnHeader7.DisplayIndex = 0;
-            this.columnHeader7.Text = "TenantID";
-            this.columnHeader7.Width = 0;
+            this.pictureBoxTenant.Location = new System.Drawing.Point(13, 24);
+            this.pictureBoxTenant.Name = "pictureBoxTenant";
+            this.pictureBoxTenant.Size = new System.Drawing.Size(106, 96);
+            this.pictureBoxTenant.TabIndex = 126;
+            this.pictureBoxTenant.TabStop = false;
             // 
-            // label17
+            // columnHeader8
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label17.Location = new System.Drawing.Point(90, 43);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(45, 14);
-            this.label17.TabIndex = 146;
-            this.label17.Text = "Unit No";
-            // 
-            // txtBoxSearchNature
-            // 
-            this.txtBoxSearchNature.BackColor = System.Drawing.Color.White;
-            this.txtBoxSearchNature.Enabled = false;
-            this.txtBoxSearchNature.Location = new System.Drawing.Point(6, 95);
-            this.txtBoxSearchNature.Name = "txtBoxSearchNature";
-            this.txtBoxSearchNature.Size = new System.Drawing.Size(171, 20);
-            this.txtBoxSearchNature.TabIndex = 147;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 14);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "Start Year of Occupancy:";
-            // 
-            // cmbBoxSearchStart
-            // 
-            this.cmbBoxSearchStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxSearchStart.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoxSearchStart.FormattingEnabled = true;
-            this.cmbBoxSearchStart.Items.AddRange(new object[] {
-            "",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035",
-            "2036",
-            "2037",
-            "2038",
-            "2039",
-            "2040",
-            "2041",
-            "2042",
-            "2043",
-            "2044",
-            "2045",
-            "2046",
-            "2047",
-            "2048",
-            "2049",
-            "2050"});
-            this.cmbBoxSearchStart.Location = new System.Drawing.Point(6, 139);
-            this.cmbBoxSearchStart.Name = "cmbBoxSearchStart";
-            this.cmbBoxSearchStart.Size = new System.Drawing.Size(171, 22);
-            this.cmbBoxSearchStart.TabIndex = 55;
-            // 
-            // cmbBoxSearchEnd
-            // 
-            this.cmbBoxSearchEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxSearchEnd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoxSearchEnd.FormattingEnabled = true;
-            this.cmbBoxSearchEnd.Items.AddRange(new object[] {
-            "",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035",
-            "2036",
-            "2037",
-            "2038",
-            "2039",
-            "2040",
-            "2041",
-            "2042",
-            "2043",
-            "2044",
-            "2045",
-            "2046",
-            "2047",
-            "2048",
-            "2049",
-            "2050"});
-            this.cmbBoxSearchEnd.Location = new System.Drawing.Point(6, 185);
-            this.cmbBoxSearchEnd.Name = "cmbBoxSearchEnd";
-            this.cmbBoxSearchEnd.Size = new System.Drawing.Size(171, 22);
-            this.cmbBoxSearchEnd.TabIndex = 57;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 14);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "Expected End Year:";
+            this.columnHeader8.Text = "Status";
+            this.columnHeader8.Width = 111;
             // 
             // TenancyDatabaseForm
             // 
@@ -1076,5 +1077,6 @@
         private System.Windows.Forms.ComboBox cmbBoxSearchEnd;
         private System.Windows.Forms.ComboBox cmbBoxSearchStart;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }

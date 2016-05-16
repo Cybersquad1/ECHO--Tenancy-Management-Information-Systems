@@ -24,11 +24,13 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
             tenantID = _tenantID;
 
-            lblUnitNo.Text = _unitNo;
+            lblUnitNo.Text = "#"+_unitNo;
 
             lblTenantName.Text = _name;
 
             this.parentForm = parentForm;
+
+            timer1.Start();
         }
 
         private void CheckIfChangesPassword()
@@ -86,7 +88,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk
         {
             mainPanel.Controls.Clear();
 
-            RequestForm hk = new RequestForm();
+            RequestForm hk = new RequestForm(lblUnitNo.Text);
             hk.Visible = true;
             hk.TopLevel = false;
             hk.Dock = DockStyle.Fill;
@@ -96,13 +98,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void ReservationButton_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = false;
-            hk.pnlRequest.Visible = false;
-            hk.pnlPaymentHistory.Visible = false;
-            hk.pnlReservation.Visible = true;
-            hk.pnlAssocDues.Visible=false;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
+
+            ReservationForm reservation = new ReservationForm(lblUnitNo.Text);
+            reservation.Visible = true;
+            reservation.TopLevel = false;
+            reservation.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(reservation);
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -133,6 +136,11 @@ namespace Tenancy_Management_Information_Systems.Kiosk
         private void HomeTenantForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             parentForm.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

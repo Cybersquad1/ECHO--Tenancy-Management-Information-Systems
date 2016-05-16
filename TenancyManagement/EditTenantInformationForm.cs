@@ -167,6 +167,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 
                 ListViewItem lvi = new ListViewItem(item.ID.ToString()); //ID
 
+                if (item.Status == "Y")
+                    lvi.SubItems.Add("Active");
+                else
+                    lvi.SubItems.Add("Deactivated");
+
                 if (item.UnitNumber == "" || item.UnitNumber == null)
                     lvi.SubItems.Add("N/A");
                 else

@@ -92,6 +92,9 @@
           <Property Name="Time" Type="varchar" MaxLength="10" />
           <Property Name="ContactNo" Type="varchar" MaxLength="20" />
           <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -151,8 +154,8 @@
           <Property Name="PetType" Type="varchar" MaxLength="100" />
           <Property Name="PetBreed" Type="varchar" MaxLength="100" />
           <Property Name="PetName" Type="varchar" MaxLength="300" />
-          <Property Name="StartOfOccupancy" Type="int" />
-          <Property Name="EndOfOccupancy" Type="int" />
+          <Property Name="StartOfOccupancy" Type="datetime" />
+          <Property Name="EndOfOccupancy" Type="datetime" />
           <Property Name="ChangePassword" Type="varchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="UnitProfile">
@@ -321,6 +324,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TenancyDatabaseByOccupancyYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+        </Function>
         <EntityContainer Name="EchoModelStoreContainer">
           <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
@@ -376,10 +383,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="EchoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EchoEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="TenancyDatabaseByOccupancyYear" ReturnType="Collection(EchoModel.TenancyDatabaseByOccupancyYear_Result)">
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <EntitySet Name="LogSheet" EntityType="EchoModel.LogSheet" />
           <EntitySet Name="LogSheetActivity" EntityType="EchoModel.LogSheetActivity" />
           <EntitySet Name="MonthlyAssociationDue" EntityType="EchoModel.MonthlyAssociationDue" />
           <EntitySet Name="PaymentHistory" EntityType="EchoModel.PaymentHistory" />
+          <EntitySet Name="Request" EntityType="EchoModel.Request" />
+          <EntitySet Name="Reservation" EntityType="EchoModel.Reservation" />
           <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagrams" />
           <EntitySet Name="TenantArchive" EntityType="EchoModel.TenantArchive" />
           <EntitySet Name="TenantProfile" EntityType="EchoModel.TenantProfile" />
@@ -406,9 +419,13 @@
             <End Role="MonthlyAssociationDue" EntitySet="MonthlyAssociationDue" />
             <End Role="PaymentHistory" EntitySet="PaymentHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK_TenantArchive_TenantProfile" Association="EchoModel.FK_TenantArchive_TenantProfile">
-            <End Role="TenantProfile" EntitySet="TenantProfile" />
-            <End Role="TenantArchive" EntitySet="TenantArchive" />
+          <AssociationSet Name="FK_PaymentHistory_Reservation" Association="EchoModel.FK_PaymentHistory_Reservation">
+            <End Role="Reservation" EntitySet="Reservation" />
+            <End Role="PaymentHistory" EntitySet="PaymentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_UnitProfile" Association="EchoModel.FK_Request_UnitProfile">
+            <End Role="UnitProfile" EntitySet="UnitProfile" />
+            <End Role="Request" EntitySet="Request" />
           </AssociationSet>
           <AssociationSet Name="FK_TenantArchive_UnitProfile" Association="EchoModel.FK_TenantArchive_UnitProfile">
             <End Role="UnitProfile" EntitySet="UnitProfile" />
@@ -418,17 +435,17 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="WaterBilling" EntitySet="WaterBilling" />
           </AssociationSet>
-          <EntitySet Name="Reservation" EntityType="EchoModel.Reservation" />
-          <AssociationSet Name="FK_PaymentHistory_Reservation" Association="EchoModel.FK_PaymentHistory_Reservation">
-            <End Role="Reservation" EntitySet="Reservation" />
-            <End Role="PaymentHistory" EntitySet="PaymentHistory" />
-          </AssociationSet>
-          <EntitySet Name="Request" EntityType="EchoModel.Request" />
-          <AssociationSet Name="FK_Request_UnitProfile" Association="EchoModel.FK_Request_UnitProfile">
-            <End Role="UnitProfile" EntitySet="UnitProfile" />
-            <End Role="Request" EntitySet="Request" />
-          </AssociationSet>
         </EntityContainer>
+        <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+          </ComplexType>
         <EntityType Name="LogSheet">
           <Key>
             <PropertyRef Name="ID" />
@@ -487,12 +504,48 @@
           <Property Name="MonthlyAssocID" Type="Guid" />
           <Property Name="Payable" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
           <Property Name="UnitNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="ReservationID" Type="Guid" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="PaymentHistory" ToRole="MonthlyAssociationDue" />
           <NavigationProperty Name="Reservation" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="PaymentHistory" ToRole="Reservation" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Project" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduleDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Time" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Request1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Request2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Request3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Request4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="Request" ToRole="UnitProfile" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Facility" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfFuntion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NoOfGuest" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="Reservation" ToRole="PaymentHistory" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -514,7 +567,6 @@
           <Property Name="EndOfOccupancy" Type="DateTime" Precision="3" />
           <Property Name="NatureOfOccupancy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="TenantID" Type="Guid" />
-          <NavigationProperty Name="TenantProfile" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantArchive" ToRole="TenantProfile" />
           <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="TenantArchive" ToRole="UnitProfile" />
         </EntityType>
         <EntityType Name="TenantProfile">
@@ -554,9 +606,8 @@
           <Property Name="PetType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PetBreed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PetName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="StartOfOccupancy" Type="Int32" />
-          <Property Name="EndOfOccupancy" Type="Int32" />
-          <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_TenantProfile" FromRole="TenantProfile" ToRole="TenantArchive" />
+          <Property Name="StartOfOccupancy" Type="DateTime" Precision="3" />
+          <Property Name="EndOfOccupancy" Type="DateTime" Precision="3" />
           <Property Name="ChangePassword" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="UnitProfile">
@@ -572,9 +623,9 @@
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Floor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="MonthlyAssociationDue" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="UnitProfile" ToRole="MonthlyAssociationDue" />
+          <NavigationProperty Name="Request" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="UnitProfile" ToRole="Request" />
           <NavigationProperty Name="TenantArchive" Relationship="EchoModel.FK_TenantArchive_UnitProfile" FromRole="UnitProfile" ToRole="TenantArchive" />
           <NavigationProperty Name="WaterBilling" Relationship="EchoModel.FK_WaterBilling_UnitProfile" FromRole="UnitProfile" ToRole="WaterBilling" />
-          <NavigationProperty Name="Request" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="UnitProfile" ToRole="Request" />
         </EntityType>
         <EntityType Name="UserProfile">
           <Key>
@@ -684,15 +735,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TenantArchive_TenantProfile">
-          <End Type="EchoModel.TenantProfile" Role="TenantProfile" Multiplicity="0..1" />
-          <End Type="EchoModel.TenantArchive" Role="TenantArchive" Multiplicity="*" />
+        <Association Name="FK_PaymentHistory_Reservation">
+          <End Type="EchoModel.Reservation" Role="Reservation" Multiplicity="0..1" />
+          <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TenantProfile">
+            <Principal Role="Reservation">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="TenantArchive">
-              <PropertyRef Name="TenantID" />
+            <Dependent Role="PaymentHistory">
+              <PropertyRef Name="ReservationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_UnitProfile">
+          <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="1" />
+          <End Type="EchoModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnitProfile">
+              <PropertyRef Name="UnitNumber" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="UnitNumber" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -720,69 +783,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Reservation">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Facility" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="DateOfFuntion" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="NoOfGuest" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="Time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="Reservation" ToRole="PaymentHistory" />
-        </EntityType>
-        <Association Name="FK_PaymentHistory_Reservation">
-          <End Type="EchoModel.Reservation" Role="Reservation" Multiplicity="0..1" />
-          <End Type="EchoModel.PaymentHistory" Role="PaymentHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Reservation">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="PaymentHistory">
-              <PropertyRef Name="ReservationID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Request">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Project" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="UnitNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Owner" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ScheduleDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Time" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Request1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Request2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Request3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Request4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_Request_UnitProfile" FromRole="Request" ToRole="UnitProfile" />
-        </EntityType>
-        <Association Name="FK_Request_UnitProfile">
-          <End Type="EchoModel.UnitProfile" Role="UnitProfile" Multiplicity="1" />
-          <End Type="EchoModel.Request" Role="Request" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UnitProfile">
-              <PropertyRef Name="UnitNumber" />
-            </Principal>
-            <Dependent Role="Request">
-              <PropertyRef Name="UnitNumber" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EchoModelStoreContainer" CdmEntityContainer="EchoEntities">
+          <FunctionImportMapping FunctionImportName="TenancyDatabaseByOccupancyYear" FunctionName="EchoModel.Store.TenancyDatabaseByOccupancyYear">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.TenancyDatabaseByOccupancyYear_Result">
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="LogSheet">
             <EntityTypeMapping TypeName="EchoModel.LogSheet">
               <MappingFragment StoreEntitySet="LogSheet">
@@ -832,14 +852,50 @@
             <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
               <MappingFragment StoreEntitySet="PaymentHistory">
                 <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
                 <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="Payable" ColumnName="Payable" />
                 <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />
                 <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
                 <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request">
+            <EntityTypeMapping TypeName="EchoModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="Request4" ColumnName="Request4" />
+                <ScalarProperty Name="Request3" ColumnName="Request3" />
+                <ScalarProperty Name="Request2" ColumnName="Request2" />
+                <ScalarProperty Name="Request1" ColumnName="Request1" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservation">
+            <EntityTypeMapping TypeName="EchoModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="NoOfGuest" ColumnName="NoOfGuest" />
+                <ScalarProperty Name="DateOfFuntion" ColumnName="DateOfFuntion" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -966,39 +1022,6 @@
                 <ScalarProperty Name="DueDate" ColumnName="DueDate" />
                 <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
                 <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Reservation">
-            <EntityTypeMapping TypeName="EchoModel.Reservation">
-              <MappingFragment StoreEntitySet="Reservation">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="NoOfGuest" ColumnName="NoOfGuest" />
-                <ScalarProperty Name="DateOfFuntion" ColumnName="DateOfFuntion" />
-                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="Facility" ColumnName="Facility" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Request">
-            <EntityTypeMapping TypeName="EchoModel.Request">
-              <MappingFragment StoreEntitySet="Request">
-                <ScalarProperty Name="Request4" ColumnName="Request4" />
-                <ScalarProperty Name="Request3" ColumnName="Request3" />
-                <ScalarProperty Name="Request2" ColumnName="Request2" />
-                <ScalarProperty Name="Request1" ColumnName="Request1" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="Project" ColumnName="Project" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

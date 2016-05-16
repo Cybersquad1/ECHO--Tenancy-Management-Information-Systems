@@ -18,9 +18,9 @@ namespace Echo.Data.Repository
         public UnitProfile()
         {
             this.MonthlyAssociationDue = new HashSet<MonthlyAssociationDue>();
+            this.Request = new HashSet<Request>();
             this.TenantArchive = new HashSet<TenantArchive>();
             this.WaterBilling = new HashSet<WaterBilling>();
-            this.Request = new HashSet<Request>();
         }
     
         public string UnitNumber { get; set; }
@@ -35,10 +35,10 @@ namespace Echo.Data.Repository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonthlyAssociationDue> MonthlyAssociationDue { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Request> Request { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TenantArchive> TenantArchive { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaterBilling> WaterBilling { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Request> Request { get; set; }
     }
 }

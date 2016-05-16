@@ -29,6 +29,9 @@ namespace Echo.Data.Repository
         public string Time { get; set; }
         public string ContactNo { get; set; }
         public System.DateTime Date { get; set; }
+        public Nullable<decimal> Amount { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public Nullable<decimal> Paid { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PaymentHistory> PaymentHistory { get; set; }

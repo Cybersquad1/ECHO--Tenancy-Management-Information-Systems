@@ -382,7 +382,7 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 18;
-            this.btnExport.Text = "Export to Excel";
+            this.btnExport.Text = "Preview";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
             // button2

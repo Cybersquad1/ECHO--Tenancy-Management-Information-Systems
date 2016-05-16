@@ -12,6 +12,8 @@ namespace Echo.Data.Repository
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class EchoEntities : DbContext
     {
@@ -29,13 +31,26 @@ namespace Echo.Data.Repository
         public virtual DbSet<LogSheetActivity> LogSheetActivity { get; set; }
         public virtual DbSet<MonthlyAssociationDue> MonthlyAssociationDue { get; set; }
         public virtual DbSet<PaymentHistory> PaymentHistory { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
+        public virtual DbSet<Reservation> Reservation { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TenantArchive> TenantArchive { get; set; }
         public virtual DbSet<TenantProfile> TenantProfile { get; set; }
         public virtual DbSet<UnitProfile> UnitProfile { get; set; }
         public virtual DbSet<UserProfile> UserProfile { get; set; }
         public virtual DbSet<WaterBilling> WaterBilling { get; set; }
-        public virtual DbSet<Reservation> Reservation { get; set; }
-        public virtual DbSet<Request> Request { get; set; }
+    
+        public virtual ObjectResult<TenancyDatabaseByOccupancyYear_Result> TenancyDatabaseByOccupancyYear(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        {
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TenancyDatabaseByOccupancyYear_Result>("TenancyDatabaseByOccupancyYear", startDateParameter, endDateParameter);
+        }
     }
 }

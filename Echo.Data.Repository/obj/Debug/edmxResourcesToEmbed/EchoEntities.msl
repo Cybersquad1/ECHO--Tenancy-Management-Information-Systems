@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EchoModelStoreContainer" CdmEntityContainer="EchoEntities">
+    <FunctionImportMapping FunctionImportName="TenancyDatabaseByOccupancyYear" FunctionName="EchoModel.Store.TenancyDatabaseByOccupancyYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.TenancyDatabaseByOccupancyYear_Result">
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="LogSheet">
       <EntityTypeMapping TypeName="EchoModel.LogSheet">
         <MappingFragment StoreEntitySet="LogSheet">
@@ -50,14 +64,50 @@
       <EntityTypeMapping TypeName="EchoModel.PaymentHistory">
         <MappingFragment StoreEntitySet="PaymentHistory">
           <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="Payable" ColumnName="Payable" />
           <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />
           <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
           <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="EchoModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Request4" ColumnName="Request4" />
+          <ScalarProperty Name="Request3" ColumnName="Request3" />
+          <ScalarProperty Name="Request2" ColumnName="Request2" />
+          <ScalarProperty Name="Request1" ColumnName="Request1" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservation">
+      <EntityTypeMapping TypeName="EchoModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="NoOfGuest" ColumnName="NoOfGuest" />
+          <ScalarProperty Name="DateOfFuntion" ColumnName="DateOfFuntion" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -184,39 +234,6 @@
           <ScalarProperty Name="DueDate" ColumnName="DueDate" />
           <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Reservation">
-      <EntityTypeMapping TypeName="EchoModel.Reservation">
-        <MappingFragment StoreEntitySet="Reservation">
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="NoOfGuest" ColumnName="NoOfGuest" />
-          <ScalarProperty Name="DateOfFuntion" ColumnName="DateOfFuntion" />
-          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="Facility" ColumnName="Facility" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Request">
-      <EntityTypeMapping TypeName="EchoModel.Request">
-        <MappingFragment StoreEntitySet="Request">
-          <ScalarProperty Name="Request4" ColumnName="Request4" />
-          <ScalarProperty Name="Request3" ColumnName="Request3" />
-          <ScalarProperty Name="Request2" ColumnName="Request2" />
-          <ScalarProperty Name="Request1" ColumnName="Request1" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="Project" ColumnName="Project" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

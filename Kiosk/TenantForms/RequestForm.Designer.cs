@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestForm));
             this.pnlRequest = new System.Windows.Forms.Panel();
+            this.txtBoxTime = new System.Windows.Forms.TextBox();
+            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOkay = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
@@ -56,10 +60,6 @@
             this.txtBoxRequest3 = new System.Windows.Forms.TextBox();
             this.txtBoxRequest2 = new System.Windows.Forms.TextBox();
             this.txtBoxRequest1 = new System.Windows.Forms.TextBox();
-            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
-            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
-            this.txtBoxContactNo = new System.Windows.Forms.TextBox();
-            this.txtBoxTime = new System.Windows.Forms.TextBox();
             this.pnlRequest.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,42 @@
             this.pnlRequest.Name = "pnlRequest";
             this.pnlRequest.Size = new System.Drawing.Size(928, 472);
             this.pnlRequest.TabIndex = 122;
+            // 
+            // txtBoxTime
+            // 
+            this.txtBoxTime.Location = new System.Drawing.Point(700, 283);
+            this.txtBoxTime.Name = "txtBoxTime";
+            this.txtBoxTime.Size = new System.Drawing.Size(132, 20);
+            this.txtBoxTime.TabIndex = 159;
+            // 
+            // txtBoxContactNo
+            // 
+            this.txtBoxContactNo.Location = new System.Drawing.Point(571, 89);
+            this.txtBoxContactNo.Name = "txtBoxContactNo";
+            this.txtBoxContactNo.Size = new System.Drawing.Size(185, 20);
+            this.txtBoxContactNo.TabIndex = 158;
+            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
+            // 
+            // txtBoxUnitOwner
+            // 
+            this.txtBoxUnitOwner.Enabled = false;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(275, 86);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(185, 20);
+            this.txtBoxUnitOwner.TabIndex = 157;
+            this.txtBoxUnitOwner.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitOwner_KeyPress);
+            this.txtBoxUnitOwner.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitOwner_KeyUp);
+            // 
+            // txtBoxUnitNo
+            // 
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(438, 53);
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(135, 20);
+            this.txtBoxUnitNo.TabIndex = 156;
+            this.txtBoxUnitNo.TextChanged += new System.EventHandler(this.txtBoxUnitNo_TextChanged);
+            this.txtBoxUnitNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitNo_KeyPress);
+            this.txtBoxUnitNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitNo_KeyUp);
+            this.txtBoxUnitNo.Leave += new System.EventHandler(this.txtBoxUnitNo_Leave);
             // 
             // btnCancel
             // 
@@ -381,41 +417,6 @@
             this.txtBoxRequest1.Size = new System.Drawing.Size(288, 21);
             this.txtBoxRequest1.TabIndex = 0;
             this.txtBoxRequest1.TextChanged += new System.EventHandler(this.txtBoxRequest1_TextChanged);
-            // 
-            // txtBoxUnitNo
-            // 
-            this.txtBoxUnitNo.Location = new System.Drawing.Point(438, 53);
-            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
-            this.txtBoxUnitNo.Size = new System.Drawing.Size(135, 20);
-            this.txtBoxUnitNo.TabIndex = 156;
-            this.txtBoxUnitNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitNo_KeyPress);
-            this.txtBoxUnitNo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitNo_KeyUp);
-            this.txtBoxUnitNo.Leave += new System.EventHandler(this.txtBoxUnitNo_Leave);
-            // 
-            // txtBoxUnitOwner
-            // 
-            this.txtBoxUnitOwner.Enabled = false;
-            this.txtBoxUnitOwner.Location = new System.Drawing.Point(275, 86);
-            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
-            this.txtBoxUnitOwner.Size = new System.Drawing.Size(185, 20);
-            this.txtBoxUnitOwner.TabIndex = 157;
-            this.txtBoxUnitOwner.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxUnitOwner_KeyPress);
-            this.txtBoxUnitOwner.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxUnitOwner_KeyUp);
-            // 
-            // txtBoxContactNo
-            // 
-            this.txtBoxContactNo.Location = new System.Drawing.Point(571, 89);
-            this.txtBoxContactNo.Name = "txtBoxContactNo";
-            this.txtBoxContactNo.Size = new System.Drawing.Size(185, 20);
-            this.txtBoxContactNo.TabIndex = 158;
-            this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
-            // 
-            // txtBoxTime
-            // 
-            this.txtBoxTime.Location = new System.Drawing.Point(700, 283);
-            this.txtBoxTime.Name = "txtBoxTime";
-            this.txtBoxTime.Size = new System.Drawing.Size(132, 20);
-            this.txtBoxTime.TabIndex = 159;
             // 
             // RequestForm
             // 

@@ -24,7 +24,7 @@ namespace Tenancy_Management_Information_Systems
 
             timer1.Start();
 
-            lblUsername.Text = loginInfo.username;
+            lblUsername.Text = loginInfo.fullName;
 
             this.parentForm = parentForm;
 

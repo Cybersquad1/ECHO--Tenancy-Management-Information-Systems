@@ -87,6 +87,9 @@
     <Property Name="Time" Type="varchar" MaxLength="10" />
     <Property Name="ContactNo" Type="varchar" MaxLength="20" />
     <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -146,8 +149,8 @@
     <Property Name="PetType" Type="varchar" MaxLength="100" />
     <Property Name="PetBreed" Type="varchar" MaxLength="100" />
     <Property Name="PetName" Type="varchar" MaxLength="300" />
-    <Property Name="StartOfOccupancy" Type="int" />
-    <Property Name="EndOfOccupancy" Type="int" />
+    <Property Name="StartOfOccupancy" Type="datetime" />
+    <Property Name="EndOfOccupancy" Type="datetime" />
     <Property Name="ChangePassword" Type="varchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="UnitProfile">
@@ -316,6 +319,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="TenancyDatabaseByOccupancyYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
   <EntityContainer Name="EchoModelStoreContainer">
     <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />

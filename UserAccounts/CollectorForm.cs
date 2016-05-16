@@ -109,11 +109,35 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     txtBoxUnitOwner.Text = "N/A";
 
                 //Get Particulars
-                var particulars = new MonthlyAssociationDueViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
+                //Monthly Assoc
+                lstBoxParticulars.Items.Clear();
+         
+                var monthlyAssocs = new MonthlyAssociationDueViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
 
-                particulars.ForEach(item =>
+                monthlyAssocs.ForEach(item =>
                 {
+                    ListViewItem lvi = new ListViewItem("Monthly Association Fee");
 
+                    lvi.SubItems.Add(DateTime.Parse(item.DueDate.ToString()).ToShortDateString());
+
+                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
+                    lstBoxParticulars.Items.Add(lvi);
+                });
+
+                //Reservation
+
+                var reservations = new ReservationViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
+
+                reservations.ForEach(item =>
+                {
+                    ListViewItem lvi = new ListViewItem("Reservation Fee");
+
+                    lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
+
+                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
+                    lstBoxParticulars.Items.Add(lvi);
                 });
             }
         }
