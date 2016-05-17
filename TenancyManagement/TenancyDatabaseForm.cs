@@ -45,7 +45,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     var user = new UserViewModel().GetSelectedUser(unit.Owner);
 
                     txtBoxUnitNo.Text = unit.UnitNumber;
-                    txtBoxUnitOwner.Text = user.FullName;
+
+                    if (user != null)
+                        txtBoxUnitOwner.Text = user.FullName;
+                    else
+                        txtBoxUnitOwner.Text = "N/A";
                 }
                 else
                 {
