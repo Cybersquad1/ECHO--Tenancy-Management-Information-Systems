@@ -56,16 +56,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EchoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EchoDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EchoDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="EchoEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +99,10 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="TenancyDatabase.cs" />
+    <Compile Include="TenancyDatabase.Designer.cs">
+      <DependentUpon>TenancyDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenancyDatabaseByOccupancyYear_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
@@ -116,6 +110,15 @@
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TenantProfile.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitAllAvailable_Result.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitAllOccupied_Result.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitAll_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="UnitProfile.cs">
@@ -157,28 +160,6 @@
     <None Include="EchoDataSet.xss">
       <DependentUpon>EchoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="EchoDataSet1.xsc">
-      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="EchoDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EchoDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EchoDataSet1.xss">
-      <DependentUpon>EchoDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="EchoDataSet2.xsc">
-      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="EchoDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EchoDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EchoDataSet2.xss">
-      <DependentUpon>EchoDataSet2.xsd</DependentUpon>
-    </None>
     <None Include="EchoEntities.edmx.diagram">
       <DependentUpon>EchoEntities.edmx</DependentUpon>
     </None>
@@ -203,6 +184,11 @@
       <LastGenOutput>EchoEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Program Info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TenancyDatabase.resx">
+      <DependentUpon>TenancyDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

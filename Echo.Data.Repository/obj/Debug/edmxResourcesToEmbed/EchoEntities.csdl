@@ -53,6 +53,9 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="WaterBilling" EntitySet="WaterBilling" />
     </AssociationSet>
+    <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
+    <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
+    <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
   </EntityContainer>
   <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
     <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -401,4 +404,40 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="UnitAll_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UnitAllAvailable_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UnitAllOccupied_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
 </Schema>

@@ -238,5 +238,53 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -328,6 +328,9 @@
           <Parameter Name="StartDate" Type="datetime" Mode="In" />
           <Parameter Name="EndDate" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="UnitAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UnitAllAvailable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UnitAllOccupied" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="EchoModelStoreContainer">
           <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
@@ -435,6 +438,9 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="WaterBilling" EntitySet="WaterBilling" />
           </AssociationSet>
+          <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
+          <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
+          <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
         </EntityContainer>
         <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
           <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -783,6 +789,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="UnitAll_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="UnitAllAvailable_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="UnitAllOccupied_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1026,6 +1068,54 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

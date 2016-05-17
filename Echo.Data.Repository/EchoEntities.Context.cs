@@ -52,5 +52,20 @@ namespace Echo.Data.Repository
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TenancyDatabaseByOccupancyYear_Result>("TenancyDatabaseByOccupancyYear", startDateParameter, endDateParameter);
         }
+    
+        public virtual ObjectResult<UnitAll_Result> UnitAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UnitAll_Result>("UnitAll");
+        }
+    
+        public virtual ObjectResult<UnitAllAvailable_Result> UnitAllAvailable()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UnitAllAvailable_Result>("UnitAllAvailable");
+        }
+    
+        public virtual ObjectResult<UnitAllOccupied_Result> UnitAllOccupied()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UnitAllOccupied_Result>("UnitAllOccupied");
+        }
     }
 }
