@@ -99,10 +99,6 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TenancyDatabase.cs" />
-    <Compile Include="TenancyDatabase.Designer.cs">
-      <DependentUpon>TenancyDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="TenancyDatabaseByOccupancyYear_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
@@ -183,12 +179,6 @@
       <DependentUpon>EchoEntities.edmx</DependentUpon>
       <LastGenOutput>EchoEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="Program Info.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TenancyDatabase.resx">
-      <DependentUpon>TenancyDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

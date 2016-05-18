@@ -18,16 +18,6 @@ C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Ten
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
 C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll.config
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.xml
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll.config
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.pdb
@@ -37,3 +27,12 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll.config
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.pdb
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb

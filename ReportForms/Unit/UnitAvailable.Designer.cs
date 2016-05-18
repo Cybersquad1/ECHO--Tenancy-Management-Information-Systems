@@ -58,7 +58,7 @@
             // 
             // echoDataSetBindingSource
             // 
-            this.echoDataSetBindingSource.DataSource = this.echoDataSet;
+            this.echoDataSetBindingSource.DataSource = echoDataSet;
             this.echoDataSetBindingSource.Position = 0;
             // 
             // UnitAllAvailableBindingSource
