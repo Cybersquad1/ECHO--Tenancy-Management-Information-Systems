@@ -8,6 +8,30 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class ReservationViewModel : ViewModelBase<Reservation>
     {
+        public bool ProcessPaymenet(Guid _reservationID, decimal _amount)
+        {
+            try
+            {
+                var reservation = GetEntity(r => r.ID == _reservationID);
+
+                reservation.Paid = reservation.Paid + _amount;
+
+                reservation.Balance = reservation.Balance - _amount;
+
+                Update(reservation);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public Reservation GetSelected (Guid _reservationID)
+        {
+            return GetEntity(r => r.ID == _reservationID);
+        }
+
         public bool Save(Reservation _reservation)
         {
             try

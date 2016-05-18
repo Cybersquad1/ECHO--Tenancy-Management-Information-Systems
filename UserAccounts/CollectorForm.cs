@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
+using Tenancy_Management_Information_Systems.Utilities;
 
 namespace Tenancy_Management_Information_Systems.UserAccounts
 {
     public partial class CollectorForm : Form
     {
+        Guid selectedID;
+
+        string type = "";
+
+        FormUtilities formUlility = new FormUtilities();
+
         public CollectorForm()
         {
             InitializeComponent();
@@ -74,7 +81,28 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnUserCreate_Click(object sender, EventArgs e)
         {
+            if(type == "ASSOC")
+            {
+                var assocVM = new MonthlyAssociationDueViewModel();
 
+                if (assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+                {
+                    MessageBox.Show("Successfully processed payment");
+                }
+                else
+                    MessageBox.Show("Cannot process payment there was some kind of error", "Error");
+            }
+            else
+            {
+                var reservationVM = new ReservationViewModel();
+
+                if(reservationVM.ProcessPaymenet(selectedID,decimal.Parse(txtBoxTenderedAmount.Text)))
+                {
+                    MessageBox.Show("Successfully processed payment");
+                }
+                else
+                    MessageBox.Show("Cannot process payment there was some kind of error", "Error");
+            }
         }
 
         private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,7 +144,9 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
                 monthlyAssocs.ForEach(item =>
                 {
-                    ListViewItem lvi = new ListViewItem("Monthly Association Fee");
+                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                    lvi.SubItems.Add("Monthly Association Fee");
 
                     lvi.SubItems.Add(DateTime.Parse(item.DueDate.ToString()).ToShortDateString());
 
@@ -131,7 +161,9 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
                 reservations.ForEach(item =>
                 {
-                    ListViewItem lvi = new ListViewItem("Reservation Fee");
+                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                    lvi.SubItems.Add("Reservation Fee");
 
                     lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
 
@@ -140,6 +172,73 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     lstBoxParticulars.Items.Add(lvi);
                 });
             }
+        }
+
+        private void lstBoxParticulars_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedID = Guid.Parse(lstBoxParticulars.SelectedItems[0].SubItems[0].Text);
+
+                var monthlyAssoc = new MonthlyAssociationDueViewModel().GetSelected(selectedID);
+
+                var reservation = new ReservationViewModel().GetSelected(selectedID);
+
+                if (monthlyAssoc != null)
+                {
+                    txtBoxBillAmount.Text = string.Format("{0:0.00}", monthlyAssoc.TotalAmount - (monthlyAssoc.Penalty + monthlyAssoc.OtherPenaltyAmount));
+
+                    txtBoxBillDate.Text = DateTime.Parse(monthlyAssoc.ChargeDate.ToString()).ToShortDateString();
+
+                    txtBoxDueDate.Text = DateTime.Parse(monthlyAssoc.DueDate.ToString()).ToShortDateString();
+
+                    txtBoxPenalties.Text = string.Format("{0:0.00}", monthlyAssoc.Penalty + monthlyAssoc.OtherPenaltyAmount);
+
+                    txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", monthlyAssoc.Balance);
+
+                    type = "ASSOC";
+                }
+                else if (reservation != null)
+                {
+                    txtBoxBillAmount.Text = string.Format("{0:0.00}", reservation.Amount);
+
+                    txtBoxBillDate.Text = reservation.Date.ToShortDateString();
+
+                    txtBoxDueDate.Text = reservation.DateOfFuntion.AddDays(7).ToShortDateString();
+
+                    txtBoxPenalties.Text = "0.00";
+
+                    txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", reservation.Balance);
+
+                    type = "RESERVATION";
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message, "Error");
+            }
+        }
+
+        private void txtBoxTenderedAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUlility.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxTenderedAmount_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBoxTenderedAmount.Text != "")
+            {
+                decimal total = decimal.Parse(txtBoxTotalAmountDue.Text);
+
+                total -= decimal.Parse(txtBoxTenderedAmount.Text);
+
+                txtBoxChange.Text = string.Format("{0:0.00}", total);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

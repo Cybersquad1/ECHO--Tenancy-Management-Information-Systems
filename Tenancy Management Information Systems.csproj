@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />

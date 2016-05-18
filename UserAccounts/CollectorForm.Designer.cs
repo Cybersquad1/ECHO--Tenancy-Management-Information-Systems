@@ -50,7 +50,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUserCreate = new System.Windows.Forms.Button();
-            this.btnUserCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxBillAmount = new System.Windows.Forms.TextBox();
             this.label81 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstBoxParticulars = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -185,6 +185,7 @@
             // txtBoxChange
             // 
             this.txtBoxChange.BackColor = System.Drawing.Color.White;
+            this.txtBoxChange.Enabled = false;
             this.txtBoxChange.Location = new System.Drawing.Point(161, 355);
             this.txtBoxChange.Name = "txtBoxChange";
             this.txtBoxChange.Size = new System.Drawing.Size(176, 20);
@@ -208,6 +209,8 @@
             this.txtBoxTenderedAmount.Name = "txtBoxTenderedAmount";
             this.txtBoxTenderedAmount.Size = new System.Drawing.Size(176, 20);
             this.txtBoxTenderedAmount.TabIndex = 113;
+            this.txtBoxTenderedAmount.TextChanged += new System.EventHandler(this.txtBoxTenderedAmount_TextChanged);
+            this.txtBoxTenderedAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTenderedAmount_KeyPress);
             // 
             // label7
             // 
@@ -288,6 +291,7 @@
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "    Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -301,7 +305,6 @@
             this.groupBox1.Controls.Add(this.txtBoxDiscounts);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnUserCreate);
-            this.groupBox1.Controls.Add(this.btnUserCancel);
             this.groupBox1.Controls.Add(this.txtBoxChange);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtBoxTenderedAmount);
@@ -334,25 +337,13 @@
             this.btnUserCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCreate.Image")));
             this.btnUserCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCreate.Location = new System.Drawing.Point(366, 351);
+            this.btnUserCreate.Location = new System.Drawing.Point(464, 356);
             this.btnUserCreate.Name = "btnUserCreate";
             this.btnUserCreate.Size = new System.Drawing.Size(92, 28);
             this.btnUserCreate.TabIndex = 119;
             this.btnUserCreate.Text = "    Save";
             this.btnUserCreate.UseVisualStyleBackColor = true;
             this.btnUserCreate.Click += new System.EventHandler(this.btnUserCreate_Click);
-            // 
-            // btnUserCancel
-            // 
-            this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
-            this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCancel.Location = new System.Drawing.Point(466, 351);
-            this.btnUserCancel.Name = "btnUserCancel";
-            this.btnUserCancel.Size = new System.Drawing.Size(92, 28);
-            this.btnUserCancel.TabIndex = 120;
-            this.btnUserCancel.Text = "    Cancel";
-            this.btnUserCancel.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -513,6 +504,7 @@
             // 
             this.lstBoxParticulars.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lstBoxParticulars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader1});
@@ -524,6 +516,12 @@
             this.lstBoxParticulars.TabIndex = 2;
             this.lstBoxParticulars.UseCompatibleStateImageBehavior = false;
             this.lstBoxParticulars.View = System.Windows.Forms.View.Details;
+            this.lstBoxParticulars.DoubleClick += new System.EventHandler(this.lstBoxParticulars_DoubleClick);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ID";
+            this.columnHeader2.Width = 0;
             // 
             // columnHeader6
             // 
@@ -649,7 +647,6 @@
         private System.Windows.Forms.TextBox txtBoxDiscounts;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUserCreate;
-        private System.Windows.Forms.Button btnUserCancel;
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.TextBox txtBoxChange;
         private System.Windows.Forms.Label label8;
@@ -686,5 +683,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

@@ -335,3 +335,5 @@ C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml

@@ -99,7 +99,9 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void button2_Click(object sender, EventArgs e)//Login button
         {
-            Login();           
+            Login();
+
+            txtBoxPassword.Text = txtBoxUsername.Text = "";          
         }
 
         private void Home2_FormClosed(object sender, FormClosedEventArgs e)
