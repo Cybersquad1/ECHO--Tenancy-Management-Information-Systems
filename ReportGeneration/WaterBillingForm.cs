@@ -89,7 +89,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 var tenant = tenantVm.GetSelectedTenant(unit.Tenant);
 
-                txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                if (tenant != null)
+                    txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                else
+                    txtBoxTenant.Text = "N/A";
             }
             else
             {

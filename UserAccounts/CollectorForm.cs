@@ -40,16 +40,59 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
             });
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void GetParticulars()
         {
+            lstBoxParticulars.Items.Clear();
+
             if (cmbBoxUtilityBilling.Text == "Monthly Association Dues")
             {
                 checkBoxAdvancePayment.Visible = true;
+
+                //Get Particulars
+                //Monthly Assoc                
+
+                var monthlyAssocs = new MonthlyAssociationDueViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
+
+                monthlyAssocs.ForEach(item =>
+                {
+                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                    lvi.SubItems.Add("Monthly Association Fee");
+
+                    lvi.SubItems.Add(DateTime.Parse(item.DueDate.ToString()).ToShortDateString());
+
+                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
+                    lstBoxParticulars.Items.Add(lvi);
+                });
             }
             else
             {
                 checkBoxAdvancePayment.Visible = false;
+
+                //Reservation
+
+                var reservations = new ReservationViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
+
+                reservations.ForEach(item =>
+                {
+                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                    lvi.SubItems.Add("Reservation Fee");
+
+                    lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
+
+                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
+                    lstBoxParticulars.Items.Add(lvi);
+                });
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            GetParticulars();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -81,34 +124,50 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnUserCreate_Click(object sender, EventArgs e)
         {
-            if(type == "ASSOC")
-            {
-                var assocVM = new MonthlyAssociationDueViewModel();
+            DialogResult result = MessageBox.Show("Are you sure you want to save?", "Confirmation", MessageBoxButtons.YesNo);
 
-                if (assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+            if (result == DialogResult.Yes)
+            {
+                if (type == "ASSOC")
                 {
-                    MessageBox.Show("Successfully processed payment");
+                    var assocVM = new MonthlyAssociationDueViewModel();
+
+                    if (assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+                    {
+                        MessageBox.Show("Successfully processed payment");
+                    }
+                    else
+                        MessageBox.Show("Cannot process payment there was some kind of error", "Error");
                 }
                 else
-                    MessageBox.Show("Cannot process payment there was some kind of error", "Error");
-            }
-            else
-            {
-                var reservationVM = new ReservationViewModel();
-
-                if(reservationVM.ProcessPaymenet(selectedID,decimal.Parse(txtBoxTenderedAmount.Text)))
                 {
-                    MessageBox.Show("Successfully processed payment");
+                    var reservationVM = new ReservationViewModel();
+
+                    if (reservationVM.ProcessPaymenet(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+                    {
+                        MessageBox.Show("Successfully processed payment");
+                    }
+                    else
+                        MessageBox.Show("Cannot process payment there was some kind of error", "Error");
                 }
-                else
-                    MessageBox.Show("Cannot process payment there was some kind of error", "Error");
             }
+
+            GetParticulars();
+        }
+
+        private void EnablePaymentForm(bool type)
+        {
+            cmbBoxUtilityBilling.Enabled = comboBoxMonths.Enabled =
+                txtBoxTenderedAmount.Enabled = txtBoxExactNoOfMonths.Enabled =
+                btnUserCreate.Enabled = type;
         }
 
         private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbBoxUnitNo.Text != "")
             {
+                EnablePaymentForm(true);
+
                 var unitInformation = new UnitViewModel().GetSelected(cmbBoxUnitNo.Text);
                 
                 //Get Tenant Information
@@ -134,43 +193,11 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                         txtBoxUnitOwner.Text = "N/A";
                 }
                 else
-                    txtBoxUnitOwner.Text = "N/A";
-
-                //Get Particulars
-                //Monthly Assoc
-                lstBoxParticulars.Items.Clear();
-         
-                var monthlyAssocs = new MonthlyAssociationDueViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
-
-                monthlyAssocs.ForEach(item =>
-                {
-                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
-
-                    lvi.SubItems.Add("Monthly Association Fee");
-
-                    lvi.SubItems.Add(DateTime.Parse(item.DueDate.ToString()).ToShortDateString());
-
-                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
-
-                    lstBoxParticulars.Items.Add(lvi);
-                });
-
-                //Reservation
-
-                var reservations = new ReservationViewModel().GetAllUnpaid(cmbBoxUnitNo.Text);
-
-                reservations.ForEach(item =>
-                {
-                    ListViewItem lvi = new ListViewItem(item.ID.ToString());
-
-                    lvi.SubItems.Add("Reservation Fee");
-
-                    lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
-
-                    lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
-
-                    lstBoxParticulars.Items.Add(lvi);
-                });
+                    txtBoxUnitOwner.Text = "N/A";                            
+            }
+            else
+            {
+                EnablePaymentForm(false);
             }
         }
 
@@ -228,17 +255,44 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         {
             if(txtBoxTenderedAmount.Text != "")
             {
-                decimal total = decimal.Parse(txtBoxTotalAmountDue.Text);
+                decimal total = decimal.Parse(txtBoxTenderedAmount.Text);
 
-                total -= decimal.Parse(txtBoxTenderedAmount.Text);
+                total -= decimal.Parse(txtBoxTotalAmountDue.Text);
 
-                txtBoxChange.Text = string.Format("{0:0.00}", total);
+                if (total < 0)
+                    txtBoxChange.Text = "0.00";
+                else
+                    txtBoxChange.Text = string.Format("{0:0.00}", total);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBoxMonths_SelectedIndexChanged(object sender, EventArgs e)
+        {                                 
+            if (comboBoxMonths.Text == "2 - 5 mo.")
+            {
+                txtBoxDiscount.Text = "0%";
+            }
+            else if (comboBoxMonths.Text == "6 - 11 mo. -- 2.5 %")
+            {
+                txtBoxDiscount.Text = "2.5%";
+            }
+            else if(comboBoxMonths.Text == "12 - 17 mo. -- 5.0 %")
+            {
+                txtBoxDiscount.Text = "5%";
+            }
+            else if(comboBoxMonths.Text == "18 - 23 mo. -- 8.0 %")
+            {
+                txtBoxDiscount.Text = "8%";
+            }
+            else if(comboBoxMonths.Text == "24 mo. & up-- 11.0 %")
+            {
+                txtBoxDiscount.Text = "11%";
+            }
         }
     }
 }

@@ -108,6 +108,7 @@
             // txtBoxExactNoOfMonths
             // 
             this.txtBoxExactNoOfMonths.BackColor = System.Drawing.Color.White;
+            this.txtBoxExactNoOfMonths.Enabled = false;
             this.txtBoxExactNoOfMonths.Location = new System.Drawing.Point(138, 94);
             this.txtBoxExactNoOfMonths.Name = "txtBoxExactNoOfMonths";
             this.txtBoxExactNoOfMonths.Size = new System.Drawing.Size(96, 20);
@@ -137,6 +138,7 @@
             // comboBoxMonths
             // 
             this.comboBoxMonths.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMonths.Enabled = false;
             this.comboBoxMonths.FormattingEnabled = true;
             this.comboBoxMonths.Items.AddRange(new object[] {
             "2-5 mo.",
@@ -149,6 +151,7 @@
             this.comboBoxMonths.Size = new System.Drawing.Size(136, 22);
             this.comboBoxMonths.TabIndex = 20;
             this.comboBoxMonths.Visible = false;
+            this.comboBoxMonths.SelectedIndexChanged += new System.EventHandler(this.comboBoxMonths_SelectedIndexChanged);
             // 
             // checkBoxAdvancePayment
             // 
@@ -205,6 +208,7 @@
             // txtBoxTenderedAmount
             // 
             this.txtBoxTenderedAmount.BackColor = System.Drawing.Color.White;
+            this.txtBoxTenderedAmount.Enabled = false;
             this.txtBoxTenderedAmount.Location = new System.Drawing.Point(161, 333);
             this.txtBoxTenderedAmount.Name = "txtBoxTenderedAmount";
             this.txtBoxTenderedAmount.Size = new System.Drawing.Size(176, 20);
@@ -417,6 +421,7 @@
             // cmbBoxUtilityBilling
             // 
             this.cmbBoxUtilityBilling.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxUtilityBilling.Enabled = false;
             this.cmbBoxUtilityBilling.FormattingEnabled = true;
             this.cmbBoxUtilityBilling.Items.AddRange(new object[] {
             "Monthly Association Dues",

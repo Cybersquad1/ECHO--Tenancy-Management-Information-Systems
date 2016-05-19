@@ -33,7 +33,6 @@
             this.AccountsButton = new System.Windows.Forms.Button();
             this.ReportsButton = new System.Windows.Forms.Button();
             this.TenancyMgmtButton = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.UserAccPnl = new System.Windows.Forms.Panel();
             this.CreateNewUserButton = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -85,6 +83,7 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCollector = new System.Windows.Forms.Button();
             this.baPanel.SuspendLayout();
             this.UserAccPnl.SuspendLayout();
             this.TenMgmtPnl.SuspendLayout();
@@ -109,11 +108,10 @@
             this.baPanel.Controls.Add(this.AccountsButton);
             this.baPanel.Controls.Add(this.ReportsButton);
             this.baPanel.Controls.Add(this.TenancyMgmtButton);
-            this.baPanel.Controls.Add(this.button16);
             this.baPanel.Controls.Add(this.button2);
-            this.baPanel.Location = new System.Drawing.Point(3, 27);
+            this.baPanel.Location = new System.Drawing.Point(3, 28);
             this.baPanel.Name = "baPanel";
-            this.baPanel.Size = new System.Drawing.Size(141, 522);
+            this.baPanel.Size = new System.Drawing.Size(141, 521);
             this.baPanel.TabIndex = 52;
             // 
             // AccountsButton
@@ -158,24 +156,12 @@
             this.TenancyMgmtButton.UseVisualStyleBackColor = false;
             this.TenancyMgmtButton.Click += new System.EventHandler(this.TenancyMgmtButton_Click);
             // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.email5;
-            this.button16.Location = new System.Drawing.Point(6, 297);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(130, 96);
-            this.button16.TabIndex = 45;
-            this.button16.Text = "Messaging";
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.doooor;
-            this.button2.Location = new System.Drawing.Point(6, 391);
+            this.button2.Location = new System.Drawing.Point(5, 297);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 100);
             this.button2.TabIndex = 5;
@@ -295,6 +281,7 @@
             // reportsGenPnl
             // 
             this.reportsGenPnl.BackColor = System.Drawing.Color.Transparent;
+            this.reportsGenPnl.Controls.Add(this.btnCollector);
             this.reportsGenPnl.Controls.Add(this.button10);
             this.reportsGenPnl.Controls.Add(this.button11);
             this.reportsGenPnl.Controls.Add(this.button24);
@@ -334,7 +321,7 @@
             // 
             this.button24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.database;
-            this.button24.Location = new System.Drawing.Point(4, 180);
+            this.button24.Location = new System.Drawing.Point(3, 267);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(118, 90);
             this.button24.TabIndex = 45;
@@ -465,7 +452,6 @@
             this.clPanel.Controls.Add(this.button21);
             this.clPanel.Controls.Add(this.button22);
             this.clPanel.Controls.Add(this.button5);
-            this.clPanel.Controls.Add(this.button19);
             this.clPanel.Controls.Add(this.button1);
             this.clPanel.Location = new System.Drawing.Point(3, 27);
             this.clPanel.Name = "clPanel";
@@ -514,24 +500,12 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.email51;
-            this.button19.Location = new System.Drawing.Point(6, 296);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(130, 96);
-            this.button19.TabIndex = 45;
-            this.button19.Text = "Messaging";
-            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button19.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.doooor;
-            this.button1.Location = new System.Drawing.Point(6, 389);
+            this.button1.Location = new System.Drawing.Point(5, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 100);
             this.button1.TabIndex = 5;
@@ -792,16 +766,16 @@
             this.lblUsername.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblUsername.Location = new System.Drawing.Point(944, 55);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(82, 16);
+            this.lblUsername.Size = new System.Drawing.Size(86, 16);
             this.lblUsername.TabIndex = 64;
-            this.lblUsername.Text = "RCVIgnacio";
+            this.lblUsername.Text = "User\'s Name";
             // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.SystemColors.Window;
+            this.panelLeft.Controls.Add(this.acPnl);
             this.panelLeft.Controls.Add(this.baPanel);
             this.panelLeft.Controls.Add(this.clPanel);
-            this.panelLeft.Controls.Add(this.acPnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl);
             this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
             this.panelLeft.Controls.Add(this.reportsGenPnl2);
@@ -831,6 +805,19 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnCollector
+            // 
+            this.btnCollector.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollector.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.assocbut;
+            this.btnCollector.Location = new System.Drawing.Point(4, 178);
+            this.btnCollector.Name = "btnCollector";
+            this.btnCollector.Size = new System.Drawing.Size(118, 90);
+            this.btnCollector.TabIndex = 46;
+            this.btnCollector.Text = "Collector";
+            this.btnCollector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCollector.UseVisualStyleBackColor = true;
+            this.btnCollector.Click += new System.EventHandler(this.btnCollector_Click);
             // 
             // Home
             // 
@@ -875,7 +862,6 @@
         private System.Windows.Forms.Button AccountsButton;
         private System.Windows.Forms.Button ReportsButton;
         private System.Windows.Forms.Button TenancyMgmtButton;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button2;
         internal System.Windows.Forms.Panel UserAccPnl;
         internal System.Windows.Forms.Button CreateNewUserButton;
@@ -905,7 +891,6 @@
         private System.Windows.Forms.Panel clPanel;
         private System.Windows.Forms.Button button21;
         internal System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button button5;
@@ -926,6 +911,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblLogout;
+        internal System.Windows.Forms.Button btnCollector;
     }
 }
 

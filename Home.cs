@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Kiosk;
+using Tenancy_Management_Information_Systems.UserAccounts;
 
 namespace Tenancy_Management_Information_Systems
 {
@@ -222,7 +223,6 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Clear();
 
             TenancyManagement.PaymentHistoryForm p1 = new TenancyManagement.PaymentHistoryForm();
-            p1.paymentHistoryPnl.Visible = true;
             p1.Visible = true;
             p1.TopLevel = false;
             p1.Dock = DockStyle.Fill;
@@ -235,7 +235,6 @@ namespace Tenancy_Management_Information_Systems
             panelMain.Controls.Clear();
 
             TenancyManagement.AvailableUnitForm a1 = new TenancyManagement.AvailableUnitForm();
-            a1.unitPnl.Visible = true;
 
             a1.TopLevel = false;
             a1.Visible = true;
@@ -302,9 +301,14 @@ namespace Tenancy_Management_Information_Systems
 
         private void button13_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+
             TenancyManagement.AvailableUnitForm a1 = new TenancyManagement.AvailableUnitForm();
-            a1.unitPnl.Visible = true;
-            a1.ShowDialog();
+            a1.Visible = true;
+            a1.TopLevel = false;
+            a1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(a1);
         }
 
         private void button14_Click(object sender, EventArgs e)//Payment History
@@ -388,6 +392,18 @@ namespace Tenancy_Management_Information_Systems
         private void button2_Click(object sender, EventArgs e) //Logout
         {
             Close();
+        }
+
+        private void btnCollector_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+
+            CollectorForm cf = new CollectorForm();
+            cf.TopLevel = false;
+            cf.Visible = true;
+            cf.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(cf);
         }
     }
 }
