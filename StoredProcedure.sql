@@ -87,3 +87,38 @@ ON owner.ID = unit.Owner
 LEFT JOIN TenantProfile as tenant
 ON tenant.ID = unit.Tenant
 WHERE unit.Tenant IS NOT NULL
+
+
+USE [Echo]
+GO
+/****** Object:  StoredProcedure [dbo].[MonthlyAssocPaymentHistory]    Script Date: 5/20/2016 3:21:15 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[MonthlyAssocPaymentHistory]
+(
+@UnitNo varchar(10)
+)
+AS
+SELECT * FROM MonthlyAssociationDue
+WHERE UnitNumber = @UnitNo
+ORDER BY ChargeDate DESC
+
+
+USE [Echo]
+GO
+/****** Object:  StoredProcedure [dbo].[WaterBillingPaymentHistory]    Script Date: 5/20/2016 3:21:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[WaterBillingPaymentHistory]
+(
+	@UnitNo varchar(10)
+)
+AS
+SELECT * FROM WaterBilling
+WHERE UnitNumber = @UnitNo
+ORDER BY ChargeDate DESC
