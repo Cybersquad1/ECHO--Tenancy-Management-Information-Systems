@@ -157,8 +157,11 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TenancyManagement.viewUnitNumberForm v2 = new TenancyManagement.viewUnitNumberForm();
-            v2.Show();
+            if (cmbBoxUnitNo.Text != "")
+            {
+                TenancyManagement.viewUnitNumberForm v2 = new TenancyManagement.viewUnitNumberForm(cmbBoxUnitNo.Text);
+                v2.Show();
+            }
         }
 
         private void btnUserCancel_Click(object sender, EventArgs e)

@@ -67,5 +67,23 @@ namespace Echo.Data.Repository
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UnitAllOccupied_Result>("UnitAllOccupied");
         }
+    
+        public virtual ObjectResult<MonthlyAssocPaymentHistory_Result> MonthlyAssocPaymentHistory(string unitNo)
+        {
+            var unitNoParameter = unitNo != null ?
+                new ObjectParameter("UnitNo", unitNo) :
+                new ObjectParameter("UnitNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonthlyAssocPaymentHistory_Result>("MonthlyAssocPaymentHistory", unitNoParameter);
+        }
+    
+        public virtual ObjectResult<WaterBillingPaymentHistory_Result> WaterBillingPaymentHistory(string unitNo)
+        {
+            var unitNoParameter = unitNo != null ?
+                new ObjectParameter("UnitNo", unitNo) :
+                new ObjectParameter("UnitNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WaterBillingPaymentHistory_Result>("WaterBillingPaymentHistory", unitNoParameter);
+        }
     }
 }

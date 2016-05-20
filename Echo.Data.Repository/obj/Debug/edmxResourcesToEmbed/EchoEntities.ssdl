@@ -319,6 +319,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="MonthlyAssocPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnitNo" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="TenancyDatabaseByOccupancyYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="StartDate" Type="datetime" Mode="In" />
     <Parameter Name="EndDate" Type="datetime" Mode="In" />
@@ -326,6 +329,9 @@
   <Function Name="UnitAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="UnitAllAvailable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="UnitAllOccupied" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WaterBillingPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnitNo" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="EchoModelStoreContainer">
     <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />

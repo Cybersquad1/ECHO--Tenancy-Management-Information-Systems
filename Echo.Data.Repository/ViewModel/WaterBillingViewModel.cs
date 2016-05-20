@@ -14,6 +14,11 @@ namespace Echo.Data.Repository.ViewModel
             public decimal Amount { get; set; }
         }
 
+        public List<WaterBilling> GetAll(string _unitNo)
+        {
+            return Find(r => r.UnitNumber == _unitNo).OrderByDescending(r => r.ChargeDate).ToList();
+        }
+
         public bool IfBillingAlreadyExist(string _unitNo)
         {
             var billing = GetLast(r=>r.UnitNumber == _unitNo);

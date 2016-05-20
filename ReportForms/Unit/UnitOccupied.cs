@@ -9,32 +9,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tenancy_Management_Information_Systems.ReportForms
+namespace Tenancy_Management_Information_Systems.ReportForms.Unit
 {
-    public partial class UnitAll : Form
+    public partial class UnitOccupied : Form
     {
-        public UnitAll()
+        public UnitOccupied()
         {
             InitializeComponent();
 
             LoadReport();
         }
 
+
         private void LoadReport()
         {
             using (var db = new EchoEntities())
             {
-                unitAllBindingSource.DataSource =
-                    db.UnitAll();
+                unitAllOccupiedBindingSource.DataSource =
+                    db.UnitAllOccupied();
 
                 reportViewer.RefreshReport();
             }
         }
-
-        private void UnitAll_Load(object sender, EventArgs e)
+        private void UnitOccupied_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'echoDataSet1.UnitAll' table. You can move, or remove it, as needed.
-            this.unitAllTableAdapter.Fill(this.echoDataSet1.UnitAll);
+            // TODO: This line of code loads data into the 'echoDataSet.UnitAllOccupied' table. You can move, or remove it, as needed.
+            this.unitAllOccupiedTableAdapter.Fill(this.echoDataSet.UnitAllOccupied);
 
             this.reportViewer.RefreshReport();
         }

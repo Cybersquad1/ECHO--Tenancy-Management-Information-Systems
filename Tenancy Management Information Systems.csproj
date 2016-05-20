@@ -128,6 +128,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportForms\PaymentHistory\MonthlyAssociationDue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\PaymentHistory\MonthlyAssociationDue.Designer.cs">
+      <DependentUpon>MonthlyAssociationDue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\PaymentHistory\PaymentHistoryType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\PaymentHistory\PaymentHistoryType.Designer.cs">
+      <DependentUpon>PaymentHistoryType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\PaymentHistory\WaterBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\PaymentHistory\WaterBilling.Designer.cs">
+      <DependentUpon>WaterBilling.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForms\TenancyDatabase\TenancyDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +175,12 @@
     </Compile>
     <Compile Include="ReportForms\Unit\UnitCategory.Designer.cs">
       <DependentUpon>UnitCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\Unit\UnitOccupied.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\Unit\UnitOccupied.Designer.cs">
+      <DependentUpon>UnitOccupied.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportGeneration\logSheetForm.cs">
       <SubType>Form</SubType>
@@ -308,6 +332,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportForms\PaymentHistory\MonthlyAssociationDue.resx">
+      <DependentUpon>MonthlyAssociationDue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\PaymentHistory\PaymentHistoryType.resx">
+      <DependentUpon>PaymentHistoryType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\PaymentHistory\WaterBilling.resx">
+      <DependentUpon>WaterBilling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\TenancyDatabase\TenancyDatabase.resx">
       <DependentUpon>TenancyDatabase.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +356,9 @@
     <EmbeddedResource Include="ReportForms\Unit\UnitCategory.resx">
       <DependentUpon>UnitCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\Unit\UnitOccupied.resx">
+      <DependentUpon>UnitOccupied.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportGeneration\logSheetForm.resx">
       <DependentUpon>logSheetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,10 +371,12 @@
     <EmbeddedResource Include="ReportGeneration\WaterBillingForm.resx">
       <DependentUpon>WaterBillingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonthlyAssocPaymentHistory.rdlc" />
     <EmbeddedResource Include="Reports\TenancyDatabaseByOccupancyDate.rdlc" />
     <EmbeddedResource Include="Reports\UnitAll.rdlc" />
     <EmbeddedResource Include="Reports\UnitAvailable.rdlc" />
     <EmbeddedResource Include="Reports\UnitOccupiedrdlc.rdlc" />
+    <EmbeddedResource Include="Reports\WaterBillingPaymentHistory.rdlc" />
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>

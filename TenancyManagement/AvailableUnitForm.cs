@@ -221,8 +221,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TenancyManagement.viewUnitNumberForm v1 = new viewUnitNumberForm();
-            v1.Show();
+            if (txtBoxUnitNumber.Text != "")
+            {
+                TenancyManagement.viewUnitNumberForm v1 = new viewUnitNumberForm(txtBoxUnitNumber.Text);
+                v1.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e) //Cancel

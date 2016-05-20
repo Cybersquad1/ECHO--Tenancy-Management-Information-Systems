@@ -56,6 +56,12 @@
     <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
     <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
     <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
+    <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
+      <Parameter Name="UnitNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
+      <Parameter Name="UnitNo" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
     <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -439,5 +445,36 @@
     <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="MonthlyAssocPaymentHistory_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="WaterBillingPaymentHistory_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
   </ComplexType>
 </Schema>

@@ -286,5 +286,44 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
+          <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+          <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
+          <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -51,11 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EchoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EchoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="EchoEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +74,9 @@
     </Compile>
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="MonthlyAssociationDue.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlyAssocPaymentHistory_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentHistory.cs">
@@ -138,6 +136,9 @@
     <Compile Include="WaterBilling.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="WaterBillingPaymentHistory_Result.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -145,17 +146,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EchoEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EchoDataSet.xsc">
-      <DependentUpon>EchoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EchoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EchoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EchoDataSet.xss">
-      <DependentUpon>EchoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="EchoEntities.edmx.diagram">
       <DependentUpon>EchoEntities.edmx</DependentUpon>
     </None>

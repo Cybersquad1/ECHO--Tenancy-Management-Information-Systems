@@ -338,3 +338,7 @@ C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitAvailable.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.MonthlyAssociationDue.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources

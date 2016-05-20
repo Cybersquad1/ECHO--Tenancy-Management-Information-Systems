@@ -324,6 +324,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="MonthlyAssocPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitNo" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="TenancyDatabaseByOccupancyYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="StartDate" Type="datetime" Mode="In" />
           <Parameter Name="EndDate" Type="datetime" Mode="In" />
@@ -331,6 +334,9 @@
         <Function Name="UnitAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="UnitAllAvailable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="UnitAllOccupied" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WaterBillingPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitNo" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="EchoModelStoreContainer">
           <EntitySet Name="LogSheet" EntityType="Self.LogSheet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogSheetActivity" EntityType="Self.LogSheetActivity" Schema="dbo" store:Type="Tables" />
@@ -441,6 +447,12 @@
           <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
           <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
           <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
+          <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
+            <Parameter Name="UnitNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
+            <Parameter Name="UnitNo" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
           <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -825,6 +837,37 @@
           <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
         </ComplexType>
+        <ComplexType Name="MonthlyAssocPaymentHistory_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="WaterBillingPaymentHistory_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1113,6 +1156,45 @@
                 <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
                 <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
                 <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+                <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+                <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+                <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
+                <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+                <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
+                <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

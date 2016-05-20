@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{12
 	ProjectSection(SolutionItems) = preProject
 		Echo.sql = Echo.sql
 		SQL Query with Sample Data.sql = SQL Query with Sample Data.sql
+		StoredProcedure.sql = StoredProcedure.sql
 	EndProjectSection
 EndProject
 Global
