@@ -122,3 +122,14 @@ AS
 SELECT * FROM WaterBilling
 WHERE UnitNumber = @UnitNo
 ORDER BY ChargeDate DESC
+
+USE [Echo]
+GO
+/****** Object:  StoredProcedure [dbo].[WaterBillingPaymentHistory]    Script Date: 5/20/2016 3:21:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE UserList
+AS
+Select * From UserProfile

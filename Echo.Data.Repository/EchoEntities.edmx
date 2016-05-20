@@ -334,6 +334,7 @@
         <Function Name="UnitAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="UnitAllAvailable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="UnitAllOccupied" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UserList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="WaterBillingPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UnitNo" Type="varchar" Mode="In" />
         </Function>
@@ -448,11 +449,12 @@
           <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
           <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
           <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
-            <Parameter Name="UnitNo" Mode="In" Type="String" />
+          <Parameter Name="UnitNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
-            <Parameter Name="UnitNo" Mode="In" Type="String" />
+          <Parameter Name="UnitNo" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
         </EntityContainer>
         <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
           <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -868,6 +870,29 @@
           <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
           <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
         </ComplexType>
+        <ComplexType Name="UserList_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
+          <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
+          <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1195,6 +1220,33 @@
                 <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
                 <ScalarProperty Name="Paid" ColumnName="Paid" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UserList" FunctionName="EchoModel.Store.UserList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UserList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+                <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
+                <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

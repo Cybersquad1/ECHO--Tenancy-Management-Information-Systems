@@ -118,6 +118,9 @@
     <Compile Include="UnitProfile.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserList_Result.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserProfile.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>

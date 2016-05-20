@@ -24,7 +24,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
             tenantID = _tenantID;
 
-            lblUnitNo.Text = "#"+_unitNo;
+            lblUnitNo.Text = _unitNo;
 
             lblTenantName.Text = _name;
 
@@ -75,13 +75,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void PHistoryButton_Click(object sender, EventArgs e)
         {
-            HomeKioskForms hk = new HomeKioskForms();
-            hk.pnlTenancyInfo.Visible = false;
-            hk.pnlRequest.Visible = false;
-            hk.pnlPaymentHistory.Visible = true;
-            hk.pnlReservation.Visible = false;
-            hk.pnlAssocDues.Visible = false;
-            hk.ShowDialog();
+            mainPanel.Controls.Clear();
+
+            PaymentHistory form = new PaymentHistory(lblUnitNo.Text);
+            form.TopLevel = false;
+            form.Visible = true;
+            form.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(form);
         }
 
         private void RequestButton_Click(object sender, EventArgs e)

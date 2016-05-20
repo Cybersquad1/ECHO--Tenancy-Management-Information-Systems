@@ -40,7 +40,10 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
                     {
                         var tenant = new TenantViewModel().GetSelectedTenant(unitProfile.Tenant);
 
-                        txtBoxUnitOwner.Text = tenant.FirstName + " " + tenant.LastName;
+                        if (tenant != null)
+                            txtBoxUnitOwner.Text = tenant.FirstName + " " + tenant.LastName;
+                        else
+                            txtBoxUnitOwner.Text = "N/A";
 
                     }
                     else

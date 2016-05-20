@@ -182,6 +182,12 @@
     <Compile Include="ReportForms\Unit\UnitOccupied.Designer.cs">
       <DependentUpon>UnitOccupied.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForms\UserList\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\UserList\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportGeneration\logSheetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     <EmbeddedResource Include="ReportForms\Unit\UnitOccupied.resx">
       <DependentUpon>UnitOccupied.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\UserList\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportGeneration\logSheetForm.resx">
       <DependentUpon>logSheetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +385,7 @@
     <EmbeddedResource Include="Reports\UnitAll.rdlc" />
     <EmbeddedResource Include="Reports\UnitAvailable.rdlc" />
     <EmbeddedResource Include="Reports\UnitOccupiedrdlc.rdlc" />
+    <EmbeddedResource Include="Reports\UserList.rdlc" />
     <EmbeddedResource Include="Reports\WaterBillingPaymentHistory.rdlc" />
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>

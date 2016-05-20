@@ -85,5 +85,10 @@ namespace Echo.Data.Repository
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WaterBillingPaymentHistory_Result>("WaterBillingPaymentHistory", unitNoParameter);
         }
+    
+        public virtual ObjectResult<UserList_Result> UserList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UserList_Result>("UserList");
+        }
     }
 }

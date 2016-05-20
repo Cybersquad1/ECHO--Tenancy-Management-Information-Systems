@@ -146,6 +146,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void btnExport_Click(object sender, EventArgs e)
         {
             PaymentHistoryType form = new PaymentHistoryType(unitNo);
+
             form.ShowDialog();
         }
     }

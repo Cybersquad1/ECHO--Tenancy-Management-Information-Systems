@@ -457,6 +457,7 @@
             // 
             // pnlReservation
             // 
+            this.pnlReservation.BackColor = System.Drawing.Color.White;
             this.pnlReservation.Controls.Add(this.txtBoxContactNo);
             this.pnlReservation.Controls.Add(this.txtBoxTime);
             this.pnlReservation.Controls.Add(this.txtBoxNoOfGuests);

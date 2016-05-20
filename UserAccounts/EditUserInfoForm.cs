@@ -12,6 +12,7 @@ using Echo.Data.Repository.ViewModel;
 using Tenancy_Management_Information_Systems.Utilities;
 using System.IO;
 using System.Text.RegularExpressions;
+using Tenancy_Management_Information_Systems.ReportForms.UserList;
 
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
@@ -310,6 +311,13 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         private void txtBoxContactNo_TextChanged(object sender, EventArgs e)
         {
  
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            UserList form = new UserList();
+
+            form.Show();
         }
     }
 }

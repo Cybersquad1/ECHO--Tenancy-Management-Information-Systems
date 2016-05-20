@@ -13,16 +13,22 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
 {
     public partial class PaymentHistory : Form
     {
-        public PaymentHistory()
+        public PaymentHistory(string _unitNo)
         {
             InitializeComponent();
+
+            GetAssocDue(_unitNo);
+
+            GetReservation(_unitNo);
         }
 
-        private void GetBillingHistory(string _unitNo)
+        private void GetAssocDue(string _unitNo)
         {
-            var billings = new MonthlyAssociationDueViewModel().GetAll(_unitNo);
+            listViewAssoc.Items.Clear();
 
-            billings.ForEach(item =>
+            var assocDue = new MonthlyAssociationDueViewModel().GetAll(_unitNo);
+
+            assocDue.ForEach(item =>
             {
                 ListViewItem lvi = new ListViewItem(DateTime.Parse
                     (item.ChargeDate.ToString()).ToShortDateString());//Charge Date
@@ -34,6 +40,28 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
                 lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance)); //Balance
 
                 lvi.SubItems.Add(string.Format("{0:0.00}", item.TotalAmount)); //Total        
+
+                listViewAssoc.Items.Add(lvi);
+            });
+        }
+
+        private void GetReservation(string _unitNo)
+        {
+            listViewReservation.Items.Clear();
+
+            var reservation = new ReservationViewModel().GetAll(_unitNo);
+
+            reservation.ForEach(item =>
+            {
+                ListViewItem lvi = new ListViewItem(item.Date.ToShortDateString());
+
+                lvi.SubItems.Add("Reservation for " + item.Facility);
+
+                lvi.SubItems.Add(string.Format("{0:0.00}", item.Amount));
+
+                lvi.SubItems.Add(item.DateOfFuntion.AddDays(-7).ToShortDateString());
+
+                listViewReservation.Items.Add(lvi);
             });
         }
     }

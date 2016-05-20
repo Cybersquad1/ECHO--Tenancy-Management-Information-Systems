@@ -75,7 +75,7 @@
             this.paymentHistoryPnl.Controls.Add(this.btnCancel);
             this.paymentHistoryPnl.Location = new System.Drawing.Point(10, 10);
             this.paymentHistoryPnl.Name = "paymentHistoryPnl";
-            this.paymentHistoryPnl.Size = new System.Drawing.Size(967, 548);
+            this.paymentHistoryPnl.Size = new System.Drawing.Size(967, 557);
             this.paymentHistoryPnl.TabIndex = 1;
             // 
             // groupBox1
@@ -280,7 +280,6 @@
             this.groupBox2.Size = new System.Drawing.Size(208, 555);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "7";
             // 
             // listViewUnit
             // 
@@ -325,7 +324,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 512);
+            this.btnExport.Location = new System.Drawing.Point(749, 503);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 18;
@@ -338,7 +337,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(861, 512);
+            this.btnCancel.Location = new System.Drawing.Point(861, 503);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 33);
             this.btnCancel.TabIndex = 19;

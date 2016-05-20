@@ -104,8 +104,9 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
             totalAmount += double.Parse(lblWaterOverdueAmount.Text);
             totalAmount += double.Parse(lblWaterDisconnectionAmount.Text);
 
-            lblTotalAmount.Text = string.Format("{0:0.00}", totalAmount - double.Parse(lblVAT.Text));
             lblVAT.Text = string.Format("{0:0.00}", totalAmount * 0.12);
+            lblTotalAmount.Text = string.Format("{0:0.00}", totalAmount - double.Parse(lblVAT.Text));
+           
             lblTotalWithVAT.Text = string.Format("{0:0.00}", totalAmount);
         }
 
