@@ -42,17 +42,11 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                         userID = user.ID
                     };
 
-                    if (loginInfo.accountType.ToUpper() == "ADMIN")
-                    {
+
                         Home h1 = new Home(loginInfo, this);
                         h1.Show();
 
                         Hide();
-                    }
-                    else //If unit owner | accounting
-                    {
-
-                    }
                 }
                 else
                 {

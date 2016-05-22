@@ -30,6 +30,26 @@ namespace Tenancy_Management_Information_Systems
             this.parentForm = parentForm;
 
             this.loginInfo = loginInfo;
+
+            //Show panel depending on user access
+            if(loginInfo.accountType.ToLower() == "accountant")
+            {
+                acPnl.Visible = true;
+                clPanel.Visible = false;
+                baPanel.Visible = false;
+            }
+            else if(loginInfo.accountType.ToLower() == "admin")
+            {
+                acPnl.Visible = false;
+                clPanel.Visible = false;
+                baPanel.Visible = true;
+            }
+            else if(loginInfo.accountType.ToLower() == "collector")
+            {
+                acPnl.Visible = false;
+                clPanel.Visible = true;
+                baPanel.Visible = false;
+            }
         }
 
         private void AccountsButton_Click(object sender, EventArgs e)

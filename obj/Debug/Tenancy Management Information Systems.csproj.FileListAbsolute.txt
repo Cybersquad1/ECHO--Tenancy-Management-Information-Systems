@@ -342,3 +342,8 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
 C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.MonthlyAssociationDue.resources
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources
+C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UserList.UserList.resources
