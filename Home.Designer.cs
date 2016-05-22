@@ -42,7 +42,6 @@
             this.tenancyDataButton = new System.Windows.Forms.Button();
             this.TenancyArchiveButton = new System.Windows.Forms.Button();
             this.reportsGenPnl = new System.Windows.Forms.Panel();
-            this.btnCollector = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
@@ -271,19 +270,6 @@
             this.reportsGenPnl.TabIndex = 55;
             this.reportsGenPnl.Visible = false;
             // 
-            // btnCollector
-            // 
-            this.btnCollector.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCollector.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.assocbut;
-            this.btnCollector.Location = new System.Drawing.Point(6, 298);
-            this.btnCollector.Name = "btnCollector";
-            this.btnCollector.Size = new System.Drawing.Size(130, 90);
-            this.btnCollector.TabIndex = 46;
-            this.btnCollector.Text = "Collector";
-            this.btnCollector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCollector.UseVisualStyleBackColor = true;
-            this.btnCollector.Click += new System.EventHandler(this.btnCollector_Click);
-            // 
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -442,7 +428,6 @@
             // clPanel
             // 
             this.clPanel.BackColor = System.Drawing.Color.Transparent;
-            this.clPanel.Controls.Add(this.btnCollector);
             this.clPanel.Controls.Add(this.button21);
             this.clPanel.Controls.Add(this.button22);
             this.clPanel.Controls.Add(this.button5);
@@ -847,7 +832,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblLogout;
-        internal System.Windows.Forms.Button btnCollector;
     }
 }
 

@@ -285,9 +285,14 @@ namespace Tenancy_Management_Information_Systems
 
         private void button21_Click(object sender, EventArgs e)
         {
-            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
-            c1.collectorPnl.Visible = true;
-            c1.ShowDialog();
+            panelMain.Controls.Clear();
+
+            CollectorForm cf = new CollectorForm();
+            cf.TopLevel = false;
+            cf.Visible = true;
+            cf.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(cf);
         }
 
         private void button22_Click(object sender, EventArgs e)
