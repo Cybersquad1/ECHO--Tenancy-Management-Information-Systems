@@ -248,5 +248,10 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         {
             formUtilities.AllowsNumericOnly(sender, e);
         }
+
+        private void CreateNewUserForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -262,7 +262,6 @@
             // reportsGenPnl
             // 
             this.reportsGenPnl.BackColor = System.Drawing.Color.Transparent;
-            this.reportsGenPnl.Controls.Add(this.btnCollector);
             this.reportsGenPnl.Controls.Add(this.button10);
             this.reportsGenPnl.Controls.Add(this.button11);
             this.reportsGenPnl.Controls.Add(this.button24);
@@ -276,9 +275,9 @@
             // 
             this.btnCollector.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCollector.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.assocbut;
-            this.btnCollector.Location = new System.Drawing.Point(4, 178);
+            this.btnCollector.Location = new System.Drawing.Point(6, 298);
             this.btnCollector.Name = "btnCollector";
-            this.btnCollector.Size = new System.Drawing.Size(118, 90);
+            this.btnCollector.Size = new System.Drawing.Size(130, 90);
             this.btnCollector.TabIndex = 46;
             this.btnCollector.Text = "Collector";
             this.btnCollector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -315,7 +314,7 @@
             // 
             this.button24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.database;
-            this.button24.Location = new System.Drawing.Point(3, 267);
+            this.button24.Location = new System.Drawing.Point(4, 181);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(118, 90);
             this.button24.TabIndex = 45;
@@ -443,6 +442,7 @@
             // clPanel
             // 
             this.clPanel.BackColor = System.Drawing.Color.Transparent;
+            this.clPanel.Controls.Add(this.btnCollector);
             this.clPanel.Controls.Add(this.button21);
             this.clPanel.Controls.Add(this.button22);
             this.clPanel.Controls.Add(this.button5);
@@ -726,15 +726,15 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.SystemColors.Window;
-            this.panelLeft.Controls.Add(this.reportsGenPnl);
-            this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
-            this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Controls.Add(this.collectorPnl2);
             this.panelLeft.Controls.Add(this.UserAccPnl);
             this.panelLeft.Controls.Add(this.TenMgmtPnl);
+            this.panelLeft.Controls.Add(this.clPanel);
             this.panelLeft.Controls.Add(this.acPnl);
             this.panelLeft.Controls.Add(this.baPanel);
-            this.panelLeft.Controls.Add(this.clPanel);
+            this.panelLeft.Controls.Add(this.reportsGenPnl);
+            this.panelLeft.Controls.Add(this.tenancyDatabasePnl);
+            this.panelLeft.Controls.Add(this.reportsGenPnl2);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 127);
             this.panelLeft.Name = "panelLeft";

@@ -268,7 +268,7 @@
             this.collectorPnl.Controls.Add(this.groupBox3);
             this.collectorPnl.Location = new System.Drawing.Point(4, 5);
             this.collectorPnl.Name = "collectorPnl";
-            this.collectorPnl.Size = new System.Drawing.Size(979, 559);
+            this.collectorPnl.Size = new System.Drawing.Size(979, 537);
             this.collectorPnl.TabIndex = 19;
             // 
             // btnPreview
@@ -277,7 +277,7 @@
             this.btnPreview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreview.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
             this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPreview.Location = new System.Drawing.Point(777, 520);
+            this.btnPreview.Location = new System.Drawing.Point(780, 498);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(111, 33);
             this.btnPreview.TabIndex = 30;
@@ -289,7 +289,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(894, 520);
+            this.btnCancel.Location = new System.Drawing.Point(897, 498);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 33);
             this.btnCancel.TabIndex = 29;
@@ -620,6 +620,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(986, 568);
             this.Controls.Add(this.collectorPnl);

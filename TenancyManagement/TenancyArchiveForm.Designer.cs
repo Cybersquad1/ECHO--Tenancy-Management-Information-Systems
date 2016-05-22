@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenancyArchiveForm));
             this.ArchivePnl = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,65 +50,64 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.ArchivePnl.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ArchivePnl
@@ -120,6 +120,29 @@
             this.ArchivePnl.Name = "ArchivePnl";
             this.ArchivePnl.Size = new System.Drawing.Size(967, 548);
             this.ArchivePnl.TabIndex = 0;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(749, 512);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(106, 33);
+            this.btnExport.TabIndex = 18;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(861, 512);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 33);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "    Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -138,61 +161,6 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(196, 10);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(760, 447);
-            this.tabControl1.TabIndex = 2;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.listView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(752, 420);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "All";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(752, 420);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Tenancy Information";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(69, 19);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 21);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Unit Number";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(153, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 23);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -301,6 +269,48 @@
             this.label2.TabIndex = 56;
             this.label2.Text = "Start Year of Occupancy:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(69, 19);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(86, 21);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "Unit Number";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(153, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 23);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(196, 10);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(760, 447);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(752, 420);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "All";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -354,6 +364,239 @@
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader6.Width = 166;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(752, 420);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tenancy Information";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.textBox22);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.textBox21);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 323);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(740, 98);
+            this.groupBox3.TabIndex = 142;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Duration of Stay";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label24.Location = new System.Drawing.Point(388, 41);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(133, 14);
+            this.label24.TabIndex = 156;
+            this.label24.Text = "End Date of Occupancy:";
+            // 
+            // textBox22
+            // 
+            this.textBox22.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox22.Enabled = false;
+            this.textBox22.Location = new System.Drawing.Point(529, 38);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(205, 20);
+            this.textBox22.TabIndex = 157;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label23.Location = new System.Drawing.Point(24, 41);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(139, 14);
+            this.label23.TabIndex = 154;
+            this.label23.Text = "Start Date of Occupancy:";
+            // 
+            // textBox21
+            // 
+            this.textBox21.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox21.Enabled = false;
+            this.textBox21.Location = new System.Drawing.Point(169, 38);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(181, 20);
+            this.textBox21.TabIndex = 155;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.textBox20);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.textBox19);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.textBox18);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.textBox17);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBox16);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(6, 219);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(740, 98);
+            this.groupBox1.TabIndex = 141;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Other Information";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label21.Location = new System.Drawing.Point(524, 63);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 14);
+            this.label21.TabIndex = 152;
+            this.label21.Text = "Type/s:";
+            // 
+            // textBox20
+            // 
+            this.textBox20.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox20.Enabled = false;
+            this.textBox20.Location = new System.Drawing.Point(581, 60);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(153, 20);
+            this.textBox20.TabIndex = 153;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label19.Location = new System.Drawing.Point(524, 40);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(51, 14);
+            this.label19.TabIndex = 150;
+            this.label19.Text = "Name/s:";
+            // 
+            // textBox19
+            // 
+            this.textBox19.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox19.Enabled = false;
+            this.textBox19.Location = new System.Drawing.Point(581, 37);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(153, 20);
+            this.textBox19.TabIndex = 151;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label18.Location = new System.Drawing.Point(503, 19);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 14);
+            this.label18.TabIndex = 149;
+            this.label18.Text = "Pet/s:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label17.Location = new System.Drawing.Point(268, 63);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 14);
+            this.label17.TabIndex = 147;
+            this.label17.Text = "Name:";
+            // 
+            // textBox18
+            // 
+            this.textBox18.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox18.Enabled = false;
+            this.textBox18.Location = new System.Drawing.Point(312, 60);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(183, 20);
+            this.textBox18.TabIndex = 148;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label10.Location = new System.Drawing.Point(268, 40);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 14);
+            this.label10.TabIndex = 145;
+            this.label10.Text = "Name:";
+            // 
+            // textBox17
+            // 
+            this.textBox17.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox17.Enabled = false;
+            this.textBox17.Location = new System.Drawing.Point(312, 37);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(183, 20);
+            this.textBox17.TabIndex = 146;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label9.Location = new System.Drawing.Point(24, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 14);
+            this.label9.TabIndex = 143;
+            this.label9.Text = "Name:";
+            // 
+            // textBox16
+            // 
+            this.textBox16.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox16.Enabled = false;
+            this.textBox16.Location = new System.Drawing.Point(76, 60);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(181, 20);
+            this.textBox16.TabIndex = 144;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label6.Location = new System.Drawing.Point(24, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 14);
+            this.label6.TabIndex = 141;
+            this.label6.Text = "Name:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox15.Enabled = false;
+            this.textBox15.Location = new System.Drawing.Point(76, 37);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(181, 20);
+            this.textBox15.TabIndex = 142;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label3.Location = new System.Drawing.Point(8, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 14);
+            this.label3.TabIndex = 141;
+            this.label3.Text = "Other Occupants:";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox8);
@@ -392,13 +635,42 @@
             this.groupBox6.Text = "Personal Information";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // pictureBox1
+            // textBox8
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 96);
-            this.pictureBox1.TabIndex = 126;
-            this.pictureBox1.TabStop = false;
+            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox8.Enabled = false;
+            this.textBox8.Location = new System.Drawing.Point(417, 98);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(317, 34);
+            this.textBox8.TabIndex = 140;
+            // 
+            // textBox14
+            // 
+            this.textBox14.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox14.Enabled = false;
+            this.textBox14.Location = new System.Drawing.Point(543, 179);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(191, 20);
+            this.textBox14.TabIndex = 139;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox13.Enabled = false;
+            this.textBox13.Location = new System.Drawing.Point(543, 157);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(191, 20);
+            this.textBox13.TabIndex = 138;
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox12.Enabled = false;
+            this.textBox12.Location = new System.Drawing.Point(543, 135);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(191, 20);
+            this.textBox12.TabIndex = 137;
             // 
             // label22
             // 
@@ -411,6 +683,27 @@
             this.label22.TabIndex = 110;
             this.label22.Text = "E-mail Address:";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label14.Location = new System.Drawing.Point(415, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 14);
+            this.label14.TabIndex = 108;
+            this.label14.Text = "Mobile Number:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(417, 44);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(317, 34);
+            this.textBox7.TabIndex = 135;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -422,16 +715,107 @@
             this.label7.TabIndex = 109;
             this.label7.Text = "Telephone Number:";
             // 
-            // label14
+            // textBox11
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label14.Location = new System.Drawing.Point(415, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 14);
-            this.label14.TabIndex = 108;
-            this.label14.Text = "Mobile Number:";
+            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox11.Enabled = false;
+            this.textBox11.Location = new System.Drawing.Point(255, 176);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(147, 20);
+            this.textBox11.TabIndex = 134;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(218, 153);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(184, 20);
+            this.textBox10.TabIndex = 133;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(218, 131);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(184, 20);
+            this.textBox9.TabIndex = 132;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label20.Location = new System.Drawing.Point(415, 83);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(114, 14);
+            this.label20.TabIndex = 94;
+            this.label20.Text = "Provincial Address:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(218, 109);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(184, 20);
+            this.textBox6.TabIndex = 131;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label26.Location = new System.Drawing.Point(415, 25);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(93, 14);
+            this.label26.TabIndex = 95;
+            this.label26.Text = "Home Address:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(218, 87);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(184, 20);
+            this.textBox5.TabIndex = 130;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(218, 65);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(184, 20);
+            this.textBox4.TabIndex = 129;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(218, 43);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(184, 20);
+            this.textBox3.TabIndex = 128;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(218, 21);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 20);
+            this.textBox2.TabIndex = 127;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(13, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 96);
+            this.pictureBox1.TabIndex = 126;
+            this.pictureBox1.TabStop = false;
             // 
             // label8
             // 
@@ -465,28 +849,6 @@
             this.label12.Size = new System.Drawing.Size(85, 14);
             this.label12.TabIndex = 96;
             this.label12.Text = "Marital Status:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label26.Location = new System.Drawing.Point(415, 25);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(93, 14);
-            this.label26.TabIndex = 95;
-            this.label26.Text = "Home Address:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label20.Location = new System.Drawing.Point(415, 83);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(114, 14);
-            this.label20.TabIndex = 94;
-            this.label20.Text = "Provincial Address:";
             // 
             // label11
             // 
@@ -544,372 +906,11 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Nature of Occupancy:";
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(218, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 127;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(218, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(184, 20);
-            this.textBox3.TabIndex = 128;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(218, 65);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(184, 20);
-            this.textBox4.TabIndex = 129;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(218, 87);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(184, 20);
-            this.textBox5.TabIndex = 130;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(218, 109);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(184, 20);
-            this.textBox6.TabIndex = 131;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(218, 131);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(184, 20);
-            this.textBox9.TabIndex = 132;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(218, 153);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(184, 20);
-            this.textBox10.TabIndex = 133;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(255, 176);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(147, 20);
-            this.textBox11.TabIndex = 134;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(417, 44);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(317, 34);
-            this.textBox7.TabIndex = 135;
-            // 
-            // textBox12
-            // 
-            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(543, 135);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(191, 20);
-            this.textBox12.TabIndex = 137;
-            // 
-            // textBox13
-            // 
-            this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(543, 157);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(191, 20);
-            this.textBox13.TabIndex = 138;
-            // 
-            // textBox14
-            // 
-            this.textBox14.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(543, 179);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(191, 20);
-            this.textBox14.TabIndex = 139;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(417, 98);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(317, 34);
-            this.textBox8.TabIndex = 140;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox19);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox18);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 219);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 98);
-            this.groupBox1.TabIndex = 141;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Other Information";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.textBox22);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.textBox21);
-            this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 323);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(740, 98);
-            this.groupBox3.TabIndex = 142;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Duration of Stay";
-            // 
-            // textBox15
-            // 
-            this.textBox15.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox15.Enabled = false;
-            this.textBox15.Location = new System.Drawing.Point(76, 37);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(181, 20);
-            this.textBox15.TabIndex = 142;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(8, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 14);
-            this.label3.TabIndex = 141;
-            this.label3.Text = "Other Occupants:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label6.Location = new System.Drawing.Point(24, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 14);
-            this.label6.TabIndex = 141;
-            this.label6.Text = "Name:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label9.Location = new System.Drawing.Point(24, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 14);
-            this.label9.TabIndex = 143;
-            this.label9.Text = "Name:";
-            // 
-            // textBox16
-            // 
-            this.textBox16.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox16.Enabled = false;
-            this.textBox16.Location = new System.Drawing.Point(76, 60);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(181, 20);
-            this.textBox16.TabIndex = 144;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label10.Location = new System.Drawing.Point(268, 40);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 14);
-            this.label10.TabIndex = 145;
-            this.label10.Text = "Name:";
-            // 
-            // textBox17
-            // 
-            this.textBox17.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox17.Enabled = false;
-            this.textBox17.Location = new System.Drawing.Point(312, 37);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(183, 20);
-            this.textBox17.TabIndex = 146;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label17.Location = new System.Drawing.Point(268, 63);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 14);
-            this.label17.TabIndex = 147;
-            this.label17.Text = "Name:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox18.Enabled = false;
-            this.textBox18.Location = new System.Drawing.Point(312, 60);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(183, 20);
-            this.textBox18.TabIndex = 148;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label18.Location = new System.Drawing.Point(503, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 14);
-            this.label18.TabIndex = 149;
-            this.label18.Text = "Pet/s:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label19.Location = new System.Drawing.Point(524, 40);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 14);
-            this.label19.TabIndex = 150;
-            this.label19.Text = "Name/s:";
-            // 
-            // textBox19
-            // 
-            this.textBox19.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox19.Enabled = false;
-            this.textBox19.Location = new System.Drawing.Point(581, 37);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(153, 20);
-            this.textBox19.TabIndex = 151;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label21.Location = new System.Drawing.Point(524, 63);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 14);
-            this.label21.TabIndex = 152;
-            this.label21.Text = "Type/s:";
-            // 
-            // textBox20
-            // 
-            this.textBox20.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox20.Enabled = false;
-            this.textBox20.Location = new System.Drawing.Point(581, 60);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(153, 20);
-            this.textBox20.TabIndex = 153;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label23.Location = new System.Drawing.Point(24, 41);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(139, 14);
-            this.label23.TabIndex = 154;
-            this.label23.Text = "Start Date of Occupancy:";
-            // 
-            // textBox21
-            // 
-            this.textBox21.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox21.Enabled = false;
-            this.textBox21.Location = new System.Drawing.Point(169, 38);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(181, 20);
-            this.textBox21.TabIndex = 155;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label24.Location = new System.Drawing.Point(388, 41);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(133, 14);
-            this.label24.TabIndex = 156;
-            this.label24.Text = "End Date of Occupancy:";
-            // 
-            // textBox22
-            // 
-            this.textBox22.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox22.Enabled = false;
-            this.textBox22.Location = new System.Drawing.Point(529, 38);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(205, 20);
-            this.textBox22.TabIndex = 157;
-            // 
-            // btnExport
-            // 
-            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 512);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(106, 33);
-            this.btnExport.TabIndex = 18;
-            this.btnExport.Text = "Export to Excel";
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(861, 512);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 33);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "    Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // TenancyArchiveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(986, 568);
             this.Controls.Add(this.ArchivePnl);
@@ -924,13 +925,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -62,6 +62,7 @@
     <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
       <Parameter Name="UnitNo" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
   </EntityContainer>
   <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
     <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -476,5 +477,28 @@
     <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
     <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
     <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="UserList_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
+    <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
   </ComplexType>
 </Schema>
