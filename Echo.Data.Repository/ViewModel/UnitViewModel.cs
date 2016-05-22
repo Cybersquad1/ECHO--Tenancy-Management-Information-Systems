@@ -27,14 +27,18 @@ namespace Echo.Data.Repository.ViewModel
 
                 var db = new EchoEntities();
                 var tenant = db.TenantProfile.FirstOrDefault(r => r.ID == unitProfile.Tenant) ;
-                tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
-                tenant.UnitNumber = unitProfile.UnitNumber;
-                tenant.StartOfOccupancy = unitProfile.StartOfOccupancy;
-                tenant.EndOfOccupancy = unit.ExpectedEndOfOccupancy;
 
-                db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                //end of update tenant
+                if (tenant != null)
+                {
+                    tenant.NatureOfOccupancy = unitProfile.NatureOfOccupancy;
+                    tenant.UnitNumber = unitProfile.UnitNumber;
+                    tenant.StartOfOccupancy = unitProfile.StartOfOccupancy;
+                    tenant.EndOfOccupancy = unit.ExpectedEndOfOccupancy;
+
+                    db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    //end of update tenant
+                }
 
                 //Save Archive
                 var archiveVM = new TenantArchiveViewModel();

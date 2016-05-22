@@ -172,18 +172,18 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 else
                     lvi.SubItems.Add("Deactivated");
 
-                if (item.UnitNumber == "" || item.UnitNumber == null)
-                    lvi.SubItems.Add("N/A");
+                if (item.UnitNumber == "" && item.UnitNumber == null)
+                    lvi.SubItems.Add(item.UnitNumber); //Unit No         
                 else
-                    lvi.SubItems.Add(item.UnitNumber); //Unit No
-                
-                if(unit != null)
+                    lvi.SubItems.Add("N/A");
+
+                if (unit != null)
                 {
-                    var owner = new UserViewModel().GetSelectedUser(unit.Owner);
+                    var owner = new TenantViewModel().GetSelectedTenant(unit.Owner);
                     startDate = unit.StartOfOccupancy.ToString();
                     endDate = unit.ExpectedEndOfOccupancy.ToString();
                     if (owner != null)
-                        lvi.SubItems.Add(owner.FullName); //owner
+                        lvi.SubItems.Add(owner.FirstName + " " + owner.LastName); //owner
                     else
                         lvi.SubItems.Add("N/A");
                 }

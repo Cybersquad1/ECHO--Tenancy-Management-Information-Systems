@@ -224,8 +224,8 @@ CREATE TABLE [dbo].[TenantProfile](
 	[PetType] [varchar](100) NULL,
 	[PetBreed] [varchar](100) NULL,
 	[PetName] [varchar](300) NULL,
-	[StartOfOccupancy] [int] NULL,
-	[EndOfOccupancy] [int] NULL,
+	[StartOfOccupancy] [datetime] NULL,
+	[EndOfOccupancy] [datetime] NULL,
 	[ChangePassword] [varchar](1) NULL,
  CONSTRAINT [PK_TenantProfile] PRIMARY KEY CLUSTERED 
 (
