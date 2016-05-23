@@ -297,9 +297,14 @@ namespace Tenancy_Management_Information_Systems
 
         private void button22_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
+
             ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
-            l1.logPnl.Visible = true;
-            l1.ShowDialog();
+            l1.TopLevel = false;
+            l1.Visible = true;
+            l1.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(l1);
         }
 
         private void button5_Click(object sender, EventArgs e)

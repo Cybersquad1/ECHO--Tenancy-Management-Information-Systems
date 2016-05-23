@@ -56,7 +56,7 @@ namespace Echo.Data.Repository.ViewModel
 
         public bool CheckIfAvailable(string _facility, DateTime _date)
         {
-            var reservation = Find(r => r.Facility == _facility && 
+            var reservation = GetEntity(r => r.Facility == _facility && 
             r.DateOfFuntion.ToShortDateString() == _date.ToShortDateString());
 
             if (reservation != null)
