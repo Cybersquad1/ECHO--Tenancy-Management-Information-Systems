@@ -75,9 +75,10 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
         {
             if (cmbBoxReservedFacility.Text != "")
                 datePickerFunction.Enabled = true;
-            else if (cmbBoxReservedFacility.Text == "Function Room")
+
+             if (cmbBoxReservedFacility.Text == "Function Room")
                 amount = 5500;
-            else
+             else
                 amount = 4000;
         }
 
@@ -131,6 +132,10 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
                 newReservation.ContactNo = txtBoxContactNo.Text;
 
                 newReservation.Facility = cmbBoxReservedFacility.Text;
+
+                newReservation.Date = datePickerDate.Value;
+
+                newReservation.DateOfFuntion = datePickerFunction.Value;
 
                 if(reservationVM.Save(newReservation))
                 {
