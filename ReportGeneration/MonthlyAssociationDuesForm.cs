@@ -93,9 +93,27 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             }
         }
 
+        private void Clear()
+        {
+            txtBoxAssociationDues.Text = "";
+
+            txtBoxWaterBilling.Text = "";
+
+            txtBoxDiscount.Text = "";
+
+            txtBoxOtherAmount.Text = "";
+
+            txtBoxOtherDesc.Text = "";
+
+            txtBoxTotalAmountDue.Text = "0.00";
+        }
+
         private void GetUnitInformation(string _unitNo)
         {
+            Clear();
+
             unitVM = new UnitViewModel();
+
             tenantVM = new TenantViewModel();
 
             var unit = unitVM.GetSelected(_unitNo);
@@ -106,7 +124,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 var owner = tenantVM.GetSelectedTenant(unit.Owner);
 
-                txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+                if (owner != null)
+                    txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+                else
+                    txtBoxUnitOwner.Text = "N/A";
             }
             else
             {
@@ -117,7 +138,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 var tenant = tenantVM.GetSelectedTenant(unit.Tenant);
 
-                txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                if (tenant != null)
+                    txtBoxTenant.Text = tenant.FirstName + " " + tenant.LastName;
+                else
+                    txtBoxTenant.Text = "N/A";
             }
             else
             {
@@ -137,8 +161,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 txtBoxWaterBilling.Text = waterBilling[1];
 
-                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", decimal.Parse(waterBilling[1]) 
-                    + decimal.Parse(txtBoxTotalAmountDue.Text));
+                ComputeTotal();
             }
             else
             {
@@ -294,9 +317,12 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 total += double.Parse(txtBoxWaterBilling.Text);
             }
 
-            if(checkBoxOverdue.Checked)
+            if (txtBoxAssociationDues.Text != "")
             {
-                total += double.Parse(txtBoxAssociationDues.Text) * 0.04;
+                if (checkBoxOverdue.Checked)
+                {
+                    total += double.Parse(txtBoxAssociationDues.Text) * 0.04;
+                }
             }
 
             if(txtBoxOtherAmount.Text !="")

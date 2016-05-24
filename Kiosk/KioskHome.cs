@@ -43,15 +43,21 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                     };
 
 
-                        Home h1 = new Home(loginInfo, this);
-                        h1.Show();
+                    Home h1 = new Home(loginInfo, this);
 
-                        Hide();
+                    h1.Show();
+
+                    Hide();
+
+                    txtBoxPassword.Text = txtBoxUsername.Text = "";
+
+                    lblErrorLogin.Hide();
                 }
                 else
                 {
-                    lblErrorLogin.Text = "This account is currently disabled";
-                    txtBoxPassword.Text = "";
+                    lblErrorLogin.Text = "This account is deactivated";
+
+                    lblErrorLogin.Show();
                 }
             }
 
@@ -71,7 +77,12 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                     if (tenant.UnitNumber != null && tenant.UnitNumber != "")
                     {
                         HomeTenantForm ht1 = new HomeTenantForm(this,tenant.ID, tenant.UnitNumber, tenant.FirstName + " " + tenant.LastName);
+
                         ht1.Show();
+
+                        txtBoxPassword.Text = txtBoxUsername.Text = "";
+
+                        lblErrorLogin.Hide();
 
                         Hide();
                     }
@@ -80,7 +91,14 @@ namespace Tenancy_Management_Information_Systems.Kiosk
                         MessageBox.Show("No assign unit, please contact administrator for this issue", "Warning");
                     }
                 }
+                else
+                {
+                    lblErrorLogin.Text = "This account is deactivated";
+
+                    lblErrorLogin.Show();
+                }
             }
+
 
             //if username and password not match in user and tenant profile table
             if(user == null && tenant == null)
@@ -93,9 +111,7 @@ namespace Tenancy_Management_Information_Systems.Kiosk
 
         private void button2_Click(object sender, EventArgs e)//Login button
         {
-            Login();
-
-            txtBoxPassword.Text = txtBoxUsername.Text = "";          
+            Login();                     
         }
 
         private void Home2_FormClosed(object sender, FormClosedEventArgs e)

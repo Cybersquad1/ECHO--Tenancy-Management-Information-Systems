@@ -44,11 +44,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             if(avail == "Available")
             {
                 units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy 
-                    > DateTime.Now && r.NatureOfOccupancy == "Tenant");
+                    > DateTime.Now);
             }
             else //Occupied
             {
-                units = units.Where(r => r.ExpectedEndOfOccupancy < DateTime.Now && r.NatureOfOccupancy == "Tenant");
+                units = units.Where(r => r.ExpectedEndOfOccupancy < DateTime.Now);
             }
 
             if(unitFloor != "")
@@ -72,7 +72,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     {
                         var owner = new UserViewModel().GetSelectedUser(item.Owner);
 
-                        lvi.SubItems.Add(owner.FullName);
+                        if(owner != null)
+                            lvi.SubItems.Add(owner.FullName);
+                        else
+                            lvi.SubItems.Add("No Owner");
                     }
                     else
                     {
@@ -91,7 +94,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     {
                         var tenant = new TenantViewModel().GetSelectedTenant(item.Tenant);
 
-                        lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
+                        if (tenant != null)
+                            lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
+                        else
+                            lvi.SubItems.Add("No Tenant");
                     }
                 }
 
@@ -112,7 +118,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 ListViewItem lvi = new ListViewItem(item.UnitNumber); //Unit No
 
                 if (item.ExpectedEndOfOccupancy == null ||
-                item.ExpectedEndOfOccupancy > DateTime.Now && item.NatureOfOccupancy == "Tenant") //Availability
+                item.ExpectedEndOfOccupancy < DateTime.Now) //Availability
                     lvi.SubItems.Add("Available");
                 else
                     lvi.SubItems.Add("Occupied");
@@ -146,9 +152,15 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     var tenant = new TenantViewModel().GetSelectedTenant(item.Tenant);
 
                     if (tenant != null)
+                    {
                         lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
+                        lvi.SubItems.Add(item.Tenant.ToString());
+                    }
                     else
+                    {
                         lvi.SubItems.Add("N/A");
+                        lvi.SubItems.Add("");
+                    }
                 }
 
                 listViewUnits.Items.Add(lvi);
@@ -275,6 +287,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             tabControl1.SelectedTab = openTab;
 
             unitNo = listViewUnits.SelectedItems[0].SubItems[0].Text;
+
+            if(listViewUnits.SelectedItems[0].SubItems[6].Text!="")
+                tenantID = Guid.Parse(listViewUnits.SelectedItems[0].SubItems[6].Text);
 
             GetSelectedUnit();
 

@@ -80,6 +80,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.unitPnl.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -157,7 +158,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader9});
             this.listViewUnits.FullRowSelect = true;
             this.listViewUnits.GridLines = true;
             this.listViewUnits.Location = new System.Drawing.Point(3, 2);
@@ -638,7 +640,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 508);
+            this.btnExport.Location = new System.Drawing.Point(749, 505);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 33);
             this.btnExport.TabIndex = 18;
@@ -650,13 +652,18 @@
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(861, 508);
+            this.button2.Location = new System.Drawing.Point(861, 505);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 33);
             this.button2.TabIndex = 19;
             this.button2.Text = "    Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "TenantID";
+            this.columnHeader9.Width = 0;
             // 
             // AvailableUnitForm
             // 
@@ -741,5 +748,6 @@
         private System.Windows.Forms.Button btnSelectTenant;
         public System.Windows.Forms.TextBox txtBoxTenant;
         private System.Windows.Forms.ComboBox txtBoxNatureOfOccupancy;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }
