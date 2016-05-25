@@ -36,9 +36,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             List<TenantProfile> tenants = new List<TenantProfile>();
 
             if (_searchKey != "")
-                tenants = vm.Search(_searchKey);
+                tenants = vm.Search(_searchKey,"Y");
             else
-                tenants = vm.GetAll();
+                tenants = vm.GetAll("Y");
 
             tenants = tenants.AsQueryable().Where(r => r.NatureOfOccupancy == "Unit Owner").ToList();
 

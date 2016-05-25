@@ -109,7 +109,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             vm = new TenantViewModel(); //Refresh database data
 
-            var tenants = vm.GetAll().AsQueryable();
+            var tenants = vm.GetAll("Y").AsQueryable();
 
             if (unitNo != "")
                 tenants = tenants.Where(r => r.UnitNumber.Contains(unitNo));

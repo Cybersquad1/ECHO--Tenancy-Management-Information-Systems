@@ -376,6 +376,7 @@
     <member name="M:Microsoft.VisualBasic.PowerPacks.DataRepeaterDataErrorEventArgs.#ctor(Microsoft.VisualBasic.PowerPacks.DataRepeaterItem,System.Windows.Forms.Control,System.String,System.Exception)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterDataErrorEventArgs" /> class.</summary>
       <param name="item">The <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem" /> on which the error occurred.</param>
+      <param name="ctl">The control on the <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem" /> on which the error occurred.</param>
       <param name="prop">The property on which the error occurred. For most controls, this will be the <see cref="P:System.Windows.Forms.Control.Text" /> property.</param>
       <param name="ex">The exception object.</param>
     </member>
@@ -505,6 +506,7 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemCloneEventArgs.#ctor(Microsoft.VisualBasic.PowerPacks.DataRepeaterItem)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemCloneEventArgs" /> class.</summary>
+      <param name="src">The <see cref="P:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate" /> from which the new item will be cloned.</param>
     </member>
     <member name="P:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemCloneEventArgs.Handled">
       <summary>Gets or sets a value that specifies whether the cloning is handled by the developer.</summary>
@@ -545,6 +547,7 @@
     <member name="M:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemValueEventArgs.#ctor(System.Int32,System.Windows.Forms.Control,System.String,System.Object)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemValueEventArgs" /> class.</summary>
       <param name="itemIndex">The index of the <see cref="T:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem" /> that contains the control that is raising the event.</param>
+      <param name="ctl">The child control that is raising the event.</param>
       <param name="propertyName">The property of the control that has changed or that needs data.</param>
       <param name="value">The property value that has changed.</param>
     </member>
@@ -857,6 +860,8 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.OvalShape.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.OvalShape" /> class, specifying its location and size.</summary>
+      <param name="x">An Integer representing the left edge (in pixels)of the <see cref="T:Microsoft.VisualBasic.PowerPacks.OvalShape" />.</param>
+      <param name="y">An Integer representing the top edge (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.OvalShape" />.</param>
       <param name="width">An Integer representing the width (in pixels)of the <see cref="T:Microsoft.VisualBasic.PowerPacks.OvalShape" />.</param>
       <param name="height">An Integer representing the height (in pixels)of the <see cref="T:Microsoft.VisualBasic.PowerPacks.OvalShape" />.</param>
     </member>
@@ -872,6 +877,8 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.RectangleShape.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.RectangleShape" /> class, specifying its location and size.</summary>
+      <param name="x">An Integer representing the left edge (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.RectangleShape" />.</param>
+      <param name="y">An Integer representing the top edge (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.RectangleShape" />.</param>
       <param name="width">An Integer representing the width (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.RectangleShape" />.</param>
       <param name="height">An Integer representing the height (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.RectangleShape" />.</param>
     </member>
@@ -1253,10 +1260,12 @@
     <member name="M:Microsoft.VisualBasic.PowerPacks.Shape.PointToClient(System.Drawing.Point)">
       <summary>Computes the location of the specified screen point into client coordinates.</summary>
       <returns>A <see cref="T:System.Drawing.Point" /> that represents the converted <see cref="T:System.Drawing.Point" />, <paramref name="p" />, in client coordinates.</returns>
+      <param name="p">The screen coordinate <see cref="T:System.Drawing.Point" /> to convert.</param>
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.Shape.PointToScreen(System.Drawing.Point)">
       <summary>Computes the location of the specified client point into screen coordinates.</summary>
       <returns>A <see cref="T:System.Drawing.Point" /> that represents the converted <see cref="T:System.Drawing.Point" />, <paramref name="p" />, in screen coordinates.</returns>
+      <param name="p">The client coordinate <see cref="T:System.Drawing.Point" /> to convert.</param>
     </member>
     <member name="E:Microsoft.VisualBasic.PowerPacks.Shape.PreviewKeyDown">
       <summary>Occurs before the <see cref="E:Microsoft.VisualBasic.PowerPacks.Shape.KeyDown" /> event when a key is pressed and focus is on the shape.</summary>
@@ -1451,6 +1460,7 @@
     <member name="M:Microsoft.VisualBasic.PowerPacks.ShapeContainer.GetChildAtPoint(System.Drawing.Point)">
       <summary>Gets the shape that is located at the specified coordinates.</summary>
       <returns>A <see cref="T:Microsoft.VisualBasic.PowerPacks.Shape" /> that represents the shape that is located at the specified point.</returns>
+      <param name="pt">A <see cref="T:System.Drawing.Point" /> that contains the coordinates of the location where you want to look for a shape. Coordinates are expressed relative to the upper-left corner of the screen.</param>
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.ShapeContainer.GetNextShape(Microsoft.VisualBasic.PowerPacks.Shape,System.Boolean)">
       <summary>Retrieves the next or previous shape in the order of the <see cref="T:Microsoft.VisualBasic.PowerPacks.ShapeCollection" />.</summary>
@@ -1481,6 +1491,8 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.SimpleShape.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.SimpleShape" /> class, specifying its size and location.</summary>
+      <param name="x">An Integer that represents the left edge (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.SimpleShape" />.</param>
+      <param name="y">An Integer that represents the top (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.SimpleShape" />.</param>
       <param name="width">An Integer that represents the width (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.SimpleShape" />.</param>
       <param name="height">An Integer that represents the height (in pixels) of the <see cref="T:Microsoft.VisualBasic.PowerPacks.SimpleShape" />.</param>
     </member>
@@ -1639,6 +1651,8 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.SimpleShape.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>Sets the bounds of the shape to the specified location and size.</summary>
+      <param name="x">The new Left property value of the shape. </param>
+      <param name="y">The new Top property value of the shape. </param>
       <param name="width">The new Width property value of the shape. </param>
       <param name="height">The new Height property value of the shape. </param>
     </member>
@@ -1669,6 +1683,7 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.#ctor(System.Windows.Forms.Form)">
       <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm" /> class, specifying the <see cref="T:System.Windows.Forms.Form" /> where it will be parented.</summary>
+      <param name="parentForm">A <see cref="T:System.Windows.Forms.Form" /> where the component will be parented.</param>
     </member>
     <member name="E:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint">
       <summary>Occurs when the <see cref="M:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print" /> method is called, before the first page of the document prints.</summary>
@@ -1705,6 +1720,8 @@
     </member>
     <member name="M:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print(System.Windows.Forms.Form,Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintOption)">
       <summary>Sends an image of a Windows Form to the destination specified by the <see cref="P:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction" /> property, specifying the form and printing options</summary>
+      <param name="printForm">The name of the <see cref="T:System.Windows.Forms.Form" /> to be printed.</param>
+      <param name="printFormOption">A <see cref="T:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintOption" /> enumeration that determines how the form will be printed.</param>
     </member>
     <member name="P:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction">
       <summary>Gets or sets a value indicating whether the output is directed to a printer, to a print preview window, or to a file.</summary>

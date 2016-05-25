@@ -36,16 +36,16 @@ namespace Echo.Data.Repository.ViewModel
             return GetEntity(r => r.ID == _tenantID);
         }
 
-        public List<TenantProfile> GetAll()
+        public List<TenantProfile> GetAll(string _status)
         {
-            return Find();
+            return Find(r=>r.Status == _status);
         }
 
-        public List<TenantProfile> Search(string _searchKey)
+        public List<TenantProfile> Search(string _searchKey, string _status)
         {
             return Find(r => r.FirstName.ToLower().Contains(_searchKey.ToLower()) ||
                 r.LastName.ToLower().Contains(_searchKey.ToLower()) ||
-                r.MiddleName.ToLower().Contains(_searchKey.ToLower()));
+                r.MiddleName.ToLower().Contains(_searchKey.ToLower()) && r.Status == _status);
         }
 
         public bool ChangeTenantStatus(Guid _tenantID, string _status)

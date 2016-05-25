@@ -46,15 +46,25 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     //Assign value to its corresponding fields
                     //Personal Information
                     txtBoxFirstName.Text = tenant.FirstName;
+
                     txtBoxMiddleName.Text = tenant.MiddleName;
+
                     txtBoxLastName.Text = tenant.LastName;
+
                     datePickerDateOfBirth.Value = DateTime.Parse(tenant.DateOfBirth.ToString());
+
                     comboBoxMaritalStatus.Text = tenant.MaritalStatus;
+
                     txtBoxNatureOfOccupancy.Text = tenant.NatureOfOccupancy;
+
                     txtBoxHomeAddress.Text = tenant.HomeAddress;
+
                     txtBoxProvincialAddress.Text = tenant.ProvincialAddress;
+
                     txtBoxMobileNo.Text = tenant.MobileNo;
+
                     txtBoxTelephoneNo.Text = tenant.TelephoneNo;
+
                     txtBoxEmail.Text = tenant.Email;
 
                     //Unit Information
@@ -62,13 +72,13 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     {
                         txtBoxUnitNo.Text = txtBoxUnitOwner.Text =
                             txtBoxStartDateOfOccupancy.Text = txtBoxEndDateOfOccupancy.Text = "N/A";
-
                     }
                     else
                     {
                         txtBoxUnitNo.Text = tenant.UnitNumber;
 
                         var unitInfo = new UnitViewModel().GetSelected(tenant.UnitNumber);
+
                         var owner = new UserViewModel().GetSelectedUser(unitInfo.Owner);
 
                         if (owner == null)
@@ -78,14 +88,19 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                         //duration of stay
                         txtBoxStartDateOfOccupancy.Text = unitInfo.StartOfOccupancy.ToString();
+
                         txtBoxEndDateOfOccupancy.Text = unitInfo.ExpectedEndOfOccupancy.ToString();
                     }
 
                     //Other Information
                     txtBoxOtherName1.Text = tenant.OtherName1;
+
                     txtBoxOtherName2.Text = tenant.OtherName2;
+
                     txtBoxOtherName3.Text = tenant.OtherName3;
+
                     txtBoxPetName.Text = tenant.PetName;
+
                     txtBoxPetType.Text = tenant.PetType;
 
                     //Login Info
@@ -102,11 +117,6 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     {
                         pictureBox.Image = null;
                     }
-
-                    if (tenant.Status == "Y")
-                        btnActivate.Text = "Deactivate";
-                    else
-                        btnActivate.Text = "Activate";
 
                     EnableDisableFields(false); //Disable fields
                 }
@@ -157,20 +167,15 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             List<TenantProfile> tenants = new List<TenantProfile>();
 
             if (_searchKey == "") //Get all data
-                tenants = vm.GetAll();
+                tenants = vm.GetAll("Y");
             else //if have search filer
-                tenants = vm.Search(_searchKey);
+                tenants = vm.Search(_searchKey, "Y");
 
             tenants.ForEach(item =>
             {
                 var unit = new UnitViewModel().GetSelected(item.UnitNumber);
                 
                 ListViewItem lvi = new ListViewItem(item.ID.ToString()); //ID
-
-                if (item.Status == "Y")
-                    lvi.SubItems.Add("Active");
-                else
-                    lvi.SubItems.Add("Deactivated");
 
                 if (item.UnitNumber == "" && item.UnitNumber == null)
                     lvi.SubItems.Add(item.UnitNumber); //Unit No         
@@ -213,6 +218,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             try
             {
                 TabPage openTab = tabControl1.TabPages[1];
+
                 tabControl1.SelectedTab = openTab;
 
                 tenantID = Guid.Parse(listViewTenants.SelectedItems[0].SubItems[0].Text);
@@ -255,12 +261,13 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 {
                     string status = "N";
 
-                    if (btnActivate.Text == "Activate")
-                        status = "Y";
-
                     if (vm.ChangeTenantStatus(tenantID, status))
                     {
                         MessageBox.Show("Successfully " + btnActivate.Text);
+
+                        btnSave.Enabled = false;
+                        btnEdit.Enabled = true;
+                        btnActivate.Enabled = false;
                     }
                     else
                     {
@@ -325,7 +332,18 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                             editTenant.Password = txtBoxPassword.Text;
 
                         db.Entry(editTenant).State = System.Data.Entity.EntityState.Modified;
+
                         db.SaveChanges();
+
+                        MessageBox.Show("Successfully updated tenant information");
+
+                        btnActivate.Enabled = false;
+
+                        btnSave.Enabled = false;
+
+                        btnEdit.Enabled = true;
+
+                        GetTenantList();
                     }
                 }
                 else

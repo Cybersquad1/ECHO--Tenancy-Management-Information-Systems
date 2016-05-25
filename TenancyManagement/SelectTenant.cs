@@ -33,7 +33,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                 vmTenant = new TenantViewModel();
 
-                var tenants = vmTenant.GetAll();
+                var tenants = vmTenant.GetAll("Y");
 
                 tenants.ForEach(item =>
                 {
@@ -57,7 +57,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                 vmTenant = new TenantViewModel();
 
-                var tenants = vmTenant.Search(_searchKey);
+                var tenants = vmTenant.Search(_searchKey,"Y");
 
                 tenants.ForEach(item =>
                 {
