@@ -45,7 +45,7 @@ namespace Echo.Data.Repository.ViewModel
         {
             return Find(r => r.FirstName.ToLower().Contains(_searchKey.ToLower()) ||
                 r.LastName.ToLower().Contains(_searchKey.ToLower()) ||
-                r.MiddleName.ToLower().Contains(_searchKey.ToLower()) && r.Status == _status);
+                r.MiddleName.ToLower().Contains(_searchKey.ToLower())).Where(r=>r.Status == _status).ToList();
         }
 
         public bool ChangeTenantStatus(Guid _tenantID, string _status)

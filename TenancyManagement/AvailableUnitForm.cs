@@ -145,6 +145,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 if (item.ExpectedEndOfOccupancy == null || 
                     item.ExpectedEndOfOccupancy > DateTime.Now) //Availability
                 {
+                    lvi.SubItems.Add("N/A");
                     lvi.SubItems.Add("");
                 }
                 else

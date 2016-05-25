@@ -83,6 +83,14 @@
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblContactPerson = new System.Windows.Forms.Label();
+            this.lblRelationToContact = new System.Windows.Forms.Label();
+            this.lblHomeAddress = new System.Windows.Forms.Label();
+            this.lblContactNo = new System.Windows.Forms.Label();
             this.EditUserPnl.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -313,6 +321,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblContactNo);
+            this.groupBox2.Controls.Add(this.lblRelationToContact);
+            this.groupBox2.Controls.Add(this.lblContactPerson);
             this.groupBox2.Controls.Add(this.txtBoxContactNo);
             this.groupBox2.Controls.Add(this.txtBoxTelNo);
             this.groupBox2.Controls.Add(this.txtBoxMobileNo);
@@ -340,7 +351,7 @@
             this.txtBoxContactNo.Location = new System.Drawing.Point(613, 63);
             this.txtBoxContactNo.MaxLength = 12;
             this.txtBoxContactNo.Name = "txtBoxContactNo";
-            this.txtBoxContactNo.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxContactNo.Size = new System.Drawing.Size(230, 20);
             this.txtBoxContactNo.TabIndex = 130;
             this.txtBoxContactNo.TextChanged += new System.EventHandler(this.txtBoxContactNo_TextChanged);
             this.txtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxContactNo_KeyPress);
@@ -454,8 +465,9 @@
             this.txtBoxRelationToContactPerson.Location = new System.Drawing.Point(613, 89);
             this.txtBoxRelationToContactPerson.MaxLength = 100;
             this.txtBoxRelationToContactPerson.Name = "txtBoxRelationToContactPerson";
-            this.txtBoxRelationToContactPerson.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxRelationToContactPerson.Size = new System.Drawing.Size(230, 20);
             this.txtBoxRelationToContactPerson.TabIndex = 12;
+            this.txtBoxRelationToContactPerson.TextChanged += new System.EventHandler(this.txtBoxRelationToContactPerson_TextChanged);
             // 
             // txtBoxContactPerson
             // 
@@ -465,11 +477,17 @@
             this.txtBoxContactPerson.Location = new System.Drawing.Point(613, 37);
             this.txtBoxContactPerson.MaxLength = 100;
             this.txtBoxContactPerson.Name = "txtBoxContactPerson";
-            this.txtBoxContactPerson.Size = new System.Drawing.Size(247, 20);
+            this.txtBoxContactPerson.Size = new System.Drawing.Size(230, 20);
             this.txtBoxContactPerson.TabIndex = 10;
+            this.txtBoxContactPerson.TextChanged += new System.EventHandler(this.txtBoxContactPerson_TextChanged);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblHomeAddress);
+            this.groupBox6.Controls.Add(this.lblDateOfBirth);
+            this.groupBox6.Controls.Add(this.lblMaritalStatus);
+            this.groupBox6.Controls.Add(this.lblLastName);
+            this.groupBox6.Controls.Add(this.lblFirstName);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label26);
@@ -495,6 +513,7 @@
             this.groupBox6.Size = new System.Drawing.Size(748, 209);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // label4
             // 
@@ -633,7 +652,7 @@
             this.txtBoxProvincialAddress.Location = new System.Drawing.Point(123, 169);
             this.txtBoxProvincialAddress.MaxLength = 250;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
-            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(578, 20);
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(561, 20);
             this.txtBoxProvincialAddress.TabIndex = 14;
             // 
             // txtBoxHomeAddress
@@ -643,11 +662,13 @@
             this.txtBoxHomeAddress.Location = new System.Drawing.Point(123, 143);
             this.txtBoxHomeAddress.MaxLength = 250;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
-            this.txtBoxHomeAddress.Size = new System.Drawing.Size(578, 20);
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(561, 20);
             this.txtBoxHomeAddress.TabIndex = 13;
+            this.txtBoxHomeAddress.TextChanged += new System.EventHandler(this.txtBoxHomeAddress_TextChanged);
             // 
             // comboBoxMaritalStatus
             // 
+            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaritalStatus.Enabled = false;
             this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMaritalStatus.FormattingEnabled = true;
@@ -660,7 +681,7 @@
             this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
             this.comboBoxMaritalStatus.Size = new System.Drawing.Size(170, 22);
             this.comboBoxMaritalStatus.TabIndex = 7;
-            this.comboBoxMaritalStatus.Text = "--Select One--";
+            this.comboBoxMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaritalStatus_SelectedIndexChanged);
             // 
             // datePickerDateOfBirth
             // 
@@ -675,6 +696,7 @@
             this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
             this.datePickerDateOfBirth.Size = new System.Drawing.Size(170, 20);
             this.datePickerDateOfBirth.TabIndex = 6;
+            this.datePickerDateOfBirth.ValueChanged += new System.EventHandler(this.datePickerDateOfBirth_ValueChanged);
             // 
             // txtBoxLastName
             // 
@@ -685,6 +707,7 @@
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxLastName.TabIndex = 5;
+            this.txtBoxLastName.TextChanged += new System.EventHandler(this.txtBoxLastName_TextChanged);
             // 
             // txtBoxMiddleName
             // 
@@ -705,6 +728,7 @@
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(206, 20);
             this.txtBoxFirstName.TabIndex = 3;
+            this.txtBoxFirstName.TextChanged += new System.EventHandler(this.txtBoxFirstName_TextChanged);
             // 
             // pictureBoxUser
             // 
@@ -717,6 +741,94 @@
             this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUser.TabIndex = 126;
             this.pictureBoxUser.TabStop = false;
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstName.Location = new System.Drawing.Point(335, 23);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
+            this.lblFirstName.TabIndex = 123;
+            this.lblFirstName.Text = "required";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Red;
+            this.lblLastName.Location = new System.Drawing.Point(335, 73);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 11);
+            this.lblLastName.TabIndex = 124;
+            this.lblLastName.Text = "required";
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(299, 124);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
+            this.lblMaritalStatus.TabIndex = 125;
+            this.lblMaritalStatus.Text = "required";
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(299, 98);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
+            this.lblDateOfBirth.TabIndex = 126;
+            this.lblDateOfBirth.Text = "required";
+            // 
+            // lblContactPerson
+            // 
+            this.lblContactPerson.AutoSize = true;
+            this.lblContactPerson.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactPerson.ForeColor = System.Drawing.Color.Red;
+            this.lblContactPerson.Location = new System.Drawing.Point(849, 46);
+            this.lblContactPerson.Name = "lblContactPerson";
+            this.lblContactPerson.Size = new System.Drawing.Size(44, 11);
+            this.lblContactPerson.TabIndex = 131;
+            this.lblContactPerson.Text = "required";
+            // 
+            // lblRelationToContact
+            // 
+            this.lblRelationToContact.AutoSize = true;
+            this.lblRelationToContact.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRelationToContact.ForeColor = System.Drawing.Color.Red;
+            this.lblRelationToContact.Location = new System.Drawing.Point(849, 91);
+            this.lblRelationToContact.Name = "lblRelationToContact";
+            this.lblRelationToContact.Size = new System.Drawing.Size(44, 11);
+            this.lblRelationToContact.TabIndex = 132;
+            this.lblRelationToContact.Text = "required";
+            // 
+            // lblHomeAddress
+            // 
+            this.lblHomeAddress.AutoSize = true;
+            this.lblHomeAddress.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAddress.ForeColor = System.Drawing.Color.Red;
+            this.lblHomeAddress.Location = new System.Drawing.Point(690, 148);
+            this.lblHomeAddress.Name = "lblHomeAddress";
+            this.lblHomeAddress.Size = new System.Drawing.Size(44, 11);
+            this.lblHomeAddress.TabIndex = 127;
+            this.lblHomeAddress.Text = "required";
+            // 
+            // lblContactNo
+            // 
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.ForeColor = System.Drawing.Color.Red;
+            this.lblContactNo.Location = new System.Drawing.Point(849, 68);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(44, 11);
+            this.lblContactNo.TabIndex = 133;
+            this.lblContactNo.Text = "required";
             // 
             // Edit_User_Info
             // 
@@ -802,5 +914,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRelationToContact;
+        private System.Windows.Forms.Label lblContactPerson;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblMaritalStatus;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblHomeAddress;
+        private System.Windows.Forms.Label lblContactNo;
     }
 }

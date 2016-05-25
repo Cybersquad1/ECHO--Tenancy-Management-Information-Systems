@@ -99,6 +99,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblHomeAdd = new System.Windows.Forms.Label();
+            this.lblMobile = new System.Windows.Forms.Label();
+            this.lblNatureOfOccupancy = new System.Windows.Forms.Label();
             this.EditTenantPnl.SuspendLayout();
             this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -557,6 +564,13 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblNatureOfOccupancy);
+            this.groupBox6.Controls.Add(this.lblMobile);
+            this.groupBox6.Controls.Add(this.lblHomeAdd);
+            this.groupBox6.Controls.Add(this.lblMaritalStatus);
+            this.groupBox6.Controls.Add(this.lblDateOfBirth);
+            this.groupBox6.Controls.Add(this.lblLastName);
+            this.groupBox6.Controls.Add(this.lblFirstName);
             this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
             this.groupBox6.Controls.Add(this.comboBoxMaritalStatus);
             this.groupBox6.Controls.Add(this.datePickerDateOfBirth);
@@ -608,6 +622,7 @@
             // 
             // comboBoxMaritalStatus
             // 
+            this.comboBoxMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaritalStatus.Enabled = false;
             this.comboBoxMaritalStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMaritalStatus.FormattingEnabled = true;
@@ -620,7 +635,6 @@
             this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
             this.comboBoxMaritalStatus.Size = new System.Drawing.Size(170, 22);
             this.comboBoxMaritalStatus.TabIndex = 142;
-            this.comboBoxMaritalStatus.Text = "--Select One--";
             // 
             // datePickerDateOfBirth
             // 
@@ -644,7 +658,7 @@
             this.txtBoxProvincialAddress.MaxLength = 200;
             this.txtBoxProvincialAddress.Multiline = true;
             this.txtBoxProvincialAddress.Name = "txtBoxProvincialAddress";
-            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(390, 34);
+            this.txtBoxProvincialAddress.Size = new System.Drawing.Size(372, 34);
             this.txtBoxProvincialAddress.TabIndex = 140;
             // 
             // txtBoxEmail
@@ -654,7 +668,7 @@
             this.txtBoxEmail.Location = new System.Drawing.Point(610, 171);
             this.txtBoxEmail.MaxLength = 100;
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxEmail.Size = new System.Drawing.Size(246, 20);
             this.txtBoxEmail.TabIndex = 139;
             // 
             // txtBoxTelephoneNo
@@ -664,7 +678,7 @@
             this.txtBoxTelephoneNo.Location = new System.Drawing.Point(610, 149);
             this.txtBoxTelephoneNo.MaxLength = 10;
             this.txtBoxTelephoneNo.Name = "txtBoxTelephoneNo";
-            this.txtBoxTelephoneNo.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxTelephoneNo.Size = new System.Drawing.Size(246, 20);
             this.txtBoxTelephoneNo.TabIndex = 138;
             this.txtBoxTelephoneNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelephoneNo_KeyPress);
             // 
@@ -675,7 +689,7 @@
             this.txtBoxMobileNo.Location = new System.Drawing.Point(610, 127);
             this.txtBoxMobileNo.MaxLength = 12;
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
-            this.txtBoxMobileNo.Size = new System.Drawing.Size(264, 20);
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(246, 20);
             this.txtBoxMobileNo.TabIndex = 137;
             this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
@@ -709,7 +723,7 @@
             this.txtBoxHomeAddress.MaxLength = 200;
             this.txtBoxHomeAddress.Multiline = true;
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
-            this.txtBoxHomeAddress.Size = new System.Drawing.Size(390, 34);
+            this.txtBoxHomeAddress.Size = new System.Drawing.Size(372, 34);
             this.txtBoxHomeAddress.TabIndex = 135;
             // 
             // label7
@@ -912,6 +926,83 @@
             this.Go.UseVisualStyleBackColor = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstName.Location = new System.Drawing.Point(439, 19);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
+            this.lblFirstName.TabIndex = 151;
+            this.lblFirstName.Text = "required";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Red;
+            this.lblLastName.Location = new System.Drawing.Point(439, 63);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 11);
+            this.lblLastName.TabIndex = 152;
+            this.lblLastName.Text = "required";
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(393, 85);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
+            this.lblDateOfBirth.TabIndex = 153;
+            this.lblDateOfBirth.Text = "required";
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(393, 107);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
+            this.lblMaritalStatus.TabIndex = 154;
+            this.lblMaritalStatus.Text = "required";
+            // 
+            // lblHomeAdd
+            // 
+            this.lblHomeAdd.AutoSize = true;
+            this.lblHomeAdd.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAdd.ForeColor = System.Drawing.Color.Red;
+            this.lblHomeAdd.Location = new System.Drawing.Point(862, 39);
+            this.lblHomeAdd.Name = "lblHomeAdd";
+            this.lblHomeAdd.Size = new System.Drawing.Size(44, 11);
+            this.lblHomeAdd.TabIndex = 155;
+            this.lblHomeAdd.Text = "required";
+            // 
+            // lblMobile
+            // 
+            this.lblMobile.AutoSize = true;
+            this.lblMobile.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobile.ForeColor = System.Drawing.Color.Red;
+            this.lblMobile.Location = new System.Drawing.Point(862, 132);
+            this.lblMobile.Name = "lblMobile";
+            this.lblMobile.Size = new System.Drawing.Size(44, 11);
+            this.lblMobile.TabIndex = 156;
+            this.lblMobile.Text = "required";
+            // 
+            // lblNatureOfOccupancy
+            // 
+            this.lblNatureOfOccupancy.AutoSize = true;
+            this.lblNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNatureOfOccupancy.ForeColor = System.Drawing.Color.Red;
+            this.lblNatureOfOccupancy.Location = new System.Drawing.Point(436, 177);
+            this.lblNatureOfOccupancy.Name = "lblNatureOfOccupancy";
+            this.lblNatureOfOccupancy.Size = new System.Drawing.Size(44, 11);
+            this.lblNatureOfOccupancy.TabIndex = 157;
+            this.lblNatureOfOccupancy.Text = "required";
+            // 
             // EditTenantInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1017,5 +1108,12 @@
         private System.Windows.Forms.ListView listViewTenants;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label lblNatureOfOccupancy;
+        private System.Windows.Forms.Label lblMobile;
+        private System.Windows.Forms.Label lblHomeAdd;
+        private System.Windows.Forms.Label lblMaritalStatus;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
     }
 }

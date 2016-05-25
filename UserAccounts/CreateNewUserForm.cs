@@ -78,14 +78,32 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         {
             Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
 
+            Regex Letters = new Regex(@"^[a-zA-Z]+$");
+
             string errorMessage = "";
 
             //Required field validation
             if (txtBoxFirstName.Text == "")
                 errorMessage += "First name is required\n";
-
+            else
+            {
+                if (!Letters.IsMatch(txtBoxFirstName.Text))
+                    errorMessage += "First name must not contain number and special character\n";
+            }
+            
             if (txtBoxLastName.Text == "")
                 errorMessage += "Last name is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxLastName.Text))
+                    errorMessage += "Last name name must not contain number and special character\n";
+            }
+
+            if(txtBoxMiddleName.Text != "")
+            {
+                if (!Letters.IsMatch(txtBoxMiddleName.Text))
+                    errorMessage += "Middle name must not contain number and special character\n";
+            }
 
             if (comboBoxMaritalStatus.Text == "")
                 errorMessage += "Marital status is required\n";
@@ -98,23 +116,31 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
             if (txtBoxContactPerson.Text == "")
                 errorMessage += "Contact Person is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxContactPerson.Text))
+                    errorMessage += "Contact Person must not consist of Numbers and Special Characters\n";
+            }
 
             if (txtBoxRelationToContactPerson.Text == "")
                 errorMessage += "Relation to contact person is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxRelationToContactPerson.Text))
+                    errorMessage += "Relation to Contact Person must not consist of Numbers and Special Characters\n";
+            }
 
             if (datePickerDateOfBirth.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
                 errorMessage += "Date of Birth is required\n";
 
             if (DateTime.Now.Year - datePickerDateOfBirth.Value.Year < 18)
-                errorMessage += "User must be atleast 18yrs old";
+                errorMessage += "User must be atleast 18yrs old\n";                               
 
             //Email validation
             if (txtBoxEmail.Text != "") 
             {
                 if (!EmailAddress.IsMatch(txtBoxEmail.Text))
-                {
-                    errorMessage += "-Invalid Email\n";
-                }
+                    errorMessage += "Invalid Email\n";
             }
 
             if (errorMessage != "")
@@ -252,6 +278,16 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         private void CreateNewUserForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBoxFirstName_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void comboBoxMaritalStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMaritalStatus.Visible = formUtilities.ShowRequiredLabel(comboBoxMaritalStatus.Text);
         }
     }
 }

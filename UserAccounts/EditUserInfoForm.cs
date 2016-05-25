@@ -35,6 +35,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void GetUsers(string _searchKey = "")
         {
+            vm = new UserViewModel();
+
             listViewUser.Items.Clear();
 
             List<UserProfile> userList = new List<UserProfile>();
@@ -61,6 +63,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         {
             try
             {
+                vm = new UserViewModel();
+
                 var user = vm.GetSelectedUser(_userID); //get selected user
 
                 if (user != null)
@@ -114,7 +118,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                 comboBoxMaritalStatus.Enabled = txtBoxHomeAddress.Enabled = txtBoxProvincialAddress.Enabled =
                 txtBoxMobileNo.Enabled = txtBoxTelNo.Enabled = txtBoxEmail.Enabled = txtBoxContactNo.Enabled =
                 txtBoxContactPerson.Enabled = txtBoxRelationToContactPerson.Enabled = btnSave.Enabled =
-                btnGeneratePassword.Enabled = txtBoxFirstName.Enabled = btnDeactivate.Enabled = _value;
+                btnGeneratePassword.Enabled = txtBoxFirstName.Enabled = btnDeactivate.Enabled = btnUploadImage.Enabled = _value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -171,13 +175,53 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         {
             Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
 
+            Regex Letters = new Regex(@"^[a-zA-Z]+$");
+
             string errorMessage = "";
 
             if (txtBoxFirstName.Text == "")
                 errorMessage += "First name is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxFirstName.Text))
+                    errorMessage += "First name must not contain number and special character\n";
+            }
 
             if (txtBoxLastName.Text == "")
                 errorMessage += "Last name is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxLastName.Text))
+                    errorMessage += "Last name must not contain number and special character\n";
+            }
+
+            if (comboBoxMaritalStatus.Text == "")
+                errorMessage += "Marital status is required\n";
+
+            if (txtBoxContactNo.Text == "")
+                errorMessage += "Contact Number is required\n";
+
+            if (txtBoxContactPerson.Text == "")
+                errorMessage += "Contact Person is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxContactPerson.Text))
+                    errorMessage += "Contact Person must not consist of Numbers and Special Characters\n";
+            }
+
+            if (txtBoxRelationToContactPerson.Text == "")
+                errorMessage += "Relation to contact person is required\n";
+            else
+            {
+                if (!Letters.IsMatch(txtBoxRelationToContactPerson.Text))
+                    errorMessage += "Relation to Contact Person must not consist of Numbers and Special Characters\n";
+            }
+
+            if (txtBoxMiddleName.Text != "")
+            {
+                if (!Letters.IsMatch(txtBoxMiddleName.Text))
+                    errorMessage += "Middle name must not contain number and special character\n";
+            }
 
             if (comboBoxMaritalStatus.Text == "")
                 errorMessage += "Marital status is required\n";
@@ -236,6 +280,15 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                     editUser.IfGeneratedPassword = "Y";
                 }
 
+                if (pictureBoxUser.Image != null)
+                {
+                    using (var imgStr = new System.IO.MemoryStream())
+                    {
+                        pictureBoxUser.Image.Save(imgStr, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        editUser.ImageContent = imgStr.ToArray();
+                    }
+                }
+
                 editUser.FirstName = txtBoxFirstName.Text;
                 editUser.MiddleName = txtBoxMiddleName.Text;
                 editUser.LastName = txtBoxLastName.Text;
@@ -257,6 +310,8 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                 EnableDisableUserFields(false);
 
                 GetSelectedUser(userID);
+
+                GetUsers();
             }
         }
 
@@ -268,11 +323,14 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void btnDeactivate_Click(object sender, EventArgs e)
         {
-            DialogResult confirmation = MessageBox.Show("Are you sure you wan to deactivate?\n Y/N", "Confirmation", MessageBoxButtons.YesNo);
+            DialogResult confirmation = MessageBox.Show("Are you sure you wan to " + btnDeactivate.Text +"?\n Y/N", "Confirmation", MessageBoxButtons.YesNo);
 
             if(confirmation == DialogResult.Yes)
             {
-                Save("N");
+                if (btnDeactivate.Text == "Deactivate")
+                    Save("N");
+                else
+                    Save("Y");
             }
         }
 
@@ -310,7 +368,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void txtBoxContactNo_TextChanged(object sender, EventArgs e)
         {
- 
+            lblContactNo.Visible = formUtilities.ShowRequiredLabel(txtBoxContactNo.Text);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -318,6 +376,47 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
             UserList form = new UserList();
 
             form.Show();
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            lblFirstName.Visible = formUtilities.ShowRequiredLabel(txtBoxFirstName.Text);
+        }
+
+        private void txtBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            lblLastName.Visible = formUtilities.ShowRequiredLabel(txtBoxLastName.Text);
+        }
+
+        private void datePickerDateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+            lblDateOfBirth.Visible = formUtilities.ShowRequiredLabel
+                (datePickerDateOfBirth.Value.ToShortDateString());
+        }
+
+        private void comboBoxMaritalStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMaritalStatus.Visible = formUtilities.ShowRequiredLabel(comboBoxMaritalStatus.Text);
+        }
+
+        private void txtBoxHomeAddress_TextChanged(object sender, EventArgs e)
+        {
+            lblHomeAddress.Visible = formUtilities.ShowRequiredLabel(txtBoxHomeAddress.Text);
+        }
+
+        private void txtBoxContactPerson_TextChanged(object sender, EventArgs e)
+        {
+            lblContactPerson.Visible = formUtilities.ShowRequiredLabel(txtBoxContactPerson.Text);
+        }
+
+        private void txtBoxRelationToContactPerson_TextChanged(object sender, EventArgs e)
+        {
+            lblRelationToContact.Visible = formUtilities.ShowRequiredLabel(txtBoxRelationToContactPerson.Text);
         }
     }
 }

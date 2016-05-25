@@ -93,7 +93,7 @@
             this.NewUserPnl.Controls.Add(this.CreateNewUserBox);
             this.NewUserPnl.Location = new System.Drawing.Point(4, 4);
             this.NewUserPnl.Name = "NewUserPnl";
-            this.NewUserPnl.Size = new System.Drawing.Size(970, 552);
+            this.NewUserPnl.Size = new System.Drawing.Size(970, 432);
             this.NewUserPnl.TabIndex = 7;
             // 
             // CreateNewUserBox
@@ -109,7 +109,7 @@
             this.CreateNewUserBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewUserBox.Location = new System.Drawing.Point(6, 2);
             this.CreateNewUserBox.Name = "CreateNewUserBox";
-            this.CreateNewUserBox.Size = new System.Drawing.Size(961, 547);
+            this.CreateNewUserBox.Size = new System.Drawing.Size(961, 420);
             this.CreateNewUserBox.TabIndex = 3;
             this.CreateNewUserBox.TabStop = false;
             this.CreateNewUserBox.Text = "Create New User";
@@ -431,6 +431,7 @@
             this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
             this.comboBoxMaritalStatus.Size = new System.Drawing.Size(207, 22);
             this.comboBoxMaritalStatus.TabIndex = 119;
+            this.comboBoxMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaritalStatus_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -553,6 +554,7 @@
             this.txtBoxFirstName.Size = new System.Drawing.Size(207, 23);
             this.txtBoxFirstName.TabIndex = 1;
             this.txtBoxFirstName.TextChanged += new System.EventHandler(this.txtBoxFirstName_TextChanged);
+            this.txtBoxFirstName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxFirstName_KeyUp);
             // 
             // txtBoxHomeAddress
             // 
@@ -643,7 +645,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(763, 508);
+            this.btnCreate.Location = new System.Drawing.Point(763, 369);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(92, 33);
             this.btnCreate.TabIndex = 21;
@@ -656,7 +658,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(863, 508);
+            this.btnCancel.Location = new System.Drawing.Point(863, 369);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 33);
             this.btnCancel.TabIndex = 22;
@@ -712,7 +714,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1000, 616);
+            this.ClientSize = new System.Drawing.Size(1000, 450);
             this.Controls.Add(this.NewUserPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(352, 141);
