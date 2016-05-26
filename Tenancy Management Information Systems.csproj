@@ -380,7 +380,9 @@
     <EmbeddedResource Include="ReportGeneration\WaterBillingForm.resx">
       <DependentUpon>WaterBillingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BillingStatement.rdlc" />
     <EmbeddedResource Include="Reports\MonthlyAssocPaymentHistory.rdlc" />
+    <EmbeddedResource Include="Reports\OfficialReceipt.rdlc" />
     <EmbeddedResource Include="Reports\TenancyDatabaseByOccupancyDate.rdlc" />
     <EmbeddedResource Include="Reports\UnitAll.rdlc" />
     <EmbeddedResource Include="Reports\UnitAvailable.rdlc" />
