@@ -70,6 +70,13 @@
             this.txtBoxOtherName1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblNatureOfOccupancy = new System.Windows.Forms.Label();
+            this.lblMobile = new System.Windows.Forms.Label();
+            this.lblHomeAdd = new System.Windows.Forms.Label();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtBoxNatureOfOccupancy = new System.Windows.Forms.ComboBox();
             this.comboBoxMaritalStatus = new System.Windows.Forms.ComboBox();
             this.datePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -99,13 +106,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Go = new System.Windows.Forms.Button();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.lblMaritalStatus = new System.Windows.Forms.Label();
-            this.lblHomeAdd = new System.Windows.Forms.Label();
-            this.lblMobile = new System.Windows.Forms.Label();
-            this.lblNatureOfOccupancy = new System.Windows.Forms.Label();
             this.EditTenantPnl.SuspendLayout();
             this.btnClose.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -606,6 +606,83 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
             // 
+            // lblNatureOfOccupancy
+            // 
+            this.lblNatureOfOccupancy.AutoSize = true;
+            this.lblNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNatureOfOccupancy.ForeColor = System.Drawing.Color.Red;
+            this.lblNatureOfOccupancy.Location = new System.Drawing.Point(436, 177);
+            this.lblNatureOfOccupancy.Name = "lblNatureOfOccupancy";
+            this.lblNatureOfOccupancy.Size = new System.Drawing.Size(44, 11);
+            this.lblNatureOfOccupancy.TabIndex = 157;
+            this.lblNatureOfOccupancy.Text = "required";
+            // 
+            // lblMobile
+            // 
+            this.lblMobile.AutoSize = true;
+            this.lblMobile.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobile.ForeColor = System.Drawing.Color.Red;
+            this.lblMobile.Location = new System.Drawing.Point(862, 132);
+            this.lblMobile.Name = "lblMobile";
+            this.lblMobile.Size = new System.Drawing.Size(44, 11);
+            this.lblMobile.TabIndex = 156;
+            this.lblMobile.Text = "required";
+            // 
+            // lblHomeAdd
+            // 
+            this.lblHomeAdd.AutoSize = true;
+            this.lblHomeAdd.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeAdd.ForeColor = System.Drawing.Color.Red;
+            this.lblHomeAdd.Location = new System.Drawing.Point(862, 39);
+            this.lblHomeAdd.Name = "lblHomeAdd";
+            this.lblHomeAdd.Size = new System.Drawing.Size(44, 11);
+            this.lblHomeAdd.TabIndex = 155;
+            this.lblHomeAdd.Text = "required";
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMaritalStatus.Location = new System.Drawing.Point(393, 107);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
+            this.lblMaritalStatus.TabIndex = 154;
+            this.lblMaritalStatus.Text = "required";
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(393, 85);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
+            this.lblDateOfBirth.TabIndex = 153;
+            this.lblDateOfBirth.Text = "required";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.Red;
+            this.lblLastName.Location = new System.Drawing.Point(439, 63);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 11);
+            this.lblLastName.TabIndex = 152;
+            this.lblLastName.Text = "required";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstName.Location = new System.Drawing.Point(439, 19);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
+            this.lblFirstName.TabIndex = 151;
+            this.lblFirstName.Text = "required";
+            // 
             // txtBoxNatureOfOccupancy
             // 
             this.txtBoxNatureOfOccupancy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -619,6 +696,7 @@
             this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
             this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(182, 22);
             this.txtBoxNatureOfOccupancy.TabIndex = 150;
+            this.txtBoxNatureOfOccupancy.SelectedIndexChanged += new System.EventHandler(this.txtBoxNatureOfOccupancy_SelectedIndexChanged);
             // 
             // comboBoxMaritalStatus
             // 
@@ -635,6 +713,7 @@
             this.comboBoxMaritalStatus.Name = "comboBoxMaritalStatus";
             this.comboBoxMaritalStatus.Size = new System.Drawing.Size(170, 22);
             this.comboBoxMaritalStatus.TabIndex = 142;
+            this.comboBoxMaritalStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaritalStatus_SelectedIndexChanged);
             // 
             // datePickerDateOfBirth
             // 
@@ -649,6 +728,7 @@
             this.datePickerDateOfBirth.Name = "datePickerDateOfBirth";
             this.datePickerDateOfBirth.Size = new System.Drawing.Size(169, 20);
             this.datePickerDateOfBirth.TabIndex = 141;
+            this.datePickerDateOfBirth.ValueChanged += new System.EventHandler(this.datePickerDateOfBirth_ValueChanged);
             // 
             // txtBoxProvincialAddress
             // 
@@ -691,6 +771,7 @@
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(246, 20);
             this.txtBoxMobileNo.TabIndex = 137;
+            this.txtBoxMobileNo.TextChanged += new System.EventHandler(this.txtBoxMobileNo_TextChanged);
             this.txtBoxMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxMobileNo_KeyPress);
             // 
             // label22
@@ -725,6 +806,7 @@
             this.txtBoxHomeAddress.Name = "txtBoxHomeAddress";
             this.txtBoxHomeAddress.Size = new System.Drawing.Size(372, 34);
             this.txtBoxHomeAddress.TabIndex = 135;
+            this.txtBoxHomeAddress.TextChanged += new System.EventHandler(this.txtBoxHomeAddress_TextChanged);
             // 
             // label7
             // 
@@ -788,6 +870,7 @@
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxLastName.TabIndex = 129;
+            this.txtBoxLastName.TextChanged += new System.EventHandler(this.txtBoxLastName_TextChanged);
             // 
             // txtBoxMiddleName
             // 
@@ -808,6 +891,7 @@
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(215, 20);
             this.txtBoxFirstName.TabIndex = 127;
+            this.txtBoxFirstName.TextChanged += new System.EventHandler(this.txtBoxFirstName_TextChanged);
             // 
             // pictureBox
             // 
@@ -925,83 +1009,6 @@
             this.Go.TabIndex = 11;
             this.Go.UseVisualStyleBackColor = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.Red;
-            this.lblFirstName.Location = new System.Drawing.Point(439, 19);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(44, 11);
-            this.lblFirstName.TabIndex = 151;
-            this.lblFirstName.Text = "required";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.Red;
-            this.lblLastName.Location = new System.Drawing.Point(439, 63);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(44, 11);
-            this.lblLastName.TabIndex = 152;
-            this.lblLastName.Text = "required";
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.ForeColor = System.Drawing.Color.Red;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(393, 85);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(44, 11);
-            this.lblDateOfBirth.TabIndex = 153;
-            this.lblDateOfBirth.Text = "required";
-            // 
-            // lblMaritalStatus
-            // 
-            this.lblMaritalStatus.AutoSize = true;
-            this.lblMaritalStatus.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaritalStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblMaritalStatus.Location = new System.Drawing.Point(393, 107);
-            this.lblMaritalStatus.Name = "lblMaritalStatus";
-            this.lblMaritalStatus.Size = new System.Drawing.Size(44, 11);
-            this.lblMaritalStatus.TabIndex = 154;
-            this.lblMaritalStatus.Text = "required";
-            // 
-            // lblHomeAdd
-            // 
-            this.lblHomeAdd.AutoSize = true;
-            this.lblHomeAdd.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHomeAdd.ForeColor = System.Drawing.Color.Red;
-            this.lblHomeAdd.Location = new System.Drawing.Point(862, 39);
-            this.lblHomeAdd.Name = "lblHomeAdd";
-            this.lblHomeAdd.Size = new System.Drawing.Size(44, 11);
-            this.lblHomeAdd.TabIndex = 155;
-            this.lblHomeAdd.Text = "required";
-            // 
-            // lblMobile
-            // 
-            this.lblMobile.AutoSize = true;
-            this.lblMobile.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMobile.ForeColor = System.Drawing.Color.Red;
-            this.lblMobile.Location = new System.Drawing.Point(862, 132);
-            this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(44, 11);
-            this.lblMobile.TabIndex = 156;
-            this.lblMobile.Text = "required";
-            // 
-            // lblNatureOfOccupancy
-            // 
-            this.lblNatureOfOccupancy.AutoSize = true;
-            this.lblNatureOfOccupancy.Font = new System.Drawing.Font("Arial", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNatureOfOccupancy.ForeColor = System.Drawing.Color.Red;
-            this.lblNatureOfOccupancy.Location = new System.Drawing.Point(436, 177);
-            this.lblNatureOfOccupancy.Name = "lblNatureOfOccupancy";
-            this.lblNatureOfOccupancy.Size = new System.Drawing.Size(44, 11);
-            this.lblNatureOfOccupancy.TabIndex = 157;
-            this.lblNatureOfOccupancy.Text = "required";
             // 
             // EditTenantInformationForm
             // 

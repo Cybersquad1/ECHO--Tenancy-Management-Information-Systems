@@ -11,6 +11,7 @@ using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
 using System.IO;
 using Tenancy_Management_Information_Systems.Utilities;
+using System.Text.RegularExpressions;
 
 namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
@@ -285,13 +286,42 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         {
             try
             {
+                Regex EmailAddress = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+
+                Regex Letters = new Regex(@"^[a-zA-Z]+$");
+
                 string errorMessage = "";
 
                 if (txtBoxFirstName.Text == "")
                     errorMessage += "Firstname is required\n";
+                else
+                {
+                    if (!Letters.IsMatch(txtBoxFirstName.Text))
+                        errorMessage += "First name must not contain number and special character\n";
+                }
+
+                if (txtBoxMiddleName.Text != "")
+                {
+                    if (!Letters.IsMatch(txtBoxMiddleName.Text))
+                        errorMessage += "Middle name must not contain number and special character\n";
+                }
 
                 if (txtBoxLastName.Text == "")
                     errorMessage += "Lastname is required\n";
+                else
+                {
+                    if (!Letters.IsMatch(txtBoxLastName.Text))
+                        errorMessage += "Last name must not contain number and special character\n";
+                }
+
+                if (txtBoxHomeAddress.Text == "")
+                    errorMessage += "Home address is required\n";
+
+                if (txtBoxMobileNo.Text == "")
+                    errorMessage += "Mobile no is required\n";
+
+                if (comboBoxMaritalStatus.Text == "")
+                    errorMessage += "Marital status is required\n";
 
                 if (datePickerDateOfBirth.Value >= DateTime.Now)
                     errorMessage += "Date of birth must no be equal or exceed from date today\n";
@@ -370,6 +400,42 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void txtBoxMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             formUtilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            lblFirstName.Visible = formUtilities.ShowRequiredLabel(txtBoxFirstName.Text);
+        }
+
+        private void txtBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            lblLastName.Visible = formUtilities.ShowRequiredLabel(txtBoxLastName.Text);
+        }
+
+        private void comboBoxMaritalStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMaritalStatus.Visible = formUtilities.ShowRequiredLabel(comboBoxMaritalStatus.Text);
+        }
+
+        private void txtBoxNatureOfOccupancy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblNatureOfOccupancy.Visible = formUtilities.ShowRequiredLabel(txtBoxNatureOfOccupancy.Text);
+        }
+
+        private void txtBoxHomeAddress_TextChanged(object sender, EventArgs e)
+        {
+            lblHomeAdd.Visible = formUtilities.ShowRequiredLabel(txtBoxHomeAddress.Text);
+        }
+
+        private void txtBoxMobileNo_TextChanged(object sender, EventArgs e)
+        {
+            lblMobile.Visible = formUtilities.ShowRequiredLabel(txtBoxMobileNo.Text);
+        }
+
+        private void datePickerDateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+            lblDateOfBirth.Visible = formUtilities.ShowRequiredLabel
+                (datePickerDateOfBirth.Value.ToShortDateString());
         }
     }
 }
