@@ -1,11 +1,64 @@
 USE [Echo]
 GO
-/****** Object:  StoredProcedure [dbo].[TenancyDatabaseByOccupancyYear]    Script Date: 5/20/2016 12:36:06 PM ******/
+/****** Object:  StoredProcedure [dbo].[UnitAllOccupied]    Script Date: 05/28/2016 22:31:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[TenancyDatabaseByOccupancyYear]
+CREATE PROCEDURE [dbo].[UnitAllOccupied]
+AS
+SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
+unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
+owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
+tenant.LastName as TenantLastName
+FROM UnitProfile as unit
+LEFT JOIN TenantProfile as owner
+ON owner.ID = unit.Owner
+LEFT JOIN TenantProfile as tenant
+ON tenant.ID = unit.Tenant
+WHERE unit.Tenant IS NOT NULL
+GO
+/****** Object:  StoredProcedure [dbo].[UnitAllAvailable]    Script Date: 05/28/2016 22:31:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[UnitAllAvailable]
+AS
+SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
+unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
+owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
+tenant.LastName as TenantLastName
+FROM UnitProfile as unit
+LEFT JOIN TenantProfile as owner
+ON owner.ID = unit.Owner
+LEFT JOIN TenantProfile as tenant
+ON tenant.ID = unit.Tenant
+WHERE unit.Tenant IS NULL
+GO
+/****** Object:  StoredProcedure [dbo].[UnitAll]    Script Date: 05/28/2016 22:31:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[UnitAll]
+AS
+SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
+unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
+owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
+tenant.LastName as TenantLastName
+FROM UnitProfile as unit
+LEFT JOIN TenantProfile as owner
+ON owner.ID = unit.Owner
+LEFT JOIN TenantProfile as tenant
+ON tenant.ID = unit.Tenant
+GO
+/****** Object:  StoredProcedure [dbo].[TenancyDatabaseByOccupancyYear]    Script Date: 05/28/2016 22:31:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[TenancyDatabaseByOccupancyYear]
 (
 	@StartDate datetime,
 	@EndDate datetime
@@ -24,97 +77,22 @@ ON unit.Tenant = unittenant.ID
 WHERE tenant.StartOfOccupancy between @StartDate and @EndDate
 AND tenant.Status = 'Y'
 ORDER BY tenant.LastName ASC
-
-
-USE [Echo]
 GO
-/****** Object:  StoredProcedure [dbo].[UnitAll]    Script Date: 5/20/2016 12:36:28 PM ******/
+/****** Object:  StoredProcedure [dbo].[UserList]    Script Date: 05/28/2016 22:31:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[UnitAll]
+CREATE PROCEDURE [dbo].[UserList]
 AS
-SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
-unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
-owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
-tenant.LastName as TenantLastName
-FROM UnitProfile as unit
-LEFT JOIN TenantProfile as owner
-ON owner.ID = unit.Owner
-LEFT JOIN TenantProfile as tenant
-ON tenant.ID = unit.Tenant
-
-
-USE [Echo]
+Select * From UserProfile
 GO
-/****** Object:  StoredProcedure [dbo].[UnitAllAvailable]    Script Date: 5/20/2016 12:36:36 PM ******/
+/****** Object:  StoredProcedure [dbo].[WaterBillingPaymentHistory]    Script Date: 05/28/2016 22:31:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[UnitAllAvailable]
-AS
-SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
-unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
-owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
-tenant.LastName as TenantLastName
-FROM UnitProfile as unit
-LEFT JOIN TenantProfile as owner
-ON owner.ID = unit.Owner
-LEFT JOIN TenantProfile as tenant
-ON tenant.ID = unit.Tenant
-WHERE unit.Tenant IS NULL
-
-
-
-USE [Echo]
-GO
-/****** Object:  StoredProcedure [dbo].[UnitAllOccupied]    Script Date: 5/20/2016 12:36:43 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [dbo].[UnitAllOccupied]
-AS
-SELECT unit.UnitNumber, unit.StartOfOccupancy, unit.ExpectedEndOfOccupancy, 
-unit.NatureOfOccupancy, unit.Type, unit.Floor, owner.FirstName as OwnerFirstName, 
-owner.LastName as OwnerLastName, tenant.FirstName as TenantFirstName,
-tenant.LastName as TenantLastName
-FROM UnitProfile as unit
-LEFT JOIN TenantProfile as owner
-ON owner.ID = unit.Owner
-LEFT JOIN TenantProfile as tenant
-ON tenant.ID = unit.Tenant
-WHERE unit.Tenant IS NOT NULL
-
-
-USE [Echo]
-GO
-/****** Object:  StoredProcedure [dbo].[MonthlyAssocPaymentHistory]    Script Date: 5/20/2016 3:21:15 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-ALTER PROCEDURE [dbo].[MonthlyAssocPaymentHistory]
-(
-@UnitNo varchar(10)
-)
-AS
-SELECT * FROM MonthlyAssociationDue
-WHERE UnitNumber = @UnitNo
-ORDER BY ChargeDate DESC
-
-
-USE [Echo]
-GO
-/****** Object:  StoredProcedure [dbo].[WaterBillingPaymentHistory]    Script Date: 5/20/2016 3:21:32 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [dbo].[WaterBillingPaymentHistory]
+CREATE PROCEDURE [dbo].[WaterBillingPaymentHistory]
 (
 	@UnitNo varchar(10)
 )
@@ -122,14 +100,36 @@ AS
 SELECT * FROM WaterBilling
 WHERE UnitNumber = @UnitNo
 ORDER BY ChargeDate DESC
-
-USE [Echo]
 GO
-/****** Object:  StoredProcedure [dbo].[WaterBillingPaymentHistory]    Script Date: 5/20/2016 3:21:32 PM ******/
+/****** Object:  StoredProcedure [dbo].[BillingStatement]    Script Date: 05/28/2016 22:31:06 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROCEDURE UserList
+CREATE PROCEDURE [dbo].[BillingStatement]
+(
+	@AssocID uniqueidentifier
+)
 AS
-Select * From UserProfile
+select assoc.UnitNumber, tenant.FirstName, tenant.LastName, assoc.ChargeDate,
+assoc.AssociationDue, assoc.WaterBillTotalDue, assoc.OtherPenalty, assoc.OtherPenaltyAmount,
+assoc.Penalty, assoc.WaterCurrentReading, assoc.WaterPreviousReading, assoc.WaterDate, assoc.TotalAmount from MonthlyAssociationDue as assoc
+LEFT JOIN UnitProfile as unit
+on unit.UnitNumber = assoc.UnitNumber
+LEFT JOIN TenantProfile as tenant
+on unit.Tenant = tenant.ID where assoc.ID=@AssocID
+GO
+/****** Object:  StoredProcedure [dbo].[MonthlyAssocPaymentHistory]    Script Date: 05/28/2016 22:31:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[MonthlyAssocPaymentHistory]
+(
+@UnitNo varchar(10)
+)
+AS
+SELECT * FROM MonthlyAssociationDue
+WHERE UnitNumber = @UnitNo
+ORDER BY ChargeDate DESC
+GO
