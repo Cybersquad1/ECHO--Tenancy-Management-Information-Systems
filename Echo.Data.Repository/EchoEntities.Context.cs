@@ -33,7 +33,6 @@ namespace Echo.Data.Repository
         public virtual DbSet<PaymentHistory> PaymentHistory { get; set; }
         public virtual DbSet<Request> Request { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TenantArchive> TenantArchive { get; set; }
         public virtual DbSet<TenantProfile> TenantProfile { get; set; }
         public virtual DbSet<UnitProfile> UnitProfile { get; set; }
@@ -89,6 +88,15 @@ namespace Echo.Data.Repository
         public virtual ObjectResult<UserList_Result> UserList()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UserList_Result>("UserList");
+        }
+    
+        public virtual ObjectResult<BillingStatement_Result> BillingStatement(Nullable<System.Guid> assocID)
+        {
+            var assocIDParameter = assocID.HasValue ?
+                new ObjectParameter("AssocID", assocID) :
+                new ObjectParameter("AssocID", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BillingStatement_Result>("BillingStatement", assocIDParameter);
         }
     }
 }

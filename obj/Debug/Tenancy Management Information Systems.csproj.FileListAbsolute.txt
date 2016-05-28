@@ -1,350 +1,68 @@
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-c:\users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\nio manglanlan\documents\visual studio 2012\Projects\Tenancy Management Information Systems\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\nio manglanlan\Desktop\Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\Stephanie\Desktop\ALFA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\Stephanie\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\nio manglanlan\Desktop\BETA-Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\Stephanie\Desktop\Charlie -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
-C:\Users\nio manglanlan\Desktop\DELTA -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Create_New_User.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Echo.Data.Repository.dll
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Royce\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\WebCam_Capture.dll
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Echo.Data.Repository.dll
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\WebCam_Capture.dll
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\philscan\Desktop\ECHO -Tenancy Management Information Systems\ECHO -Tenancy Management Information Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\WebCam_Capture.dll
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ChangePassword.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.MonthlyAssocDue.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.PaymentHistory.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.RequestForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ReservationForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.TenantInformation.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabase.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabaseParameter.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UnitAll.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitCategory.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectTenant.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectUnit.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TransferOwnership.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.cache
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.compiled
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ChangePassword.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.MonthlyAssocDue.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.PaymentHistory.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.RequestForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ReservationForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.TenantInformation.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabase.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabaseParameter.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UnitAll.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitAvailable.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitCategory.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectTenant.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectUnit.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TransferOwnership.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.cache
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.compiled
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\WebCam_Capture.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitAvailable.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.MonthlyAssociationDue.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.MonthlyAssociationDue.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources
-C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UserList.UserList.resources
-C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UserList.UserList.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csprojResolveAssemblyReference.cache
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Home.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeKioskForms.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.Home2.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.HomeTenantForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ChangePassword.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.MonthlyAssocDue.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.PaymentHistory.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.RequestForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.ReservationForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Kiosk.TenantForms.TenantInformation.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.Properties.Resources.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Billing.StatementOfAccount.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.MonthlyAssociationDue.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.PaymentHistoryType.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.PaymentHistory.WaterBilling.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabase.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.TenancyDatabaseParameter.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UnitAll.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitAvailable.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitCategory.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.Unit.UnitOccupied.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportForms.UserList.UserList.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.logSheetForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.MonthlyAssociationDuesForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.TheListForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.ReportGeneration.WaterBillingForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.SplashScreen.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.AvailableUnitForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.CreateNewTenantForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.EditTenantInformationForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.PaymentHistoryForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectTenant.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.SelectUnit.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyArchiveForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TenancyDatabaseForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.TransferOwnership.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.viewUnitNumberForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.UserAccounts.CollectorForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.CreateNewUserForm.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.User_Accounts.Edit_User_Info.resources
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.csproj.GenerateResource.Cache
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.cache
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\RdlCompile.compiled
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.pdb
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\WebCam_Capture.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Echo.Data.Repository.pdb
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
+C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb

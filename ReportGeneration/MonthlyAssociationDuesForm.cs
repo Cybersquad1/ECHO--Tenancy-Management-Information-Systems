@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
 using Tenancy_Management_Information_Systems.Utilities;
+using Tenancy_Management_Information_Systems.ReportForms.Billing;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
@@ -25,6 +26,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         FormUtilities formUtilities = new FormUtilities();
      
         double penalty = 0;
+
+        Guid assocID = Guid.Empty;
+
+        WaterBilling waterBilling;
 
         public MonthlyAssociationDuesForm()
         {
@@ -155,11 +160,11 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         {
             waterBillingVM = new WaterBillingViewModel(); //Refresh connection
 
-            var waterBilling = waterBillingVM.GetPreviousBilling(cmbBoxUnitNo.Text);
+            waterBilling = waterBillingVM.GetPrevBilling(cmbBoxUnitNo.Text);
 
             if(waterBilling != null)
             {
-                txtBoxWaterBilling.Text = waterBilling[1];
+                txtBoxWaterBilling.Text = string.Format("{0:0.00}",waterBilling.TotalAmount);
 
                 ComputeTotal();
             }
@@ -232,6 +237,15 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 newAssoc.Balance = newAssoc.TotalAmount = decimal.Parse(txtBoxTotalAmountDue.Text);
                 newAssoc.Paid = 0;
 
+                if(waterBilling != null)
+                {
+                    newAssoc.WaterCurrentReading = waterBilling.CurrentReading;
+
+                    newAssoc.WaterPreviousReading = waterBilling.PreviousReading;
+
+                    newAssoc.WaterDate = waterBilling.ChargeDate;
+                }
+
                 if (checkBoxOverdue.Checked)
                     newAssoc.Penalty = decimal.Parse((double.Parse(
                         txtBoxAssociationDues.Text) * 0.04).ToString());
@@ -252,11 +266,15 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
                 if (result == DialogResult.Yes)
                 {
-                    if (assocVM.CreateMonthlyAssoc(newAssoc))
+                    assocID = assocVM.CreateMonthlyAssoc(newAssoc);
+
+                    if (assocID!= Guid.Empty)
                     {
                         AddDuesToSummaryTable();
 
                         MessageBox.Show("Successfully save");
+
+                        btnPreview.Enabled = true;
                     }
                     else
                     {
@@ -341,6 +359,13 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void txtBoxOtherAmount_TextChanged(object sender, EventArgs e)
         {
                 ComputeTotal();
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            StatementOfAccount form = new StatementOfAccount(assocID);
+
+            form.Show();
         }
     } 
 }

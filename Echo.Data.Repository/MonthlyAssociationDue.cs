@@ -33,6 +33,9 @@ namespace Echo.Data.Repository
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<decimal> Balance { get; set; }
         public Nullable<decimal> Paid { get; set; }
+        public string WaterCurrentReading { get; set; }
+        public string WaterPreviousReading { get; set; }
+        public Nullable<System.DateTime> WaterDate { get; set; }
     
         public virtual UnitProfile UnitProfile { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

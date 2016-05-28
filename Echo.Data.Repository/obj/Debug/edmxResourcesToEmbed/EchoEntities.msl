@@ -15,6 +15,139 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
+          <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+          <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
+          <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserList" FunctionName="EchoModel.Store.UserList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.UserList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
+          <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BillingStatement" FunctionName="EchoModel.Store.BillingStatement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.BillingStatement_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
+          <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
+          <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="LogSheet">
       <EntityTypeMapping TypeName="EchoModel.LogSheet">
         <MappingFragment StoreEntitySet="LogSheet">
@@ -44,6 +177,9 @@
     <EntitySetMapping Name="MonthlyAssociationDue">
       <EntityTypeMapping TypeName="EchoModel.MonthlyAssociationDue">
         <MappingFragment StoreEntitySet="MonthlyAssociationDue">
+          <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
+          <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
+          <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
           <ScalarProperty Name="Paid" ColumnName="Paid" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
@@ -109,17 +245,6 @@
           <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
           <ScalarProperty Name="Facility" ColumnName="Facility" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="EchoModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -238,119 +363,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-          <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-          <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-          <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-          <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-          <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-          <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
-          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
-          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
-          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
-          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
-          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
-          <ScalarProperty Name="Paid" ColumnName="Paid" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-          <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
-          <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
-          <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
-          <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
-          <ScalarProperty Name="Paid" ColumnName="Paid" />
-          <ScalarProperty Name="Balance" ColumnName="Balance" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="UserList" FunctionName="EchoModel.Store.UserList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EchoModel.UserList_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-          <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-          <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-          <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
-          <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

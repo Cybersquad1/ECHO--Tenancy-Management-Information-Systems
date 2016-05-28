@@ -30,8 +30,8 @@
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
-    <Property Name="ChargeDate" Type="datetime" />
-    <Property Name="DueDate" Type="datetime" />
+    <Property Name="ChargeDate" Type="date" />
+    <Property Name="DueDate" Type="date" />
     <Property Name="AssociationDue" Type="decimal" Precision="18" Scale="2" />
     <Property Name="WaterBillTotalDue" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Discounts" Type="decimal" Precision="18" Scale="2" />
@@ -41,6 +41,9 @@
     <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="WaterCurrentReading" Type="varchar" MaxLength="50" />
+    <Property Name="WaterPreviousReading" Type="varchar" MaxLength="50" />
+    <Property Name="WaterDate" Type="date" />
   </EntityType>
   <EntityType Name="PaymentHistory">
     <Key>
@@ -90,16 +93,6 @@
     <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TenantArchive">
     <Key>
@@ -319,6 +312,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="BillingStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AssocID" Type="uniqueidentifier" Mode="In" />
+  </Function>
   <Function Name="MonthlyAssocPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UnitNo" Type="varchar" Mode="In" />
   </Function>
@@ -340,7 +336,6 @@
     <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />

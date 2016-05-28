@@ -35,8 +35,8 @@
           </Key>
           <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UnitNumber" Type="varchar" MaxLength="5" />
-          <Property Name="ChargeDate" Type="datetime" />
-          <Property Name="DueDate" Type="datetime" />
+          <Property Name="ChargeDate" Type="date" />
+          <Property Name="DueDate" Type="date" />
           <Property Name="AssociationDue" Type="decimal" Precision="18" Scale="2" />
           <Property Name="WaterBillTotalDue" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Discounts" Type="decimal" Precision="18" Scale="2" />
@@ -46,6 +46,9 @@
           <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="WaterCurrentReading" Type="varchar" MaxLength="50" />
+          <Property Name="WaterPreviousReading" Type="varchar" MaxLength="50" />
+          <Property Name="WaterDate" Type="date" />
         </EntityType>
         <EntityType Name="PaymentHistory">
           <Key>
@@ -95,16 +98,6 @@
           <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TenantArchive">
           <Key>
@@ -324,6 +317,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="BillingStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AssocID" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="MonthlyAssocPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UnitNo" Type="varchar" Mode="In" />
         </Function>
@@ -345,7 +341,6 @@
           <EntitySet Name="PaymentHistory" EntityType="Self.PaymentHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TenantArchive" EntityType="Self.TenantArchive" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TenantProfile" EntityType="Self.TenantProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UnitProfile" EntityType="Self.UnitProfile" Schema="dbo" store:Type="Tables" />
@@ -397,13 +392,25 @@
             <Parameter Name="StartDate" Mode="In" Type="DateTime" />
             <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
+          <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
+          <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
+          <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
+          <Parameter Name="UnitNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
+          <Parameter Name="UnitNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
+          <FunctionImport Name="BillingStatement" ReturnType="Collection(EchoModel.BillingStatement_Result)">
+          <Parameter Name="AssocID" Mode="In" Type="Guid" />
+          </FunctionImport>
           <EntitySet Name="LogSheet" EntityType="EchoModel.LogSheet" />
           <EntitySet Name="LogSheetActivity" EntityType="EchoModel.LogSheetActivity" />
           <EntitySet Name="MonthlyAssociationDue" EntityType="EchoModel.MonthlyAssociationDue" />
           <EntitySet Name="PaymentHistory" EntityType="EchoModel.PaymentHistory" />
           <EntitySet Name="Request" EntityType="EchoModel.Request" />
           <EntitySet Name="Reservation" EntityType="EchoModel.Reservation" />
-          <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagrams" />
           <EntitySet Name="TenantArchive" EntityType="EchoModel.TenantArchive" />
           <EntitySet Name="TenantProfile" EntityType="EchoModel.TenantProfile" />
           <EntitySet Name="UnitProfile" EntityType="EchoModel.UnitProfile" />
@@ -445,16 +452,6 @@
             <End Role="UnitProfile" EntitySet="UnitProfile" />
             <End Role="WaterBilling" EntitySet="WaterBilling" />
           </AssociationSet>
-          <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
-          <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
-          <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
-          <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
-          <Parameter Name="UnitNo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
-          <Parameter Name="UnitNo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
         </EntityContainer>
         <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
           <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -466,6 +463,111 @@
           <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
           </ComplexType>
+        <ComplexType Name="UnitAll_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="UnitAllAvailable_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="UnitAllOccupied_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="MonthlyAssocPaymentHistory_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="WaterBillingPaymentHistory_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="UserList_Result">
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
+          <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
+          <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="BillingStatement_Result">
+          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="ChargeDate" Nullable="true" />
+          <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="WaterCurrentReading" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="WaterPreviousReading" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="WaterDate" Nullable="true" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
         <EntityType Name="LogSheet">
           <Key>
             <PropertyRef Name="ID" />
@@ -500,8 +602,8 @@
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="ChargeDate" Type="DateTime" Precision="3" />
-          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="ChargeDate" Type="DateTime" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
           <Property Name="AssociationDue" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="WaterBillTotalDue" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Discounts" Type="Decimal" Precision="18" Scale="2" />
@@ -511,6 +613,9 @@
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="WaterCurrentReading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WaterPreviousReading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WaterDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
           <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="MonthlyAssociationDue" ToRole="PaymentHistory" />
         </EntityType>
@@ -566,16 +671,6 @@
           <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="Reservation" ToRole="PaymentHistory" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TenantArchive">
           <Key>
@@ -803,96 +898,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="UnitAll_Result">
-          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="UnitAllAvailable_Result">
-          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="UnitAllOccupied_Result">
-          <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-          <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-          <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-          <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="MonthlyAssocPaymentHistory_Result">
-          <Property Type="Guid" Name="ID" Nullable="false" />
-          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
-          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
-          <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
-          <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
-        </ComplexType>
-        <ComplexType Name="WaterBillingPaymentHistory_Result">
-          <Property Type="Guid" Name="ID" Nullable="false" />
-          <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
-          <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
-          <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
-          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
-          <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
-          <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
-        </ComplexType>
-        <ComplexType Name="UserList_Result">
-          <Property Type="Guid" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
-          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
-          <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
-          <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
-          <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -911,6 +916,139 @@
                 <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
                 <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
                 </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
+                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
+                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
+                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
+                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
+                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+                <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+                <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+                <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
+                <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
+                <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
+                <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UserList" FunctionName="EchoModel.Store.UserList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.UserList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+                <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
+                <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="BillingStatement" FunctionName="EchoModel.Store.BillingStatement">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EchoModel.BillingStatement_Result">
+                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+                <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+                <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
+                <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
+                <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <EntitySetMapping Name="LogSheet">
@@ -942,6 +1080,9 @@
           <EntitySetMapping Name="MonthlyAssociationDue">
             <EntityTypeMapping TypeName="EchoModel.MonthlyAssociationDue">
               <MappingFragment StoreEntitySet="MonthlyAssociationDue">
+                <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
+                <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
+                <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
                 <ScalarProperty Name="Paid" ColumnName="Paid" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
@@ -1007,17 +1148,6 @@
                 <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
                 <ScalarProperty Name="Facility" ColumnName="Facility" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="EchoModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1136,120 +1266,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="UnitAll" FunctionName="EchoModel.Store.UnitAll">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.UnitAll_Result">
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Floor" ColumnName="Floor" />
-                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UnitAllAvailable" FunctionName="EchoModel.Store.UnitAllAvailable">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.UnitAllAvailable_Result">
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Floor" ColumnName="Floor" />
-                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UnitAllOccupied" FunctionName="EchoModel.Store.UnitAllOccupied">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.UnitAllOccupied_Result">
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="StartOfOccupancy" ColumnName="StartOfOccupancy" />
-                <ScalarProperty Name="ExpectedEndOfOccupancy" ColumnName="ExpectedEndOfOccupancy" />
-                <ScalarProperty Name="NatureOfOccupancy" ColumnName="NatureOfOccupancy" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Floor" ColumnName="Floor" />
-                <ScalarProperty Name="OwnerFirstName" ColumnName="OwnerFirstName" />
-                <ScalarProperty Name="OwnerLastName" ColumnName="OwnerLastName" />
-                <ScalarProperty Name="TenantFirstName" ColumnName="TenantFirstName" />
-                <ScalarProperty Name="TenantLastName" ColumnName="TenantLastName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MonthlyAssocPaymentHistory" FunctionName="EchoModel.Store.MonthlyAssocPaymentHistory">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.MonthlyAssocPaymentHistory_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-                <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
-                <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
-                <ScalarProperty Name="Discounts" ColumnName="Discounts" />
-                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
-                <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
-                <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-                <ScalarProperty Name="Balance" ColumnName="Balance" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="WaterBillingPaymentHistory" FunctionName="EchoModel.Store.WaterBillingPaymentHistory">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.WaterBillingPaymentHistory_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
-                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-                <ScalarProperty Name="CurrentReading" ColumnName="CurrentReading" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-                <ScalarProperty Name="OverdueAmount" ColumnName="OverdueAmount" />
-                <ScalarProperty Name="DisconnectionFee" ColumnName="DisconnectionFee" />
-                <ScalarProperty Name="PreviousReading" ColumnName="PreviousReading" />
-                <ScalarProperty Name="PreviousAmount" ColumnName="PreviousAmount" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
-                <ScalarProperty Name="Balance" ColumnName="Balance" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UserList" FunctionName="EchoModel.Store.UserList">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EchoModel.UserList_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-                <ScalarProperty Name="ProvincialAddress" ColumnName="ProvincialAddress" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-                <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="RelationshipToContact" ColumnName="RelationshipToContact" />
-                <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="IfGeneratedPassword" ColumnName="IfGeneratedPassword" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

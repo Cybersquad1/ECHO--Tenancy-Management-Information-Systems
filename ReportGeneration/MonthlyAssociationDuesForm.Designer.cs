@@ -118,6 +118,7 @@
             this.btnPreview.TabIndex = 27;
             this.btnPreview.Text = "    Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnUserCancel
             // 

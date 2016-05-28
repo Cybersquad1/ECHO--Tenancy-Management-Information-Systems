@@ -5,13 +5,25 @@
       <Parameter Name="StartDate" Mode="In" Type="DateTime" />
       <Parameter Name="EndDate" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
+    <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
+    <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
+    <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
+      <Parameter Name="UnitNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
+      <Parameter Name="UnitNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
+    <FunctionImport Name="BillingStatement" ReturnType="Collection(EchoModel.BillingStatement_Result)">
+      <Parameter Name="AssocID" Mode="In" Type="Guid" />
+    </FunctionImport>
     <EntitySet Name="LogSheet" EntityType="EchoModel.LogSheet" />
     <EntitySet Name="LogSheetActivity" EntityType="EchoModel.LogSheetActivity" />
     <EntitySet Name="MonthlyAssociationDue" EntityType="EchoModel.MonthlyAssociationDue" />
     <EntitySet Name="PaymentHistory" EntityType="EchoModel.PaymentHistory" />
     <EntitySet Name="Request" EntityType="EchoModel.Request" />
     <EntitySet Name="Reservation" EntityType="EchoModel.Reservation" />
-    <EntitySet Name="sysdiagrams" EntityType="EchoModel.sysdiagrams" />
     <EntitySet Name="TenantArchive" EntityType="EchoModel.TenantArchive" />
     <EntitySet Name="TenantProfile" EntityType="EchoModel.TenantProfile" />
     <EntitySet Name="UnitProfile" EntityType="EchoModel.UnitProfile" />
@@ -53,16 +65,6 @@
       <End Role="UnitProfile" EntitySet="UnitProfile" />
       <End Role="WaterBilling" EntitySet="WaterBilling" />
     </AssociationSet>
-    <FunctionImport Name="UnitAll" ReturnType="Collection(EchoModel.UnitAll_Result)" />
-    <FunctionImport Name="UnitAllAvailable" ReturnType="Collection(EchoModel.UnitAllAvailable_Result)" />
-    <FunctionImport Name="UnitAllOccupied" ReturnType="Collection(EchoModel.UnitAllOccupied_Result)" />
-    <FunctionImport Name="MonthlyAssocPaymentHistory" ReturnType="Collection(EchoModel.MonthlyAssocPaymentHistory_Result)">
-      <Parameter Name="UnitNo" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="WaterBillingPaymentHistory" ReturnType="Collection(EchoModel.WaterBillingPaymentHistory_Result)">
-      <Parameter Name="UnitNo" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="UserList" ReturnType="Collection(EchoModel.UserList_Result)" />
   </EntityContainer>
   <ComplexType Name="TenancyDatabaseByOccupancyYear_Result">
     <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
@@ -73,6 +75,111 @@
     <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UnitAll_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UnitAllAvailable_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UnitAllOccupied_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="MonthlyAssocPaymentHistory_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="WaterBillingPaymentHistory_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="UserList_Result">
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
+    <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
+  </ComplexType>
+  <ComplexType Name="BillingStatement_Result">
+    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
+    <Property Type="DateTime" Name="ChargeDate" Nullable="true" />
+    <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="WaterCurrentReading" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WaterPreviousReading" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="WaterDate" Nullable="true" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
   </ComplexType>
   <EntityType Name="LogSheet">
     <Key>
@@ -108,8 +215,8 @@
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
     <Property Name="UnitNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="ChargeDate" Type="DateTime" Precision="3" />
-    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="ChargeDate" Type="DateTime" Precision="0" />
+    <Property Name="DueDate" Type="DateTime" Precision="0" />
     <Property Name="AssociationDue" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="WaterBillTotalDue" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Discounts" Type="Decimal" Precision="18" Scale="2" />
@@ -119,6 +226,9 @@
     <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="WaterCurrentReading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WaterPreviousReading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WaterDate" Type="DateTime" Precision="0" />
     <NavigationProperty Name="UnitProfile" Relationship="EchoModel.FK_MonthlyAssociationDue_UnitProfile" FromRole="MonthlyAssociationDue" ToRole="UnitProfile" />
     <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_MonthlyAssociationDue" FromRole="MonthlyAssociationDue" ToRole="PaymentHistory" />
   </EntityType>
@@ -174,16 +284,6 @@
     <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="PaymentHistory" Relationship="EchoModel.FK_PaymentHistory_Reservation" FromRole="Reservation" ToRole="PaymentHistory" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TenantArchive">
     <Key>
@@ -411,94 +511,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="UnitAll_Result">
-    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="UnitAllAvailable_Result">
-    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="UnitAllOccupied_Result">
-    <Property Type="String" Name="UnitNumber" Nullable="false" MaxLength="5" />
-    <Property Type="DateTime" Name="StartOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="ExpectedEndOfOccupancy" Nullable="true" Precision="23" />
-    <Property Type="String" Name="NatureOfOccupancy" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Floor" Nullable="true" MaxLength="3" />
-    <Property Type="String" Name="OwnerFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="OwnerLastName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantFirstName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="TenantLastName" Nullable="true" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="MonthlyAssocPaymentHistory_Result">
-    <Property Type="Guid" Name="ID" Nullable="false" />
-    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
-    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
-    <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
-    <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
-  </ComplexType>
-  <ComplexType Name="WaterBillingPaymentHistory_Result">
-    <Property Type="Guid" Name="ID" Nullable="false" />
-    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="5" />
-    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="FromDate" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="ToDate" Nullable="true" Precision="23" />
-    <Property Type="String" Name="CurrentReading" Nullable="true" MaxLength="100" />
-    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="OverdueAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="DisconnectionFee" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="String" Name="PreviousReading" Nullable="true" MaxLength="100" />
-    <Property Type="Decimal" Name="PreviousAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
-  </ComplexType>
-  <ComplexType Name="UserList_Result">
-    <Property Type="Guid" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Username" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="LastName" Nullable="true" MaxLength="100" />
-    <Property Type="DateTime" Name="DateOfBirth" Nullable="false" Precision="23" />
-    <Property Type="String" Name="MaritalStatus" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="HomeAddress" Nullable="false" MaxLength="300" />
-    <Property Type="String" Name="ProvincialAddress" Nullable="true" MaxLength="300" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="TelephoneNo" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="ContactPerson" Nullable="true" MaxLength="150" />
-    <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="RelationshipToContact" Nullable="true" MaxLength="100" />
-    <Property Type="Binary" Name="ImageContent" Nullable="true" MaxLength="Max" />
-    <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
-    <Property Type="String" Name="IfGeneratedPassword" Nullable="true" MaxLength="1" />
-    <Property Type="String" Name="FullName" Nullable="true" MaxLength="300" />
-  </ComplexType>
 </Schema>

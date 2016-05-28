@@ -54,16 +54,17 @@ namespace Echo.Data.Repository.ViewModel
             return null;
         }
 
-        public bool CreateMonthlyAssoc(MonthlyAssociationDue _monthlyAssocDue)
+        public Guid CreateMonthlyAssoc(MonthlyAssociationDue _monthlyAssocDue)
         {
             try
             {
                 Add(_monthlyAssocDue);
-                return true;
+
+                return _monthlyAssocDue.ID;
             }
             catch
             {
-                return false;
+                return Guid.Empty;
             }
         }
     }
