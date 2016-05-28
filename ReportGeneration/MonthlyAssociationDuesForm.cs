@@ -199,6 +199,12 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             {
                 txtBoxOtherDesc.Enabled = false;
                 txtBoxOtherAmount.Enabled = false;
+
+                txtBoxOtherDesc.Text = "";
+
+                txtBoxOtherAmount.Text = "";
+
+                ComputeTotal();
             }
         }
 
@@ -311,9 +317,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void txtBoxDiscount_TextChanged(object sender, EventArgs e)
         {
             //Auto deduction of discount to total amount due
-            if(txtBoxDiscount.Text != "")
-            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", 
-                decimal.Parse(txtBoxTotalAmountDue.Text) - decimal.Parse(txtBoxDiscount.Text));
+            ComputeTotal();
         }
 
         private void txtBoxAssociationDues_KeyPress(object sender, KeyPressEventArgs e)
@@ -346,6 +350,11 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             if(txtBoxOtherAmount.Text !="")
             {
                 total += double.Parse(txtBoxOtherAmount.Text);
+            }
+
+            if(txtBoxDiscount.Text != "")
+            {
+                total -= double.Parse(txtBoxDiscount.Text);
             }
 
             txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
