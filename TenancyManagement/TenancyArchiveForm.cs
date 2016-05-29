@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Tenancy_Management_Information_Systems.ReportForms;
+using System.IO;
 
 namespace Tenancy_Management_Information_Systems.TenancyManagement
 {
     public partial class TenancyArchiveForm : Form
     {
         TenantViewModel vm;
+
+        Guid tenantID = Guid.Empty;
 
         public TenancyArchiveForm()
         {
@@ -179,6 +182,131 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GetSelectedTenant(Guid _tenantID)
+        {
+            var tenant = new TenantViewModel().GetSelectedTenant(_tenantID);
+
+            if(tenant != null)
+            {
+                txtBoxFirstName.Text = tenant.FirstName;
+
+                txtBoxLastName.Text = tenant.LastName;
+
+                txtBoxMiddleName.Text = tenant.MiddleName;
+
+                datePickerDateOfBirth.Value = DateTime.Parse(tenant.DateOfBirth.ToString());
+
+                comboBoxMaritalStatus.Text = tenant.MaritalStatus;
+
+                txtBoxUnitNo.Text = tenant.UnitNumber;
+
+                if(tenant.UnitNumber != null && tenant.UnitNumber != "")
+                {
+                    var unit = new UnitViewModel().GetSelected(tenant.UnitNumber);
+
+                    if(unit != null)
+                    {
+                        var owner = new TenantViewModel().GetSelectedTenant(unit.Owner);
+
+                        if (owner != null)
+                        {
+                            txtBoxUnitOwner.Text = owner.FirstName + " " + owner.LastName;
+                        }
+                        else
+                            txtBoxUnitOwner.Text = "N/A";
+                    }
+                    else
+                        txtBoxUnitOwner.Text = "N/A";
+                }
+                else
+                    txtBoxUnitOwner.Text = "N/A";
+
+                txtBoxNatureOfOccupancy.Text = tenant.NatureOfOccupancy;
+
+                txtBoxHomeAddress.Text = tenant.HomeAddress;
+
+                txtBoxProvincialAddress.Text = tenant.ProvincialAddress;
+
+                txtBoxMobileNo.Text = tenant.MobileNo;
+
+                txtBoxTelNo.Text = tenant.TelephoneNo;
+
+                txtBoxEmail.Text = tenant.Email;
+
+                //Other information
+                txtBoxOtherName1.Text = tenant.OtherName1;
+
+                txtBoxOtherName2.Text = tenant.OtherName2;
+
+                txtBoxOtherName3.Text = tenant.OtherName3;
+
+                //Pet information
+                txtBoxPetName.Text = tenant.PetName;
+
+                txtBoxPetType.Text = tenant.PetType;
+
+                //Duration of stay
+                if (tenant.StartOfOccupancy != null)
+                    txtBoxStartDate.Text = tenant.StartOfOccupancy.ToString();
+                else
+                    txtBoxStartDate.Text = "N/A";
+
+                if (tenant.EndOfOccupancy != null)
+                    txtBoxEndDate.Text = tenant.EndOfOccupancy.ToString();
+                else
+                    txtBoxEndDate.Text = "N/A";
+
+                //Profile Pic
+                if (tenant.ImageLocation != null)
+                {
+                    Stream imgStr = new MemoryStream(tenant.ImageLocation);
+
+                    pictureBoxTenant.Image = System.Drawing.Image.FromStream(imgStr);
+                }
+                else
+                {
+                    pictureBoxTenant.Image = null;
+                }
+            }
+        }
+
+        private void listViewTenants_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                TabPage openTab = tabControl1.TabPages[1];
+
+                tabControl1.SelectedTab = openTab;
+
+                tenantID = Guid.Parse(listViewTenants.SelectedItems[0].SubItems[0].Text);
+
+                GetSelectedTenant(tenantID);
+
+                btnActivate.Enabled = true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error");
+            }
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {
+            if (tenantID != Guid.Empty)
+            {
+                var tenantVM = new TenantViewModel();
+
+                if (tenantVM.ChangeTenantStatus(tenantID, "Y"))
+                {
+                    MessageBox.Show("Successfully activated tenant");
+
+                    GetTenants();//Refresh table data
+                }
+                else
+                    MessageBox.Show("Cannot activate tenant. There was some kind of error", "Error");
+            }
         }
     }
 }

@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenancyArchiveForm));
             this.ArchivePnl = new System.Windows.Forms.Panel();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnActivate = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewTenants = new System.Windows.Forms.ListView();
@@ -90,6 +89,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.ArchivePnl.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             // ArchivePnl
             // 
+            this.ArchivePnl.Controls.Add(this.btnActivate);
             this.ArchivePnl.Controls.Add(this.tabControl1);
             this.ArchivePnl.Controls.Add(this.btnExport);
             this.ArchivePnl.Controls.Add(this.button2);
@@ -110,38 +112,28 @@
             this.ArchivePnl.Size = new System.Drawing.Size(967, 538);
             this.ArchivePnl.TabIndex = 0;
             // 
-            // btnExport
+            // btnActivate
             // 
-            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(749, 496);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(106, 33);
-            this.btnExport.TabIndex = 18;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(857, 496);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 33);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "    Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnActivate.Enabled = false;
+            this.btnActivate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivate.Location = new System.Drawing.Point(27, 18);
+            this.btnActivate.Name = "btnActivate";
+            this.btnActivate.Size = new System.Drawing.Size(101, 28);
+            this.btnActivate.TabIndex = 21;
+            this.btnActivate.Text = "     Activate";
+            this.btnActivate.UseVisualStyleBackColor = true;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(23, 29);
+            this.tabControl1.Location = new System.Drawing.Point(23, 52);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(926, 461);
+            this.tabControl1.Size = new System.Drawing.Size(926, 438);
             this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
@@ -150,7 +142,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(918, 434);
+            this.tabPage1.Size = new System.Drawing.Size(918, 411);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -173,10 +165,11 @@
             this.listViewTenants.Location = new System.Drawing.Point(3, 3);
             this.listViewTenants.MultiSelect = false;
             this.listViewTenants.Name = "listViewTenants";
-            this.listViewTenants.Size = new System.Drawing.Size(912, 428);
+            this.listViewTenants.Size = new System.Drawing.Size(912, 405);
             this.listViewTenants.TabIndex = 0;
             this.listViewTenants.UseCompatibleStateImageBehavior = false;
             this.listViewTenants.View = System.Windows.Forms.View.Details;
+            this.listViewTenants.DoubleClick += new System.EventHandler(this.listViewTenants_DoubleClick);
             // 
             // columnHeader7
             // 
@@ -231,7 +224,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(918, 434);
+            this.tabPage2.Size = new System.Drawing.Size(918, 411);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tenancy Information";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -747,6 +740,29 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Nature of Occupancy:";
             // 
+            // btnExport
+            // 
+            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(749, 496);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(106, 33);
+            this.btnExport.TabIndex = 18;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(857, 496);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 33);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "    Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // TenancyArchiveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,5 +853,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnActivate;
     }
 }
