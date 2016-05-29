@@ -31,10 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheListForm));
             this.listPnl = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnUserCancel = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.listViewReservation = new System.Windows.Forms.ListView();
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,31 +47,31 @@
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.cmbBoxStatus = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.cmbBoxReservedFacility = new System.Windows.Forms.ComboBox();
+            this.txtBoxNumberOfGuest = new System.Windows.Forms.TextBox();
+            this.txtBoxPurpose = new System.Windows.Forms.TextBox();
+            this.txtBoxEventName = new System.Windows.Forms.TextBox();
+            this.txtBoxDateOfEvent = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.txtBoxTelNo = new System.Windows.Forms.TextBox();
+            this.txtBoxMobileNo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtBoxNatureOfOccupancy = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitOwner = new System.Windows.Forms.TextBox();
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
+            this.txtBoxLastName = new System.Windows.Forms.TextBox();
+            this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
+            this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -77,18 +81,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cmbBoxReservationFacility = new System.Windows.Forms.ComboBox();
+            this.cmbBoxReservationStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.txtBoxReservationSearch = new System.Windows.Forms.TextBox();
+            this.cmbBoxReservationYear = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnUserCancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmbBoxReservationMonth = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,14 +97,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewPaidAccounts = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button4 = new System.Windows.Forms.Button();
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listPnl.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -149,14 +149,60 @@
             this.groupBox3.Controls.Add(this.btnUserCancel);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Controls.Add(this.groupBox2);
+            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Location = new System.Drawing.Point(4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(957, 543);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(6, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 34);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Paid Accounts";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnUserCancel
+            // 
+            this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
+            this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserCancel.Location = new System.Drawing.Point(6, 504);
+            this.btnUserCancel.Name = "btnUserCancel";
+            this.btnUserCancel.Size = new System.Drawing.Size(115, 33);
+            this.btnUserCancel.TabIndex = 25;
+            this.btnUserCancel.Text = "    Cancel";
+            this.btnUserCancel.UseVisualStyleBackColor = true;
+            this.btnUserCancel.Click += new System.EventHandler(this.btnUserCancel_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(6, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 34);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Unpaid Accounts";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(6, 85);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 34);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Reservations";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox4
             // 
@@ -183,7 +229,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.listView3);
+            this.tabPage1.Controls.Add(this.listViewReservation);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -192,24 +238,26 @@
             this.tabPage1.Text = "Reservations";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // listViewReservation
             // 
-            this.listView3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewReservation.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.listViewReservation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader21,
             this.columnHeader15,
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18,
             this.columnHeader19,
             this.columnHeader20});
-            this.listView3.FullRowSelect = true;
-            this.listView3.GridLines = true;
-            this.listView3.Location = new System.Drawing.Point(4, 6);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(783, 366);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listViewReservation.FullRowSelect = true;
+            this.listViewReservation.GridLines = true;
+            this.listViewReservation.Location = new System.Drawing.Point(4, 6);
+            this.listViewReservation.Name = "listViewReservation";
+            this.listViewReservation.Size = new System.Drawing.Size(783, 366);
+            this.listViewReservation.TabIndex = 0;
+            this.listViewReservation.UseCompatibleStateImageBehavior = false;
+            this.listViewReservation.View = System.Windows.Forms.View.Details;
+            this.listViewReservation.DoubleClick += new System.EventHandler(this.listViewReservation_DoubleClick);
             // 
             // columnHeader15
             // 
@@ -255,13 +303,13 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.comboBox10);
+            this.groupBox7.Controls.Add(this.cmbBoxStatus);
             this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Controls.Add(this.comboBox9);
-            this.groupBox7.Controls.Add(this.textBox18);
-            this.groupBox7.Controls.Add(this.textBox19);
-            this.groupBox7.Controls.Add(this.textBox20);
-            this.groupBox7.Controls.Add(this.textBox21);
+            this.groupBox7.Controls.Add(this.cmbBoxReservedFacility);
+            this.groupBox7.Controls.Add(this.txtBoxNumberOfGuest);
+            this.groupBox7.Controls.Add(this.txtBoxPurpose);
+            this.groupBox7.Controls.Add(this.txtBoxEventName);
+            this.groupBox7.Controls.Add(this.txtBoxDateOfEvent);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label21);
@@ -275,19 +323,19 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Reservation Details:";
             // 
-            // comboBox10
+            // cmbBoxStatus
             // 
-            this.comboBox10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
+            this.cmbBoxStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxStatus.FormattingEnabled = true;
+            this.cmbBoxStatus.Items.AddRange(new object[] {
             "To Start",
             "On-going",
             "Completed"});
-            this.comboBox10.Location = new System.Drawing.Point(488, 21);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(251, 23);
-            this.comboBox10.TabIndex = 148;
-            this.comboBox10.Text = "Select One";
+            this.cmbBoxStatus.Location = new System.Drawing.Point(488, 21);
+            this.cmbBoxStatus.Name = "cmbBoxStatus";
+            this.cmbBoxStatus.Size = new System.Drawing.Size(251, 23);
+            this.cmbBoxStatus.TabIndex = 148;
+            this.cmbBoxStatus.Text = "Select One";
             // 
             // label11
             // 
@@ -300,50 +348,50 @@
             this.label11.TabIndex = 147;
             this.label11.Text = "Status:";
             // 
-            // comboBox9
+            // cmbBoxReservedFacility
             // 
-            this.comboBox9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
+            this.cmbBoxReservedFacility.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxReservedFacility.FormattingEnabled = true;
+            this.cmbBoxReservedFacility.Items.AddRange(new object[] {
             "Function Room",
             "Viewing Deck Area"});
-            this.comboBox9.Location = new System.Drawing.Point(143, 113);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(251, 23);
-            this.comboBox9.TabIndex = 146;
-            this.comboBox9.Text = "Select One";
+            this.cmbBoxReservedFacility.Location = new System.Drawing.Point(143, 113);
+            this.cmbBoxReservedFacility.Name = "cmbBoxReservedFacility";
+            this.cmbBoxReservedFacility.Size = new System.Drawing.Size(251, 23);
+            this.cmbBoxReservedFacility.TabIndex = 146;
+            this.cmbBoxReservedFacility.Text = "Select One";
             // 
-            // textBox18
+            // txtBoxNumberOfGuest
             // 
-            this.textBox18.BackColor = System.Drawing.Color.White;
-            this.textBox18.Location = new System.Drawing.Point(143, 91);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(251, 20);
-            this.textBox18.TabIndex = 132;
+            this.txtBoxNumberOfGuest.BackColor = System.Drawing.Color.White;
+            this.txtBoxNumberOfGuest.Location = new System.Drawing.Point(143, 91);
+            this.txtBoxNumberOfGuest.Name = "txtBoxNumberOfGuest";
+            this.txtBoxNumberOfGuest.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxNumberOfGuest.TabIndex = 132;
             // 
-            // textBox19
+            // txtBoxPurpose
             // 
-            this.textBox19.BackColor = System.Drawing.Color.White;
-            this.textBox19.Location = new System.Drawing.Point(143, 68);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(251, 20);
-            this.textBox19.TabIndex = 129;
+            this.txtBoxPurpose.BackColor = System.Drawing.Color.White;
+            this.txtBoxPurpose.Location = new System.Drawing.Point(143, 68);
+            this.txtBoxPurpose.Name = "txtBoxPurpose";
+            this.txtBoxPurpose.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxPurpose.TabIndex = 129;
             // 
-            // textBox20
+            // txtBoxEventName
             // 
-            this.textBox20.BackColor = System.Drawing.Color.White;
-            this.textBox20.Location = new System.Drawing.Point(143, 46);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(251, 20);
-            this.textBox20.TabIndex = 128;
+            this.txtBoxEventName.BackColor = System.Drawing.Color.White;
+            this.txtBoxEventName.Location = new System.Drawing.Point(143, 46);
+            this.txtBoxEventName.Name = "txtBoxEventName";
+            this.txtBoxEventName.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxEventName.TabIndex = 128;
             // 
-            // textBox21
+            // txtBoxDateOfEvent
             // 
-            this.textBox21.BackColor = System.Drawing.Color.White;
-            this.textBox21.Location = new System.Drawing.Point(143, 24);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(251, 20);
-            this.textBox21.TabIndex = 127;
+            this.txtBoxDateOfEvent.BackColor = System.Drawing.Color.White;
+            this.txtBoxDateOfEvent.Location = new System.Drawing.Point(143, 24);
+            this.txtBoxDateOfEvent.Name = "txtBoxDateOfEvent";
+            this.txtBoxDateOfEvent.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxDateOfEvent.TabIndex = 127;
             // 
             // label19
             // 
@@ -402,18 +450,18 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox12);
+            this.groupBox6.Controls.Add(this.txtBoxEmail);
+            this.groupBox6.Controls.Add(this.txtBoxTelNo);
+            this.groupBox6.Controls.Add(this.txtBoxMobileNo);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label9);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox15);
-            this.groupBox6.Controls.Add(this.textBox16);
+            this.groupBox6.Controls.Add(this.txtBoxNatureOfOccupancy);
+            this.groupBox6.Controls.Add(this.txtBoxUnitOwner);
+            this.groupBox6.Controls.Add(this.txtBoxUnitNo);
+            this.groupBox6.Controls.Add(this.txtBoxLastName);
+            this.groupBox6.Controls.Add(this.txtBoxMiddleName);
+            this.groupBox6.Controls.Add(this.txtBoxFirstName);
             this.groupBox6.Controls.Add(this.pictureBox1);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label29);
@@ -428,30 +476,31 @@
             this.groupBox6.TabIndex = 144;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Personal Information";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // textBox14
+            // txtBoxEmail
             // 
-            this.textBox14.BackColor = System.Drawing.Color.White;
-            this.textBox14.Location = new System.Drawing.Point(542, 57);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(201, 20);
-            this.textBox14.TabIndex = 139;
+            this.txtBoxEmail.BackColor = System.Drawing.Color.White;
+            this.txtBoxEmail.Location = new System.Drawing.Point(542, 57);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(201, 20);
+            this.txtBoxEmail.TabIndex = 139;
             // 
-            // textBox13
+            // txtBoxTelNo
             // 
-            this.textBox13.BackColor = System.Drawing.Color.White;
-            this.textBox13.Location = new System.Drawing.Point(542, 35);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(201, 20);
-            this.textBox13.TabIndex = 138;
+            this.txtBoxTelNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxTelNo.Location = new System.Drawing.Point(542, 35);
+            this.txtBoxTelNo.Name = "txtBoxTelNo";
+            this.txtBoxTelNo.Size = new System.Drawing.Size(201, 20);
+            this.txtBoxTelNo.TabIndex = 138;
             // 
-            // textBox12
+            // txtBoxMobileNo
             // 
-            this.textBox12.BackColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(542, 13);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(201, 20);
-            this.textBox12.TabIndex = 137;
+            this.txtBoxMobileNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxMobileNo.Location = new System.Drawing.Point(542, 13);
+            this.txtBoxMobileNo.Name = "txtBoxMobileNo";
+            this.txtBoxMobileNo.Size = new System.Drawing.Size(201, 20);
+            this.txtBoxMobileNo.TabIndex = 137;
             // 
             // label22
             // 
@@ -486,53 +535,53 @@
             this.label9.TabIndex = 109;
             this.label9.Text = "Telephone Number:";
             // 
-            // textBox11
+            // txtBoxNatureOfOccupancy
             // 
-            this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(255, 126);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(139, 20);
-            this.textBox11.TabIndex = 134;
+            this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
+            this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(255, 126);
+            this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
+            this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(139, 20);
+            this.txtBoxNatureOfOccupancy.TabIndex = 134;
             // 
-            // textBox10
+            // txtBoxUnitOwner
             // 
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.Location = new System.Drawing.Point(218, 103);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(176, 20);
-            this.textBox10.TabIndex = 133;
+            this.txtBoxUnitOwner.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitOwner.Location = new System.Drawing.Point(218, 103);
+            this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
+            this.txtBoxUnitOwner.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxUnitOwner.TabIndex = 133;
             // 
-            // textBox9
+            // txtBoxUnitNo
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(218, 81);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(176, 20);
-            this.textBox9.TabIndex = 132;
+            this.txtBoxUnitNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(218, 81);
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxUnitNo.TabIndex = 132;
             // 
-            // textBox4
+            // txtBoxLastName
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(218, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 20);
-            this.textBox4.TabIndex = 129;
+            this.txtBoxLastName.BackColor = System.Drawing.Color.White;
+            this.txtBoxLastName.Location = new System.Drawing.Point(218, 58);
+            this.txtBoxLastName.Name = "txtBoxLastName";
+            this.txtBoxLastName.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxLastName.TabIndex = 129;
             // 
-            // textBox15
+            // txtBoxMiddleName
             // 
-            this.textBox15.BackColor = System.Drawing.Color.White;
-            this.textBox15.Location = new System.Drawing.Point(218, 36);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(176, 20);
-            this.textBox15.TabIndex = 128;
+            this.txtBoxMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtBoxMiddleName.Location = new System.Drawing.Point(218, 36);
+            this.txtBoxMiddleName.Name = "txtBoxMiddleName";
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxMiddleName.TabIndex = 128;
             // 
-            // textBox16
+            // txtBoxFirstName
             // 
-            this.textBox16.BackColor = System.Drawing.Color.White;
-            this.textBox16.Location = new System.Drawing.Point(218, 14);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(176, 20);
-            this.textBox16.TabIndex = 127;
+            this.txtBoxFirstName.BackColor = System.Drawing.Color.White;
+            this.txtBoxFirstName.Location = new System.Drawing.Point(218, 14);
+            this.txtBoxFirstName.Name = "txtBoxFirstName";
+            this.txtBoxFirstName.Size = new System.Drawing.Size(176, 20);
+            this.txtBoxFirstName.TabIndex = 127;
             // 
             // pictureBox1
             // 
@@ -611,15 +660,15 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.comboBox8);
-            this.groupBox5.Controls.Add(this.comboBox7);
+            this.groupBox5.Controls.Add(this.cmbBoxReservationFacility);
+            this.groupBox5.Controls.Add(this.cmbBoxReservationStatus);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.comboBox5);
+            this.groupBox5.Controls.Add(this.txtBoxReservationSearch);
+            this.groupBox5.Controls.Add(this.cmbBoxReservationYear);
             this.groupBox5.Controls.Add(this.button6);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.comboBox6);
+            this.groupBox5.Controls.Add(this.cmbBoxReservationMonth);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(8, 13);
             this.groupBox5.Name = "groupBox5";
@@ -638,25 +687,25 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Reserved Facility:";
             // 
-            // comboBox8
+            // cmbBoxReservationFacility
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(461, 12);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(175, 22);
-            this.comboBox8.TabIndex = 12;
+            this.cmbBoxReservationFacility.FormattingEnabled = true;
+            this.cmbBoxReservationFacility.Location = new System.Drawing.Point(461, 12);
+            this.cmbBoxReservationFacility.Name = "cmbBoxReservationFacility";
+            this.cmbBoxReservationFacility.Size = new System.Drawing.Size(175, 22);
+            this.cmbBoxReservationFacility.TabIndex = 12;
             // 
-            // comboBox7
+            // cmbBoxReservationStatus
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.cmbBoxReservationStatus.FormattingEnabled = true;
+            this.cmbBoxReservationStatus.Items.AddRange(new object[] {
             "To Start",
             "On-going",
             "Completed"});
-            this.comboBox7.Location = new System.Drawing.Point(461, 36);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(175, 22);
-            this.comboBox7.TabIndex = 10;
+            this.cmbBoxReservationStatus.Location = new System.Drawing.Point(461, 36);
+            this.cmbBoxReservationStatus.Name = "cmbBoxReservationStatus";
+            this.cmbBoxReservationStatus.Size = new System.Drawing.Size(175, 22);
+            this.cmbBoxReservationStatus.TabIndex = 10;
             // 
             // label7
             // 
@@ -668,23 +717,23 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Status:";
             // 
-            // textBox3
+            // txtBoxReservationSearch
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(10, 19);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(86, 21);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Unit Number";
+            this.txtBoxReservationSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxReservationSearch.Location = new System.Drawing.Point(10, 19);
+            this.txtBoxReservationSearch.Multiline = true;
+            this.txtBoxReservationSearch.Name = "txtBoxReservationSearch";
+            this.txtBoxReservationSearch.Size = new System.Drawing.Size(86, 21);
+            this.txtBoxReservationSearch.TabIndex = 3;
+            this.txtBoxReservationSearch.Text = "Unit Number";
             // 
-            // comboBox5
+            // cmbBoxReservationYear
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(188, 35);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(158, 22);
-            this.comboBox5.TabIndex = 8;
+            this.cmbBoxReservationYear.FormattingEnabled = true;
+            this.cmbBoxReservationYear.Location = new System.Drawing.Point(188, 35);
+            this.cmbBoxReservationYear.Name = "cmbBoxReservationYear";
+            this.cmbBoxReservationYear.Size = new System.Drawing.Size(158, 22);
+            this.cmbBoxReservationYear.TabIndex = 8;
             // 
             // button6
             // 
@@ -716,47 +765,13 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Month:";
             // 
-            // comboBox6
+            // cmbBoxReservationMonth
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(188, 12);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(158, 22);
-            this.comboBox6.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Paid Accounts";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnUserCancel
-            // 
-            this.btnUserCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnUserCancel.Image")));
-            this.btnUserCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserCancel.Location = new System.Drawing.Point(6, 504);
-            this.btnUserCancel.Name = "btnUserCancel";
-            this.btnUserCancel.Size = new System.Drawing.Size(115, 33);
-            this.btnUserCancel.TabIndex = 25;
-            this.btnUserCancel.Text = "    Cancel";
-            this.btnUserCancel.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Unpaid Accounts";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cmbBoxReservationMonth.FormattingEnabled = true;
+            this.cmbBoxReservationMonth.Location = new System.Drawing.Point(188, 12);
+            this.cmbBoxReservationMonth.Name = "cmbBoxReservationMonth";
+            this.cmbBoxReservationMonth.Size = new System.Drawing.Size(158, 22);
+            this.cmbBoxReservationMonth.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -766,7 +781,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.listViewPaidAccounts);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(139, 14);
             this.groupBox1.Name = "groupBox1";
@@ -831,25 +846,24 @@
             this.button5.TabIndex = 2;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listViewPaidAccounts
             // 
-            this.listView1.BackColor = System.Drawing.Color.LightGreen;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewPaidAccounts.BackColor = System.Drawing.Color.LightGreen;
+            this.listViewPaidAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 100);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(806, 441);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader6});
+            this.listViewPaidAccounts.FullRowSelect = true;
+            this.listViewPaidAccounts.GridLines = true;
+            this.listViewPaidAccounts.Location = new System.Drawing.Point(0, 100);
+            this.listViewPaidAccounts.Name = "listViewPaidAccounts";
+            this.listViewPaidAccounts.Size = new System.Drawing.Size(806, 441);
+            this.listViewPaidAccounts.TabIndex = 0;
+            this.listViewPaidAccounts.UseCompatibleStateImageBehavior = false;
+            this.listViewPaidAccounts.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -859,12 +873,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Unit Owner";
-            this.columnHeader2.Width = 108;
+            this.columnHeader2.Width = 116;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Tenant";
-            this.columnHeader3.Width = 72;
+            this.columnHeader3.Width = 148;
             // 
             // columnHeader4
             // 
@@ -880,11 +894,6 @@
             // 
             this.columnHeader6.Text = "Total Amount Due";
             this.columnHeader6.Width = 123;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Status";
-            this.columnHeader7.Width = 102;
             // 
             // groupBox2
             // 
@@ -1015,16 +1024,10 @@
             this.columnHeader14.Text = "Status";
             this.columnHeader14.Width = 102;
             // 
-            // button4
+            // columnHeader21
             // 
-            this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(6, 85);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 34);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Reservations";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.columnHeader21.Text = "ID";
+            this.columnHeader21.Width = 0;
             // 
             // TheListForm
             // 
@@ -1065,7 +1068,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewPaidAccounts;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -1078,7 +1081,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
@@ -1097,18 +1099,18 @@
         internal System.Windows.Forms.Panel listPnl;
         private System.Windows.Forms.Button btnUserCancel;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cmbBoxReservationYear;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cmbBoxReservationMonth;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxReservationSearch;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView listViewReservation;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cmbBoxReservationStatus;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1117,30 +1119,30 @@
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cmbBoxReservationFacility;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txtBoxNumberOfGuest;
+        private System.Windows.Forms.TextBox txtBoxPurpose;
+        private System.Windows.Forms.TextBox txtBoxEventName;
+        private System.Windows.Forms.TextBox txtBoxDateOfEvent;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtBoxEmail;
+        private System.Windows.Forms.TextBox txtBoxTelNo;
+        private System.Windows.Forms.TextBox txtBoxMobileNo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtBoxNatureOfOccupancy;
+        private System.Windows.Forms.TextBox txtBoxUnitOwner;
+        private System.Windows.Forms.TextBox txtBoxUnitNo;
+        private System.Windows.Forms.TextBox txtBoxLastName;
+        private System.Windows.Forms.TextBox txtBoxMiddleName;
+        private System.Windows.Forms.TextBox txtBoxFirstName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label29;
@@ -1148,9 +1150,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox cmbBoxStatus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox cmbBoxReservedFacility;
         internal System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
     }
 }

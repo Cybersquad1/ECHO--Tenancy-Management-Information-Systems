@@ -8,6 +8,11 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class ReservationViewModel : ViewModelBase<Reservation>
     {
+        public List<Reservation> GetAll()
+        {
+            return Find();
+        }
+
         public List<Reservation> GetAll(string _unitNo)
         {
             return Find(r => r.UnitNumber == _unitNo).OrderByDescending(r => r.Date).ToList();
