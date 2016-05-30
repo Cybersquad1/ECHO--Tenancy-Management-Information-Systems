@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Echo.Data.Repository.ViewModel();
+using Echo.Data.Repository.ViewModel;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {

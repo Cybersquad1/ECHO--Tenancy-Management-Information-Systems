@@ -36,9 +36,6 @@ namespace Echo.Data.Repository
         public string WaterCurrentReading { get; set; }
         public string WaterPreviousReading { get; set; }
         public Nullable<System.DateTime> WaterDate { get; set; }
-        public string WaterCurrentReading1 { get; set; }
-        public string WaterPreviousReading1 { get; set; }
-        public Nullable<System.DateTime> WaterDate1 { get; set; }
     
         public virtual UnitProfile UnitProfile { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
