@@ -8,6 +8,11 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class ReservationViewModel : ViewModelBase<Reservation>
     {
+        public List<Reservation> GetAllPaid(string _unitNo)
+        {
+            return Find(r => r.UnitNumber == _unitNo && r.Paid >= r.Amount);
+        }
+        
         public List<Reservation> GetAll()
         {
             return Find();

@@ -9,6 +9,11 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class MonthlyAssociationDueViewModel: ViewModelBase<MonthlyAssociationDue>
     {
+        public List<MonthlyAssociationDue> GetAllPaid(string _unitNo)
+        {
+            return Find(r => r.UnitNumber == _unitNo && r.Paid >= r.TotalAmount);
+        }
+
         public bool ProcessPayment(Guid _assocID, decimal _amount)
         {
             try
