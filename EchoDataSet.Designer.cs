@@ -2112,6 +2112,12 @@ namespace Tenancy_Management_Information_Systems {
             
             private global::System.Data.DataColumn columnPaid;
             
+            private global::System.Data.DataColumn columnWaterCurrentReading;
+            
+            private global::System.Data.DataColumn columnWaterPreviousReading;
+            
+            private global::System.Data.DataColumn columnWaterDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MonthlyAssocPaymentHistoryDataTable() {
@@ -2251,6 +2257,30 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WaterCurrentReadingColumn {
+                get {
+                    return this.columnWaterCurrentReading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WaterPreviousReadingColumn {
+                get {
+                    return this.columnWaterPreviousReading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WaterDateColumn {
+                get {
+                    return this.columnWaterDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2286,7 +2316,23 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MonthlyAssocPaymentHistoryRow AddMonthlyAssocPaymentHistoryRow(System.Guid ID, string UnitNumber, System.DateTime ChargeDate, System.DateTime DueDate, decimal AssociationDue, decimal WaterBillTotalDue, decimal Discounts, decimal Penalty, string OtherPenalty, decimal OtherPenaltyAmount, decimal TotalAmount, decimal Balance, decimal Paid) {
+            public MonthlyAssocPaymentHistoryRow AddMonthlyAssocPaymentHistoryRow(
+                        System.Guid ID, 
+                        string UnitNumber, 
+                        System.DateTime ChargeDate, 
+                        System.DateTime DueDate, 
+                        decimal AssociationDue, 
+                        decimal WaterBillTotalDue, 
+                        decimal Discounts, 
+                        decimal Penalty, 
+                        string OtherPenalty, 
+                        decimal OtherPenaltyAmount, 
+                        decimal TotalAmount, 
+                        decimal Balance, 
+                        decimal Paid, 
+                        string WaterCurrentReading, 
+                        string WaterPreviousReading, 
+                        System.DateTime WaterDate) {
                 MonthlyAssocPaymentHistoryRow rowMonthlyAssocPaymentHistoryRow = ((MonthlyAssocPaymentHistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -2301,7 +2347,10 @@ namespace Tenancy_Management_Information_Systems {
                         OtherPenaltyAmount,
                         TotalAmount,
                         Balance,
-                        Paid};
+                        Paid,
+                        WaterCurrentReading,
+                        WaterPreviousReading,
+                        WaterDate};
                 rowMonthlyAssocPaymentHistoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMonthlyAssocPaymentHistoryRow);
                 return rowMonthlyAssocPaymentHistoryRow;
@@ -2344,6 +2393,9 @@ namespace Tenancy_Management_Information_Systems {
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columnBalance = base.Columns["Balance"];
                 this.columnPaid = base.Columns["Paid"];
+                this.columnWaterCurrentReading = base.Columns["WaterCurrentReading"];
+                this.columnWaterPreviousReading = base.Columns["WaterPreviousReading"];
+                this.columnWaterDate = base.Columns["WaterDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2375,12 +2427,20 @@ namespace Tenancy_Management_Information_Systems {
                 base.Columns.Add(this.columnBalance);
                 this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPaid);
+                this.columnWaterCurrentReading = new global::System.Data.DataColumn("WaterCurrentReading", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWaterCurrentReading);
+                this.columnWaterPreviousReading = new global::System.Data.DataColumn("WaterPreviousReading", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWaterPreviousReading);
+                this.columnWaterDate = new global::System.Data.DataColumn("WaterDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWaterDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnUnitNumber.MaxLength = 5;
                 this.columnOtherPenalty.MaxLength = 100;
+                this.columnWaterCurrentReading.MaxLength = 50;
+                this.columnWaterPreviousReading.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5898,6 +5958,57 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WaterCurrentReading {
+                get {
+                    try {
+                        return ((string)(this[this.tableMonthlyAssocPaymentHistory.WaterCurrentReadingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WaterCurrentReading\' in table \'MonthlyAssocPaymentHistory\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMonthlyAssocPaymentHistory.WaterCurrentReadingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WaterPreviousReading {
+                get {
+                    try {
+                        return ((string)(this[this.tableMonthlyAssocPaymentHistory.WaterPreviousReadingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WaterPreviousReading\' in table \'MonthlyAssocPaymentHistory\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMonthlyAssocPaymentHistory.WaterPreviousReadingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime WaterDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMonthlyAssocPaymentHistory.WaterDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WaterDate\' in table \'MonthlyAssocPaymentHistory\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableMonthlyAssocPaymentHistory.WaterDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUnitNumberNull() {
                 return this.IsNull(this.tableMonthlyAssocPaymentHistory.UnitNumberColumn);
             }
@@ -6038,6 +6149,42 @@ namespace Tenancy_Management_Information_Systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPaidNull() {
                 this[this.tableMonthlyAssocPaymentHistory.PaidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWaterCurrentReadingNull() {
+                return this.IsNull(this.tableMonthlyAssocPaymentHistory.WaterCurrentReadingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWaterCurrentReadingNull() {
+                this[this.tableMonthlyAssocPaymentHistory.WaterCurrentReadingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWaterPreviousReadingNull() {
+                return this.IsNull(this.tableMonthlyAssocPaymentHistory.WaterPreviousReadingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWaterPreviousReadingNull() {
+                this[this.tableMonthlyAssocPaymentHistory.WaterPreviousReadingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWaterDateNull() {
+                return this.IsNull(this.tableMonthlyAssocPaymentHistory.WaterDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWaterDateNull() {
+                this[this.tableMonthlyAssocPaymentHistory.WaterDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9189,6 +9336,9 @@ namespace Tenancy_Management_Information_Systems.EchoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
             tableMapping.ColumnMappings.Add("Balance", "Balance");
             tableMapping.ColumnMappings.Add("Paid", "Paid");
+            tableMapping.ColumnMappings.Add("WaterCurrentReading", "WaterCurrentReading");
+            tableMapping.ColumnMappings.Add("WaterPreviousReading", "WaterPreviousReading");
+            tableMapping.ColumnMappings.Add("WaterDate", "WaterDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

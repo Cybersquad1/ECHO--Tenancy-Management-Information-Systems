@@ -609,7 +609,7 @@
   <Width>8.12375in</Width>
   <Page>
     <PageHeader>
-      <Height>1.56819in</Height>
+      <Height>1.5925in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -920,8 +920,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
-          <Top>1.2175in</Top>
-          <Left>6.2066in</Left>
+          <Top>1.2857in</Top>
+          <Left>6.22048in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>8</ZIndex>
@@ -1020,7 +1020,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>EchoDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Miguel&amp;Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\EchoDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\EchoDataSet.xsd</rd:SchemaPath>
         <rd:TableName>BillingStatement</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -30,35 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.echoDataSet = new Tenancy_Management_Information_Systems.EchoDataSet();
             this.billingStatementBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.echoDataSet = new Tenancy_Management_Information_Systems.EchoDataSet();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.billingStatementTableAdapter = new Tenancy_Management_Information_Systems.EchoDataSetTableAdapters.BillingStatementTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billingStatementBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer
+            // billingStatementBindingSource
             // 
-            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "MonthlyAssoc";
-            reportDataSource1.Value = this.billingStatementBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tenancy_Management_Information_Systems.Reports.MonthlyAssocPaymentHistory.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.Size = new System.Drawing.Size(697, 416);
-            this.reportViewer.TabIndex = 0;
+            this.billingStatementBindingSource.DataMember = "BillingStatement";
+            this.billingStatementBindingSource.DataSource = this.echoDataSet;
+            this.billingStatementBindingSource.CurrentChanged += new System.EventHandler(this.billingStatementBindingSource_CurrentChanged);
             // 
             // echoDataSet
             // 
             this.echoDataSet.DataSetName = "EchoDataSet";
             this.echoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // billingStatementBindingSource
+            // reportViewer
             // 
-            this.billingStatementBindingSource.DataMember = "BillingStatement";
-            this.billingStatementBindingSource.DataSource = this.echoDataSet;
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "BillingStatement";
+            reportDataSource1.Value = this.billingStatementBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tenancy_Management_Information_Systems.Reports.BillingStatement.rdlc";
+            this.reportViewer.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.Size = new System.Drawing.Size(697, 416);
+            this.reportViewer.TabIndex = 0;
             // 
             // billingStatementTableAdapter
             // 
@@ -73,8 +74,8 @@
             this.Name = "StatementOfAccount";
             this.Text = "Statement Of Account";
             this.Load += new System.EventHandler(this.StatementOfAccount_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billingStatementBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

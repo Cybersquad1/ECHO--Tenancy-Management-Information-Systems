@@ -387,5 +387,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BillingStatement" FunctionName="EchoModel.Store.BillingStatement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EchoModel.BillingStatement_Result">
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+          <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
+          <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
+          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
+          <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
+          <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

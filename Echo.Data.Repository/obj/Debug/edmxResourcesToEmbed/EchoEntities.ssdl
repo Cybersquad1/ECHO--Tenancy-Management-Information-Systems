@@ -322,6 +322,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="BillingStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AssocID" Type="uniqueidentifier" Mode="In" />
+  </Function>
   <Function Name="MonthlyAssocPaymentHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UnitNo" Type="varchar" Mode="In" />
   </Function>

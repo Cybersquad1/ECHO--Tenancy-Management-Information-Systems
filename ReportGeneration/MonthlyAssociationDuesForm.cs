@@ -372,7 +372,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            StatementOfAccount form = new StatementOfAccount(assocID);
+            StatementOfAccount form = new StatementOfAccount(assocID, cmbBoxUnitNo.Text);
 
             form.Show();
         }
