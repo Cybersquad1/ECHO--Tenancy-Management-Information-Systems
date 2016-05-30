@@ -133,3 +133,21 @@ SELECT * FROM MonthlyAssociationDue
 WHERE UnitNumber = @UnitNo
 ORDER BY ChargeDate DESC
 GO
+
+
+USE [Echo]
+GO
+/****** Object:  StoredProcedure [dbo].[Receipt]    Script Date: 5/30/2016 5:35:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Receipt]
+(
+	@paymentHistoryID uniqueidentifier
+)
+AS
+select * from PaymentHistory as payment
+left join MonthlyAssociationDue as assoc 
+ON assoc.ID = payment.MonthlyAssocID
+where payment.ID = @paymentHistoryID

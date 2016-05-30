@@ -123,9 +123,9 @@
       </Textbox>
       <Line Name="Line3">
         <Top>1.09944in</Top>
-        <Left>0.77083in</Left>
+        <Left>2.23958in</Left>
         <Height>0in</Height>
-        <Width>1.39931in</Width>
+        <Width>1.02306in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
