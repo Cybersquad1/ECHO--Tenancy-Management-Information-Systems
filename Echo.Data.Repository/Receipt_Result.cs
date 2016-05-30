@@ -11,20 +11,33 @@ namespace Echo.Data.Repository
 {
     using System;
     
-    public partial class BillingStatement_Result
+    public partial class Receipt_Result
     {
-        public string UnitNumber { get; set; }
+        public System.Guid ID { get; set; }
         public Nullable<System.DateTime> ChargeDate { get; set; }
+        public Nullable<decimal> TotalPayment { get; set; }
+        public Nullable<System.Guid> MonthlyAssocID { get; set; }
+        public Nullable<decimal> Payable { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public string UnitNumber { get; set; }
+        public Nullable<System.Guid> ReservationID { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public string Type { get; set; }
+        public Nullable<System.Guid> ID1 { get; set; }
+        public string UnitNumber1 { get; set; }
+        public Nullable<System.DateTime> ChargeDate1 { get; set; }
+        public Nullable<System.DateTime> DueDate { get; set; }
         public Nullable<decimal> AssociationDue { get; set; }
         public Nullable<decimal> WaterBillTotalDue { get; set; }
+        public Nullable<decimal> Discounts { get; set; }
         public Nullable<decimal> Penalty { get; set; }
         public string OtherPenalty { get; set; }
         public Nullable<decimal> OtherPenaltyAmount { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public Nullable<decimal> TotalAmount { get; set; }
+        public Nullable<decimal> Balance1 { get; set; }
+        public Nullable<decimal> Paid { get; set; }
         public string WaterCurrentReading { get; set; }
         public string WaterPreviousReading { get; set; }
         public Nullable<System.DateTime> WaterDate { get; set; }
-        public Nullable<decimal> TotalAmount { get; set; }
     }
 }

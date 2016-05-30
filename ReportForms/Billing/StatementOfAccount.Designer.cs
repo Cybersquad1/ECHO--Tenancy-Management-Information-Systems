@@ -41,19 +41,24 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "BillingStatement";
+            reportDataSource1.Name = "MonthlyAssoc";
             reportDataSource1.Value = this.billingStatementBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tenancy_Management_Information_Systems.Reports.BillingStatement.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Tenancy_Management_Information_Systems.Reports.MonthlyAssocPaymentHistory.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
-            this.reportViewer.Size = new System.Drawing.Size(978, 531);
+            this.reportViewer.Size = new System.Drawing.Size(697, 416);
             this.reportViewer.TabIndex = 0;
             // 
             // echoDataSet
             // 
             this.echoDataSet.DataSetName = "EchoDataSet";
             this.echoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // billingStatementBindingSource
+            // 
+            this.billingStatementBindingSource.DataMember = "BillingStatement";
+            this.billingStatementBindingSource.DataSource = this.echoDataSet;
             // 
             // billingStatementTableAdapter
             // 
@@ -63,10 +68,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 531);
+            this.ClientSize = new System.Drawing.Size(697, 416);
             this.Controls.Add(this.reportViewer);
             this.Name = "StatementOfAccount";
-            this.Text = "Statement of Account";
+            this.Text = "Statement Of Account";
             this.Load += new System.EventHandler(this.StatementOfAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billingStatementBindingSource)).EndInit();

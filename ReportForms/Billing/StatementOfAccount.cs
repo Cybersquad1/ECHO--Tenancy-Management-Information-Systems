@@ -24,8 +24,7 @@ namespace Tenancy_Management_Information_Systems.ReportForms.Billing
         {
             using (var db = new EchoEntities())
             {
-                billingStatementBindingSource.DataSource =
-                    db.BillingStatement(_assocID);
+                billingStatementBindingSource.DataSource = db.BillingStatement(_assocID);
 
                 reportViewer.RefreshReport();
             }

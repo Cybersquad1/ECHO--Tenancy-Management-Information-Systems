@@ -293,5 +293,10 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                 txtBoxDiscount.Text = "11%";
             }
         }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

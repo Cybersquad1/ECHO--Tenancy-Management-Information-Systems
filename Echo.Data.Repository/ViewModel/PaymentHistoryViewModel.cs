@@ -8,6 +8,16 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class PaymentHistoryViewModel : ViewModelBase<PaymentHistory>
     {
+        public void Save(PaymentHistory _paymentHistory)
+        {
+            try
+            {
+                Add(_paymentHistory);
+            }
+            catch
+            {}
+        }
+
         public DateTime? GetLastPayment(string _unitNo)
         {
             var lastPayment = GetLast(r => r.UnitNumber == _unitNo);

@@ -21,6 +21,29 @@ namespace Echo.Data.Repository.ViewModel
 
                 Update(assoc);
 
+                //Assign value for payment history
+                var paymentVM = new PaymentHistoryViewModel();
+
+                PaymentHistory newPayment = new PaymentHistory();
+
+                newPayment.MonthlyAssocID = _assocID;
+
+                newPayment.Payable = assoc.Balance;
+
+                newPayment.Balance = assoc.Balance - _amount;
+
+                newPayment.TotalPayment = _amount;
+
+                newPayment.Date = DateTime.Now;
+
+                newPayment.Type = "ASSOC";
+
+                newPayment.UnitNumber = assoc.UnitNumber;
+
+                newPayment.ChargeDate = assoc.ChargeDate;
+
+                paymentVM.Save(newPayment); //Save payment history
+
                 return true;
             }
             catch

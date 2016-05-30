@@ -91,6 +91,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Receipt_Result.cs">
+      <DependentUpon>EchoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Request.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>

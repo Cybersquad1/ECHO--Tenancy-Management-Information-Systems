@@ -98,5 +98,14 @@ namespace Echo.Data.Repository
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BillingStatement_Result>("BillingStatement", assocIDParameter);
         }
+    
+        public virtual ObjectResult<Receipt_Result> Receipt(Nullable<System.Guid> paymentHistoryID)
+        {
+            var paymentHistoryIDParameter = paymentHistoryID.HasValue ?
+                new ObjectParameter("paymentHistoryID", paymentHistoryID) :
+                new ObjectParameter("paymentHistoryID", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Receipt_Result>("Receipt", paymentHistoryIDParameter);
+        }
     }
 }

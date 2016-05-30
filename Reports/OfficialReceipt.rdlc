@@ -172,7 +172,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!AssociationDue.Value</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -206,7 +206,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!WaterBillTotalDue.Value</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -240,7 +240,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=!Fields.TotalAmount.Value * 0.12</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -274,7 +274,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!TotalAmount.Value</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -379,36 +379,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>1.14111in</Top>
-        <Left>4.41542in</Left>
-        <Height>0.25in</Height>
-        <Width>2.65625in</Width>
-        <ZIndex>13</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox18">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -428,7 +398,7 @@
         <Left>3.35986in</Left>
         <Height>0.25in</Height>
         <Width>1.125in</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -446,7 +416,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Fields!TotalPayment.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -460,7 +430,7 @@
         <Left>4.52653in</Left>
         <Height>0.25in</Height>
         <Width>1.24653in</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -490,7 +460,7 @@
         <Left>5.26958in</Left>
         <Height>0.25in</Height>
         <Width>0.3125in</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -506,7 +476,7 @@
         <Left>5.58208in</Left>
         <Height>0in</Height>
         <Width>1.48958in</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -535,7 +505,7 @@
         <Left>5.69319in</Left>
         <Height>0.25in</Height>
         <Width>1.23264in</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -546,6 +516,18 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line5">
+        <Top>1.37723in</Top>
+        <Left>4.37028in</Left>
+        <Height>0in</Height>
+        <Width>2.70139in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>3.17708in</Height>
     <Style />
@@ -754,6 +736,137 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="EchoDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>ba8ffdd5-0c7e-4dc4-a11f-36659c676006</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Receipt">
+      <Query>
+        <DataSourceName>EchoDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ChargeDate">
+          <DataField>ChargeDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TotalPayment">
+          <DataField>TotalPayment</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MonthlyAssocID">
+          <DataField>MonthlyAssocID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Payable">
+          <DataField>Payable</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="UnitNumber">
+          <DataField>UnitNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReservationID">
+          <DataField>ReservationID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID1">
+          <DataField>ID1</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="UnitNumber1">
+          <DataField>UnitNumber1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ChargeDate1">
+          <DataField>ChargeDate1</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="AssociationDue">
+          <DataField>AssociationDue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WaterBillTotalDue">
+          <DataField>WaterBillTotalDue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Discounts">
+          <DataField>Discounts</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Penalty">
+          <DataField>Penalty</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OtherPenalty">
+          <DataField>OtherPenalty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherPenaltyAmount">
+          <DataField>OtherPenaltyAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Balance1">
+          <DataField>Balance1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Paid">
+          <DataField>Paid</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WaterCurrentReading">
+          <DataField>WaterCurrentReading</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WaterPreviousReading">
+          <DataField>WaterPreviousReading</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WaterDate">
+          <DataField>WaterDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>EchoDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\EchoDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Receipt</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ReceiptTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <ReportParameters>
     <ReportParameter Name="ReceiptDate">
       <DataType>String</DataType>

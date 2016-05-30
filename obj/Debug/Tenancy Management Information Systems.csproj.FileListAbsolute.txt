@@ -66,3 +66,6 @@ C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
 C:\Users\Miguel&Manuel\Source\Repos\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
