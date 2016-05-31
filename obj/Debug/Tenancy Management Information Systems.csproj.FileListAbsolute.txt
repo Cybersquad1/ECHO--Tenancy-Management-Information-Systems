@@ -127,3 +127,4 @@ C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Syst
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\bin\Debug\Tenancy Management Information Systems.exe.config
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.exe
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy Management Information Systems.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\obj\Debug\Tenancy_Management_Information_Systems.TenancyManagement.RequestForm.resources

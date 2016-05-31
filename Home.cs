@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tenancy_Management_Information_Systems.Kiosk;
 using Tenancy_Management_Information_Systems.UserAccounts;
+using Tenancy_Management_Information_Systems.TenancyManagement;
 
 namespace Tenancy_Management_Information_Systems
 {
@@ -434,6 +435,18 @@ namespace Tenancy_Management_Information_Systems
             cf.Dock = DockStyle.Fill;
 
             panelMain.Controls.Add(cf);
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+
+            RequestForm form = new RequestForm();
+            form.TopLevel = false;
+            form.Visible = true;
+            form.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(form);
         }
     }
 }

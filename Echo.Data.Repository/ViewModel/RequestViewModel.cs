@@ -9,6 +9,11 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class RequestViewModel : ViewModelBase<Request>
     {
+        public List<Request> GetAll()
+        {
+            return Find().OrderByDescending(r=>r.Date).ToList();
+        }
+
         public bool Save(Request _request)
         {
             try
