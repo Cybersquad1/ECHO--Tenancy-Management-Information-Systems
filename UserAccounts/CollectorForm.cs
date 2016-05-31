@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
 using Tenancy_Management_Information_Systems.Utilities;
+using Tenancy_Management_Information_Systems.ReportForms.Billing;
+using Echo.Data.Repository.Models;
 
 namespace Tenancy_Management_Information_Systems.UserAccounts
 {
@@ -21,11 +23,17 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         FormUtilities formUlility = new FormUtilities();
 
-        public CollectorForm()
+        LoginInfo loginInfo;
+
+        Guid paymentID;
+
+        public CollectorForm(LoginInfo loginInfo)
         {
             InitializeComponent();
 
             GetUnitDropDown();
+
+            this.loginInfo = loginInfo;
         }
 
         private void GetUnitDropDown()
@@ -131,9 +139,14 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                 {
                     var assocVM = new MonthlyAssociationDueViewModel();
 
-                    if (assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+                    Guid ID = assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text));
+                    if (ID != Guid.Empty)
                     {
                         MessageBox.Show("Successfully processed payment");
+
+                        btnPreview.Enabled = true;
+
+                        paymentID = ID;
                     }
                     else
                         MessageBox.Show("Cannot process payment there was some kind of error", "Error");
@@ -296,7 +309,9 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
+            Receipt form = new Receipt(paymentID,loginInfo.fullName);
 
+            form.Show();
         }
     }
 }

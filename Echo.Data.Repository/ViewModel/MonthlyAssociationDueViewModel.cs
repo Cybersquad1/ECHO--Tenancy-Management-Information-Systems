@@ -14,7 +14,7 @@ namespace Echo.Data.Repository.ViewModel
             return Find(r=>r.Paid >= r.TotalAmount);
         }
 
-        public bool ProcessPayment(Guid _assocID, decimal _amount)
+        public Guid ProcessPayment(Guid _assocID, decimal _amount)
         {
             try
             {
@@ -49,11 +49,11 @@ namespace Echo.Data.Repository.ViewModel
 
                 paymentVM.Save(newPayment); //Save payment history
 
-                return true;
+                return newPayment.ID;
             }
             catch
             {
-                return false;
+                return Guid.Empty;
             }
         }
         public MonthlyAssociationDue GetSelected (Guid _assocID)
