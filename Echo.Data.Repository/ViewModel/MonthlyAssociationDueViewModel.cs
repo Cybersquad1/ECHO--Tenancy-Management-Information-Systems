@@ -9,9 +9,9 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class MonthlyAssociationDueViewModel: ViewModelBase<MonthlyAssociationDue>
     {
-        public List<MonthlyAssociationDue> GetAllPaid(string _unitNo)
+        public List<MonthlyAssociationDue> GetAllPaid()
         {
-            return Find(r => r.UnitNumber == _unitNo && r.Paid >= r.TotalAmount);
+            return Find(r=>r.Paid >= r.TotalAmount);
         }
 
         public bool ProcessPayment(Guid _assocID, decimal _amount)
@@ -60,6 +60,12 @@ namespace Echo.Data.Repository.ViewModel
         {
             return GetEntity(r => r.ID == _assocID);
         }
+
+        public List<MonthlyAssociationDue> GetAllUnpaid()
+        {
+            return Find(r => r.Paid < r.TotalAmount).OrderByDescending(r => r.ChargeDate).ToList();
+        }
+
         public List<MonthlyAssociationDue> GetAllUnpaid(string _unitNo)
         {
             return Find(r=>r.UnitNumber == _unitNo && r.Paid < r.TotalAmount).OrderByDescending(r => r.ChargeDate).ToList();

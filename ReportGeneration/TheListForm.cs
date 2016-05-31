@@ -13,7 +13,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
     public partial class TheListForm : Form
     {
-        public class PaidAccounts
+        public class Accounts
         {
             public Guid ID { get; set; }
 
@@ -70,12 +70,11 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         
         }
 
-        public TheListForm(string _unitNo)
+        public TheListForm()
         {
             InitializeComponent();
 
             GetReservations();
-
         }
 
         private void GetUnpaidAccounts(string _unitNo)
@@ -113,22 +112,123 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 return 0;
         }
 
-        private void GetPaidAccounts(string _unitNo, string month, string year)
+        private void GetUnpaidAccounts()
         {
-            List<PaidAccounts> paidAccounts = new List<PaidAccounts>();
+            List<Accounts> unpaidAccounts = new List<Accounts>();
+
+            var unpaidAssoc = new MonthlyAssociationDueViewModel().GetAllUnpaid();
+
+            //unpaid monthly assoc
+            unpaidAssoc.ForEach(item =>
+            {
+                Accounts temp = new Accounts();
+
+                temp.ID = item.ID;
+
+                if (item.UnitNumber != "")
+                {
+                    var unit = new UnitViewModel().GetSelected(item.UnitNumber);
+
+                    if (unit != null)
+                    {
+                        temp.UnitNo = item.UnitNumber;
+
+                        temp.Tenant = unit.Tenant.ToString();
+
+                        temp.UnitOwner = unit.Owner.ToString();
+                    }
+                }
+
+                temp.tenantChargeDate = DateTime.Parse(item.ChargeDate.ToString());
+
+                temp.TotalAmountDue = string.Format("{0:0.00}", item.TotalAmount);
+
+                unpaidAccounts.Add(temp);
+            });
+
+            //unpaid reservation
+            var reservation = new ReservationViewModel().GetAllPaid();
+
+            reservation.ForEach(item =>
+            {
+                Accounts temp = new Accounts();
+
+                if (item.UnitNumber != "")
+                {
+                    var unit = new UnitViewModel().GetSelected(item.UnitNumber);
+
+                    if (unit != null)
+                    {
+                        temp.UnitNo = item.UnitNumber;
+
+                        temp.Tenant = unit.Tenant.ToString();
+
+                        temp.UnitOwner = unit.Owner.ToString();
+                    }
+                }
+
+                temp.tenantChargeDate = DateTime.Parse(item.Date.ToString());
+
+                temp.TotalAmountDue = string.Format("{0:0.00}", item.Amount);
+
+                unpaidAccounts.Add(temp);
+            });
+
+            if (cmbBoxUnpaidMonth.Text != "")
+            {
+                unpaidAccounts = unpaidAccounts.Where(r => r.tenantChargeDate.Month == ConvertMonthToInt(cmbBoxUnpaidMonth.Text)).ToList();
+            }
+
+            if (cmbBoxUnpaidYear.Text != "")
+            {
+                unpaidAccounts = unpaidAccounts.Where(r => r.tenantChargeDate.Year == int.Parse(cmbBoxUnpaidYear.Text)).ToList();
+            }
+
+            if (txtBoxUnpaidUnitNo.Text != "")
+            {
+                unpaidAccounts = unpaidAccounts.Where(r => r.UnitNo == txtBoxUnpaidUnitNo.Text).ToList();
+            }
+
+            unpaidAccounts = unpaidAccounts.OrderByDescending(r => r.tenantChargeDate).ToList();
+
+            listViewUnpaid.Items.Clear();
+
+            unpaidAccounts.ForEach(item =>
+            {
+                ListViewItem lvi = new ListViewItem(item.ID.ToString());
+
+                lvi.SubItems.Add(item.UnitNo);
+
+                lvi.SubItems.Add(item.UnitOwner);
+
+                lvi.SubItems.Add(item.Tenant);
+
+                lvi.SubItems.Add(item.tenantChargeDate.ToShortDateString());
+
+                lvi.SubItems.Add(item.TotalAmountDue);
+
+                listViewUnpaid.Items.Add(lvi);
+            });
+        }
+
+        private void GetPaidAccounts()
+        {
+            List<Accounts> paidAccounts = new List<Accounts>();
 
             //Monthly Assoc Due
-            var paidAssoc = new MonthlyAssociationDueViewModel().GetAllPaid(_unitNo);
+            var paidAssoc = new MonthlyAssociationDueViewModel().GetAllPaid();
 
             paidAssoc.ForEach(item =>
             {
-                PaidAccounts paidAccount = new PaidAccounts();
+                Accounts paidAccount = new Accounts();
 
                 paidAccount.ID = item.ID;
 
                 if(item.UnitNumber != "")
                 {
                     var unit = new UnitViewModel().GetSelected(item.UnitNumber);
+
+                    paidAccount.UnitNo = item.UnitNumber;
 
                     if(unit != null)
                     {
@@ -146,11 +246,11 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             });
 
             //Reservation
-            var reservation = new ReservationViewModel().GetAllPaid(_unitNo);
+            var reservation = new ReservationViewModel().GetAllPaid();
 
             reservation.ForEach(item =>
             {
-                PaidAccounts paidAccount = new PaidAccounts();
+                Accounts paidAccount = new Accounts();
 
                 if (item.UnitNumber != "")
                 {
@@ -158,6 +258,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
                     if (unit != null)
                     {
+                        paidAccount.UnitNo = item.UnitNumber;
+
                         paidAccount.Tenant = unit.Tenant.ToString();
 
                         paidAccount.UnitOwner = unit.Owner.ToString();
@@ -171,14 +273,19 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 paidAccounts.Add(paidAccount);
             });
 
-            if(month != "")
+            if(cmbBoxPaidMonth.Text != "")
             {
-                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Month == ConvertMonthToInt(month)).ToList();
+                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Month == ConvertMonthToInt(cmbBoxPaidMonth.Text)).ToList();
             }
 
-            if(year != "")
+            if(cmbBoxPaidMonth.Text != "")
             {
-                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Year == int.Parse(year)).ToList();
+                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Year == int.Parse(cmbBoxPaidYear.Text)).ToList();
+            }
+
+            if(txtBoxPaidUnitNo.Text != "")
+            {
+                paidAccounts = paidAccounts.Where(r => r.UnitNo == txtBoxPaidUnitNo.Text).ToList();
             }
 
             paidAccounts = paidAccounts.OrderByDescending(r => r.tenantChargeDate).ToList();
@@ -379,6 +486,21 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void btnUserCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSearchPaid_Click(object sender, EventArgs e)
+        {
+            GetPaidAccounts();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUnpaidSearch_Click(object sender, EventArgs e)
+        {
+            GetUnpaidAccounts();
         }
     }
 }
