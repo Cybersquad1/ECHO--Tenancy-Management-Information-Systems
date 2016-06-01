@@ -22,7 +22,14 @@ namespace Echo.Data.Repository.ViewModel
 
                 assoc.Paid = assoc.Paid + _amount;
 
-                assoc.Balance = assoc.Balance - _amount;
+                decimal? total =0;
+                
+                total = assoc.Balance - _amount;
+
+                if (total < 0)
+                    assoc.Balance = 0;
+                else
+                    assoc.Balance = total;
 
                 Update(assoc);
 
