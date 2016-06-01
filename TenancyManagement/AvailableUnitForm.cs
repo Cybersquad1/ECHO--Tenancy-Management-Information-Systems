@@ -44,7 +44,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             if(avail == "Available")
             {
                 units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy 
-                    > DateTime.Now);
+                    < DateTime.Now);
             }
             else //Occupied
             {
