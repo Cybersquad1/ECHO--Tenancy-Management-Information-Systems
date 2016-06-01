@@ -158,6 +158,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     if (reservationVM.ProcessPaymenet(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
                     {
                         MessageBox.Show("Successfully processed payment");
+
+                        btnPreview.Enabled = true;
                     }
                     else
                         MessageBox.Show("Cannot process payment there was some kind of error", "Error");
@@ -312,6 +314,11 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
             Receipt form = new Receipt(paymentID,loginInfo.fullName);
 
             form.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
