@@ -147,7 +147,8 @@ create PROCEDURE [dbo].[Receipt]
 	@paymentHistoryID uniqueidentifier
 )
 AS
-select * from PaymentHistory as payment
+select assoc.AssociationDue, assoc.WaterBillTotalDue,
+payment.Balance, payment.TotalPayment, assoc.TotalAmount from PaymentHistory as payment
 left join MonthlyAssociationDue as assoc 
 ON assoc.ID = payment.MonthlyAssocID
 where payment.ID = @paymentHistoryID
