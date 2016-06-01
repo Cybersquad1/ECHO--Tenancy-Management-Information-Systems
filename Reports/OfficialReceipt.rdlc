@@ -554,8 +554,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.57986in</Top>
-          <Left>4.75917in</Left>
+          <Top>0.63194in</Top>
+          <Left>0.77083in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <Style>
@@ -586,8 +586,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.27431in</Top>
-          <Left>5.38417in</Left>
+          <Top>0.3125in</Top>
+          <Left>1.39583in</Left>
           <Height>0.25in</Height>
           <Width>1.6875in</Width>
           <ZIndex>1</ZIndex>
@@ -618,7 +618,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Left>6.77083in</Left>
+          <Top>0.03819in</Top>
+          <Left>2.78249in</Left>
           <Height>0.28125in</Height>
           <Width>0.67708in</Width>
           <ZIndex>2</ZIndex>
@@ -647,8 +648,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.89931in</Top>
-          <Left>4.75917in</Left>
+          <Top>0.9375in</Top>
+          <Left>0.77083in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>3</ZIndex>
@@ -677,8 +678,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>0.59375in</Top>
-          <Left>5.82861in</Left>
+          <Top>0.63194in</Top>
+          <Left>1.84027in</Left>
           <Height>0.25in</Height>
           <Width>1.61931in</Width>
           <ZIndex>4</ZIndex>
@@ -707,8 +708,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.88542in</Top>
-          <Left>5.82861in</Left>
+          <Top>0.92361in</Top>
+          <Left>1.84027in</Left>
           <Height>0.25in</Height>
           <Width>1.61931in</Width>
           <ZIndex>5</ZIndex>
@@ -752,62 +753,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="ChargeDate">
-          <DataField>ChargeDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="TotalPayment">
-          <DataField>TotalPayment</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="MonthlyAssocID">
-          <DataField>MonthlyAssocID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Payable">
-          <DataField>Payable</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Balance">
-          <DataField>Balance</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="UnitNumber">
-          <DataField>UnitNumber</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ReservationID">
-          <DataField>ReservationID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Type">
-          <DataField>Type</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ID1">
-          <DataField>ID1</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="UnitNumber1">
-          <DataField>UnitNumber1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ChargeDate1">
-          <DataField>ChargeDate1</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="DueDate">
-          <DataField>DueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="AssociationDue">
           <DataField>AssociationDue</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -816,45 +761,17 @@
           <DataField>WaterBillTotalDue</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Discounts">
-          <DataField>Discounts</DataField>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Penalty">
-          <DataField>Penalty</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="OtherPenalty">
-          <DataField>OtherPenalty</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="OtherPenaltyAmount">
-          <DataField>OtherPenaltyAmount</DataField>
+        <Field Name="TotalPayment">
+          <DataField>TotalPayment</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="TotalAmount">
           <DataField>TotalAmount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Balance1">
-          <DataField>Balance1</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Paid">
-          <DataField>Paid</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="WaterCurrentReading">
-          <DataField>WaterCurrentReading</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WaterPreviousReading">
-          <DataField>WaterPreviousReading</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WaterDate">
-          <DataField>WaterDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

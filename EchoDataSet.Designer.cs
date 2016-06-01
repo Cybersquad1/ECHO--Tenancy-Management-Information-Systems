@@ -4022,57 +4022,15 @@ namespace Tenancy_Management_Information_Systems {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ReceiptDataTable : global::System.Data.TypedTableBase<ReceiptRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnChargeDate;
-            
-            private global::System.Data.DataColumn columnTotalPayment;
-            
-            private global::System.Data.DataColumn columnMonthlyAssocID;
-            
-            private global::System.Data.DataColumn columnPayable;
-            
-            private global::System.Data.DataColumn columnBalance;
-            
-            private global::System.Data.DataColumn columnUnitNumber;
-            
-            private global::System.Data.DataColumn columnReservationID;
-            
-            private global::System.Data.DataColumn columnDate;
-            
-            private global::System.Data.DataColumn columnType;
-            
-            private global::System.Data.DataColumn columnID1;
-            
-            private global::System.Data.DataColumn columnUnitNumber1;
-            
-            private global::System.Data.DataColumn columnChargeDate1;
-            
-            private global::System.Data.DataColumn columnDueDate;
-            
             private global::System.Data.DataColumn columnAssociationDue;
             
             private global::System.Data.DataColumn columnWaterBillTotalDue;
             
-            private global::System.Data.DataColumn columnDiscounts;
+            private global::System.Data.DataColumn columnBalance;
             
-            private global::System.Data.DataColumn columnPenalty;
-            
-            private global::System.Data.DataColumn columnOtherPenalty;
-            
-            private global::System.Data.DataColumn columnOtherPenaltyAmount;
+            private global::System.Data.DataColumn columnTotalPayment;
             
             private global::System.Data.DataColumn columnTotalAmount;
-            
-            private global::System.Data.DataColumn columnBalance1;
-            
-            private global::System.Data.DataColumn columnPaid;
-            
-            private global::System.Data.DataColumn columnWaterCurrentReading;
-            
-            private global::System.Data.DataColumn columnWaterPreviousReading;
-            
-            private global::System.Data.DataColumn columnWaterDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4109,118 +4067,6 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ChargeDateColumn {
-                get {
-                    return this.columnChargeDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotalPaymentColumn {
-                get {
-                    return this.columnTotalPayment;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MonthlyAssocIDColumn {
-                get {
-                    return this.columnMonthlyAssocID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PayableColumn {
-                get {
-                    return this.columnPayable;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BalanceColumn {
-                get {
-                    return this.columnBalance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UnitNumberColumn {
-                get {
-                    return this.columnUnitNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReservationIDColumn {
-                get {
-                    return this.columnReservationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
-                get {
-                    return this.columnDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
-                get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID1Column {
-                get {
-                    return this.columnID1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UnitNumber1Column {
-                get {
-                    return this.columnUnitNumber1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ChargeDate1Column {
-                get {
-                    return this.columnChargeDate1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DueDateColumn {
-                get {
-                    return this.columnDueDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn AssociationDueColumn {
                 get {
                     return this.columnAssociationDue;
@@ -4237,33 +4083,17 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DiscountsColumn {
+            public global::System.Data.DataColumn BalanceColumn {
                 get {
-                    return this.columnDiscounts;
+                    return this.columnBalance;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PenaltyColumn {
+            public global::System.Data.DataColumn TotalPaymentColumn {
                 get {
-                    return this.columnPenalty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OtherPenaltyColumn {
-                get {
-                    return this.columnOtherPenalty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OtherPenaltyAmountColumn {
-                get {
-                    return this.columnOtherPenaltyAmount;
+                    return this.columnTotalPayment;
                 }
             }
             
@@ -4272,46 +4102,6 @@ namespace Tenancy_Management_Information_Systems {
             public global::System.Data.DataColumn TotalAmountColumn {
                 get {
                     return this.columnTotalAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Balance1Column {
-                get {
-                    return this.columnBalance1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PaidColumn {
-                get {
-                    return this.columnPaid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WaterCurrentReadingColumn {
-                get {
-                    return this.columnWaterCurrentReading;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WaterPreviousReadingColumn {
-                get {
-                    return this.columnWaterPreviousReading;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WaterDateColumn {
-                get {
-                    return this.columnWaterDate;
                 }
             }
             
@@ -4352,61 +4142,14 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReceiptRow AddReceiptRow(
-                        System.Guid ID, 
-                        System.DateTime ChargeDate, 
-                        decimal TotalPayment, 
-                        System.Guid MonthlyAssocID, 
-                        decimal Payable, 
-                        decimal Balance, 
-                        string UnitNumber, 
-                        System.Guid ReservationID, 
-                        System.DateTime Date, 
-                        string Type, 
-                        System.Guid ID1, 
-                        string UnitNumber1, 
-                        System.DateTime ChargeDate1, 
-                        System.DateTime DueDate, 
-                        decimal AssociationDue, 
-                        decimal WaterBillTotalDue, 
-                        decimal Discounts, 
-                        decimal Penalty, 
-                        string OtherPenalty, 
-                        decimal OtherPenaltyAmount, 
-                        decimal TotalAmount, 
-                        decimal Balance1, 
-                        decimal Paid, 
-                        string WaterCurrentReading, 
-                        string WaterPreviousReading, 
-                        System.DateTime WaterDate) {
+            public ReceiptRow AddReceiptRow(decimal AssociationDue, decimal WaterBillTotalDue, decimal Balance, decimal TotalPayment, decimal TotalAmount) {
                 ReceiptRow rowReceiptRow = ((ReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
-                        ChargeDate,
-                        TotalPayment,
-                        MonthlyAssocID,
-                        Payable,
-                        Balance,
-                        UnitNumber,
-                        ReservationID,
-                        Date,
-                        Type,
-                        ID1,
-                        UnitNumber1,
-                        ChargeDate1,
-                        DueDate,
                         AssociationDue,
                         WaterBillTotalDue,
-                        Discounts,
-                        Penalty,
-                        OtherPenalty,
-                        OtherPenaltyAmount,
-                        TotalAmount,
-                        Balance1,
-                        Paid,
-                        WaterCurrentReading,
-                        WaterPreviousReading,
-                        WaterDate};
+                        Balance,
+                        TotalPayment,
+                        TotalAmount};
                 rowReceiptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReceiptRow);
                 return rowReceiptRow;
@@ -4429,99 +4172,26 @@ namespace Tenancy_Management_Information_Systems {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnChargeDate = base.Columns["ChargeDate"];
-                this.columnTotalPayment = base.Columns["TotalPayment"];
-                this.columnMonthlyAssocID = base.Columns["MonthlyAssocID"];
-                this.columnPayable = base.Columns["Payable"];
-                this.columnBalance = base.Columns["Balance"];
-                this.columnUnitNumber = base.Columns["UnitNumber"];
-                this.columnReservationID = base.Columns["ReservationID"];
-                this.columnDate = base.Columns["Date"];
-                this.columnType = base.Columns["Type"];
-                this.columnID1 = base.Columns["ID1"];
-                this.columnUnitNumber1 = base.Columns["UnitNumber1"];
-                this.columnChargeDate1 = base.Columns["ChargeDate1"];
-                this.columnDueDate = base.Columns["DueDate"];
                 this.columnAssociationDue = base.Columns["AssociationDue"];
                 this.columnWaterBillTotalDue = base.Columns["WaterBillTotalDue"];
-                this.columnDiscounts = base.Columns["Discounts"];
-                this.columnPenalty = base.Columns["Penalty"];
-                this.columnOtherPenalty = base.Columns["OtherPenalty"];
-                this.columnOtherPenaltyAmount = base.Columns["OtherPenaltyAmount"];
+                this.columnBalance = base.Columns["Balance"];
+                this.columnTotalPayment = base.Columns["TotalPayment"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
-                this.columnBalance1 = base.Columns["Balance1"];
-                this.columnPaid = base.Columns["Paid"];
-                this.columnWaterCurrentReading = base.Columns["WaterCurrentReading"];
-                this.columnWaterPreviousReading = base.Columns["WaterPreviousReading"];
-                this.columnWaterDate = base.Columns["WaterDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnChargeDate = new global::System.Data.DataColumn("ChargeDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnChargeDate);
-                this.columnTotalPayment = new global::System.Data.DataColumn("TotalPayment", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalPayment);
-                this.columnMonthlyAssocID = new global::System.Data.DataColumn("MonthlyAssocID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMonthlyAssocID);
-                this.columnPayable = new global::System.Data.DataColumn("Payable", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPayable);
-                this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBalance);
-                this.columnUnitNumber = new global::System.Data.DataColumn("UnitNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnitNumber);
-                this.columnReservationID = new global::System.Data.DataColumn("ReservationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReservationID);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnID1 = new global::System.Data.DataColumn("ID1", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID1);
-                this.columnUnitNumber1 = new global::System.Data.DataColumn("UnitNumber1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnitNumber1);
-                this.columnChargeDate1 = new global::System.Data.DataColumn("ChargeDate1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnChargeDate1);
-                this.columnDueDate = new global::System.Data.DataColumn("DueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDueDate);
                 this.columnAssociationDue = new global::System.Data.DataColumn("AssociationDue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssociationDue);
                 this.columnWaterBillTotalDue = new global::System.Data.DataColumn("WaterBillTotalDue", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWaterBillTotalDue);
-                this.columnDiscounts = new global::System.Data.DataColumn("Discounts", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscounts);
-                this.columnPenalty = new global::System.Data.DataColumn("Penalty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPenalty);
-                this.columnOtherPenalty = new global::System.Data.DataColumn("OtherPenalty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOtherPenalty);
-                this.columnOtherPenaltyAmount = new global::System.Data.DataColumn("OtherPenaltyAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOtherPenaltyAmount);
+                this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBalance);
+                this.columnTotalPayment = new global::System.Data.DataColumn("TotalPayment", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalPayment);
                 this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalAmount);
-                this.columnBalance1 = new global::System.Data.DataColumn("Balance1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBalance1);
-                this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaid);
-                this.columnWaterCurrentReading = new global::System.Data.DataColumn("WaterCurrentReading", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWaterCurrentReading);
-                this.columnWaterPreviousReading = new global::System.Data.DataColumn("WaterPreviousReading", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWaterPreviousReading);
-                this.columnWaterDate = new global::System.Data.DataColumn("WaterDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWaterDate);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID,
-                                this.columnID1}, false));
-                this.columnID.AllowDBNull = false;
-                this.columnUnitNumber.MaxLength = 10;
-                this.columnType.MaxLength = 50;
-                this.columnUnitNumber1.MaxLength = 5;
-                this.columnOtherPenalty.MaxLength = 100;
-                this.columnWaterCurrentReading.MaxLength = 50;
-                this.columnWaterPreviousReading.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7450,225 +7120,6 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid ID {
-                get {
-                    return ((global::System.Guid)(this[this.tableReceipt.IDColumn]));
-                }
-                set {
-                    this[this.tableReceipt.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ChargeDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableReceipt.ChargeDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ChargeDate\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.ChargeDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal TotalPayment {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.TotalPaymentColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalPayment\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.TotalPaymentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid MonthlyAssocID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableReceipt.MonthlyAssocIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MonthlyAssocID\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.MonthlyAssocIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Payable {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.PayableColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Payable\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.PayableColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Balance {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.BalanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Balance\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.BalanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UnitNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.UnitNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UnitNumber\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.UnitNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid ReservationID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableReceipt.ReservationIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReservationID\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.ReservationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableReceipt.DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Type {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid ID1 {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableReceipt.ID1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID1\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.ID1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UnitNumber1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.UnitNumber1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UnitNumber1\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.UnitNumber1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ChargeDate1 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableReceipt.ChargeDate1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ChargeDate1\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.ChargeDate1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DueDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableReceipt.DueDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DueDate\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.DueDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal AssociationDue {
                 get {
                     try {
@@ -7701,65 +7152,33 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Discounts {
+            public decimal Balance {
                 get {
                     try {
-                        return ((decimal)(this[this.tableReceipt.DiscountsColumn]));
+                        return ((decimal)(this[this.tableReceipt.BalanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Discounts\' in table \'Receipt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Balance\' in table \'Receipt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableReceipt.DiscountsColumn] = value;
+                    this[this.tableReceipt.BalanceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Penalty {
+            public decimal TotalPayment {
                 get {
                     try {
-                        return ((decimal)(this[this.tableReceipt.PenaltyColumn]));
+                        return ((decimal)(this[this.tableReceipt.TotalPaymentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Penalty\' in table \'Receipt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalPayment\' in table \'Receipt\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableReceipt.PenaltyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OtherPenalty {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.OtherPenaltyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OtherPenalty\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.OtherPenaltyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal OtherPenaltyAmount {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.OtherPenaltyAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OtherPenaltyAmount\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.OtherPenaltyAmountColumn] = value;
+                    this[this.tableReceipt.TotalPaymentColumn] = value;
                 }
             }
             
@@ -7777,242 +7196,6 @@ namespace Tenancy_Management_Information_Systems {
                 set {
                     this[this.tableReceipt.TotalAmountColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Balance1 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.Balance1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Balance1\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.Balance1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Paid {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableReceipt.PaidColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Paid\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.PaidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WaterCurrentReading {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.WaterCurrentReadingColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WaterCurrentReading\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.WaterCurrentReadingColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WaterPreviousReading {
-                get {
-                    try {
-                        return ((string)(this[this.tableReceipt.WaterPreviousReadingColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WaterPreviousReading\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.WaterPreviousReadingColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime WaterDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableReceipt.WaterDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WaterDate\' in table \'Receipt\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReceipt.WaterDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsChargeDateNull() {
-                return this.IsNull(this.tableReceipt.ChargeDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetChargeDateNull() {
-                this[this.tableReceipt.ChargeDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTotalPaymentNull() {
-                return this.IsNull(this.tableReceipt.TotalPaymentColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTotalPaymentNull() {
-                this[this.tableReceipt.TotalPaymentColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMonthlyAssocIDNull() {
-                return this.IsNull(this.tableReceipt.MonthlyAssocIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMonthlyAssocIDNull() {
-                this[this.tableReceipt.MonthlyAssocIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPayableNull() {
-                return this.IsNull(this.tableReceipt.PayableColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPayableNull() {
-                this[this.tableReceipt.PayableColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBalanceNull() {
-                return this.IsNull(this.tableReceipt.BalanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBalanceNull() {
-                this[this.tableReceipt.BalanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUnitNumberNull() {
-                return this.IsNull(this.tableReceipt.UnitNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUnitNumberNull() {
-                this[this.tableReceipt.UnitNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReservationIDNull() {
-                return this.IsNull(this.tableReceipt.ReservationIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReservationIDNull() {
-                this[this.tableReceipt.ReservationIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateNull() {
-                return this.IsNull(this.tableReceipt.DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateNull() {
-                this[this.tableReceipt.DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tableReceipt.TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tableReceipt.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsID1Null() {
-                return this.IsNull(this.tableReceipt.ID1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetID1Null() {
-                this[this.tableReceipt.ID1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUnitNumber1Null() {
-                return this.IsNull(this.tableReceipt.UnitNumber1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUnitNumber1Null() {
-                this[this.tableReceipt.UnitNumber1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsChargeDate1Null() {
-                return this.IsNull(this.tableReceipt.ChargeDate1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetChargeDate1Null() {
-                this[this.tableReceipt.ChargeDate1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDueDateNull() {
-                return this.IsNull(this.tableReceipt.DueDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDueDateNull() {
-                this[this.tableReceipt.DueDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8041,50 +7224,26 @@ namespace Tenancy_Management_Information_Systems {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDiscountsNull() {
-                return this.IsNull(this.tableReceipt.DiscountsColumn);
+            public bool IsBalanceNull() {
+                return this.IsNull(this.tableReceipt.BalanceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDiscountsNull() {
-                this[this.tableReceipt.DiscountsColumn] = global::System.Convert.DBNull;
+            public void SetBalanceNull() {
+                this[this.tableReceipt.BalanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPenaltyNull() {
-                return this.IsNull(this.tableReceipt.PenaltyColumn);
+            public bool IsTotalPaymentNull() {
+                return this.IsNull(this.tableReceipt.TotalPaymentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPenaltyNull() {
-                this[this.tableReceipt.PenaltyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOtherPenaltyNull() {
-                return this.IsNull(this.tableReceipt.OtherPenaltyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOtherPenaltyNull() {
-                this[this.tableReceipt.OtherPenaltyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOtherPenaltyAmountNull() {
-                return this.IsNull(this.tableReceipt.OtherPenaltyAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOtherPenaltyAmountNull() {
-                this[this.tableReceipt.OtherPenaltyAmountColumn] = global::System.Convert.DBNull;
+            public void SetTotalPaymentNull() {
+                this[this.tableReceipt.TotalPaymentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8097,66 +7256,6 @@ namespace Tenancy_Management_Information_Systems {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalAmountNull() {
                 this[this.tableReceipt.TotalAmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBalance1Null() {
-                return this.IsNull(this.tableReceipt.Balance1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBalance1Null() {
-                this[this.tableReceipt.Balance1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPaidNull() {
-                return this.IsNull(this.tableReceipt.PaidColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPaidNull() {
-                this[this.tableReceipt.PaidColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWaterCurrentReadingNull() {
-                return this.IsNull(this.tableReceipt.WaterCurrentReadingColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWaterCurrentReadingNull() {
-                this[this.tableReceipt.WaterCurrentReadingColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWaterPreviousReadingNull() {
-                return this.IsNull(this.tableReceipt.WaterPreviousReadingColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWaterPreviousReadingNull() {
-                this[this.tableReceipt.WaterPreviousReadingColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWaterDateNull() {
-                return this.IsNull(this.tableReceipt.WaterDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWaterDateNull() {
-                this[this.tableReceipt.WaterDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10094,32 +9193,11 @@ namespace Tenancy_Management_Information_Systems.EchoDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Receipt";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("ChargeDate", "ChargeDate");
-            tableMapping.ColumnMappings.Add("TotalPayment", "TotalPayment");
-            tableMapping.ColumnMappings.Add("MonthlyAssocID", "MonthlyAssocID");
-            tableMapping.ColumnMappings.Add("Payable", "Payable");
-            tableMapping.ColumnMappings.Add("Balance", "Balance");
-            tableMapping.ColumnMappings.Add("UnitNumber", "UnitNumber");
-            tableMapping.ColumnMappings.Add("ReservationID", "ReservationID");
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("ID1", "ID1");
-            tableMapping.ColumnMappings.Add("UnitNumber1", "UnitNumber1");
-            tableMapping.ColumnMappings.Add("ChargeDate1", "ChargeDate1");
-            tableMapping.ColumnMappings.Add("DueDate", "DueDate");
             tableMapping.ColumnMappings.Add("AssociationDue", "AssociationDue");
             tableMapping.ColumnMappings.Add("WaterBillTotalDue", "WaterBillTotalDue");
-            tableMapping.ColumnMappings.Add("Discounts", "Discounts");
-            tableMapping.ColumnMappings.Add("Penalty", "Penalty");
-            tableMapping.ColumnMappings.Add("OtherPenalty", "OtherPenalty");
-            tableMapping.ColumnMappings.Add("OtherPenaltyAmount", "OtherPenaltyAmount");
+            tableMapping.ColumnMappings.Add("Balance", "Balance");
+            tableMapping.ColumnMappings.Add("TotalPayment", "TotalPayment");
             tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
-            tableMapping.ColumnMappings.Add("Balance1", "Balance1");
-            tableMapping.ColumnMappings.Add("Paid", "Paid");
-            tableMapping.ColumnMappings.Add("WaterCurrentReading", "WaterCurrentReading");
-            tableMapping.ColumnMappings.Add("WaterPreviousReading", "WaterPreviousReading");
-            tableMapping.ColumnMappings.Add("WaterDate", "WaterDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

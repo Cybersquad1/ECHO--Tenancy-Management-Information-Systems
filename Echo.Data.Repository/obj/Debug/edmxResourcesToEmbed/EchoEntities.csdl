@@ -186,32 +186,11 @@
     <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
   </ComplexType>
   <ComplexType Name="Receipt_Result">
-    <Property Type="Guid" Name="ID" Nullable="false" />
-    <Property Type="DateTime" Name="ChargeDate" Nullable="true" Precision="23" />
     <Property Type="Decimal" Name="TotalPayment" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Guid" Name="MonthlyAssocID" Nullable="true" />
-    <Property Type="Decimal" Name="Payable" Nullable="true" Precision="18" Scale="2" />
     <Property Type="Decimal" Name="Balance" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="String" Name="UnitNumber" Nullable="true" MaxLength="10" />
-    <Property Type="Guid" Name="ReservationID" Nullable="true" />
-    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
-    <Property Type="Guid" Name="ID1" Nullable="true" />
-    <Property Type="String" Name="UnitNumber1" Nullable="true" MaxLength="5" />
-    <Property Type="DateTime" Name="ChargeDate1" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="DueDate" Nullable="true" Precision="23" />
     <Property Type="Decimal" Name="AssociationDue" Nullable="true" Precision="18" Scale="2" />
     <Property Type="Decimal" Name="WaterBillTotalDue" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Penalty" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="String" Name="OtherPenalty" Nullable="true" MaxLength="100" />
-    <Property Type="Decimal" Name="OtherPenaltyAmount" Nullable="true" Precision="18" Scale="2" />
     <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Balance1" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Paid" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="String" Name="WaterCurrentReading" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="WaterPreviousReading" Nullable="true" MaxLength="50" />
-    <Property Type="DateTime" Name="WaterDate" Nullable="true" />
   </ComplexType>
   <EntityType Name="LogSheet">
     <Key>

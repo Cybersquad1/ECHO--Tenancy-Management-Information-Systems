@@ -266,7 +266,7 @@ namespace Tenancy_Management_Information_Systems
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
+            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm(loginInfo);
             c1.collectorPnl.Visible = true;
             c1.ShowDialog();
         }
@@ -288,7 +288,7 @@ namespace Tenancy_Management_Information_Systems
         {
             panelMain.Controls.Clear();
 
-            CollectorForm cf = new CollectorForm();
+            CollectorForm cf = new CollectorForm(loginInfo);
             cf.TopLevel = false;
             cf.Visible = true;
             cf.Dock = DockStyle.Fill;
@@ -313,7 +313,7 @@ namespace Tenancy_Management_Information_Systems
             collectorPnl2.Visible = true;
             ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = false;
-            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
+            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm(loginInfo);
             c1.collectorPnl.Visible = false;
         }
 
@@ -387,7 +387,7 @@ namespace Tenancy_Management_Information_Systems
             reportsGenPnl.Visible = false;
             ReportGeneration.logSheetForm l1 = new ReportGeneration.logSheetForm(loginInfo.userID);
             l1.logPnl.Visible = false;
-            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm();
+            UserAccounts.CollectorForm c1 = new UserAccounts.CollectorForm(loginInfo);
             c1.collectorPnl.Visible = false;
         }
 
@@ -429,7 +429,7 @@ namespace Tenancy_Management_Information_Systems
         {
             panelMain.Controls.Clear();
 
-            CollectorForm cf = new CollectorForm();
+            CollectorForm cf = new CollectorForm(loginInfo);
             cf.TopLevel = false;
             cf.Visible = true;
             cf.Dock = DockStyle.Fill;

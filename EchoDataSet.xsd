@@ -265,32 +265,11 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="ChargeDate" DataSetColumn="ChargeDate" />
-              <Mapping SourceColumn="TotalPayment" DataSetColumn="TotalPayment" />
-              <Mapping SourceColumn="MonthlyAssocID" DataSetColumn="MonthlyAssocID" />
-              <Mapping SourceColumn="Payable" DataSetColumn="Payable" />
-              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
-              <Mapping SourceColumn="UnitNumber" DataSetColumn="UnitNumber" />
-              <Mapping SourceColumn="ReservationID" DataSetColumn="ReservationID" />
-              <Mapping SourceColumn="Date" DataSetColumn="Date" />
-              <Mapping SourceColumn="Type" DataSetColumn="Type" />
-              <Mapping SourceColumn="ID1" DataSetColumn="ID1" />
-              <Mapping SourceColumn="UnitNumber1" DataSetColumn="UnitNumber1" />
-              <Mapping SourceColumn="ChargeDate1" DataSetColumn="ChargeDate1" />
-              <Mapping SourceColumn="DueDate" DataSetColumn="DueDate" />
               <Mapping SourceColumn="AssociationDue" DataSetColumn="AssociationDue" />
               <Mapping SourceColumn="WaterBillTotalDue" DataSetColumn="WaterBillTotalDue" />
-              <Mapping SourceColumn="Discounts" DataSetColumn="Discounts" />
-              <Mapping SourceColumn="Penalty" DataSetColumn="Penalty" />
-              <Mapping SourceColumn="OtherPenalty" DataSetColumn="OtherPenalty" />
-              <Mapping SourceColumn="OtherPenaltyAmount" DataSetColumn="OtherPenaltyAmount" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="TotalPayment" DataSetColumn="TotalPayment" />
               <Mapping SourceColumn="TotalAmount" DataSetColumn="TotalAmount" />
-              <Mapping SourceColumn="Balance1" DataSetColumn="Balance1" />
-              <Mapping SourceColumn="Paid" DataSetColumn="Paid" />
-              <Mapping SourceColumn="WaterCurrentReading" DataSetColumn="WaterCurrentReading" />
-              <Mapping SourceColumn="WaterPreviousReading" DataSetColumn="WaterPreviousReading" />
-              <Mapping SourceColumn="WaterDate" DataSetColumn="WaterDate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -302,7 +281,7 @@
   <xs:element name="EchoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EchoDataSet" msprop:Generator_UserDSName="EchoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TenancyDatabaseByOccupancyYear" msprop:Generator_TableClassName="TenancyDatabaseByOccupancyYearDataTable" msprop:Generator_TableVarName="tableTenancyDatabaseByOccupancyYear" msprop:Generator_RowChangedName="TenancyDatabaseByOccupancyYearRowChanged" msprop:Generator_TablePropName="TenancyDatabaseByOccupancyYear" msprop:Generator_RowDeletingName="TenancyDatabaseByOccupancyYearRowDeleting" msprop:Generator_RowChangingName="TenancyDatabaseByOccupancyYearRowChanging" msprop:Generator_RowEvHandlerName="TenancyDatabaseByOccupancyYearRowChangeEventHandler" msprop:Generator_RowDeletedName="TenancyDatabaseByOccupancyYearRowDeleted" msprop:Generator_RowClassName="TenancyDatabaseByOccupancyYearRow" msprop:Generator_UserTableName="TenancyDatabaseByOccupancyYear" msprop:Generator_RowEvArgName="TenancyDatabaseByOccupancyYearRowChangeEvent">
+        <xs:element name="TenancyDatabaseByOccupancyYear" msprop:Generator_TableClassName="TenancyDatabaseByOccupancyYearDataTable" msprop:Generator_TableVarName="tableTenancyDatabaseByOccupancyYear" msprop:Generator_TablePropName="TenancyDatabaseByOccupancyYear" msprop:Generator_RowDeletingName="TenancyDatabaseByOccupancyYearRowDeleting" msprop:Generator_RowChangingName="TenancyDatabaseByOccupancyYearRowChanging" msprop:Generator_RowEvHandlerName="TenancyDatabaseByOccupancyYearRowChangeEventHandler" msprop:Generator_RowDeletedName="TenancyDatabaseByOccupancyYearRowDeleted" msprop:Generator_UserTableName="TenancyDatabaseByOccupancyYear" msprop:Generator_RowChangedName="TenancyDatabaseByOccupancyYearRowChanged" msprop:Generator_RowEvArgName="TenancyDatabaseByOccupancyYearRowChangeEvent" msprop:Generator_RowClassName="TenancyDatabaseByOccupancyYearRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber" minOccurs="0">
@@ -352,7 +331,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UnitAll" msprop:Generator_TableClassName="UnitAllDataTable" msprop:Generator_TableVarName="tableUnitAll" msprop:Generator_RowChangedName="UnitAllRowChanged" msprop:Generator_TablePropName="UnitAll" msprop:Generator_RowDeletingName="UnitAllRowDeleting" msprop:Generator_RowChangingName="UnitAllRowChanging" msprop:Generator_RowEvHandlerName="UnitAllRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllRowDeleted" msprop:Generator_RowClassName="UnitAllRow" msprop:Generator_UserTableName="UnitAll" msprop:Generator_RowEvArgName="UnitAllRowChangeEvent">
+        <xs:element name="UnitAll" msprop:Generator_TableClassName="UnitAllDataTable" msprop:Generator_TableVarName="tableUnitAll" msprop:Generator_TablePropName="UnitAll" msprop:Generator_RowDeletingName="UnitAllRowDeleting" msprop:Generator_RowChangingName="UnitAllRowChanging" msprop:Generator_RowEvHandlerName="UnitAllRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllRowDeleted" msprop:Generator_UserTableName="UnitAll" msprop:Generator_RowChangedName="UnitAllRowChanged" msprop:Generator_RowEvArgName="UnitAllRowChangeEvent" msprop:Generator_RowClassName="UnitAllRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber">
@@ -416,7 +395,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UnitAllAvailable" msprop:Generator_TableClassName="UnitAllAvailableDataTable" msprop:Generator_TableVarName="tableUnitAllAvailable" msprop:Generator_RowChangedName="UnitAllAvailableRowChanged" msprop:Generator_TablePropName="UnitAllAvailable" msprop:Generator_RowDeletingName="UnitAllAvailableRowDeleting" msprop:Generator_RowChangingName="UnitAllAvailableRowChanging" msprop:Generator_RowEvHandlerName="UnitAllAvailableRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllAvailableRowDeleted" msprop:Generator_RowClassName="UnitAllAvailableRow" msprop:Generator_UserTableName="UnitAllAvailable" msprop:Generator_RowEvArgName="UnitAllAvailableRowChangeEvent">
+        <xs:element name="UnitAllAvailable" msprop:Generator_TableClassName="UnitAllAvailableDataTable" msprop:Generator_TableVarName="tableUnitAllAvailable" msprop:Generator_TablePropName="UnitAllAvailable" msprop:Generator_RowDeletingName="UnitAllAvailableRowDeleting" msprop:Generator_RowChangingName="UnitAllAvailableRowChanging" msprop:Generator_RowEvHandlerName="UnitAllAvailableRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllAvailableRowDeleted" msprop:Generator_UserTableName="UnitAllAvailable" msprop:Generator_RowChangedName="UnitAllAvailableRowChanged" msprop:Generator_RowEvArgName="UnitAllAvailableRowChangeEvent" msprop:Generator_RowClassName="UnitAllAvailableRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber">
@@ -480,7 +459,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UnitAllOccupied" msprop:Generator_TableClassName="UnitAllOccupiedDataTable" msprop:Generator_TableVarName="tableUnitAllOccupied" msprop:Generator_RowChangedName="UnitAllOccupiedRowChanged" msprop:Generator_TablePropName="UnitAllOccupied" msprop:Generator_RowDeletingName="UnitAllOccupiedRowDeleting" msprop:Generator_RowChangingName="UnitAllOccupiedRowChanging" msprop:Generator_RowEvHandlerName="UnitAllOccupiedRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllOccupiedRowDeleted" msprop:Generator_RowClassName="UnitAllOccupiedRow" msprop:Generator_UserTableName="UnitAllOccupied" msprop:Generator_RowEvArgName="UnitAllOccupiedRowChangeEvent">
+        <xs:element name="UnitAllOccupied" msprop:Generator_TableClassName="UnitAllOccupiedDataTable" msprop:Generator_TableVarName="tableUnitAllOccupied" msprop:Generator_TablePropName="UnitAllOccupied" msprop:Generator_RowDeletingName="UnitAllOccupiedRowDeleting" msprop:Generator_RowChangingName="UnitAllOccupiedRowChanging" msprop:Generator_RowEvHandlerName="UnitAllOccupiedRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitAllOccupiedRowDeleted" msprop:Generator_UserTableName="UnitAllOccupied" msprop:Generator_RowChangedName="UnitAllOccupiedRowChanged" msprop:Generator_RowEvArgName="UnitAllOccupiedRowChangeEvent" msprop:Generator_RowClassName="UnitAllOccupiedRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber">
@@ -544,7 +523,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MonthlyAssocPaymentHistory" msprop:Generator_TableClassName="MonthlyAssocPaymentHistoryDataTable" msprop:Generator_TableVarName="tableMonthlyAssocPaymentHistory" msprop:Generator_TablePropName="MonthlyAssocPaymentHistory" msprop:Generator_RowDeletingName="MonthlyAssocPaymentHistoryRowDeleting" msprop:Generator_RowChangingName="MonthlyAssocPaymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="MonthlyAssocPaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="MonthlyAssocPaymentHistoryRowDeleted" msprop:Generator_UserTableName="MonthlyAssocPaymentHistory" msprop:Generator_RowChangedName="MonthlyAssocPaymentHistoryRowChanged" msprop:Generator_RowEvArgName="MonthlyAssocPaymentHistoryRowChangeEvent" msprop:Generator_RowClassName="MonthlyAssocPaymentHistoryRow">
+        <xs:element name="MonthlyAssocPaymentHistory" msprop:Generator_TableClassName="MonthlyAssocPaymentHistoryDataTable" msprop:Generator_TableVarName="tableMonthlyAssocPaymentHistory" msprop:Generator_RowChangedName="MonthlyAssocPaymentHistoryRowChanged" msprop:Generator_TablePropName="MonthlyAssocPaymentHistory" msprop:Generator_RowDeletingName="MonthlyAssocPaymentHistoryRowDeleting" msprop:Generator_RowChangingName="MonthlyAssocPaymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="MonthlyAssocPaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="MonthlyAssocPaymentHistoryRowDeleted" msprop:Generator_RowClassName="MonthlyAssocPaymentHistoryRow" msprop:Generator_UserTableName="MonthlyAssocPaymentHistory" msprop:Generator_RowEvArgName="MonthlyAssocPaymentHistoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
@@ -590,7 +569,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WaterBillingPaymentHistory" msprop:Generator_TableClassName="WaterBillingPaymentHistoryDataTable" msprop:Generator_TableVarName="tableWaterBillingPaymentHistory" msprop:Generator_TablePropName="WaterBillingPaymentHistory" msprop:Generator_RowDeletingName="WaterBillingPaymentHistoryRowDeleting" msprop:Generator_RowChangingName="WaterBillingPaymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="WaterBillingPaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="WaterBillingPaymentHistoryRowDeleted" msprop:Generator_UserTableName="WaterBillingPaymentHistory" msprop:Generator_RowChangedName="WaterBillingPaymentHistoryRowChanged" msprop:Generator_RowEvArgName="WaterBillingPaymentHistoryRowChangeEvent" msprop:Generator_RowClassName="WaterBillingPaymentHistoryRow">
+        <xs:element name="WaterBillingPaymentHistory" msprop:Generator_TableClassName="WaterBillingPaymentHistoryDataTable" msprop:Generator_TableVarName="tableWaterBillingPaymentHistory" msprop:Generator_RowChangedName="WaterBillingPaymentHistoryRowChanged" msprop:Generator_TablePropName="WaterBillingPaymentHistory" msprop:Generator_RowDeletingName="WaterBillingPaymentHistoryRowDeleting" msprop:Generator_RowChangingName="WaterBillingPaymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="WaterBillingPaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="WaterBillingPaymentHistoryRowDeleted" msprop:Generator_RowClassName="WaterBillingPaymentHistoryRow" msprop:Generator_UserTableName="WaterBillingPaymentHistory" msprop:Generator_RowEvArgName="WaterBillingPaymentHistoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
@@ -628,7 +607,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserList" msprop:Generator_TableClassName="UserListDataTable" msprop:Generator_TableVarName="tableUserList" msprop:Generator_RowChangedName="UserListRowChanged" msprop:Generator_TablePropName="UserList" msprop:Generator_RowDeletingName="UserListRowDeleting" msprop:Generator_RowChangingName="UserListRowChanging" msprop:Generator_RowEvHandlerName="UserListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserListRowDeleted" msprop:Generator_RowClassName="UserListRow" msprop:Generator_UserTableName="UserList" msprop:Generator_RowEvArgName="UserListRowChangeEvent">
+        <xs:element name="UserList" msprop:Generator_TableClassName="UserListDataTable" msprop:Generator_TableVarName="tableUserList" msprop:Generator_TablePropName="UserList" msprop:Generator_RowDeletingName="UserListRowDeleting" msprop:Generator_RowChangingName="UserListRowChanging" msprop:Generator_RowEvHandlerName="UserListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserListRowDeleted" msprop:Generator_UserTableName="UserList" msprop:Generator_RowChangedName="UserListRowChanged" msprop:Generator_RowEvArgName="UserListRowChangeEvent" msprop:Generator_RowClassName="UserListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
@@ -763,7 +742,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BillingStatement" msprop:Generator_TableClassName="BillingStatementDataTable" msprop:Generator_TableVarName="tableBillingStatement" msprop:Generator_RowChangedName="BillingStatementRowChanged" msprop:Generator_TablePropName="BillingStatement" msprop:Generator_RowDeletingName="BillingStatementRowDeleting" msprop:Generator_RowChangingName="BillingStatementRowChanging" msprop:Generator_RowEvHandlerName="BillingStatementRowChangeEventHandler" msprop:Generator_RowDeletedName="BillingStatementRowDeleted" msprop:Generator_RowClassName="BillingStatementRow" msprop:Generator_UserTableName="BillingStatement" msprop:Generator_RowEvArgName="BillingStatementRowChangeEvent">
+        <xs:element name="BillingStatement" msprop:Generator_TableClassName="BillingStatementDataTable" msprop:Generator_TableVarName="tableBillingStatement" msprop:Generator_TablePropName="BillingStatement" msprop:Generator_RowDeletingName="BillingStatementRowDeleting" msprop:Generator_RowChangingName="BillingStatementRowChanging" msprop:Generator_RowEvHandlerName="BillingStatementRowChangeEventHandler" msprop:Generator_RowDeletedName="BillingStatementRowDeleted" msprop:Generator_UserTableName="BillingStatement" msprop:Generator_RowChangedName="BillingStatementRowChanged" msprop:Generator_RowEvArgName="BillingStatementRowChangeEvent" msprop:Generator_RowClassName="BillingStatementRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber" minOccurs="0">
@@ -818,71 +797,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Receipt" msprop:Generator_TableClassName="ReceiptDataTable" msprop:Generator_TableVarName="tableReceipt" msprop:Generator_RowChangedName="ReceiptRowChanged" msprop:Generator_TablePropName="Receipt" msprop:Generator_RowDeletingName="ReceiptRowDeleting" msprop:Generator_RowChangingName="ReceiptRowChanging" msprop:Generator_RowEvHandlerName="ReceiptRowChangeEventHandler" msprop:Generator_RowDeletedName="ReceiptRowDeleted" msprop:Generator_RowClassName="ReceiptRow" msprop:Generator_UserTableName="Receipt" msprop:Generator_RowEvArgName="ReceiptRowChangeEvent">
+        <xs:element name="Receipt" msprop:Generator_TableClassName="ReceiptDataTable" msprop:Generator_TableVarName="tableReceipt" msprop:Generator_TablePropName="Receipt" msprop:Generator_RowDeletingName="ReceiptRowDeleting" msprop:Generator_RowChangingName="ReceiptRowChanging" msprop:Generator_RowEvHandlerName="ReceiptRowChangeEventHandler" msprop:Generator_RowDeletedName="ReceiptRowDeleted" msprop:Generator_UserTableName="Receipt" msprop:Generator_RowChangedName="ReceiptRowChanged" msprop:Generator_RowEvArgName="ReceiptRowChangeEvent" msprop:Generator_RowClassName="ReceiptRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
-              <xs:element name="ChargeDate" msprop:Generator_ColumnVarNameInTable="columnChargeDate" msprop:Generator_ColumnPropNameInRow="ChargeDate" msprop:Generator_ColumnPropNameInTable="ChargeDateColumn" msprop:Generator_UserColumnName="ChargeDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TotalPayment" msprop:Generator_ColumnVarNameInTable="columnTotalPayment" msprop:Generator_ColumnPropNameInRow="TotalPayment" msprop:Generator_ColumnPropNameInTable="TotalPaymentColumn" msprop:Generator_UserColumnName="TotalPayment" type="xs:decimal" minOccurs="0" />
-              <xs:element name="MonthlyAssocID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnMonthlyAssocID" msprop:Generator_ColumnPropNameInRow="MonthlyAssocID" msprop:Generator_ColumnPropNameInTable="MonthlyAssocIDColumn" msprop:Generator_UserColumnName="MonthlyAssocID" type="xs:string" minOccurs="0" />
-              <xs:element name="Payable" msprop:Generator_ColumnVarNameInTable="columnPayable" msprop:Generator_ColumnPropNameInRow="Payable" msprop:Generator_ColumnPropNameInTable="PayableColumn" msprop:Generator_UserColumnName="Payable" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:decimal" minOccurs="0" />
-              <xs:element name="UnitNumber" msprop:Generator_ColumnVarNameInTable="columnUnitNumber" msprop:Generator_ColumnPropNameInRow="UnitNumber" msprop:Generator_ColumnPropNameInTable="UnitNumberColumn" msprop:Generator_UserColumnName="UnitNumber" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ReservationID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnReservationID" msprop:Generator_ColumnPropNameInRow="ReservationID" msprop:Generator_ColumnPropNameInTable="ReservationIDColumn" msprop:Generator_UserColumnName="ReservationID" type="xs:string" minOccurs="0" />
-              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID1" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID1" msprop:Generator_ColumnPropNameInRow="ID1" msprop:Generator_ColumnPropNameInTable="ID1Column" msprop:Generator_UserColumnName="ID1" type="xs:string" minOccurs="0" />
-              <xs:element name="UnitNumber1" msprop:Generator_ColumnVarNameInTable="columnUnitNumber1" msprop:Generator_ColumnPropNameInRow="UnitNumber1" msprop:Generator_ColumnPropNameInTable="UnitNumber1Column" msprop:Generator_UserColumnName="UnitNumber1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ChargeDate1" msprop:Generator_ColumnVarNameInTable="columnChargeDate1" msprop:Generator_ColumnPropNameInRow="ChargeDate1" msprop:Generator_ColumnPropNameInTable="ChargeDate1Column" msprop:Generator_UserColumnName="ChargeDate1" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DueDate" msprop:Generator_ColumnVarNameInTable="columnDueDate" msprop:Generator_ColumnPropNameInRow="DueDate" msprop:Generator_ColumnPropNameInTable="DueDateColumn" msprop:Generator_UserColumnName="DueDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="AssociationDue" msprop:Generator_ColumnVarNameInTable="columnAssociationDue" msprop:Generator_ColumnPropNameInRow="AssociationDue" msprop:Generator_ColumnPropNameInTable="AssociationDueColumn" msprop:Generator_UserColumnName="AssociationDue" type="xs:decimal" minOccurs="0" />
               <xs:element name="WaterBillTotalDue" msprop:Generator_ColumnVarNameInTable="columnWaterBillTotalDue" msprop:Generator_ColumnPropNameInRow="WaterBillTotalDue" msprop:Generator_ColumnPropNameInTable="WaterBillTotalDueColumn" msprop:Generator_UserColumnName="WaterBillTotalDue" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Discounts" msprop:Generator_ColumnVarNameInTable="columnDiscounts" msprop:Generator_ColumnPropNameInRow="Discounts" msprop:Generator_ColumnPropNameInTable="DiscountsColumn" msprop:Generator_UserColumnName="Discounts" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Penalty" msprop:Generator_ColumnVarNameInTable="columnPenalty" msprop:Generator_ColumnPropNameInRow="Penalty" msprop:Generator_ColumnPropNameInTable="PenaltyColumn" msprop:Generator_UserColumnName="Penalty" type="xs:decimal" minOccurs="0" />
-              <xs:element name="OtherPenalty" msprop:Generator_ColumnVarNameInTable="columnOtherPenalty" msprop:Generator_ColumnPropNameInRow="OtherPenalty" msprop:Generator_ColumnPropNameInTable="OtherPenaltyColumn" msprop:Generator_UserColumnName="OtherPenalty" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="OtherPenaltyAmount" msprop:Generator_ColumnVarNameInTable="columnOtherPenaltyAmount" msprop:Generator_ColumnPropNameInRow="OtherPenaltyAmount" msprop:Generator_ColumnPropNameInTable="OtherPenaltyAmountColumn" msprop:Generator_UserColumnName="OtherPenaltyAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPayment" msprop:Generator_ColumnVarNameInTable="columnTotalPayment" msprop:Generator_ColumnPropNameInRow="TotalPayment" msprop:Generator_ColumnPropNameInTable="TotalPaymentColumn" msprop:Generator_UserColumnName="TotalPayment" type="xs:decimal" minOccurs="0" />
               <xs:element name="TotalAmount" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_UserColumnName="TotalAmount" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Balance1" msprop:Generator_ColumnVarNameInTable="columnBalance1" msprop:Generator_ColumnPropNameInRow="Balance1" msprop:Generator_ColumnPropNameInTable="Balance1Column" msprop:Generator_UserColumnName="Balance1" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Paid" msprop:Generator_ColumnVarNameInTable="columnPaid" msprop:Generator_ColumnPropNameInRow="Paid" msprop:Generator_ColumnPropNameInTable="PaidColumn" msprop:Generator_UserColumnName="Paid" type="xs:decimal" minOccurs="0" />
-              <xs:element name="WaterCurrentReading" msprop:Generator_ColumnVarNameInTable="columnWaterCurrentReading" msprop:Generator_ColumnPropNameInRow="WaterCurrentReading" msprop:Generator_ColumnPropNameInTable="WaterCurrentReadingColumn" msprop:Generator_UserColumnName="WaterCurrentReading" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="WaterPreviousReading" msprop:Generator_ColumnVarNameInTable="columnWaterPreviousReading" msprop:Generator_ColumnPropNameInRow="WaterPreviousReading" msprop:Generator_ColumnPropNameInTable="WaterPreviousReadingColumn" msprop:Generator_UserColumnName="WaterPreviousReading" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="WaterDate" msprop:Generator_ColumnVarNameInTable="columnWaterDate" msprop:Generator_ColumnPropNameInRow="WaterDate" msprop:Generator_ColumnPropNameInTable="WaterDateColumn" msprop:Generator_UserColumnName="WaterDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -911,11 +833,6 @@
     <xs:unique name="UserList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:UserList" />
       <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="Receipt_Constraint1" msdata:ConstraintName="Constraint1">
-      <xs:selector xpath=".//mstns:Receipt" />
-      <xs:field xpath="mstns:ID" />
-      <xs:field xpath="mstns:ID1" />
     </xs:unique>
   </xs:element>
 </xs:schema>

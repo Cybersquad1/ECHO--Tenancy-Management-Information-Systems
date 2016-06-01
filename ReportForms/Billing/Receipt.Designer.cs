@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.echoDataSet = new Tenancy_Management_Information_Systems.EchoDataSet();
             this.receiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receiptTableAdapter = new Tenancy_Management_Information_Systems.EchoDataSetTableAdapters.ReceiptTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.echoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +40,9 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Receipt";
+            reportDataSource1.Value = this.receiptBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Tenancy_Management_Information_Systems.Reports.OfficialReceipt.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
@@ -55,10 +58,6 @@
             // 
             this.receiptBindingSource.DataMember = "Receipt";
             this.receiptBindingSource.DataSource = this.echoDataSet;
-            // 
-            // receiptTableAdapter
-            // 
-            this.receiptTableAdapter.ClearBeforeFill = true;
             // 
             // Receipt
             // 
@@ -80,6 +79,5 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private EchoDataSet echoDataSet;
         private System.Windows.Forms.BindingSource receiptBindingSource;
-        private EchoDataSetTableAdapters.ReceiptTableAdapter receiptTableAdapter;
     }
 }

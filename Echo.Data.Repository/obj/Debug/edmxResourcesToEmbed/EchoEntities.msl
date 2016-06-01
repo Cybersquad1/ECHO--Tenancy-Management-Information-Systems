@@ -132,32 +132,11 @@
     <FunctionImportMapping FunctionImportName="Receipt" FunctionName="EchoModel.Store.Receipt">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EchoModel.Receipt_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
           <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
-          <ScalarProperty Name="MonthlyAssocID" ColumnName="MonthlyAssocID" />
-          <ScalarProperty Name="Payable" ColumnName="Payable" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
-          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
-          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="ID1" ColumnName="ID1" />
-          <ScalarProperty Name="UnitNumber1" ColumnName="UnitNumber1" />
-          <ScalarProperty Name="ChargeDate1" ColumnName="ChargeDate1" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
           <ScalarProperty Name="AssociationDue" ColumnName="AssociationDue" />
           <ScalarProperty Name="WaterBillTotalDue" ColumnName="WaterBillTotalDue" />
-          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
-          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
-          <ScalarProperty Name="OtherPenalty" ColumnName="OtherPenalty" />
-          <ScalarProperty Name="OtherPenaltyAmount" ColumnName="OtherPenaltyAmount" />
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="Balance1" ColumnName="Balance1" />
-          <ScalarProperty Name="Paid" ColumnName="Paid" />
-          <ScalarProperty Name="WaterCurrentReading" ColumnName="WaterCurrentReading" />
-          <ScalarProperty Name="WaterPreviousReading" ColumnName="WaterPreviousReading" />
-          <ScalarProperty Name="WaterDate" ColumnName="WaterDate" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
