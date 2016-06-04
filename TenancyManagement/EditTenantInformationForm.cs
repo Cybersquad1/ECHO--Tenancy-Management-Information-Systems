@@ -178,7 +178,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 
                 ListViewItem lvi = new ListViewItem(item.ID.ToString()); //ID
 
-                if (item.UnitNumber == "" && item.UnitNumber == null)
+                if (item.UnitNumber != "" && item.UnitNumber != null)
                     lvi.SubItems.Add(item.UnitNumber); //Unit No         
                 else
                     lvi.SubItems.Add("N/A");
