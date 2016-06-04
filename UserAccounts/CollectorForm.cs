@@ -48,6 +48,17 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
             });
         }
 
+        private void Clear()
+        {
+            lstBoxParticulars.Items.Clear();
+
+            cmbBoxUtilityBilling.Text = comboBoxMonths.Text = txtBoxExactNoOfMonths.Text = txtBoxDiscount.Text = 
+                txtBoxBillDate.Text = txtBoxDueDate.Text = txtBoxUnitOwner.Text = txtBoxTenant.Text = txtBoxTenderedAmount.Text =
+                txtBoxChange.Text = "";
+
+            txtBoxTotalAmountDue.Text = "0.00";
+        }
+
         private void GetParticulars()
         {
             lstBoxParticulars.Items.Clear();
@@ -178,6 +189,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Clear();
+
             if (cmbBoxUnitNo.Text != "")
             {
                 EnablePaymentForm(true);

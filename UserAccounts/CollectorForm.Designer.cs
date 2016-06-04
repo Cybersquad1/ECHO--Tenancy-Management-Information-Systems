@@ -141,6 +141,7 @@
             this.comboBoxMonths.Enabled = false;
             this.comboBoxMonths.FormattingEnabled = true;
             this.comboBoxMonths.Items.AddRange(new object[] {
+            "",
             "2-5 mo.",
             "6-11 mo. -- 2.5%",
             "12-17 mo. -- 5.0%",
@@ -426,6 +427,7 @@
             this.cmbBoxUtilityBilling.Enabled = false;
             this.cmbBoxUtilityBilling.FormattingEnabled = true;
             this.cmbBoxUtilityBilling.Items.AddRange(new object[] {
+            "",
             "Monthly Association Dues",
             "Reservation"});
             this.cmbBoxUtilityBilling.Location = new System.Drawing.Point(98, 24);
