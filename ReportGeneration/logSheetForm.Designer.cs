@@ -280,6 +280,7 @@
             this.txtBoxAddQuantity.Name = "txtBoxAddQuantity";
             this.txtBoxAddQuantity.Size = new System.Drawing.Size(231, 20);
             this.txtBoxAddQuantity.TabIndex = 118;
+            this.txtBoxAddQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxAddQuantity_KeyPress);
             // 
             // groupBox2
             // 
@@ -356,6 +357,9 @@
             this.txtBoxModifyQuantity.Name = "txtBoxModifyQuantity";
             this.txtBoxModifyQuantity.Size = new System.Drawing.Size(231, 20);
             this.txtBoxModifyQuantity.TabIndex = 118;
+            this.txtBoxModifyQuantity.TextChanged += new System.EventHandler(this.txtBoxModifyQuantity_TextChanged);
+            this.txtBoxModifyQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxModifyQuantity_KeyPress);
+            this.txtBoxModifyQuantity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxModifyQuantity_KeyUp);
             // 
             // lstViewItem
             // 
@@ -520,6 +524,7 @@
             this.txtBoxPieces.Name = "txtBoxPieces";
             this.txtBoxPieces.Size = new System.Drawing.Size(231, 20);
             this.txtBoxPieces.TabIndex = 5;
+            this.txtBoxPieces.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPieces_KeyPress);
             // 
             // label3
             // 

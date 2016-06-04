@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
 using Echo.Data.Repository;
+using Tenancy_Management_Information_Systems.Utilities;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
@@ -19,6 +20,9 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         LogSheetActivityViewModel logActivityVM;
 
         Guid userID;
+
+        FormUtilities utilities = new FormUtilities();
+
         public logSheetForm(Guid _userID)
         {
             InitializeComponent();
@@ -265,6 +269,21 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         {
             string errorMessage = "";
 
+            if (cmbBoxItem.Text == "")
+                errorMessage += "Item is required\n";
+
+            if (txtBoxPieces.Text == "")
+                errorMessage += "Balance/Pieces is required\n";
+
+            if (txtBoxPurpose.Text == "")
+                errorMessage += "Purpose is required\n";
+
+            if (txtBoxArea.Text == "")
+                errorMessage += "Area is required\n";
+
+            if (txtBoxReceivedBy.Text == "")
+                errorMessage += "Received by is required\n";
+
             if (errorMessage == "")
             {
                 DialogResult result = MessageBox.Show("Proceed on saving Log Sheet? [Y/N]", "Confirmation", MessageBoxButtons.YesNo);
@@ -312,6 +331,31 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void btnLogClear_Click(object sender, EventArgs e)
         {
             Clear("ACTIVITY");
+        }
+
+        private void txtBoxModifyQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxModifyQuantity_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtBoxModifyQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxAddQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utilities.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxPieces_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utilities.AllowsNumericOnly(sender, e);
         }
     }
 }
