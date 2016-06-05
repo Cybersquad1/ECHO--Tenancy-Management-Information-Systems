@@ -35,6 +35,8 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                 lvi.SubItems.Add(item.UnitNumber);
 
+                lvi.SubItems.Add(item.Date.ToShortDateString());
+
                 lvi.SubItems.Add(item.ScheduleDate.ToShortDateString());
 
                 lvi.SubItems.Add(item.Time);

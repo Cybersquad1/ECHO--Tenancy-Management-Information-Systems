@@ -75,6 +75,10 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             InitializeComponent();
 
             GetReservations();
+
+            GetUnpaidAccounts();
+
+            GetPaidAccounts();
         }
 
         private void GetUnpaidAccounts(string _unitNo)

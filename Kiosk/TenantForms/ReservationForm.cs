@@ -140,6 +140,8 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
                 if(reservationVM.Save(newReservation))
                 {
                     MessageBox.Show("Successfully reserved " + cmbBoxReservedFacility.Text);
+
+                    btnOkay.Enabled = false;
                 }
                 else
                 {

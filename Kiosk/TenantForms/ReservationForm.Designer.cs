@@ -401,6 +401,7 @@
             // datePickerDate
             // 
             this.datePickerDate.CustomFormat = "mm/dd/yyyy";
+            this.datePickerDate.Enabled = false;
             this.datePickerDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePickerDate.Location = new System.Drawing.Point(670, 46);

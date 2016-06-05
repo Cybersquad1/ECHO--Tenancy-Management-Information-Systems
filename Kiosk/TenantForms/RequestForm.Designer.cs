@@ -99,6 +99,7 @@
             // txtBoxTime
             // 
             this.txtBoxTime.Location = new System.Drawing.Point(700, 283);
+            this.txtBoxTime.MaxLength = 10;
             this.txtBoxTime.Name = "txtBoxTime";
             this.txtBoxTime.Size = new System.Drawing.Size(132, 20);
             this.txtBoxTime.TabIndex = 159;
@@ -106,6 +107,7 @@
             // txtBoxContactNo
             // 
             this.txtBoxContactNo.Location = new System.Drawing.Point(571, 89);
+            this.txtBoxContactNo.MaxLength = 10;
             this.txtBoxContactNo.Name = "txtBoxContactNo";
             this.txtBoxContactNo.Size = new System.Drawing.Size(185, 20);
             this.txtBoxContactNo.TabIndex = 158;
@@ -123,6 +125,7 @@
             // 
             // txtBoxUnitNo
             // 
+            this.txtBoxUnitNo.Enabled = false;
             this.txtBoxUnitNo.Location = new System.Drawing.Point(438, 53);
             this.txtBoxUnitNo.Name = "txtBoxUnitNo";
             this.txtBoxUnitNo.Size = new System.Drawing.Size(135, 20);

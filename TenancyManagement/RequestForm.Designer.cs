@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.listViewRequest = new System.Windows.Forms.ListView();
-            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBoxUnitNo = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -58,26 +58,6 @@
             this.listViewRequest.TabIndex = 10;
             this.listViewRequest.UseCompatibleStateImageBehavior = false;
             this.listViewRequest.View = System.Windows.Forms.View.Details;
-            // 
-            // txtBoxUnitNo
-            // 
-            this.txtBoxUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUnitNo.Location = new System.Drawing.Point(12, 12);
-            this.txtBoxUnitNo.Multiline = true;
-            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
-            this.txtBoxUnitNo.Size = new System.Drawing.Size(118, 21);
-            this.txtBoxUnitNo.TabIndex = 12;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(129, 11);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(24, 23);
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // ID
             // 
@@ -102,12 +82,32 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Time";
-            this.columnHeader4.Width = 65;
+            this.columnHeader4.Width = 66;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Request";
             this.columnHeader5.Width = 474;
+            // 
+            // txtBoxUnitNo
+            // 
+            this.txtBoxUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUnitNo.Location = new System.Drawing.Point(12, 12);
+            this.txtBoxUnitNo.Multiline = true;
+            this.txtBoxUnitNo.Name = "txtBoxUnitNo";
+            this.txtBoxUnitNo.Size = new System.Drawing.Size(118, 21);
+            this.txtBoxUnitNo.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(129, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(24, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label1
             // 

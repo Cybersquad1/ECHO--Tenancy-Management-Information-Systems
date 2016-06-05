@@ -135,6 +135,9 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
             if (txtBoxTime.Text == "")
                 errorMessage += "Preffered time is required\n";
 
+            if (txtBoxRequest1.Text == "")
+                errorMessage += "Service request is required\n";
+
             try
             {
                 DateTime time = DateTime.Parse(txtBoxTime.Text);

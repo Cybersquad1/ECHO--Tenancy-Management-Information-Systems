@@ -110,6 +110,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Clear();
+
             GetParticulars();
         }
 

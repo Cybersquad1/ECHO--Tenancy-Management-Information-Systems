@@ -35,21 +35,16 @@
             this.btnUserCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbBoxPaidYear = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbBoxPaidMonth = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxPaidUnitNo = new System.Windows.Forms.TextBox();
-            this.btnSearchPaid = new System.Windows.Forms.Button();
-            this.listViewPaidAccounts = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbBoxUnpaidYear = new System.Windows.Forms.ComboBox();
+            this.cmbBoxUnpaidMonth = new System.Windows.Forms.ComboBox();
+            this.listViewUnpaid = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxUnpaidUnitNo = new System.Windows.Forms.TextBox();
@@ -110,18 +105,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbBoxReservationMonth = new System.Windows.Forms.ComboBox();
-            this.listViewUnpaid = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmbBoxUnpaidYear = new System.Windows.Forms.ComboBox();
-            this.cmbBoxUnpaidMonth = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbBoxPaidYear = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbBoxPaidMonth = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBoxPaidUnitNo = new System.Windows.Forms.TextBox();
+            this.btnSearchPaid = new System.Windows.Forms.Button();
+            this.listViewPaidAccounts = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.listPnl.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -131,6 +132,7 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listPnl
@@ -148,9 +150,9 @@
             this.groupBox3.Controls.Add(this.btnUserCancel);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox1);
+            this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Location = new System.Drawing.Point(4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(957, 543);
@@ -203,152 +205,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbBoxPaidYear);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cmbBoxPaidMonth);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtBoxPaidUnitNo);
-            this.groupBox1.Controls.Add(this.btnSearchPaid);
-            this.groupBox1.Controls.Add(this.listViewPaidAccounts);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(139, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(812, 513);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Visible = false;
-            // 
-            // cmbBoxPaidYear
-            // 
-            this.cmbBoxPaidYear.FormattingEnabled = true;
-            this.cmbBoxPaidYear.Items.AddRange(new object[] {
-            "2016",
-            "2015",
-            "2014",
-            "2013",
-            "2012",
-            "2011",
-            "2010",
-            "2009",
-            "2008",
-            "2007"});
-            this.cmbBoxPaidYear.Location = new System.Drawing.Point(199, 49);
-            this.cmbBoxPaidYear.Name = "cmbBoxPaidYear";
-            this.cmbBoxPaidYear.Size = new System.Drawing.Size(84, 23);
-            this.cmbBoxPaidYear.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 14);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Year:";
-            // 
-            // cmbBoxPaidMonth
-            // 
-            this.cmbBoxPaidMonth.FormattingEnabled = true;
-            this.cmbBoxPaidMonth.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cmbBoxPaidMonth.Location = new System.Drawing.Point(55, 49);
-            this.cmbBoxPaidMonth.Name = "cmbBoxPaidMonth";
-            this.cmbBoxPaidMonth.Size = new System.Drawing.Size(98, 23);
-            this.cmbBoxPaidMonth.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Month:";
-            // 
-            // txtBoxPaidUnitNo
-            // 
-            this.txtBoxPaidUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPaidUnitNo.Location = new System.Drawing.Point(5, 13);
-            this.txtBoxPaidUnitNo.Multiline = true;
-            this.txtBoxPaidUnitNo.Name = "txtBoxPaidUnitNo";
-            this.txtBoxPaidUnitNo.Size = new System.Drawing.Size(86, 21);
-            this.txtBoxPaidUnitNo.TabIndex = 3;
-            // 
-            // btnSearchPaid
-            // 
-            this.btnSearchPaid.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.btnSearchPaid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchPaid.Location = new System.Drawing.Point(89, 12);
-            this.btnSearchPaid.Name = "btnSearchPaid";
-            this.btnSearchPaid.Size = new System.Drawing.Size(24, 23);
-            this.btnSearchPaid.TabIndex = 2;
-            this.btnSearchPaid.UseVisualStyleBackColor = true;
-            this.btnSearchPaid.Click += new System.EventHandler(this.btnSearchPaid_Click);
-            // 
-            // listViewPaidAccounts
-            // 
-            this.listViewPaidAccounts.BackColor = System.Drawing.Color.LightGreen;
-            this.listViewPaidAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader6});
-            this.listViewPaidAccounts.FullRowSelect = true;
-            this.listViewPaidAccounts.GridLines = true;
-            this.listViewPaidAccounts.Location = new System.Drawing.Point(0, 100);
-            this.listViewPaidAccounts.Name = "listViewPaidAccounts";
-            this.listViewPaidAccounts.Size = new System.Drawing.Size(806, 441);
-            this.listViewPaidAccounts.TabIndex = 0;
-            this.listViewPaidAccounts.UseCompatibleStateImageBehavior = false;
-            this.listViewPaidAccounts.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID";
-            this.columnHeader5.Width = 0;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Unit Number";
-            this.columnHeader1.Width = 133;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Unit Owner";
-            this.columnHeader2.Width = 186;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tenant";
-            this.columnHeader3.Width = 208;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tenant Charge Date";
-            this.columnHeader4.Width = 149;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Total Amount Due";
-            this.columnHeader6.Width = 123;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -367,6 +223,95 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Visible = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // cmbBoxUnpaidYear
+            // 
+            this.cmbBoxUnpaidYear.FormattingEnabled = true;
+            this.cmbBoxUnpaidYear.Items.AddRange(new object[] {
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008",
+            "2007"});
+            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(199, 45);
+            this.cmbBoxUnpaidYear.Name = "cmbBoxUnpaidYear";
+            this.cmbBoxUnpaidYear.Size = new System.Drawing.Size(84, 23);
+            this.cmbBoxUnpaidYear.TabIndex = 11;
+            // 
+            // cmbBoxUnpaidMonth
+            // 
+            this.cmbBoxUnpaidMonth.FormattingEnabled = true;
+            this.cmbBoxUnpaidMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(55, 45);
+            this.cmbBoxUnpaidMonth.Name = "cmbBoxUnpaidMonth";
+            this.cmbBoxUnpaidMonth.Size = new System.Drawing.Size(98, 23);
+            this.cmbBoxUnpaidMonth.TabIndex = 10;
+            // 
+            // listViewUnpaid
+            // 
+            this.listViewUnpaid.BackColor = System.Drawing.Color.Tomato;
+            this.listViewUnpaid.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.listViewUnpaid.FullRowSelect = true;
+            this.listViewUnpaid.GridLines = true;
+            this.listViewUnpaid.Location = new System.Drawing.Point(5, 76);
+            this.listViewUnpaid.Name = "listViewUnpaid";
+            this.listViewUnpaid.Size = new System.Drawing.Size(806, 441);
+            this.listViewUnpaid.TabIndex = 9;
+            this.listViewUnpaid.UseCompatibleStateImageBehavior = false;
+            this.listViewUnpaid.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID";
+            this.columnHeader7.Width = 0;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Unit Number";
+            this.columnHeader8.Width = 133;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Unit Owner";
+            this.columnHeader9.Width = 186;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Tenant";
+            this.columnHeader10.Width = 208;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Tenant Charge Date";
+            this.columnHeader11.Width = 149;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Total Amount Due";
+            this.columnHeader12.Width = 123;
             // 
             // label3
             // 
@@ -411,6 +356,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnSave);
+            this.groupBox4.Controls.Add(this.btnEdit);
             this.groupBox4.Controls.Add(this.tabControl1);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -426,10 +373,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(7, 101);
+            this.tabControl1.Location = new System.Drawing.Point(7, 119);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(798, 406);
+            this.tabControl1.Size = new System.Drawing.Size(798, 388);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -506,7 +453,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(790, 379);
+            this.tabPage2.Size = new System.Drawing.Size(790, 361);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reservation Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -528,13 +475,14 @@
             this.groupBox7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(7, 181);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(777, 169);
+            this.groupBox7.Size = new System.Drawing.Size(777, 146);
             this.groupBox7.TabIndex = 145;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Reservation Details:";
             // 
             // cmbBoxStatus
             // 
+            this.cmbBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxStatus.FormattingEnabled = true;
             this.cmbBoxStatus.Items.AddRange(new object[] {
@@ -545,7 +493,6 @@
             this.cmbBoxStatus.Name = "cmbBoxStatus";
             this.cmbBoxStatus.Size = new System.Drawing.Size(251, 23);
             this.cmbBoxStatus.TabIndex = 148;
-            this.cmbBoxStatus.Text = "Select One";
             // 
             // label11
             // 
@@ -983,59 +930,27 @@
             this.cmbBoxReservationMonth.Size = new System.Drawing.Size(158, 22);
             this.cmbBoxReservationMonth.TabIndex = 6;
             // 
-            // listViewUnpaid
+            // groupBox1
             // 
-            this.listViewUnpaid.BackColor = System.Drawing.Color.Tomato;
-            this.listViewUnpaid.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.listViewUnpaid.FullRowSelect = true;
-            this.listViewUnpaid.GridLines = true;
-            this.listViewUnpaid.Location = new System.Drawing.Point(5, 76);
-            this.listViewUnpaid.Name = "listViewUnpaid";
-            this.listViewUnpaid.Size = new System.Drawing.Size(806, 441);
-            this.listViewUnpaid.TabIndex = 9;
-            this.listViewUnpaid.UseCompatibleStateImageBehavior = false;
-            this.listViewUnpaid.View = System.Windows.Forms.View.Details;
+            this.groupBox1.Controls.Add(this.cmbBoxPaidYear);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cmbBoxPaidMonth);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtBoxPaidUnitNo);
+            this.groupBox1.Controls.Add(this.btnSearchPaid);
+            this.groupBox1.Controls.Add(this.listViewPaidAccounts);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(139, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(812, 513);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
             // 
-            // columnHeader7
+            // cmbBoxPaidYear
             // 
-            this.columnHeader7.Text = "ID";
-            this.columnHeader7.Width = 0;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Unit Number";
-            this.columnHeader8.Width = 133;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Unit Owner";
-            this.columnHeader9.Width = 186;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Tenant";
-            this.columnHeader10.Width = 208;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Tenant Charge Date";
-            this.columnHeader11.Width = 149;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Total Amount Due";
-            this.columnHeader12.Width = 123;
-            // 
-            // cmbBoxUnpaidYear
-            // 
-            this.cmbBoxUnpaidYear.FormattingEnabled = true;
-            this.cmbBoxUnpaidYear.Items.AddRange(new object[] {
+            this.cmbBoxPaidYear.FormattingEnabled = true;
+            this.cmbBoxPaidYear.Items.AddRange(new object[] {
             "2016",
             "2015",
             "2014",
@@ -1046,15 +961,25 @@
             "2009",
             "2008",
             "2007"});
-            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(199, 45);
-            this.cmbBoxUnpaidYear.Name = "cmbBoxUnpaidYear";
-            this.cmbBoxUnpaidYear.Size = new System.Drawing.Size(84, 23);
-            this.cmbBoxUnpaidYear.TabIndex = 11;
+            this.cmbBoxPaidYear.Location = new System.Drawing.Point(199, 49);
+            this.cmbBoxPaidYear.Name = "cmbBoxPaidYear";
+            this.cmbBoxPaidYear.Size = new System.Drawing.Size(84, 23);
+            this.cmbBoxPaidYear.TabIndex = 8;
             // 
-            // cmbBoxUnpaidMonth
+            // label1
             // 
-            this.cmbBoxUnpaidMonth.FormattingEnabled = true;
-            this.cmbBoxUnpaidMonth.Items.AddRange(new object[] {
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(159, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 14);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Year:";
+            // 
+            // cmbBoxPaidMonth
+            // 
+            this.cmbBoxPaidMonth.FormattingEnabled = true;
+            this.cmbBoxPaidMonth.Items.AddRange(new object[] {
             "January",
             "February",
             "March",
@@ -1067,10 +992,112 @@
             "October",
             "November",
             "December"});
-            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(55, 45);
-            this.cmbBoxUnpaidMonth.Name = "cmbBoxUnpaidMonth";
-            this.cmbBoxUnpaidMonth.Size = new System.Drawing.Size(98, 23);
-            this.cmbBoxUnpaidMonth.TabIndex = 10;
+            this.cmbBoxPaidMonth.Location = new System.Drawing.Point(55, 49);
+            this.cmbBoxPaidMonth.Name = "cmbBoxPaidMonth";
+            this.cmbBoxPaidMonth.Size = new System.Drawing.Size(98, 23);
+            this.cmbBoxPaidMonth.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 14);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Month:";
+            // 
+            // txtBoxPaidUnitNo
+            // 
+            this.txtBoxPaidUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPaidUnitNo.Location = new System.Drawing.Point(5, 13);
+            this.txtBoxPaidUnitNo.Multiline = true;
+            this.txtBoxPaidUnitNo.Name = "txtBoxPaidUnitNo";
+            this.txtBoxPaidUnitNo.Size = new System.Drawing.Size(86, 21);
+            this.txtBoxPaidUnitNo.TabIndex = 3;
+            // 
+            // btnSearchPaid
+            // 
+            this.btnSearchPaid.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnSearchPaid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchPaid.Location = new System.Drawing.Point(89, 12);
+            this.btnSearchPaid.Name = "btnSearchPaid";
+            this.btnSearchPaid.Size = new System.Drawing.Size(24, 23);
+            this.btnSearchPaid.TabIndex = 2;
+            this.btnSearchPaid.UseVisualStyleBackColor = true;
+            this.btnSearchPaid.Click += new System.EventHandler(this.btnSearchPaid_Click);
+            // 
+            // listViewPaidAccounts
+            // 
+            this.listViewPaidAccounts.BackColor = System.Drawing.Color.LightGreen;
+            this.listViewPaidAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader6});
+            this.listViewPaidAccounts.FullRowSelect = true;
+            this.listViewPaidAccounts.GridLines = true;
+            this.listViewPaidAccounts.Location = new System.Drawing.Point(0, 100);
+            this.listViewPaidAccounts.Name = "listViewPaidAccounts";
+            this.listViewPaidAccounts.Size = new System.Drawing.Size(806, 441);
+            this.listViewPaidAccounts.TabIndex = 0;
+            this.listViewPaidAccounts.UseCompatibleStateImageBehavior = false;
+            this.listViewPaidAccounts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ID";
+            this.columnHeader5.Width = 0;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Unit Number";
+            this.columnHeader1.Width = 133;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Unit Owner";
+            this.columnHeader2.Width = 186;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tenant";
+            this.columnHeader3.Width = 208;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tenant Charge Date";
+            this.columnHeader4.Width = 149;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Total Amount Due";
+            this.columnHeader6.Width = 123;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(84, 87);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(69, 28);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "    Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(14, 87);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(69, 28);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "       Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // TheListForm
             // 
@@ -1086,8 +1113,6 @@
             this.Text = "TheListForm";
             this.listPnl.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1101,6 +1126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1197,5 +1224,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ComboBox cmbBoxUnpaidYear;
         private System.Windows.Forms.ComboBox cmbBoxUnpaidMonth;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
