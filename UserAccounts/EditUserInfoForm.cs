@@ -285,6 +285,7 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
                     using (var imgStr = new System.IO.MemoryStream())
                     {
                         pictureBoxUser.Image.Save(imgStr, System.Drawing.Imaging.ImageFormat.Jpeg);
+
                         editUser.ImageContent = imgStr.ToArray();
                     }
                 }

@@ -37,7 +37,7 @@
             // 
             // txtBoxNewPassword
             // 
-            this.txtBoxNewPassword.Location = new System.Drawing.Point(125, 12);
+            this.txtBoxNewPassword.Location = new System.Drawing.Point(123, 15);
             this.txtBoxNewPassword.Name = "txtBoxNewPassword";
             this.txtBoxNewPassword.PasswordChar = '*';
             this.txtBoxNewPassword.Size = new System.Drawing.Size(288, 20);
@@ -45,7 +45,7 @@
             // 
             // txtBoxConfirmPassword
             // 
-            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(125, 38);
+            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(123, 41);
             this.txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             this.txtBoxConfirmPassword.PasswordChar = '*';
             this.txtBoxConfirmPassword.Size = new System.Drawing.Size(288, 20);
@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(10, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 2;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Location = new System.Drawing.Point(10, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(180, 65);
+            this.btnChangePassword.Location = new System.Drawing.Point(178, 68);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(88, 23);
             this.btnChangePassword.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 100);
+            this.ClientSize = new System.Drawing.Size(423, 99);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

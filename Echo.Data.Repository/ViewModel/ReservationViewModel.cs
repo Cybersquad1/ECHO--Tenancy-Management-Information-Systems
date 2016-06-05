@@ -8,6 +8,24 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class ReservationViewModel : ViewModelBase<Reservation>
     {
+        public bool Edit(Reservation _reservation)
+        { 
+            try
+            {
+                var reservation = GetEntity(r => r.ID == _reservation.ID);
+
+                reservation.Status = _reservation.Status;
+
+                Update(reservation);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public List<Reservation> GetAllPaid()
         {
             return Find(r => r.Paid >= r.Amount);

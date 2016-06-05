@@ -33,7 +33,6 @@ namespace Echo.Data.Repository
         public virtual DbSet<PaymentHistory> PaymentHistory { get; set; }
         public virtual DbSet<Request> Request { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TenantArchive> TenantArchive { get; set; }
         public virtual DbSet<TenantProfile> TenantProfile { get; set; }
         public virtual DbSet<UnitProfile> UnitProfile { get; set; }

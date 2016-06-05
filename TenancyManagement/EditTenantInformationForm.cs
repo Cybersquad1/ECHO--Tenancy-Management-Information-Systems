@@ -68,6 +68,17 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                     txtBoxEmail.Text = tenant.Email;
 
+                    if(tenant.ImageLocation != null)
+                    {
+                            Stream imgStr = new MemoryStream(tenant.ImageLocation);
+
+                            pictureBox.Image = System.Drawing.Image.FromStream(imgStr);
+                    }
+                    else
+                    {
+                        pictureBox.Image = null;
+                    }
+
                     //Unit Information
                     if (tenant.UnitNumber == "" || tenant.UnitNumber == null)
                     {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Echo.Data.Repository.ViewModel;
+using Echo.Data.Repository;
 
 namespace Tenancy_Management_Information_Systems.ReportGeneration
 {
@@ -19,7 +20,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             public string UnitNo { get; set; }
 
-            private string _owner;
+            private string _owner;           
 
             public string UnitOwner
             {
@@ -80,6 +81,9 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             GetPaidAccounts();
         }
+
+        Reservation reservation;
+
 
         private void GetUnpaidAccounts(string _unitNo)
         {
@@ -314,11 +318,53 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             });
         }
 
+        private int ConvertMonth(string _month)
+        {
+            if (_month == "January")
+                return 1;
+            else if (_month == "February")
+                return 2;
+            else if (_month == "March")
+                return 3;
+            else if (_month == "April")
+                return 4;
+            else if (_month == "May")
+                return 5;
+            else if (_month == "June")
+                return 6;
+            else if (_month == "July")
+                return 7;
+            else if (_month == "August")
+                return 8;
+            else if (_month == "September")
+                return 9;
+            else if (_month == "October")
+                return 10;
+            else if (_month == "November")
+                return 11;
+            else if (_month == "December")
+                return 12;
+            else
+                return 0;
+        }
+
         private void GetReservations()
         {
             listViewReservation.Items.Clear();
 
             var reservation = new ReservationViewModel().GetAll();
+
+            if (txtBoxReservationSearch.Text != "")
+                reservation = reservation.Where(r => r.UnitNumber == txtBoxReservationSearch.Text).ToList();
+
+            if (cmbBoxReservationMonth.Text != "")
+                reservation = reservation.Where(r => r.DateOfFuntion.Month == ConvertMonth(cmbBoxReservationMonth.Text)).ToList();
+
+            if (cmbBoxReservationYear.Text != "")
+                reservation = reservation.Where(r => r.DateOfFuntion.Year == int.Parse(cmbBoxReservationYear.Text)).ToList();
+
+            if (cmbBoxReservationStatus.Text != "")
+                reservation = reservation.Where(r => r.Status == cmbBoxReservationStatus.Text).ToList();
 
             reservation.ForEach(item =>
             {
@@ -386,7 +432,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void GetSelectedReservation(Guid _reservationID)
         {
-            var reservation = new ReservationViewModel().GetSelected(_reservationID);
+            reservation = new ReservationViewModel().GetSelected(_reservationID);
 
             if(reservation != null)
             {
@@ -433,13 +479,13 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 //Reservation information
                 txtBoxDateOfEvent.Text = reservation.DateOfFuntion.ToShortDateString();
 
-                txtBoxEventName.Text = "N/A";
-
                 txtBoxPurpose.Text = reservation.Purpose;
 
                 txtBoxNumberOfGuest.Text = reservation.NoOfGuest;
 
-                cmbBoxReservationFacility.Text = reservation.Facility;
+                txtBoxFacility.Text = reservation.Facility;
+
+                cmbBoxStatus.Text = reservation.Status;
             }
         }
 
@@ -505,6 +551,47 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void btnUnpaidSearch_Click(object sender, EventArgs e)
         {
             GetUnpaidAccounts();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (reservation != null)
+            {
+                cmbBoxStatus.Enabled = true;
+
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (cmbBoxStatus.Text != "")
+            {
+                if (reservation != null)
+                {
+                    var reservationVM = new ReservationViewModel();
+
+                    reservation.Status = cmbBoxStatus.Text;
+
+                    if (reservationVM.Edit(reservation))
+                    {
+                        MessageBox.Show("Successfully updated");
+
+                        cmbBoxStatus.Enabled = false;
+
+                        btnSave.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Cannot update reservation there was some kind of error", "Error");
+                }
+            }
+            else
+                MessageBox.Show("Status is required", "Error");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetReservations();
         }
     }
 }

@@ -30,31 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuPnl = new System.Windows.Forms.Panel();
-            this.RequestButton = new System.Windows.Forms.Button();
-            this.ReservationButton = new System.Windows.Forms.Button();
-            this.PHistoryButton = new System.Windows.Forms.Button();
             this.lblUnitNo = new System.Windows.Forms.Label();
-            this.AssocDuesButton = new System.Windows.Forms.Button();
-            this.ViewTenantProfButton = new System.Windows.Forms.Button();
             this.lblTenantName = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.RequestButton = new System.Windows.Forms.Button();
+            this.ReservationButton = new System.Windows.Forms.Button();
+            this.PHistoryButton = new System.Windows.Forms.Button();
+            this.AssocDuesButton = new System.Windows.Forms.Button();
+            this.ViewTenantProfButton = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBoxChangePassword = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.menuPnl.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChangePassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPnl
@@ -71,6 +73,81 @@
             this.menuPnl.Name = "menuPnl";
             this.menuPnl.Size = new System.Drawing.Size(175, 571);
             this.menuPnl.TabIndex = 64;
+            // 
+            // lblUnitNo
+            // 
+            this.lblUnitNo.AutoSize = true;
+            this.lblUnitNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnitNo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblUnitNo.Location = new System.Drawing.Point(28, 11);
+            this.lblUnitNo.Name = "lblUnitNo";
+            this.lblUnitNo.Size = new System.Drawing.Size(58, 24);
+            this.lblUnitNo.TabIndex = 65;
+            this.lblUnitNo.Text = "2001";
+            // 
+            // lblTenantName
+            // 
+            this.lblTenantName.AutoSize = true;
+            this.lblTenantName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenantName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenantName.ForeColor = System.Drawing.Color.White;
+            this.lblTenantName.Location = new System.Drawing.Point(12, 9);
+            this.lblTenantName.Name = "lblTenantName";
+            this.lblTenantName.Size = new System.Drawing.Size(117, 16);
+            this.lblTenantName.TabIndex = 67;
+            this.lblTenantName.Text = "Ariel Manglanlan";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(1133, 9);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(82, 16);
+            this.lblTime.TabIndex = 70;
+            this.lblTime.Text = "10:45:31 PM";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.pictureBoxChangePassword);
+            this.panel1.Controls.Add(this.lblTime);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.lblTenantName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1350, 34);
+            this.panel1.TabIndex = 71;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 605);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1350, 124);
+            this.panel2.TabIndex = 72;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoScroll = true;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(175, 34);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1175, 571);
+            this.mainPanel.TabIndex = 73;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RequestButton
             // 
@@ -115,18 +192,6 @@
             this.PHistoryButton.UseVisualStyleBackColor = true;
             this.PHistoryButton.Click += new System.EventHandler(this.PHistoryButton_Click);
             // 
-            // lblUnitNo
-            // 
-            this.lblUnitNo.AutoSize = true;
-            this.lblUnitNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblUnitNo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblUnitNo.Location = new System.Drawing.Point(28, 11);
-            this.lblUnitNo.Name = "lblUnitNo";
-            this.lblUnitNo.Size = new System.Drawing.Size(58, 24);
-            this.lblUnitNo.TabIndex = 65;
-            this.lblUnitNo.Text = "2001";
-            // 
             // AssocDuesButton
             // 
             this.AssocDuesButton.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,81 +217,6 @@
             this.ViewTenantProfButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ViewTenantProfButton.UseVisualStyleBackColor = true;
             this.ViewTenantProfButton.Click += new System.EventHandler(this.ViewTenantProfButton_Click);
-            // 
-            // lblTenantName
-            // 
-            this.lblTenantName.AutoSize = true;
-            this.lblTenantName.BackColor = System.Drawing.Color.Transparent;
-            this.lblTenantName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenantName.ForeColor = System.Drawing.Color.White;
-            this.lblTenantName.Location = new System.Drawing.Point(12, 9);
-            this.lblTenantName.Name = "lblTenantName";
-            this.lblTenantName.Size = new System.Drawing.Size(117, 16);
-            this.lblTenantName.TabIndex = 67;
-            this.lblTenantName.Text = "Ariel Manglanlan";
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(1174, 9);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(82, 16);
-            this.lblTime.TabIndex = 70;
-            this.lblTime.Text = "10:45:31 PM";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.lblTime);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.lblTenantName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 34);
-            this.panel1.TabIndex = 71;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.lilogout;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(1303, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(35, 32);
-            this.pictureBox5.TabIndex = 69;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.homebut;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(1262, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 32);
-            this.pictureBox4.TabIndex = 68;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 605);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1350, 124);
-            this.panel2.TabIndex = 72;
             // 
             // pictureBox6
             // 
@@ -260,18 +250,44 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // mainPanel
+            // pictureBoxChangePassword
             // 
-            this.mainPanel.AutoScroll = true;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(175, 34);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1175, 571);
-            this.mainPanel.TabIndex = 73;
+            this.pictureBoxChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxChangePassword.BackColor = System.Drawing.Color.White;
+            this.pictureBoxChangePassword.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.Security_Password_2_icon;
+            this.pictureBoxChangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxChangePassword.Location = new System.Drawing.Point(1221, 0);
+            this.pictureBoxChangePassword.Name = "pictureBoxChangePassword";
+            this.pictureBoxChangePassword.Size = new System.Drawing.Size(35, 32);
+            this.pictureBoxChangePassword.TabIndex = 71;
+            this.pictureBoxChangePassword.TabStop = false;
+            this.pictureBoxChangePassword.Click += new System.EventHandler(this.pictureBoxChangePassword_Click);
             // 
-            // timer1
+            // pictureBox5
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.lilogout;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(1303, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox5.TabIndex = 69;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.BackgroundImage = global::Tenancy_Management_Information_Systems.Properties.Resources.homebut;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(1262, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox4.TabIndex = 68;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // HomeTenantForm
             // 
@@ -294,12 +310,13 @@
             this.menuPnl.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChangePassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +341,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBoxChangePassword;
     }
 }

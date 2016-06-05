@@ -103,9 +103,6 @@
     <Compile Include="Reservation.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>EchoEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="TenancyDatabaseByOccupancyYear_Result.cs">
       <DependentUpon>EchoEntities.tt</DependentUpon>
     </Compile>

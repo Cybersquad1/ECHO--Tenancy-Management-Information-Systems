@@ -35,21 +35,9 @@
             this.btnUserCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbBoxUnpaidYear = new System.Windows.Forms.ComboBox();
-            this.cmbBoxUnpaidMonth = new System.Windows.Forms.ComboBox();
-            this.listViewUnpaid = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxUnpaidUnitNo = new System.Windows.Forms.TextBox();
-            this.btnUnpaidSearch = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewReservation = new System.Windows.Forms.ListView();
@@ -62,17 +50,15 @@
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtBoxFacility = new System.Windows.Forms.TextBox();
             this.cmbBoxStatus = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmbBoxReservedFacility = new System.Windows.Forms.ComboBox();
             this.txtBoxNumberOfGuest = new System.Windows.Forms.TextBox();
             this.txtBoxPurpose = new System.Windows.Forms.TextBox();
-            this.txtBoxEventName = new System.Windows.Forms.TextBox();
             this.txtBoxDateOfEvent = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
@@ -96,12 +82,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmbBoxReservationFacility = new System.Windows.Forms.ComboBox();
             this.cmbBoxReservationStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxReservationSearch = new System.Windows.Forms.TextBox();
             this.cmbBoxReservationYear = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbBoxReservationMonth = new System.Windows.Forms.ComboBox();
@@ -119,11 +104,24 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbBoxUnpaidYear = new System.Windows.Forms.ComboBox();
+            this.cmbBoxUnpaidMonth = new System.Windows.Forms.ComboBox();
+            this.listViewUnpaid = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBoxUnpaidUnitNo = new System.Windows.Forms.TextBox();
+            this.btnUnpaidSearch = new System.Windows.Forms.Button();
+            this.cmbBoxReservedFacility = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.listPnl.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listPnl
@@ -205,155 +204,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.cmbBoxUnpaidYear);
-            this.groupBox2.Controls.Add(this.cmbBoxUnpaidMonth);
-            this.groupBox2.Controls.Add(this.listViewUnpaid);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtBoxUnpaidUnitNo);
-            this.groupBox2.Controls.Add(this.btnUnpaidSearch);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(139, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(812, 541);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Visible = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // cmbBoxUnpaidYear
-            // 
-            this.cmbBoxUnpaidYear.FormattingEnabled = true;
-            this.cmbBoxUnpaidYear.Items.AddRange(new object[] {
-            "2016",
-            "2015",
-            "2014",
-            "2013",
-            "2012",
-            "2011",
-            "2010",
-            "2009",
-            "2008",
-            "2007"});
-            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(199, 45);
-            this.cmbBoxUnpaidYear.Name = "cmbBoxUnpaidYear";
-            this.cmbBoxUnpaidYear.Size = new System.Drawing.Size(84, 23);
-            this.cmbBoxUnpaidYear.TabIndex = 11;
-            // 
-            // cmbBoxUnpaidMonth
-            // 
-            this.cmbBoxUnpaidMonth.FormattingEnabled = true;
-            this.cmbBoxUnpaidMonth.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(55, 45);
-            this.cmbBoxUnpaidMonth.Name = "cmbBoxUnpaidMonth";
-            this.cmbBoxUnpaidMonth.Size = new System.Drawing.Size(98, 23);
-            this.cmbBoxUnpaidMonth.TabIndex = 10;
-            // 
-            // listViewUnpaid
-            // 
-            this.listViewUnpaid.BackColor = System.Drawing.Color.Tomato;
-            this.listViewUnpaid.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.listViewUnpaid.FullRowSelect = true;
-            this.listViewUnpaid.GridLines = true;
-            this.listViewUnpaid.Location = new System.Drawing.Point(5, 76);
-            this.listViewUnpaid.Name = "listViewUnpaid";
-            this.listViewUnpaid.Size = new System.Drawing.Size(806, 441);
-            this.listViewUnpaid.TabIndex = 9;
-            this.listViewUnpaid.UseCompatibleStateImageBehavior = false;
-            this.listViewUnpaid.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "ID";
-            this.columnHeader7.Width = 0;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Unit Number";
-            this.columnHeader8.Width = 133;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Unit Owner";
-            this.columnHeader9.Width = 186;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Tenant";
-            this.columnHeader10.Width = 208;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Tenant Charge Date";
-            this.columnHeader11.Width = 149;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Total Amount Due";
-            this.columnHeader12.Width = 123;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 14);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Year:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 14);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Month:";
-            // 
-            // txtBoxUnpaidUnitNo
-            // 
-            this.txtBoxUnpaidUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUnpaidUnitNo.Location = new System.Drawing.Point(5, 13);
-            this.txtBoxUnpaidUnitNo.Multiline = true;
-            this.txtBoxUnpaidUnitNo.Name = "txtBoxUnpaidUnitNo";
-            this.txtBoxUnpaidUnitNo.Size = new System.Drawing.Size(86, 21);
-            this.txtBoxUnpaidUnitNo.TabIndex = 3;
-            this.txtBoxUnpaidUnitNo.Text = "Unit Number";
-            // 
-            // btnUnpaidSearch
-            // 
-            this.btnUnpaidSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.btnUnpaidSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnpaidSearch.Location = new System.Drawing.Point(89, 12);
-            this.btnUnpaidSearch.Name = "btnUnpaidSearch";
-            this.btnUnpaidSearch.Size = new System.Drawing.Size(24, 23);
-            this.btnUnpaidSearch.TabIndex = 2;
-            this.btnUnpaidSearch.UseVisualStyleBackColor = true;
-            this.btnUnpaidSearch.Click += new System.EventHandler(this.btnUnpaidSearch_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSave);
@@ -368,15 +218,40 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Visible = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(84, 90);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(69, 28);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "    Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(14, 90);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(69, 28);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "       Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(7, 119);
+            this.tabControl1.Location = new System.Drawing.Point(7, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(798, 388);
+            this.tabControl1.Size = new System.Drawing.Size(798, 383);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -385,7 +260,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(790, 379);
+            this.tabPage1.Size = new System.Drawing.Size(790, 356);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Reservations";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -453,24 +328,22 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(790, 361);
+            this.tabPage2.Size = new System.Drawing.Size(790, 356);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reservation Details";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.txtBoxFacility);
             this.groupBox7.Controls.Add(this.cmbBoxStatus);
             this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Controls.Add(this.cmbBoxReservedFacility);
             this.groupBox7.Controls.Add(this.txtBoxNumberOfGuest);
             this.groupBox7.Controls.Add(this.txtBoxPurpose);
-            this.groupBox7.Controls.Add(this.txtBoxEventName);
             this.groupBox7.Controls.Add(this.txtBoxDateOfEvent);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.label23);
             this.groupBox7.Controls.Add(this.label24);
             this.groupBox7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(7, 181);
@@ -480,16 +353,26 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Reservation Details:";
             // 
+            // txtBoxFacility
+            // 
+            this.txtBoxFacility.BackColor = System.Drawing.Color.White;
+            this.txtBoxFacility.Enabled = false;
+            this.txtBoxFacility.Location = new System.Drawing.Point(143, 101);
+            this.txtBoxFacility.Name = "txtBoxFacility";
+            this.txtBoxFacility.Size = new System.Drawing.Size(251, 20);
+            this.txtBoxFacility.TabIndex = 149;
+            // 
             // cmbBoxStatus
             // 
             this.cmbBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxStatus.Enabled = false;
             this.cmbBoxStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxStatus.FormattingEnabled = true;
             this.cmbBoxStatus.Items.AddRange(new object[] {
             "To Start",
             "On-going",
             "Completed"});
-            this.cmbBoxStatus.Location = new System.Drawing.Point(488, 21);
+            this.cmbBoxStatus.Location = new System.Drawing.Point(492, 18);
             this.cmbBoxStatus.Name = "cmbBoxStatus";
             this.cmbBoxStatus.Size = new System.Drawing.Size(251, 23);
             this.cmbBoxStatus.TabIndex = 148;
@@ -505,23 +388,11 @@
             this.label11.TabIndex = 147;
             this.label11.Text = "Status:";
             // 
-            // cmbBoxReservedFacility
-            // 
-            this.cmbBoxReservedFacility.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoxReservedFacility.FormattingEnabled = true;
-            this.cmbBoxReservedFacility.Items.AddRange(new object[] {
-            "Function Room",
-            "Viewing Deck Area"});
-            this.cmbBoxReservedFacility.Location = new System.Drawing.Point(143, 113);
-            this.cmbBoxReservedFacility.Name = "cmbBoxReservedFacility";
-            this.cmbBoxReservedFacility.Size = new System.Drawing.Size(251, 23);
-            this.cmbBoxReservedFacility.TabIndex = 146;
-            this.cmbBoxReservedFacility.Text = "Select One";
-            // 
             // txtBoxNumberOfGuest
             // 
             this.txtBoxNumberOfGuest.BackColor = System.Drawing.Color.White;
-            this.txtBoxNumberOfGuest.Location = new System.Drawing.Point(143, 91);
+            this.txtBoxNumberOfGuest.Enabled = false;
+            this.txtBoxNumberOfGuest.Location = new System.Drawing.Point(143, 74);
             this.txtBoxNumberOfGuest.Name = "txtBoxNumberOfGuest";
             this.txtBoxNumberOfGuest.Size = new System.Drawing.Size(251, 20);
             this.txtBoxNumberOfGuest.TabIndex = 132;
@@ -529,22 +400,16 @@
             // txtBoxPurpose
             // 
             this.txtBoxPurpose.BackColor = System.Drawing.Color.White;
-            this.txtBoxPurpose.Location = new System.Drawing.Point(143, 68);
+            this.txtBoxPurpose.Enabled = false;
+            this.txtBoxPurpose.Location = new System.Drawing.Point(143, 51);
             this.txtBoxPurpose.Name = "txtBoxPurpose";
             this.txtBoxPurpose.Size = new System.Drawing.Size(251, 20);
             this.txtBoxPurpose.TabIndex = 129;
             // 
-            // txtBoxEventName
-            // 
-            this.txtBoxEventName.BackColor = System.Drawing.Color.White;
-            this.txtBoxEventName.Location = new System.Drawing.Point(143, 46);
-            this.txtBoxEventName.Name = "txtBoxEventName";
-            this.txtBoxEventName.Size = new System.Drawing.Size(251, 20);
-            this.txtBoxEventName.TabIndex = 128;
-            // 
             // txtBoxDateOfEvent
             // 
             this.txtBoxDateOfEvent.BackColor = System.Drawing.Color.White;
+            this.txtBoxDateOfEvent.Enabled = false;
             this.txtBoxDateOfEvent.Location = new System.Drawing.Point(143, 24);
             this.txtBoxDateOfEvent.Name = "txtBoxDateOfEvent";
             this.txtBoxDateOfEvent.Size = new System.Drawing.Size(251, 20);
@@ -555,7 +420,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label19.Location = new System.Drawing.Point(27, 118);
+            this.label19.Location = new System.Drawing.Point(27, 101);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(103, 14);
             this.label19.TabIndex = 106;
@@ -566,7 +431,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label20.Location = new System.Drawing.Point(27, 94);
+            this.label20.Location = new System.Drawing.Point(27, 77);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(111, 14);
             this.label20.TabIndex = 105;
@@ -577,22 +442,11 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label21.Location = new System.Drawing.Point(27, 71);
+            this.label21.Location = new System.Drawing.Point(27, 54);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(57, 14);
             this.label21.TabIndex = 92;
             this.label21.Text = "Purpose:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label23.Location = new System.Drawing.Point(27, 49);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(74, 14);
-            this.label23.TabIndex = 91;
-            this.label23.Text = "Event Name:";
             // 
             // label24
             // 
@@ -638,6 +492,7 @@
             // txtBoxEmail
             // 
             this.txtBoxEmail.BackColor = System.Drawing.Color.White;
+            this.txtBoxEmail.Enabled = false;
             this.txtBoxEmail.Location = new System.Drawing.Point(542, 57);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(201, 20);
@@ -646,6 +501,7 @@
             // txtBoxTelNo
             // 
             this.txtBoxTelNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxTelNo.Enabled = false;
             this.txtBoxTelNo.Location = new System.Drawing.Point(542, 35);
             this.txtBoxTelNo.Name = "txtBoxTelNo";
             this.txtBoxTelNo.Size = new System.Drawing.Size(201, 20);
@@ -654,6 +510,7 @@
             // txtBoxMobileNo
             // 
             this.txtBoxMobileNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxMobileNo.Enabled = false;
             this.txtBoxMobileNo.Location = new System.Drawing.Point(542, 13);
             this.txtBoxMobileNo.Name = "txtBoxMobileNo";
             this.txtBoxMobileNo.Size = new System.Drawing.Size(201, 20);
@@ -695,6 +552,7 @@
             // txtBoxNatureOfOccupancy
             // 
             this.txtBoxNatureOfOccupancy.BackColor = System.Drawing.Color.White;
+            this.txtBoxNatureOfOccupancy.Enabled = false;
             this.txtBoxNatureOfOccupancy.Location = new System.Drawing.Point(255, 126);
             this.txtBoxNatureOfOccupancy.Name = "txtBoxNatureOfOccupancy";
             this.txtBoxNatureOfOccupancy.Size = new System.Drawing.Size(139, 20);
@@ -703,6 +561,7 @@
             // txtBoxUnitOwner
             // 
             this.txtBoxUnitOwner.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitOwner.Enabled = false;
             this.txtBoxUnitOwner.Location = new System.Drawing.Point(218, 103);
             this.txtBoxUnitOwner.Name = "txtBoxUnitOwner";
             this.txtBoxUnitOwner.Size = new System.Drawing.Size(176, 20);
@@ -711,6 +570,7 @@
             // txtBoxUnitNo
             // 
             this.txtBoxUnitNo.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnitNo.Enabled = false;
             this.txtBoxUnitNo.Location = new System.Drawing.Point(218, 81);
             this.txtBoxUnitNo.Name = "txtBoxUnitNo";
             this.txtBoxUnitNo.Size = new System.Drawing.Size(176, 20);
@@ -719,6 +579,7 @@
             // txtBoxLastName
             // 
             this.txtBoxLastName.BackColor = System.Drawing.Color.White;
+            this.txtBoxLastName.Enabled = false;
             this.txtBoxLastName.Location = new System.Drawing.Point(218, 58);
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(176, 20);
@@ -727,6 +588,7 @@
             // txtBoxMiddleName
             // 
             this.txtBoxMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtBoxMiddleName.Enabled = false;
             this.txtBoxMiddleName.Location = new System.Drawing.Point(218, 36);
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.Size = new System.Drawing.Size(176, 20);
@@ -735,6 +597,7 @@
             // txtBoxFirstName
             // 
             this.txtBoxFirstName.BackColor = System.Drawing.Color.White;
+            this.txtBoxFirstName.Enabled = false;
             this.txtBoxFirstName.Location = new System.Drawing.Point(218, 14);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(176, 20);
@@ -816,13 +679,14 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.cmbBoxReservedFacility);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.cmbBoxReservationFacility);
             this.groupBox5.Controls.Add(this.cmbBoxReservationStatus);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.txtBoxReservationSearch);
             this.groupBox5.Controls.Add(this.cmbBoxReservationYear);
-            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.btnSearch);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.cmbBoxReservationMonth);
@@ -844,16 +708,9 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Reserved Facility:";
             // 
-            // cmbBoxReservationFacility
-            // 
-            this.cmbBoxReservationFacility.FormattingEnabled = true;
-            this.cmbBoxReservationFacility.Location = new System.Drawing.Point(461, 12);
-            this.cmbBoxReservationFacility.Name = "cmbBoxReservationFacility";
-            this.cmbBoxReservationFacility.Size = new System.Drawing.Size(175, 22);
-            this.cmbBoxReservationFacility.TabIndex = 12;
-            // 
             // cmbBoxReservationStatus
             // 
+            this.cmbBoxReservationStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxReservationStatus.FormattingEnabled = true;
             this.cmbBoxReservationStatus.Items.AddRange(new object[] {
             "To Start",
@@ -861,7 +718,7 @@
             "Completed"});
             this.cmbBoxReservationStatus.Location = new System.Drawing.Point(461, 36);
             this.cmbBoxReservationStatus.Name = "cmbBoxReservationStatus";
-            this.cmbBoxReservationStatus.Size = new System.Drawing.Size(175, 22);
+            this.cmbBoxReservationStatus.Size = new System.Drawing.Size(195, 22);
             this.cmbBoxReservationStatus.TabIndex = 10;
             // 
             // label7
@@ -882,25 +739,34 @@
             this.txtBoxReservationSearch.Name = "txtBoxReservationSearch";
             this.txtBoxReservationSearch.Size = new System.Drawing.Size(86, 21);
             this.txtBoxReservationSearch.TabIndex = 3;
-            this.txtBoxReservationSearch.Text = "Unit Number";
             // 
             // cmbBoxReservationYear
             // 
+            this.cmbBoxReservationYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxReservationYear.FormattingEnabled = true;
+            this.cmbBoxReservationYear.Items.AddRange(new object[] {
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010"});
             this.cmbBoxReservationYear.Location = new System.Drawing.Point(188, 35);
             this.cmbBoxReservationYear.Name = "cmbBoxReservationYear";
             this.cmbBoxReservationYear.Size = new System.Drawing.Size(158, 22);
             this.cmbBoxReservationYear.TabIndex = 8;
             // 
-            // button6
+            // btnSearch
             // 
-            this.button6.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(94, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(24, 23);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(94, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(24, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label5
             // 
@@ -924,7 +790,21 @@
             // 
             // cmbBoxReservationMonth
             // 
+            this.cmbBoxReservationMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxReservationMonth.FormattingEnabled = true;
+            this.cmbBoxReservationMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cmbBoxReservationMonth.Location = new System.Drawing.Point(188, 12);
             this.cmbBoxReservationMonth.Name = "cmbBoxReservationMonth";
             this.cmbBoxReservationMonth.Size = new System.Drawing.Size(158, 22);
@@ -1076,28 +956,177 @@
             this.columnHeader6.Text = "Total Amount Due";
             this.columnHeader6.Width = 123;
             // 
-            // btnSave
+            // groupBox2
             // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(84, 87);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(69, 28);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "    Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.cmbBoxUnpaidYear);
+            this.groupBox2.Controls.Add(this.cmbBoxUnpaidMonth);
+            this.groupBox2.Controls.Add(this.listViewUnpaid);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtBoxUnpaidUnitNo);
+            this.groupBox2.Controls.Add(this.btnUnpaidSearch);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(139, 14);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(812, 541);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Visible = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // btnEdit
+            // cmbBoxUnpaidYear
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(14, 87);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(69, 28);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "       Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.cmbBoxUnpaidYear.FormattingEnabled = true;
+            this.cmbBoxUnpaidYear.Items.AddRange(new object[] {
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008",
+            "2007"});
+            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(199, 45);
+            this.cmbBoxUnpaidYear.Name = "cmbBoxUnpaidYear";
+            this.cmbBoxUnpaidYear.Size = new System.Drawing.Size(84, 23);
+            this.cmbBoxUnpaidYear.TabIndex = 11;
+            // 
+            // cmbBoxUnpaidMonth
+            // 
+            this.cmbBoxUnpaidMonth.FormattingEnabled = true;
+            this.cmbBoxUnpaidMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(55, 45);
+            this.cmbBoxUnpaidMonth.Name = "cmbBoxUnpaidMonth";
+            this.cmbBoxUnpaidMonth.Size = new System.Drawing.Size(98, 23);
+            this.cmbBoxUnpaidMonth.TabIndex = 10;
+            // 
+            // listViewUnpaid
+            // 
+            this.listViewUnpaid.BackColor = System.Drawing.Color.Tomato;
+            this.listViewUnpaid.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.listViewUnpaid.FullRowSelect = true;
+            this.listViewUnpaid.GridLines = true;
+            this.listViewUnpaid.Location = new System.Drawing.Point(5, 76);
+            this.listViewUnpaid.Name = "listViewUnpaid";
+            this.listViewUnpaid.Size = new System.Drawing.Size(806, 441);
+            this.listViewUnpaid.TabIndex = 9;
+            this.listViewUnpaid.UseCompatibleStateImageBehavior = false;
+            this.listViewUnpaid.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID";
+            this.columnHeader7.Width = 0;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Unit Number";
+            this.columnHeader8.Width = 133;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Unit Owner";
+            this.columnHeader9.Width = 186;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Tenant";
+            this.columnHeader10.Width = 208;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Tenant Charge Date";
+            this.columnHeader11.Width = 149;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Total Amount Due";
+            this.columnHeader12.Width = 123;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(159, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 14);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Year:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 14);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Month:";
+            // 
+            // txtBoxUnpaidUnitNo
+            // 
+            this.txtBoxUnpaidUnitNo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUnpaidUnitNo.Location = new System.Drawing.Point(5, 13);
+            this.txtBoxUnpaidUnitNo.Multiline = true;
+            this.txtBoxUnpaidUnitNo.Name = "txtBoxUnpaidUnitNo";
+            this.txtBoxUnpaidUnitNo.Size = new System.Drawing.Size(86, 21);
+            this.txtBoxUnpaidUnitNo.TabIndex = 3;
+            this.txtBoxUnpaidUnitNo.Text = "Unit Number";
+            // 
+            // btnUnpaidSearch
+            // 
+            this.btnUnpaidSearch.Image = global::Tenancy_Management_Information_Systems.Properties.Resources.magnifying_glass34;
+            this.btnUnpaidSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUnpaidSearch.Location = new System.Drawing.Point(89, 12);
+            this.btnUnpaidSearch.Name = "btnUnpaidSearch";
+            this.btnUnpaidSearch.Size = new System.Drawing.Size(24, 23);
+            this.btnUnpaidSearch.TabIndex = 2;
+            this.btnUnpaidSearch.UseVisualStyleBackColor = true;
+            this.btnUnpaidSearch.Click += new System.EventHandler(this.btnUnpaidSearch_Click);
+            // 
+            // cmbBoxReservedFacility
+            // 
+            this.cmbBoxReservedFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxReservedFacility.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxReservedFacility.FormattingEnabled = true;
+            this.cmbBoxReservedFacility.Items.AddRange(new object[] {
+            "Function Room",
+            "Viewing Deck Area"});
+            this.cmbBoxReservedFacility.Location = new System.Drawing.Point(461, 11);
+            this.cmbBoxReservedFacility.Name = "cmbBoxReservedFacility";
+            this.cmbBoxReservedFacility.Size = new System.Drawing.Size(195, 23);
+            this.cmbBoxReservedFacility.TabIndex = 146;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 14);
+            this.label12.TabIndex = 147;
+            this.label12.Text = "Unit Number";
             // 
             // TheListForm
             // 
@@ -1113,8 +1142,6 @@
             this.Text = "TheListForm";
             this.listPnl.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1128,6 +1155,8 @@
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1163,7 +1192,7 @@
         private System.Windows.Forms.ComboBox cmbBoxReservationMonth;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxReservationSearch;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ListView listViewReservation;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader16;
@@ -1177,17 +1206,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbBoxReservationFacility;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox txtBoxNumberOfGuest;
         private System.Windows.Forms.TextBox txtBoxPurpose;
-        private System.Windows.Forms.TextBox txtBoxEventName;
         private System.Windows.Forms.TextBox txtBoxDateOfEvent;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtBoxEmail;
@@ -1211,7 +1236,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbBoxStatus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmbBoxReservedFacility;
         internal System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader5;
@@ -1226,5 +1250,9 @@
         private System.Windows.Forms.ComboBox cmbBoxUnpaidMonth;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtBoxFacility;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbBoxReservedFacility;
+        private System.Windows.Forms.Label label12;
     }
 }

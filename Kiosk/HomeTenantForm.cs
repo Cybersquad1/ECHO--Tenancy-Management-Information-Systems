@@ -31,6 +31,8 @@ namespace Tenancy_Management_Information_Systems.Kiosk
             this.parentForm = parentForm;
 
             timer1.Start();
+
+            CheckIfChangesPassword();
         }
 
         private void CheckIfChangesPassword()
@@ -142,6 +144,12 @@ namespace Tenancy_Management_Information_Systems.Kiosk
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void pictureBoxChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword form = new ChangePassword(tenantID);
+            form.ShowDialog();
         }
     }
 }
