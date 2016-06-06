@@ -27,6 +27,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         Guid paymentID;
 
+        double total = 0;
+
         public CollectorForm(LoginInfo loginInfo)
         {
             InitializeComponent();
@@ -132,6 +134,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                 label12.Visible = false;
                 txtBoxExactNoOfMonths.Visible = false;
                 txtBoxDiscount.Visible = false;
+                comboBoxMonths.Text = "";
+                txtBoxDiscount.Text = "";
             }
         }
 
@@ -250,6 +254,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
                     txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", monthlyAssoc.Balance);
 
+                    total = double.Parse(monthlyAssoc.Balance.ToString());
+
                     type = "ASSOC";
                 }
                 else if (reservation != null)
@@ -263,6 +269,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     txtBoxPenalties.Text = "0.00";
 
                     txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", reservation.Balance);
+
+                    total = double.Parse(reservation.Balance.ToString());
 
                     type = "RESERVATION";
                 }
@@ -300,26 +308,55 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void comboBoxMonths_SelectedIndexChanged(object sender, EventArgs e)
         {                                 
-            if (comboBoxMonths.Text == "2 - 5 mo.")
+
+            if (comboBoxMonths.Text == "2-5 mo.")
             {
                 txtBoxDiscount.Text = "0%";
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+
+                txtBoxDiscounts.Text = "0.00";
             }
-            else if (comboBoxMonths.Text == "6 - 11 mo. -- 2.5 %")
+            else if (comboBoxMonths.Text == "6-11 mo. -- 2.5%")
             {
                 txtBoxDiscount.Text = "2.5%";
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}",total - (total * 0.025));
+
+                txtBoxDiscounts.Text = string.Format("{0:0.00}", total * 0.025);
             }
-            else if(comboBoxMonths.Text == "12 - 17 mo. -- 5.0 %")
+            else if(comboBoxMonths.Text == "12-17 mo. -- 5.0%")
             {
                 txtBoxDiscount.Text = "5%";
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total - (total * 0.05));
+
+                txtBoxDiscounts.Text = string.Format("{0:0.00}", total * 0.05);
             }
-            else if(comboBoxMonths.Text == "18 - 23 mo. -- 8.0 %")
+            else if(comboBoxMonths.Text == "18-23 mo. -- 8.0%")
             {
                 txtBoxDiscount.Text = "8%";
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total - (total * 0.08));
+
+                txtBoxDiscounts.Text = string.Format("{0:0.00}", total * 0.08);
             }
-            else if(comboBoxMonths.Text == "24 mo. & up-- 11.0 %")
+            else if(comboBoxMonths.Text == "24 mo. & up -- 11.0%")
             {
                 txtBoxDiscount.Text = "11%";
+
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total - (total * 0.11));
+
+                txtBoxDiscounts.Text = string.Format("{0:0.00}", total * 0.11);
             }
+            else
+            {
+                txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", total);
+
+                txtBoxDiscounts.Text = "0.00";
+            }
+
+
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -330,6 +367,11 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxBillAmount_TextChanged(object sender, EventArgs e)
         {
 
         }
