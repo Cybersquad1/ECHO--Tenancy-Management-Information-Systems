@@ -149,6 +149,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             var unitNumbers = unitVm.GetAll().OrderBy(r => r.UnitNumber).ToList();
 
+            unitNumbers = unitNumbers.Where(r => r.Tenant != null).ToList();
+
             unitNumbers.ForEach(item =>
             {
                 cmbBoxUnitNo.Items.Add(item.UnitNumber);

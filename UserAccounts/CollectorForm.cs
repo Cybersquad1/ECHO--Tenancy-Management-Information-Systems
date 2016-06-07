@@ -154,42 +154,50 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnUserCreate_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to save?", "Confirmation", MessageBoxButtons.YesNo);
+            string error = "";
 
-            if (result == DialogResult.Yes)
+            if (txtBoxTenderedAmount.Text == "")
+                error += "Tendered Amount is required\n";
+
+            if (error == "")
             {
-                if (type == "ASSOC")
+                DialogResult result = MessageBox.Show("Are you sure you want to save?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
                 {
-                    var assocVM = new MonthlyAssociationDueViewModel();
-
-                    Guid ID = assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text));
-                    if (ID != Guid.Empty)
+                    if (type == "ASSOC")
                     {
-                        MessageBox.Show("Successfully processed payment");
+                        var assocVM = new MonthlyAssociationDueViewModel();
 
-                        btnPreview.Enabled = true;
+                        Guid ID = assocVM.ProcessPayment(selectedID, decimal.Parse(txtBoxTenderedAmount.Text));
+                        if (ID != Guid.Empty)
+                        {
+                            MessageBox.Show("Successfully processed payment");
 
-                        paymentID = ID;
+                            btnPreview.Enabled = true;
+
+                            paymentID = ID;
+                        }
+                        else
+                            MessageBox.Show("Cannot process payment there was some kind of error", "Error");
                     }
                     else
-                        MessageBox.Show("Cannot process payment there was some kind of error", "Error");
-                }
-                else
-                {
-                    var reservationVM = new ReservationViewModel();
-
-                    if (reservationVM.ProcessPaymenet(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
                     {
-                        MessageBox.Show("Successfully processed payment");
+                        var reservationVM = new ReservationViewModel();
 
-                        btnPreview.Enabled = true;
+                        if (reservationVM.ProcessPaymenet(selectedID, decimal.Parse(txtBoxTenderedAmount.Text)))
+                        {
+                            MessageBox.Show("Successfully processed payment");
+
+                            btnPreview.Enabled = true;
+                        }
+                        else
+                            MessageBox.Show("Cannot process payment there was some kind of error", "Error");
                     }
-                    else
-                        MessageBox.Show("Cannot process payment there was some kind of error", "Error");
                 }
+
+                GetParticulars();
             }
-
-            GetParticulars();
         }
 
         private void EnablePaymentForm(bool type)
@@ -425,6 +433,11 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         private void txtBoxExactNoOfMonths_KeyUp(object sender, KeyEventArgs e)
         {
             ComputeAdvance();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
         }
     }
 }

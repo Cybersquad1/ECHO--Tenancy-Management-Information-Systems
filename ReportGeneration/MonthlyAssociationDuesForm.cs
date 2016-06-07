@@ -44,13 +44,29 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             GetUnitDropDown();
         }
 
+        private void GetUnsettled()
+        {
+            lstViewUnsettledCharges.Items.Clear();
+
+            var charges = new MonthlyAssociationDueViewModel().GetAllUnpaid().Where(r=>r.UnitNumber ==cmbBoxUnitNo.Text).ToList();
+
+            charges.ForEach(item =>
+            {
+                ListViewItem lvi = new ListViewItem(item.ChargeDate.ToString());
+
+                lvi.SubItems.Add(string.Format("{0:0.00}",item.Balance));
+
+                lstViewUnsettledCharges.Items.Add(lvi);
+            });
+        }
+
         private void GetUnitDropDown()
         {
             cmbBoxUnitNo.Items.Clear();
 
             unitVM = new UnitViewModel(); //refresh database connection
 
-            var units = unitVM.GetAll();
+            var units = unitVM.GetAll().Where(r => r.Tenant != null).ToList();
 
             units.ForEach(item =>
             {
@@ -281,6 +297,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                         MessageBox.Show("Successfully save");
 
                         btnPreview.Enabled = true;
+
+                        GetUnsettled();
                     }
                     else
                     {
@@ -297,6 +315,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         private void cmbBoxUnitNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetUnitInformation(cmbBoxUnitNo.Text);
+
+            GetUnsettled();
         }
 
         private void txtBoxOtherAmount_KeyPress(object sender, KeyPressEventArgs e)

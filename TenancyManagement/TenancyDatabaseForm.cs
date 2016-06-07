@@ -103,7 +103,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             }
         }
 
-        private void GetTenants(string unitNo = "", DateTime? start = null, DateTime? end = null)
+        private void GetTenants(string unitNo = "", int? start = null, int? end = null)
         {
             listViewTenants.Items.Clear(); //Clear data in list view
 
@@ -115,10 +115,10 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 tenants = tenants.Where(r => r.UnitNumber.Contains(unitNo));
 
             if (start != null)
-                tenants = tenants.Where(r => r.StartOfOccupancy == start);
+                tenants = tenants.Where(r => r.StartOfOccupancy != null && DateTime.Parse(r.StartOfOccupancy.ToString()).Year == start);
 
             if (end != null)
-                tenants = tenants.Where(r => r.EndOfOccupancy == end);
+                tenants = tenants.Where(r => r.EndOfOccupancy != null && DateTime.Parse(r.EndOfOccupancy.ToString()).Year == end);
 
             tenants.ToList().ForEach(item =>
             {
@@ -171,36 +171,34 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
             //Search Tenant
             if (txtBoxSearchUnitNo.Text != "" && cmbBoxSearchEnd.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text, DateTime.Parse(cmbBoxSearchStart.Text), DateTime.Parse(cmbBoxSearchEnd.Text));
+                GetTenants(txtBoxSearchUnitNo.Text, int.Parse(cmbBoxSearchStart.Text), int.Parse(cmbBoxSearchEnd.Text));
             }
             else if (txtBoxSearchUnitNo.Text != "" && cmbBoxSearchEnd.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text, null, DateTime.Parse(cmbBoxSearchEnd.Text));
+                GetTenants(txtBoxSearchUnitNo.Text, null, int.Parse(cmbBoxSearchEnd.Text));
             }
-            else if(txtBoxSearchUnitNo.Text != "" && cmbBoxSearchStart.Text != "")
+            else if (txtBoxSearchUnitNo.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants(txtBoxSearchUnitNo.Text, DateTime.Parse(cmbBoxSearchStart.Text), null);
+                GetTenants(txtBoxSearchUnitNo.Text, int.Parse(cmbBoxSearchStart.Text), null);
             }
-            else if(cmbBoxSearchEnd.Text != "" && cmbBoxSearchStart.Text != "")
+            else if (cmbBoxSearchEnd.Text != "" && cmbBoxSearchStart.Text != "")
             {
-                GetTenants("", DateTime.Parse(cmbBoxSearchStart.Text), DateTime.Parse(cmbBoxSearchEnd.Text));
+                GetTenants("", int.Parse(cmbBoxSearchStart.Text), int.Parse(cmbBoxSearchEnd.Text));
             }
-            else if(txtBoxSearchUnitNo.Text != "")
+            else if (txtBoxSearchUnitNo.Text != "")
             {
                 GetTenants("", null, null);
             }
-            else if(cmbBoxSearchStart.Text != "")
+            else if (cmbBoxSearchStart.Text != "")
             {
-                GetTenants("", DateTime.Parse(cmbBoxSearchStart.Text), null);
+                GetTenants("", int.Parse(cmbBoxSearchStart.Text), null);
             }
-            else if(cmbBoxSearchEnd.Text != "")
+            else if (cmbBoxSearchEnd.Text != "")
             {
-                GetTenants("", null, DateTime.Parse(cmbBoxSearchEnd.Text));
+                GetTenants("", null, int.Parse(cmbBoxSearchEnd.Text));
             }
             else
-            {
-                MessageBox.Show("Please enter search filter", "Warning");
-            }
+                GetTenants("", null, null);
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

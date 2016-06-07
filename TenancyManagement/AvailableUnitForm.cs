@@ -43,12 +43,11 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
             if(avail == "Available")
             {
-                units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy 
-                    < DateTime.Now);
+                units = units.Where(r => r.ExpectedEndOfOccupancy == null || r.ExpectedEndOfOccupancy < DateTime.Now);
             }
             else //Occupied
             {
-                units = units.Where(r => r.ExpectedEndOfOccupancy < DateTime.Now);
+                units = units.Where(r => r.ExpectedEndOfOccupancy > DateTime.Now);
             }
 
             if(unitFloor != "")
@@ -143,7 +142,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
 
                 //Tenant
                 if (item.ExpectedEndOfOccupancy == null || 
-                    item.ExpectedEndOfOccupancy > DateTime.Now) //Availability
+                    item.ExpectedEndOfOccupancy < DateTime.Now) //Availability
                 {
                     lvi.SubItems.Add("N/A");
                     lvi.SubItems.Add("");
@@ -222,7 +221,9 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 datePickerEnd.Value = DateTime.Parse(selectedUnit.ExpectedEndOfOccupancy.ToString());
 
             txtBoxFloor.Text = selectedUnit.Floor;
+
             txtBoxType.Text = selectedUnit.Type;
+
             txtBoxNatureOfOccupancy.Text = selectedUnit.NatureOfOccupancy;
 
             if(txtBoxNatureOfOccupancy.Text == "Unit Owner")

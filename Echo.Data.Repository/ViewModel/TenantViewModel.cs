@@ -16,6 +16,8 @@ namespace Echo.Data.Repository.ViewModel
 
                 tenant.Password = _newPassword;
 
+                tenant.ChangePassword = "N";
+
                 Update(tenant);
 
                 return true;
