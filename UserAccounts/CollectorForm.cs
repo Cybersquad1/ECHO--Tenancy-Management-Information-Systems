@@ -27,6 +27,16 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         Guid paymentID;
 
+        double total = 0;
+
+        double totalAmount = 0;
+
+        double totalAssoc = 0;
+
+        double waterBilling = 0;
+
+        double penalty = 0;
+
         public CollectorForm(LoginInfo loginInfo)
         {
             InitializeComponent();
@@ -83,9 +93,10 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
 
                     lstBoxParticulars.Items.Add(lvi);
+
                 });
             }
-            else
+            else if(cmbBoxUtilityBilling.Text == "Reservation")
             {
                 checkBoxAdvancePayment.Visible = false;
 
@@ -102,6 +113,7 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
 
                     lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
 
                     lstBoxParticulars.Items.Add(lvi);
                 });
@@ -251,6 +263,16 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", monthlyAssoc.Balance);
 
                     type = "ASSOC";
+
+                    total = double.Parse(monthlyAssoc.Balance.ToString());
+
+                    totalAmount = double.Parse(monthlyAssoc.AssociationDue.ToString());
+
+                    waterBilling = double.Parse(monthlyAssoc.WaterBillTotalDue.ToString());
+
+                    totalAssoc = double.Parse(monthlyAssoc.AssociationDue.ToString());
+
+                    penalty = double.Parse((monthlyAssoc.Penalty + monthlyAssoc.OtherPenaltyAmount).ToString());
                 }
                 else if (reservation != null)
                 {
@@ -265,6 +287,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", reservation.Balance);
 
                     type = "RESERVATION";
+
+                    total = double.Parse(reservation.Balance.ToString());
                 }
             }
             catch(Exception error)
@@ -299,27 +323,59 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         }
 
         private void comboBoxMonths_SelectedIndexChanged(object sender, EventArgs e)
-        {                                 
-            if (comboBoxMonths.Text == "2 - 5 mo.")
+        {
+            double tempTotal = 0;
+
+            double tempDiscount = 0;
+
+            tempTotal = totalAssoc;
+
+            if (comboBoxMonths.Text == "2-5 mo.")
             {
                 txtBoxDiscount.Text = "0%";
+
+                txtBoxExactNoOfMonths.Text ="2";
             }
-            else if (comboBoxMonths.Text == "6 - 11 mo. -- 2.5 %")
+            else if (comboBoxMonths.Text == "6-11 mo. -- 2.5%")
             {
                 txtBoxDiscount.Text = "2.5%";
+
+                tempDiscount = totalAssoc * 0.025;
+
+                txtBoxExactNoOfMonths.Text = "6";
             }
-            else if(comboBoxMonths.Text == "12 - 17 mo. -- 5.0 %")
+            else if(comboBoxMonths.Text == "12-17 mo. -- 5.0%")
             {
                 txtBoxDiscount.Text = "5%";
+
+                tempDiscount = totalAssoc * 0.05;
+
+                txtBoxExactNoOfMonths.Text = "12";
             }
-            else if(comboBoxMonths.Text == "18 - 23 mo. -- 8.0 %")
+            else if(comboBoxMonths.Text == "18-23 mo. -- 8.0%")
             {
                 txtBoxDiscount.Text = "8%";
+
+                tempDiscount = totalAssoc * 0.08;
+
+                txtBoxExactNoOfMonths.Text = "18";
             }
-            else if(comboBoxMonths.Text == "24 mo. & up-- 11.0 %")
+            else if(comboBoxMonths.Text == "24 mo. & up -- 11.0%")
             {
                 txtBoxDiscount.Text = "11%";
+
+                tempDiscount = totalAssoc * 0.11;
+
+                txtBoxExactNoOfMonths.Text = "24";
             }
+
+            tempTotal = tempTotal - tempDiscount;
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", tempTotal + waterBilling + penalty);
+
+            txtBoxDiscounts.Text = string.Format("{0:0.00}", tempDiscount);
+
+            ComputeAdvance();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -332,6 +388,43 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBoxExactNoOfMonths_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            formUlility.AllowsNumericOnly(sender, e);
+        }
+
+        private void txtBoxExactNoOfMonths_TextChanged(object sender, EventArgs e)
+        {
+            ComputeAdvance();
+        }
+
+        private void ComputeAdvance()
+        {
+            double temp = 0;
+
+            if (txtBoxExactNoOfMonths.Text != "")
+            {
+                totalAssoc = totalAmount * double.Parse(txtBoxExactNoOfMonths.Text);
+            }
+
+            temp += totalAssoc;
+
+            temp += waterBilling;
+
+            txtBoxBillAmount.Text = string.Format("{0:0.00}", temp);
+
+            temp += penalty;
+
+            temp -= double.Parse(txtBoxDiscounts.Text);
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", temp);
+        }
+
+        private void txtBoxExactNoOfMonths_KeyUp(object sender, KeyEventArgs e)
+        {
+            ComputeAdvance();
         }
     }
 }

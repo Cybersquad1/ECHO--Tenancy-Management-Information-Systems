@@ -43,3 +43,14 @@ C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
 C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll.config
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.dll
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\Echo.Data.Repository.pdb
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\WebCam_Capture.dll
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.dll
+C:\Users\Royce\Desktop\MouseWithoutBorders\ECHO--Tenancy-Management-Information-Systems\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\obj\Debug\Echo.Data.Repository.pdb
+C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\Echo.Data.Repository\bin\Debug\WebCam_Capture.dll

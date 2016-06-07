@@ -12,6 +12,7 @@ using Echo.Data.Repository;
 using Echo.Data.Repository.ViewModel;
 using System.Text.RegularExpressions;
 
+
 namespace Tenancy_Management_Information_Systems.User_Accounts
 {
     public partial class CreateNewUserForm : Form
@@ -19,6 +20,10 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
         UserUtilities userUtilities = new UserUtilities();
 
         FormUtilities formUtilities = new FormUtilities();
+
+        private WebCam_Capture.WebCamCapture webCamCapture;
+
+        private WebCam_Capture.WebCamCapture userControl;
 
         public CreateNewUserForm()
         {
@@ -252,7 +257,9 @@ namespace Tenancy_Management_Information_Systems.User_Accounts
 
         private void btnTakePicture_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Webcam photo not yet available", "Error");
+            webCamCapture.TimeToCapture_milliseconds = 10;
+
+           webCamCapture.Start(0);
         }
 
         private void txtBoxContactPerson_KeyPress(object sender, KeyPressEventArgs e)
