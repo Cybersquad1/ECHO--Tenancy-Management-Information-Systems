@@ -110,10 +110,14 @@
             this.txtBoxExactNoOfMonths.BackColor = System.Drawing.Color.White;
             this.txtBoxExactNoOfMonths.Enabled = false;
             this.txtBoxExactNoOfMonths.Location = new System.Drawing.Point(138, 94);
+            this.txtBoxExactNoOfMonths.MaxLength = 2;
             this.txtBoxExactNoOfMonths.Name = "txtBoxExactNoOfMonths";
             this.txtBoxExactNoOfMonths.Size = new System.Drawing.Size(96, 20);
             this.txtBoxExactNoOfMonths.TabIndex = 20;
             this.txtBoxExactNoOfMonths.Visible = false;
+            this.txtBoxExactNoOfMonths.TextChanged += new System.EventHandler(this.txtBoxExactNoOfMonths_TextChanged);
+            this.txtBoxExactNoOfMonths.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxExactNoOfMonths_KeyPress);
+            this.txtBoxExactNoOfMonths.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBoxExactNoOfMonths_KeyUp);
             // 
             // label11
             // 
