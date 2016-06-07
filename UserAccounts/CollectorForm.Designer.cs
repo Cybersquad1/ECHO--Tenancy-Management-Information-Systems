@@ -371,7 +371,6 @@
             this.txtBoxBillAmount.Name = "txtBoxBillAmount";
             this.txtBoxBillAmount.Size = new System.Drawing.Size(244, 20);
             this.txtBoxBillAmount.TabIndex = 106;
-            this.txtBoxBillAmount.TextChanged += new System.EventHandler(this.txtBoxBillAmount_TextChanged);
             // 
             // label81
             // 
