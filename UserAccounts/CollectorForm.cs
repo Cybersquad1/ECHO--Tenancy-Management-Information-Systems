@@ -27,6 +27,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         Guid paymentID;
 
+        double total = 0;
+
         public CollectorForm(LoginInfo loginInfo)
         {
             InitializeComponent();
@@ -82,10 +84,12 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
                     lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
 
+                    total = double.Parse(item.Balance.ToString());
+
                     lstBoxParticulars.Items.Add(lvi);
                 });
             }
-            else
+            else if(cmbBoxUtilityBilling.Text == "Reservation")
             {
                 checkBoxAdvancePayment.Visible = false;
 
@@ -102,6 +106,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     lvi.SubItems.Add(item.DateOfFuntion.AddDays(-3).ToShortDateString());
 
                     lvi.SubItems.Add(string.Format("{0:0.00}", item.Balance));
+
+                    total = double.Parse(item.Balance.ToString());
 
                     lstBoxParticulars.Items.Add(lvi);
                 });
@@ -299,27 +305,47 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
         }
 
         private void comboBoxMonths_SelectedIndexChanged(object sender, EventArgs e)
-        {                                 
-            if (comboBoxMonths.Text == "2 - 5 mo.")
+        {
+            double tempTotal = 0;
+
+            double tempDiscount = 0;
+
+            tempTotal = total;
+
+            if (comboBoxMonths.Text == "2-5 mo.")
             {
                 txtBoxDiscount.Text = "0%";
             }
-            else if (comboBoxMonths.Text == "6 - 11 mo. -- 2.5 %")
+            else if (comboBoxMonths.Text == "6-11 mo. -- 2.5%")
             {
                 txtBoxDiscount.Text = "2.5%";
+
+                tempDiscount = total * 0.025;
             }
-            else if(comboBoxMonths.Text == "12 - 17 mo. -- 5.0 %")
+            else if(comboBoxMonths.Text == "12-17 mo. -- 5.0")
             {
                 txtBoxDiscount.Text = "5%";
+
+                tempDiscount = total * 0.05;
             }
-            else if(comboBoxMonths.Text == "18 - 23 mo. -- 8.0 %")
+            else if(comboBoxMonths.Text == "18-23 mo. -- 8.0%")
             {
                 txtBoxDiscount.Text = "8%";
+
+                tempDiscount = total * 0.08;
             }
-            else if(comboBoxMonths.Text == "24 mo. & up-- 11.0 %")
+            else if(comboBoxMonths.Text == "24 mo. & up -- 11.0%")
             {
                 txtBoxDiscount.Text = "11%";
+
+                tempDiscount = total * 0.11;
             }
+
+            tempTotal = tempTotal - tempDiscount;
+
+            txtBoxTotalAmountDue.Text = string.Format("{0:0.00}", tempTotal);
+
+            txtBoxDiscounts.Text = string.Format("{0:0.00}", tempDiscount);
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
