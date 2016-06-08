@@ -12,6 +12,7 @@ using Echo.Data.Repository;
 using Tenancy_Management_Information_Systems.Utilities;
 using Tenancy_Management_Information_Systems.ReportForms.Billing;
 using Echo.Data.Repository.Models;
+using Tenancy_Management_Information_Systems.TenancyManagement;
 
 namespace Tenancy_Management_Information_Systems.UserAccounts
 {
@@ -437,7 +438,12 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            if (cmbBoxUnitNo.Text != "")
+            {
+                viewUnitNumberForm form = new viewUnitNumberForm(cmbBoxUnitNo.Text);
+
+                form.ShowDialog();
+            }
         }
     }
 }

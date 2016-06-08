@@ -137,7 +137,10 @@ namespace Tenancy_Management_Information_Systems.Kiosk.TenantForms
 
                 newReservation.DateOfFuntion = datePickerFunction.Value;
 
-                if(reservationVM.Save(newReservation))
+                //Default status for new reservation
+                newReservation.Status = "To Start";
+
+                if (reservationVM.Save(newReservation))
                 {
                     MessageBox.Show("Successfully reserved " + cmbBoxReservedFacility.Text);
 
