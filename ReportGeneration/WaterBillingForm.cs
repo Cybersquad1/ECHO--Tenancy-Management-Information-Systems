@@ -315,6 +315,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                     billingVm.CreateWaterBilling(waterBilling); //save water billing
 
                     AddSummary(); //add data on table
+
+                    btnUserCreate.Enabled = false;
                 }
             }
             else
