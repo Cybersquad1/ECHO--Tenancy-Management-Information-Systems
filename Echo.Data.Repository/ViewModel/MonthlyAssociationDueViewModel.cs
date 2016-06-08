@@ -99,11 +99,22 @@ namespace Echo.Data.Repository.ViewModel
         {
             try
             {
+               
+
+                var water = new WaterBillingViewModel().GetPrevBilling(_monthlyAssocDue.UnitNumber);
+
+                if(water != null)
+                {
+                    var vm = new WaterBillingViewModel();
+
+                    vm.UpdateWater(water.ID);
+                }
+
                 Add(_monthlyAssocDue);
 
                 return _monthlyAssocDue.ID;
             }
-            catch
+            catch(Exception r)
             {
                 return Guid.Empty;
             }
