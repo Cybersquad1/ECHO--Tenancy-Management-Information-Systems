@@ -85,7 +85,7 @@ namespace Echo.Data.Repository.ViewModel
 
         public MonthlyAssociationDue GetPreviousBilling(string _unitNo)
         {
-            var prevBilling = GetLast(r => r.UnitNumber == _unitNo);
+            var prevBilling = GetLast(r => r.UnitNumber == _unitNo && r.Balance > 0);
 
             if(prevBilling != null)
             {
