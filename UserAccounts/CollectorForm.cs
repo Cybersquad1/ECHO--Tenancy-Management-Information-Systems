@@ -389,7 +389,7 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            Receipt form = new Receipt(paymentID,loginInfo.fullName);
+            Receipt form = new Receipt(paymentID,loginInfo.fullName, totalAssoc);
 
             form.Show();
         }

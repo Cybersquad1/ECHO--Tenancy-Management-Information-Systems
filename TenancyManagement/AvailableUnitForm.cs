@@ -87,16 +87,24 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                     if (item.ExpectedEndOfOccupancy == null ||
                     item.ExpectedEndOfOccupancy > DateTime.Now) //Availability
                     {
-                        lvi.SubItems.Add("");
-                    }
-                    else
-                    {
                         var tenant = new TenantViewModel().GetSelectedTenant(item.Tenant);
 
                         if (tenant != null)
                             lvi.SubItems.Add(tenant.FirstName + " " + tenant.LastName);
                         else
-                            lvi.SubItems.Add("No Tenant");
+                        {
+                            var owner = new TenantViewModel().GetSelectedTenant(item.Owner);
+
+                            if (owner != null)
+                                lvi.SubItems.Add(owner.FirstName + " " + owner.LastName);
+                            else
+                                lvi.SubItems.Add("N/A");
+                        }
+                        
+                    }
+                    else
+                    {
+                        lvi.SubItems.Add("");
                     }
                 }
 
@@ -126,6 +134,7 @@ namespace Tenancy_Management_Information_Systems.TenancyManagement
                 lvi.SubItems.Add(item.Type); //Unit Type
 
                 //Unit Owner
+
                 if(item.Owner != null)
                 {
                     var owner = new TenantViewModel().GetSelectedTenant(item.Owner);

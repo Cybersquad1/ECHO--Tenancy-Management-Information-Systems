@@ -103,7 +103,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.63493in</Top>
+        <Top>1.00993in</Top>
         <Height>0.1875in</Height>
         <Width>0.59723in</Width>
         <ZIndex>4</ZIndex>
@@ -118,7 +118,7 @@
         </Style>
       </Textbox>
       <Line Name="Line3">
-        <Top>1in</Top>
+        <Top>1.375in</Top>
         <Left>1.46875in</Left>
         <Height>0in</Height>
         <Width>1.02306in</Width>
@@ -146,7 +146,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.04167in</Top>
+        <Top>1.41667in</Top>
         <Height>0.1875in</Height>
         <Width>1.39931in</Width>
         <ZIndex>6</ZIndex>
@@ -235,7 +235,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=(Parameters!AdvancePayment.Value + Fields!AssociationDue.Value + Fields!WaterBillTotalDue.Value) * 0.12</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -247,7 +247,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.67709in</Top>
+        <Top>1.05209in</Top>
         <Left>1.46875in</Left>
         <Height>0.1875in</Height>
         <Width>1.02306in</Width>
@@ -269,7 +269,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!TotalAmount.Value</Value>
+                <Value>=Parameters!AdvancePayment.Value + Fields!AssociationDue.Value + Fields!WaterBillTotalDue.Value</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -281,7 +281,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.04167in</Top>
+        <Top>1.41667in</Top>
         <Left>1.46875in</Left>
         <Height>0.1875in</Height>
         <Width>1.02306in</Width>
@@ -523,8 +523,73 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Advance Payment</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.67708in</Top>
+        <Height>0.1875in</Height>
+        <Width>1.39931in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!AdvancePayment.Value</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.67708in</Top>
+        <Left>1.46875in</Left>
+        <Height>0.1875in</Height>
+        <Width>1.02306in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.17708in</Height>
+    <Height>3.30208in</Height>
     <Style />
   </Body>
   <Width>6.47917in</Width>
@@ -786,6 +851,10 @@
     </ReportParameter>
     <ReportParameter Name="PreparedBy">
       <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AdvancePayment">
+      <DataType>Float</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

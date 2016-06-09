@@ -68,6 +68,8 @@ namespace Echo.Data.Repository.ViewModel
         {
             try
             {
+                _reservation.Status = "To Start";
+
                 Add(_reservation);
 
                 return true;
@@ -77,6 +79,11 @@ namespace Echo.Data.Repository.ViewModel
                 return false;
             }
         }
+        public List<Reservation> GetAllUnpaid()
+        {
+            return Find(r => r.Balance > 0);
+        }
+
         public List<Reservation> GetAllUnpaid(string _unitNo)
         {
             return Find(r => r.Balance > 0 && r.UnitNumber == _unitNo);

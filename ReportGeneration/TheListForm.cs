@@ -85,11 +85,6 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
         Reservation reservation;
 
 
-        private void GetUnpaidAccounts(string _unitNo)
-        {
-
-        }
-
         private int ConvertMonthToInt(string _month)
         {
             if (_month == "January")
@@ -122,6 +117,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
         private void GetUnpaidAccounts()
         {
+            listViewUnpaid.Items.Clear();
+
             List<Accounts> unpaidAccounts = new List<Accounts>();
 
             var unpaidAssoc = new MonthlyAssociationDueViewModel().GetAllUnpaid();
@@ -155,7 +152,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
             });
 
             //unpaid reservation
-            var reservation = new ReservationViewModel().GetAllPaid();
+            var reservation = new ReservationViewModel().GetAllUnpaid();
 
             reservation.ForEach(item =>
             {
@@ -197,9 +194,7 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                 unpaidAccounts = unpaidAccounts.Where(r => r.UnitNo == txtBoxUnpaidUnitNo.Text).ToList();
             }
 
-            unpaidAccounts = unpaidAccounts.OrderByDescending(r => r.tenantChargeDate).ToList();
-
-            listViewUnpaid.Items.Clear();
+            unpaidAccounts = unpaidAccounts.OrderByDescending(r => r.tenantChargeDate).ToList();            
 
             unpaidAccounts.ForEach(item =>
             {
@@ -283,12 +278,12 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
 
             if(cmbBoxPaidMonth.Text != "")
             {
-                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Month == ConvertMonthToInt(cmbBoxPaidMonth.Text)).ToList();
+                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate != null && r.tenantChargeDate.Month == ConvertMonthToInt(cmbBoxPaidMonth.Text)).ToList();
             }
 
-            if(cmbBoxPaidMonth.Text != "")
+            if(cmbBoxPaidYear.Text != "")
             {
-                paidAccounts = paidAccounts.Where(r => r.tenantChargeDate.Year == int.Parse(cmbBoxPaidYear.Text)).ToList();
+                paidAccounts = paidAccounts.Where(r =>r.tenantChargeDate != null && r.tenantChargeDate.Year == int.Parse(cmbBoxPaidYear.Text)).ToList();
             }
 
             if(txtBoxPaidUnitNo.Text != "")

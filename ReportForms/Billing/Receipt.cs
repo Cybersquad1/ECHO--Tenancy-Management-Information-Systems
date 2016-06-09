@@ -14,14 +14,14 @@ namespace Tenancy_Management_Information_Systems.ReportForms.Billing
 {
     public partial class Receipt : Form
     {
-        public Receipt(Guid _paymentHistoryID, string userName)
+        public Receipt(Guid _paymentHistoryID, string userName, double advance)
         {
             InitializeComponent();
 
-            LoadReport(_paymentHistoryID, userName);
+            LoadReport(_paymentHistoryID, userName, advance);
         }
 
-        private void LoadReport(Guid _paymentHistoryID, string userName)
+        private void LoadReport(Guid _paymentHistoryID, string userName, double advance)
         {
             using (var db = new EchoEntities())
             {
@@ -30,7 +30,8 @@ namespace Tenancy_Management_Information_Systems.ReportForms.Billing
                 ReportParameter[] rParams = new ReportParameter[]
                 {
                     new ReportParameter("ReceiptDate", DateTime.Now.ToShortDateString()),
-                    new ReportParameter("PreparedBy", userName)
+                    new ReportParameter("PreparedBy", userName),
+                    new ReportParameter("AdvancePayment", string.Format("0:0.00",advance))
                 };
 
                 reportViewer.LocalReport.SetParameters(rParams);

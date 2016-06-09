@@ -174,14 +174,16 @@
             <TextRuns>
               <TextRun>
                 <Value>=Fields!ChargeDate.Value</Value>
-                <Style />
+                <Style>
+                  <Format>dd/MM/yyyy</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>0.67013in</Top>
+        <Top>0.65625in</Top>
         <Left>1.36333in</Left>
         <Height>0.25in</Height>
         <Width>1.72917in</Width>
@@ -234,7 +236,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=Fields!WaterDate.Value</Value>
-                <Style />
+                <Style>
+                  <Format>dd/MM/yyyy</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -849,6 +853,7 @@
                   <Value>=Fields!ChargeDate.Value</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1020,7 +1025,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>EchoDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\philscan\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\EchoDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Royce\Documents\Repository\ECHO--Tenancy-Management-Information-Systems\EchoDataSet.xsd</rd:SchemaPath>
         <rd:TableName>BillingStatement</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

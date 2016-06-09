@@ -81,6 +81,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbBoxReservedFacility = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbBoxReservationStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -118,8 +120,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxUnpaidUnitNo = new System.Windows.Forms.TextBox();
             this.btnUnpaidSearch = new System.Windows.Forms.Button();
-            this.cmbBoxReservedFacility = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.listPnl.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -149,9 +151,9 @@
             this.groupBox3.Controls.Add(this.btnUserCancel);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox1);
-            this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Location = new System.Drawing.Point(4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(957, 543);
@@ -698,6 +700,29 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search by:";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 14);
+            this.label12.TabIndex = 147;
+            this.label12.Text = "Unit Number";
+            // 
+            // cmbBoxReservedFacility
+            // 
+            this.cmbBoxReservedFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxReservedFacility.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxReservedFacility.FormattingEnabled = true;
+            this.cmbBoxReservedFacility.Items.AddRange(new object[] {
+            "Function Room",
+            "Viewing Deck Area"});
+            this.cmbBoxReservedFacility.Location = new System.Drawing.Point(461, 11);
+            this.cmbBoxReservedFacility.Name = "cmbBoxReservedFacility";
+            this.cmbBoxReservedFacility.Size = new System.Drawing.Size(195, 23);
+            this.cmbBoxReservedFacility.TabIndex = 146;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -812,6 +837,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.cmbBoxPaidYear);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbBoxPaidMonth);
@@ -841,7 +867,7 @@
             "2009",
             "2008",
             "2007"});
-            this.cmbBoxPaidYear.Location = new System.Drawing.Point(199, 49);
+            this.cmbBoxPaidYear.Location = new System.Drawing.Point(199, 56);
             this.cmbBoxPaidYear.Name = "cmbBoxPaidYear";
             this.cmbBoxPaidYear.Size = new System.Drawing.Size(84, 23);
             this.cmbBoxPaidYear.TabIndex = 8;
@@ -850,7 +876,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 53);
+            this.label1.Location = new System.Drawing.Point(159, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 14);
             this.label1.TabIndex = 7;
@@ -872,7 +898,7 @@
             "October",
             "November",
             "December"});
-            this.cmbBoxPaidMonth.Location = new System.Drawing.Point(55, 49);
+            this.cmbBoxPaidMonth.Location = new System.Drawing.Point(55, 56);
             this.cmbBoxPaidMonth.Name = "cmbBoxPaidMonth";
             this.cmbBoxPaidMonth.Size = new System.Drawing.Size(98, 23);
             this.cmbBoxPaidMonth.TabIndex = 6;
@@ -881,7 +907,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Location = new System.Drawing.Point(6, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 14);
             this.label2.TabIndex = 5;
@@ -959,6 +985,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.cmbBoxUnpaidYear);
             this.groupBox2.Controls.Add(this.cmbBoxUnpaidMonth);
             this.groupBox2.Controls.Add(this.listViewUnpaid);
@@ -989,7 +1016,7 @@
             "2009",
             "2008",
             "2007"});
-            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(199, 45);
+            this.cmbBoxUnpaidYear.Location = new System.Drawing.Point(202, 53);
             this.cmbBoxUnpaidYear.Name = "cmbBoxUnpaidYear";
             this.cmbBoxUnpaidYear.Size = new System.Drawing.Size(84, 23);
             this.cmbBoxUnpaidYear.TabIndex = 11;
@@ -1010,7 +1037,7 @@
             "October",
             "November",
             "December"});
-            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(55, 45);
+            this.cmbBoxUnpaidMonth.Location = new System.Drawing.Point(58, 53);
             this.cmbBoxUnpaidMonth.Name = "cmbBoxUnpaidMonth";
             this.cmbBoxUnpaidMonth.Size = new System.Drawing.Size(98, 23);
             this.cmbBoxUnpaidMonth.TabIndex = 10;
@@ -1027,9 +1054,9 @@
             this.columnHeader12});
             this.listViewUnpaid.FullRowSelect = true;
             this.listViewUnpaid.GridLines = true;
-            this.listViewUnpaid.Location = new System.Drawing.Point(5, 76);
+            this.listViewUnpaid.Location = new System.Drawing.Point(5, 85);
             this.listViewUnpaid.Name = "listViewUnpaid";
-            this.listViewUnpaid.Size = new System.Drawing.Size(806, 441);
+            this.listViewUnpaid.Size = new System.Drawing.Size(806, 432);
             this.listViewUnpaid.TabIndex = 9;
             this.listViewUnpaid.UseCompatibleStateImageBehavior = false;
             this.listViewUnpaid.View = System.Windows.Forms.View.Details;
@@ -1068,7 +1095,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 53);
+            this.label3.Location = new System.Drawing.Point(162, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 14);
             this.label3.TabIndex = 7;
@@ -1078,7 +1105,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 53);
+            this.label4.Location = new System.Drawing.Point(9, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 14);
             this.label4.TabIndex = 5;
@@ -1092,7 +1119,6 @@
             this.txtBoxUnpaidUnitNo.Name = "txtBoxUnpaidUnitNo";
             this.txtBoxUnpaidUnitNo.Size = new System.Drawing.Size(86, 21);
             this.txtBoxUnpaidUnitNo.TabIndex = 3;
-            this.txtBoxUnpaidUnitNo.Text = "Unit Number";
             // 
             // btnUnpaidSearch
             // 
@@ -1105,28 +1131,25 @@
             this.btnUnpaidSearch.UseVisualStyleBackColor = true;
             this.btnUnpaidSearch.Click += new System.EventHandler(this.btnUnpaidSearch_Click);
             // 
-            // cmbBoxReservedFacility
+            // label18
             // 
-            this.cmbBoxReservedFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxReservedFacility.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoxReservedFacility.FormattingEnabled = true;
-            this.cmbBoxReservedFacility.Items.AddRange(new object[] {
-            "Function Room",
-            "Viewing Deck Area"});
-            this.cmbBoxReservedFacility.Location = new System.Drawing.Point(461, 11);
-            this.cmbBoxReservedFacility.Name = "cmbBoxReservedFacility";
-            this.cmbBoxReservedFacility.Size = new System.Drawing.Size(195, 23);
-            this.cmbBoxReservedFacility.TabIndex = 146;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(16, 35);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(75, 14);
+            this.label18.TabIndex = 148;
+            this.label18.Text = "Unit Number";
             // 
-            // label12
+            // label23
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 14);
-            this.label12.TabIndex = 147;
-            this.label12.Text = "Unit Number";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(12, 35);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(75, 14);
+            this.label23.TabIndex = 148;
+            this.label23.Text = "Unit Number";
             // 
             // TheListForm
             // 
@@ -1254,5 +1277,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbBoxReservedFacility;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label23;
     }
 }
