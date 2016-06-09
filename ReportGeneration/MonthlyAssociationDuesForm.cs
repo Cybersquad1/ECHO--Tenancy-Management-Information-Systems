@@ -299,6 +299,8 @@ namespace Tenancy_Management_Information_Systems.ReportGeneration
                         btnPreview.Enabled = true;
 
                         GetUnsettled();
+
+                        btnFinalize.Enabled = false;
                     }
                     else
                     {

@@ -8,6 +8,14 @@ namespace Echo.Data.Repository.ViewModel
 {
     public class WaterBillingViewModel : ViewModelBase<WaterBilling>
     {
+        public void UpdateWater(Guid ID)
+        {
+            var water = GetEntity(r => r.ID == ID);
+
+            water.Paid = 1;
+
+            Update(water);
+        }
         public class PreviousBalance
         {
             public DateTime Date { get; set; }
@@ -38,7 +46,7 @@ namespace Echo.Data.Repository.ViewModel
 
         public WaterBilling GetPrevBilling(string _unitNo)
         {
-            return GetLast(r => r.UnitNumber == _unitNo);
+            return GetLast(r => r.UnitNumber == _unitNo && r.Paid == 0);
         }
 
         public string[] GetPreviousBilling(string _unitNo)
