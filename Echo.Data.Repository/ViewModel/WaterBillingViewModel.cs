@@ -45,7 +45,7 @@ namespace Echo.Data.Repository.ViewModel
         {
             string[] returnValue = new string[2];
 
-            var billing = GetLast(r => r.UnitNumber == _unitNo); //Get last record of Water billing
+            var billing = GetLast(r => r.UnitNumber == _unitNo && r.Paid == 0); //Get last record of Water billing
 
             if (billing != null)
             {
