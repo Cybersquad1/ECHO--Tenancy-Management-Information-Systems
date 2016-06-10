@@ -31,7 +31,7 @@ namespace Tenancy_Management_Information_Systems.ReportForms.Billing
                 {
                     new ReportParameter("ReceiptDate", DateTime.Now.ToShortDateString()),
                     new ReportParameter("PreparedBy", userName),
-                    new ReportParameter("AdvancePayment", string.Format("0:0.00",advance))
+                    new ReportParameter("AdvancePayment", advance.ToString())
                 };
 
                 reportViewer.LocalReport.SetParameters(rParams);
