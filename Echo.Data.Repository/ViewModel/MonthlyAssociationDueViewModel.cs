@@ -80,16 +80,20 @@ namespace Echo.Data.Repository.ViewModel
 
         public List<MonthlyAssociationDue> GetAll(string _unitNo)
         {
-            return Find(r => r.UnitNumber == _unitNo).OrderByDescending(r=>r.ChargeDate).ToList();
+            return Find(r => r.UnitNumber == _unitNo).OrderBy(r=>r.ChargeDate).ToList();
         }
 
         public MonthlyAssociationDue GetPreviousBilling(string _unitNo)
         {
-            var prevBilling = GetLast(r => r.UnitNumber == _unitNo && r.Balance > 0);
+            var prevBilling = Find(r => r.UnitNumber == _unitNo && r.Balance > 0);
+
+            prevBilling = prevBilling.OrderByDescending(r => r.ChargeDate).ToList();
+
+            var temp = prevBilling.FirstOrDefault(r => r.Balance > 0);
 
             if(prevBilling != null)
             {
-                return prevBilling;
+                return temp;
             }
 
             return null;
