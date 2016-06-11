@@ -38,6 +38,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         double penalty = 0;
 
+        double originalAssoc = 0;
+
         public CollectorForm(LoginInfo loginInfo)
         {
             InitializeComponent();
@@ -282,6 +284,8 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
                     totalAssoc = double.Parse(monthlyAssoc.AssociationDue.ToString());
 
                     penalty = double.Parse((monthlyAssoc.Penalty + monthlyAssoc.OtherPenaltyAmount).ToString());
+
+                    originalAssoc = double.Parse(monthlyAssoc.AssociationDue.ToString());
                 }
                 else if (reservation != null)
                 {
@@ -389,8 +393,12 @@ namespace Tenancy_Management_Information_Systems.UserAccounts
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
+            double temp = 0;
 
-             Receipt form = new Receipt(paymentID,loginInfo.fullName, totalAssoc);
+            if (totalAssoc != originalAssoc)
+                temp = totalAssoc;
+
+            Receipt form = new Receipt(paymentID,loginInfo.fullName, temp);
 
             form.Show();
         }
